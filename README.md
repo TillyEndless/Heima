@@ -1,6 +1,6 @@
 # Heima
 
-This repository provides an overview of all resources for the paper ["Efficient Reasoning with Hidden Thinking"](https://arxiv.org/abs/2501.19201).
+This repository provides all resources for the ICML 2026 paper ["Efficient Reasoning with Hidden Thinking"](https://arxiv.org/abs/2501.19201).
 
 ## Demo
 ![M3](asserts/1987-BMW-E30-M3.png)
