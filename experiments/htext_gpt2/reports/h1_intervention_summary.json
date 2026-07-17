@@ -1,0 +1,314 @@
+{
+  "42": {
+    "generation": {
+      "normal": {
+        "expression_match": 1.0,
+        "intermediate_result_match": 0.0,
+        "number_match": 0.0,
+        "operation_type_match": 0.9375
+      },
+      "shuffled": {
+        "expression_match": 1.0,
+        "intermediate_result_match": 0.0,
+        "number_match": 0.0,
+        "operation_type_match": 1.0
+      }
+    },
+    "interventions": {
+      "farthest": {
+        "logits_kl_from_normal": {
+          "average_logits_kl": 4.9526410293765366e-05,
+          "first_token_logits_kl": 3.5285131161799654e-05
+        },
+        "nll": {
+          "first_4_tokens": 0.0731121376156807,
+          "first_8_tokens": 0.2521485984325409,
+          "first_token": 0.15800891816616058,
+          "full": 0.5772321820259094,
+          "intermediate_tokens": 2.5595524311065674,
+          "numeric_tokens": 1.4884560108184814,
+          "operator_tokens": 0.05669090151786804
+        }
+      },
+      "global_mean": {
+        "logits_kl_from_normal": {
+          "average_logits_kl": 8.86020643520169e-06,
+          "first_token_logits_kl": 4.922143943986157e-06
+        },
+        "nll": {
+          "first_4_tokens": 0.07289885729551315,
+          "first_8_tokens": 0.25177624821662903,
+          "first_token": 0.15805663168430328,
+          "full": 0.5770983099937439,
+          "intermediate_tokens": 2.5588467121124268,
+          "numeric_tokens": 1.4880480766296387,
+          "operator_tokens": 0.05693167448043823
+        }
+      },
+      "norm_matched_random": {
+        "logits_kl_from_normal": {
+          "average_logits_kl": 0.016842912882566452,
+          "first_token_logits_kl": 0.005283186677843332
+        },
+        "nll": {
+          "first_4_tokens": 0.09138983488082886,
+          "first_8_tokens": 0.26993611454963684,
+          "first_token": 0.15543831884860992,
+          "full": 0.5898813009262085,
+          "intermediate_tokens": 2.5807926654815674,
+          "numeric_tokens": 1.5021947622299194,
+          "operator_tokens": 0.05377548560500145
+        }
+      },
+      "normal": {
+        "nll": {
+          "first_4_tokens": 0.07275675982236862,
+          "first_8_tokens": 0.25156497955322266,
+          "first_token": 0.15804125368595123,
+          "full": 0.5770061016082764,
+          "intermediate_tokens": 2.558478355407715,
+          "numeric_tokens": 1.4878370761871338,
+          "operator_tokens": 0.0571046881377697
+        }
+      },
+      "shuffled": {
+        "logits_kl_from_normal": {
+          "average_logits_kl": 1.9116376279271208e-05,
+          "first_token_logits_kl": 9.057036550075281e-06
+        },
+        "nll": {
+          "first_4_tokens": 0.07298023253679276,
+          "first_8_tokens": 0.25183480978012085,
+          "first_token": 0.15807247161865234,
+          "full": 0.5771750211715698,
+          "intermediate_tokens": 2.559112548828125,
+          "numeric_tokens": 1.4882036447525024,
+          "operator_tokens": 0.05707395449280739
+        }
+      },
+      "zero": {
+        "logits_kl_from_normal": {
+          "average_logits_kl": 0.00458880327641964,
+          "first_token_logits_kl": 0.003517068922519684
+        },
+        "nll": {
+          "first_4_tokens": 0.08317360281944275,
+          "first_8_tokens": 0.262317031621933,
+          "first_token": 0.17387469112873077,
+          "full": 0.5835316181182861,
+          "intermediate_tokens": 2.5721094608306885,
+          "numeric_tokens": 1.496238350868225,
+          "operator_tokens": 0.048581283539533615
+        }
+      }
+    }
+  },
+  "43": {
+    "generation": {
+      "normal": {
+        "expression_match": 1.0,
+        "intermediate_result_match": 0.0,
+        "number_match": 0.0,
+        "operation_type_match": 1.0
+      },
+      "shuffled": {
+        "expression_match": 1.0,
+        "intermediate_result_match": 0.0,
+        "number_match": 0.0,
+        "operation_type_match": 1.0
+      }
+    },
+    "interventions": {
+      "farthest": {
+        "logits_kl_from_normal": {
+          "average_logits_kl": 4.674513911595568e-05,
+          "first_token_logits_kl": 4.9465255870018154e-05
+        },
+        "nll": {
+          "first_4_tokens": 0.04414820671081543,
+          "first_8_tokens": 0.22461985051631927,
+          "first_token": 0.013454267755150795,
+          "full": 0.5721028447151184,
+          "intermediate_tokens": 2.5174002647399902,
+          "numeric_tokens": 1.459977626800537,
+          "operator_tokens": 0.009443736635148525
+        }
+      },
+      "global_mean": {
+        "logits_kl_from_normal": {
+          "average_logits_kl": 7.5824864325113595e-06,
+          "first_token_logits_kl": 6.788816790503915e-06
+        },
+        "nll": {
+          "first_4_tokens": 0.04396451264619827,
+          "first_8_tokens": 0.22423343360424042,
+          "first_token": 0.013407004997134209,
+          "full": 0.571993350982666,
+          "intermediate_tokens": 2.5174405574798584,
+          "numeric_tokens": 1.4599742889404297,
+          "operator_tokens": 0.009317255578935146
+        }
+      },
+      "norm_matched_random": {
+        "logits_kl_from_normal": {
+          "average_logits_kl": 0.02840033732354641,
+          "first_token_logits_kl": 0.011489770375192165
+        },
+        "nll": {
+          "first_4_tokens": 0.06334401667118073,
+          "first_8_tokens": 0.24951845407485962,
+          "first_token": 0.03328604996204376,
+          "full": 0.6080420613288879,
+          "intermediate_tokens": 2.56307053565979,
+          "numeric_tokens": 1.4909465312957764,
+          "operator_tokens": 0.02566772699356079
+        }
+      },
+      "normal": {
+        "nll": {
+          "first_4_tokens": 0.04374752938747406,
+          "first_8_tokens": 0.22401714324951172,
+          "first_token": 0.01331658847630024,
+          "full": 0.5719587802886963,
+          "intermediate_tokens": 2.517582893371582,
+          "numeric_tokens": 1.4599868059158325,
+          "operator_tokens": 0.009317210875451565
+        }
+      },
+      "shuffled": {
+        "logits_kl_from_normal": {
+          "average_logits_kl": 1.3769929864793085e-05,
+          "first_token_logits_kl": 1.5597144738421775e-05
+        },
+        "nll": {
+          "first_4_tokens": 0.04412936419248581,
+          "first_8_tokens": 0.2244148850440979,
+          "first_token": 0.013472805730998516,
+          "full": 0.5720478296279907,
+          "intermediate_tokens": 2.517378330230713,
+          "numeric_tokens": 1.460017204284668,
+          "operator_tokens": 0.009310954250395298
+        }
+      },
+      "zero": {
+        "logits_kl_from_normal": {
+          "average_logits_kl": 0.004871536046266556,
+          "first_token_logits_kl": 0.010945720598101616
+        },
+        "nll": {
+          "first_4_tokens": 0.05985487997531891,
+          "first_8_tokens": 0.23435702919960022,
+          "first_token": 0.02870747819542885,
+          "full": 0.579759418964386,
+          "intermediate_tokens": 2.5279977321624756,
+          "numeric_tokens": 1.4668248891830444,
+          "operator_tokens": 0.009050874970853329
+        }
+      }
+    }
+  },
+  "44": {
+    "generation": {
+      "normal": {
+        "expression_match": 1.0,
+        "intermediate_result_match": 0.0,
+        "number_match": 0.0,
+        "operation_type_match": 0.875
+      },
+      "shuffled": {
+        "expression_match": 1.0,
+        "intermediate_result_match": 0.0,
+        "number_match": 0.0,
+        "operation_type_match": 0.9375
+      }
+    },
+    "interventions": {
+      "farthest": {
+        "logits_kl_from_normal": {
+          "average_logits_kl": 2.476497866155114e-05,
+          "first_token_logits_kl": 4.007411189377308e-05
+        },
+        "nll": {
+          "first_4_tokens": 0.061426468193531036,
+          "first_8_tokens": 0.2978070378303528,
+          "first_token": 0.014384649693965912,
+          "full": 0.592712938785553,
+          "intermediate_tokens": 2.630939245223999,
+          "numeric_tokens": 1.4922250509262085,
+          "operator_tokens": 0.01607031747698784
+        }
+      },
+      "global_mean": {
+        "logits_kl_from_normal": {
+          "average_logits_kl": 3.734478923433926e-06,
+          "first_token_logits_kl": 5.1160550356144086e-06
+        },
+        "nll": {
+          "first_4_tokens": 0.061381369829177856,
+          "first_8_tokens": 0.2977214455604553,
+          "first_token": 0.014270778745412827,
+          "full": 0.5930025577545166,
+          "intermediate_tokens": 2.6312196254730225,
+          "numeric_tokens": 1.49247145652771,
+          "operator_tokens": 0.016622157767415047
+        }
+      },
+      "norm_matched_random": {
+        "logits_kl_from_normal": {
+          "average_logits_kl": 0.017198042944073677,
+          "first_token_logits_kl": 0.00733589380979538
+        },
+        "nll": {
+          "first_4_tokens": 0.08469770103693008,
+          "first_8_tokens": 0.31996527314186096,
+          "first_token": 0.028514821082353592,
+          "full": 0.6143351197242737,
+          "intermediate_tokens": 2.6824309825897217,
+          "numeric_tokens": 1.5210713148117065,
+          "operator_tokens": 0.023253032937645912
+        }
+      },
+      "normal": {
+        "nll": {
+          "first_4_tokens": 0.061217907816171646,
+          "first_8_tokens": 0.29756462574005127,
+          "first_token": 0.014098658226430416,
+          "full": 0.5931205153465271,
+          "intermediate_tokens": 2.6312191486358643,
+          "numeric_tokens": 1.492525339126587,
+          "operator_tokens": 0.016890529543161392
+        }
+      },
+      "shuffled": {
+        "logits_kl_from_normal": {
+          "average_logits_kl": 6.956764991628006e-06,
+          "first_token_logits_kl": 8.212911779992282e-06
+        },
+        "nll": {
+          "first_4_tokens": 0.0611945316195488,
+          "first_8_tokens": 0.2978507876396179,
+          "first_token": 0.014252708293497562,
+          "full": 0.5930392742156982,
+          "intermediate_tokens": 2.631701707839966,
+          "numeric_tokens": 1.4927083253860474,
+          "operator_tokens": 0.01652923785150051
+        }
+      },
+      "zero": {
+        "logits_kl_from_normal": {
+          "average_logits_kl": 0.003942049108445644,
+          "first_token_logits_kl": 0.006342023611068726
+        },
+        "nll": {
+          "first_4_tokens": 0.06767424941062927,
+          "first_8_tokens": 0.3072882294654846,
+          "first_token": 0.025623684749007225,
+          "full": 0.599541425704956,
+          "intermediate_tokens": 2.653043508529663,
+          "numeric_tokens": 1.5055686235427856,
+          "operator_tokens": 0.015898749232292175
+        }
+      }
+    }
+  }
+}

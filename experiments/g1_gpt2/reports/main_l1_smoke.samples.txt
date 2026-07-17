@@ -1,0 +1,271 @@
+Sample 1
+Question: Compute (6 + 29) * 9.
+Gold CoT: First add 6 and 29: 6 + 29 = 35. Then multiply the result by 9: 35 * 9 = 315.
+Normal latent decoded CoT: 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+The first,
+
+The first, the first, the first, the first, the first, the first, the first, the first
+Zero latent decoded CoT: 
+Decode the latent state.
+
+Latent:
+
+Reasoning:
+
+Decode the latent state.
+
+Latent:
+
+Reasoning:
+
+Decode the latent state.
+
+Latent:
+Shuffled latent decoded CoT: 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+The first,
+
+The first, the first, the first, the first, the first, the first, the first, the first
+Gold answer: 315
+Predicted answer: 1,
+
+Sample 2
+Question: Compute (15 + 13) * 8.
+Gold CoT: First add 15 and 13: 15 + 13 = 28. Then multiply the result by 8: 28 * 8 = 224.
+Normal latent decoded CoT: 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+The first,
+
+The first, the first, the first, the first, the first, the first, the first, the first
+Zero latent decoded CoT: 
+Decode the latent state.
+
+Latent:
+
+Reasoning:
+
+Decode the latent state.
+
+Latent:
+
+Reasoning:
+
+Decode the latent state.
+
+Latent:
+Shuffled latent decoded CoT: 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+The first,
+
+The first, the first, the first, the first, the first, the first, the first, the first
+Gold answer: 224
+Predicted answer: 1:
+
+Sample 3
+Question: Compute (22 + 14) * 11.
+Gold CoT: First add 22 and 14: 22 + 14 = 36. Then multiply the result by 11: 36 * 11 = 396.
+Normal latent decoded CoT: 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+The first,
+
+The first, the first, the first, the first, the first, the first, the first, the first
+Zero latent decoded CoT: 
+Decode the latent state.
+
+Latent:
+
+Reasoning:
+
+Decode the latent state.
+
+Latent:
+
+Reasoning:
+
+Decode the latent state.
+
+Latent:
+Shuffled latent decoded CoT: 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+The first,
+
+The first, the first, the first, the first, the first, the first, the first, the first
+Gold answer: 396
+Predicted answer: 1:
+
+Sample 4
+Question: Compute (28 + 18) * 5.
+Gold CoT: First add 28 and 18: 28 + 18 = 46. Then multiply the result by 5: 46 * 5 = 230.
+Normal latent decoded CoT: 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+The first,
+
+The first, the first, the first, the first, the first, the first, the first, the first
+Zero latent decoded CoT: 
+Decode the latent state.
+
+Latent:
+
+Reasoning:
+
+Decode the latent state.
+
+Latent:
+
+Reasoning:
+
+Decode the latent state.
+
+Latent:
+Shuffled latent decoded CoT: 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+The first,
+
+The first, the first, the first, the first, the first, the first, the first, the first
+Gold answer: 230
+Predicted answer: 1:

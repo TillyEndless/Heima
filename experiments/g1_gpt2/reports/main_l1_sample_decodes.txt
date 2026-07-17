@@ -1,0 +1,79 @@
+Sample 1
+Question: Compute (6 + 29) * 9.
+Gold CoT: First add 6 and 29: 6 + 29 = 35. Then multiply the result by 9: 35 * 9 = 315.
+Normal latent decoded CoT:  11 = by 8.: Then 8 result = by 180.:
+Zero latent decoded CoT: 
+Add the 8 = by 2. Then add the 8 = by 2.
+Shuffled latent decoded CoT:  19 = by 5.: Then 5 multiply * the 8.:
+Gold answer: 315
+Predicted answer: 180
+
+Sample 2
+Question: Compute (15 + 13) * 8.
+Gold CoT: First add 15 and 13: 15 + 13 = 28. Then multiply the result by 8: 28 * 8 = 224.
+Normal latent decoded CoT:  19 = by 5.: Then 5 multiply * the 8.:
+Zero latent decoded CoT: 
+Add the 8 = by 2. Then add the 8 = by 2.
+Shuffled latent decoded CoT:  11 = by 5.: Then 5 multiply * the 8.:
+Gold answer: 224
+Predicted answer: 180
+
+Sample 3
+Question: Compute (22 + 14) * 11.
+Gold CoT: First add 22 and 14: 22 + 14 = 36. Then multiply the result by 11: 36 * 11 = 396.
+Normal latent decoded CoT:  11 = by 5.: Then 5 multiply * the 8.:
+Zero latent decoded CoT: 
+Add the 8 = by 2. Then add the 8 = by 2.
+Shuffled latent decoded CoT:  11 = by 5.: Then 5 multiply * the 8.:
+Gold answer: 396
+Predicted answer: 180
+
+Sample 4
+Question: Compute (28 + 18) * 5.
+Gold CoT: First add 28 and 18: 28 + 18 = 46. Then multiply the result by 5: 46 * 5 = 230.
+Normal latent decoded CoT:  11 = by 5.: Then 5 multiply * the 8.:
+Zero latent decoded CoT: 
+Add the 8 = by 2. Then add the 8 = by 2.
+Shuffled latent decoded CoT:  11 = by 8.: Then 8 result = by 180.:
+Gold answer: 230
+Predicted answer: 198
+
+Sample 5
+Question: Compute (13 + 13) * 9.
+Gold CoT: First add 13 and 13: 13 + 13 = 26. Then multiply the result by 9: 26 * 9 = 234.
+Normal latent decoded CoT:  11 = by 8.: Then 8 result = by 180.:
+Zero latent decoded CoT: 
+Add the 8 = by 2. Then add the 8 = by 2.
+Shuffled latent decoded CoT:  19 = by 5.: Then 5 multiply * the 8.:
+Gold answer: 234
+Predicted answer: 198
+
+Sample 6
+Question: Compute (18 + 3) * 6.
+Gold CoT: First add 18 and 3: 18 + 3 = 21. Then multiply the result by 6: 21 * 6 = 126.
+Normal latent decoded CoT:  19 = by 5.: Then 5 multiply * the 8.:
+Zero latent decoded CoT: 
+Add the 8 = by 2. Then add the 8 = by 2.
+Shuffled latent decoded CoT:  11 = by 8.: Then 8 result = by 180.:
+Gold answer: 126
+Predicted answer: 180
+
+Sample 7
+Question: Compute (16 + 4) * 3.
+Gold CoT: First add 16 and 4: 16 + 4 = 20. Then multiply the result by 3: 20 * 3 = 60.
+Normal latent decoded CoT:  11 = by 8.: Then 8 result = by 180.:
+Zero latent decoded CoT: 
+Add the 8 = by 2. Then add the 8 = by 2.
+Shuffled latent decoded CoT:  11 = by 8.: Then 8 result = by 180.:
+Gold answer: 60
+Predicted answer: 198
+
+Sample 8
+Question: Compute (28 + 2) * 2.
+Gold CoT: First add 28 and 2: 28 + 2 = 30. Then multiply the result by 2: 30 * 2 = 60.
+Normal latent decoded CoT:  11 = by 8.: Then 8 result = by 180.:
+Zero latent decoded CoT: 
+Add the 8 = by 2. Then add the 8 = by 2.
+Shuffled latent decoded CoT:  11 = by 8.: Then 8 result = by 180.:
+Gold answer: 60
+Predicted answer: 198

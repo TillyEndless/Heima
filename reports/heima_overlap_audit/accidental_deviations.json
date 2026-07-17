@@ -1,0 +1,280 @@
+{
+  "count": 25,
+  "items": [
+    {
+      "alignment_status": "NOT_ALIGNED",
+      "area": "dataset",
+      "classification": "HEIMA_BASELINE_REQUIRED",
+      "current_g1": "No section extraction",
+      "id": "M04",
+      "item": "required answer sections",
+      "official_heima": "Requires SUMMARY/CAPTION/REASONING extraction",
+      "rationale": "Heima latent taxonomy depends on these sections.",
+      "severity": "critical"
+    },
+    {
+      "alignment_status": "NOT_ALIGNED",
+      "area": "dataset",
+      "classification": "HEIMA_BASELINE_REQUIRED",
+      "current_g1": "No replacement; z inserted as hidden vector",
+      "id": "M05",
+      "item": "main compressed answer",
+      "official_heima": "Replaces section spans with typed thinking tokens",
+      "rationale": "Official main loss learns explicit thinking-token placeholders.",
+      "severity": "critical"
+    },
+    {
+      "alignment_status": "NOT_ALIGNED",
+      "area": "dataset",
+      "classification": "HEIMA_BASELINE_REQUIRED",
+      "current_g1": "Single latent vector; EOS placeholder only in B prompt",
+      "id": "M06",
+      "item": "thinking token types",
+      "official_heima": "Three typed tokens",
+      "rationale": "Typed latent channels are core to Heima overlap.",
+      "severity": "critical"
+    },
+    {
+      "alignment_status": "NOT_ALIGNED",
+      "area": "dataset",
+      "classification": "HEIMA_BASELINE_REQUIRED",
+      "current_g1": "No progressive stage variants",
+      "id": "M07",
+      "item": "progressive variants",
+      "official_heima": "Multiple compression orders and stages",
+      "rationale": "Official pipeline trains/evaluates staged compression behavior.",
+      "severity": "high"
+    },
+    {
+      "alignment_status": "NOT_ALIGNED",
+      "area": "dataset",
+      "classification": "HEIMA_BASELINE_REQUIRED",
+      "current_g1": "One whole-CoT decoder dataset",
+      "id": "M08",
+      "item": "decoder datasets",
+      "official_heima": "Three local decoder datasets",
+      "rationale": "Current B reconstructs a whole CoT, not local Heima sections.",
+      "severity": "critical"
+    },
+    {
+      "alignment_status": "NOT_ALIGNED",
+      "area": "dataset",
+      "classification": "HEIMA_BASELINE_REQUIRED",
+      "current_g1": "B prompt omits question",
+      "id": "M09",
+      "item": "decoder user prompt includes question",
+      "official_heima": "Decoder templates include original question",
+      "rationale": "Not in allowed intended differences; it strongly affects overlap audit.",
+      "severity": "critical"
+    },
+    {
+      "alignment_status": "NOT_ALIGNED",
+      "area": "dataset",
+      "classification": "HEIMA_BASELINE_REQUIRED",
+      "current_g1": "Whole CoT text",
+      "id": "M10",
+      "item": "decoder target scope",
+      "official_heima": "Local tagged section",
+      "rationale": "This is the most direct explanation for weak shuffled-normal separation.",
+      "severity": "critical"
+    },
+    {
+      "alignment_status": "PARTIAL",
+      "area": "loss_main",
+      "classification": "HEIMA_BASELINE_REQUIRED",
+      "current_g1": "Answer only in synthetic sequence",
+      "id": "M11",
+      "item": "main supervised region",
+      "official_heima": "Assistant answer from torchtune labels after shift",
+      "rationale": "Both are CE next-token losses, but token regions/schema differ.",
+      "severity": "medium"
+    },
+    {
+      "alignment_status": "NOT_ALIGNED",
+      "area": "loss_main",
+      "classification": "HEIMA_BASELINE_REQUIRED",
+      "current_g1": "No typed thinking token target",
+      "id": "M13",
+      "item": "thinking token supervised",
+      "official_heima": "Compressed assistant contains typed thinking tokens",
+      "rationale": "Current A never learns to emit Heima latent tokens.",
+      "severity": "critical"
+    },
+    {
+      "alignment_status": "NOT_ALIGNED",
+      "area": "latent",
+      "classification": "HEIMA_BASELINE_REQUIRED",
+      "current_g1": "Last ordinary question token hidden",
+      "id": "M14",
+      "item": "latent extraction site",
+      "official_heima": "Hidden states at shifted typed thinking-token positions",
+      "rationale": "Current z is ordinary question-token hidden, not special thinking-token hidden.",
+      "severity": "critical"
+    },
+    {
+      "alignment_status": "NOT_ALIGNED",
+      "area": "latent",
+      "classification": "HEIMA_BASELINE_REQUIRED",
+      "current_g1": "One latent slot",
+      "id": "M15",
+      "item": "number of latent slots",
+      "official_heima": "Per-stage repeated token counts, three channels",
+      "rationale": "Capacity and indexing differ.",
+      "severity": "high"
+    },
+    {
+      "alignment_status": "NOT_ALIGNED",
+      "area": "latent",
+      "classification": "HEIMA_BASELINE_REQUIRED",
+      "current_g1": "No projector; direct hidden replacement",
+      "id": "M16",
+      "item": "abstract projection",
+      "official_heima": "Decoder has abstract_projection for latent tokens",
+      "rationale": "Official decoder path includes trainable projection.",
+      "severity": "critical"
+    },
+    {
+      "alignment_status": "NOT_ALIGNED",
+      "area": "loss1",
+      "classification": "HEIMA_BASELINE_REQUIRED",
+      "current_g1": "One decoder B",
+      "id": "M17",
+      "item": "decoder count",
+      "official_heima": "Three decoders summary/caption/reasoning",
+      "rationale": "Current setup cannot measure per-stage Heima overlap.",
+      "severity": "critical"
+    },
+    {
+      "alignment_status": "PARTIAL",
+      "area": "loss1",
+      "classification": "HEIMA_BASELINE_REQUIRED",
+      "current_g1": "replace EOS placeholder embedding with z",
+      "id": "M19",
+      "item": "latent replacement mechanism",
+      "official_heima": "thinking_token + thinking_token_mask arguments",
+      "rationale": "Both inject hidden state, but via different model interface.",
+      "severity": "medium"
+    },
+    {
+      "alignment_status": "PARTIAL",
+      "area": "optimization",
+      "classification": "HEIMA_BASELINE_REQUIRED",
+      "current_g1": "Single AdamW over A+B",
+      "id": "M23",
+      "item": "optimizer topology",
+      "official_heima": "Separate main and decoder optimizers",
+      "rationale": "Both update main/decoder surfaces, but optimizer topology differs.",
+      "severity": "medium"
+    },
+    {
+      "alignment_status": "NOT_ALIGNED",
+      "area": "tokenizer",
+      "classification": "HEIMA_BASELINE_REQUIRED",
+      "current_g1": "Uses GPT-2 EOS as placeholder",
+      "id": "M28",
+      "item": "special token registration",
+      "official_heima": "Tokenizer has explicit <THINKING_OF_*> special IDs",
+      "rationale": "EOS placeholder is not a Heima thinking token.",
+      "severity": "critical"
+    },
+    {
+      "alignment_status": "NOT_ALIGNED",
+      "area": "evaluation",
+      "classification": "HEIMA_BASELINE_REQUIRED",
+      "current_g1": "Whole-CoT decode/interventions",
+      "id": "M29",
+      "item": "decode eval target",
+      "official_heima": "Per-stage decode scripts and metrics",
+      "rationale": "Current eval does not answer Heima local decoder quality.",
+      "severity": "high"
+    },
+    {
+      "alignment_status": "NOT_ALIGNED",
+      "area": "data_filtering",
+      "classification": "HEIMA_BASELINE_REQUIRED",
+      "current_g1": "No analogous filter",
+      "id": "M31",
+      "item": "section filter",
+      "official_heima": "Drops samples missing required sections or duplicate token counts",
+      "rationale": "Official data validity constraints absent.",
+      "severity": "medium"
+    },
+    {
+      "alignment_status": "PARTIAL",
+      "area": "batching",
+      "classification": "HEIMA_BASELINE_REQUIRED",
+      "current_g1": "Same records feed main and whole-CoT B",
+      "id": "M32",
+      "item": "main/decoder batch alignment",
+      "official_heima": "Main, summary, caption, reasoning dataloaders stepped together",
+      "rationale": "Aligned at sample level, not at Heima stage level.",
+      "severity": "medium"
+    },
+    {
+      "alignment_status": "PARTIAL",
+      "area": "labels",
+      "classification": "HEIMA_BASELINE_REQUIRED",
+      "current_g1": "Prompt/latent masked; whole CoT supervised",
+      "id": "M34",
+      "item": "decoder prompt masking",
+      "official_heima": "Multimodal user prompt likely masked; assistant local section supervised",
+      "rationale": "Masking similar, target content differs critically.",
+      "severity": "high"
+    },
+    {
+      "alignment_status": "NOT_ALIGNED",
+      "area": "method",
+      "classification": "HEIMA_BASELINE_REQUIRED",
+      "current_g1": "Current B cannot see question",
+      "id": "M35",
+      "item": "B can bypass latent using question",
+      "official_heima": "Official B sees question plus latent token",
+      "rationale": "This current anti-bypass choice is not in the allowed intended-difference list.",
+      "severity": "high"
+    },
+    {
+      "alignment_status": "NOT_ALIGNED",
+      "area": "method",
+      "classification": "HEIMA_BASELINE_REQUIRED",
+      "current_g1": "Whole-CoT decoder permits global/generic pressure",
+      "id": "M36",
+      "item": "latent semantic pressure",
+      "official_heima": "Typed local decoders force section-specific semantics",
+      "rationale": "Likely contributes to normal/shuffled NLL overlap.",
+      "severity": "critical"
+    },
+    {
+      "alignment_status": "NOT_ALIGNED",
+      "area": "method",
+      "classification": "HEIMA_BASELINE_REQUIRED",
+      "current_g1": "A is trained with hidden z insertion and answer only",
+      "id": "M37",
+      "item": "A output surface",
+      "official_heima": "A is trained in normal LM token space with visible thinking tokens",
+      "rationale": "Current A does not learn a Heima-style compressed text trajectory.",
+      "severity": "critical"
+    },
+    {
+      "alignment_status": "PARTIAL",
+      "area": "config",
+      "classification": "HEIMA_BASELINE_REQUIRED",
+      "current_g1": "Current uses lambda1=0.1",
+      "id": "M38",
+      "item": "lambda weighting",
+      "official_heima": "Official decoder losses are added directly in current_loss",
+      "rationale": "Loss weighting differs from observed official summation.",
+      "severity": "medium"
+    },
+    {
+      "alignment_status": "NOT_ALIGNED",
+      "area": "claim",
+      "classification": "HEIMA_BASELINE_REQUIRED",
+      "current_g1": "Current preserves only joint no-detach latent-to-A idea and CE scaffolding",
+      "id": "M40",
+      "item": "lightweight Heima baseline claim",
+      "official_heima": "Would preserve section tokens, local decoders, projector, question-conditioned decoder",
+      "rationale": "Current G1 should be described as Heima-inspired probe, not a lightweight Heima baseline.",
+      "severity": "critical"
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+
+HEIMA Loss1 / decoder trace (static source audit)
+Commit: cebd6ef3ef862f62c601ced191b64b45d2bf3de2
+Audited source: heima/main_python/2-training-pipeline-main_lora-pure_llm_decoder_lora-split_3_stages-fix_num-progressive.py
+
+1. Decoder topology
+   - setup enables summary_decoder, caption_decoder, reasoning_decoder at lines 287-290.
+   - Three decoder models are created at lines 312-354.
+   - Each decoder is created with use_abstract_projection=True and optional abstract_projection_state_dict.
+   - abstract_projection params are explicitly opened for training at lines 355-367.
+
+2. Decoder data
+   - Organizer creates summary/caption/reasoning decoder prompts at lines 304-374.
+   - Each decoder prompt contains the original question and the matching <THINKING_OF_*> token(s), plus <image>.
+   - Decoder answers are local tagged sections: <SUMMARY>...</SUMMARY>, <CAPTION>...</CAPTION>, <REASONING>...</REASONING>.
+
+3. Latent path
+   - Main hidden states at typed thinking-token positions are extracted at lines 1540-1558.
+   - Decoder batches compute masks for the matching typed token in their own token sequences at lines 1603-1617.
+   - Each decoder receives thinking_token=<hidden from main> and thinking_token_mask=<decoder token mask> at lines 1619-1638.
+
+4. Decoder losses
+   - summary/caption/reasoning labels are shifted at lines 1640-1660.
+   - current_loss_summary/current_loss_caption/current_loss_reasoning are added into current_loss at lines 1644-1663.
+   - current_loss.backward() at line 1668 therefore lets decoder losses flow through the main hidden thinking_token path unless blocked elsewhere.
+
+5. Optimizer stepping
+   - Main optimizer steps at lines 1677-1685.
+   - Decoder gradients are scaled and decoder optimizers step separately at lines 1700-1747.

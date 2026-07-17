@@ -1,0 +1,18 @@
+{
+  "environment_report": "reports/remote_environment.json",
+  "g0_remote_report": "reports/gradient_bridge_report_remote.json",
+  "generated_data": {
+    "train": "experiments/g1_gpt2/data/synthetic_g1_train.jsonl",
+    "validation": "experiments/g1_gpt2/data/synthetic_g1_validation.jsonl"
+  },
+  "last_successful_stage": "R0/G0 remote validation",
+  "model_name": "openai-community/gpt2",
+  "network_check": "Spider mode enabled. Check if remote file exists.\n--2026-07-16 17:24:34--  https://huggingface.co/openai-community/gpt2/resolve/main/config.json\nResolving huggingface.co (huggingface.co)... 31.13.73.9, 2a03:2880:f12c:183:face:b00c:0:25de\nConnecting to huggingface.co (huggingface.co)|31.13.73.9|:443... failed: Connection timed out.\nConnecting to huggingface.co (huggingface.co)|2a03:2880:f12c:183:face:b00c:0:25de|:443... failed: Network is unreachable.",
+  "reason": "Remote server cannot reach https://huggingface.co and no usable openai-community/gpt2 cache was confirmed before training.",
+  "stage": "G1",
+  "status": "stop",
+  "stop_gates_triggered": [
+    "pretrained_gpt2_unavailable"
+  ],
+  "timestamp": "2026-07-16 17:24:34 CST"
+}

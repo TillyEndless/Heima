@@ -1,0 +1,60 @@
+{
+  "config": {
+    "checkpoint_dir": "experiments/htext_gpt2/reports/h1_smoke_checkpoint",
+    "eval_samples": 4,
+    "experiment_name": "h1_frozen_a_interpreter",
+    "gradient_accumulation_steps": 4,
+    "h0_checkpoint_dir": "experiments/htext_gpt2/reports/h0_smoke_checkpoint",
+    "learning_rate_B": 1e-05,
+    "learning_rate_projector": 5e-05,
+    "local_files_only": true,
+    "log_interval": 1,
+    "max_cot_tokens": 96,
+    "max_grad_norm": 1.0,
+    "max_question_tokens": 80,
+    "max_steps": 2,
+    "micro_batch_size": 2,
+    "model_name_or_path": "/mnt/nas/share2/home/zxl/models/openai-community-gpt2",
+    "num_thinking_tokens": 1,
+    "report_path": "experiments/htext_gpt2/reports/h1_smoke.json",
+    "seed": 42,
+    "train_path": "experiments/htext_gpt2/data/synthetic_htext_train.jsonl",
+    "use_safetensors": true,
+    "validation_path": "experiments/htext_gpt2/data/synthetic_htext_validation.jsonl",
+    "weight_decay": 0.01
+  },
+  "eval": {
+    "normal_minus_shuffled": 0.917022705078125,
+    "normal_minus_zero": 2.0228004455566406,
+    "normal_nll": 6.449101448059082,
+    "shuffled_nll": 5.532078742980957,
+    "zero_nll": 4.426301002502441
+  },
+  "experiment": "h1_frozen_a_interpreter",
+  "logs": [
+    {
+      "latent_requires_grad": false,
+      "loss1": 6.163423776626587,
+      "model_a_frozen_grad_norm": 0.0,
+      "model_b_grad_finite": true,
+      "model_b_grad_norm": 0.8985791824705167,
+      "projector_grad_finite": true,
+      "projector_grad_norm": 0.4388112843925419,
+      "step": 1
+    },
+    {
+      "latent_requires_grad": false,
+      "loss1": 5.878396272659302,
+      "model_a_frozen_grad_norm": 0.0,
+      "model_b_grad_finite": true,
+      "model_b_grad_norm": 0.8382306179617839,
+      "projector_grad_finite": true,
+      "projector_grad_norm": 0.5453158749910211,
+      "step": 2
+    }
+  ],
+  "runtime_sec": 0.43557119369506836,
+  "stage": "H1",
+  "status": "pass",
+  "stop_gates_triggered": []
+}

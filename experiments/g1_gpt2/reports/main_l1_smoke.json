@@ -1,0 +1,123 @@
+{
+  "config": {
+    "checkpoint_dir": "experiments/g1_gpt2/reports/main_l1_smoke_checkpoint",
+    "eval_samples": 4,
+    "evaluation_interval": 25,
+    "experiment_name": "main_l1",
+    "gradient_accumulation_steps": 4,
+    "lambda1": 0.1,
+    "learning_rate_A": 1e-05,
+    "learning_rate_B": 1e-05,
+    "local_files_only": true,
+    "log_interval": 1,
+    "max_answer_tokens": 16,
+    "max_cot_tokens": 96,
+    "max_grad_norm": 1.0,
+    "max_question_tokens": 64,
+    "max_steps": 2,
+    "micro_batch_size": 2,
+    "model_name_or_path": "/mnt/nas/share2/home/zxl/models/openai-community-gpt2",
+    "report_path": "experiments/g1_gpt2/reports/main_l1_smoke.json",
+    "sample_decode_path": "experiments/g1_gpt2/reports/main_l1_smoke.samples.txt",
+    "seed": 42,
+    "train_path": "experiments/g1_gpt2/data/synthetic_g1_train.jsonl",
+    "use_safetensors": true,
+    "validation_path": "experiments/g1_gpt2/data/synthetic_g1_validation.jsonl",
+    "weight_decay": 0.01
+  },
+  "eval": {
+    "answer_em": 0.0,
+    "answer_nll": 8.730419158935547
+  },
+  "experiment": "main_l1",
+  "final_l1": 8.167388916015625,
+  "initial_l1": 8.873208045959473,
+  "interventions": {
+    "answer_intervention": {
+      "normal": {
+        "em": 0.0,
+        "nll": 8.730419158935547
+      },
+      "random": {
+        "em": 0.0,
+        "nll": 9.54541301727295
+      },
+      "shuffled": {
+        "em": 0.0,
+        "nll": 8.725549697875977
+      },
+      "zero": {
+        "em": 0.0,
+        "nll": 10.216668128967285
+      }
+    },
+    "decode_intervention": {
+      "normal": {
+        "nll": 8.184270858764648
+      },
+      "random": {
+        "nll": 8.712069511413574
+      },
+      "shuffled": {
+        "nll": 8.179594993591309
+      },
+      "zero": {
+        "nll": 9.103177070617676
+      }
+    },
+    "first_cot_token_logit_diff_shuffle": 0.3787078857421875,
+    "first_cot_token_logit_diff_zero": 52.33380126953125,
+    "first_cot_token_logit_difference": 52.33380126953125
+  },
+  "logs": [
+    {
+      "all_finite": true,
+      "cosine_g_main_g_l1": 0.024157123640179634,
+      "finite_ratio": 1.0,
+      "g_l1_norm": 0.2458680272102356,
+      "g_main_l1_cosine": 0.024157123640179634,
+      "g_main_norm": 0.2612921893596649,
+      "loss1": 9.020713567733765,
+      "loss_main": 10.845300674438477,
+      "model_a_grad_finite": true,
+      "model_a_grad_norm": 0.9986859018704652,
+      "model_b_grad_finite": true,
+      "model_b_grad_norm": 0.05125156275285903,
+      "norm_g_l1": 0.2458680272102356,
+      "norm_g_l1_over_g_main": 0.9409696777112684,
+      "norm_g_main": 0.2612921893596649,
+      "peak_gpu_memory_mb": 4800.35107421875,
+      "step": 1,
+      "step_time_sec": 0.418895959854126,
+      "total_loss": 11.747372150421143,
+      "z_grad_norm": 0.417331725358963
+    },
+    {
+      "all_finite": true,
+      "cosine_g_main_g_l1": 0.025061825290322304,
+      "finite_ratio": 1.0,
+      "g_l1_norm": 0.08579020202159882,
+      "g_main_l1_cosine": 0.025061825290322304,
+      "g_main_norm": 0.2218644618988037,
+      "loss1": 8.479002475738525,
+      "loss_main": 9.103538751602173,
+      "model_a_grad_finite": true,
+      "model_a_grad_norm": 0.9985385786806741,
+      "model_b_grad_finite": true,
+      "model_b_grad_norm": 0.05404329036910362,
+      "norm_g_l1": 0.08579020202159882,
+      "norm_g_l1_over_g_main": 0.38667843099959487,
+      "norm_g_main": 0.2218644618988037,
+      "peak_gpu_memory_mb": 4800.35107421875,
+      "step": 2,
+      "step_time_sec": 0.1578226089477539,
+      "total_loss": 9.951438903808594,
+      "z_grad_norm": 0.2930310070514679
+    }
+  ],
+  "runtime_sec": 2.0976803302764893,
+  "sample_cot_decode": "Sample 1\nQuestion: Compute (6 + 29) * 9.\nGold CoT: First add 6 and 29: 6 + 29 = 35. Then multiply the result by 9: 35 * 9 = 315.\nNormal latent decoded CoT: \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nThe first,\n\nThe first, the first, the first, the first, the first, the first, the first, the first\nZero latent decoded CoT: \nDecode the latent state.\n\nLatent:\n\nReasoning:\n\nDecode the latent state.\n\nLatent:\n\nReasoning:\n\nDecode the latent state.\n\nLatent:\nShuffled latent decoded CoT: \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nThe first,\n\nThe first, the first, the first, the first, the first, the first, the first, the first\nGold answer: 315\nPredicted answer: 1,\n\nSample 2\nQuestion: Compute (15 + 13) * 8.\nGold CoT: First add 15 and 13: 15 + 13 = 28. Then multiply the result by 8: 28 * 8 = 224.\nNormal latent decoded CoT: \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nThe first,\n\nThe first, the first, the first, the first, the first, the first, the first, the first\nZero latent decoded CoT: \nDecode the latent state.\n\nLatent:\n\nReasoning:\n\nDecode the latent state.\n\nLatent:\n\nReasoning:\n\nDecode the latent state.\n\nLatent:\nShuffled latent decoded CoT: \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nThe first,\n\nThe first, the first, the first, the first, the first, the first, the first, the first\nGold answer: 224\nPredicted answer: 1:\n\nSample 3\nQuestion: Compute (22 + 14) * 11.\nGold CoT: First add 22 and 14: 22 + 14 = 36. Then multiply the result by 11: 36 * 11 = 396.\nNormal latent decoded CoT: \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nThe first,\n\nThe first, the first, the first, the first, the first, the first, the first, the first\nZero latent decoded CoT: \nDecode the latent state.\n\nLatent:\n\nReasoning:\n\nDecode the latent state.\n\nLatent:\n\nReasoning:\n\nDecode the latent state.\n\nLatent:\nShuffled latent decoded CoT: \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nThe first,\n\nThe first, the first, the first, the first, the first, the first, the first, the first\nGold answer: 396\nPredicted answer: 1:\n\nSample 4\nQuestion: Compute (28 + 18) * 5.\nGold CoT: First add 28 and 18: 28 + 18 = 46. Then multiply the result by 5: 46 * 5 = 230.\nNormal latent decoded CoT: \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nThe first,\n\nThe first, the first, the first, the first, the first, the first, the first, the first\nZero latent decoded CoT: \nDecode the latent state.\n\nLatent:\n\nReasoning:\n\nDecode the latent state.\n\nLatent:\n\nReasoning:\n\nDecode the latent state.\n\nLatent:\nShuffled latent decoded CoT: \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nThe first,\n\nThe first, the first, the first, the first, the first, the first, the first, the first\nGold answer: 230\nPredicted answer: 1:\n",
+  "status": "pass",
+  "stop_gates_triggered": [],
+  "warnings": []
+}

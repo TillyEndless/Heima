@@ -218,6 +218,31 @@ venv.bak/
 .dmypy.json
 dmypy.json
 
+### Heima experiment artifacts
+# Large model/checkpoint binaries should stay on NAS, not in git.
+*.pt
+*.pth
+*.ckpt
+*.safetensors
+*.bin
+*.onnx
+*.npy
+*.npz
+
+models/
+**/checkpoints/
+**/*_checkpoint/
+**/*_checkpoints/
+**/wandb/
+**/runs/
+**/tensorboard/
+**/tb/
+
+# Generated caches
+.pytest_cache/
+.mypy_cache/
+__pycache__/
+
 # Pyre type checker
 .pyre/
 
@@ -233,4 +258,3 @@ cython_debug/
 #  and can be added to the global gitignore or merged into this file.  For a more nuclear
 #  option (not recommended) you can uncomment the following to ignore the entire idea folder.
 #.idea/
-

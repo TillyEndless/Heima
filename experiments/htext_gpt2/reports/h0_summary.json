@@ -1,0 +1,356 @@
+{
+  "42": {
+    "checkpoint_dir": "experiments/htext_gpt2/checkpoints/h0_seed_42",
+    "final_main_loss": 3.624228000640869,
+    "gate_pass": true,
+    "gate_reasons": [],
+    "initial_main_loss": 10.867525100708008,
+    "peak_gpu_memory_mb": 2443.4189453125,
+    "report_path": "experiments/htext_gpt2/reports/h0_seed_42.json",
+    "runtime_sec": 11.198119640350342,
+    "train": {
+      "answer_em": 0.0,
+      "answer_interventions": {
+        "normal": {
+          "answer_em": 0.0,
+          "answer_nll": 4.755753040313721
+        },
+        "shuffled": {
+          "answer_em": 0.0,
+          "answer_nll": 4.773586273193359
+        },
+        "zero": {
+          "answer_em": 0.0,
+          "answer_nll": 2.8492279052734375
+        }
+      },
+      "answer_nll": 4.755753040313721,
+      "main_nll": 3.470887929201126,
+      "main_token_em": 0.005859375,
+      "thinking_hidden_geometry": {
+        "effective_rank": 2.155623435974121,
+        "pairwise_cosine_mean": 0.9991390705108643,
+        "pairwise_cosine_std": 0.0008900830871425569,
+        "within_dataset_variance_mean": 0.22467750310897827,
+        "within_dataset_variance_sum": 172.5523223876953
+      },
+      "thinking_positions_first_batch": [
+        [
+          20
+        ],
+        [
+          15
+        ],
+        [
+          14
+        ],
+        [
+          20
+        ],
+        [
+          13
+        ],
+        [
+          12
+        ],
+        [
+          19
+        ],
+        [
+          12
+        ]
+      ],
+      "thinking_token_accuracy": 0.962890625
+    },
+    "validation": {
+      "answer_em": 0.0,
+      "answer_interventions": {
+        "normal": {
+          "answer_em": 0.0,
+          "answer_nll": 4.8849592208862305
+        },
+        "shuffled": {
+          "answer_em": 0.0,
+          "answer_nll": 4.8860392570495605
+        },
+        "zero": {
+          "answer_em": 0.0,
+          "answer_nll": 3.458859920501709
+        }
+      },
+      "answer_nll": 4.8849592208862305,
+      "main_nll": 3.801191121339798,
+      "main_token_em": 0.0,
+      "thinking_hidden_geometry": {
+        "effective_rank": 2.1580727100372314,
+        "pairwise_cosine_mean": 0.9991637468338013,
+        "pairwise_cosine_std": 0.0008425868581980467,
+        "within_dataset_variance_mean": 0.21805362403392792,
+        "within_dataset_variance_sum": 167.46517944335938
+      },
+      "thinking_positions_first_batch": [
+        [
+          20
+        ],
+        [
+          13
+        ],
+        [
+          10
+        ],
+        [
+          19
+        ],
+        [
+          12
+        ],
+        [
+          14
+        ],
+        [
+          20
+        ],
+        [
+          12
+        ]
+      ],
+      "thinking_token_accuracy": 0.9375
+    }
+  },
+  "43": {
+    "checkpoint_dir": "experiments/htext_gpt2/checkpoints/h0_seed_43",
+    "final_main_loss": 3.669807195663452,
+    "gate_pass": true,
+    "gate_reasons": [],
+    "initial_main_loss": 10.927037239074707,
+    "peak_gpu_memory_mb": 2443.43896484375,
+    "report_path": "experiments/htext_gpt2/reports/h0_seed_43.json",
+    "runtime_sec": 10.989228010177612,
+    "train": {
+      "answer_em": 0.0,
+      "answer_interventions": {
+        "normal": {
+          "answer_em": 0.0,
+          "answer_nll": 4.8270673751831055
+        },
+        "shuffled": {
+          "answer_em": 0.0,
+          "answer_nll": 4.844377517700195
+        },
+        "zero": {
+          "answer_em": 0.0,
+          "answer_nll": 2.790421485900879
+        }
+      },
+      "answer_nll": 4.8270673751831055,
+      "main_nll": 3.4461081735789776,
+      "main_token_em": 0.0078125,
+      "thinking_hidden_geometry": {
+        "effective_rank": 2.5074760913848877,
+        "pairwise_cosine_mean": 0.99928218126297,
+        "pairwise_cosine_std": 0.0007178006926551461,
+        "within_dataset_variance_mean": 0.189252570271492,
+        "within_dataset_variance_sum": 145.34597778320312
+      },
+      "thinking_positions_first_batch": [
+        [
+          15
+        ],
+        [
+          13
+        ],
+        [
+          10
+        ],
+        [
+          15
+        ],
+        [
+          19
+        ],
+        [
+          14
+        ],
+        [
+          8
+        ],
+        [
+          8
+        ]
+      ],
+      "thinking_token_accuracy": 0.99609375
+    },
+    "validation": {
+      "answer_em": 0.0,
+      "answer_interventions": {
+        "normal": {
+          "answer_em": 0.0,
+          "answer_nll": 5.137727737426758
+        },
+        "shuffled": {
+          "answer_em": 0.0,
+          "answer_nll": 5.137110233306885
+        },
+        "zero": {
+          "answer_em": 0.0,
+          "answer_nll": 3.437786817550659
+        }
+      },
+      "answer_nll": 5.137727737426758,
+      "main_nll": 3.820804789662361,
+      "main_token_em": 0.0,
+      "thinking_hidden_geometry": {
+        "effective_rank": 2.3765194416046143,
+        "pairwise_cosine_mean": 0.9992472529411316,
+        "pairwise_cosine_std": 0.0007584469276480377,
+        "within_dataset_variance_mean": 0.19640283286571503,
+        "within_dataset_variance_sum": 150.83737182617188
+      },
+      "thinking_positions_first_batch": [
+        [
+          10
+        ],
+        [
+          12
+        ],
+        [
+          13
+        ],
+        [
+          12
+        ],
+        [
+          14
+        ],
+        [
+          10
+        ],
+        [
+          14
+        ],
+        [
+          15
+        ]
+      ],
+      "thinking_token_accuracy": 0.9921875
+    }
+  },
+  "44": {
+    "checkpoint_dir": "experiments/htext_gpt2/checkpoints/h0_seed_44",
+    "final_main_loss": 3.5608956813812256,
+    "gate_pass": true,
+    "gate_reasons": [],
+    "initial_main_loss": 11.793451309204102,
+    "peak_gpu_memory_mb": 2443.43896484375,
+    "report_path": "experiments/htext_gpt2/reports/h0_seed_44.json",
+    "runtime_sec": 11.00118088722229,
+    "train": {
+      "answer_em": 0.0,
+      "answer_interventions": {
+        "normal": {
+          "answer_em": 0.0,
+          "answer_nll": 4.705676078796387
+        },
+        "shuffled": {
+          "answer_em": 0.0,
+          "answer_nll": 4.714863300323486
+        },
+        "zero": {
+          "answer_em": 0.015625,
+          "answer_nll": 2.805976390838623
+        }
+      },
+      "answer_nll": 4.705676078796387,
+      "main_nll": 3.411933161318302,
+      "main_token_em": 0.017578125,
+      "thinking_hidden_geometry": {
+        "effective_rank": 2.739051103591919,
+        "pairwise_cosine_mean": 0.9992162585258484,
+        "pairwise_cosine_std": 0.0007905695820227265,
+        "within_dataset_variance_mean": 0.2159905880689621,
+        "within_dataset_variance_sum": 165.88076782226562
+      },
+      "thinking_positions_first_batch": [
+        [
+          14
+        ],
+        [
+          8
+        ],
+        [
+          13
+        ],
+        [
+          15
+        ],
+        [
+          8
+        ],
+        [
+          19
+        ],
+        [
+          14
+        ],
+        [
+          20
+        ]
+      ],
+      "thinking_token_accuracy": 0.986328125
+    },
+    "validation": {
+      "answer_em": 0.0,
+      "answer_interventions": {
+        "normal": {
+          "answer_em": 0.0,
+          "answer_nll": 5.10111665725708
+        },
+        "shuffled": {
+          "answer_em": 0.0,
+          "answer_nll": 5.109243392944336
+        },
+        "zero": {
+          "answer_em": 0.0,
+          "answer_nll": 3.3881189823150635
+        }
+      },
+      "answer_nll": 5.10111665725708,
+      "main_nll": 3.8061853796243668,
+      "main_token_em": 0.0,
+      "thinking_hidden_geometry": {
+        "effective_rank": 2.969935655593872,
+        "pairwise_cosine_mean": 0.9993185997009277,
+        "pairwise_cosine_std": 0.0006676649209111929,
+        "within_dataset_variance_mean": 0.1835794448852539,
+        "within_dataset_variance_sum": 140.989013671875
+      },
+      "thinking_positions_first_batch": [
+        [
+          19
+        ],
+        [
+          20
+        ],
+        [
+          10
+        ],
+        [
+          13
+        ],
+        [
+          8
+        ],
+        [
+          14
+        ],
+        [
+          20
+        ],
+        [
+          20
+        ]
+      ],
+      "thinking_token_accuracy": 0.9921875
+    }
+  }
+}

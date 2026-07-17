@@ -1,0 +1,13 @@
+{
+  "grad_to_latent_nonzero": true,
+  "grad_to_token_embedding_nonzero": true,
+  "in_place_or_out_of_place": "official mutates the local h tensor view in-place; adapter returns cloned out-of-place tensor for safer parity testing",
+  "mask_shape": [
+    2,
+    4
+  ],
+  "multiple_thinking_tokens": "official tensor path flattens all true mask positions and requires count == batch*num_replace_tokens; list path handles variable counts per batch",
+  "official_source": "torchtune_pkg/torchtune/torchtune/modules/transformer.py:669-701",
+  "position_embedding_note": "Llama/Torchtune path uses RoPE, no additive learned token-position embedding at this replacement point. HF GPT-2 adapter replacement through inputs_embeds occurs before GPT-2 adds learned position embeddings.",
+  "replacement_position": "after tok_embeddings(tokens), before transformer layers"
+}

@@ -1,0 +1,96 @@
+{
+  "fixture": {
+    "answer": "20",
+    "question": "Compute (2 + 3) * 4.",
+    "reasoning": "First add 2 and 3: 2 + 3 = 5. Then multiply 5 by 4: 5 * 4 = 20.",
+    "sample_id": "fixture_0"
+  },
+  "loss": {
+    "absolute_error": 0.0,
+    "hf_shifted_ce_loss": 2.1058149337768555,
+    "ignore_index": -100,
+    "official_torchtune_loss": 2.1058149337768555,
+    "reduction": "sum over nonignored tokens / nonignored token count"
+  },
+  "loss1": {
+    "decoder_question_prompt_participates": false,
+    "ignore_positions": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "input_ids": [
+      41,
+      42,
+      102,
+      43,
+      51,
+      52,
+      53
+    ],
+    "labels": [
+      -100,
+      -100,
+      -100,
+      -100,
+      51,
+      52,
+      53
+    ],
+    "loss_denominator": 3,
+    "non_ignored_token_count": 3,
+    "participating_token_roles": [
+      "cot_target"
+    ],
+    "shifted_labels": [
+      -100,
+      -100,
+      -100,
+      51,
+      52,
+      53
+    ]
+  },
+  "main": {
+    "ignore_positions": [
+      0,
+      1,
+      2,
+      4
+    ],
+    "input_ids": [
+      11,
+      12,
+      13,
+      101,
+      31,
+      21,
+      22
+    ],
+    "labels": [
+      -100,
+      -100,
+      -100,
+      101,
+      -100,
+      21,
+      22
+    ],
+    "loss_denominator": 3,
+    "non_ignored_token_count": 3,
+    "participating_token_roles": [
+      "thinking_token",
+      "answer"
+    ],
+    "shifted_labels": [
+      -100,
+      -100,
+      101,
+      -100,
+      21,
+      22
+    ]
+  },
+  "train_on_input_note": "Official decoder dataset sets train_on_input=True, but HText Loss1 masks prompt/question by construction. This is a remaining semantic mismatch unless explicitly configured."
+}

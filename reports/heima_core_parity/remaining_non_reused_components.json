@@ -1,0 +1,7 @@
+{
+  "data_builder": "Official LLaVA-CoT section/image builders are not directly reused; HText uses text-only fixture/schema adapter.",
+  "hf_gpt2_model_adapter": "HF GPT-2 cannot directly call Torchtune Llama/Vision builders or transformer thinking_token forward API.",
+  "official_parameters": "Llama-3.2V-11B-cot and Llama-3.1-8B-Instruct checkpoints are not used in lightweight GPT-2 run.",
+  "progressive_pipeline": "Not reused by task constraint.",
+  "training_recipe": "Torchtune FSDP/LoRA/checkpointer recipe is not directly reused."
+}

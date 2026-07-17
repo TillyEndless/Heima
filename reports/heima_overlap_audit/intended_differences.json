@@ -1,0 +1,43 @@
+{
+  "allowed_scope": [
+    "Loss1 not detach latent",
+    "Loss1 through B returns A",
+    "Main + lambda1*Loss1 joint optimization"
+  ],
+  "count": 3,
+  "items": [
+    {
+      "alignment_status": "FUNCTIONALLY_ALIGNED",
+      "area": "loss1",
+      "classification": "INTENDED_METHOD_DIFFERENCE",
+      "current_g1": "Loss1 uses z without detach and returns to A",
+      "id": "M20",
+      "item": "Loss1 gradient to A",
+      "official_heima": "Decoder losses share current_loss.backward through main hidden states",
+      "rationale": "Allowed intended method: Loss1 through B returns to A.",
+      "severity": "low"
+    },
+    {
+      "alignment_status": "FUNCTIONALLY_ALIGNED",
+      "area": "optimization",
+      "classification": "INTENDED_METHOD_DIFFERENCE",
+      "current_g1": "loss_main + lambda1*loss1",
+      "id": "M21",
+      "item": "joint objective",
+      "official_heima": "Main plus active decoder losses in one backward tensor",
+      "rationale": "Allowed intended method: joint optimization.",
+      "severity": "low"
+    },
+    {
+      "alignment_status": "FUNCTIONALLY_ALIGNED",
+      "area": "optimization",
+      "classification": "INTENDED_METHOD_DIFFERENCE",
+      "current_g1": "No detach on z",
+      "id": "M22",
+      "item": "Loss1 detach",
+      "official_heima": "No detach observed on thinking_token path",
+      "rationale": "Allowed intended method: Loss1 does not detach latent.",
+      "severity": "low"
+    }
+  ]
+}

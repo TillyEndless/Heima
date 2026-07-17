@@ -1,0 +1,207 @@
+{
+  "config_path": "experiments/g1_gpt2/configs/main_l1.yaml",
+  "gradient_destinations_from_code": {
+    "Lmain": [
+      "model_a parameters",
+      "z"
+    ],
+    "Loss1": [
+      "model_b parameters",
+      "z",
+      "model_a upstream parameters via z because z is not detached"
+    ],
+    "source_refs": [
+      "src/g1/trainer.py:73-80",
+      "src/g1/trainer.py:104-129",
+      "src/g1/trainer.py:139-142"
+    ],
+    "total": "loss_main + lambda1 * loss1; one AdamW over A and B parameter lists"
+  },
+  "hidden_size": 768,
+  "loss1_B": {
+    "b_receives_question": false,
+    "decoder_prompt": "Instruction:\nDecode the complete reasoning encoded in the latent state.\n\nLatent:\n<|endoftext|>\n\nReasoning:\n",
+    "labels_supervise": "whole CoT tokens only; decoder instruction/prompt and latent placeholder are -100",
+    "latent_pos_in_prompt": 21,
+    "latent_token_id": 50256,
+    "latent_token_literal": "<|endoftext|>",
+    "loss1_inputs_embeds_shape": [
+      2,
+      54,
+      768
+    ],
+    "prompt_token_length": 28,
+    "supervised_label_positions_by_sample": [
+      [
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33,
+        34,
+        35,
+        36,
+        37,
+        38,
+        39,
+        40,
+        41,
+        42,
+        43,
+        44,
+        45,
+        46,
+        47
+      ],
+      [
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33,
+        34,
+        35,
+        36,
+        37,
+        38,
+        39,
+        40,
+        41,
+        42,
+        43,
+        44,
+        45,
+        46,
+        47
+      ]
+    ],
+    "target_field": "record[cot] + eos"
+  },
+  "main_A": {
+    "answer_prefix": "\nAnswer: ",
+    "attention_mask_shape": [
+      2,
+      17
+    ],
+    "labels_supervise": "answer tokens only; question, latent slot, and answer prefix are -100",
+    "latent_source": "last_valid_hidden over question-only model_a forward; ordinary final question token hidden, not a special thinking token hidden",
+    "main_inputs_embeds_shape": [
+      2,
+      17,
+      768
+    ],
+    "question_texts": [
+      "Compute (13 + 26) * 4.",
+      "Compute (5 + 7) * 4."
+    ],
+    "question_token_lengths": [
+      10,
+      10
+    ],
+    "supervised_label_positions_by_sample": [
+      [
+        15,
+        16
+      ],
+      [
+        15,
+        16
+      ]
+    ],
+    "z_shape": [
+      2,
+      768
+    ]
+  },
+  "model_name_or_path": "/mnt/nas/share2/home/zxl/models/openai-community-gpt2",
+  "model_type": "gpt2",
+  "sample_ids": [
+    "g1_train_0000",
+    "g1_train_0001"
+  ],
+  "status": "generated_without_training_or_checkpoint_writes",
+  "trainable_params": {
+    "A_count": 148,
+    "A_names_first_30": [
+      "transformer.wte.weight",
+      "transformer.wpe.weight",
+      "transformer.h.0.ln_1.weight",
+      "transformer.h.0.ln_1.bias",
+      "transformer.h.0.attn.c_attn.weight",
+      "transformer.h.0.attn.c_attn.bias",
+      "transformer.h.0.attn.c_proj.weight",
+      "transformer.h.0.attn.c_proj.bias",
+      "transformer.h.0.ln_2.weight",
+      "transformer.h.0.ln_2.bias",
+      "transformer.h.0.mlp.c_fc.weight",
+      "transformer.h.0.mlp.c_fc.bias",
+      "transformer.h.0.mlp.c_proj.weight",
+      "transformer.h.0.mlp.c_proj.bias",
+      "transformer.h.1.ln_1.weight",
+      "transformer.h.1.ln_1.bias",
+      "transformer.h.1.attn.c_attn.weight",
+      "transformer.h.1.attn.c_attn.bias",
+      "transformer.h.1.attn.c_proj.weight",
+      "transformer.h.1.attn.c_proj.bias",
+      "transformer.h.1.ln_2.weight",
+      "transformer.h.1.ln_2.bias",
+      "transformer.h.1.mlp.c_fc.weight",
+      "transformer.h.1.mlp.c_fc.bias",
+      "transformer.h.1.mlp.c_proj.weight",
+      "transformer.h.1.mlp.c_proj.bias",
+      "transformer.h.2.ln_1.weight",
+      "transformer.h.2.ln_1.bias",
+      "transformer.h.2.attn.c_attn.weight",
+      "transformer.h.2.attn.c_attn.bias"
+    ],
+    "B_count": 148,
+    "B_names_first_30": [
+      "transformer.wte.weight",
+      "transformer.wpe.weight",
+      "transformer.h.0.ln_1.weight",
+      "transformer.h.0.ln_1.bias",
+      "transformer.h.0.attn.c_attn.weight",
+      "transformer.h.0.attn.c_attn.bias",
+      "transformer.h.0.attn.c_proj.weight",
+      "transformer.h.0.attn.c_proj.bias",
+      "transformer.h.0.ln_2.weight",
+      "transformer.h.0.ln_2.bias",
+      "transformer.h.0.mlp.c_fc.weight",
+      "transformer.h.0.mlp.c_fc.bias",
+      "transformer.h.0.mlp.c_proj.weight",
+      "transformer.h.0.mlp.c_proj.bias",
+      "transformer.h.1.ln_1.weight",
+      "transformer.h.1.ln_1.bias",
+      "transformer.h.1.attn.c_attn.weight",
+      "transformer.h.1.attn.c_attn.bias",
+      "transformer.h.1.attn.c_proj.weight",
+      "transformer.h.1.attn.c_proj.bias",
+      "transformer.h.1.ln_2.weight",
+      "transformer.h.1.ln_2.bias",
+      "transformer.h.1.mlp.c_fc.weight",
+      "transformer.h.1.mlp.c_fc.bias",
+      "transformer.h.1.mlp.c_proj.weight",
+      "transformer.h.1.mlp.c_proj.bias",
+      "transformer.h.2.ln_1.weight",
+      "transformer.h.2.ln_1.bias",
+      "transformer.h.2.attn.c_attn.weight",
+      "transformer.h.2.attn.c_attn.bias"
+    ],
+    "note": "All GPT-2 parameters require grad in current G1; no LoRA or freezing wrapper is used."
+  },
+  "vocab_size": 50257
+}

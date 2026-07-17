@@ -1,0 +1,254 @@
+{
+  "config": {
+    "checkpoint_dir": "experiments/htext_gpt2/checkpoints/h0_seed_42",
+    "eval_batch_size": 8,
+    "eval_samples": 128,
+    "experiment_name": "h0_thinking_main",
+    "gradient_accumulation_steps": 1,
+    "intervention_samples": 64,
+    "learning_rate_A": 1e-05,
+    "local_files_only": true,
+    "log_interval": 10,
+    "max_answer_tokens": 16,
+    "max_grad_norm": 1.0,
+    "max_question_tokens": 80,
+    "max_steps": 300,
+    "micro_batch_size": 8,
+    "model_name_or_path": "/mnt/nas/share2/home/zxl/models/openai-community-gpt2",
+    "num_thinking_tokens": 1,
+    "report_path": "experiments/htext_gpt2/reports/h0_seed_42.json",
+    "seed": 42,
+    "train_path": "experiments/htext_gpt2/data/synthetic_htext_train_seed_42.jsonl",
+    "use_safetensors": true,
+    "validation_path": "experiments/htext_gpt2/data/synthetic_htext_validation_seed_42.jsonl",
+    "weight_decay": 0.01
+  },
+  "eval": {
+    "main_nll": 3.7995002269744873,
+    "token_em": 0.0
+  },
+  "experiment": "h0_thinking_main",
+  "logs": [
+    {
+      "loss_main": 10.867525100708008,
+      "model_a_grad_finite": true,
+      "model_a_grad_norm": 1.0000000154079485,
+      "peak_gpu_memory_mb": 2440.59521484375,
+      "step": 1
+    },
+    {
+      "loss_main": 7.858461856842041,
+      "model_a_grad_finite": true,
+      "model_a_grad_norm": 1.0000000138555265,
+      "peak_gpu_memory_mb": 2442.28271484375,
+      "step": 10
+    },
+    {
+      "loss_main": 6.378957271575928,
+      "model_a_grad_finite": true,
+      "model_a_grad_norm": 1.0000000341120192,
+      "peak_gpu_memory_mb": 2442.28271484375,
+      "step": 20
+    },
+    {
+      "loss_main": 6.2436017990112305,
+      "model_a_grad_finite": true,
+      "model_a_grad_norm": 0.9999999982611172,
+      "peak_gpu_memory_mb": 2442.28271484375,
+      "step": 30
+    },
+    {
+      "loss_main": 6.122254371643066,
+      "model_a_grad_finite": true,
+      "model_a_grad_norm": 0.9999999127490076,
+      "peak_gpu_memory_mb": 2442.28271484375,
+      "step": 40
+    },
+    {
+      "loss_main": 5.385406970977783,
+      "model_a_grad_finite": true,
+      "model_a_grad_norm": 1.0000000505332012,
+      "peak_gpu_memory_mb": 2443.4189453125,
+      "step": 50
+    },
+    {
+      "loss_main": 5.741603374481201,
+      "model_a_grad_finite": true,
+      "model_a_grad_norm": 0.9999999517612064,
+      "peak_gpu_memory_mb": 2443.4189453125,
+      "step": 60
+    },
+    {
+      "loss_main": 5.653812885284424,
+      "model_a_grad_finite": true,
+      "model_a_grad_norm": 1.0000000701947063,
+      "peak_gpu_memory_mb": 2443.4189453125,
+      "step": 70
+    },
+    {
+      "loss_main": 5.861057758331299,
+      "model_a_grad_finite": true,
+      "model_a_grad_norm": 1.00000009765382,
+      "peak_gpu_memory_mb": 2443.4189453125,
+      "step": 80
+    },
+    {
+      "loss_main": 5.586530685424805,
+      "model_a_grad_finite": true,
+      "model_a_grad_norm": 1.0000000837389074,
+      "peak_gpu_memory_mb": 2443.4189453125,
+      "step": 90
+    },
+    {
+      "loss_main": 5.430657386779785,
+      "model_a_grad_finite": true,
+      "model_a_grad_norm": 1.000000200452797,
+      "peak_gpu_memory_mb": 2443.4189453125,
+      "step": 100
+    },
+    {
+      "loss_main": 5.442258358001709,
+      "model_a_grad_finite": true,
+      "model_a_grad_norm": 1.000000012012407,
+      "peak_gpu_memory_mb": 2443.4189453125,
+      "step": 110
+    },
+    {
+      "loss_main": 5.630491256713867,
+      "model_a_grad_finite": true,
+      "model_a_grad_norm": 0.999999822467901,
+      "peak_gpu_memory_mb": 2443.4189453125,
+      "step": 120
+    },
+    {
+      "loss_main": 5.252673625946045,
+      "model_a_grad_finite": true,
+      "model_a_grad_norm": 0.9999997702887138,
+      "peak_gpu_memory_mb": 2443.4189453125,
+      "step": 130
+    },
+    {
+      "loss_main": 5.123373985290527,
+      "model_a_grad_finite": true,
+      "model_a_grad_norm": 0.9999999896088134,
+      "peak_gpu_memory_mb": 2443.4189453125,
+      "step": 140
+    },
+    {
+      "loss_main": 5.004240036010742,
+      "model_a_grad_finite": true,
+      "model_a_grad_norm": 1.0000000822568362,
+      "peak_gpu_memory_mb": 2443.4189453125,
+      "step": 150
+    },
+    {
+      "loss_main": 4.842067241668701,
+      "model_a_grad_finite": true,
+      "model_a_grad_norm": 0.9999999900965015,
+      "peak_gpu_memory_mb": 2443.4189453125,
+      "step": 160
+    },
+    {
+      "loss_main": 4.871379375457764,
+      "model_a_grad_finite": true,
+      "model_a_grad_norm": 1.000000008497235,
+      "peak_gpu_memory_mb": 2443.4189453125,
+      "step": 170
+    },
+    {
+      "loss_main": 4.878672122955322,
+      "model_a_grad_finite": true,
+      "model_a_grad_norm": 0.9999999130206694,
+      "peak_gpu_memory_mb": 2443.4189453125,
+      "step": 180
+    },
+    {
+      "loss_main": 5.030414581298828,
+      "model_a_grad_finite": true,
+      "model_a_grad_norm": 0.9999999008596618,
+      "peak_gpu_memory_mb": 2443.4189453125,
+      "step": 190
+    },
+    {
+      "loss_main": 4.836490631103516,
+      "model_a_grad_finite": true,
+      "model_a_grad_norm": 1.0000000959069577,
+      "peak_gpu_memory_mb": 2443.4189453125,
+      "step": 200
+    },
+    {
+      "loss_main": 4.645523548126221,
+      "model_a_grad_finite": true,
+      "model_a_grad_norm": 0.9999998372852811,
+      "peak_gpu_memory_mb": 2443.4189453125,
+      "step": 210
+    },
+    {
+      "loss_main": 4.647263050079346,
+      "model_a_grad_finite": true,
+      "model_a_grad_norm": 0.999999969947607,
+      "peak_gpu_memory_mb": 2443.4189453125,
+      "step": 220
+    },
+    {
+      "loss_main": 4.4071807861328125,
+      "model_a_grad_finite": true,
+      "model_a_grad_norm": 1.0000000720217601,
+      "peak_gpu_memory_mb": 2443.4189453125,
+      "step": 230
+    },
+    {
+      "loss_main": 4.1921586990356445,
+      "model_a_grad_finite": true,
+      "model_a_grad_norm": 1.000000001650653,
+      "peak_gpu_memory_mb": 2443.4189453125,
+      "step": 240
+    },
+    {
+      "loss_main": 4.1806206703186035,
+      "model_a_grad_finite": true,
+      "model_a_grad_norm": 0.999999938034639,
+      "peak_gpu_memory_mb": 2443.4189453125,
+      "step": 250
+    },
+    {
+      "loss_main": 3.948057174682617,
+      "model_a_grad_finite": true,
+      "model_a_grad_norm": 0.9999999824634552,
+      "peak_gpu_memory_mb": 2443.4189453125,
+      "step": 260
+    },
+    {
+      "loss_main": 4.010930061340332,
+      "model_a_grad_finite": true,
+      "model_a_grad_norm": 1.0000000878234248,
+      "peak_gpu_memory_mb": 2443.4189453125,
+      "step": 270
+    },
+    {
+      "loss_main": 3.8296561241149902,
+      "model_a_grad_finite": true,
+      "model_a_grad_norm": 0.9999999681424135,
+      "peak_gpu_memory_mb": 2443.4189453125,
+      "step": 280
+    },
+    {
+      "loss_main": 3.813952922821045,
+      "model_a_grad_finite": true,
+      "model_a_grad_norm": 1.0000000396447062,
+      "peak_gpu_memory_mb": 2443.4189453125,
+      "step": 290
+    },
+    {
+      "loss_main": 3.624228000640869,
+      "model_a_grad_finite": true,
+      "model_a_grad_norm": 0.9999999853728426,
+      "peak_gpu_memory_mb": 2443.4189453125,
+      "step": 300
+    }
+  ],
+  "runtime_sec": 11.198119640350342,
+  "stage": "H0",
+  "status": "pass",
+  "stop_gates_triggered": []
+}
