@@ -1,0 +1,26 @@
+{
+  "absolute_difference": null,
+  "metrics": null,
+  "official_test_split_evaluated": false,
+  "paper_table_a5_reference": {
+    "Caption": {
+      "BERTScore": 71.4,
+      "BLEU": 12.8,
+      "METEOR": 35.5,
+      "ROUGE-L": 37.9
+    },
+    "Reasoning": {
+      "BERTScore": 66.6,
+      "BLEU": 11.2,
+      "METEOR": 32.7,
+      "ROUGE-L": 32.7
+    },
+    "Summary": {
+      "BERTScore": 73.4,
+      "BLEU": 15.9,
+      "METEOR": 40.1,
+      "ROUGE-L": 41.6
+    }
+  },
+  "reason_not_run": "Official checkpoints/data are absent; running metrics on lightweight or synthetic data is prohibited by this task."
+}

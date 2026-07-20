@@ -1,0 +1,28 @@
+{
+  "evaluated": false,
+  "metrics": [
+    "full-stage NLL",
+    "first-token NLL",
+    "content-word NLL",
+    "visual-fact NLL",
+    "BLEU",
+    "METEOR",
+    "ROUGE-L",
+    "BERTScore",
+    "free-generation visual-fact match"
+  ],
+  "planned_interventions": [
+    "normal",
+    "within-stage cyclic shuffle",
+    "same-question shuffle if available",
+    "zero",
+    "mean",
+    "norm-matched random"
+  ],
+  "reason_not_run": "Requires loaded official Encoder and three official Decoder checkpoints plus official test data/images.",
+  "stages": [
+    "summary",
+    "caption",
+    "reasoning"
+  ]
+}

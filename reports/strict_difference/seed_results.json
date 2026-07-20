@@ -1,0 +1,2039 @@
+{
+  "42": {
+    "config": {
+      "allow_loss_fallback": false,
+      "compatibility_mode": "strict_heima_repo",
+      "eval_samples": 48,
+      "gradient_accumulation_steps": 1,
+      "h1_mode": "qz",
+      "heima_compatibility": "strict_repo",
+      "lambda1": 0.1,
+      "learning_rate_A": 1e-05,
+      "learning_rate_B": 1e-05,
+      "learning_rate_projector": 5e-05,
+      "local_files_only": true,
+      "log_interval": 30,
+      "loss_backend": "torchtune_chunked_ce",
+      "max_answer_tokens": 16,
+      "max_cot_tokens": 96,
+      "max_grad_norm": 1.0,
+      "max_question_tokens": 80,
+      "max_steps": 120,
+      "micro_batch_size": 4,
+      "model_name_or_path": "/mnt/nas/share2/home/zxl/models/openai-community-gpt2",
+      "num_thinking_tokens": 1,
+      "ood_path": "experiments/htext_gpt2/data/strict_difference/seed_42/ood.jsonl",
+      "projector": "heima_official",
+      "projector_type": "heima_official",
+      "seed": 42,
+      "thinking_state_mode": "predictor",
+      "thinking_token": "<THINKING_OF_REASONING>",
+      "train_path": "experiments/htext_gpt2/data/strict_difference/seed_42/train.jsonl",
+      "use_safetensors": true,
+      "validation_path": "experiments/htext_gpt2/data/strict_difference/seed_42/validation.jsonl",
+      "weight_decay": 0.01
+    },
+    "joint_detach": {
+      "checkpoint": "checkpoints/strict_difference/seed_42/joint_detach.pt",
+      "gradient_attribution": {
+        "cosine_main_grad_A_loss1_grad_A": null,
+        "detach_encoder_latent": true,
+        "finite": true,
+        "g_loss1_to_z": 0.0,
+        "grad_A_from_loss1": 0.0,
+        "grad_A_from_main": 75.66551641355521,
+        "grad_A_from_total": 75.66551641355521,
+        "grad_B_from_loss1": 17.129313777906702,
+        "grad_projector_from_loss1": 0.7110658174274114,
+        "norm_ratio_loss1_over_main": 0.0
+      },
+      "interventions": {
+        "deltas": {
+          "delta_shuffle_first8": 0.000257641077041626,
+          "delta_shuffle_full": 1.7404556274414062e-05,
+          "delta_shuffle_intermediate": -0.0003795623779296875,
+          "delta_shuffle_numeric": -0.00020456314086914062
+        },
+        "farthest": {
+          "kl_from_normal": {
+            "average_logits_kl": 7.392307907139184e-06,
+            "first_token_logits_kl": 2.2654441636404954e-05
+          },
+          "nll": {
+            "first_4_tokens": 0.16948121786117554,
+            "first_8_tokens": 0.3269897699356079,
+            "first_token": 0.2834467887878418,
+            "full": 0.6342015266418457,
+            "intermediate_tokens": 2.670994758605957,
+            "numeric_tokens": 1.5516339540481567,
+            "operator_tokens": 0.08068042248487473
+          }
+        },
+        "generation": {
+          "decode_lines": [
+            "id=htext_validation_0000 variant=normal\nCompute the multiplication: 75 * 40 = 856. Finish with the subtraction: 856 - 856 = 856 - 856 = 856.\n",
+            "id=htext_validation_0000 variant=shuffled\nCompute the multiplication: 75 * 40 = 856. Finish with the subtraction: 856 - 856 = 856 - 856 = 856.\n",
+            "id=htext_validation_0001 variant=normal\nThe sum is 24 + 49 = 872. Multiplying by 9 gives 872 * 9 = 890.\n",
+            "id=htext_validation_0001 variant=shuffled\nThe sum is 24 + 49 = 872. Multiplying by 9 gives 872 * 9 = 890.\n",
+            "id=htext_validation_0002 variant=normal\nFirst multiply 9 by 64: 9 * 64 = 856. Then subtract 14: 856 - 14 = 829.\n",
+            "id=htext_validation_0002 variant=shuffled\nFirst multiply 9 by 64: 9 * 64 = 856. Then subtract 14: 856 - 14 = 829.\n",
+            "id=htext_validation_0003 variant=normal\nFirst multiply 18 by 8: 18 * 8 = 828. Then subtract 66: 828 - 66 = 829.\n",
+            "id=htext_validation_0003 variant=shuffled\nFirst multiply 18 by 8: 18 * 8 = 828. Then subtract 66: 828 - 66 = 829.\n",
+            "id=htext_validation_0004 variant=normal\nEvaluate the parentheses first: 59 + 13 = 9. Now compute 9 times that value: 9 * 9 = 928.\n",
+            "id=htext_validation_0004 variant=shuffled\nEvaluate the parentheses first: 59 + 13 = 9. Now compute 9 times that value: 9 * 9 = 928.\n",
+            "id=htext_validation_0005 variant=normal\nFirst multiply 79 by 2: 79 * 2 = 858. Then subtract 37: 858 - 37 = 867.\n",
+            "id=htext_validation_0005 variant=shuffled\nFirst multiply 79 by 2: 79 * 2 = 858. Then subtract 37: 858 - 37 = 867.\n",
+            "id=htext_validation_0006 variant=normal\nFirst multiply 35 by 12: 35 * 12 = 585. Then subtract 7: 585 - 7 = 567. Finally subtract 7: 567 - 7 = 556.\n",
+            "id=htext_validation_0006 variant=shuffled\nFirst multiply 35 by 12: 35 * 12 = 585. Then subtract 7: 585 - 7 = 567. Finally subtract 7: 567 - 7 = 556.\n",
+            "id=htext_validation_0007 variant=normal\nFirst multiply 28 by 7: 28 * 7 = 856. Then subtract 3: 856 - 3 = 829.\n",
+            "id=htext_validation_0007 variant=shuffled\nFirst multiply 28 by 7: 28 * 7 = 856. Then subtract 3: 856 - 3 = 829.\n",
+            "id=htext_validation_0008 variant=normal\nThe sum is 22 + 39 = 872. Multiplying by 12 gives 872 * 12 = 890.\n",
+            "id=htext_validation_0008 variant=shuffled\nThe sum is 22 + 39 = 872. Multiplying by 12 gives 872 * 12 = 890.\n",
+            "id=htext_validation_0009 variant=normal\nFirst multiply 26 by 12: 26 * 12 = 856. Then subtract 130: 856 - 130 = 829. Finally subtract 130: 829 - 130 = 828.\n",
+            "id=htext_validation_0009 variant=shuffled\nFirst multiply 26 by 12: 26 * 12 = 856. Then subtract 130: 856 - 130 = 829. Finally subtract 130: 829 - 130 = 828.\n",
+            "id=htext_validation_0010 variant=normal\nFirst multiply 48 by 32: 48 * 32 = 856. Then subtract 11: 856 - 11 = 829.\n",
+            "id=htext_validation_0010 variant=shuffled\nFirst multiply 48 by 32: 48 * 32 = 856. Then subtract 11: 856 - 11 = 829.\n",
+            "id=htext_validation_0011 variant=normal\nEvaluate the parentheses first: 70 + 30 = 13. Now compute 13 times that value: 13 * 13 = 8.\n",
+            "id=htext_validation_0011 variant=shuffled\nEvaluate the parentheses first: 70 + 30 = 13. Now compute 13 times that value: 13 * 13 = 8.\n"
+          ],
+          "metrics": {
+            "normal": {
+              "expression_match": 1.0,
+              "intermediate_result_match": 0.0,
+              "number_match": 0.0
+            },
+            "shuffled": {
+              "expression_match": 1.0,
+              "intermediate_result_match": 0.0,
+              "number_match": 0.0
+            }
+          }
+        },
+        "global_mean": {
+          "kl_from_normal": {
+            "average_logits_kl": 1.7965944607567508e-06,
+            "first_token_logits_kl": 6.655295692326035e-06
+          },
+          "nll": {
+            "first_4_tokens": 0.16918781399726868,
+            "first_8_tokens": 0.3270270526409149,
+            "first_token": 0.2830018997192383,
+            "full": 0.6343132257461548,
+            "intermediate_tokens": 2.6712327003479004,
+            "numeric_tokens": 1.5517722368240356,
+            "operator_tokens": 0.08083309978246689
+          }
+        },
+        "norm_matched_random": {
+          "kl_from_normal": {
+            "average_logits_kl": 0.011749845929443836,
+            "first_token_logits_kl": 0.052736155688762665
+          },
+          "nll": {
+            "first_4_tokens": 0.19270837306976318,
+            "first_8_tokens": 0.33823269605636597,
+            "first_token": 0.3381405770778656,
+            "full": 0.6439744234085083,
+            "intermediate_tokens": 2.678553819656372,
+            "numeric_tokens": 1.5587960481643677,
+            "operator_tokens": 0.0858500599861145
+          }
+        },
+        "normal": {
+          "nll": {
+            "first_4_tokens": 0.16856656968593597,
+            "first_8_tokens": 0.326701819896698,
+            "first_token": 0.2815442681312561,
+            "full": 0.6342512965202332,
+            "intermediate_tokens": 2.6714839935302734,
+            "numeric_tokens": 1.5519155263900757,
+            "operator_tokens": 0.08097359538078308
+          }
+        },
+        "shuffled": {
+          "kl_from_normal": {
+            "average_logits_kl": 3.3912099297594978e-06,
+            "first_token_logits_kl": 1.3978284187032841e-05
+          },
+          "nll": {
+            "first_4_tokens": 0.16917288303375244,
+            "first_8_tokens": 0.3269594609737396,
+            "first_token": 0.2829495370388031,
+            "full": 0.6342687010765076,
+            "intermediate_tokens": 2.6711044311523438,
+            "numeric_tokens": 1.5517109632492065,
+            "operator_tokens": 0.08093307912349701
+          }
+        },
+        "zero": {
+          "kl_from_normal": {
+            "average_logits_kl": 0.024067753925919533,
+            "first_token_logits_kl": 0.19721290469169617
+          },
+          "nll": {
+            "first_4_tokens": 0.20779220759868622,
+            "first_8_tokens": 0.3489221930503845,
+            "first_token": 0.4267542362213135,
+            "full": 0.6481198668479919,
+            "intermediate_tokens": 2.673572540283203,
+            "numeric_tokens": 1.5574880838394165,
+            "operator_tokens": 0.09215746819972992
+          }
+        }
+      },
+      "logs": [
+        {
+          "grad_A": 70.53317957586987,
+          "grad_B": 2.5218684487784886,
+          "grad_projector": 0.2744843272296177,
+          "loss1": 1.2250001430511475,
+          "main_loss": 5.42047643661499,
+          "step": 1,
+          "total": 5.542976379394531
+        },
+        {
+          "grad_A": 91.09536940656372,
+          "grad_B": 1.583560425039532,
+          "grad_projector": 0.1350607943623948,
+          "loss1": 0.7761955857276917,
+          "main_loss": 5.267384052276611,
+          "step": 30,
+          "total": 5.345003604888916
+        },
+        {
+          "grad_A": 107.18575883333695,
+          "grad_B": 1.9455243717641584,
+          "grad_projector": 0.1656360020387434,
+          "loss1": 1.0481998920440674,
+          "main_loss": 5.4879913330078125,
+          "step": 60,
+          "total": 5.592811107635498
+        },
+        {
+          "grad_A": 134.28779242120794,
+          "grad_B": 1.7176678009241628,
+          "grad_projector": 0.10152986295781766,
+          "loss1": 0.8966739773750305,
+          "main_loss": 4.9285359382629395,
+          "step": 90,
+          "total": 5.018203258514404
+        },
+        {
+          "grad_A": 135.78802651197145,
+          "grad_B": 1.4312916214125313,
+          "grad_projector": 0.09454322419994388,
+          "loss1": 0.7053703665733337,
+          "main_loss": 4.301853656768799,
+          "step": 120,
+          "total": 4.3723907470703125
+        }
+      ],
+      "ood": {
+        "answer_em": 0.0,
+        "answer_nll": 4.491092721621196,
+        "latent_geometry": {
+          "effective_rank": 4.100873947143555,
+          "pairwise_cosine_mean": 0.9994651675224304,
+          "pairwise_cosine_std": 0.0003955451538786292,
+          "within_dataset_variance_mean": 0.13654042780399323,
+          "within_dataset_variance_sum": 104.86304473876953
+        },
+        "retrieval": {
+          "R@1": 1.0,
+          "R@5": 1.0
+        }
+      },
+      "q_only": {
+        "full_cot_nll": 0.6712220460176468
+      },
+      "runtime_sec": 24.431484937667847,
+      "validation": {
+        "answer_em": 0.0,
+        "answer_nll": 4.503031253814697,
+        "latent_geometry": {
+          "effective_rank": 3.593191623687744,
+          "pairwise_cosine_mean": 0.9993433356285095,
+          "pairwise_cosine_std": 0.0005188611103221774,
+          "within_dataset_variance_mean": 0.1655452996492386,
+          "within_dataset_variance_sum": 127.1387939453125
+        },
+        "retrieval": {
+          "R@1": 1.0,
+          "R@5": 1.0
+        }
+      }
+    },
+    "joint_no_detach": {
+      "checkpoint": "checkpoints/strict_difference/seed_42/joint_no_detach.pt",
+      "gradient_attribution": {
+        "cosine_main_grad_A_loss1_grad_A": 0.006581410765647888,
+        "detach_encoder_latent": false,
+        "finite": true,
+        "g_loss1_to_z": 0.001960802124813199,
+        "grad_A_from_loss1": 0.03598966314641634,
+        "grad_A_from_main": 75.66551641355521,
+        "grad_A_from_total": 75.66553990435499,
+        "grad_B_from_loss1": 17.129313777906702,
+        "grad_projector_from_loss1": 0.7110658174274114,
+        "norm_ratio_loss1_over_main": 0.00047564154521476207
+      },
+      "interventions": {
+        "deltas": {
+          "delta_shuffle_first8": 0.00025776028633117676,
+          "delta_shuffle_full": 1.7344951629638672e-05,
+          "delta_shuffle_intermediate": -0.0003809928894042969,
+          "delta_shuffle_numeric": -0.00020515918731689453
+        },
+        "farthest": {
+          "kl_from_normal": {
+            "average_logits_kl": 7.417420420097187e-06,
+            "first_token_logits_kl": 2.3299882741412148e-05
+          },
+          "nll": {
+            "first_4_tokens": 0.16947031021118164,
+            "first_8_tokens": 0.32698220014572144,
+            "first_token": 0.2834494709968567,
+            "full": 0.6341961026191711,
+            "intermediate_tokens": 2.6709840297698975,
+            "numeric_tokens": 1.5516266822814941,
+            "operator_tokens": 0.08067973703145981
+          }
+        },
+        "generation": {
+          "decode_lines": [
+            "id=htext_validation_0000 variant=normal\nCompute the multiplication: 75 * 40 = 856. Finish with the subtraction: 856 - 856 = 856 - 856 = 856.\n",
+            "id=htext_validation_0000 variant=shuffled\nCompute the multiplication: 75 * 40 = 856. Finish with the subtraction: 856 - 856 = 856 - 856 = 856.\n",
+            "id=htext_validation_0001 variant=normal\nThe sum is 24 + 49 = 872. Multiplying by 9 gives 872 * 9 = 890.\n",
+            "id=htext_validation_0001 variant=shuffled\nThe sum is 24 + 49 = 872. Multiplying by 9 gives 872 * 9 = 890.\n",
+            "id=htext_validation_0002 variant=normal\nFirst multiply 9 by 64: 9 * 64 = 856. Then subtract 14: 856 - 14 = 829.\n",
+            "id=htext_validation_0002 variant=shuffled\nFirst multiply 9 by 64: 9 * 64 = 856. Then subtract 14: 856 - 14 = 829.\n",
+            "id=htext_validation_0003 variant=normal\nFirst multiply 18 by 8: 18 * 8 = 828. Then subtract 66: 828 - 66 = 829.\n",
+            "id=htext_validation_0003 variant=shuffled\nFirst multiply 18 by 8: 18 * 8 = 828. Then subtract 66: 828 - 66 = 829.\n",
+            "id=htext_validation_0004 variant=normal\nEvaluate the parentheses first: 59 + 13 = 9. Now compute 9 times that value: 9 * 9 = 928.\n",
+            "id=htext_validation_0004 variant=shuffled\nEvaluate the parentheses first: 59 + 13 = 9. Now compute 9 times that value: 9 * 9 = 928.\n",
+            "id=htext_validation_0005 variant=normal\nFirst multiply 79 by 2: 79 * 2 = 858. Then subtract 37: 858 - 37 = 867.\n",
+            "id=htext_validation_0005 variant=shuffled\nFirst multiply 79 by 2: 79 * 2 = 858. Then subtract 37: 858 - 37 = 867.\n",
+            "id=htext_validation_0006 variant=normal\nFirst multiply 35 by 12: 35 * 12 = 585. Then subtract 7: 585 - 7 = 567. Finally subtract 7: 567 - 7 = 556.\n",
+            "id=htext_validation_0006 variant=shuffled\nFirst multiply 35 by 12: 35 * 12 = 585. Then subtract 7: 585 - 7 = 567. Finally subtract 7: 567 - 7 = 556.\n",
+            "id=htext_validation_0007 variant=normal\nFirst multiply 28 by 7: 28 * 7 = 856. Then subtract 3: 856 - 3 = 829.\n",
+            "id=htext_validation_0007 variant=shuffled\nFirst multiply 28 by 7: 28 * 7 = 856. Then subtract 3: 856 - 3 = 829.\n",
+            "id=htext_validation_0008 variant=normal\nThe sum is 22 + 39 = 872. Multiplying by 12 gives 872 * 12 = 890.\n",
+            "id=htext_validation_0008 variant=shuffled\nThe sum is 22 + 39 = 872. Multiplying by 12 gives 872 * 12 = 890.\n",
+            "id=htext_validation_0009 variant=normal\nFirst multiply 26 by 12: 26 * 12 = 856. Then subtract 130: 856 - 130 = 829. Finally subtract 130: 829 - 130 = 828.\n",
+            "id=htext_validation_0009 variant=shuffled\nFirst multiply 26 by 12: 26 * 12 = 856. Then subtract 130: 856 - 130 = 829. Finally subtract 130: 829 - 130 = 828.\n",
+            "id=htext_validation_0010 variant=normal\nFirst multiply 48 by 32: 48 * 32 = 856. Then subtract 11: 856 - 11 = 829.\n",
+            "id=htext_validation_0010 variant=shuffled\nFirst multiply 48 by 32: 48 * 32 = 856. Then subtract 11: 856 - 11 = 829.\n",
+            "id=htext_validation_0011 variant=normal\nEvaluate the parentheses first: 70 + 30 = 13. Now compute 13 times that value: 13 * 13 = 8.\n",
+            "id=htext_validation_0011 variant=shuffled\nEvaluate the parentheses first: 70 + 30 = 13. Now compute 13 times that value: 13 * 13 = 8.\n"
+          ],
+          "metrics": {
+            "normal": {
+              "expression_match": 1.0,
+              "intermediate_result_match": 0.0,
+              "number_match": 0.0
+            },
+            "shuffled": {
+              "expression_match": 1.0,
+              "intermediate_result_match": 0.0,
+              "number_match": 0.0
+            }
+          }
+        },
+        "global_mean": {
+          "kl_from_normal": {
+            "average_logits_kl": 1.801369194254221e-06,
+            "first_token_logits_kl": 6.668129117315402e-06
+          },
+          "nll": {
+            "first_4_tokens": 0.16917452216148376,
+            "first_8_tokens": 0.32701852917671204,
+            "first_token": 0.2829761505126953,
+            "full": 0.634309709072113,
+            "intermediate_tokens": 2.671229124069214,
+            "numeric_tokens": 1.5517696142196655,
+            "operator_tokens": 0.0808340385556221
+          }
+        },
+        "norm_matched_random": {
+          "kl_from_normal": {
+            "average_logits_kl": 0.011749867349863052,
+            "first_token_logits_kl": 0.052735835313797
+          },
+          "nll": {
+            "first_4_tokens": 0.19269154965877533,
+            "first_8_tokens": 0.3382226228713989,
+            "first_token": 0.33810514211654663,
+            "full": 0.6439694762229919,
+            "intermediate_tokens": 2.678546905517578,
+            "numeric_tokens": 1.5587910413742065,
+            "operator_tokens": 0.08585269004106522
+          }
+        },
+        "normal": {
+          "nll": {
+            "first_4_tokens": 0.16855309903621674,
+            "first_8_tokens": 0.3266928791999817,
+            "first_token": 0.2815173268318176,
+            "full": 0.6342470645904541,
+            "intermediate_tokens": 2.6714768409729004,
+            "numeric_tokens": 1.551910400390625,
+            "operator_tokens": 0.08097396045923233
+          }
+        },
+        "shuffled": {
+          "kl_from_normal": {
+            "average_logits_kl": 3.40355359185196e-06,
+            "first_token_logits_kl": 1.4044358977116644e-05
+          },
+          "nll": {
+            "first_4_tokens": 0.16916011273860931,
+            "first_8_tokens": 0.32695063948631287,
+            "first_token": 0.2829239070415497,
+            "full": 0.6342644095420837,
+            "intermediate_tokens": 2.671095848083496,
+            "numeric_tokens": 1.551705241203308,
+            "operator_tokens": 0.08093485981225967
+          }
+        },
+        "zero": {
+          "kl_from_normal": {
+            "average_logits_kl": 0.024065859615802765,
+            "first_token_logits_kl": 0.197210431098938
+          },
+          "nll": {
+            "first_4_tokens": 0.20777975022792816,
+            "first_8_tokens": 0.3489154279232025,
+            "first_token": 0.4267288148403168,
+            "full": 0.6481150388717651,
+            "intermediate_tokens": 2.6735641956329346,
+            "numeric_tokens": 1.5574815273284912,
+            "operator_tokens": 0.09215802699327469
+          }
+        }
+      },
+      "logs": [
+        {
+          "grad_A": 70.53362627116132,
+          "grad_B": 2.5218684487784886,
+          "grad_projector": 0.2744843272296177,
+          "loss1": 1.2250001430511475,
+          "main_loss": 5.42047643661499,
+          "step": 1,
+          "total": 5.542976379394531
+        },
+        {
+          "grad_A": 91.0862429556701,
+          "grad_B": 1.5835894163343043,
+          "grad_projector": 0.13505615816462463,
+          "loss1": 0.7761997580528259,
+          "main_loss": 5.267423629760742,
+          "step": 30,
+          "total": 5.345043659210205
+        },
+        {
+          "grad_A": 107.15281426881884,
+          "grad_B": 1.945569566438227,
+          "grad_projector": 0.16559595217971534,
+          "loss1": 1.0481990575790405,
+          "main_loss": 5.48798942565918,
+          "step": 60,
+          "total": 5.592809200286865
+        },
+        {
+          "grad_A": 134.2714467365664,
+          "grad_B": 1.7176515948461808,
+          "grad_projector": 0.10152794160177339,
+          "loss1": 0.8966562151908875,
+          "main_loss": 4.9288105964660645,
+          "step": 90,
+          "total": 5.0184760093688965
+        },
+        {
+          "grad_A": 135.78302837688364,
+          "grad_B": 1.4312906921951705,
+          "grad_projector": 0.09454545793634563,
+          "loss1": 0.7053679823875427,
+          "main_loss": 4.301845550537109,
+          "step": 120,
+          "total": 4.372382164001465
+        }
+      ],
+      "ood": {
+        "answer_em": 0.0,
+        "answer_nll": 4.491131981213887,
+        "latent_geometry": {
+          "effective_rank": 4.101640701293945,
+          "pairwise_cosine_mean": 0.9994649887084961,
+          "pairwise_cosine_std": 0.00039551645750179887,
+          "within_dataset_variance_mean": 0.13659115135669708,
+          "within_dataset_variance_sum": 104.9020004272461
+        },
+        "retrieval": {
+          "R@1": 1.0,
+          "R@5": 1.0
+        }
+      },
+      "q_only": {
+        "full_cot_nll": 0.6712154696385065
+      },
+      "runtime_sec": 24.560018301010132,
+      "validation": {
+        "answer_em": 0.0,
+        "answer_nll": 4.5030858516693115,
+        "latent_geometry": {
+          "effective_rank": 3.5930261611938477,
+          "pairwise_cosine_mean": 0.9993429183959961,
+          "pairwise_cosine_std": 0.0005188114591874182,
+          "within_dataset_variance_mean": 0.16562190651893616,
+          "within_dataset_variance_sum": 127.19762420654297
+        },
+        "retrieval": {
+          "R@1": 1.0,
+          "R@5": 1.0
+        }
+      }
+    },
+    "s0": {
+      "checkpoint": "checkpoints/strict_difference/seed_42/s0_encoder.pt",
+      "eval": {
+        "answer_em": 0.0,
+        "answer_nll": 5.559396862983704,
+        "latent_geometry": {
+          "effective_rank": 2.1821703910827637,
+          "pairwise_cosine_mean": 0.9987719655036926,
+          "pairwise_cosine_std": 0.000710387306753546,
+          "within_dataset_variance_mean": 0.16106678545475006,
+          "within_dataset_variance_sum": 123.69928741455078
+        },
+        "retrieval": {
+          "R@1": 1.0,
+          "R@5": 1.0
+        }
+      },
+      "logs": [
+        {
+          "grad_A": 0.9999999145949195,
+          "main_loss": 11.69282341003418,
+          "step": 1
+        },
+        {
+          "grad_A": 0.9999999742875186,
+          "main_loss": 6.532383441925049,
+          "step": 30
+        },
+        {
+          "grad_A": 1.0000000309071875,
+          "main_loss": 6.3376851081848145,
+          "step": 60
+        },
+        {
+          "grad_A": 1.00000003479635,
+          "main_loss": 5.724039554595947,
+          "step": 90
+        },
+        {
+          "grad_A": 0.9999999564570307,
+          "main_loss": 5.288597583770752,
+          "step": 120
+        }
+      ],
+      "runtime_sec": 11.047654628753662
+    },
+    "s1": {
+      "checkpoint": "checkpoints/strict_difference/seed_42/s1_staged.pt",
+      "interventions": {
+        "deltas": {
+          "delta_shuffle_first8": 0.0003813505172729492,
+          "delta_shuffle_full": 0.0004991292953491211,
+          "delta_shuffle_intermediate": 0.0002949237823486328,
+          "delta_shuffle_numeric": 0.0006911754608154297
+        },
+        "farthest": {
+          "kl_from_normal": {
+            "average_logits_kl": 4.255667590769008e-05,
+            "first_token_logits_kl": 5.78103463340085e-05
+          },
+          "nll": {
+            "first_4_tokens": 0.4948716163635254,
+            "first_8_tokens": 0.535664975643158,
+            "first_token": 0.9272765517234802,
+            "full": 0.8007069826126099,
+            "intermediate_tokens": 2.86649227142334,
+            "numeric_tokens": 1.7688682079315186,
+            "operator_tokens": 0.1588379442691803
+          }
+        },
+        "global_mean": {
+          "kl_from_normal": {
+            "average_logits_kl": 1.1793647900049109e-05,
+            "first_token_logits_kl": 1.5738740330561996e-05
+          },
+          "nll": {
+            "first_4_tokens": 0.4941557049751282,
+            "first_8_tokens": 0.5358849763870239,
+            "first_token": 0.9248579740524292,
+            "full": 0.8005780577659607,
+            "intermediate_tokens": 2.8666489124298096,
+            "numeric_tokens": 1.7686383724212646,
+            "operator_tokens": 0.15915755927562714
+          }
+        },
+        "norm_matched_random": {
+          "kl_from_normal": {
+            "average_logits_kl": 0.021474197506904602,
+            "first_token_logits_kl": 0.11516007035970688
+          },
+          "nll": {
+            "first_4_tokens": 0.5408260822296143,
+            "first_8_tokens": 0.5778293609619141,
+            "first_token": 1.0877825021743774,
+            "full": 0.8386490345001221,
+            "intermediate_tokens": 2.8885457515716553,
+            "numeric_tokens": 1.8273993730545044,
+            "operator_tokens": 0.17664946615695953
+          }
+        },
+        "normal": {
+          "nll": {
+            "first_4_tokens": 0.4932730197906494,
+            "first_8_tokens": 0.535629391670227,
+            "first_token": 0.9230356216430664,
+            "full": 0.80025714635849,
+            "intermediate_tokens": 2.8667263984680176,
+            "numeric_tokens": 1.7681866884231567,
+            "operator_tokens": 0.15933406352996826
+          }
+        },
+        "shuffled": {
+          "kl_from_normal": {
+            "average_logits_kl": 2.132712324964814e-05,
+            "first_token_logits_kl": 3.519992606015876e-05
+          },
+          "nll": {
+            "first_4_tokens": 0.4944237172603607,
+            "first_8_tokens": 0.5360107421875,
+            "first_token": 0.9257509112358093,
+            "full": 0.8007562756538391,
+            "intermediate_tokens": 2.867021322250366,
+            "numeric_tokens": 1.7688778638839722,
+            "operator_tokens": 0.15927918255329132
+          }
+        },
+        "zero": {
+          "kl_from_normal": {
+            "average_logits_kl": 0.040971413254737854,
+            "first_token_logits_kl": 0.38137006759643555
+          },
+          "nll": {
+            "first_4_tokens": 0.5913341045379639,
+            "first_8_tokens": 0.5935481786727905,
+            "first_token": 1.277472734451294,
+            "full": 0.8343544602394104,
+            "intermediate_tokens": 2.869199514389038,
+            "numeric_tokens": 1.7970167398452759,
+            "operator_tokens": 0.17677946388721466
+          }
+        }
+      },
+      "logs": [
+        {
+          "grad_A": 0.0,
+          "grad_B": 50.231848780517545,
+          "grad_projector": 13.301687484373184,
+          "loss1": 4.91256046295166,
+          "step": 1
+        },
+        {
+          "grad_A": 0.0,
+          "grad_B": 25.419820622592457,
+          "grad_projector": 2.9142773874502694,
+          "loss1": 2.4958114624023438,
+          "step": 30
+        },
+        {
+          "grad_A": 0.0,
+          "grad_B": 20.114513077415257,
+          "grad_projector": 2.5501125653884333,
+          "loss1": 1.9434428215026855,
+          "step": 60
+        },
+        {
+          "grad_A": 0.0,
+          "grad_B": 21.857762608388448,
+          "grad_projector": 2.0753374837812104,
+          "loss1": 1.3168697357177734,
+          "step": 90
+        },
+        {
+          "grad_A": 0.0,
+          "grad_B": 18.493166694513704,
+          "grad_projector": 1.470778058660935,
+          "loss1": 1.1675817966461182,
+          "step": 120
+        }
+      ],
+      "q_only": {
+        "full_cot_nll": 0.8900842517614365
+      },
+      "runtime_sec": 13.871772527694702
+    }
+  },
+  "43": {
+    "config": {
+      "allow_loss_fallback": false,
+      "compatibility_mode": "strict_heima_repo",
+      "eval_samples": 48,
+      "gradient_accumulation_steps": 1,
+      "h1_mode": "qz",
+      "heima_compatibility": "strict_repo",
+      "lambda1": 0.1,
+      "learning_rate_A": 1e-05,
+      "learning_rate_B": 1e-05,
+      "learning_rate_projector": 5e-05,
+      "local_files_only": true,
+      "log_interval": 30,
+      "loss_backend": "torchtune_chunked_ce",
+      "max_answer_tokens": 16,
+      "max_cot_tokens": 96,
+      "max_grad_norm": 1.0,
+      "max_question_tokens": 80,
+      "max_steps": 120,
+      "micro_batch_size": 4,
+      "model_name_or_path": "/mnt/nas/share2/home/zxl/models/openai-community-gpt2",
+      "num_thinking_tokens": 1,
+      "ood_path": "experiments/htext_gpt2/data/strict_difference/seed_43/ood.jsonl",
+      "projector": "heima_official",
+      "projector_type": "heima_official",
+      "seed": 43,
+      "thinking_state_mode": "predictor",
+      "thinking_token": "<THINKING_OF_REASONING>",
+      "train_path": "experiments/htext_gpt2/data/strict_difference/seed_43/train.jsonl",
+      "use_safetensors": true,
+      "validation_path": "experiments/htext_gpt2/data/strict_difference/seed_43/validation.jsonl",
+      "weight_decay": 0.01
+    },
+    "joint_detach": {
+      "checkpoint": "checkpoints/strict_difference/seed_43/joint_detach.pt",
+      "gradient_attribution": {
+        "cosine_main_grad_A_loss1_grad_A": null,
+        "detach_encoder_latent": true,
+        "finite": true,
+        "g_loss1_to_z": 0.0,
+        "grad_A_from_loss1": 0.0,
+        "grad_A_from_main": 68.80987072950457,
+        "grad_A_from_total": 68.80987072950457,
+        "grad_B_from_loss1": 14.051961938734985,
+        "grad_projector_from_loss1": 1.0563616655523347,
+        "norm_ratio_loss1_over_main": 0.0
+      },
+      "interventions": {
+        "deltas": {
+          "delta_shuffle_first8": -0.00015485286712646484,
+          "delta_shuffle_full": -6.777048110961914e-05,
+          "delta_shuffle_intermediate": -0.0001537799835205078,
+          "delta_shuffle_numeric": -0.0002770423889160156
+        },
+        "farthest": {
+          "kl_from_normal": {
+            "average_logits_kl": 1.8731339878286235e-05,
+            "first_token_logits_kl": 1.56612295540981e-05
+          },
+          "nll": {
+            "first_4_tokens": 0.19477558135986328,
+            "first_8_tokens": 0.2895143926143646,
+            "first_token": 0.22408396005630493,
+            "full": 0.6332953572273254,
+            "intermediate_tokens": 2.629758834838867,
+            "numeric_tokens": 1.5343737602233887,
+            "operator_tokens": 0.04421127215027809
+          }
+        },
+        "generation": {
+          "decode_lines": [
+            "id=htext_validation_0000 variant=normal\nFirst multiply 6 by 15: 6 * 15 = 636. Then subtract 50: 636 - 50 = 636.\n",
+            "id=htext_validation_0000 variant=shuffled\nFirst multiply 6 by 15: 6 * 15 = 636. Then subtract 50: 636 - 50 = 636.\n",
+            "id=htext_validation_0001 variant=normal\nEvaluate the parentheses first: 42 + 59 = 684. Now compute 14 times that value: 14 * 684 = 684.\n",
+            "id=htext_validation_0001 variant=shuffled\nEvaluate the parentheses first: 42 + 59 = 684. Now compute 14 times that value: 14 * 684 = 684.\n",
+            "id=htext_validation_0002 variant=normal\nEvaluate the parentheses first: 10 + 43 = 684. Now compute 12 times that value: 12 * 684 = 675.\n",
+            "id=htext_validation_0002 variant=shuffled\nEvaluate the parentheses first: 10 + 43 = 684. Now compute 12 times that value: 12 * 684 = 675.\n",
+            "id=htext_validation_0003 variant=normal\nFirst multiply 30 by 30: 30 * 30 = 684. Then subtract 11: 684 - 11 = 675.\n",
+            "id=htext_validation_0003 variant=shuffled\nFirst multiply 30 by 30: 30 * 30 = 684. Then subtract 11: 684 - 11 = 675.\n",
+            "id=htext_validation_0004 variant=normal\nUse multiplication first: 32 * 10 = 584. Combine with 2: 2 + 584 = 592. Reduce by 107: 592 - 107 = 564.\n",
+            "id=htext_validation_0004 variant=shuffled\nUse multiplication first: 32 * 10 = 584. Combine with 2: 2 + 584 = 592. Reduce by 107: 592 - 107 = 564.\n",
+            "id=htext_validation_0005 variant=normal\nEvaluate the parentheses first: 38 + 46 = 584. Now compute 2 times that value: 2 * 584 = 584.\n",
+            "id=htext_validation_0005 variant=shuffled\nEvaluate the parentheses first: 38 + 46 = 584. Now compute 2 times that value: 2 * 584 = 584.\n",
+            "id=htext_validation_0006 variant=normal\nThe product is 50 * 53 = 684. Subtracting 2 leaves 684 - 2 = 684.\n",
+            "id=htext_validation_0006 variant=shuffled\nThe product is 50 * 53 = 684. Subtracting 2 leaves 684 - 2 = 684.\n",
+            "id=htext_validation_0007 variant=normal\nFirst multiply 75 by 10: 75 * 10 = 584. Then subtract 23: 584 - 23 = 567.\n",
+            "id=htext_validation_0007 variant=shuffled\nFirst multiply 75 by 10: 75 * 10 = 584. Then subtract 23: 584 - 23 = 567.\n",
+            "id=htext_validation_0008 variant=normal\nThe sum is 34 + 77 = 584. Multiplying by 19 gives 584 * 19 = 592.\n",
+            "id=htext_validation_0008 variant=shuffled\nThe sum is 34 + 77 = 584. Multiplying by 19 gives 584 * 19 = 592.\n",
+            "id=htext_validation_0009 variant=normal\nEvaluate the parentheses first: 42 + 73 = 684. Now compute 18 times that value: 18 * 684 = 684.\n",
+            "id=htext_validation_0009 variant=shuffled\nEvaluate the parentheses first: 42 + 73 = 684. Now compute 18 times that value: 18 * 684 = 684.\n",
+            "id=htext_validation_0010 variant=normal\nFirst multiply 33 by 12: 33 * 12 = 684. Then subtract 9: 684 - 9 = 636.\n",
+            "id=htext_validation_0010 variant=shuffled\nFirst multiply 33 by 12: 33 * 12 = 684. Then subtract 9: 684 - 9 = 636.\n",
+            "id=htext_validation_0011 variant=normal\nThe sum is 58 + 50 = 604. Multiplying by 6 gives 604 * 604 = 636.\n",
+            "id=htext_validation_0011 variant=shuffled\nThe sum is 58 + 50 = 604. Multiplying by 6 gives 604 * 604 = 636.\n"
+          ],
+          "metrics": {
+            "normal": {
+              "expression_match": 1.0,
+              "intermediate_result_match": 0.0,
+              "number_match": 0.0
+            },
+            "shuffled": {
+              "expression_match": 1.0,
+              "intermediate_result_match": 0.0,
+              "number_match": 0.0
+            }
+          }
+        },
+        "global_mean": {
+          "kl_from_normal": {
+            "average_logits_kl": 2.361367023695493e-06,
+            "first_token_logits_kl": 2.516532731533516e-06
+          },
+          "nll": {
+            "first_4_tokens": 0.1954975128173828,
+            "first_8_tokens": 0.2897893190383911,
+            "first_token": 0.22461441159248352,
+            "full": 0.6334762573242188,
+            "intermediate_tokens": 2.629976987838745,
+            "numeric_tokens": 1.534523844718933,
+            "operator_tokens": 0.04404262825846672
+          }
+        },
+        "norm_matched_random": {
+          "kl_from_normal": {
+            "average_logits_kl": 0.008163484744727612,
+            "first_token_logits_kl": 0.0173644982278347
+          },
+          "nll": {
+            "first_4_tokens": 0.20059971511363983,
+            "first_8_tokens": 0.29773327708244324,
+            "first_token": 0.24566715955734253,
+            "full": 0.6414754986763,
+            "intermediate_tokens": 2.6366868019104004,
+            "numeric_tokens": 1.5434855222702026,
+            "operator_tokens": 0.050041958689689636
+          }
+        },
+        "normal": {
+          "nll": {
+            "first_4_tokens": 0.1955460011959076,
+            "first_8_tokens": 0.2898929715156555,
+            "first_token": 0.2243206948041916,
+            "full": 0.6335265040397644,
+            "intermediate_tokens": 2.630023956298828,
+            "numeric_tokens": 1.5346721410751343,
+            "operator_tokens": 0.04407724365592003
+          }
+        },
+        "shuffled": {
+          "kl_from_normal": {
+            "average_logits_kl": 4.6383888729906175e-06,
+            "first_token_logits_kl": 4.507919129537186e-06
+          },
+          "nll": {
+            "first_4_tokens": 0.1955958902835846,
+            "first_8_tokens": 0.28973811864852905,
+            "first_token": 0.22454047203063965,
+            "full": 0.6334587335586548,
+            "intermediate_tokens": 2.6298701763153076,
+            "numeric_tokens": 1.5343950986862183,
+            "operator_tokens": 0.04399567097425461
+          }
+        },
+        "zero": {
+          "kl_from_normal": {
+            "average_logits_kl": 0.01721310056746006,
+            "first_token_logits_kl": 0.16052398085594177
+          },
+          "nll": {
+            "first_4_tokens": 0.28947287797927856,
+            "first_8_tokens": 0.34116131067276,
+            "first_token": 0.4536401629447937,
+            "full": 0.6581641435623169,
+            "intermediate_tokens": 2.620131492614746,
+            "numeric_tokens": 1.5445984601974487,
+            "operator_tokens": 0.04986371099948883
+          }
+        }
+      },
+      "logs": [
+        {
+          "grad_A": 63.62517935369814,
+          "grad_B": 1.5014887788247373,
+          "grad_projector": 0.12583258269888986,
+          "loss1": 0.8662790656089783,
+          "main_loss": 4.900627613067627,
+          "step": 1,
+          "total": 4.987255573272705
+        },
+        {
+          "grad_A": 82.72761088044396,
+          "grad_B": 1.4625328478220307,
+          "grad_projector": 0.14329725746927563,
+          "loss1": 0.8190165758132935,
+          "main_loss": 5.591787338256836,
+          "step": 30,
+          "total": 5.673688888549805
+        },
+        {
+          "grad_A": 113.04475929770368,
+          "grad_B": 1.297509698323682,
+          "grad_projector": 0.09696708349936227,
+          "loss1": 0.7013155817985535,
+          "main_loss": 5.263865947723389,
+          "step": 60,
+          "total": 5.33399772644043
+        },
+        {
+          "grad_A": 110.63586398166485,
+          "grad_B": 1.33679436315646,
+          "grad_projector": 0.0799600641170765,
+          "loss1": 0.6857620477676392,
+          "main_loss": 5.127411842346191,
+          "step": 90,
+          "total": 5.195988178253174
+        },
+        {
+          "grad_A": 133.35623424337373,
+          "grad_B": 1.3272104844762747,
+          "grad_projector": 0.09092272280717499,
+          "loss1": 0.7712261080741882,
+          "main_loss": 4.727842807769775,
+          "step": 120,
+          "total": 4.804965496063232
+        }
+      ],
+      "ood": {
+        "answer_em": 0.0,
+        "answer_nll": 4.382236123085022,
+        "latent_geometry": {
+          "effective_rank": 3.9911677837371826,
+          "pairwise_cosine_mean": 0.999329149723053,
+          "pairwise_cosine_std": 0.0005491212359629571,
+          "within_dataset_variance_mean": 0.16698260605335236,
+          "within_dataset_variance_sum": 128.24264526367188
+        },
+        "retrieval": {
+          "R@1": 1.0,
+          "R@5": 1.0
+        }
+      },
+      "q_only": {
+        "full_cot_nll": 0.6754324088493983
+      },
+      "runtime_sec": 23.61205530166626,
+      "validation": {
+        "answer_em": 0.0,
+        "answer_nll": 4.529589136441548,
+        "latent_geometry": {
+          "effective_rank": 4.680537223815918,
+          "pairwise_cosine_mean": 0.9995368123054504,
+          "pairwise_cosine_std": 0.00036224641371518373,
+          "within_dataset_variance_mean": 0.11800382286310196,
+          "within_dataset_variance_sum": 90.62693786621094
+        },
+        "retrieval": {
+          "R@1": 1.0,
+          "R@5": 1.0
+        }
+      }
+    },
+    "joint_no_detach": {
+      "checkpoint": "checkpoints/strict_difference/seed_43/joint_no_detach.pt",
+      "gradient_attribution": {
+        "cosine_main_grad_A_loss1_grad_A": 0.00619537103921175,
+        "detach_encoder_latent": false,
+        "finite": true,
+        "g_loss1_to_z": 0.0021458915434777737,
+        "grad_A_from_loss1": 0.056855926729408604,
+        "grad_A_from_main": 68.80987072950457,
+        "grad_A_from_total": 68.80990578711932,
+        "grad_B_from_loss1": 14.051961938734985,
+        "grad_projector_from_loss1": 1.0563616655523347,
+        "norm_ratio_loss1_over_main": 0.000826275738155539
+      },
+      "interventions": {
+        "deltas": {
+          "delta_shuffle_first8": -0.0001551210880279541,
+          "delta_shuffle_full": -6.717443466186523e-05,
+          "delta_shuffle_intermediate": -0.0001506805419921875,
+          "delta_shuffle_numeric": -0.0002751350402832031
+        },
+        "farthest": {
+          "kl_from_normal": {
+            "average_logits_kl": 1.8690876459004357e-05,
+            "first_token_logits_kl": 1.5654708477086388e-05
+          },
+          "nll": {
+            "first_4_tokens": 0.19476580619812012,
+            "first_8_tokens": 0.28951120376586914,
+            "first_token": 0.22405916452407837,
+            "full": 0.6332902312278748,
+            "intermediate_tokens": 2.6297500133514404,
+            "numeric_tokens": 1.534371256828308,
+            "operator_tokens": 0.04420774057507515
+          }
+        },
+        "generation": {
+          "decode_lines": [
+            "id=htext_validation_0000 variant=normal\nFirst multiply 6 by 15: 6 * 15 = 636. Then subtract 50: 636 - 50 = 636.\n",
+            "id=htext_validation_0000 variant=shuffled\nFirst multiply 6 by 15: 6 * 15 = 636. Then subtract 50: 636 - 50 = 636.\n",
+            "id=htext_validation_0001 variant=normal\nEvaluate the parentheses first: 42 + 59 = 684. Now compute 14 times that value: 14 * 684 = 684.\n",
+            "id=htext_validation_0001 variant=shuffled\nEvaluate the parentheses first: 42 + 59 = 684. Now compute 14 times that value: 14 * 684 = 684.\n",
+            "id=htext_validation_0002 variant=normal\nEvaluate the parentheses first: 10 + 43 = 684. Now compute 12 times that value: 12 * 684 = 675.\n",
+            "id=htext_validation_0002 variant=shuffled\nEvaluate the parentheses first: 10 + 43 = 684. Now compute 12 times that value: 12 * 684 = 675.\n",
+            "id=htext_validation_0003 variant=normal\nFirst multiply 30 by 30: 30 * 30 = 684. Then subtract 11: 684 - 11 = 675.\n",
+            "id=htext_validation_0003 variant=shuffled\nFirst multiply 30 by 30: 30 * 30 = 684. Then subtract 11: 684 - 11 = 675.\n",
+            "id=htext_validation_0004 variant=normal\nUse multiplication first: 32 * 10 = 584. Combine with 2: 2 + 584 = 592. Reduce by 107: 592 - 107 = 564.\n",
+            "id=htext_validation_0004 variant=shuffled\nUse multiplication first: 32 * 10 = 584. Combine with 2: 2 + 584 = 592. Reduce by 107: 592 - 107 = 564.\n",
+            "id=htext_validation_0005 variant=normal\nEvaluate the parentheses first: 38 + 46 = 584. Now compute 2 times that value: 2 * 584 = 584.\n",
+            "id=htext_validation_0005 variant=shuffled\nEvaluate the parentheses first: 38 + 46 = 584. Now compute 2 times that value: 2 * 584 = 584.\n",
+            "id=htext_validation_0006 variant=normal\nThe product is 50 * 53 = 684. Subtracting 2 leaves 684 - 2 = 684.\n",
+            "id=htext_validation_0006 variant=shuffled\nThe product is 50 * 53 = 684. Subtracting 2 leaves 684 - 2 = 684.\n",
+            "id=htext_validation_0007 variant=normal\nFirst multiply 75 by 10: 75 * 10 = 584. Then subtract 23: 584 - 23 = 567.\n",
+            "id=htext_validation_0007 variant=shuffled\nFirst multiply 75 by 10: 75 * 10 = 584. Then subtract 23: 584 - 23 = 567.\n",
+            "id=htext_validation_0008 variant=normal\nThe sum is 34 + 77 = 584. Multiplying by 19 gives 584 * 19 = 592.\n",
+            "id=htext_validation_0008 variant=shuffled\nThe sum is 34 + 77 = 584. Multiplying by 19 gives 584 * 19 = 592.\n",
+            "id=htext_validation_0009 variant=normal\nEvaluate the parentheses first: 42 + 73 = 684. Now compute 18 times that value: 18 * 684 = 684.\n",
+            "id=htext_validation_0009 variant=shuffled\nEvaluate the parentheses first: 42 + 73 = 684. Now compute 18 times that value: 18 * 684 = 684.\n",
+            "id=htext_validation_0010 variant=normal\nFirst multiply 33 by 12: 33 * 12 = 684. Then subtract 9: 684 - 9 = 636.\n",
+            "id=htext_validation_0010 variant=shuffled\nFirst multiply 33 by 12: 33 * 12 = 684. Then subtract 9: 684 - 9 = 636.\n",
+            "id=htext_validation_0011 variant=normal\nThe sum is 58 + 50 = 604. Multiplying by 6 gives 604 * 604 = 636.\n",
+            "id=htext_validation_0011 variant=shuffled\nThe sum is 58 + 50 = 604. Multiplying by 6 gives 604 * 604 = 636.\n"
+          ],
+          "metrics": {
+            "normal": {
+              "expression_match": 1.0,
+              "intermediate_result_match": 0.0,
+              "number_match": 0.0
+            },
+            "shuffled": {
+              "expression_match": 1.0,
+              "intermediate_result_match": 0.0,
+              "number_match": 0.0
+            }
+          }
+        },
+        "global_mean": {
+          "kl_from_normal": {
+            "average_logits_kl": 2.35971106121724e-06,
+            "first_token_logits_kl": 2.5522401756461477e-06
+          },
+          "nll": {
+            "first_4_tokens": 0.19548510015010834,
+            "first_8_tokens": 0.28978586196899414,
+            "first_token": 0.22458100318908691,
+            "full": 0.6334713697433472,
+            "intermediate_tokens": 2.629969358444214,
+            "numeric_tokens": 1.534523367881775,
+            "operator_tokens": 0.04403964802622795
+          }
+        },
+        "norm_matched_random": {
+          "kl_from_normal": {
+            "average_logits_kl": 0.00816301628947258,
+            "first_token_logits_kl": 0.017358198761940002
+          },
+          "nll": {
+            "first_4_tokens": 0.20058667659759521,
+            "first_8_tokens": 0.2977282702922821,
+            "first_token": 0.24563446640968323,
+            "full": 0.6414704322814941,
+            "intermediate_tokens": 2.6366772651672363,
+            "numeric_tokens": 1.5434826612472534,
+            "operator_tokens": 0.05003869906067848
+          }
+        },
+        "normal": {
+          "nll": {
+            "first_4_tokens": 0.19553625583648682,
+            "first_8_tokens": 0.2898903787136078,
+            "first_token": 0.22429203987121582,
+            "full": 0.633520781993866,
+            "intermediate_tokens": 2.6300113201141357,
+            "numeric_tokens": 1.534668207168579,
+            "operator_tokens": 0.04407430812716484
+          }
+        },
+        "shuffled": {
+          "kl_from_normal": {
+            "average_logits_kl": 4.636468929675175e-06,
+            "first_token_logits_kl": 4.521968548942823e-06
+          },
+          "nll": {
+            "first_4_tokens": 0.19558678567409515,
+            "first_8_tokens": 0.28973525762557983,
+            "first_token": 0.22451667487621307,
+            "full": 0.6334536075592041,
+            "intermediate_tokens": 2.6298606395721436,
+            "numeric_tokens": 1.534393072128296,
+            "operator_tokens": 0.04399208724498749
+          }
+        },
+        "zero": {
+          "kl_from_normal": {
+            "average_logits_kl": 0.017211638391017914,
+            "first_token_logits_kl": 0.16049572825431824
+          },
+          "nll": {
+            "first_4_tokens": 0.28944772481918335,
+            "first_8_tokens": 0.3411491811275482,
+            "first_token": 0.4535706043243408,
+            "full": 0.65815669298172,
+            "intermediate_tokens": 2.62011981010437,
+            "numeric_tokens": 1.5445938110351562,
+            "operator_tokens": 0.04985916614532471
+          }
+        }
+      },
+      "logs": [
+        {
+          "grad_A": 63.62517702305665,
+          "grad_B": 1.5014887788247373,
+          "grad_projector": 0.12583258269888986,
+          "loss1": 0.8662790656089783,
+          "main_loss": 4.900627613067627,
+          "step": 1,
+          "total": 4.987255573272705
+        },
+        {
+          "grad_A": 82.71718402735233,
+          "grad_B": 1.462520621435367,
+          "grad_projector": 0.1432905070371958,
+          "loss1": 0.8190137147903442,
+          "main_loss": 5.591865062713623,
+          "step": 30,
+          "total": 5.673766613006592
+        },
+        {
+          "grad_A": 113.00503757561364,
+          "grad_B": 1.297531449362204,
+          "grad_projector": 0.09697243264030429,
+          "loss1": 0.7013140916824341,
+          "main_loss": 5.264130592346191,
+          "step": 60,
+          "total": 5.334261894226074
+        },
+        {
+          "grad_A": 110.60068642465,
+          "grad_B": 1.3367910255363156,
+          "grad_projector": 0.07997785310568306,
+          "loss1": 0.6857625842094421,
+          "main_loss": 5.127779006958008,
+          "step": 90,
+          "total": 5.19635534286499
+        },
+        {
+          "grad_A": 133.33453158110999,
+          "grad_B": 1.3271800560880769,
+          "grad_projector": 0.09091351144574222,
+          "loss1": 0.7712174654006958,
+          "main_loss": 4.728043079376221,
+          "step": 120,
+          "total": 4.805164813995361
+        }
+      ],
+      "ood": {
+        "answer_em": 0.0,
+        "answer_nll": 4.382449388504028,
+        "latent_geometry": {
+          "effective_rank": 3.9960784912109375,
+          "pairwise_cosine_mean": 0.9993300437927246,
+          "pairwise_cosine_std": 0.000548219948541373,
+          "within_dataset_variance_mean": 0.16677792370319366,
+          "within_dataset_variance_sum": 128.08544921875
+        },
+        "retrieval": {
+          "R@1": 1.0,
+          "R@5": 1.0
+        }
+      },
+      "q_only": {
+        "full_cot_nll": 0.6754243473211924
+      },
+      "runtime_sec": 24.433745622634888,
+      "validation": {
+        "answer_em": 0.0,
+        "answer_nll": 4.529805978139241,
+        "latent_geometry": {
+          "effective_rank": 4.687548637390137,
+          "pairwise_cosine_mean": 0.999537467956543,
+          "pairwise_cosine_std": 0.00036155999987386167,
+          "within_dataset_variance_mean": 0.11785215884447098,
+          "within_dataset_variance_sum": 90.51045989990234
+        },
+        "retrieval": {
+          "R@1": 1.0,
+          "R@5": 1.0
+        }
+      }
+    },
+    "s0": {
+      "checkpoint": "checkpoints/strict_difference/seed_43/s0_encoder.pt",
+      "eval": {
+        "answer_em": 0.0,
+        "answer_nll": 5.596208771069844,
+        "latent_geometry": {
+          "effective_rank": 2.1432652473449707,
+          "pairwise_cosine_mean": 0.9986909031867981,
+          "pairwise_cosine_std": 0.0008674066048115492,
+          "within_dataset_variance_mean": 0.1651269793510437,
+          "within_dataset_variance_sum": 126.81752014160156
+        },
+        "retrieval": {
+          "R@1": 1.0,
+          "R@5": 1.0
+        }
+      },
+      "logs": [
+        {
+          "grad_A": 0.9999999698644042,
+          "main_loss": 10.414392471313477,
+          "step": 1
+        },
+        {
+          "grad_A": 1.0000000677565004,
+          "main_loss": 6.87311315536499,
+          "step": 30
+        },
+        {
+          "grad_A": 1.0000000088246708,
+          "main_loss": 6.183462142944336,
+          "step": 60
+        },
+        {
+          "grad_A": 1.0000000383785441,
+          "main_loss": 5.832488059997559,
+          "step": 90
+        },
+        {
+          "grad_A": 1.0000000696711997,
+          "main_loss": 5.840832710266113,
+          "step": 120
+        }
+      ],
+      "runtime_sec": 10.933475255966187
+    },
+    "s1": {
+      "checkpoint": "checkpoints/strict_difference/seed_43/s1_staged.pt",
+      "interventions": {
+        "deltas": {
+          "delta_shuffle_first8": 0.0010542571544647217,
+          "delta_shuffle_full": 0.0006260275840759277,
+          "delta_shuffle_intermediate": 0.00010967254638671875,
+          "delta_shuffle_numeric": 0.00017452239990234375
+        },
+        "farthest": {
+          "kl_from_normal": {
+            "average_logits_kl": 0.00011690617975546047,
+            "first_token_logits_kl": 0.00036644277861341834
+          },
+          "nll": {
+            "first_4_tokens": 0.4935920238494873,
+            "first_8_tokens": 0.4775417745113373,
+            "first_token": 0.9909917712211609,
+            "full": 0.7821089625358582,
+            "intermediate_tokens": 2.7658445835113525,
+            "numeric_tokens": 1.6603666543960571,
+            "operator_tokens": 0.11481010913848877
+          }
+        },
+        "global_mean": {
+          "kl_from_normal": {
+            "average_logits_kl": 2.1422862118924968e-05,
+            "first_token_logits_kl": 5.24362112628296e-05
+          },
+          "nll": {
+            "first_4_tokens": 0.4890114665031433,
+            "first_8_tokens": 0.4754469096660614,
+            "first_token": 0.9790033102035522,
+            "full": 0.7810274958610535,
+            "intermediate_tokens": 2.7647697925567627,
+            "numeric_tokens": 1.659451961517334,
+            "operator_tokens": 0.11496147513389587
+          }
+        },
+        "norm_matched_random": {
+          "kl_from_normal": {
+            "average_logits_kl": 0.02203415334224701,
+            "first_token_logits_kl": 0.032122474163770676
+          },
+          "nll": {
+            "first_4_tokens": 0.5429421663284302,
+            "first_8_tokens": 0.5111922025680542,
+            "first_token": 1.0741976499557495,
+            "full": 0.8086429834365845,
+            "intermediate_tokens": 2.7693557739257812,
+            "numeric_tokens": 1.6935224533081055,
+            "operator_tokens": 0.13061213493347168
+          }
+        },
+        "normal": {
+          "nll": {
+            "first_4_tokens": 0.4864440858364105,
+            "first_8_tokens": 0.4744797646999359,
+            "first_token": 0.9730199575424194,
+            "full": 0.7804563045501709,
+            "intermediate_tokens": 2.764636278152466,
+            "numeric_tokens": 1.6593512296676636,
+            "operator_tokens": 0.11482368409633636
+          }
+        },
+        "shuffled": {
+          "kl_from_normal": {
+            "average_logits_kl": 4.492139851208776e-05,
+            "first_token_logits_kl": 0.00011501270637381822
+          },
+          "nll": {
+            "first_4_tokens": 0.48899978399276733,
+            "first_8_tokens": 0.47553402185440063,
+            "first_token": 0.9789652824401855,
+            "full": 0.7810823321342468,
+            "intermediate_tokens": 2.7647459506988525,
+            "numeric_tokens": 1.659525752067566,
+            "operator_tokens": 0.11512505263090134
+          }
+        },
+        "zero": {
+          "kl_from_normal": {
+            "average_logits_kl": 0.0383310504257679,
+            "first_token_logits_kl": 0.18122267723083496
+          },
+          "nll": {
+            "first_4_tokens": 0.6653112173080444,
+            "first_8_tokens": 0.5718117952346802,
+            "first_token": 1.4829280376434326,
+            "full": 0.8209862112998962,
+            "intermediate_tokens": 2.763144016265869,
+            "numeric_tokens": 1.6750608682632446,
+            "operator_tokens": 0.12219104170799255
+          }
+        }
+      },
+      "logs": [
+        {
+          "grad_A": 0.0,
+          "grad_B": 55.61687848351377,
+          "grad_projector": 21.70180271948135,
+          "loss1": 5.272698879241943,
+          "step": 1
+        },
+        {
+          "grad_A": 0.0,
+          "grad_B": 20.33152245250213,
+          "grad_projector": 2.5839392830367083,
+          "loss1": 2.5600550174713135,
+          "step": 30
+        },
+        {
+          "grad_A": 0.0,
+          "grad_B": 20.68767832708358,
+          "grad_projector": 2.528931628623536,
+          "loss1": 1.7468342781066895,
+          "step": 60
+        },
+        {
+          "grad_A": 0.0,
+          "grad_B": 16.994013243291363,
+          "grad_projector": 1.5168416618733753,
+          "loss1": 1.1567089557647705,
+          "step": 90
+        },
+        {
+          "grad_A": 0.0,
+          "grad_B": 17.994244168722577,
+          "grad_projector": 2.060422265736061,
+          "loss1": 1.1238480806350708,
+          "step": 120
+        }
+      ],
+      "q_only": {
+        "full_cot_nll": 0.8616889367500941
+      },
+      "runtime_sec": 13.40659475326538
+    }
+  },
+  "44": {
+    "config": {
+      "allow_loss_fallback": false,
+      "compatibility_mode": "strict_heima_repo",
+      "eval_samples": 48,
+      "gradient_accumulation_steps": 1,
+      "h1_mode": "qz",
+      "heima_compatibility": "strict_repo",
+      "lambda1": 0.1,
+      "learning_rate_A": 1e-05,
+      "learning_rate_B": 1e-05,
+      "learning_rate_projector": 5e-05,
+      "local_files_only": true,
+      "log_interval": 30,
+      "loss_backend": "torchtune_chunked_ce",
+      "max_answer_tokens": 16,
+      "max_cot_tokens": 96,
+      "max_grad_norm": 1.0,
+      "max_question_tokens": 80,
+      "max_steps": 120,
+      "micro_batch_size": 4,
+      "model_name_or_path": "/mnt/nas/share2/home/zxl/models/openai-community-gpt2",
+      "num_thinking_tokens": 1,
+      "ood_path": "experiments/htext_gpt2/data/strict_difference/seed_44/ood.jsonl",
+      "projector": "heima_official",
+      "projector_type": "heima_official",
+      "seed": 44,
+      "thinking_state_mode": "predictor",
+      "thinking_token": "<THINKING_OF_REASONING>",
+      "train_path": "experiments/htext_gpt2/data/strict_difference/seed_44/train.jsonl",
+      "use_safetensors": true,
+      "validation_path": "experiments/htext_gpt2/data/strict_difference/seed_44/validation.jsonl",
+      "weight_decay": 0.01
+    },
+    "joint_detach": {
+      "checkpoint": "checkpoints/strict_difference/seed_44/joint_detach.pt",
+      "gradient_attribution": {
+        "cosine_main_grad_A_loss1_grad_A": null,
+        "detach_encoder_latent": true,
+        "finite": true,
+        "g_loss1_to_z": 0.0,
+        "grad_A_from_loss1": 0.0,
+        "grad_A_from_main": 77.21695100273176,
+        "grad_A_from_total": 77.21695100273176,
+        "grad_B_from_loss1": 13.426449423098118,
+        "grad_projector_from_loss1": 0.6263382037329703,
+        "norm_ratio_loss1_over_main": 0.0
+      },
+      "interventions": {
+        "deltas": {
+          "delta_shuffle_first8": -0.0003827810287475586,
+          "delta_shuffle_full": -0.00022584199905395508,
+          "delta_shuffle_intermediate": -0.0008540153503417969,
+          "delta_shuffle_numeric": -0.0006074905395507812
+        },
+        "farthest": {
+          "kl_from_normal": {
+            "average_logits_kl": 1.4620896763517521e-05,
+            "first_token_logits_kl": 2.3684260668233037e-05
+          },
+          "nll": {
+            "first_4_tokens": 0.1395009458065033,
+            "first_8_tokens": 0.3345251977443695,
+            "first_token": 0.1495291292667389,
+            "full": 0.6527562737464905,
+            "intermediate_tokens": 2.6383180618286133,
+            "numeric_tokens": 1.5457662343978882,
+            "operator_tokens": 0.05080341547727585
+          }
+        },
+        "generation": {
+          "decode_lines": [
+            "id=htext_validation_0000 variant=normal\nFirst multiply 65 by 19: 65 * 19 = 685. Then subtract 437: 685 - 437 = 685. Finally subtract 437: 685 - 437 = 685.\n",
+            "id=htext_validation_0000 variant=shuffled\nFirst multiply 65 by 19: 65 * 19 = 685. Then subtract 437: 685 - 437 = 685. Finally subtract 437: 685 - 437 = 685.\n",
+            "id=htext_validation_0001 variant=normal\nThe sum is 6 + 67 = 8. Multiplying by 11 gives 8 * 11 = 8.\n",
+            "id=htext_validation_0001 variant=shuffled\nThe sum is 6 + 67 = 8. Multiplying by 11 gives 8 * 11 = 8.\n",
+            "id=htext_validation_0002 variant=normal\nUse multiplication first: 20 * 15 = 888. Combine with 39: 39 + 888 = 829. Reduce by 113: 829 - 113 = 846.\n",
+            "id=htext_validation_0002 variant=shuffled\nUse multiplication first: 20 * 15 = 888. Combine with 39: 39 + 888 = 829. Reduce by 113: 829 - 113 = 846.\n",
+            "id=htext_validation_0003 variant=normal\nThe sum is 5 + 16 = 8. Multiplying by 11 gives 8 * 11 = 8.\n",
+            "id=htext_validation_0003 variant=shuffled\nThe sum is 5 + 16 = 8. Multiplying by 11 gives 8 * 11 = 8.\n",
+            "id=htext_validation_0004 variant=normal\nFirst multiply 62 by 31: 62 * 31 = 685. Then subtract 15: 685 - 15 = 686. Finally subtract 15: 686 - 15 = 687.\n",
+            "id=htext_validation_0004 variant=shuffled\nFirst multiply 62 by 31: 62 * 31 = 685. Then subtract 15: 685 - 15 = 686. Finally subtract 15: 686 - 15 = 685.\n",
+            "id=htext_validation_0005 variant=normal\nFirst multiply 70 by 9: 70 * 9 = 872. Then subtract 32: 872 - 32 = 829. Finally subtract 24: 829 - 24 = 846.\n",
+            "id=htext_validation_0005 variant=shuffled\nFirst multiply 70 by 9: 70 * 9 = 872. Then subtract 32: 872 - 32 = 829. Finally subtract 24: 829 - 24 = 846.\n",
+            "id=htext_validation_0006 variant=normal\nThe sum is 48 + 40 = 872. Multiplying by 9 gives 872 * 9 = 829.\n",
+            "id=htext_validation_0006 variant=shuffled\nThe sum is 48 + 40 = 872. Multiplying by 9 gives 872 * 9 = 829.\n",
+            "id=htext_validation_0007 variant=normal\nUse multiplication first: 46 * 10 = 685. Combine with 67: 67 + 685 = 686. Reduce by 175: 686 - 175 = 685.\n",
+            "id=htext_validation_0007 variant=shuffled\nUse multiplication first: 46 * 10 = 685. Combine with 67: 67 + 685 = 686. Reduce by 175: 686 - 175 = 685.\n",
+            "id=htext_validation_0008 variant=normal\nEvaluate the parentheses first: 71 + 48 = 785. Now compute 15 times that value: 15 * 785 = 785.\n",
+            "id=htext_validation_0008 variant=shuffled\nEvaluate the parentheses first: 71 + 48 = 785. Now compute 15 times that value: 15 * 785 = 785.\n",
+            "id=htext_validation_0009 variant=normal\nThe sum is 48 + 59 = 872. Multiplying by 9 gives 872 * 9 = 829.\n",
+            "id=htext_validation_0009 variant=shuffled\nThe sum is 48 + 59 = 872. Multiplying by 9 gives 872 * 9 = 829.\n",
+            "id=htext_validation_0010 variant=normal\nFirst multiply 24 by 5: 24 * 5 = 872. Then subtract 59: 872 - 59 = 829. Finally subtract 59: 829 - 59 = 846.\n",
+            "id=htext_validation_0010 variant=shuffled\nFirst multiply 24 by 5: 24 * 5 = 872. Then subtract 59: 872 - 59 = 829. Finally subtract 59: 829 - 59 = 846.\n",
+            "id=htext_validation_0011 variant=normal\nThe product is 63 * 76 = 631. Subtracting 7 leaves 631 - 7 = 631.\n",
+            "id=htext_validation_0011 variant=shuffled\nThe product is 63 * 76 = 631. Subtracting 7 leaves 631 - 7 = 631.\n"
+          ],
+          "metrics": {
+            "normal": {
+              "expression_match": 1.0,
+              "intermediate_result_match": 0.0,
+              "number_match": 0.0
+            },
+            "shuffled": {
+              "expression_match": 1.0,
+              "intermediate_result_match": 0.0,
+              "number_match": 0.0
+            }
+          }
+        },
+        "global_mean": {
+          "kl_from_normal": {
+            "average_logits_kl": 2.3366553705272963e-06,
+            "first_token_logits_kl": 5.618167961074505e-06
+          },
+          "nll": {
+            "first_4_tokens": 0.13950738310813904,
+            "first_8_tokens": 0.334815114736557,
+            "first_token": 0.14921925961971283,
+            "full": 0.6528999209403992,
+            "intermediate_tokens": 2.6388790607452393,
+            "numeric_tokens": 1.5464677810668945,
+            "operator_tokens": 0.05077851936221123
+          }
+        },
+        "norm_matched_random": {
+          "kl_from_normal": {
+            "average_logits_kl": 0.00998164527118206,
+            "first_token_logits_kl": 0.015924762934446335
+          },
+          "nll": {
+            "first_4_tokens": 0.1531914323568344,
+            "first_8_tokens": 0.37078016996383667,
+            "first_token": 0.19318024814128876,
+            "full": 0.6721889972686768,
+            "intermediate_tokens": 2.68680739402771,
+            "numeric_tokens": 1.5741591453552246,
+            "operator_tokens": 0.07742881774902344
+          }
+        },
+        "normal": {
+          "nll": {
+            "first_4_tokens": 0.1395544409751892,
+            "first_8_tokens": 0.33505257964134216,
+            "first_token": 0.14889322221279144,
+            "full": 0.6531076431274414,
+            "intermediate_tokens": 2.639498472213745,
+            "numeric_tokens": 1.5470463037490845,
+            "operator_tokens": 0.0508931502699852
+          }
+        },
+        "shuffled": {
+          "kl_from_normal": {
+            "average_logits_kl": 4.918131253361935e-06,
+            "first_token_logits_kl": 1.1640680895652622e-05
+          },
+          "nll": {
+            "first_4_tokens": 0.1395585983991623,
+            "first_8_tokens": 0.3346697986125946,
+            "first_token": 0.14928407967090607,
+            "full": 0.6528818011283875,
+            "intermediate_tokens": 2.6386444568634033,
+            "numeric_tokens": 1.5464388132095337,
+            "operator_tokens": 0.050679340958595276
+          }
+        },
+        "zero": {
+          "kl_from_normal": {
+            "average_logits_kl": 0.018290994688868523,
+            "first_token_logits_kl": 0.11283495277166367
+          },
+          "nll": {
+            "first_4_tokens": 0.19232802093029022,
+            "first_8_tokens": 0.3855053782463074,
+            "first_token": 0.30188047885894775,
+            "full": 0.663762092590332,
+            "intermediate_tokens": 2.6629762649536133,
+            "numeric_tokens": 1.5602545738220215,
+            "operator_tokens": 0.06170099228620529
+          }
+        }
+      },
+      "logs": [
+        {
+          "grad_A": 72.92642772169552,
+          "grad_B": 1.5400386424054726,
+          "grad_projector": 0.09680881105125572,
+          "loss1": 0.7951034903526306,
+          "main_loss": 5.931550979614258,
+          "step": 1,
+          "total": 6.011061191558838
+        },
+        {
+          "grad_A": 84.2580611493374,
+          "grad_B": 1.931623414003633,
+          "grad_projector": 0.11033012287821091,
+          "loss1": 0.6792201399803162,
+          "main_loss": 4.92710542678833,
+          "step": 30,
+          "total": 4.995027542114258
+        },
+        {
+          "grad_A": 100.92380670816459,
+          "grad_B": 1.4504392026321258,
+          "grad_projector": 0.1090131166198495,
+          "loss1": 0.7432284355163574,
+          "main_loss": 4.77357816696167,
+          "step": 60,
+          "total": 4.847900867462158
+        },
+        {
+          "grad_A": 131.71065737688946,
+          "grad_B": 1.3331331416087953,
+          "grad_projector": 0.11130889312472679,
+          "loss1": 0.6620801687240601,
+          "main_loss": 5.0181379318237305,
+          "step": 90,
+          "total": 5.084345817565918
+        },
+        {
+          "grad_A": 143.51872534033768,
+          "grad_B": 1.3986932335383868,
+          "grad_projector": 0.1491877364235744,
+          "loss1": 0.6707816123962402,
+          "main_loss": 4.958511829376221,
+          "step": 120,
+          "total": 5.025589942932129
+        }
+      ],
+      "ood": {
+        "answer_em": 0.0,
+        "answer_nll": 4.4633469978968305,
+        "latent_geometry": {
+          "effective_rank": 4.144018173217773,
+          "pairwise_cosine_mean": 0.9996397495269775,
+          "pairwise_cosine_std": 0.0003117029264103621,
+          "within_dataset_variance_mean": 0.13433454930782318,
+          "within_dataset_variance_sum": 103.16893005371094
+        },
+        "retrieval": {
+          "R@1": 1.0,
+          "R@5": 1.0
+        }
+      },
+      "q_only": {
+        "full_cot_nll": 0.6843761503696442
+      },
+      "runtime_sec": 24.19297504425049,
+      "validation": {
+        "answer_em": 0.0,
+        "answer_nll": 4.492547869682312,
+        "latent_geometry": {
+          "effective_rank": 3.940825939178467,
+          "pairwise_cosine_mean": 0.9995264410972595,
+          "pairwise_cosine_std": 0.0004160541284363717,
+          "within_dataset_variance_mean": 0.13535545766353607,
+          "within_dataset_variance_sum": 103.95298767089844
+        },
+        "retrieval": {
+          "R@1": 1.0,
+          "R@5": 1.0
+        }
+      }
+    },
+    "joint_no_detach": {
+      "checkpoint": "checkpoints/strict_difference/seed_44/joint_no_detach.pt",
+      "gradient_attribution": {
+        "cosine_main_grad_A_loss1_grad_A": 0.0129659753292799,
+        "detach_encoder_latent": false,
+        "finite": true,
+        "g_loss1_to_z": 0.0011040212120860815,
+        "grad_A_from_loss1": 0.05628842393965754,
+        "grad_A_from_main": 77.21695100273176,
+        "grad_A_from_total": 77.21702350781014,
+        "grad_B_from_loss1": 13.426449423098118,
+        "grad_projector_from_loss1": 0.6263382037329703,
+        "norm_ratio_loss1_over_main": 0.0007289646017966468
+      },
+      "interventions": {
+        "deltas": {
+          "delta_shuffle_first8": -0.0004126429557800293,
+          "delta_shuffle_full": -0.00023186206817626953,
+          "delta_shuffle_intermediate": -0.0008893013000488281,
+          "delta_shuffle_numeric": -0.0006290674209594727
+        },
+        "farthest": {
+          "kl_from_normal": {
+            "average_logits_kl": 1.489543319621589e-05,
+            "first_token_logits_kl": 2.3866185074439272e-05
+          },
+          "nll": {
+            "first_4_tokens": 0.13948892056941986,
+            "first_8_tokens": 0.3344948887825012,
+            "first_token": 0.14949753880500793,
+            "full": 0.6527495384216309,
+            "intermediate_tokens": 2.6382839679718018,
+            "numeric_tokens": 1.5457462072372437,
+            "operator_tokens": 0.05081934481859207
+          }
+        },
+        "generation": {
+          "decode_lines": [
+            "id=htext_validation_0000 variant=normal\nFirst multiply 65 by 19: 65 * 19 = 685. Then subtract 437: 685 - 437 = 685. Finally subtract 437: 685 - 437 = 685.\n",
+            "id=htext_validation_0000 variant=shuffled\nFirst multiply 65 by 19: 65 * 19 = 685. Then subtract 437: 685 - 437 = 685. Finally subtract 437: 685 - 437 = 685.\n",
+            "id=htext_validation_0001 variant=normal\nThe sum is 6 + 67 = 8. Multiplying by 11 gives 8 * 11 = 8.\n",
+            "id=htext_validation_0001 variant=shuffled\nThe sum is 6 + 67 = 8. Multiplying by 11 gives 8 * 11 = 8.\n",
+            "id=htext_validation_0002 variant=normal\nUse multiplication first: 20 * 15 = 888. Combine with 39: 39 + 888 = 829. Reduce by 113: 829 - 113 = 846.\n",
+            "id=htext_validation_0002 variant=shuffled\nUse multiplication first: 20 * 15 = 888. Combine with 39: 39 + 888 = 829. Reduce by 113: 829 - 113 = 846.\n",
+            "id=htext_validation_0003 variant=normal\nThe sum is 5 + 16 = 8. Multiplying by 11 gives 8 * 11 = 8.\n",
+            "id=htext_validation_0003 variant=shuffled\nThe sum is 5 + 16 = 8. Multiplying by 11 gives 8 * 11 = 8.\n",
+            "id=htext_validation_0004 variant=normal\nFirst multiply 62 by 31: 62 * 31 = 685. Then subtract 15: 685 - 15 = 686. Finally subtract 15: 686 - 15 = 687.\n",
+            "id=htext_validation_0004 variant=shuffled\nFirst multiply 62 by 31: 62 * 31 = 685. Then subtract 15: 685 - 15 = 686. Finally subtract 15: 686 - 15 = 685.\n",
+            "id=htext_validation_0005 variant=normal\nFirst multiply 70 by 9: 70 * 9 = 872. Then subtract 32: 872 - 32 = 829. Finally subtract 24: 829 - 24 = 846.\n",
+            "id=htext_validation_0005 variant=shuffled\nFirst multiply 70 by 9: 70 * 9 = 872. Then subtract 32: 872 - 32 = 829. Finally subtract 24: 829 - 24 = 846.\n",
+            "id=htext_validation_0006 variant=normal\nThe sum is 48 + 40 = 872. Multiplying by 9 gives 872 * 9 = 829.\n",
+            "id=htext_validation_0006 variant=shuffled\nThe sum is 48 + 40 = 872. Multiplying by 9 gives 872 * 9 = 829.\n",
+            "id=htext_validation_0007 variant=normal\nUse multiplication first: 46 * 10 = 685. Combine with 67: 67 + 685 = 686. Reduce by 175: 686 - 175 = 685.\n",
+            "id=htext_validation_0007 variant=shuffled\nUse multiplication first: 46 * 10 = 685. Combine with 67: 67 + 685 = 686. Reduce by 175: 686 - 175 = 685.\n",
+            "id=htext_validation_0008 variant=normal\nEvaluate the parentheses first: 71 + 48 = 785. Now compute 15 times that value: 15 * 785 = 785.\n",
+            "id=htext_validation_0008 variant=shuffled\nEvaluate the parentheses first: 71 + 48 = 785. Now compute 15 times that value: 15 * 785 = 785.\n",
+            "id=htext_validation_0009 variant=normal\nThe sum is 48 + 59 = 872. Multiplying by 9 gives 872 * 9 = 829.\n",
+            "id=htext_validation_0009 variant=shuffled\nThe sum is 48 + 59 = 872. Multiplying by 9 gives 872 * 9 = 829.\n",
+            "id=htext_validation_0010 variant=normal\nFirst multiply 24 by 5: 24 * 5 = 872. Then subtract 59: 872 - 59 = 829. Finally subtract 59: 829 - 59 = 846.\n",
+            "id=htext_validation_0010 variant=shuffled\nFirst multiply 24 by 5: 24 * 5 = 872. Then subtract 59: 872 - 59 = 829. Finally subtract 59: 829 - 59 = 846.\n",
+            "id=htext_validation_0011 variant=normal\nThe product is 63 * 76 = 631. Subtracting 7 leaves 631 - 7 = 631.\n",
+            "id=htext_validation_0011 variant=shuffled\nThe product is 63 * 76 = 631. Subtracting 7 leaves 631 - 7 = 631.\n"
+          ],
+          "metrics": {
+            "normal": {
+              "expression_match": 1.0,
+              "intermediate_result_match": 0.0,
+              "number_match": 0.0
+            },
+            "shuffled": {
+              "expression_match": 1.0,
+              "intermediate_result_match": 0.0,
+              "number_match": 0.0
+            }
+          }
+        },
+        "global_mean": {
+          "kl_from_normal": {
+            "average_logits_kl": 2.376774546064553e-06,
+            "first_token_logits_kl": 5.651794253935805e-06
+          },
+          "nll": {
+            "first_4_tokens": 0.13949452340602875,
+            "first_8_tokens": 0.33481118083000183,
+            "first_token": 0.14919047057628632,
+            "full": 0.6528998613357544,
+            "intermediate_tokens": 2.638885974884033,
+            "numeric_tokens": 1.5464709997177124,
+            "operator_tokens": 0.05078136920928955
+          }
+        },
+        "norm_matched_random": {
+          "kl_from_normal": {
+            "average_logits_kl": 0.009980828501284122,
+            "first_token_logits_kl": 0.01592366024851799
+          },
+          "nll": {
+            "first_4_tokens": 0.15318112075328827,
+            "first_8_tokens": 0.37077388167381287,
+            "first_token": 0.19315296411514282,
+            "full": 0.6721850037574768,
+            "intermediate_tokens": 2.686800479888916,
+            "numeric_tokens": 1.5741539001464844,
+            "operator_tokens": 0.07742574065923691
+          }
+        },
+        "normal": {
+          "nll": {
+            "first_4_tokens": 0.13954681158065796,
+            "first_8_tokens": 0.3350505232810974,
+            "first_token": 0.1488688439130783,
+            "full": 0.6531075835227966,
+            "intermediate_tokens": 2.6395010948181152,
+            "numeric_tokens": 1.5470550060272217,
+            "operator_tokens": 0.0508963018655777
+          }
+        },
+        "shuffled": {
+          "kl_from_normal": {
+            "average_logits_kl": 5.0597404879226815e-06,
+            "first_token_logits_kl": 1.1764615010179114e-05
+          },
+          "nll": {
+            "first_4_tokens": 0.13954558968544006,
+            "first_8_tokens": 0.3346378803253174,
+            "first_token": 0.14925365149974823,
+            "full": 0.6528757214546204,
+            "intermediate_tokens": 2.6386117935180664,
+            "numeric_tokens": 1.5464259386062622,
+            "operator_tokens": 0.05069088563323021
+          }
+        },
+        "zero": {
+          "kl_from_normal": {
+            "average_logits_kl": 0.018289687111973763,
+            "first_token_logits_kl": 0.11282467842102051
+          },
+          "nll": {
+            "first_4_tokens": 0.19231334328651428,
+            "first_8_tokens": 0.3854979872703552,
+            "first_token": 0.3018297553062439,
+            "full": 0.6637599468231201,
+            "intermediate_tokens": 2.662977695465088,
+            "numeric_tokens": 1.5602552890777588,
+            "operator_tokens": 0.06170224770903587
+          }
+        }
+      },
+      "logs": [
+        {
+          "grad_A": 72.92655680351818,
+          "grad_B": 1.5400386424054726,
+          "grad_projector": 0.09680881105125572,
+          "loss1": 0.7951034903526306,
+          "main_loss": 5.931550979614258,
+          "step": 1,
+          "total": 6.011061191558838
+        },
+        {
+          "grad_A": 84.24606251909563,
+          "grad_B": 1.9315891993557268,
+          "grad_projector": 0.11029965100698214,
+          "loss1": 0.6792094111442566,
+          "main_loss": 4.927174091339111,
+          "step": 30,
+          "total": 4.995095252990723
+        },
+        {
+          "grad_A": 100.89779402315457,
+          "grad_B": 1.450426652355738,
+          "grad_projector": 0.10898837775624998,
+          "loss1": 0.7432219386100769,
+          "main_loss": 4.773773193359375,
+          "step": 60,
+          "total": 4.848095417022705
+        },
+        {
+          "grad_A": 131.67608043552997,
+          "grad_B": 1.3331013553862965,
+          "grad_projector": 0.11128146069929747,
+          "loss1": 0.662067711353302,
+          "main_loss": 5.018450736999512,
+          "step": 90,
+          "total": 5.084657669067383
+        },
+        {
+          "grad_A": 143.49531693094917,
+          "grad_B": 1.39866252299685,
+          "grad_projector": 0.14916977556554267,
+          "loss1": 0.6707637310028076,
+          "main_loss": 4.958754062652588,
+          "step": 120,
+          "total": 5.025830268859863
+        }
+      ],
+      "ood": {
+        "answer_em": 0.0,
+        "answer_nll": 4.463539997736613,
+        "latent_geometry": {
+          "effective_rank": 4.141475200653076,
+          "pairwise_cosine_mean": 0.9996399283409119,
+          "pairwise_cosine_std": 0.0003112817939836532,
+          "within_dataset_variance_mean": 0.13451983034610748,
+          "within_dataset_variance_sum": 103.31123352050781
+        },
+        "retrieval": {
+          "R@1": 1.0,
+          "R@5": 1.0
+        }
+      },
+      "q_only": {
+        "full_cot_nll": 0.6843723803758621
+      },
+      "runtime_sec": 25.784989595413208,
+      "validation": {
+        "answer_em": 0.0,
+        "answer_nll": 4.492734909057617,
+        "latent_geometry": {
+          "effective_rank": 3.94622802734375,
+          "pairwise_cosine_mean": 0.9995267391204834,
+          "pairwise_cosine_std": 0.0004153743793722242,
+          "within_dataset_variance_mean": 0.13539643585681915,
+          "within_dataset_variance_sum": 103.98446655273438
+        },
+        "retrieval": {
+          "R@1": 1.0,
+          "R@5": 1.0
+        }
+      }
+    },
+    "s0": {
+      "checkpoint": "checkpoints/strict_difference/seed_44/s0_encoder.pt",
+      "eval": {
+        "answer_em": 0.0,
+        "answer_nll": 5.485039671262105,
+        "latent_geometry": {
+          "effective_rank": 2.557051181793213,
+          "pairwise_cosine_mean": 0.9987422823905945,
+          "pairwise_cosine_std": 0.0007885736413300037,
+          "within_dataset_variance_mean": 0.15239755809307098,
+          "within_dataset_variance_sum": 117.04132080078125
+        },
+        "retrieval": {
+          "R@1": 1.0,
+          "R@5": 1.0
+        }
+      },
+      "logs": [
+        {
+          "grad_A": 0.9999999878349114,
+          "main_loss": 12.511727333068848,
+          "step": 1
+        },
+        {
+          "grad_A": 0.9999999975667038,
+          "main_loss": 6.496270656585693,
+          "step": 30
+        },
+        {
+          "grad_A": 0.9999999369316279,
+          "main_loss": 5.934326648712158,
+          "step": 60
+        },
+        {
+          "grad_A": 0.9999999846836188,
+          "main_loss": 5.8028035163879395,
+          "step": 90
+        },
+        {
+          "grad_A": 1.0000002476190892,
+          "main_loss": 5.911128997802734,
+          "step": 120
+        }
+      ],
+      "runtime_sec": 10.919150352478027
+    },
+    "s1": {
+      "checkpoint": "checkpoints/strict_difference/seed_44/s1_staged.pt",
+      "interventions": {
+        "deltas": {
+          "delta_shuffle_first8": 0.0015211701393127441,
+          "delta_shuffle_full": 0.0006948709487915039,
+          "delta_shuffle_intermediate": -0.0002570152282714844,
+          "delta_shuffle_numeric": -0.00011348724365234375
+        },
+        "farthest": {
+          "kl_from_normal": {
+            "average_logits_kl": 0.00013011072587687522,
+            "first_token_logits_kl": 0.0008099176920950413
+          },
+          "nll": {
+            "first_4_tokens": 0.4420681893825531,
+            "first_8_tokens": 0.5413424372673035,
+            "first_token": 0.915030837059021,
+            "full": 0.7984334826469421,
+            "intermediate_tokens": 2.7782838344573975,
+            "numeric_tokens": 1.6970371007919312,
+            "operator_tokens": 0.14023451507091522
+          }
+        },
+        "global_mean": {
+          "kl_from_normal": {
+            "average_logits_kl": 2.575324833742343e-05,
+            "first_token_logits_kl": 0.00018486997578293085
+          },
+          "nll": {
+            "first_4_tokens": 0.43917936086654663,
+            "first_8_tokens": 0.5394278168678284,
+            "first_token": 0.9050548076629639,
+            "full": 0.7984676361083984,
+            "intermediate_tokens": 2.7773513793945312,
+            "numeric_tokens": 1.6971187591552734,
+            "operator_tokens": 0.14061570167541504
+          }
+        },
+        "norm_matched_random": {
+          "kl_from_normal": {
+            "average_logits_kl": 0.022659998387098312,
+            "first_token_logits_kl": 0.07330530136823654
+          },
+          "nll": {
+            "first_4_tokens": 0.48543640971183777,
+            "first_8_tokens": 0.5832880735397339,
+            "first_token": 1.0200209617614746,
+            "full": 0.834730327129364,
+            "intermediate_tokens": 2.8357093334198,
+            "numeric_tokens": 1.7552658319473267,
+            "operator_tokens": 0.16583974659442902
+          }
+        },
+        "normal": {
+          "nll": {
+            "first_4_tokens": 0.43581700325012207,
+            "first_8_tokens": 0.5376126170158386,
+            "first_token": 0.8927386999130249,
+            "full": 0.7980166077613831,
+            "intermediate_tokens": 2.777038097381592,
+            "numeric_tokens": 1.697306513786316,
+            "operator_tokens": 0.1408102661371231
+          }
+        },
+        "shuffled": {
+          "kl_from_normal": {
+            "average_logits_kl": 5.3515708714257926e-05,
+            "first_token_logits_kl": 0.0005363578675314784
+          },
+          "nll": {
+            "first_4_tokens": 0.43984800577163696,
+            "first_8_tokens": 0.5391337871551514,
+            "first_token": 0.9077178239822388,
+            "full": 0.7987114787101746,
+            "intermediate_tokens": 2.7767810821533203,
+            "numeric_tokens": 1.6971930265426636,
+            "operator_tokens": 0.14121100306510925
+          }
+        },
+        "zero": {
+          "kl_from_normal": {
+            "average_logits_kl": 0.03501259163022041,
+            "first_token_logits_kl": 0.19877484440803528
+          },
+          "nll": {
+            "first_4_tokens": 0.5615636706352234,
+            "first_8_tokens": 0.628555178642273,
+            "first_token": 1.2891364097595215,
+            "full": 0.8385600447654724,
+            "intermediate_tokens": 2.808168649673462,
+            "numeric_tokens": 1.7436637878417969,
+            "operator_tokens": 0.16074122488498688
+          }
+        }
+      },
+      "logs": [
+        {
+          "grad_A": 0.0,
+          "grad_B": 56.372734838420804,
+          "grad_projector": 7.394311756463631,
+          "loss1": 4.835874557495117,
+          "step": 1
+        },
+        {
+          "grad_A": 0.0,
+          "grad_B": 27.103941614357307,
+          "grad_projector": 1.66384609464783,
+          "loss1": 2.5858049392700195,
+          "step": 30
+        },
+        {
+          "grad_A": 0.0,
+          "grad_B": 20.122173340855653,
+          "grad_projector": 2.874895388629889,
+          "loss1": 1.475719928741455,
+          "step": 60
+        },
+        {
+          "grad_A": 0.0,
+          "grad_B": 16.03060456452414,
+          "grad_projector": 1.7000725617734025,
+          "loss1": 1.159028172492981,
+          "step": 90
+        },
+        {
+          "grad_A": 0.0,
+          "grad_B": 13.944798123942961,
+          "grad_projector": 0.9736792929529292,
+          "loss1": 0.8685587644577026,
+          "step": 120
+        }
+      ],
+      "q_only": {
+        "full_cot_nll": 0.8664391189813614
+      },
+      "runtime_sec": 13.791904926300049
+    }
+  }
+}

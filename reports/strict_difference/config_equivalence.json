@@ -1,0 +1,8 @@
+{
+  "checked_per_seed": [
+    42,
+    43,
+    44
+  ],
+  "joint_only_diff_is_detach_encoder_latent": true
+}

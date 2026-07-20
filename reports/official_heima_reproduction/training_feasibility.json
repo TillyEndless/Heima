@@ -1,0 +1,16 @@
+{
+  "blocking_items": [
+    "Download/obtain Xkev/Llama-3.2V-11B-cot files.",
+    "Obtain Meta Llama-3.1-8B-Instruct access and files.",
+    "Download Xkev/LLaVA-CoT-100k JSON and image files.",
+    "Download shawnricecake/Heima encoder, summary decoder, caption decoder, reasoning decoder checkpoints.",
+    "Map paths in heima/configs to local storage with sufficient disk.",
+    "Run official data scripts before official decode/eval."
+  ],
+  "can_run_official_steps_1_to_5_now": false,
+  "can_run_resource_adapted_now": false,
+  "can_use_official_checkpoints_now": false,
+  "classification": "B_only_official_checkpoint_evaluation_possible_after_downloading_resources",
+  "disk_note": "Only about 388GB free on /data during audit; full official model+dataset+checkpoint set may require additional space.",
+  "gpu_note": "8x RTX 4090-class GPUs were detected; memory may be enough for sharded/FSDP inference/training, but official full training feasibility still depends on complete resources and exact torchtune environment."
+}

@@ -1,0 +1,71 @@
+{
+  "42": {
+    "context_signature_overlaps": {
+      "ood_vs_train": 0,
+      "ood_vs_validation": 0,
+      "train_vs_validation": 0
+    },
+    "ood": {
+      "bad_groups": [],
+      "num_groups": 16,
+      "num_samples": 64
+    },
+    "passed": true,
+    "train": {
+      "bad_groups": [],
+      "num_groups": 64,
+      "num_samples": 256
+    },
+    "validation": {
+      "bad_groups": [],
+      "num_groups": 16,
+      "num_samples": 64
+    }
+  },
+  "43": {
+    "context_signature_overlaps": {
+      "ood_vs_train": 0,
+      "ood_vs_validation": 0,
+      "train_vs_validation": 0
+    },
+    "ood": {
+      "bad_groups": [],
+      "num_groups": 16,
+      "num_samples": 64
+    },
+    "passed": true,
+    "train": {
+      "bad_groups": [],
+      "num_groups": 64,
+      "num_samples": 256
+    },
+    "validation": {
+      "bad_groups": [],
+      "num_groups": 16,
+      "num_samples": 64
+    }
+  },
+  "44": {
+    "context_signature_overlaps": {
+      "ood_vs_train": 0,
+      "ood_vs_validation": 0,
+      "train_vs_validation": 0
+    },
+    "ood": {
+      "bad_groups": [],
+      "num_groups": 16,
+      "num_samples": 64
+    },
+    "passed": true,
+    "train": {
+      "bad_groups": [],
+      "num_groups": 64,
+      "num_samples": 256
+    },
+    "validation": {
+      "bad_groups": [],
+      "num_groups": 16,
+      "num_samples": 64
+    }
+  }
+}

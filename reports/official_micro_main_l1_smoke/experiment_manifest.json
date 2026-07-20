@@ -1,0 +1,25 @@
+{
+  "batch_size": 2,
+  "experiment_type": "official_data_micro_main_plus_loss1",
+  "important_caveat": "This run uses official LLaVA-CoT micro data and strict-core GPT2 adapters. It is not the official 11B MLLM Heima baseline because official 11B/8B weights are not present.",
+  "lambda1": 0.1,
+  "loss": "L = Lmain + lambda1 * (L1_summary + L1_caption + L1_reasoning), detach_encoder_latent=False",
+  "model_path": "/data/zxl/models/openai-community-gpt2",
+  "official_core_alignment": {
+    "embedding_replacement": "official_embedding_replacement",
+    "loss": "CEWithChunkedOutputLoss via heima_ce_loss where available",
+    "projector": "HeimaOfficialAbstractProjection",
+    "thinking_state_mode": "predictor",
+    "typed_tokens": {
+      "caption": "<THINKING_OF_CAPTION>",
+      "reasoning": "<THINKING_OF_REASONING>",
+      "summary": "<THINKING_OF_SUMMARY>"
+    }
+  },
+  "seeds": [
+    42
+  ],
+  "status": "complete",
+  "steps": 2,
+  "subset": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_available_images_v1"
+}

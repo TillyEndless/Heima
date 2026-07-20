@@ -1,0 +1,40 @@
+{
+  "active_log": {
+    "returncode": 0,
+    "stderr": "",
+    "stdout": "/data/zxl/official_heima/logs/download_20260718_150031.log"
+  },
+  "assembly_state": {
+    "done": [],
+    "pending": null,
+    "revision": "2b1db57dccb04ba8c33fc9b418a0f1d6cd328de3",
+    "zip_size": 0
+  },
+  "disk": {
+    "returncode": 0,
+    "stderr": "",
+    "stdout": "Filesystem      Size  Used Avail Use% Mounted on\n/dev/nvme1n1    3.5T  3.2T  388G  90% /data\n350M\t/data/zxl/official_heima\n2.5M\t/data/zxl/hf"
+  },
+  "download_processes": {
+    "returncode": 0,
+    "stderr": "",
+    "stdout": "1641995 bash -c mkdir -p /data/zxl/test/models/logs/demo_fast && cd /data/zxl/test/BoxDreamer && nohup env CUDA_VISIBLE_DEVICES=0 BOXDREAMER_ARTIFACT_ROOT=/data/zxl/test /root/miniconda3/envs/test/bin/python -m src.demo.gradio_demo --ckpt /data/zxl/test/models/checkpoints/dji_pose_refquery_scratch_baseline/Best-epoch=270-val_loss=5.33814.ckpt > /data/zxl/test/models/logs/demo_fast/baseline_best270_fast100.log 2>&1 < /dev/null & echo $!\n1641997 /root/miniconda3/envs/test/bin/python -m src.demo.gradio_demo --ckpt /data/zxl/test/models/checkpoints/dji_pose_refquery_scratch_baseline/Best-epoch=270-val_loss=5.33814.ckpt\n1969643 bash /data/zxl/download_official_heima.sh\n1969652 bash /data/zxl/download_official_heima.sh\n1969670 python -\n1969805 /bin/sh -c pgrep -af 'download_official_heima|python -' || true\n4049277 python -"
+  },
+  "hf_auth": {
+    "returncode": 0,
+    "stderr": "",
+    "stdout": "\u001b[32m\u2713 Logged in\u001b[0m\n  user: TillyEndless\n  orgs: zju"
+  },
+  "image_zip_size_bytes": 0,
+  "note": "image.zip remains 0 until the whole part is downloaded and appended. The active incomplete file is the expected hf_hub_download temporary file.",
+  "part_incomplete_files": [
+    {
+      "mtime": 1784387081.9005318,
+      "path": "/data/zxl/official_heima/datasets/LLaVA-CoT-100k/.download_parts/.cache/huggingface/download/VfeFlLP1awsqvy8MAtU2E7Longw=.9703d3e2ceeda03ccf5161ba096a126c4463dfcc1ecc1862d79c8c88312ed43b.16fe38c6.incomplete",
+      "size_bytes": 62914560
+    }
+  ],
+  "script_mode": "HF_HUB_DISABLE_XET=1; HF_XET_HIGH_PERFORMANCE absent",
+  "status": "running_part_aa_non_xet_download",
+  "timestamp": "2026-07-18T15:05:18Z"
+}

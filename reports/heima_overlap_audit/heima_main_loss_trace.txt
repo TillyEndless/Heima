@@ -1,0 +1,26 @@
+
+HEIMA main loss trace (static source audit)
+Commit: cebd6ef3ef862f62c601ced191b64b45d2bf3de2
+Audited source: heima/main_python/2-training-pipeline-main_lora-pure_llm_decoder_lora-split_3_stages-fix_num-progressive.py
+
+1. Batch construction
+   - Main dataloader is configured in setup at lines 419-425.
+   - Dataset construction creates multimodal user prompts with <image> and assistant answers where SUMMARY, CAPTION, and REASONING spans can be replaced by typed tokens. See 1_1 organizer lines 223-299.
+
+2. Main forward
+   - Batch moves to device at line 1494.
+   - Token count for unmasked labels is computed at lines 1496-1501.
+   - The main model forward is self._model(**batch) at lines 1537-1539.
+
+3. Latent extraction
+   - Masks for shifted <THINKING_OF_SUMMARY>, <THINKING_OF_CAPTION>, and <THINKING_OF_REASONING> token positions are built at lines 1503-1532.
+   - Last hidden state is read from self._model.decoder.last_hidden_state at lines 1540-1542.
+   - Hidden states at those typed thinking-token positions are reshaped per batch at lines 1543-1558.
+
+4. Main CE
+   - Labels are shifted at lines 1580-1585.
+   - current_loss = self._loss_fn(logits, labels) * current_num_tokens at lines 1590-1594.
+   - Because torchtune multimodal user messages are masked in torchtune_pkg/torchtune/torchtune/data/_messages.py:486-488, the effective supervised region is assistant-side output tokens, including compressed thinking-token targets when present.
+
+5. Backward role
+   - Decoder losses are later added into current_loss, and current_loss.backward() is called at line 1668.

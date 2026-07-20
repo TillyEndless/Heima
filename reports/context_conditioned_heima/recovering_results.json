@@ -1,0 +1,251 @@
+{
+  "42": {
+    "logs": [
+      {
+        "grad_A": 0.9999999192972137,
+        "loss": 0.6015148162841797,
+        "step": 1
+      },
+      {
+        "grad_A": 0.9999999932177275,
+        "loss": 0.7777910232543945,
+        "step": 30
+      },
+      {
+        "grad_A": 0.9999999530024428,
+        "loss": 0.6812728047370911,
+        "step": 60
+      },
+      {
+        "grad_A": 0.9999998768282619,
+        "loss": 0.5998299717903137,
+        "step": 90
+      },
+      {
+        "grad_A": 0.9999998597529228,
+        "loss": 0.4458184540271759,
+        "step": 120
+      }
+    ],
+    "ood": {
+      "answer_em": 0.03125,
+      "geometry": {
+        "stage_1": {
+          "effective_rank": 4.354382038116455,
+          "pairwise_cosine_mean": 0.9997648000717163,
+          "pairwise_cosine_std": 0.00015701638767495751,
+          "within_dataset_variance_mean": 0.04986967518925667,
+          "within_dataset_variance_sum": 38.29991149902344
+        },
+        "stage_2": {
+          "effective_rank": 3.552835702896118,
+          "pairwise_cosine_mean": 0.9998319745063782,
+          "pairwise_cosine_std": 0.00010970161383738741,
+          "within_dataset_variance_mean": 0.03531159460544586,
+          "within_dataset_variance_sum": 27.119304656982422
+        },
+        "stage_3": {
+          "effective_rank": 2.5509960651397705,
+          "pairwise_cosine_mean": 0.9980899691581726,
+          "pairwise_cosine_std": 0.0013763288734480739,
+          "within_dataset_variance_mean": 0.10472604632377625,
+          "within_dataset_variance_sum": 80.42960357666016
+        }
+      },
+      "nll": 1.3294098004698753
+    },
+    "validation": {
+      "answer_em": 0.03125,
+      "geometry": {
+        "stage_1": {
+          "effective_rank": 4.33493185043335,
+          "pairwise_cosine_mean": 0.9997546076774597,
+          "pairwise_cosine_std": 0.0001690638455329463,
+          "within_dataset_variance_mean": 0.05069249868392944,
+          "within_dataset_variance_sum": 38.93183898925781
+        },
+        "stage_2": {
+          "effective_rank": 3.5962464809417725,
+          "pairwise_cosine_mean": 0.9998326897621155,
+          "pairwise_cosine_std": 0.00011028983863070607,
+          "within_dataset_variance_mean": 0.033454779535532,
+          "within_dataset_variance_sum": 25.69327163696289
+        },
+        "stage_3": {
+          "effective_rank": 2.717052698135376,
+          "pairwise_cosine_mean": 0.9980672001838684,
+          "pairwise_cosine_std": 0.0012468158965930343,
+          "within_dataset_variance_mean": 0.10190945863723755,
+          "within_dataset_variance_sum": 78.26646423339844
+        }
+      },
+      "nll": 1.3676108419895172
+    }
+  },
+  "43": {
+    "logs": [
+      {
+        "grad_A": 0.9999999994938662,
+        "loss": 1.1089870929718018,
+        "step": 1
+      },
+      {
+        "grad_A": 0.99999996033577,
+        "loss": 0.7424628138542175,
+        "step": 30
+      },
+      {
+        "grad_A": 0.9999999014139669,
+        "loss": 0.7035384178161621,
+        "step": 60
+      },
+      {
+        "grad_A": 0.9999997853042029,
+        "loss": 0.6504310369491577,
+        "step": 90
+      },
+      {
+        "grad_A": 0.9999998776232456,
+        "loss": 0.5045005083084106,
+        "step": 120
+      }
+    ],
+    "ood": {
+      "answer_em": 0.0,
+      "geometry": {
+        "stage_1": {
+          "effective_rank": 2.7945127487182617,
+          "pairwise_cosine_mean": 0.9999197125434875,
+          "pairwise_cosine_std": 5.721339039155282e-05,
+          "within_dataset_variance_mean": 0.015789316967129707,
+          "within_dataset_variance_sum": 12.126194953918457
+        },
+        "stage_2": {
+          "effective_rank": 3.9031729698181152,
+          "pairwise_cosine_mean": 0.9999223947525024,
+          "pairwise_cosine_std": 5.0406120863044634e-05,
+          "within_dataset_variance_mean": 0.01759558543562889,
+          "within_dataset_variance_sum": 13.513409614562988
+        },
+        "stage_3": {
+          "effective_rank": 1.6218777894973755,
+          "pairwise_cosine_mean": 0.9980979561805725,
+          "pairwise_cosine_std": 0.0017268392257392406,
+          "within_dataset_variance_mean": 0.14534124732017517,
+          "within_dataset_variance_sum": 111.62207794189453
+        }
+      },
+      "nll": 1.3041353821754456
+    },
+    "validation": {
+      "answer_em": 0.015625,
+      "geometry": {
+        "stage_1": {
+          "effective_rank": 2.8485820293426514,
+          "pairwise_cosine_mean": 0.9999268651008606,
+          "pairwise_cosine_std": 4.945082400809042e-05,
+          "within_dataset_variance_mean": 0.014616006053984165,
+          "within_dataset_variance_sum": 11.225092887878418
+        },
+        "stage_2": {
+          "effective_rank": 3.797288179397583,
+          "pairwise_cosine_mean": 0.999921977519989,
+          "pairwise_cosine_std": 5.2228784625185654e-05,
+          "within_dataset_variance_mean": 0.017186041921377182,
+          "within_dataset_variance_sum": 13.198880195617676
+        },
+        "stage_3": {
+          "effective_rank": 1.615515112876892,
+          "pairwise_cosine_mean": 0.9981231689453125,
+          "pairwise_cosine_std": 0.0017046337015926838,
+          "within_dataset_variance_mean": 0.1414118856191635,
+          "within_dataset_variance_sum": 108.60432434082031
+        }
+      },
+      "nll": 1.281198225915432
+    }
+  },
+  "44": {
+    "logs": [
+      {
+        "grad_A": 0.9999998619823967,
+        "loss": 0.618100106716156,
+        "step": 1
+      },
+      {
+        "grad_A": 0.9999999793487004,
+        "loss": 0.6582253575325012,
+        "step": 30
+      },
+      {
+        "grad_A": 0.9999998604599982,
+        "loss": 0.6654175519943237,
+        "step": 60
+      },
+      {
+        "grad_A": 0.9999999271421105,
+        "loss": 0.7921298146247864,
+        "step": 90
+      },
+      {
+        "grad_A": 0.9999998409642517,
+        "loss": 0.42815473675727844,
+        "step": 120
+      }
+    ],
+    "ood": {
+      "answer_em": 0.0,
+      "geometry": {
+        "stage_1": {
+          "effective_rank": 1.9373502731323242,
+          "pairwise_cosine_mean": 0.9999310374259949,
+          "pairwise_cosine_std": 5.279485048959032e-05,
+          "within_dataset_variance_mean": 0.023544982075691223,
+          "within_dataset_variance_sum": 18.08254623413086
+        },
+        "stage_2": {
+          "effective_rank": 1.581505537033081,
+          "pairwise_cosine_mean": 0.9996724128723145,
+          "pairwise_cosine_std": 0.00035722923348657787,
+          "within_dataset_variance_mean": 0.05721297860145569,
+          "within_dataset_variance_sum": 43.93956756591797
+        },
+        "stage_3": {
+          "effective_rank": 1.69778573513031,
+          "pairwise_cosine_mean": 0.9980168342590332,
+          "pairwise_cosine_std": 0.0019541592337191105,
+          "within_dataset_variance_mean": 0.15222929418087006,
+          "within_dataset_variance_sum": 116.91210174560547
+        }
+      },
+      "nll": 1.3818902671337128
+    },
+    "validation": {
+      "answer_em": 0.0,
+      "geometry": {
+        "stage_1": {
+          "effective_rank": 1.8925249576568604,
+          "pairwise_cosine_mean": 0.9999285340309143,
+          "pairwise_cosine_std": 5.619864896289073e-05,
+          "within_dataset_variance_mean": 0.024563929066061974,
+          "within_dataset_variance_sum": 18.865097045898438
+        },
+        "stage_2": {
+          "effective_rank": 1.619718313217163,
+          "pairwise_cosine_mean": 0.9996833801269531,
+          "pairwise_cosine_std": 0.0003456008271314204,
+          "within_dataset_variance_mean": 0.05575944855809212,
+          "within_dataset_variance_sum": 42.82325744628906
+        },
+        "stage_3": {
+          "effective_rank": 1.683403730392456,
+          "pairwise_cosine_mean": 0.9979668855667114,
+          "pairwise_cosine_std": 0.0020155792590230703,
+          "within_dataset_variance_mean": 0.15658895671367645,
+          "within_dataset_variance_sum": 120.26032257080078
+        }
+      },
+      "nll": 1.3405998051166534
+    }
+  }
+}

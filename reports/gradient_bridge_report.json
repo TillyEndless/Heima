@@ -1,0 +1,52 @@
+{
+  "causal_mask": {
+    "future_latent_grad_norm": 0.0,
+    "latent_after_target_changes_previous_logits": 0.0,
+    "latent_before_target_changes_logits": true,
+    "latent_before_target_delta": 0.5630890254615466
+  },
+  "directional_derivative": {
+    "analytic": 0.005857713138997455,
+    "epsilon": 0.0001,
+    "numeric": 0.00585771313676986,
+    "relative_error": 3.802840446154155e-10
+  },
+  "dtype": "float64",
+  "label_mask": {
+    "first_target_prediction_index_correct": true,
+    "label_mask_correct": true,
+    "manual_loss": 4.799171327489157,
+    "manual_loss_matches_model_loss": true,
+    "model_loss": 4.799171327489157,
+    "padding_ignored": true,
+    "placeholder_ignored": true,
+    "prompt_ignored": true
+  },
+  "label_mask_correct": true,
+  "model_a_trainable": true,
+  "model_b_frozen_case": {
+    "all_finite": true,
+    "inputs_embeds_grad_fn": "CatBackward0",
+    "inputs_embeds_requires_grad": true,
+    "latent_grad_fn": "SelectBackward0",
+    "latent_grad_norm": 0.08872547839686526,
+    "latent_requires_grad": true,
+    "loss": 4.8947581631331065,
+    "model_a_grad_norm": 10.449786877225662,
+    "model_b_non_none_grad_count": 0
+  },
+  "model_b_trainable_case": {
+    "all_finite": true,
+    "inputs_embeds_grad_fn": "CatBackward0",
+    "inputs_embeds_requires_grad": true,
+    "latent_grad_fn": "SelectBackward0",
+    "latent_grad_norm": 0.08942130750812921,
+    "latent_requires_grad": true,
+    "loss": 4.8225379978637175,
+    "model_a_grad_norm": 10.758291888393588,
+    "model_b_grad_norm": 10.27183695610031
+  },
+  "replacement_operator": "torch.cat",
+  "status": "pass",
+  "stop_gates_triggered": []
+}

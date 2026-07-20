@@ -1,0 +1,29 @@
+{
+  "42": {
+    "allow_joint": true,
+    "margins": [
+      -0.00011199712753295898,
+      6.0677528381347656e-05,
+      -0.0008535385131835938
+    ],
+    "reason": "stop only if all stages completely ignore latent"
+  },
+  "43": {
+    "allow_joint": true,
+    "margins": [
+      -5.632638931274414e-05,
+      2.5033950805664062e-05,
+      -0.0006717443466186523
+    ],
+    "reason": "stop only if all stages completely ignore latent"
+  },
+  "44": {
+    "allow_joint": true,
+    "margins": [
+      -3.409385681152344e-05,
+      -5.5670738220214844e-05,
+      0.0012028217315673828
+    ],
+    "reason": "stop only if all stages completely ignore latent"
+  }
+}

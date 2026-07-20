@@ -1,0 +1,426 @@
+{
+  "finding": "Answer EM=0 is generation/model failure if parsed answers do not match gold; parser extracts last integer from raw generated text.",
+  "match_rate": 0.0,
+  "rows": [
+    {
+      "gold_answer": "2992",
+      "id": "htext_validation_0000",
+      "match": false,
+      "parsed_answer": "1260",
+      "question": "Find the value of (75 times 40) minus 8.",
+      "raw_generated_text": "1260",
+      "stop_reason": "eos",
+      "token_ids": [
+        1065,
+        1899,
+        50256
+      ]
+    },
+    {
+      "gold_answer": "657",
+      "id": "htext_validation_0001",
+      "match": false,
+      "parsed_answer": "1234",
+      "question": "Take the sum of 24 and 49, then multiply it by 9. What is the result?",
+      "raw_generated_text": "1234",
+      "stop_reason": "eos",
+      "token_ids": [
+        1065,
+        2682,
+        50256
+      ]
+    },
+    {
+      "gold_answer": "1022",
+      "id": "htext_validation_0002",
+      "match": false,
+      "parsed_answer": "1440",
+      "question": "Compute (9 + 64) * 14.",
+      "raw_generated_text": "1440",
+      "stop_reason": "eos",
+      "token_ids": [
+        1415,
+        1821,
+        50256
+      ]
+    },
+    {
+      "gold_answer": "672",
+      "id": "htext_validation_0003",
+      "match": false,
+      "parsed_answer": "1290",
+      "question": "Compute (18 + 66) * 8.",
+      "raw_generated_text": "1290",
+      "stop_reason": "eos",
+      "token_ids": [
+        1065,
+        3829,
+        50256
+      ]
+    },
+    {
+      "gold_answer": "648",
+      "id": "htext_validation_0004",
+      "match": false,
+      "parsed_answer": "1260",
+      "question": "What do you get if 9 times the quantity 59 plus 13 is evaluated?",
+      "raw_generated_text": "1260",
+      "stop_reason": "eos",
+      "token_ids": [
+        1065,
+        1899,
+        50256
+      ]
+    },
+    {
+      "gold_answer": "232",
+      "id": "htext_validation_0005",
+      "match": false,
+      "parsed_answer": "1290",
+      "question": "Compute (79 + 37) * 2.",
+      "raw_generated_text": "1290",
+      "stop_reason": "eos",
+      "token_ids": [
+        1065,
+        3829,
+        50256
+      ]
+    },
+    {
+      "gold_answer": "413",
+      "id": "htext_validation_0006",
+      "match": false,
+      "parsed_answer": "1290",
+      "question": "Compute 35 * 12 - 7.",
+      "raw_generated_text": "1290",
+      "stop_reason": "eos",
+      "token_ids": [
+        1065,
+        3829,
+        50256
+      ]
+    },
+    {
+      "gold_answer": "217",
+      "id": "htext_validation_0007",
+      "match": false,
+      "parsed_answer": "1492",
+      "question": "Compute (28 + 3) * 7.",
+      "raw_generated_text": "1492",
+      "stop_reason": "eos",
+      "token_ids": [
+        1415,
+        5892,
+        50256
+      ]
+    },
+    {
+      "gold_answer": "732",
+      "id": "htext_validation_0008",
+      "match": false,
+      "parsed_answer": "1234",
+      "question": "Take the sum of 22 and 39, then multiply it by 12. What is the result?",
+      "raw_generated_text": "1234",
+      "stop_reason": "eos",
+      "token_ids": [
+        1065,
+        2682,
+        50256
+      ]
+    },
+    {
+      "gold_answer": "260",
+      "id": "htext_validation_0009",
+      "match": false,
+      "parsed_answer": "1290",
+      "question": "Compute 78 + 26 * 12 - 130.",
+      "raw_generated_text": "1290",
+      "stop_reason": "eos",
+      "token_ids": [
+        1065,
+        3829,
+        50256
+      ]
+    },
+    {
+      "gold_answer": "1525",
+      "id": "htext_validation_0010",
+      "match": false,
+      "parsed_answer": "1290",
+      "question": "Compute 48 * 32 - 11.",
+      "raw_generated_text": "1290",
+      "stop_reason": "eos",
+      "token_ids": [
+        1065,
+        3829,
+        50256
+      ]
+    },
+    {
+      "gold_answer": "1300",
+      "id": "htext_validation_0011",
+      "match": false,
+      "parsed_answer": "1260",
+      "question": "What do you get if 13 times the quantity 70 plus 30 is evaluated?",
+      "raw_generated_text": "1260",
+      "stop_reason": "eos",
+      "token_ids": [
+        1065,
+        1899,
+        50256
+      ]
+    },
+    {
+      "gold_answer": "1045",
+      "id": "htext_validation_0012",
+      "match": false,
+      "parsed_answer": "1260",
+      "question": "Take the sum of 4 and 51, then multiply it by 19. What is the result?",
+      "raw_generated_text": "1260",
+      "stop_reason": "eos",
+      "token_ids": [
+        1065,
+        1899,
+        50256
+      ]
+    },
+    {
+      "gold_answer": "2762",
+      "id": "htext_validation_0013",
+      "match": false,
+      "parsed_answer": "1260",
+      "question": "What remains after subtracting 13 from the product of 75 and 37?",
+      "raw_generated_text": "1260",
+      "stop_reason": "eos",
+      "token_ids": [
+        1065,
+        1899,
+        50256
+      ]
+    },
+    {
+      "gold_answer": "676",
+      "id": "htext_validation_0014",
+      "match": false,
+      "parsed_answer": "1260",
+      "question": "Start with 51, add the product of 74 and 13, then subtract 337. What is left?",
+      "raw_generated_text": "1260",
+      "stop_reason": "eos",
+      "token_ids": [
+        1065,
+        1899,
+        50256
+      ]
+    },
+    {
+      "gold_answer": "244",
+      "id": "htext_validation_0015",
+      "match": false,
+      "parsed_answer": "1290",
+      "question": "Evaluate 71 plus 49 times 6, reduced by 121.",
+      "raw_generated_text": "1290",
+      "stop_reason": "eos",
+      "token_ids": [
+        1065,
+        3829,
+        50256
+      ]
+    },
+    {
+      "gold_answer": "720",
+      "id": "htext_validation_0016",
+      "match": false,
+      "parsed_answer": "1234",
+      "question": "Take the sum of 21 and 19, then multiply it by 18. What is the result?",
+      "raw_generated_text": "1234",
+      "stop_reason": "eos",
+      "token_ids": [
+        1065,
+        2682,
+        50256
+      ]
+    },
+    {
+      "gold_answer": "5829",
+      "id": "htext_validation_0017",
+      "match": false,
+      "parsed_answer": "1490",
+      "question": "Compute 79 * 74 - 17.",
+      "raw_generated_text": "1490",
+      "stop_reason": "eos",
+      "token_ids": [
+        1415,
+        3829,
+        50256
+      ]
+    },
+    {
+      "gold_answer": "127",
+      "id": "htext_validation_0018",
+      "match": false,
+      "parsed_answer": "1260",
+      "question": "Find the value of (2 times 71) minus 15.",
+      "raw_generated_text": "1260",
+      "stop_reason": "eos",
+      "token_ids": [
+        1065,
+        1899,
+        50256
+      ]
+    },
+    {
+      "gold_answer": "1230",
+      "id": "htext_validation_0019",
+      "match": false,
+      "parsed_answer": "1234",
+      "question": "Take the sum of 72 and 51, then multiply it by 10. What is the result?",
+      "raw_generated_text": "1234",
+      "stop_reason": "eos",
+      "token_ids": [
+        1065,
+        2682,
+        50256
+      ]
+    },
+    {
+      "gold_answer": "393",
+      "id": "htext_validation_0020",
+      "match": false,
+      "parsed_answer": "1290",
+      "question": "Compute 29 + 40 * 14 - 196.",
+      "raw_generated_text": "1290",
+      "stop_reason": "eos",
+      "token_ids": [
+        1065,
+        3829,
+        50256
+      ]
+    },
+    {
+      "gold_answer": "3602",
+      "id": "htext_validation_0021",
+      "match": false,
+      "parsed_answer": "1290",
+      "question": "Compute 47 * 77 - 17.",
+      "raw_generated_text": "1290",
+      "stop_reason": "eos",
+      "token_ids": [
+        1065,
+        3829,
+        50256
+      ]
+    },
+    {
+      "gold_answer": "26",
+      "id": "htext_validation_0022",
+      "match": false,
+      "parsed_answer": "1290",
+      "question": "Compute 24 + 2 * 7 - 12.",
+      "raw_generated_text": "1290",
+      "stop_reason": "eos",
+      "token_ids": [
+        1065,
+        3829,
+        50256
+      ]
+    },
+    {
+      "gold_answer": "4320",
+      "id": "htext_validation_0023",
+      "match": false,
+      "parsed_answer": "1290",
+      "question": "Compute 71 * 61 - 11.",
+      "raw_generated_text": "1290",
+      "stop_reason": "eos",
+      "token_ids": [
+        1065,
+        3829,
+        50256
+      ]
+    },
+    {
+      "gold_answer": "144",
+      "id": "htext_validation_0024",
+      "match": false,
+      "parsed_answer": "1290",
+      "question": "Evaluate 48 plus 12 times 14, reduced by 72.",
+      "raw_generated_text": "1290",
+      "stop_reason": "eos",
+      "token_ids": [
+        1065,
+        3829,
+        50256
+      ]
+    },
+    {
+      "gold_answer": "1356",
+      "id": "htext_validation_0025",
+      "match": false,
+      "parsed_answer": "1260",
+      "question": "What remains after subtracting 9 from the product of 39 and 35?",
+      "raw_generated_text": "1260",
+      "stop_reason": "eos",
+      "token_ids": [
+        1065,
+        1899,
+        50256
+      ]
+    },
+    {
+      "gold_answer": "5",
+      "id": "htext_validation_0026",
+      "match": false,
+      "parsed_answer": "1260",
+      "question": "After taking 54 away from 69, divide the result by 3. What is the answer?",
+      "raw_generated_text": "1260",
+      "stop_reason": "eos",
+      "token_ids": [
+        1065,
+        1899,
+        50256
+      ]
+    },
+    {
+      "gold_answer": "990",
+      "id": "htext_validation_0027",
+      "match": false,
+      "parsed_answer": "1260",
+      "question": "Find the value of (27 times 37) minus 9.",
+      "raw_generated_text": "1260",
+      "stop_reason": "eos",
+      "token_ids": [
+        1065,
+        1899,
+        50256
+      ]
+    },
+    {
+      "gold_answer": "930",
+      "id": "htext_validation_0028",
+      "match": false,
+      "parsed_answer": "1260",
+      "question": "What do you get if 6 times the quantity 76 plus 79 is evaluated?",
+      "raw_generated_text": "1260",
+      "stop_reason": "eos",
+      "token_ids": [
+        1065,
+        1899,
+        50256
+      ]
+    },
+    {
+      "gold_answer": "1200",
+      "id": "htext_validation_0029",
+      "match": false,
+      "parsed_answer": "1234",
+      "question": "What do you get if 16 times the quantity 27 plus 48 is evaluated?",
+      "raw_generated_text": "1234",
+      "stop_reason": "eos",
+      "token_ids": [
+        1065,
+        2682,
+        50256
+      ]
+    }
+  ]
+}

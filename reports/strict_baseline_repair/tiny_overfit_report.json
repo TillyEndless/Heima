@@ -1,0 +1,539 @@
+{
+  "checkpoint": "checkpoints/strict_baseline_repair/tiny_overfit_s0.pt",
+  "failure_hypothesis": null,
+  "final_train_eval": {
+    "answer_em": 1.0,
+    "answer_nll": 3.6808655750064645e-05,
+    "latent_geometry": {
+      "effective_rank": 3.536679267883301,
+      "pairwise_cosine_mean": 0.9638515710830688,
+      "pairwise_cosine_std": 0.0373125784099102,
+      "within_dataset_variance_mean": 7.449682712554932,
+      "within_dataset_variance_sum": 5721.3564453125
+    },
+    "retrieval": {
+      "R@1": 1.0,
+      "R@5": 1.0,
+      "random_R@1": 0.03125,
+      "random_R@5": 0.15625
+    },
+    "thinking_token_accuracy": 1.0
+  },
+  "generation_em": 1.0,
+  "generations": [
+    {
+      "gold_answer": "1185",
+      "id": "htext_train_0000",
+      "match": true,
+      "parsed_answer": "1185",
+      "question": "Find the value of (57 times 21) minus 12.",
+      "raw_generated_text": "1185",
+      "stop_reason": "eos",
+      "token_ids": [
+        1157,
+        5332,
+        50256
+      ]
+    },
+    {
+      "gold_answer": "420",
+      "id": "htext_train_0001",
+      "match": true,
+      "parsed_answer": "420",
+      "question": "Take the sum of 20 and 15, then multiply it by 12. What is the result?",
+      "raw_generated_text": "420",
+      "stop_reason": "eos",
+      "token_ids": [
+        27211,
+        50256
+      ]
+    },
+    {
+      "gold_answer": "1",
+      "id": "htext_train_0002",
+      "match": true,
+      "parsed_answer": "1",
+      "question": "After taking 39 away from 49, divide the result by 10. What is the answer?",
+      "raw_generated_text": "1",
+      "stop_reason": "eos",
+      "token_ids": [
+        16,
+        50256
+      ]
+    },
+    {
+      "gold_answer": "667",
+      "id": "htext_train_0003",
+      "match": true,
+      "parsed_answer": "667",
+      "question": "Compute 38 * 18 - 17.",
+      "raw_generated_text": "667",
+      "stop_reason": "eos",
+      "token_ids": [
+        28933,
+        50256
+      ]
+    },
+    {
+      "gold_answer": "299",
+      "id": "htext_train_0004",
+      "match": true,
+      "parsed_answer": "299",
+      "question": "Start with 74, add the product of 22 and 17, then subtract 149. What is left?",
+      "raw_generated_text": "299",
+      "stop_reason": "eos",
+      "token_ids": [
+        22579,
+        50256
+      ]
+    },
+    {
+      "gold_answer": "1594",
+      "id": "htext_train_0005",
+      "match": true,
+      "parsed_answer": "1594",
+      "question": "Compute 31 * 52 - 18.",
+      "raw_generated_text": "1594",
+      "stop_reason": "eos",
+      "token_ids": [
+        1314,
+        5824,
+        50256
+      ]
+    },
+    {
+      "gold_answer": "2391",
+      "id": "htext_train_0006",
+      "match": true,
+      "parsed_answer": "2391",
+      "question": "What remains after subtracting 17 from the product of 56 and 43?",
+      "raw_generated_text": "2391",
+      "stop_reason": "eos",
+      "token_ids": [
+        1954,
+        6420,
+        50256
+      ]
+    },
+    {
+      "gold_answer": "1785",
+      "id": "htext_train_0007",
+      "match": true,
+      "parsed_answer": "1785",
+      "question": "Take the sum of 68 and 51, then multiply it by 15. What is the result?",
+      "raw_generated_text": "1785",
+      "stop_reason": "eos",
+      "token_ids": [
+        1558,
+        5332,
+        50256
+      ]
+    },
+    {
+      "gold_answer": "728",
+      "id": "htext_train_0008",
+      "match": true,
+      "parsed_answer": "728",
+      "question": "Start with 11, add the product of 72 and 15, then subtract 363. What is left?",
+      "raw_generated_text": "728",
+      "stop_reason": "eos",
+      "token_ids": [
+        48524,
+        50256
+      ]
+    },
+    {
+      "gold_answer": "2356",
+      "id": "htext_train_0009",
+      "match": true,
+      "parsed_answer": "2356",
+      "question": "What remains after subtracting 14 from the product of 30 and 79?",
+      "raw_generated_text": "2356",
+      "stop_reason": "eos",
+      "token_ids": [
+        1954,
+        3980,
+        50256
+      ]
+    },
+    {
+      "gold_answer": "485",
+      "id": "htext_train_0010",
+      "match": true,
+      "parsed_answer": "485",
+      "question": "What remains after subtracting 15 from the product of 50 and 10?",
+      "raw_generated_text": "485",
+      "stop_reason": "eos",
+      "token_ids": [
+        32642,
+        50256
+      ]
+    },
+    {
+      "gold_answer": "1556",
+      "id": "htext_train_0011",
+      "match": true,
+      "parsed_answer": "1556",
+      "question": "What remains after subtracting 19 from the product of 21 and 75?",
+      "raw_generated_text": "1556",
+      "stop_reason": "eos",
+      "token_ids": [
+        1314,
+        3980,
+        50256
+      ]
+    },
+    {
+      "gold_answer": "59",
+      "id": "htext_train_0012",
+      "match": true,
+      "parsed_answer": "59",
+      "question": "Evaluate 78 plus 2 times 5, reduced by 29.",
+      "raw_generated_text": "59",
+      "stop_reason": "eos",
+      "token_ids": [
+        3270,
+        50256
+      ]
+    },
+    {
+      "gold_answer": "76",
+      "id": "htext_train_0013",
+      "match": true,
+      "parsed_answer": "76",
+      "question": "Compute 22 + 23 * 4 - 38.",
+      "raw_generated_text": "76",
+      "stop_reason": "eos",
+      "token_ids": [
+        4304,
+        50256
+      ]
+    },
+    {
+      "gold_answer": "1430",
+      "id": "htext_train_0014",
+      "match": true,
+      "parsed_answer": "1430",
+      "question": "Compute (63 + 67) * 11.",
+      "raw_generated_text": "1430",
+      "stop_reason": "eos",
+      "token_ids": [
+        1415,
+        1270,
+        50256
+      ]
+    },
+    {
+      "gold_answer": "124",
+      "id": "htext_train_0015",
+      "match": true,
+      "parsed_answer": "124",
+      "question": "Start with 46, add the product of 70 and 2, then subtract 62. What is left?",
+      "raw_generated_text": "124",
+      "stop_reason": "eos",
+      "token_ids": [
+        17464,
+        50256
+      ]
+    },
+    {
+      "gold_answer": "55",
+      "id": "htext_train_0016",
+      "match": true,
+      "parsed_answer": "55",
+      "question": "What do you get if 5 times the quantity 5 plus 6 is evaluated?",
+      "raw_generated_text": "55",
+      "stop_reason": "eos",
+      "token_ids": [
+        2816,
+        50256
+      ]
+    },
+    {
+      "gold_answer": "1095",
+      "id": "htext_train_0017",
+      "match": true,
+      "parsed_answer": "1095",
+      "question": "Compute (61 + 12) * 15.",
+      "raw_generated_text": "1095",
+      "stop_reason": "eos",
+      "token_ids": [
+        940,
+        3865,
+        50256
+      ]
+    },
+    {
+      "gold_answer": "534",
+      "id": "htext_train_0018",
+      "match": true,
+      "parsed_answer": "534",
+      "question": "Compute 44 + 54 * 14 - 266.",
+      "raw_generated_text": "534",
+      "stop_reason": "eos",
+      "token_ids": [
+        20,
+        2682,
+        50256
+      ]
+    },
+    {
+      "gold_answer": "535",
+      "id": "htext_train_0019",
+      "match": true,
+      "parsed_answer": "535",
+      "question": "Compute (72 + 35) * 5.",
+      "raw_generated_text": "535",
+      "stop_reason": "eos",
+      "token_ids": [
+        44465,
+        50256
+      ]
+    },
+    {
+      "gold_answer": "202",
+      "id": "htext_train_0020",
+      "match": true,
+      "parsed_answer": "202",
+      "question": "Start with 3, add the product of 75 and 4, then subtract 101. What is left?",
+      "raw_generated_text": "202",
+      "stop_reason": "eos",
+      "token_ids": [
+        19004,
+        50256
+      ]
+    },
+    {
+      "gold_answer": "1440",
+      "id": "htext_train_0021",
+      "match": true,
+      "parsed_answer": "1440",
+      "question": "Take the sum of 69 and 27, then multiply it by 15. What is the result?",
+      "raw_generated_text": "1440",
+      "stop_reason": "eos",
+      "token_ids": [
+        1415,
+        1821,
+        50256
+      ]
+    },
+    {
+      "gold_answer": "5680",
+      "id": "htext_train_0022",
+      "match": true,
+      "parsed_answer": "5680",
+      "question": "What remains after subtracting 8 from the product of 72 and 79?",
+      "raw_generated_text": "5680",
+      "stop_reason": "eos",
+      "token_ids": [
+        3980,
+        1795,
+        50256
+      ]
+    },
+    {
+      "gold_answer": "752",
+      "id": "htext_train_0023",
+      "match": true,
+      "parsed_answer": "752",
+      "question": "Compute (40 + 54) * 8.",
+      "raw_generated_text": "752",
+      "stop_reason": "eos",
+      "token_ids": [
+        43665,
+        50256
+      ]
+    },
+    {
+      "gold_answer": "178",
+      "id": "htext_train_0024",
+      "match": true,
+      "parsed_answer": "178",
+      "question": "Start with 69, add the product of 66 and 3, then subtract 89. What is left?",
+      "raw_generated_text": "178",
+      "stop_reason": "eos",
+      "token_ids": [
+        23188,
+        50256
+      ]
+    },
+    {
+      "gold_answer": "1387",
+      "id": "htext_train_0025",
+      "match": true,
+      "parsed_answer": "1387",
+      "question": "Compute (58 + 15) * 19.",
+      "raw_generated_text": "1387",
+      "stop_reason": "eos",
+      "token_ids": [
+        1485,
+        5774,
+        50256
+      ]
+    },
+    {
+      "gold_answer": "2956",
+      "id": "htext_train_0026",
+      "match": true,
+      "parsed_answer": "2956",
+      "question": "What remains after subtracting 12 from the product of 56 and 53?",
+      "raw_generated_text": "2956",
+      "stop_reason": "eos",
+      "token_ids": [
+        1959,
+        3980,
+        50256
+      ]
+    },
+    {
+      "gold_answer": "1392",
+      "id": "htext_train_0027",
+      "match": true,
+      "parsed_answer": "1392",
+      "question": "Take the sum of 58 and 58, then multiply it by 12. What is the result?",
+      "raw_generated_text": "1392",
+      "stop_reason": "eos",
+      "token_ids": [
+        1485,
+        5892,
+        50256
+      ]
+    },
+    {
+      "gold_answer": "434",
+      "id": "htext_train_0028",
+      "match": true,
+      "parsed_answer": "434",
+      "question": "Evaluate 40 plus 61 times 10, reduced by 216.",
+      "raw_generated_text": "434",
+      "stop_reason": "eos",
+      "token_ids": [
+        47101,
+        50256
+      ]
+    },
+    {
+      "gold_answer": "150",
+      "id": "htext_train_0029",
+      "match": true,
+      "parsed_answer": "150",
+      "question": "Find the value of (7 times 24) minus 18.",
+      "raw_generated_text": "150",
+      "stop_reason": "eos",
+      "token_ids": [
+        8628,
+        50256
+      ]
+    },
+    {
+      "gold_answer": "5094",
+      "id": "htext_train_0030",
+      "match": true,
+      "parsed_answer": "5094",
+      "question": "Find the value of (72 times 71) minus 18.",
+      "raw_generated_text": "5094",
+      "stop_reason": "eos",
+      "token_ids": [
+        1120,
+        5824,
+        50256
+      ]
+    },
+    {
+      "gold_answer": "116",
+      "id": "htext_train_0031",
+      "match": true,
+      "parsed_answer": "116",
+      "question": "Compute 67 + 53 * 2 - 57.",
+      "raw_generated_text": "116",
+      "stop_reason": "eos",
+      "token_ids": [
+        18298,
+        50256
+      ]
+    }
+  ],
+  "learning_rate": 5e-05,
+  "logs": [
+    {
+      "batch_loss": 10.867566108703613,
+      "grad_A_main": 1.0000000941955944,
+      "step": 1,
+      "train_answer_em": 0.0,
+      "train_answer_nll": 8.691393852233887
+    },
+    {
+      "batch_loss": 1.280977487564087,
+      "grad_A_main": 1.000000142332818,
+      "step": 80,
+      "train_answer_em": 0.71875,
+      "train_answer_nll": 1.3405143022537231
+    },
+    {
+      "batch_loss": 0.023329004645347595,
+      "grad_A_main": 0.9999996882884343,
+      "step": 160,
+      "train_answer_em": 0.90625,
+      "train_answer_nll": 0.05985837522894144
+    },
+    {
+      "batch_loss": 0.000590677373111248,
+      "grad_A_main": 0.1174338196465378,
+      "step": 240,
+      "train_answer_em": 0.96875,
+      "train_answer_nll": 0.04305902258056449
+    },
+    {
+      "batch_loss": 0.0001898915652418509,
+      "grad_A_main": 0.03427173645516513,
+      "step": 320,
+      "train_answer_em": 1.0,
+      "train_answer_nll": 0.00013084929923934396
+    },
+    {
+      "batch_loss": 8.139724377542734e-05,
+      "grad_A_main": 0.01958095670168113,
+      "step": 400,
+      "train_answer_em": 1.0,
+      "train_answer_nll": 0.00032140641087607946
+    },
+    {
+      "batch_loss": 0.0009926992934197187,
+      "grad_A_main": 0.24993550565604103,
+      "step": 480,
+      "train_answer_em": 1.0,
+      "train_answer_nll": 0.0001888267925096443
+    },
+    {
+      "batch_loss": 4.792727850144729e-05,
+      "grad_A_main": 0.008736721396871072,
+      "step": 560,
+      "train_answer_em": 1.0,
+      "train_answer_nll": 6.910293723194627e-05
+    },
+    {
+      "batch_loss": 2.2593694666284136e-05,
+      "grad_A_main": 0.00597076568442743,
+      "step": 640,
+      "train_answer_em": 1.0,
+      "train_answer_nll": 5.5962999340408714e-05
+    },
+    {
+      "batch_loss": 4.985091436537914e-05,
+      "grad_A_main": 0.008633351948681502,
+      "step": 720,
+      "train_answer_em": 1.0,
+      "train_answer_nll": 4.975591491529485e-05
+    },
+    {
+      "batch_loss": 1.3355301234696526e-05,
+      "grad_A_main": 0.004159335038086759,
+      "step": 800,
+      "train_answer_em": 1.0,
+      "train_answer_nll": 3.6784214671570226e-05
+    }
+  ],
+  "runtime_sec": 64.02117133140564,
+  "status": "pass",
+  "steps": 800
+}

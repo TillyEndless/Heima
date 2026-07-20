@@ -1,0 +1,31 @@
+{
+  "mean": {
+    "answer_em_diff": 0.0,
+    "answer_nll_diff": 0.0009705374638239542,
+    "grad_A_loss1_ours": 0.16411241392294565,
+    "grad_ratio": 0.09345193455616634
+  },
+  "per_seed": [
+    {
+      "answer_em_diff": 0.0,
+      "answer_nll_diff": 0.005759492516517639,
+      "grad_A_loss1_ours": 0.13559341430664062,
+      "grad_ratio": 0.17934970557689667,
+      "seed": "42"
+    },
+    {
+      "answer_em_diff": 0.0,
+      "answer_nll_diff": -0.0044241249561309814,
+      "grad_A_loss1_ours": 0.22782190144062042,
+      "grad_ratio": 0.06147296354174614,
+      "seed": "43"
+    },
+    {
+      "answer_em_diff": 0.0,
+      "answer_nll_diff": 0.001576244831085205,
+      "grad_A_loss1_ours": 0.12892192602157593,
+      "grad_ratio": 0.039533134549856186,
+      "seed": "44"
+    }
+  ]
+}

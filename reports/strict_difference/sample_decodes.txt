@@ -1,0 +1,143 @@
+id=htext_validation_0000 variant=normal
+Compute the multiplication: 75 * 40 = 856. Finish with the subtraction: 856 - 856 = 856 - 856 = 856.
+
+id=htext_validation_0000 variant=shuffled
+Compute the multiplication: 75 * 40 = 856. Finish with the subtraction: 856 - 856 = 856 - 856 = 856.
+
+id=htext_validation_0001 variant=normal
+The sum is 24 + 49 = 872. Multiplying by 9 gives 872 * 9 = 890.
+
+id=htext_validation_0001 variant=shuffled
+The sum is 24 + 49 = 872. Multiplying by 9 gives 872 * 9 = 890.
+
+id=htext_validation_0002 variant=normal
+First multiply 9 by 64: 9 * 64 = 856. Then subtract 14: 856 - 14 = 829.
+
+id=htext_validation_0002 variant=shuffled
+First multiply 9 by 64: 9 * 64 = 856. Then subtract 14: 856 - 14 = 829.
+
+id=htext_validation_0003 variant=normal
+First multiply 18 by 8: 18 * 8 = 828. Then subtract 66: 828 - 66 = 829.
+
+id=htext_validation_0003 variant=shuffled
+First multiply 18 by 8: 18 * 8 = 828. Then subtract 66: 828 - 66 = 829.
+
+id=htext_validation_0000 variant=normal
+Compute the multiplication: 75 * 40 = 856. Finish with the subtraction: 856 - 856 = 856 - 856 = 856.
+
+id=htext_validation_0000 variant=shuffled
+Compute the multiplication: 75 * 40 = 856. Finish with the subtraction: 856 - 856 = 856 - 856 = 856.
+
+id=htext_validation_0001 variant=normal
+The sum is 24 + 49 = 872. Multiplying by 9 gives 872 * 9 = 890.
+
+id=htext_validation_0001 variant=shuffled
+The sum is 24 + 49 = 872. Multiplying by 9 gives 872 * 9 = 890.
+
+id=htext_validation_0002 variant=normal
+First multiply 9 by 64: 9 * 64 = 856. Then subtract 14: 856 - 14 = 829.
+
+id=htext_validation_0002 variant=shuffled
+First multiply 9 by 64: 9 * 64 = 856. Then subtract 14: 856 - 14 = 829.
+
+id=htext_validation_0003 variant=normal
+First multiply 18 by 8: 18 * 8 = 828. Then subtract 66: 828 - 66 = 829.
+
+id=htext_validation_0003 variant=shuffled
+First multiply 18 by 8: 18 * 8 = 828. Then subtract 66: 828 - 66 = 829.
+
+id=htext_validation_0000 variant=normal
+First multiply 6 by 15: 6 * 15 = 636. Then subtract 50: 636 - 50 = 636.
+
+id=htext_validation_0000 variant=shuffled
+First multiply 6 by 15: 6 * 15 = 636. Then subtract 50: 636 - 50 = 636.
+
+id=htext_validation_0001 variant=normal
+Evaluate the parentheses first: 42 + 59 = 684. Now compute 14 times that value: 14 * 684 = 684.
+
+id=htext_validation_0001 variant=shuffled
+Evaluate the parentheses first: 42 + 59 = 684. Now compute 14 times that value: 14 * 684 = 684.
+
+id=htext_validation_0002 variant=normal
+Evaluate the parentheses first: 10 + 43 = 684. Now compute 12 times that value: 12 * 684 = 675.
+
+id=htext_validation_0002 variant=shuffled
+Evaluate the parentheses first: 10 + 43 = 684. Now compute 12 times that value: 12 * 684 = 675.
+
+id=htext_validation_0003 variant=normal
+First multiply 30 by 30: 30 * 30 = 684. Then subtract 11: 684 - 11 = 675.
+
+id=htext_validation_0003 variant=shuffled
+First multiply 30 by 30: 30 * 30 = 684. Then subtract 11: 684 - 11 = 675.
+
+id=htext_validation_0000 variant=normal
+First multiply 6 by 15: 6 * 15 = 636. Then subtract 50: 636 - 50 = 636.
+
+id=htext_validation_0000 variant=shuffled
+First multiply 6 by 15: 6 * 15 = 636. Then subtract 50: 636 - 50 = 636.
+
+id=htext_validation_0001 variant=normal
+Evaluate the parentheses first: 42 + 59 = 684. Now compute 14 times that value: 14 * 684 = 684.
+
+id=htext_validation_0001 variant=shuffled
+Evaluate the parentheses first: 42 + 59 = 684. Now compute 14 times that value: 14 * 684 = 684.
+
+id=htext_validation_0002 variant=normal
+Evaluate the parentheses first: 10 + 43 = 684. Now compute 12 times that value: 12 * 684 = 675.
+
+id=htext_validation_0002 variant=shuffled
+Evaluate the parentheses first: 10 + 43 = 684. Now compute 12 times that value: 12 * 684 = 675.
+
+id=htext_validation_0003 variant=normal
+First multiply 30 by 30: 30 * 30 = 684. Then subtract 11: 684 - 11 = 675.
+
+id=htext_validation_0003 variant=shuffled
+First multiply 30 by 30: 30 * 30 = 684. Then subtract 11: 684 - 11 = 675.
+
+id=htext_validation_0000 variant=normal
+First multiply 65 by 19: 65 * 19 = 685. Then subtract 437: 685 - 437 = 685. Finally subtract 437: 685 - 437 = 685.
+
+id=htext_validation_0000 variant=shuffled
+First multiply 65 by 19: 65 * 19 = 685. Then subtract 437: 685 - 437 = 685. Finally subtract 437: 685 - 437 = 685.
+
+id=htext_validation_0001 variant=normal
+The sum is 6 + 67 = 8. Multiplying by 11 gives 8 * 11 = 8.
+
+id=htext_validation_0001 variant=shuffled
+The sum is 6 + 67 = 8. Multiplying by 11 gives 8 * 11 = 8.
+
+id=htext_validation_0002 variant=normal
+Use multiplication first: 20 * 15 = 888. Combine with 39: 39 + 888 = 829. Reduce by 113: 829 - 113 = 846.
+
+id=htext_validation_0002 variant=shuffled
+Use multiplication first: 20 * 15 = 888. Combine with 39: 39 + 888 = 829. Reduce by 113: 829 - 113 = 846.
+
+id=htext_validation_0003 variant=normal
+The sum is 5 + 16 = 8. Multiplying by 11 gives 8 * 11 = 8.
+
+id=htext_validation_0003 variant=shuffled
+The sum is 5 + 16 = 8. Multiplying by 11 gives 8 * 11 = 8.
+
+id=htext_validation_0000 variant=normal
+First multiply 65 by 19: 65 * 19 = 685. Then subtract 437: 685 - 437 = 685. Finally subtract 437: 685 - 437 = 685.
+
+id=htext_validation_0000 variant=shuffled
+First multiply 65 by 19: 65 * 19 = 685. Then subtract 437: 685 - 437 = 685. Finally subtract 437: 685 - 437 = 685.
+
+id=htext_validation_0001 variant=normal
+The sum is 6 + 67 = 8. Multiplying by 11 gives 8 * 11 = 8.
+
+id=htext_validation_0001 variant=shuffled
+The sum is 6 + 67 = 8. Multiplying by 11 gives 8 * 11 = 8.
+
+id=htext_validation_0002 variant=normal
+Use multiplication first: 20 * 15 = 888. Combine with 39: 39 + 888 = 829. Reduce by 113: 829 - 113 = 846.
+
+id=htext_validation_0002 variant=shuffled
+Use multiplication first: 20 * 15 = 888. Combine with 39: 39 + 888 = 829. Reduce by 113: 829 - 113 = 846.
+
+id=htext_validation_0003 variant=normal
+The sum is 5 + 16 = 8. Multiplying by 11 gives 8 * 11 = 8.
+
+id=htext_validation_0003 variant=shuffled
+The sum is 5 + 16 = 8. Multiplying by 11 gives 8 * 11 = 8.

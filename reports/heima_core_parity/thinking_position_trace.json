@@ -1,0 +1,103 @@
+{
+  "direct_hidden_shape": [
+    1,
+    768
+  ],
+  "direct_selected_indices": [
+    10
+  ],
+  "direct_selected_token_strings": [
+    "<THINKING>"
+  ],
+  "direct_thinking_mask": [
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    true,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false
+  ],
+  "equivalence_judgment": "Not equivalent if the intended latent is the contextual hidden of <THINKING> itself. Equivalent only if the intended Heima latent is the predictor hidden immediately before <THINKING>, matching the official next-token-shift implementation.",
+  "hf_gpt2_semantics": "HF GPT-2 hidden_states[-1][position] is the contextual representation after consuming token at position. The direct <THINKING> hidden is position t; the official shifted mask selects t-1, the predictor position for token t.",
+  "input_token_ids": [
+    7293,
+    1133,
+    357,
+    17,
+    1343,
+    513,
+    8,
+    1635,
+    604,
+    13,
+    50257,
+    198,
+    33706,
+    25,
+    220,
+    1238,
+    50256
+  ],
+  "input_token_strings": [
+    "Comp",
+    "ute",
+    " (",
+    "2",
+    " +",
+    " 3",
+    ")",
+    " *",
+    " 4",
+    ".",
+    "<THINKING>",
+    "\n",
+    "Answer",
+    ":",
+    " ",
+    "20",
+    "<|endoftext|>"
+  ],
+  "off_by_one_exists": true,
+  "official_shift_source": "heima/main_python/2-training...py:1503-1532 masks tokens[:, 1:] == thinking_id, selecting the hidden state that predicts the thinking token under next-token CE.",
+  "official_shifted_mask": [
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    true,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false
+  ],
+  "recommendation": "Use backend-specific adapter; do not mechanically set heima_shifted_hidden=true unless matching official predictor-hidden semantics is the desired experiment.",
+  "shifted_hidden_shape": [
+    1,
+    768
+  ],
+  "shifted_selected_indices": [
+    9
+  ],
+  "shifted_selected_token_strings": [
+    "."
+  ]
+}

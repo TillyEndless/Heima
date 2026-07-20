@@ -1,0 +1,26 @@
+{
+  "logits_finite": true,
+  "missing_files": [],
+  "model_loaded": true,
+  "model_path": "/mnt/nas/share2/home/zxl/models/openai-community-gpt2",
+  "n_embd": 768,
+  "n_layer": 12,
+  "network_requests": "blocked_by_offline_env",
+  "offline_env": {
+    "HF_HUB_OFFLINE": "1",
+    "TRANSFORMERS_OFFLINE": "1"
+  },
+  "required_files": [
+    "config.json",
+    "generation_config.json",
+    "model.safetensors",
+    "merges.txt",
+    "vocab.json",
+    "tokenizer.json",
+    "tokenizer_config.json"
+  ],
+  "status": "pass",
+  "tokenizer_loaded": true,
+  "vocab_size": 50257,
+  "warnings": []
+}

@@ -1,0 +1,308 @@
+{
+  "42": {
+    "checkpoint_dir": "experiments/htext_gpt2/checkpoints/h1_z_seed_42",
+    "eval": {
+      "normal_minus_shuffled": -0.0003339052200317383,
+      "normal_minus_zero": -0.030278444290161133,
+      "normal_nll": 1.221482276916504,
+      "shuffled_nll": 1.2218161821365356,
+      "zero_nll": 1.251760721206665
+    },
+    "final_loss1": 1.2171024084091187,
+    "first_loss1": 8.389424324035645,
+    "interventions": {
+      "farthest": {
+        "logits_kl_from_normal": {
+          "average_logits_kl": 0.00011786715913331136,
+          "first_token_logits_kl": 0.0004393037233967334
+        },
+        "nll": {
+          "first_4_tokens": 1.3470687866210938,
+          "first_8_tokens": 1.5673153400421143,
+          "first_token": 1.65082848072052,
+          "full": 1.220526933670044,
+          "intermediate_tokens": 3.0542407035827637,
+          "numeric_tokens": 2.9774539470672607,
+          "operator_tokens": 0.07750397175550461
+        }
+      },
+      "global_mean": {
+        "logits_kl_from_normal": {
+          "average_logits_kl": 2.37208696489688e-05,
+          "first_token_logits_kl": 9.505162597633898e-05
+        },
+        "nll": {
+          "first_4_tokens": 1.3447940349578857,
+          "first_8_tokens": 1.5656464099884033,
+          "first_token": 1.6410160064697266,
+          "full": 1.2203158140182495,
+          "intermediate_tokens": 3.0543084144592285,
+          "numeric_tokens": 2.9768853187561035,
+          "operator_tokens": 0.07752059400081635
+        }
+      },
+      "norm_matched_random": {
+        "logits_kl_from_normal": {
+          "average_logits_kl": 0.06990277022123337,
+          "first_token_logits_kl": 0.03236744552850723
+        },
+        "nll": {
+          "first_4_tokens": 1.4140563011169434,
+          "first_8_tokens": 1.6475181579589844,
+          "first_token": 1.7259364128112793,
+          "full": 1.2905124425888062,
+          "intermediate_tokens": 3.097221851348877,
+          "numeric_tokens": 3.02473783493042,
+          "operator_tokens": 0.1040632575750351
+        }
+      },
+      "normal": {
+        "nll": {
+          "first_4_tokens": 1.3410686254501343,
+          "first_8_tokens": 1.563521385192871,
+          "first_token": 1.6267510652542114,
+          "full": 1.2197601795196533,
+          "intermediate_tokens": 3.0544333457946777,
+          "numeric_tokens": 2.9763762950897217,
+          "operator_tokens": 0.07734744995832443
+        }
+      },
+      "shuffled": {
+        "logits_kl_from_normal": {
+          "average_logits_kl": 5.2023646276211366e-05,
+          "first_token_logits_kl": 0.00018001667922362685
+        },
+        "nll": {
+          "first_4_tokens": 1.3443340063095093,
+          "first_8_tokens": 1.5653245449066162,
+          "first_token": 1.6409060955047607,
+          "full": 1.2202093601226807,
+          "intermediate_tokens": 3.054281234741211,
+          "numeric_tokens": 2.9768662452697754,
+          "operator_tokens": 0.07718616724014282
+        }
+      },
+      "zero": {
+        "logits_kl_from_normal": {
+          "average_logits_kl": 0.02330036088824272,
+          "first_token_logits_kl": 0.0829692929983139
+        },
+        "nll": {
+          "first_4_tokens": 1.4076402187347412,
+          "first_8_tokens": 1.6266573667526245,
+          "first_token": 1.8562254905700684,
+          "full": 1.2521686553955078,
+          "intermediate_tokens": 3.071225643157959,
+          "numeric_tokens": 2.9950568675994873,
+          "operator_tokens": 0.08927229791879654
+        }
+      }
+    },
+    "report_path": "experiments/htext_gpt2/reports/h1_z_seed_42.json",
+    "runtime_sec": 13.18484616279602
+  },
+  "43": {
+    "checkpoint_dir": "experiments/htext_gpt2/checkpoints/h1_z_seed_43",
+    "eval": {
+      "normal_minus_shuffled": -0.0003876686096191406,
+      "normal_minus_zero": -0.048113346099853516,
+      "normal_nll": 1.2259968519210815,
+      "shuffled_nll": 1.2263845205307007,
+      "zero_nll": 1.274110198020935
+    },
+    "final_loss1": 1.1284376382827759,
+    "first_loss1": 8.165292739868164,
+    "interventions": {
+      "farthest": {
+        "logits_kl_from_normal": {
+          "average_logits_kl": 0.00010720598220359534,
+          "first_token_logits_kl": 0.0004779716255143285
+        },
+        "nll": {
+          "first_4_tokens": 1.3506110906600952,
+          "first_8_tokens": 1.518978476524353,
+          "first_token": 1.505314826965332,
+          "full": 1.2300021648406982,
+          "intermediate_tokens": 3.050079822540283,
+          "numeric_tokens": 2.9580695629119873,
+          "operator_tokens": 0.03357657045125961
+        }
+      },
+      "global_mean": {
+        "logits_kl_from_normal": {
+          "average_logits_kl": 2.2937834728509188e-05,
+          "first_token_logits_kl": 0.00011149099736940116
+        },
+        "nll": {
+          "first_4_tokens": 1.3483457565307617,
+          "first_8_tokens": 1.5178093910217285,
+          "first_token": 1.4950263500213623,
+          "full": 1.229703426361084,
+          "intermediate_tokens": 3.0494821071624756,
+          "numeric_tokens": 2.957488775253296,
+          "operator_tokens": 0.03386792168021202
+        }
+      },
+      "norm_matched_random": {
+        "logits_kl_from_normal": {
+          "average_logits_kl": 0.06917805224657059,
+          "first_token_logits_kl": 0.120108962059021
+        },
+        "nll": {
+          "first_4_tokens": 1.407716155052185,
+          "first_8_tokens": 1.5866302251815796,
+          "first_token": 1.538763165473938,
+          "full": 1.317596673965454,
+          "intermediate_tokens": 3.103579521179199,
+          "numeric_tokens": 3.0127766132354736,
+          "operator_tokens": 0.09274609386920929
+        }
+      },
+      "normal": {
+        "nll": {
+          "first_4_tokens": 1.3450193405151367,
+          "first_8_tokens": 1.5158164501190186,
+          "first_token": 1.4817094802856445,
+          "full": 1.2292968034744263,
+          "intermediate_tokens": 3.049532890319824,
+          "numeric_tokens": 2.9572761058807373,
+          "operator_tokens": 0.033853188157081604
+        }
+      },
+      "shuffled": {
+        "logits_kl_from_normal": {
+          "average_logits_kl": 4.3414020183263347e-05,
+          "first_token_logits_kl": 0.00021899977582506835
+        },
+        "nll": {
+          "first_4_tokens": 1.3480949401855469,
+          "first_8_tokens": 1.5177303552627563,
+          "first_token": 1.4932889938354492,
+          "full": 1.2297358512878418,
+          "intermediate_tokens": 3.0493667125701904,
+          "numeric_tokens": 2.9575610160827637,
+          "operator_tokens": 0.03390531986951828
+        }
+      },
+      "zero": {
+        "logits_kl_from_normal": {
+          "average_logits_kl": 0.039788104593753815,
+          "first_token_logits_kl": 0.1663036048412323
+        },
+        "nll": {
+          "first_4_tokens": 1.3860033750534058,
+          "first_8_tokens": 1.5648493766784668,
+          "first_token": 1.5267136096954346,
+          "full": 1.2833716869354248,
+          "intermediate_tokens": 3.091651678085327,
+          "numeric_tokens": 3.0107388496398926,
+          "operator_tokens": 0.059854038059711456
+        }
+      }
+    },
+    "report_path": "experiments/htext_gpt2/reports/h1_z_seed_43.json",
+    "runtime_sec": 13.330969333648682
+  },
+  "44": {
+    "checkpoint_dir": "experiments/htext_gpt2/checkpoints/h1_z_seed_44",
+    "eval": {
+      "normal_minus_shuffled": -7.593631744384766e-05,
+      "normal_minus_zero": -0.03913068771362305,
+      "normal_nll": 1.2235846519470215,
+      "shuffled_nll": 1.2236605882644653,
+      "zero_nll": 1.2627153396606445
+    },
+    "final_loss1": 1.1195296049118042,
+    "first_loss1": 8.088388442993164,
+    "interventions": {
+      "farthest": {
+        "logits_kl_from_normal": {
+          "average_logits_kl": 6.552401464432478e-05,
+          "first_token_logits_kl": 9.836122626438737e-05
+        },
+        "nll": {
+          "first_4_tokens": 1.3660269975662231,
+          "first_8_tokens": 1.589740514755249,
+          "first_token": 1.3873980045318604,
+          "full": 1.2391985654830933,
+          "intermediate_tokens": 3.02134108543396,
+          "numeric_tokens": 2.9547536373138428,
+          "operator_tokens": 0.03239548206329346
+        }
+      },
+      "global_mean": {
+        "logits_kl_from_normal": {
+          "average_logits_kl": 1.1068399544456042e-05,
+          "first_token_logits_kl": 3.789518086705357e-05
+        },
+        "nll": {
+          "first_4_tokens": 1.3650761842727661,
+          "first_8_tokens": 1.5892807245254517,
+          "first_token": 1.386902093887329,
+          "full": 1.2400261163711548,
+          "intermediate_tokens": 3.021836996078491,
+          "numeric_tokens": 2.955368757247925,
+          "operator_tokens": 0.03278689458966255
+        }
+      },
+      "norm_matched_random": {
+        "logits_kl_from_normal": {
+          "average_logits_kl": 0.0626705214381218,
+          "first_token_logits_kl": 0.08396200835704803
+        },
+        "nll": {
+          "first_4_tokens": 1.4125890731811523,
+          "first_8_tokens": 1.6598477363586426,
+          "first_token": 1.4685406684875488,
+          "full": 1.315390706062317,
+          "intermediate_tokens": 3.091979503631592,
+          "numeric_tokens": 3.018761396408081,
+          "operator_tokens": 0.07376576215028763
+        }
+      },
+      "normal": {
+        "nll": {
+          "first_4_tokens": 1.3624451160430908,
+          "first_8_tokens": 1.5880303382873535,
+          "first_token": 1.377108097076416,
+          "full": 1.2399568557739258,
+          "intermediate_tokens": 3.0225045680999756,
+          "numeric_tokens": 2.9557690620422363,
+          "operator_tokens": 0.03281106427311897
+        }
+      },
+      "shuffled": {
+        "logits_kl_from_normal": {
+          "average_logits_kl": 2.6876927222474478e-05,
+          "first_token_logits_kl": 8.017487562028691e-05
+        },
+        "nll": {
+          "first_4_tokens": 1.3651217222213745,
+          "first_8_tokens": 1.5892863273620605,
+          "first_token": 1.3868690729141235,
+          "full": 1.2398825883865356,
+          "intermediate_tokens": 3.0218193531036377,
+          "numeric_tokens": 2.955298900604248,
+          "operator_tokens": 0.03259369730949402
+        }
+      },
+      "zero": {
+        "logits_kl_from_normal": {
+          "average_logits_kl": 0.02482542395591736,
+          "first_token_logits_kl": 0.10268527269363403
+        },
+        "nll": {
+          "first_4_tokens": 1.4303619861602783,
+          "first_8_tokens": 1.6501797437667847,
+          "first_token": 1.5321590900421143,
+          "full": 1.2809242010116577,
+          "intermediate_tokens": 3.0497262477874756,
+          "numeric_tokens": 2.996807813644409,
+          "operator_tokens": 0.04201248660683632
+        }
+      }
+    },
+    "report_path": "experiments/htext_gpt2/reports/h1_z_seed_44.json",
+    "runtime_sec": 13.30431580543518
+  }
+}

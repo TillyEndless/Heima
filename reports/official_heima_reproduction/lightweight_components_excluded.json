@@ -1,0 +1,13 @@
+{
+  "audit_result": "No official reproduction or metrics were produced using lightweight components.",
+  "excluded_components": [
+    "src/htext",
+    "GPT-2",
+    "synthetic data",
+    "context-conditioned data",
+    "self-written projector",
+    "self-written dataset builder",
+    "self-written replacement/loss",
+    "single whole-CoT decoder"
+  ]
+}

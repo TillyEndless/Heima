@@ -1,0 +1,287 @@
+seed=42 id=htext_validation_0000
+Q: Find the value of (75 times 40) minus 8.
+Gold: Compute the multiplication: 75 * 40 = 3000. Finish with the subtraction: 3000 - 8 = 2992.
+Normal: Compute the multiplication: 75 * 40 = 816. Finish with the subtraction: 816 - 8 = 816.
+Shuffled: Compute the multiplication: 75 * 40 = 816. Finish with the subtraction: 816 - 8 = 816.
+
+seed=42 id=htext_validation_0001
+Q: Take the sum of 24 and 49, then multiply it by 9. What is the result?
+Gold: The sum is 24 + 49 = 73. Multiplying by 9 gives 73 * 9 = 657.
+Normal: The sum is 24 + 49 = 96. Multiplying by 9 gives 96 * 9 = 872.
+Shuffled: The sum is 24 + 49 = 96. Multiplying by 9 gives 96 * 9 = 872.
+
+seed=42 id=htext_validation_0002
+Q: Compute (9 + 64) * 14.
+Gold: First add 9 and 64: 9 + 64 = 73. Then multiply the result by 14: 73 * 14 = 1022.
+Normal: First multiply 9 by 14: 9 * 14 = 856. Then add 9: 9 + 856 = 851. Finally subtract 64: 851 - 64 = 834.
+Shuffled: First multiply 9 by 14: 9 * 14 = 856. Then add 9: 9 + 856 = 851. Finally subtract 64: 851 - 64 = 834.
+
+seed=42 id=htext_validation_0003
+Q: Compute (18 + 66) * 8.
+Gold: First add 18 and 66: 18 + 66 = 84. Then multiply the result by 8: 84 * 8 = 672.
+Normal: First multiply 66 by 8: 66 * 8 = 856. Then subtract 18: 856 - 16 = 851.
+Shuffled: First add 18 and 66: 18 + 66 = 78. Then multiply the result by 8: 78 * 8 = 856.
+
+seed=42 id=htext_validation_0004
+Q: What do you get if 9 times the quantity 59 plus 13 is evaluated?
+Gold: Evaluate the parentheses first: 59 + 13 = 72. Now compute 9 times that value: 9 * 72 = 648.
+Normal: Evaluate the parentheses first: 59 + 13 = 96. Now compute 9 times that value: 9 * 96 = 872.
+Shuffled: Evaluate the parentheses first: 59 + 13 = 96. Now compute 9 times that value: 9 * 96 = 872.
+
+seed=42 id=htext_validation_0005
+Q: Compute (79 + 37) * 2.
+Gold: First add 79 and 37: 79 + 37 = 116. Then multiply the result by 2: 116 * 2 = 232.
+Normal: First add 79 and 37: 79 + 37 = 96. Then multiply the result by 2: 96 * 2 = 585.
+Shuffled: First add 79 and 37: 79 + 37 = 96. Then multiply the result by 2: 96 * 2 = 585.
+
+seed=42 id=htext_validation_0006
+Q: Compute 35 * 12 - 7.
+Gold: First multiply 35 by 12: 35 * 12 = 420. Then subtract 7: 420 - 7 = 413.
+Normal: First multiply 35 by 12: 35 * 12 = 872. Then subtract 7: 872 - 7 = 872.
+Shuffled: First multiply 35 by 12: 35 * 12 = 872. Then subtract 7: 872 - 7 = 872.
+
+seed=42 id=htext_validation_0007
+Q: Compute (28 + 3) * 7.
+Gold: First add 28 and 3: 28 + 3 = 31. Then multiply the result by 7: 31 * 7 = 217.
+Normal: First add 28 and 3: 28 + 3 = 30. Then multiply the result by 7: 30 * 7 = 872.
+Shuffled: First add 28 and 3: 28 + 3 = 30. Then multiply the result by 7: 30 * 7 = 872.
+
+seed=42 id=htext_validation_0008
+Q: Take the sum of 22 and 39, then multiply it by 12. What is the result?
+Gold: The sum is 22 + 39 = 61. Multiplying by 12 gives 61 * 12 = 732.
+Normal: The sum is 22 + 39 = 96. Multiplying by 12 gives 96 * 12 = 872.
+Shuffled: The sum is 22 + 39 = 96. Multiplying by 12 gives 96 * 12 = 872.
+
+seed=42 id=htext_validation_0009
+Q: Compute 78 + 26 * 12 - 130.
+Gold: First multiply 26 by 12: 26 * 12 = 312. Then add 78: 78 + 312 = 390. Finally subtract 130: 390 - 130 = 260.
+Normal: First multiply 26 by 12: 26 * 12 = 872. Then add 78: 78 + 872 = 872. Finally subtract 130: 872 - 130 = 872.
+Shuffled: First multiply 26 by 12: 26 * 12 = 872. Then add 78: 78 + 872 = 872. Finally subtract 130: 872 - 130 = 872.
+
+seed=42 id=htext_validation_0010
+Q: Compute 48 * 32 - 11.
+Gold: First multiply 48 by 32: 48 * 32 = 1536. Then subtract 11: 1536 - 11 = 1525.
+Normal: First multiply 48 by 32: 48 * 32 = 872. Then add 48: 48 + 872 = 872. Finally subtract 11: 872 - 11 = 872.
+Shuffled: First multiply 48 by 32: 48 * 32 = 872. Then add 48: 48 + 872 = 872. Finally subtract 11: 872 - 11 = 872.
+
+seed=42 id=htext_validation_0011
+Q: What do you get if 13 times the quantity 70 plus 30 is evaluated?
+Gold: Evaluate the parentheses first: 70 + 30 = 100. Now compute 13 times that value: 13 * 100 = 1300.
+Normal: Evaluate the parentheses first: 70 + 30 = 80. Now compute 13 times that value: 13 * 80 = 872.
+Shuffled: Evaluate the parentheses first: 70 + 30 = 80. Now compute 13 times that value: 13 * 80 = 872.
+
+seed=42 id=htext_validation_0012
+Q: Take the sum of 4 and 51, then multiply it by 19. What is the result?
+Gold: The sum is 4 + 51 = 55. Multiplying by 19 gives 55 * 19 = 1045.
+Normal: The sum is 4 + 51 = 54. Multiplying by 19 gives 54 * 19 = 890.
+Shuffled: The sum is 4 + 51 = 54. Multiplying by 19 gives 54 * 19 = 890.
+
+seed=42 id=htext_validation_0013
+Q: What remains after subtracting 13 from the product of 75 and 37?
+Gold: The product is 75 * 37 = 2775. Subtracting 13 leaves 2775 - 13 = 2762.
+Normal: The product is 75 * 37 = 872. Subtracting 13 leaves 872 - 13 = 872.
+Shuffled: The product is 75 * 37 = 872. Subtracting 13 leaves 872 - 13 = 872.
+
+seed=42 id=htext_validation_0014
+Q: Start with 51, add the product of 74 and 13, then subtract 337. What is left?
+Gold: The product is 74 * 13 = 962. Adding 51 gives 51 + 962 = 1013. Subtract 337 to get 1013 - 337 = 676.
+Normal: The product is 74 * 13 = 890. Adding 51 gives 51 + 890 = 902. Subtract 337 to get 902 - 337 = 890.
+Shuffled: The product is 74 * 13 = 890. Adding 51 gives 51 + 890 = 902. Subtract 337 to get 902 - 337 = 890.
+
+seed=42 id=htext_validation_0015
+Q: Evaluate 71 plus 49 times 6, reduced by 121.
+Gold: Use multiplication first: 49 * 6 = 294. Combine with 71: 71 + 294 = 365. Reduce by 121: 365 - 121 = 244.
+Normal: Use multiplication first: 49 * 6 = 872. Combine with 71: 71 + 872 = 872. Reduce by 121: 872 - 121 = 834.
+Shuffled: Use multiplication first: 49 * 6 = 872. Combine with 71: 71 + 872 = 872. Reduce by 121: 872 - 121 = 834.
+
+seed=43 id=htext_validation_0000
+Q: Compute (6 + 50) * 15.
+Gold: First add 6 and 50: 6 + 50 = 56. Then multiply the result by 15: 56 * 15 = 840.
+Normal: First add 6 and 50: 6 + 50 = 60. Then multiply the result by 15: 60 * 15 = 664.
+Shuffled: First add 6 and 50: 6 + 50 = 60. Then multiply the result by 15: 60 * 15 = 664.
+
+seed=43 id=htext_validation_0001
+Q: What do you get if 14 times the quantity 42 plus 59 is evaluated?
+Gold: Evaluate the parentheses first: 42 + 59 = 101. Now compute 14 times that value: 14 * 101 = 1414.
+Normal: Evaluate the parentheses first: 42 + 59 = 60. Now compute 14 times that value: 14 * 60 = 684.
+Shuffled: Evaluate the parentheses first: 42 + 59 = 60. Now compute 14 times that value: 14 * 60 = 684.
+
+seed=43 id=htext_validation_0002
+Q: What do you get if 12 times the quantity 10 plus 43 is evaluated?
+Gold: Evaluate the parentheses first: 10 + 43 = 53. Now compute 12 times that value: 12 * 53 = 636.
+Normal: Evaluate the parentheses first: 10 + 43 = 60. Now compute 12 times that value: 12 * 60 = 684.
+Shuffled: Evaluate the parentheses first: 10 + 43 = 60. Now compute 12 times that value: 12 * 60 = 684.
+
+seed=43 id=htext_validation_0003
+Q: Compute 30 * 30 - 11.
+Gold: First multiply 30 by 30: 30 * 30 = 900. Then subtract 11: 900 - 11 = 889.
+Normal: First multiply 30 by 30: 30 * 30 = 684. Then add 30: 30 + 684 = 684. Finally subtract 11: 684 - 11 = 684.
+Shuffled: First multiply 30 by 30: 30 * 30 = 684. Then add 30: 30 + 684 = 684. Finally subtract 11: 684 - 11 = 684.
+
+seed=43 id=htext_validation_0004
+Q: Evaluate 2 plus 32 times 10, reduced by 107.
+Gold: Use multiplication first: 32 * 10 = 320. Combine with 2: 2 + 320 = 322. Reduce by 107: 322 - 107 = 215.
+Normal: Use multiplication first: 32 * 10 = 584. Combine with 2: 2 + 584 = 590. Reduce by 107: 590 - 107 = 584.
+Shuffled: Use multiplication first: 32 * 10 = 584. Combine with 2: 2 + 584 = 590. Reduce by 107: 590 - 107 = 584.
+
+seed=43 id=htext_validation_0005
+Q: What do you get if 2 times the quantity 38 plus 46 is evaluated?
+Gold: Evaluate the parentheses first: 38 + 46 = 84. Now compute 2 times that value: 2 * 84 = 168.
+Normal: Evaluate the parentheses first: 38 + 46 = 60. Now compute 2 times that value: 2 * 60 = 684.
+Shuffled: Evaluate the parentheses first: 38 + 46 = 60. Now compute 2 times that value: 2 * 60 = 684.
+
+seed=43 id=htext_validation_0006
+Q: What remains after subtracting 2 from the product of 50 and 53?
+Gold: The product is 50 * 53 = 2650. Subtracting 2 leaves 2650 - 2 = 2648.
+Normal: The product is 50 * 53 = 684. Subtracting 2 leaves 684 - 2 = 684.
+Shuffled: The product is 50 * 53 = 684. Subtracting 2 leaves 684 - 2 = 684.
+
+seed=43 id=htext_validation_0007
+Q: Compute (75 + 23) * 10.
+Gold: First add 75 and 23: 75 + 23 = 98. Then multiply the result by 10: 98 * 10 = 980.
+Normal: First add 75 and 23: 75 + 23 = 76. Then multiply the result by 10: 76 * 10 = 584.
+Shuffled: First add 75 and 23: 75 + 23 = 76. Then multiply the result by 10: 76 * 10 = 584.
+
+seed=43 id=htext_validation_0008
+Q: Take the sum of 34 and 77, then multiply it by 19. What is the result?
+Gold: The sum is 34 + 77 = 111. Multiplying by 19 gives 111 * 19 = 2109.
+Normal: The sum is 34 + 77 = 86. Multiplying by 19 gives 86 * 19 = 584.
+Shuffled: The sum is 34 + 77 = 86. Multiplying by 19 gives 86 * 19 = 584.
+
+seed=43 id=htext_validation_0009
+Q: What do you get if 18 times the quantity 42 plus 73 is evaluated?
+Gold: Evaluate the parentheses first: 42 + 73 = 115. Now compute 18 times that value: 18 * 115 = 2070.
+Normal: Evaluate the parentheses first: 42 + 73 = 60. Now compute 18 times that value: 18 * 60 = 684.
+Shuffled: Evaluate the parentheses first: 42 + 73 = 60. Now compute 18 times that value: 18 * 60 = 684.
+
+seed=43 id=htext_validation_0010
+Q: Compute (33 + 9) * 12.
+Gold: First add 33 and 9: 33 + 9 = 42. Then multiply the result by 12: 42 * 12 = 504.
+Normal: First add 33 and 9: 33 + 9 = 35. Then multiply the result by 12: 35 * 12 = 584.
+Shuffled: First add 33 and 9: 33 + 9 = 35. Then multiply the result by 12: 35 * 12 = 584.
+
+seed=43 id=htext_validation_0011
+Q: Take the sum of 58 and 50, then multiply it by 6. What is the result?
+Gold: The sum is 58 + 50 = 108. Multiplying by 6 gives 108 * 6 = 648.
+Normal: The sum is 58 + 50 = 60. Multiplying by 6 gives 60 * 6 = 636.
+Shuffled: The sum is 58 + 50 = 60. Multiplying by 6 gives 60 * 6 = 636.
+
+seed=43 id=htext_validation_0012
+Q: Compute (10 + 72) * 8.
+Gold: First add 10 and 72: 10 + 72 = 82. Then multiply the result by 8: 82 * 8 = 656.
+Normal: First add 10 and 72: 10 + 72 = 112. Then multiply the result by 8: 112 * 8 = 584.
+Shuffled: First add 10 and 72: 10 + 72 = 112. Then multiply the result by 8: 112 * 8 = 584.
+
+seed=43 id=htext_validation_0013
+Q: Compute 51 * 6 - 15.
+Gold: First multiply 51 by 6: 51 * 6 = 306. Then subtract 15: 306 - 15 = 291.
+Normal: First multiply 51 by 6: 51 * 6 = 584. Then add 51: 51 + 584 = 584. Finally subtract 15: 584 - 15 = 584.
+Shuffled: First multiply 51 by 6: 51 * 6 = 584. Then add 51: 51 + 584 = 584. Finally subtract 15: 584 - 15 = 584.
+
+seed=43 id=htext_validation_0014
+Q: Take the sum of 58 and 13, then multiply it by 12. What is the result?
+Gold: The sum is 58 + 13 = 71. Multiplying by 12 gives 71 * 12 = 852.
+Normal: The sum is 58 + 13 = 130. Multiplying by 12 gives 130 * 12 = 584.
+Shuffled: The sum is 58 + 13 = 130. Multiplying by 12 gives 130 * 12 = 584.
+
+seed=43 id=htext_validation_0015
+Q: Evaluate 6 plus 36 times 2, reduced by 26.
+Gold: Use multiplication first: 36 * 2 = 72. Combine with 6: 6 + 72 = 78. Reduce by 26: 78 - 26 = 52.
+Normal: Use multiplication first: 36 * 2 = 6. Combine with 6: 6 + 6 = 6. Reduce by 26: 6 - 26 = 6.
+Shuffled: Use multiplication first: 36 * 2 = 6. Combine with 6: 6 + 6 = 6. Reduce by 26: 6 - 26 = 6.
+
+seed=44 id=htext_validation_0000
+Q: Compute 78 + 65 * 19 - 437.
+Gold: First multiply 65 by 19: 65 * 19 = 1235. Then add 78: 78 + 1235 = 1313. Finally subtract 437: 1313 - 437 = 876.
+Normal: First multiply 65 by 19: 65 * 19 = 872. Then add 78: 78 + 872 = 872. Finally subtract 437: 872 - 437 = 831.
+Shuffled: First multiply 65 by 19: 65 * 19 = 872. Then add 78: 78 + 872 = 872. Finally subtract 437: 872 - 437 = 831.
+
+seed=44 id=htext_validation_0001
+Q: Take the sum of 6 and 67, then multiply it by 11. What is the result?
+Gold: The sum is 6 + 67 = 73. Multiplying by 11 gives 73 * 11 = 803.
+Normal: The sum is 6 + 67 = 67. Multiplying by 11 gives 67 * 11 = 872.
+Shuffled: The sum is 6 + 67 = 67. Multiplying by 11 gives 67 * 11 = 872.
+
+seed=44 id=htext_validation_0002
+Q: Evaluate 39 plus 20 times 15, reduced by 113.
+Gold: Use multiplication first: 20 * 15 = 300. Combine with 39: 39 + 300 = 339. Reduce by 113: 339 - 113 = 226.
+Normal: Use multiplication first: 20 * 15 = 488. Combine with 39: 39 + 488 = 488. Reduce by 113: 488 - 113 = 488.
+Shuffled: Use multiplication first: 20 * 15 = 488. Combine with 39: 39 + 488 = 488. Reduce by 113: 488 - 113 = 488.
+
+seed=44 id=htext_validation_0003
+Q: Take the sum of 5 and 16, then multiply it by 11. What is the result?
+Gold: The sum is 5 + 16 = 21. Multiplying by 11 gives 21 * 11 = 231.
+Normal: The sum is 5 + 16 = 17. Multiplying by 11 gives 17 * 11 = 888.
+Shuffled: The sum is 5 + 16 = 17. Multiplying by 11 gives 17 * 11 = 888.
+
+seed=44 id=htext_validation_0004
+Q: Compute 62 * 31 - 15.
+Gold: First multiply 62 by 31: 62 * 31 = 1922. Then subtract 15: 1922 - 15 = 1907.
+Normal: First multiply 62 by 31: 62 * 31 = 888. Then subtract 15: 888 - 15 = 831.
+Shuffled: First multiply 62 by 31: 62 * 31 = 888. Then subtract 15: 888 - 15 = 831.
+
+seed=44 id=htext_validation_0005
+Q: Compute (70 + 32) * 9.
+Gold: First add 70 and 32: 70 + 32 = 102. Then multiply the result by 9: 102 * 9 = 918.
+Normal: First add 70 and 32: 70 + 32 = 78. Then multiply the result by 9: 78 * 9 = 888.
+Shuffled: First add 70 and 32: 70 + 32 = 78. Then multiply the result by 9: 78 * 9 = 888.
+
+seed=44 id=htext_validation_0006
+Q: Take the sum of 48 and 40, then multiply it by 9. What is the result?
+Gold: The sum is 48 + 40 = 88. Multiplying by 9 gives 88 * 9 = 792.
+Normal: The sum is 48 + 40 = 99. Multiplying by 9 gives 99 * 9 = 888.
+Shuffled: The sum is 48 + 40 = 99. Multiplying by 9 gives 99 * 9 = 888.
+
+seed=44 id=htext_validation_0007
+Q: Evaluate 67 plus 46 times 10, reduced by 175.
+Gold: Use multiplication first: 46 * 10 = 460. Combine with 67: 67 + 460 = 527. Reduce by 175: 527 - 175 = 352.
+Normal: Use multiplication first: 46 * 10 = 888. Combine with 67: 67 + 888 = 896. Reduce by 175: 896 - 175 = 846.
+Shuffled: Use multiplication first: 46 * 10 = 888. Combine with 67: 67 + 888 = 896. Reduce by 175: 896 - 175 = 846.
+
+seed=44 id=htext_validation_0008
+Q: What do you get if 15 times the quantity 71 plus 48 is evaluated?
+Gold: Evaluate the parentheses first: 71 + 48 = 119. Now compute 15 times that value: 15 * 119 = 1785.
+Normal: Evaluate the parentheses first: 71 + 48 = 99. Now compute 15 times that value: 15 * 99 = 988.
+Shuffled: Evaluate the parentheses first: 71 + 48 = 99. Now compute 15 times that value: 15 * 99 = 988.
+
+seed=44 id=htext_validation_0009
+Q: Take the sum of 48 and 59, then multiply it by 9. What is the result?
+Gold: The sum is 48 + 59 = 107. Multiplying by 9 gives 107 * 9 = 963.
+Normal: The sum is 48 + 59 = 99. Multiplying by 9 gives 99 * 9 = 888.
+Shuffled: The sum is 48 + 59 = 99. Multiplying by 9 gives 99 * 9 = 888.
+
+seed=44 id=htext_validation_0010
+Q: Compute (24 + 59) * 5.
+Gold: First add 24 and 59: 24 + 59 = 83. Then multiply the result by 5: 83 * 5 = 415.
+Normal: First add 24 and 59: 24 + 59 = 59. Then multiply the result by 5: 59 * 5 = 872.
+Shuffled: First add 24 and 59: 24 + 59 = 59. Then multiply the result by 5: 59 * 5 = 872.
+
+seed=44 id=htext_validation_0011
+Q: What remains after subtracting 7 from the product of 63 and 76?
+Gold: The product is 63 * 76 = 4788. Subtracting 7 leaves 4788 - 7 = 4781.
+Normal: The product is 63 * 76 = 872. Subtracting 7 leaves 872 - 7 = 831.
+Shuffled: The product is 63 * 76 = 872. Subtracting 7 leaves 872 - 7 = 831.
+
+seed=44 id=htext_validation_0012
+Q: What do you get if 3 times the quantity 64 plus 5 is evaluated?
+Gold: Evaluate the parentheses first: 64 + 5 = 69. Now compute 3 times that value: 3 * 69 = 207.
+Normal: Evaluate the parentheses first: 64 + 5 = 96. Now compute 3 times that value: 3 * 96 = 888.
+Shuffled: Evaluate the parentheses first: 64 + 5 = 96. Now compute 3 times that value: 3 * 96 = 888.
+
+seed=44 id=htext_validation_0013
+Q: Compute 10 + 36 * 3 - 39.
+Gold: First multiply 36 by 3: 36 * 3 = 108. Then add 10: 10 + 108 = 118. Finally subtract 39: 118 - 39 = 79.
+Normal: First multiply 36 by 3: 36 * 3 = 888. Then subtract 39: 888 - 39 = 831.
+Shuffled: First multiply 36 by 3: 36 * 3 = 888. Then add 10: 10 + 888 = 831. Finally subtract 39: 831 - 39 = 794.
+
+seed=44 id=htext_validation_0014
+Q: Start with 34, add the product of 54 and 8, then subtract 155. What is left?
+Gold: The product is 54 * 8 = 432. Adding 34 gives 34 + 432 = 466. Subtract 155 to get 466 - 155 = 311.
+Normal: The product is 54 * 8 = 888. Adding 34 gives 34 + 888 = 896. Subtract 155 to get 896 - 155 = 872.
+Shuffled: The product is 54 * 8 = 888. Adding 34 gives 34 + 888 = 896. Subtract 155 to get 896 - 155 = 872.
+
+seed=44 id=htext_validation_0015
+Q: Compute 7 + 8 * 15 - 42.
+Gold: First multiply 8 by 15: 8 * 15 = 120. Then add 7: 7 + 120 = 127. Finally subtract 42: 127 - 42 = 85.
+Normal: First add 7 and 8: 7 + 8 = 8. Then multiply the result by 15: 8 * 15 = 8.
+Shuffled: First add 7 and 8: 7 + 8 = 8. Then multiply the result by 15: 8 * 15 = 8.

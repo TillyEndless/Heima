@@ -1,0 +1,110 @@
+{
+  "config": {
+    "checkpoint_dir": "experiments/g1_gpt2/reports/main_only_smoke_checkpoint",
+    "eval_samples": 4,
+    "evaluation_interval": 25,
+    "experiment_name": "main_only",
+    "gradient_accumulation_steps": 4,
+    "lambda1": 0.0,
+    "learning_rate_A": 1e-05,
+    "learning_rate_B": 1e-05,
+    "local_files_only": true,
+    "log_interval": 1,
+    "max_answer_tokens": 16,
+    "max_cot_tokens": 96,
+    "max_grad_norm": 1.0,
+    "max_question_tokens": 64,
+    "max_steps": 2,
+    "micro_batch_size": 2,
+    "model_name_or_path": "/mnt/nas/share2/home/zxl/models/openai-community-gpt2",
+    "report_path": "experiments/g1_gpt2/reports/main_only_smoke.json",
+    "sample_decode_path": "experiments/g1_gpt2/reports/main_only_smoke.samples.txt",
+    "seed": 42,
+    "train_path": "experiments/g1_gpt2/data/synthetic_g1_train.jsonl",
+    "use_safetensors": true,
+    "validation_path": "experiments/g1_gpt2/data/synthetic_g1_validation.jsonl",
+    "weight_decay": 0.01
+  },
+  "eval": {
+    "answer_em": 0.0,
+    "answer_nll": 8.858515739440918
+  },
+  "experiment": "main_only",
+  "final_l1": null,
+  "initial_l1": null,
+  "interventions": {
+    "answer_intervention": {
+      "normal": {
+        "em": 0.0,
+        "nll": 8.858515739440918
+      },
+      "random": {
+        "em": 0.0,
+        "nll": 9.166481018066406
+      },
+      "shuffled": {
+        "em": 0.0,
+        "nll": 8.846012115478516
+      },
+      "zero": {
+        "em": 0.0,
+        "nll": 9.96575927734375
+      }
+    },
+    "decode_intervention": {},
+    "first_cot_token_logit_diff_shuffle": null,
+    "first_cot_token_logit_diff_zero": null,
+    "first_cot_token_logit_difference": null
+  },
+  "logs": [
+    {
+      "all_finite": true,
+      "cosine_g_main_g_l1": null,
+      "finite_ratio": 1.0,
+      "g_l1_norm": 0.0,
+      "g_main_l1_cosine": null,
+      "g_main_norm": 0.35672634840011597,
+      "loss1": 0.0,
+      "loss_main": 10.657367706298828,
+      "model_a_grad_finite": true,
+      "model_a_grad_norm": 0.9999999869436275,
+      "model_b_grad_finite": true,
+      "model_b_grad_norm": 0.0,
+      "norm_g_l1": 0.0,
+      "norm_g_l1_over_g_main": 0.0,
+      "norm_g_main": 0.35672634840011597,
+      "peak_gpu_memory_mb": 2400.93408203125,
+      "step": 1,
+      "step_time_sec": 0.349621057510376,
+      "total_loss": 10.657367706298828,
+      "z_grad_norm": 0.44590792059898376
+    },
+    {
+      "all_finite": true,
+      "cosine_g_main_g_l1": null,
+      "finite_ratio": 1.0,
+      "g_l1_norm": 0.0,
+      "g_main_l1_cosine": null,
+      "g_main_norm": 0.23112992942333221,
+      "loss1": 0.0,
+      "loss_main": 9.49919319152832,
+      "model_a_grad_finite": true,
+      "model_a_grad_norm": 0.9999999307596791,
+      "model_b_grad_finite": true,
+      "model_b_grad_norm": 0.0,
+      "norm_g_l1": 0.0,
+      "norm_g_l1_over_g_main": 0.0,
+      "norm_g_main": 0.23112992942333221,
+      "peak_gpu_memory_mb": 2717.22265625,
+      "step": 2,
+      "step_time_sec": 0.09877586364746094,
+      "total_loss": 9.49919319152832,
+      "z_grad_norm": 0.28891241550445557
+    }
+  ],
+  "runtime_sec": 0.5127630233764648,
+  "sample_cot_decode": null,
+  "status": "pass",
+  "stop_gates_triggered": [],
+  "warnings": []
+}

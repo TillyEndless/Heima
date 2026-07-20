@@ -1,0 +1,32 @@
+{
+  "args": {
+    "batch_size": 4,
+    "eval_samples": 48,
+    "ood_size": 128,
+    "seeds": [
+      42,
+      43,
+      44
+    ],
+    "steps": 120,
+    "train_size": 512,
+    "validation_size": 128
+  },
+  "seeds": [
+    42,
+    43,
+    44
+  ],
+  "status": "complete",
+  "strict_components": {
+    "backend": {
+      "actual_backend": "torchtune.modules.loss.ce_chunked_output_loss.CEWithChunkedOutputLoss",
+      "fallback_reason": null,
+      "fallback_used": false,
+      "implementation_file": "/data/zxl/Heima/torchtune_pkg/torchtune/torchtune/modules/loss/ce_chunked_output_loss.py",
+      "import_path": "/data/zxl/Heima/torchtune_pkg/torchtune/torchtune/modules/loss/ce_chunked_output_loss.py",
+      "requested_backend": "torchtune.modules.loss.CEWithChunkedOutputLoss"
+    },
+    "selected_pos_check": true
+  }
+}

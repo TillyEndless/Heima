@@ -1,0 +1,80 @@
+{
+  "42": {
+    "joint_detach": {
+      "cosine_main_grad_A_loss1_grad_A": null,
+      "detach_encoder_latent": true,
+      "finite": true,
+      "g_loss1_to_z": 0.0,
+      "grad_A_from_loss1": 0.0,
+      "grad_A_from_main": 75.66551641355521,
+      "grad_A_from_total": 75.66551641355521,
+      "grad_B_from_loss1": 17.129313777906702,
+      "grad_projector_from_loss1": 0.7110658174274114,
+      "norm_ratio_loss1_over_main": 0.0
+    },
+    "joint_no_detach": {
+      "cosine_main_grad_A_loss1_grad_A": 0.006581410765647888,
+      "detach_encoder_latent": false,
+      "finite": true,
+      "g_loss1_to_z": 0.001960802124813199,
+      "grad_A_from_loss1": 0.03598966314641634,
+      "grad_A_from_main": 75.66551641355521,
+      "grad_A_from_total": 75.66553990435499,
+      "grad_B_from_loss1": 17.129313777906702,
+      "grad_projector_from_loss1": 0.7110658174274114,
+      "norm_ratio_loss1_over_main": 0.00047564154521476207
+    }
+  },
+  "43": {
+    "joint_detach": {
+      "cosine_main_grad_A_loss1_grad_A": null,
+      "detach_encoder_latent": true,
+      "finite": true,
+      "g_loss1_to_z": 0.0,
+      "grad_A_from_loss1": 0.0,
+      "grad_A_from_main": 68.80987072950457,
+      "grad_A_from_total": 68.80987072950457,
+      "grad_B_from_loss1": 14.051961938734985,
+      "grad_projector_from_loss1": 1.0563616655523347,
+      "norm_ratio_loss1_over_main": 0.0
+    },
+    "joint_no_detach": {
+      "cosine_main_grad_A_loss1_grad_A": 0.00619537103921175,
+      "detach_encoder_latent": false,
+      "finite": true,
+      "g_loss1_to_z": 0.0021458915434777737,
+      "grad_A_from_loss1": 0.056855926729408604,
+      "grad_A_from_main": 68.80987072950457,
+      "grad_A_from_total": 68.80990578711932,
+      "grad_B_from_loss1": 14.051961938734985,
+      "grad_projector_from_loss1": 1.0563616655523347,
+      "norm_ratio_loss1_over_main": 0.000826275738155539
+    }
+  },
+  "44": {
+    "joint_detach": {
+      "cosine_main_grad_A_loss1_grad_A": null,
+      "detach_encoder_latent": true,
+      "finite": true,
+      "g_loss1_to_z": 0.0,
+      "grad_A_from_loss1": 0.0,
+      "grad_A_from_main": 77.21695100273176,
+      "grad_A_from_total": 77.21695100273176,
+      "grad_B_from_loss1": 13.426449423098118,
+      "grad_projector_from_loss1": 0.6263382037329703,
+      "norm_ratio_loss1_over_main": 0.0
+    },
+    "joint_no_detach": {
+      "cosine_main_grad_A_loss1_grad_A": 0.0129659753292799,
+      "detach_encoder_latent": false,
+      "finite": true,
+      "g_loss1_to_z": 0.0011040212120860815,
+      "grad_A_from_loss1": 0.05628842393965754,
+      "grad_A_from_main": 77.21695100273176,
+      "grad_A_from_total": 77.21702350781014,
+      "grad_B_from_loss1": 13.426449423098118,
+      "grad_projector_from_loss1": 0.6263382037329703,
+      "norm_ratio_loss1_over_main": 0.0007289646017966468
+    }
+  }
+}

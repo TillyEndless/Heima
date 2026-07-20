@@ -1,0 +1,1497 @@
+{
+  "42": {
+    "p1": {
+      "logs": [
+        {
+          "grad_A": 0.9999999788797138,
+          "loss": 2.818636894226074,
+          "step": 1
+        },
+        {
+          "grad_A": 0.9999997452164808,
+          "loss": 0.8142582774162292,
+          "step": 30
+        },
+        {
+          "grad_A": 0.9999999207448949,
+          "loss": 0.644359827041626,
+          "step": 60
+        },
+        {
+          "grad_A": 0.9999998850039451,
+          "loss": 0.530231237411499,
+          "step": 90
+        },
+        {
+          "grad_A": 0.9999999644243396,
+          "loss": 0.27510321140289307,
+          "step": 120
+        }
+      ],
+      "validation": {
+        "answer_em": 0.0,
+        "answer_nll": 0.8042288422584534,
+        "generation": [
+          {
+            "gold": "94",
+            "id": "htext_validation_0000",
+            "match": false,
+            "parsed": null,
+            "raw": "",
+            "token_ids": [
+              50256
+            ]
+          },
+          {
+            "gold": "2566",
+            "id": "htext_validation_0001",
+            "match": false,
+            "parsed": null,
+            "raw": "",
+            "token_ids": [
+              50256
+            ]
+          },
+          {
+            "gold": "166",
+            "id": "htext_validation_0002",
+            "match": true,
+            "parsed": "166",
+            "raw": " 166",
+            "token_ids": [
+              26753,
+              50256
+            ]
+          },
+          {
+            "gold": "5",
+            "id": "htext_validation_0003",
+            "match": false,
+            "parsed": null,
+            "raw": "",
+            "token_ids": [
+              50256
+            ]
+          },
+          {
+            "gold": "361",
+            "id": "htext_validation_0004",
+            "match": false,
+            "parsed": null,
+            "raw": "",
+            "token_ids": [
+              50256
+            ]
+          },
+          {
+            "gold": "514",
+            "id": "htext_validation_0005",
+            "match": false,
+            "parsed": null,
+            "raw": "",
+            "token_ids": [
+              50256
+            ]
+          },
+          {
+            "gold": "199",
+            "id": "htext_validation_0006",
+            "match": false,
+            "parsed": null,
+            "raw": "",
+            "token_ids": [
+              50256
+            ]
+          },
+          {
+            "gold": "374",
+            "id": "htext_validation_0007",
+            "match": false,
+            "parsed": null,
+            "raw": "",
+            "token_ids": [
+              50256
+            ]
+          }
+        ],
+        "generation_em": 0.1875,
+        "latent": {
+          "z1": {
+            "geometry": {
+              "effective_rank": 2.4816083908081055,
+              "pairwise_cosine_mean": 0.9994037747383118,
+              "pairwise_cosine_std": 0.0005827515851706266,
+              "within_dataset_variance_mean": 0.16266830265522003,
+              "within_dataset_variance_sum": 124.92925262451172
+            },
+            "retrieval": {
+              "R@1": 1.0,
+              "R@5": 1.0,
+              "random_R@1": 0.015625,
+              "random_R@5": 0.078125
+            }
+          }
+        }
+      }
+    },
+    "p2": {
+      "logs": [
+        {
+          "grad_A": 0.9999999105639819,
+          "loss": 3.625890016555786,
+          "step": 1
+        },
+        {
+          "grad_A": 0.9999999203650812,
+          "loss": 1.2133212089538574,
+          "step": 30
+        },
+        {
+          "grad_A": 0.9999999009602569,
+          "loss": 0.8696079850196838,
+          "step": 60
+        },
+        {
+          "grad_A": 0.9999998534571687,
+          "loss": 0.7335317730903625,
+          "step": 90
+        },
+        {
+          "grad_A": 0.9999999825240805,
+          "loss": 0.3636547923088074,
+          "step": 120
+        }
+      ],
+      "validation": {
+        "answer_em": 0.0,
+        "answer_nll": 1.0224195793271065,
+        "generation": [
+          {
+            "gold": "94",
+            "id": "htext_validation_0000",
+            "match": false,
+            "parsed": null,
+            "raw": "",
+            "token_ids": [
+              50256
+            ]
+          },
+          {
+            "gold": "2566",
+            "id": "htext_validation_0001",
+            "match": false,
+            "parsed": null,
+            "raw": "",
+            "token_ids": [
+              50256
+            ]
+          },
+          {
+            "gold": "166",
+            "id": "htext_validation_0002",
+            "match": false,
+            "parsed": null,
+            "raw": "",
+            "token_ids": [
+              50256
+            ]
+          },
+          {
+            "gold": "5",
+            "id": "htext_validation_0003",
+            "match": false,
+            "parsed": null,
+            "raw": "",
+            "token_ids": [
+              50256
+            ]
+          },
+          {
+            "gold": "361",
+            "id": "htext_validation_0004",
+            "match": false,
+            "parsed": null,
+            "raw": "",
+            "token_ids": [
+              50256
+            ]
+          },
+          {
+            "gold": "514",
+            "id": "htext_validation_0005",
+            "match": false,
+            "parsed": null,
+            "raw": "",
+            "token_ids": [
+              50256
+            ]
+          },
+          {
+            "gold": "199",
+            "id": "htext_validation_0006",
+            "match": false,
+            "parsed": null,
+            "raw": "",
+            "token_ids": [
+              50256
+            ]
+          },
+          {
+            "gold": "374",
+            "id": "htext_validation_0007",
+            "match": false,
+            "parsed": null,
+            "raw": "",
+            "token_ids": [
+              50256
+            ]
+          }
+        ],
+        "generation_em": 0.0,
+        "latent": {
+          "z1": {
+            "geometry": {
+              "effective_rank": 3.5314724445343018,
+              "pairwise_cosine_mean": 0.9995083212852478,
+              "pairwise_cosine_std": 0.00041791348485276103,
+              "within_dataset_variance_mean": 0.12371406704187393,
+              "within_dataset_variance_sum": 95.01240539550781
+            },
+            "retrieval": {
+              "R@1": 1.0,
+              "R@5": 1.0,
+              "random_R@1": 0.015625,
+              "random_R@5": 0.078125
+            }
+          },
+          "z2": {
+            "geometry": {
+              "effective_rank": 3.210357427597046,
+              "pairwise_cosine_mean": 0.9988729357719421,
+              "pairwise_cosine_std": 0.0009328827145509422,
+              "within_dataset_variance_mean": 0.24437832832336426,
+              "within_dataset_variance_sum": 187.68255615234375
+            },
+            "retrieval": {
+              "R@1": 1.0,
+              "R@5": 1.0,
+              "random_R@1": 0.015625,
+              "random_R@5": 0.078125
+            }
+          }
+        }
+      }
+    },
+    "p3": {
+      "logs": [
+        {
+          "grad_A": 1.0000000155531124,
+          "loss": 5.95948600769043,
+          "step": 1
+        },
+        {
+          "grad_A": 1.000000055557596,
+          "loss": 1.88386070728302,
+          "step": 30
+        },
+        {
+          "grad_A": 0.9999998210283234,
+          "loss": 1.5493649244308472,
+          "step": 60
+        },
+        {
+          "grad_A": 0.9999999936736614,
+          "loss": 1.0761176347732544,
+          "step": 90
+        },
+        {
+          "grad_A": 0.9999999136644779,
+          "loss": 0.4098784923553467,
+          "step": 120
+        }
+      ],
+      "validation": {
+        "answer_em": 0.0,
+        "answer_nll": 1.6742294281721115,
+        "generation": [
+          {
+            "gold": "94",
+            "id": "htext_validation_0000",
+            "match": false,
+            "parsed": "242",
+            "raw": "\nAnswer: 242",
+            "token_ids": [
+              198,
+              33706,
+              25,
+              34353,
+              50256
+            ]
+          },
+          {
+            "gold": "2566",
+            "id": "htext_validation_0001",
+            "match": false,
+            "parsed": "2391",
+            "raw": "\nAnswer: 2391",
+            "token_ids": [
+              198,
+              33706,
+              25,
+              2242,
+              6420,
+              50256
+            ]
+          },
+          {
+            "gold": "166",
+            "id": "htext_validation_0002",
+            "match": false,
+            "parsed": "171",
+            "raw": "\nAnswer: 171",
+            "token_ids": [
+              198,
+              33706,
+              25,
+              28369,
+              50256
+            ]
+          },
+          {
+            "gold": "5",
+            "id": "htext_validation_0003",
+            "match": false,
+            "parsed": "8",
+            "raw": "\nAnswer: 8",
+            "token_ids": [
+              198,
+              33706,
+              25,
+              807,
+              50256
+            ]
+          },
+          {
+            "gold": "361",
+            "id": "htext_validation_0004",
+            "match": false,
+            "parsed": "290",
+            "raw": "\nAnswer: 290",
+            "token_ids": [
+              198,
+              33706,
+              25,
+              26481,
+              50256
+            ]
+          },
+          {
+            "gold": "514",
+            "id": "htext_validation_0005",
+            "match": false,
+            "parsed": "563",
+            "raw": "\nAnswer: 563",
+            "token_ids": [
+              198,
+              33706,
+              25,
+              642,
+              5066,
+              50256
+            ]
+          },
+          {
+            "gold": "199",
+            "id": "htext_validation_0006",
+            "match": false,
+            "parsed": "298",
+            "raw": "\nAnswer: 298",
+            "token_ids": [
+              198,
+              33706,
+              25,
+              37576,
+              50256
+            ]
+          },
+          {
+            "gold": "374",
+            "id": "htext_validation_0007",
+            "match": false,
+            "parsed": "480",
+            "raw": "\nAnswer: 480",
+            "token_ids": [
+              198,
+              33706,
+              25,
+              23487,
+              50256
+            ]
+          }
+        ],
+        "generation_em": 0.0,
+        "latent": {
+          "z1": {
+            "geometry": {
+              "effective_rank": 4.5455322265625,
+              "pairwise_cosine_mean": 0.9998284578323364,
+              "pairwise_cosine_std": 0.0001290941727347672,
+              "within_dataset_variance_mean": 0.03897479176521301,
+              "within_dataset_variance_sum": 29.932640075683594
+            },
+            "retrieval": {
+              "R@1": 1.0,
+              "R@5": 1.0,
+              "random_R@1": 0.015625,
+              "random_R@5": 0.078125
+            }
+          },
+          "z2": {
+            "geometry": {
+              "effective_rank": 3.9496498107910156,
+              "pairwise_cosine_mean": 0.9996464848518372,
+              "pairwise_cosine_std": 0.0002827930438797921,
+              "within_dataset_variance_mean": 0.06393011659383774,
+              "within_dataset_variance_sum": 49.09832763671875
+            },
+            "retrieval": {
+              "R@1": 1.0,
+              "R@5": 1.0,
+              "random_R@1": 0.015625,
+              "random_R@5": 0.078125
+            }
+          },
+          "z3": {
+            "geometry": {
+              "effective_rank": 4.225849628448486,
+              "pairwise_cosine_mean": 0.9996302127838135,
+              "pairwise_cosine_std": 0.00022371276281774044,
+              "within_dataset_variance_mean": 0.06514333933591843,
+              "within_dataset_variance_sum": 50.030086517333984
+            },
+            "retrieval": {
+              "R@1": 1.0,
+              "R@5": 1.0,
+              "random_R@1": 0.015625,
+              "random_R@5": 0.078125
+            }
+          }
+        }
+      }
+    }
+  },
+  "43": {
+    "p1": {
+      "logs": [
+        {
+          "grad_A": 0.9999999855614304,
+          "loss": 2.6346755027770996,
+          "step": 1
+        },
+        {
+          "grad_A": 0.99999977608903,
+          "loss": 0.7757552862167358,
+          "step": 30
+        },
+        {
+          "grad_A": 0.9999997297430373,
+          "loss": 0.6441299319267273,
+          "step": 60
+        },
+        {
+          "grad_A": 1.0000000557344733,
+          "loss": 0.4790557026863098,
+          "step": 90
+        },
+        {
+          "grad_A": 0.9999999155387904,
+          "loss": 0.3302181363105774,
+          "step": 120
+        }
+      ],
+      "validation": {
+        "answer_em": 0.0,
+        "answer_nll": 0.7422209829092026,
+        "generation": [
+          {
+            "gold": "2005",
+            "id": "htext_validation_0000",
+            "match": true,
+            "parsed": "2005",
+            "raw": "\nAnswer: 2005",
+            "token_ids": [
+              198,
+              33706,
+              25,
+              5075,
+              50256
+            ]
+          },
+          {
+            "gold": "410",
+            "id": "htext_validation_0001",
+            "match": true,
+            "parsed": "410",
+            "raw": "410",
+            "token_ids": [
+              33289,
+              50256
+            ]
+          },
+          {
+            "gold": "1870",
+            "id": "htext_validation_0002",
+            "match": false,
+            "parsed": null,
+            "raw": "\nAnswer: ",
+            "token_ids": [
+              198,
+              33706,
+              25,
+              220,
+              50256
+            ]
+          },
+          {
+            "gold": "352",
+            "id": "htext_validation_0003",
+            "match": false,
+            "parsed": null,
+            "raw": "",
+            "token_ids": [
+              50256
+            ]
+          },
+          {
+            "gold": "3",
+            "id": "htext_validation_0004",
+            "match": false,
+            "parsed": null,
+            "raw": "",
+            "token_ids": [
+              50256
+            ]
+          },
+          {
+            "gold": "1589",
+            "id": "htext_validation_0005",
+            "match": false,
+            "parsed": null,
+            "raw": "",
+            "token_ids": [
+              50256
+            ]
+          },
+          {
+            "gold": "182",
+            "id": "htext_validation_0006",
+            "match": false,
+            "parsed": null,
+            "raw": "",
+            "token_ids": [
+              50256
+            ]
+          },
+          {
+            "gold": "357",
+            "id": "htext_validation_0007",
+            "match": true,
+            "parsed": "357",
+            "raw": " 357",
+            "token_ids": [
+              45210,
+              50256
+            ]
+          }
+        ],
+        "generation_em": 0.375,
+        "latent": {
+          "z1": {
+            "geometry": {
+              "effective_rank": 3.6864590644836426,
+              "pairwise_cosine_mean": 0.9996861219406128,
+              "pairwise_cosine_std": 0.0002772998414002359,
+              "within_dataset_variance_mean": 0.08281140774488449,
+              "within_dataset_variance_sum": 63.59916305541992
+            },
+            "retrieval": {
+              "R@1": 1.0,
+              "R@5": 1.0,
+              "random_R@1": 0.015625,
+              "random_R@5": 0.078125
+            }
+          }
+        }
+      }
+    },
+    "p2": {
+      "logs": [
+        {
+          "grad_A": 1.0000000260176871,
+          "loss": 3.4536681175231934,
+          "step": 1
+        },
+        {
+          "grad_A": 0.9999998168024408,
+          "loss": 1.1030261516571045,
+          "step": 30
+        },
+        {
+          "grad_A": 0.9999998769725233,
+          "loss": 0.9426555037498474,
+          "step": 60
+        },
+        {
+          "grad_A": 0.9999998490039516,
+          "loss": 0.7839972376823425,
+          "step": 90
+        },
+        {
+          "grad_A": 0.9999997603719916,
+          "loss": 0.4630572199821472,
+          "step": 120
+        }
+      ],
+      "validation": {
+        "answer_em": 0.0,
+        "answer_nll": 0.967397503554821,
+        "generation": [
+          {
+            "gold": "2005",
+            "id": "htext_validation_0000",
+            "match": false,
+            "parsed": null,
+            "raw": "\nAnswer: ",
+            "token_ids": [
+              198,
+              33706,
+              25,
+              220,
+              50256
+            ]
+          },
+          {
+            "gold": "410",
+            "id": "htext_validation_0001",
+            "match": true,
+            "parsed": "410",
+            "raw": "\nAnswer: 410",
+            "token_ids": [
+              198,
+              33706,
+              25,
+              32921,
+              50256
+            ]
+          },
+          {
+            "gold": "1870",
+            "id": "htext_validation_0002",
+            "match": false,
+            "parsed": null,
+            "raw": "\nAnswer: ",
+            "token_ids": [
+              198,
+              33706,
+              25,
+              220,
+              50256
+            ]
+          },
+          {
+            "gold": "352",
+            "id": "htext_validation_0003",
+            "match": false,
+            "parsed": null,
+            "raw": "\nAnswer: ",
+            "token_ids": [
+              198,
+              33706,
+              25,
+              220,
+              50256
+            ]
+          },
+          {
+            "gold": "3",
+            "id": "htext_validation_0004",
+            "match": false,
+            "parsed": null,
+            "raw": "",
+            "token_ids": [
+              50256
+            ]
+          },
+          {
+            "gold": "1589",
+            "id": "htext_validation_0005",
+            "match": false,
+            "parsed": null,
+            "raw": "\nAnswer: ",
+            "token_ids": [
+              198,
+              33706,
+              25,
+              220,
+              50256
+            ]
+          },
+          {
+            "gold": "182",
+            "id": "htext_validation_0006",
+            "match": true,
+            "parsed": "182",
+            "raw": "\nAnswer: 182",
+            "token_ids": [
+              198,
+              33706,
+              25,
+              28581,
+              50256
+            ]
+          },
+          {
+            "gold": "357",
+            "id": "htext_validation_0007",
+            "match": true,
+            "parsed": "357",
+            "raw": "\nAnswer: 357",
+            "token_ids": [
+              198,
+              33706,
+              25,
+              45210,
+              50256
+            ]
+          }
+        ],
+        "generation_em": 0.21875,
+        "latent": {
+          "z1": {
+            "geometry": {
+              "effective_rank": 3.7102792263031006,
+              "pairwise_cosine_mean": 0.9996381998062134,
+              "pairwise_cosine_std": 0.00029168298351578414,
+              "within_dataset_variance_mean": 0.08137985318899155,
+              "within_dataset_variance_sum": 62.499725341796875
+            },
+            "retrieval": {
+              "R@1": 1.0,
+              "R@5": 1.0,
+              "random_R@1": 0.015625,
+              "random_R@5": 0.078125
+            }
+          },
+          "z2": {
+            "geometry": {
+              "effective_rank": 4.599201202392578,
+              "pairwise_cosine_mean": 0.9996655583381653,
+              "pairwise_cosine_std": 0.0002965866879094392,
+              "within_dataset_variance_mean": 0.07640078663825989,
+              "within_dataset_variance_sum": 58.675804138183594
+            },
+            "retrieval": {
+              "R@1": 1.0,
+              "R@5": 1.0,
+              "random_R@1": 0.015625,
+              "random_R@5": 0.078125
+            }
+          }
+        }
+      }
+    },
+    "p3": {
+      "logs": [
+        {
+          "grad_A": 0.9999999419230204,
+          "loss": 5.274204254150391,
+          "step": 1
+        },
+        {
+          "grad_A": 1.0000000215255438,
+          "loss": 2.0037901401519775,
+          "step": 30
+        },
+        {
+          "grad_A": 0.9999999552039175,
+          "loss": 1.595088005065918,
+          "step": 60
+        },
+        {
+          "grad_A": 1.000000091391516,
+          "loss": 1.021407127380371,
+          "step": 90
+        },
+        {
+          "grad_A": 0.9999998491334906,
+          "loss": 0.5675963759422302,
+          "step": 120
+        }
+      ],
+      "validation": {
+        "answer_em": 0.0,
+        "answer_nll": 1.797888308763504,
+        "generation": [
+          {
+            "gold": "2005",
+            "id": "htext_validation_0000",
+            "match": false,
+            "parsed": "553",
+            "raw": "\nAnswer: 553",
+            "token_ids": [
+              198,
+              33706,
+              25,
+              642,
+              4310,
+              50256
+            ]
+          },
+          {
+            "gold": "410",
+            "id": "htext_validation_0001",
+            "match": false,
+            "parsed": "468",
+            "raw": "\nAnswer: 468",
+            "token_ids": [
+              198,
+              33706,
+              25,
+              604,
+              3104,
+              50256
+            ]
+          },
+          {
+            "gold": "1870",
+            "id": "htext_validation_0002",
+            "match": false,
+            "parsed": "3255",
+            "raw": "\nAnswer: 3255",
+            "token_ids": [
+              198,
+              33706,
+              25,
+              513,
+              13381,
+              50256
+            ]
+          },
+          {
+            "gold": "352",
+            "id": "htext_validation_0003",
+            "match": false,
+            "parsed": "666",
+            "raw": "\nAnswer: 666",
+            "token_ids": [
+              198,
+              33706,
+              25,
+              43364,
+              50256
+            ]
+          },
+          {
+            "gold": "3",
+            "id": "htext_validation_0004",
+            "match": false,
+            "parsed": "12",
+            "raw": "\nAnswer: 12",
+            "token_ids": [
+              198,
+              33706,
+              25,
+              1105,
+              50256
+            ]
+          },
+          {
+            "gold": "1589",
+            "id": "htext_validation_0005",
+            "match": false,
+            "parsed": "976",
+            "raw": "\nAnswer: 976",
+            "token_ids": [
+              198,
+              33706,
+              25,
+              860,
+              4304,
+              50256
+            ]
+          },
+          {
+            "gold": "182",
+            "id": "htext_validation_0006",
+            "match": false,
+            "parsed": "244",
+            "raw": "\nAnswer: 244",
+            "token_ids": [
+              198,
+              33706,
+              25,
+              35264,
+              50256
+            ]
+          },
+          {
+            "gold": "357",
+            "id": "htext_validation_0007",
+            "match": false,
+            "parsed": "234",
+            "raw": "\nAnswer: 234",
+            "token_ids": [
+              198,
+              33706,
+              25,
+              34323,
+              50256
+            ]
+          }
+        ],
+        "generation_em": 0.0,
+        "latent": {
+          "z1": {
+            "geometry": {
+              "effective_rank": 5.602025508880615,
+              "pairwise_cosine_mean": 0.9998533725738525,
+              "pairwise_cosine_std": 0.00011756776802940294,
+              "within_dataset_variance_mean": 0.03253069519996643,
+              "within_dataset_variance_sum": 24.98357391357422
+            },
+            "retrieval": {
+              "R@1": 1.0,
+              "R@5": 1.0,
+              "random_R@1": 0.015625,
+              "random_R@5": 0.078125
+            }
+          },
+          "z2": {
+            "geometry": {
+              "effective_rank": 5.56931734085083,
+              "pairwise_cosine_mean": 0.9997823238372803,
+              "pairwise_cosine_std": 0.00016435443831142038,
+              "within_dataset_variance_mean": 0.039986658841371536,
+              "within_dataset_variance_sum": 30.709754943847656
+            },
+            "retrieval": {
+              "R@1": 1.0,
+              "R@5": 1.0,
+              "random_R@1": 0.015625,
+              "random_R@5": 0.078125
+            }
+          },
+          "z3": {
+            "geometry": {
+              "effective_rank": 3.9034862518310547,
+              "pairwise_cosine_mean": 0.999148964881897,
+              "pairwise_cosine_std": 0.0007224120199680328,
+              "within_dataset_variance_mean": 0.11507204920053482,
+              "within_dataset_variance_sum": 88.37533569335938
+            },
+            "retrieval": {
+              "R@1": 1.0,
+              "R@5": 1.0,
+              "random_R@1": 0.015625,
+              "random_R@5": 0.078125
+            }
+          }
+        }
+      }
+    }
+  },
+  "44": {
+    "p1": {
+      "logs": [
+        {
+          "grad_A": 0.9999998906998766,
+          "loss": 2.8532540798187256,
+          "step": 1
+        },
+        {
+          "grad_A": 0.9999997911657839,
+          "loss": 0.773957371711731,
+          "step": 30
+        },
+        {
+          "grad_A": 0.9999998588588894,
+          "loss": 0.6300480365753174,
+          "step": 60
+        },
+        {
+          "grad_A": 0.9999998928367986,
+          "loss": 0.48087143898010254,
+          "step": 90
+        },
+        {
+          "grad_A": 0.999999739974898,
+          "loss": 0.37649232149124146,
+          "step": 120
+        }
+      ],
+      "validation": {
+        "answer_em": 0.0,
+        "answer_nll": 0.7220655679702759,
+        "generation": [
+          {
+            "gold": "2013",
+            "id": "htext_validation_0000",
+            "match": false,
+            "parsed": null,
+            "raw": "",
+            "token_ids": [
+              50256
+            ]
+          },
+          {
+            "gold": "174",
+            "id": "htext_validation_0001",
+            "match": false,
+            "parsed": null,
+            "raw": "",
+            "token_ids": [
+              50256
+            ]
+          },
+          {
+            "gold": "72",
+            "id": "htext_validation_0002",
+            "match": false,
+            "parsed": null,
+            "raw": "",
+            "token_ids": [
+              50256
+            ]
+          },
+          {
+            "gold": "780",
+            "id": "htext_validation_0003",
+            "match": false,
+            "parsed": null,
+            "raw": "",
+            "token_ids": [
+              50256
+            ]
+          },
+          {
+            "gold": "188",
+            "id": "htext_validation_0004",
+            "match": false,
+            "parsed": null,
+            "raw": "",
+            "token_ids": [
+              50256
+            ]
+          },
+          {
+            "gold": "440",
+            "id": "htext_validation_0005",
+            "match": false,
+            "parsed": null,
+            "raw": "",
+            "token_ids": [
+              50256
+            ]
+          },
+          {
+            "gold": "532",
+            "id": "htext_validation_0006",
+            "match": false,
+            "parsed": null,
+            "raw": "",
+            "token_ids": [
+              50256
+            ]
+          },
+          {
+            "gold": "2804",
+            "id": "htext_validation_0007",
+            "match": false,
+            "parsed": null,
+            "raw": "",
+            "token_ids": [
+              50256
+            ]
+          }
+        ],
+        "generation_em": 0.0,
+        "latent": {
+          "z1": {
+            "geometry": {
+              "effective_rank": 3.5344228744506836,
+              "pairwise_cosine_mean": 0.9997034668922424,
+              "pairwise_cosine_std": 0.00024379434762522578,
+              "within_dataset_variance_mean": 0.08202390372753143,
+              "within_dataset_variance_sum": 62.99435806274414
+            },
+            "retrieval": {
+              "R@1": 1.0,
+              "R@5": 1.0,
+              "random_R@1": 0.015625,
+              "random_R@5": 0.078125
+            }
+          }
+        }
+      }
+    },
+    "p2": {
+      "logs": [
+        {
+          "grad_A": 0.9999999571152776,
+          "loss": 4.099069595336914,
+          "step": 1
+        },
+        {
+          "grad_A": 0.9999998615447201,
+          "loss": 1.1990242004394531,
+          "step": 30
+        },
+        {
+          "grad_A": 0.9999999546179258,
+          "loss": 0.9938737154006958,
+          "step": 60
+        },
+        {
+          "grad_A": 1.0000000280731558,
+          "loss": 0.8270125985145569,
+          "step": 90
+        },
+        {
+          "grad_A": 0.9999999864695964,
+          "loss": 0.5088199377059937,
+          "step": 120
+        }
+      ],
+      "validation": {
+        "answer_em": 0.0,
+        "answer_nll": 0.9080897569656372,
+        "generation": [
+          {
+            "gold": "2013",
+            "id": "htext_validation_0000",
+            "match": false,
+            "parsed": null,
+            "raw": "",
+            "token_ids": [
+              50256
+            ]
+          },
+          {
+            "gold": "174",
+            "id": "htext_validation_0001",
+            "match": false,
+            "parsed": null,
+            "raw": "",
+            "token_ids": [
+              50256
+            ]
+          },
+          {
+            "gold": "72",
+            "id": "htext_validation_0002",
+            "match": false,
+            "parsed": null,
+            "raw": "",
+            "token_ids": [
+              50256
+            ]
+          },
+          {
+            "gold": "780",
+            "id": "htext_validation_0003",
+            "match": false,
+            "parsed": null,
+            "raw": "",
+            "token_ids": [
+              50256
+            ]
+          },
+          {
+            "gold": "188",
+            "id": "htext_validation_0004",
+            "match": false,
+            "parsed": null,
+            "raw": "",
+            "token_ids": [
+              50256
+            ]
+          },
+          {
+            "gold": "440",
+            "id": "htext_validation_0005",
+            "match": false,
+            "parsed": null,
+            "raw": "",
+            "token_ids": [
+              50256
+            ]
+          },
+          {
+            "gold": "532",
+            "id": "htext_validation_0006",
+            "match": false,
+            "parsed": null,
+            "raw": "",
+            "token_ids": [
+              50256
+            ]
+          },
+          {
+            "gold": "2804",
+            "id": "htext_validation_0007",
+            "match": false,
+            "parsed": null,
+            "raw": "",
+            "token_ids": [
+              50256
+            ]
+          }
+        ],
+        "generation_em": 0.0,
+        "latent": {
+          "z1": {
+            "geometry": {
+              "effective_rank": 5.128097057342529,
+              "pairwise_cosine_mean": 0.9998732805252075,
+              "pairwise_cosine_std": 0.00010749697685241699,
+              "within_dataset_variance_mean": 0.03620210289955139,
+              "within_dataset_variance_sum": 27.80321502685547
+            },
+            "retrieval": {
+              "R@1": 1.0,
+              "R@5": 1.0,
+              "random_R@1": 0.015625,
+              "random_R@5": 0.078125
+            }
+          },
+          "z2": {
+            "geometry": {
+              "effective_rank": 4.6686320304870605,
+              "pairwise_cosine_mean": 0.9997077584266663,
+              "pairwise_cosine_std": 0.00021824597206432372,
+              "within_dataset_variance_mean": 0.0642760768532753,
+              "within_dataset_variance_sum": 49.36402893066406
+            },
+            "retrieval": {
+              "R@1": 1.0,
+              "R@5": 1.0,
+              "random_R@1": 0.015625,
+              "random_R@5": 0.078125
+            }
+          }
+        }
+      }
+    },
+    "p3": {
+      "logs": [
+        {
+          "grad_A": 1.0000000084384055,
+          "loss": 5.9960856437683105,
+          "step": 1
+        },
+        {
+          "grad_A": 0.9999999222549901,
+          "loss": 1.9368575811386108,
+          "step": 30
+        },
+        {
+          "grad_A": 1.0000000150761463,
+          "loss": 1.3815511465072632,
+          "step": 60
+        },
+        {
+          "grad_A": 1.0000000094944355,
+          "loss": 1.1388297080993652,
+          "step": 90
+        },
+        {
+          "grad_A": 0.9999999958853962,
+          "loss": 0.6277474164962769,
+          "step": 120
+        }
+      ],
+      "validation": {
+        "answer_em": 0.0,
+        "answer_nll": 1.6539258807897568,
+        "generation": [
+          {
+            "gold": "2013",
+            "id": "htext_validation_0000",
+            "match": false,
+            "parsed": "1188",
+            "raw": "\nAnswer: 1188",
+            "token_ids": [
+              198,
+              33706,
+              25,
+              1367,
+              3459,
+              50256
+            ]
+          },
+          {
+            "gold": "174",
+            "id": "htext_validation_0001",
+            "match": false,
+            "parsed": "455",
+            "raw": "\nAnswer: 455",
+            "token_ids": [
+              198,
+              33706,
+              25,
+              46839,
+              50256
+            ]
+          },
+          {
+            "gold": "72",
+            "id": "htext_validation_0002",
+            "match": false,
+            "parsed": null,
+            "raw": "\nAnswer: \nAnswer: \nAnswer: \nAnswer: ",
+            "token_ids": [
+              198,
+              33706,
+              25,
+              220,
+              198,
+              33706,
+              25,
+              220,
+              198,
+              33706,
+              25,
+              220,
+              198,
+              33706,
+              25,
+              220
+            ]
+          },
+          {
+            "gold": "780",
+            "id": "htext_validation_0003",
+            "match": false,
+            "parsed": "855",
+            "raw": "\nAnswer: 855",
+            "token_ids": [
+              198,
+              33706,
+              25,
+              807,
+              2816,
+              50256
+            ]
+          },
+          {
+            "gold": "188",
+            "id": "htext_validation_0004",
+            "match": false,
+            "parsed": "180",
+            "raw": "\nAnswer: 180",
+            "token_ids": [
+              198,
+              33706,
+              25,
+              11546,
+              50256
+            ]
+          },
+          {
+            "gold": "440",
+            "id": "htext_validation_0005",
+            "match": false,
+            "parsed": "585",
+            "raw": "\nAnswer: 585",
+            "token_ids": [
+              198,
+              33706,
+              25,
+              642,
+              5332,
+              50256
+            ]
+          },
+          {
+            "gold": "532",
+            "id": "htext_validation_0006",
+            "match": false,
+            "parsed": "631",
+            "raw": "\nAnswer: 631",
+            "token_ids": [
+              198,
+              33706,
+              25,
+              718,
+              3132,
+              50256
+            ]
+          },
+          {
+            "gold": "2804",
+            "id": "htext_validation_0007",
+            "match": false,
+            "parsed": "1144",
+            "raw": "\nAnswer: 1144",
+            "token_ids": [
+              198,
+              33706,
+              25,
+              1367,
+              2598,
+              50256
+            ]
+          }
+        ],
+        "generation_em": 0.0,
+        "latent": {
+          "z1": {
+            "geometry": {
+              "effective_rank": 4.810833930969238,
+              "pairwise_cosine_mean": 0.9998918175697327,
+              "pairwise_cosine_std": 8.248150697909296e-05,
+              "within_dataset_variance_mean": 0.023601965978741646,
+              "within_dataset_variance_sum": 18.126310348510742
+            },
+            "retrieval": {
+              "R@1": 1.0,
+              "R@5": 1.0,
+              "random_R@1": 0.015625,
+              "random_R@5": 0.078125
+            }
+          },
+          "z2": {
+            "geometry": {
+              "effective_rank": 4.245571136474609,
+              "pairwise_cosine_mean": 0.9998279213905334,
+              "pairwise_cosine_std": 0.000134386689751409,
+              "within_dataset_variance_mean": 0.034289222210645676,
+              "within_dataset_variance_sum": 26.334123611450195
+            },
+            "retrieval": {
+              "R@1": 1.0,
+              "R@5": 1.0,
+              "random_R@1": 0.015625,
+              "random_R@5": 0.078125
+            }
+          },
+          "z3": {
+            "geometry": {
+              "effective_rank": 4.76003360748291,
+              "pairwise_cosine_mean": 0.9996840357780457,
+              "pairwise_cosine_std": 0.0002314755111001432,
+              "within_dataset_variance_mean": 0.05256015434861183,
+              "within_dataset_variance_sum": 40.3661994934082
+            },
+            "retrieval": {
+              "R@1": 1.0,
+              "R@5": 1.0,
+              "random_R@1": 0.015625,
+              "random_R@5": 0.078125
+            }
+          }
+        }
+      }
+    }
+  }
+}

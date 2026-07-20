@@ -1,0 +1,37 @@
+{
+  "allow_loss_fallback": false,
+  "args": {
+    "batch_size": 8,
+    "interpreter_steps": 120,
+    "lr": 5e-05,
+    "ood_groups": 4,
+    "seeds": [
+      42,
+      43,
+      44
+    ],
+    "steps": 120,
+    "train_groups": 16,
+    "val_groups": 4
+  },
+  "backend_resolution": {
+    "ce_loss": {
+      "actual_backend": "torchtune.modules.loss.ce_chunked_output_loss.CEWithChunkedOutputLoss",
+      "fallback_reason": null,
+      "fallback_used": false,
+      "implementation_file": "/data/zxl/Heima/torchtune_pkg/torchtune/torchtune/modules/loss/ce_chunked_output_loss.py",
+      "import_path": "/data/zxl/Heima/torchtune_pkg/torchtune/torchtune/modules/loss/ce_chunked_output_loss.py",
+      "requested_backend": "torchtune.modules.loss.CEWithChunkedOutputLoss"
+    }
+  },
+  "compatibility_mode": "strict_heima_repo",
+  "loss_backend": "torchtune_chunked_ce",
+  "model_name_or_path": "/mnt/nas/share2/home/zxl/models/openai-community-gpt2",
+  "projector_type": "heima_official",
+  "thinking_state_mode": "predictor",
+  "tokens": [
+    "<THINKING_OF_REASONING_1>",
+    "<THINKING_OF_REASONING_2>",
+    "<THINKING_OF_REASONING_3>"
+  ]
+}

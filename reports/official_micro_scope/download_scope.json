@@ -1,0 +1,132 @@
+{
+  "goal": "Run a minimal official-data Heima comparison before full LLaVA-CoT image archive is available.",
+  "selected_tasks": [
+    "chartqa",
+    "sqa"
+  ],
+  "why_these_tasks": {
+    "chartqa": "visual numeric reasoning; strong test of caption/reasoning latent content",
+    "sqa": "science/map/diagram QA; closer to general visual reasoning examples in Heima"
+  },
+  "already_available": {
+    "official_code": "/data/zxl/Heima/heima",
+    "torchtune_fork": "/data/zxl/Heima/torchtune_pkg/torchtune",
+    "llava_cot_train_jsonl": "/data/zxl/official_heima/datasets/LLaVA-CoT-100k/train.jsonl",
+    "micro_subset": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_v1"
+  },
+  "micro_subset": {
+    "name": "chartqa_sqa_v1",
+    "source": "/data/zxl/official_heima/datasets/LLaVA-CoT-100k/train.jsonl",
+    "seed": 20260720,
+    "tasks": [
+      "chartqa",
+      "sqa"
+    ],
+    "splits": {
+      "train": {
+        "num_turns": 192,
+        "tasks": {
+          "chartqa": 96,
+          "sqa": 96
+        }
+      },
+      "validation": {
+        "num_turns": 48,
+        "tasks": {
+          "sqa": 24,
+          "chartqa": 24
+        }
+      },
+      "test": {
+        "num_turns": 48,
+        "tasks": {
+          "chartqa": 24,
+          "sqa": 24
+        }
+      }
+    },
+    "num_unique_images": 288,
+    "fields": [
+      "id",
+      "task",
+      "image",
+      "question",
+      "summary",
+      "caption",
+      "reasoning",
+      "answer",
+      "whole_cot"
+    ],
+    "heima_alignment": {
+      "uses_official_llava_cot_json_schema": true,
+      "preserves_official_section_targets": [
+        "summary",
+        "caption",
+        "reasoning"
+      ],
+      "preserves_official_image_path": true,
+      "requires_images_for_true_mllm_encoder": true,
+      "can_run_decoder_loss_framework_without_images": true
+    }
+  },
+  "needed_for_text_only_loss_framework": {
+    "required_now": [
+      "official LLaVA-CoT train.jsonl",
+      "official section targets: summary/caption/reasoning",
+      "official typed thinking token names",
+      "official projector/replacement/loss code",
+      "decoder/base tokenizer and model weights, or smaller debug adapter explicitly marked non-official"
+    ],
+    "not_required": [
+      "full image.zip",
+      "all 98k records",
+      "all upstream image datasets"
+    ]
+  },
+  "needed_for_true_official_multimodal_micro_run": {
+    "required_now": [
+      "288 image files listed in image_manifest.jsonl",
+      "Xkev/Llama-3.2V-11B-cot or official Heima Encoder checkpoint",
+      "meta-llama/Llama-3.1-8B-Instruct or official Heima decoder checkpoints"
+    ],
+    "can_defer": [
+      "remaining LLaVA-CoT images not referenced by chartqa_sqa_v1",
+      "full 100k training set",
+      "full official BLEU/METEOR/ROUGE/BERTScore reproduction on entire test split"
+    ],
+    "important_caveat": "The Hugging Face dataset publishes images as a monolithic split zip; if images are only obtained through that archive, partial task image extraction may still require the archive central directory or an alternate upstream-image source."
+  },
+  "heima_training_params_to_match": {
+    "progressive_stages_1_to_3": {
+      "encoder_model": "Llama-3.2V-11B-cot LoRA",
+      "decoder_model": "Llama-3.1-8B-Instruct LoRA",
+      "lora_rank": 16,
+      "lora_alpha": 32,
+      "lora_dropout": 0.0,
+      "epochs": 1,
+      "batch_size": 6,
+      "gradient_accumulation_steps": 1,
+      "encoder_lr": "1e-4",
+      "decoder_lr": "5e-4",
+      "thinking_tokens_per_section": 1
+    },
+    "recovering_and_decoder_stage": {
+      "epochs": 1,
+      "batch_size": 8,
+      "gradient_accumulation_steps": 1,
+      "encoder_lr": "1e-5",
+      "decoder_lr": "5e-4",
+      "summary_decoder": true,
+      "caption_decoder": true,
+      "reasoning_decoder": true
+    }
+  },
+  "priority_execution_order": [
+    "Build official-data micro JSON and image manifest. Done.",
+    "Run text-only official-schema Loss1/Loss2 smoke on chartqa_sqa_v1 to validate detach/no-detach and loss wiring.",
+    "Acquire only manifest images if possible; otherwise continue full image.zip in background.",
+    "Run true MLLM micro official baseline with official checkpoints.",
+    "Run Ours-L1 and then Loss2 on the same micro split, keeping Heima params/config knobs matched except the method variable.",
+    "Scale to full official baseline after full resources are available."
+  ]
+}

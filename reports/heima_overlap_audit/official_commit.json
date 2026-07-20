@@ -1,0 +1,18 @@
+{
+  "audited_repository": "/mnt/nas/share2/home/zxl/Heima",
+  "commit_author": "shen494157765 <shen494157765@gmail.com>",
+  "commit_author_date": "2026-05-20T11:51:29+08:00",
+  "commit_committer_date": "2026-05-20T11:51:29+08:00",
+  "commit_sha": "cebd6ef3ef862f62c601ced191b64b45d2bf3de2",
+  "commit_subject": "update README.md",
+  "git_status_short": [
+    "?? data/",
+    "?? experiments/",
+    "?? reports/",
+    "?? scripts/",
+    "?? src/",
+    "?? tests/"
+  ],
+  "remote_origin": "git@github.com:TillyEndless/Heima.git",
+  "working_tree_note": "Repository has untracked local G0/G1 additions; audited official Heima files are under tracked heima/ plus current G1 under untracked src/experiments."
+}

@@ -1,0 +1,56 @@
+{
+  "decoder_prompt": {
+    "contains_instruction": true,
+    "contains_official_thinking_token": true,
+    "contains_question": true
+  },
+  "detach": {
+    "only_allowed_function": "prepare_latent_for_decoder(z, detach_encoder_latent)"
+  },
+  "embedding_replacement": {
+    "mask": [
+      false,
+      true,
+      false,
+      false
+    ],
+    "position": "after token embedding lookup, before first decoder block",
+    "replaced_vector_matches_projected_latent": true
+  },
+  "labels": {
+    "decoder_labels": [
+      -100,
+      -100,
+      7,
+      8,
+      9
+    ],
+    "decoder_question_prompt_participates_loss1": false,
+    "main_thinking_and_answer_participate": true
+  },
+  "loss": {
+    "backend": {
+      "actual_backend": "torchtune.modules.loss.ce_chunked_output_loss.CEWithChunkedOutputLoss",
+      "fallback_reason": null,
+      "fallback_used": false,
+      "implementation_file": "/mnt/nas/share2/home/zxl/Heima/torchtune_pkg/torchtune/torchtune/modules/loss/ce_chunked_output_loss.py",
+      "import_path": "/mnt/nas/share2/home/zxl/Heima/torchtune_pkg/torchtune/torchtune/modules/loss/ce_chunked_output_loss.py",
+      "requested_backend": "torchtune.modules.loss.CEWithChunkedOutputLoss"
+    },
+    "ignore_index": -100,
+    "input_is_chunked_logits_list": true,
+    "normalization": "sum over nonignored tokens / nonignored token count",
+    "value": 2.4884512424468994
+  },
+  "projector": {
+    "class": "HeimaOfficialAbstractProjection",
+    "layer_order": [
+      "Linear",
+      "ReLU",
+      "Linear",
+      "Dropout"
+    ],
+    "strict_repo_allows_old_layernorm_linear": false
+  },
+  "thinking_token": "<THINKING_OF_REASONING>"
+}

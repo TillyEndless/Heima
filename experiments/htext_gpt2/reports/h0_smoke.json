@@ -1,0 +1,47 @@
+{
+  "config": {
+    "checkpoint_dir": "experiments/htext_gpt2/reports/h0_smoke_checkpoint",
+    "eval_samples": 4,
+    "experiment_name": "h0_thinking_main",
+    "gradient_accumulation_steps": 4,
+    "learning_rate_A": 1e-05,
+    "local_files_only": true,
+    "log_interval": 1,
+    "max_answer_tokens": 16,
+    "max_grad_norm": 1.0,
+    "max_question_tokens": 80,
+    "max_steps": 2,
+    "micro_batch_size": 2,
+    "model_name_or_path": "/mnt/nas/share2/home/zxl/models/openai-community-gpt2",
+    "num_thinking_tokens": 1,
+    "report_path": "experiments/htext_gpt2/reports/h0_smoke.json",
+    "seed": 42,
+    "train_path": "experiments/htext_gpt2/data/synthetic_htext_train.jsonl",
+    "use_safetensors": true,
+    "validation_path": "experiments/htext_gpt2/data/synthetic_htext_validation.jsonl",
+    "weight_decay": 0.01
+  },
+  "eval": {
+    "main_nll": 11.274368286132812,
+    "token_em": 0.0
+  },
+  "experiment": "h0_thinking_main",
+  "logs": [
+    {
+      "loss_main": 12.062963247299194,
+      "model_a_grad_finite": true,
+      "model_a_grad_norm": 0.9999998994901439,
+      "step": 1
+    },
+    {
+      "loss_main": 11.14285397529602,
+      "model_a_grad_finite": true,
+      "model_a_grad_norm": 0.9999999626512015,
+      "step": 2
+    }
+  ],
+  "runtime_sec": 0.3812251091003418,
+  "stage": "H0",
+  "status": "pass",
+  "stop_gates_triggered": []
+}

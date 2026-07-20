@@ -1,0 +1,88 @@
+{
+  "audited_files": [
+    "heima/main_python/1_1-organize_dataset-num_thinking_tokens-fix_num.py",
+    "heima/main_python/1_2-organize_dataset-pure_llm_decoder-num_thinking_tokens-fix_num.py",
+    "heima/main_python/1_3-organize_dataset-num_thinking_tokens-adaptive-sequence_special_token.py",
+    "heima/main_python/1_4-organize_dataset-num_thinking_tokens-fix_num-sequence_speical_token.py",
+    "heima/main_python/2-training-pipeline-main_lora-pure_llm_decoder_lora-split_3_stages-fix_num-progressive.py",
+    "heima/main_python/4_1-eval-decode-pure_llm_decoder_lora-split_3_stages.py",
+    "heima/configs/2_1-llama3_2_vision-11b-main_lora-pure_llm_decoder_lora-split_3_stages-fix_num-progressive.yaml",
+    "heima/configs/2_2-llama3_2_vision-11b-main_lora-pure_llm_decoder_lora-split_3_stages-fix_num-progressive.yaml",
+    "heima/configs/2_3-llama3_2_vision-11b-main_lora-pure_llm_decoder_lora-split_3_stages-fix_num-progressive.yaml",
+    "heima/configs/2_4-llama3_2_vision-11b-main_lora-pure_llm_decoder_lora-split_3_stages-fix_num-progressive.yaml",
+    "heima/configs/2_5-llama3_2_vision-11b-main_lora-pure_llm_decoder_lora-split_3_stages-fix_num-progressive.yaml",
+    "torchtune_pkg/torchtune/torchtune/data/_messages.py",
+    "torchtune_pkg/torchtune/torchtune/datasets/_alpaca.py"
+  ],
+  "commit_sha": "cebd6ef3ef862f62c601ced191b64b45d2bf3de2",
+  "dataset_schema": {
+    "decoder_samples": "three local decoder datasets: summary/caption/reasoning; each user prompt contains original question plus the matching thinking token; assistant target wraps the local section in tags",
+    "main_answer_replacements": {
+      "CAPTION": "<THINKING_OF_CAPTION> repeated fixed/adaptive count",
+      "REASONING": "<THINKING_OF_REASONING> repeated fixed/adaptive count",
+      "SUMMARY": "<THINKING_OF_SUMMARY> repeated fixed/adaptive count"
+    },
+    "main_question_has_image_marker": true,
+    "progressive_variants": [
+      "compress_summary",
+      "compress_summary_caption",
+      "compress_summary_caption_reasoning",
+      "compress_caption",
+      "compress_caption_summary",
+      "compress_caption_summary_reasoning",
+      "compress_reasoning",
+      "compress_reasoning_caption",
+      "compress_reasoning_caption_summary"
+    ],
+    "source_answer_sections_required": [
+      "SUMMARY",
+      "CAPTION",
+      "REASONING"
+    ],
+    "source_refs": [
+      "heima/main_python/1_1-organize_dataset-num_thinking_tokens-fix_num.py:103-176",
+      "heima/main_python/1_1-organize_dataset-num_thinking_tokens-fix_num.py:223-299",
+      "heima/main_python/1_1-organize_dataset-num_thinking_tokens-fix_num.py:304-374"
+    ]
+  },
+  "loss1_trace": {
+    "abstract_projection": true,
+    "backward": "main current_loss plus active decoder losses are accumulated into one tensor and current_loss.backward() is called; main and decoder optimizers step separately",
+    "decoder_count": 3,
+    "decoder_inputs": "decoder batch tokens include question + matching thinking special token; forward also receives thinking_token hidden states from main model and thinking_token_mask in decoder batch",
+    "decoder_names": [
+      "summary",
+      "caption",
+      "reasoning"
+    ],
+    "source_refs": [
+      "heima/main_python/2-training-pipeline-main_lora-pure_llm_decoder_lora-split_3_stages-fix_num-progressive.py:1603-1668",
+      "heima/main_python/2-training-pipeline-main_lora-pure_llm_decoder_lora-split_3_stages-fix_num-progressive.py:1700-1747"
+    ],
+    "targets": "local section only: <SUMMARY>...</SUMMARY>, <CAPTION>...</CAPTION>, or <REASONING>...</REASONING>"
+  },
+  "main_loss_trace": {
+    "input": "collated multimodal conversation with image marker, question, and compressed answer containing explicit thinking special tokens",
+    "label_semantics": "torchtune labels are shifted before CE; multimodal user tokens are masked by torchtune despite train_on_input=True, assistant answer tokens remain supervised",
+    "latent_source": "last hidden states at shifted positions corresponding to <THINKING_OF_SUMMARY>, <THINKING_OF_CAPTION>, <THINKING_OF_REASONING>",
+    "loss_impl": "CEWithChunkedOutputLoss; current_loss = loss_fn(logits, shifted_labels) * current_num_tokens",
+    "source_refs": [
+      "heima/main_python/2-training-pipeline-main_lora-pure_llm_decoder_lora-split_3_stages-fix_num-progressive.py:1494-1594"
+    ]
+  },
+  "modalities": [
+    "text",
+    "image"
+  ],
+  "model_family": "Llama-3.2-Vision-11B style VLM via torchtune configs",
+  "name": "official_heima_pipeline_reasoning",
+  "trainable_surface": {
+    "decoders": "LoRA adapter params plus abstract_projection params",
+    "freeze_base_model_stage": "2_5 config has freeze_base_model true; earlier stages false",
+    "main": "LoRA adapter params unless freeze_base_model in later stage",
+    "source_refs": [
+      "heima/main_python/2-training-pipeline-main_lora-pure_llm_decoder_lora-split_3_stages-fix_num-progressive.py:287-371",
+      "heima/main_python/2-training-pipeline-main_lora-pure_llm_decoder_lora-split_3_stages-fix_num-progressive.py:706-797"
+    ]
+  }
+}

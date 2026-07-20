@@ -1,0 +1,9 @@
+{
+  "updated_at_utc": "2026-07-20T06:35:06.749227+00:00",
+  "state": "running_download",
+  "detail": "attempt 1: running /data/zxl/run_heima_download_with_proxy.sh; log=/data/zxl/official_heima/logs/watch_download_20260720_063505.log",
+  "proxy_url": "http://127.0.0.1:17890",
+  "download_script": "/data/zxl/run_heima_download_with_proxy.sh",
+  "auto_training_enabled": false,
+  "next_allowed_step_after_download": "resource verification and official checkpoint-loading smoke only"
+}

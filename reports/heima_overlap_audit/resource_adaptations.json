@@ -1,0 +1,115 @@
+{
+  "count": 10,
+  "items": [
+    {
+      "alignment_status": "NOT_ALIGNED",
+      "area": "model",
+      "classification": "RESOURCE_ADAPTATION",
+      "current_g1": "GPT-2 causal LM",
+      "id": "M01",
+      "item": "base architecture",
+      "official_heima": "Llama-3.2-Vision-11B VLM",
+      "rationale": "Small local GPT-2 is an explicit resource substitute, but removes vision capacity.",
+      "severity": "medium"
+    },
+    {
+      "alignment_status": "NOT_ALIGNED",
+      "area": "model",
+      "classification": "RESOURCE_ADAPTATION",
+      "current_g1": "Text only",
+      "id": "M02",
+      "item": "image modality",
+      "official_heima": "Uses image marker and image transform",
+      "rationale": "Resource-driven simplification; nevertheless changes Heima data semantics.",
+      "severity": "high"
+    },
+    {
+      "alignment_status": "NOT_ALIGNED",
+      "area": "dataset",
+      "classification": "RESOURCE_ADAPTATION",
+      "current_g1": "Synthetic arithmetic",
+      "id": "M03",
+      "item": "source domain",
+      "official_heima": "LLaVA/vision CoT with SUMMARY/CAPTION/REASONING sections",
+      "rationale": "Synthetic data made G1 cheap, but not Heima domain.",
+      "severity": "high"
+    },
+    {
+      "alignment_status": "NOT_ALIGNED",
+      "area": "loss1",
+      "classification": "RESOURCE_ADAPTATION",
+      "current_g1": "GPT-2 full decoder",
+      "id": "M18",
+      "item": "decoder model class",
+      "official_heima": "VLM decoder with LoRA and abstract projection",
+      "rationale": "Model simplification is resource-based but behavior differs.",
+      "severity": "medium"
+    },
+    {
+      "alignment_status": "NOT_ALIGNED",
+      "area": "trainable",
+      "classification": "RESOURCE_ADAPTATION",
+      "current_g1": "All GPT-2 A params",
+      "id": "M24",
+      "item": "main trainable params",
+      "official_heima": "LoRA adapter params; freeze in stage 2_5",
+      "rationale": "Full small-model finetune is practical but not LoRA baseline.",
+      "severity": "medium"
+    },
+    {
+      "alignment_status": "NOT_ALIGNED",
+      "area": "trainable",
+      "classification": "RESOURCE_ADAPTATION",
+      "current_g1": "All GPT-2 B params",
+      "id": "M25",
+      "item": "decoder trainable params",
+      "official_heima": "LoRA + abstract_projection",
+      "rationale": "Resource simplification; removes projector-specific training.",
+      "severity": "medium"
+    },
+    {
+      "alignment_status": "NOT_ALIGNED",
+      "area": "systems",
+      "classification": "RESOURCE_ADAPTATION",
+      "current_g1": "Single-process PyTorch",
+      "id": "M26",
+      "item": "FSDP/distributed",
+      "official_heima": "FSDP-enabled torchtune recipe",
+      "rationale": "System adaptation expected for lightweight audit.",
+      "severity": "low"
+    },
+    {
+      "alignment_status": "NOT_ALIGNED",
+      "area": "systems",
+      "classification": "RESOURCE_ADAPTATION",
+      "current_g1": "Default GPT-2 fp32 unless torch default changes",
+      "id": "M27",
+      "item": "dtype/memory",
+      "official_heima": "bf16/FSDP style large-model recipe",
+      "rationale": "Resource adaptation.",
+      "severity": "low"
+    },
+    {
+      "alignment_status": "NOT_ALIGNED",
+      "area": "checkpointing",
+      "classification": "RESOURCE_ADAPTATION",
+      "current_g1": "Full model_a.pt/model_b.pt",
+      "id": "M30",
+      "item": "official save surface",
+      "official_heima": "Main adapter plus decoder adapters/projectors",
+      "rationale": "Checkpoint format changed by lightweight implementation.",
+      "severity": "low"
+    },
+    {
+      "alignment_status": "NOT_ALIGNED",
+      "area": "repro",
+      "classification": "RESOURCE_ADAPTATION",
+      "current_g1": "Current uses local_files_only GPT-2 path",
+      "id": "M39",
+      "item": "offline local model path",
+      "official_heima": "Official paths target large external checkpoints",
+      "rationale": "Operational adaptation requested by user.",
+      "severity": "low"
+    }
+  ]
+}

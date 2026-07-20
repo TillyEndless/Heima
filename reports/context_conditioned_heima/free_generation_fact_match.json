@@ -1,0 +1,1943 @@
+{
+  "42": {
+    "stage_1": {
+      "examples": [
+        {
+          "id": "validation_ordered_operation_context_0001_0",
+          "normal": "The ordered rule is start * multiplier - deduction = 20 * 8 - 36.",
+          "normal_match": {
+            "context_fact_match": false,
+            "intermediate_match": false,
+            "number_match": false
+          },
+          "paired_shuffle": "The ordered rule is start * multiplier - deduction = 20 * 8 - 36.",
+          "paired_shuffle_match": {
+            "context_fact_match": false,
+            "intermediate_match": false,
+            "number_match": false
+          },
+          "stage": 1,
+          "target": "The ordered rule is start * multiplier - deduction = 21 * 14 - 34."
+        },
+        {
+          "id": "validation_ordered_operation_context_0000_0",
+          "normal": "The ordered rule is start * multiplier - deduction = 20 * 8 - 36.",
+          "normal_match": {
+            "context_fact_match": false,
+            "intermediate_match": false,
+            "number_match": false
+          },
+          "paired_shuffle": "The ordered rule is start * multiplier - deduction = 20 * 8 - 36.",
+          "paired_shuffle_match": {
+            "context_fact_match": false,
+            "intermediate_match": false,
+            "number_match": false
+          },
+          "stage": 1,
+          "target": "The ordered rule is start * multiplier - deduction = 26 * 16 - 23."
+        },
+        {
+          "id": "validation_table_fact_context_0002_3",
+          "normal": "Read the table as (red + blue) * boxes = (41 + 8) * 10.",
+          "normal_match": {
+            "context_fact_match": false,
+            "intermediate_match": false,
+            "number_match": false
+          },
+          "paired_shuffle": "Read the table as (red + blue) * boxes = (41 + 8) * 10.",
+          "paired_shuffle_match": {
+            "context_fact_match": false,
+            "intermediate_match": false,
+            "number_match": false
+          },
+          "stage": 1,
+          "target": "Read the table as (red + blue) * boxes = (50 + 40) * 5."
+        },
+        {
+          "id": "validation_ordered_operation_context_0003_1",
+          "normal": "The ordered rule is start * multiplier - deduction = 20 * 8 - 36.",
+          "normal_match": {
+            "context_fact_match": false,
+            "intermediate_match": false,
+            "number_match": false
+          },
+          "paired_shuffle": "The ordered rule is start * multiplier - deduction = 20 * 8 - 36.",
+          "paired_shuffle_match": {
+            "context_fact_match": false,
+            "intermediate_match": false,
+            "number_match": false
+          },
+          "stage": 1,
+          "target": "The ordered rule is start * multiplier - deduction = 10 * 14 - 60."
+        },
+        {
+          "id": "validation_multi_step_state_update_context_0001_1",
+          "normal": "The state update is initial + daily_gain * days - final_loss = 80 + 8 * 3 - 50.",
+          "normal_match": {
+            "context_fact_match": true,
+            "intermediate_match": true,
+            "number_match": false
+          },
+          "paired_shuffle": "The state update is initial + daily_gain * days - final_loss = 80 + 8 * 3 - 50.",
+          "paired_shuffle_match": {
+            "context_fact_match": true,
+            "intermediate_match": true,
+            "number_match": false
+          },
+          "stage": 1,
+          "target": "The state update is initial + daily_gain * days - final_loss = 65 + 19 * 8 - 43."
+        },
+        {
+          "id": "validation_arithmetic_context_0001_3",
+          "normal": "Use the context values to form (alpha + beta) * scale = (77 + 25) * 4.",
+          "normal_match": {
+            "context_fact_match": false,
+            "intermediate_match": false,
+            "number_match": false
+          },
+          "paired_shuffle": "Use the context values to form (alpha + beta) * scale = (77 + 25) * 4.",
+          "paired_shuffle_match": {
+            "context_fact_match": false,
+            "intermediate_match": false,
+            "number_match": false
+          },
+          "stage": 1,
+          "target": "Use the context values to form (alpha + beta) * scale = (49 + 26) * 7."
+        },
+        {
+          "id": "validation_table_fact_context_0000_3",
+          "normal": "Read the table as (red + blue) * boxes = (41 + 8) * 10.",
+          "normal_match": {
+            "context_fact_match": false,
+            "intermediate_match": false,
+            "number_match": false
+          },
+          "paired_shuffle": "Read the table as (red + blue) * boxes = (41 + 8) * 10.",
+          "paired_shuffle_match": {
+            "context_fact_match": false,
+            "intermediate_match": false,
+            "number_match": false
+          },
+          "stage": 1,
+          "target": "Read the table as (red + blue) * boxes = (51 + 28) * 5."
+        },
+        {
+          "id": "validation_multi_step_state_update_context_0003_0",
+          "normal": "The state update is initial + daily_gain * days - final_loss = 80 + 8 * 3 - 50.",
+          "normal_match": {
+            "context_fact_match": true,
+            "intermediate_match": true,
+            "number_match": false
+          },
+          "paired_shuffle": "The state update is initial + daily_gain * days - final_loss = 80 + 8 * 3 - 50.",
+          "paired_shuffle_match": {
+            "context_fact_match": true,
+            "intermediate_match": true,
+            "number_match": false
+          },
+          "stage": 1,
+          "target": "The state update is initial + daily_gain * days - final_loss = 49 + 3 * 9 - 8."
+        },
+        {
+          "id": "validation_table_fact_context_0001_0",
+          "normal": "Read the table as (red + blue) * boxes = (41 + 8) * 10.",
+          "normal_match": {
+            "context_fact_match": true,
+            "intermediate_match": true,
+            "number_match": false
+          },
+          "paired_shuffle": "Read the table as (red + blue) * boxes = (41 + 8) * 10.",
+          "paired_shuffle_match": {
+            "context_fact_match": true,
+            "intermediate_match": true,
+            "number_match": false
+          },
+          "stage": 1,
+          "target": "Read the table as (red + blue) * boxes = (22 + 29) * 10."
+        },
+        {
+          "id": "validation_arithmetic_context_0002_1",
+          "normal": "Use the context values to form (alpha + beta) * scale = (77 + 25) * 4.",
+          "normal_match": {
+            "context_fact_match": false,
+            "intermediate_match": false,
+            "number_match": false
+          },
+          "paired_shuffle": "Use the context values to form (alpha + beta) * scale = (77 + 25) * 4.",
+          "paired_shuffle_match": {
+            "context_fact_match": false,
+            "intermediate_match": false,
+            "number_match": false
+          },
+          "stage": 1,
+          "target": "Use the context values to form (alpha + beta) * scale = (20 + 53) * 14."
+        },
+        {
+          "id": "validation_arithmetic_context_0001_2",
+          "normal": "Use the context values to form (alpha + beta) * scale = (77 + 25) * 4.",
+          "normal_match": {
+            "context_fact_match": false,
+            "intermediate_match": false,
+            "number_match": false
+          },
+          "paired_shuffle": "Use the context values to form (alpha + beta) * scale = (77 + 25) * 4.",
+          "paired_shuffle_match": {
+            "context_fact_match": false,
+            "intermediate_match": false,
+            "number_match": false
+          },
+          "stage": 1,
+          "target": "Use the context values to form (alpha + beta) * scale = (54 + 17) * 18."
+        },
+        {
+          "id": "validation_table_fact_context_0002_2",
+          "normal": "Read the table as (red + blue) * boxes = (41 + 8) * 10.",
+          "normal_match": {
+            "context_fact_match": false,
+            "intermediate_match": false,
+            "number_match": false
+          },
+          "paired_shuffle": "Read the table as (red + blue) * boxes = (41 + 8) * 10.",
+          "paired_shuffle_match": {
+            "context_fact_match": false,
+            "intermediate_match": false,
+            "number_match": false
+          },
+          "stage": 1,
+          "target": "Read the table as (red + blue) * boxes = (12 + 14) * 7."
+        }
+      ],
+      "n": 24,
+      "normal_context_fact_match": 0.2916666666666667,
+      "normal_intermediate_match": 0.2916666666666667,
+      "normal_number_match": 0.0,
+      "paired_shuffle_context_fact_match": 0.2916666666666667,
+      "paired_shuffle_intermediate_match": 0.2916666666666667,
+      "paired_shuffle_number_match": 0.0
+    },
+    "stage_2": {
+      "examples": [
+        {
+          "id": "validation_ordered_operation_context_0001_0",
+          "normal": "Compute the product: 40 * 8 = 320.",
+          "normal_match": {
+            "context_fact_match": false,
+            "intermediate_match": false,
+            "number_match": false
+          },
+          "paired_shuffle": "Compute the product: 40 * 8 = 320.",
+          "paired_shuffle_match": {
+            "context_fact_match": false,
+            "intermediate_match": false,
+            "number_match": false
+          },
+          "stage": 2,
+          "target": "Compute the product: 21 * 14 = 294."
+        },
+        {
+          "id": "validation_ordered_operation_context_0000_0",
+          "normal": "Compute the product: 40 * 8 = 320.",
+          "normal_match": {
+            "context_fact_match": false,
+            "intermediate_match": false,
+            "number_match": false
+          },
+          "paired_shuffle": "Compute the product: 40 * 8 = 320.",
+          "paired_shuffle_match": {
+            "context_fact_match": false,
+            "intermediate_match": false,
+            "number_match": false
+          },
+          "stage": 2,
+          "target": "Compute the product: 26 * 16 = 416."
+        },
+        {
+          "id": "validation_table_fact_context_0002_3",
+          "normal": "The combined count is 41 + 16 = 48.",
+          "normal_match": {
+            "context_fact_match": false,
+            "intermediate_match": false,
+            "number_match": false
+          },
+          "paired_shuffle": "The combined count is 41 + 16 = 48.",
+          "paired_shuffle_match": {
+            "context_fact_match": false,
+            "intermediate_match": false,
+            "number_match": false
+          },
+          "stage": 2,
+          "target": "The combined count is 50 + 40 = 90."
+        },
+        {
+          "id": "validation_ordered_operation_context_0003_1",
+          "normal": "Compute the product: 40 * 8 = 320.",
+          "normal_match": {
+            "context_fact_match": false,
+            "intermediate_match": false,
+            "number_match": false
+          },
+          "paired_shuffle": "Compute the product: 40 * 8 = 320.",
+          "paired_shuffle_match": {
+            "context_fact_match": false,
+            "intermediate_match": false,
+            "number_match": false
+          },
+          "stage": 2,
+          "target": "Compute the product: 10 * 14 = 140."
+        },
+        {
+          "id": "validation_multi_step_state_update_context_0001_1",
+          "normal": "Total gain is 8 * 3 = 32.",
+          "normal_match": {
+            "context_fact_match": true,
+            "intermediate_match": true,
+            "number_match": false
+          },
+          "paired_shuffle": "Total gain is 8 * 3 = 32.",
+          "paired_shuffle_match": {
+            "context_fact_match": true,
+            "intermediate_match": true,
+            "number_match": false
+          },
+          "stage": 2,
+          "target": "Total gain is 19 * 8 = 152."
+        },
+        {
+          "id": "validation_arithmetic_context_0001_3",
+          "normal": "First alpha + beta = 76 + 13 = 76.",
+          "normal_match": {
+            "context_fact_match": false,
+            "intermediate_match": false,
+            "number_match": false
+          },
+          "paired_shuffle": "First alpha + beta = 76 + 13 = 76.",
+          "paired_shuffle_match": {
+            "context_fact_match": false,
+            "intermediate_match": false,
+            "number_match": false
+          },
+          "stage": 2,
+          "target": "First alpha + beta = 49 + 26 = 75."
+        },
+        {
+          "id": "validation_table_fact_context_0000_3",
+          "normal": "The combined count is 41 + 16 = 48.",
+          "normal_match": {
+            "context_fact_match": false,
+            "intermediate_match": false,
+            "number_match": false
+          },
+          "paired_shuffle": "The combined count is 41 + 16 = 48.",
+          "paired_shuffle_match": {
+            "context_fact_match": false,
+            "intermediate_match": false,
+            "number_match": false
+          },
+          "stage": 2,
+          "target": "The combined count is 51 + 28 = 79."
+        },
+        {
+          "id": "validation_multi_step_state_update_context_0003_0",
+          "normal": "Total gain is 8 * 3 = 32.",
+          "normal_match": {
+            "context_fact_match": true,
+            "intermediate_match": true,
+            "number_match": false
+          },
+          "paired_shuffle": "Total gain is 8 * 3 = 32.",
+          "paired_shuffle_match": {
+            "context_fact_match": true,
+            "intermediate_match": true,
+            "number_match": false
+          },
+          "stage": 2,
+          "target": "Total gain is 3 * 9 = 27."
+        },
+        {
+          "id": "validation_table_fact_context_0001_0",
+          "normal": "The combined count is 41 + 16 = 48.",
+          "normal_match": {
+            "context_fact_match": false,
+            "intermediate_match": false,
+            "number_match": false
+          },
+          "paired_shuffle": "The combined count is 41 + 16 = 48.",
+          "paired_shuffle_match": {
+            "context_fact_match": false,
+            "intermediate_match": false,
+            "number_match": false
+          },
+          "stage": 2,
+          "target": "The combined count is 22 + 29 = 51."
+        },
+        {
+          "id": "validation_arithmetic_context_0002_1",
+          "normal": "First alpha + beta = 76 + 13 = 76.",
+          "normal_match": {
+            "context_fact_match": false,
+            "intermediate_match": false,
+            "number_match": false
+          },
+          "paired_shuffle": "First alpha + beta = 76 + 13 = 76.",
+          "paired_shuffle_match": {
+            "context_fact_match": false,
+            "intermediate_match": false,
+            "number_match": false
+          },
+          "stage": 2,
+          "target": "First alpha + beta = 20 + 53 = 73."
+        },
+        {
+          "id": "validation_arithmetic_context_0001_2",
+          "normal": "First alpha + beta = 76 + 13 = 76.",
+          "normal_match": {
+            "context_fact_match": false,
+            "intermediate_match": false,
+            "number_match": false
+          },
+          "paired_shuffle": "First alpha + beta = 76 + 13 = 76.",
+          "paired_shuffle_match": {
+            "context_fact_match": false,
+            "intermediate_match": false,
+            "number_match": false
+          },
+          "stage": 2,
+          "target": "First alpha + beta = 54 + 17 = 71."
+        },
+        {
+          "id": "validation_table_fact_context_0002_2",
+          "normal": "The combined count is 41 + 16 = 48.",
+          "normal_match": {
+            "context_fact_match": false,
+            "intermediate_match": false,
+            "number_match": false
+          },
+          "paired_shuffle": "The combined count is 41 + 16 = 48.",
+          "paired_shuffle_match": {
+            "context_fact_match": false,
+            "intermediate_match": false,
+            "number_match": false
+          },
+          "stage": 2,
+          "target": "The combined count is 12 + 14 = 26."
+        }
+      ],
+      "n": 24,
+      "normal_context_fact_match": 0.125,
+      "normal_intermediate_match": 0.125,
+      "normal_number_match": 0.0,
+      "paired_shuffle_context_fact_match": 0.125,
+      "paired_shuffle_intermediate_match": 0.125,
+      "paired_shuffle_number_match": 0.0
+    },
+    "stage_3": {
+      "examples": [
+        {
+          "id": "validation_ordered_operation_context_0001_0",
+          "normal": "Subtract the deduction: 782 - 38 = 746.",
+          "normal_match": {
+            "context_fact_match": false,
+            "intermediate_match": false,
+            "number_match": false
+          },
+          "paired_shuffle": "Subtract the deduction: 782 - 38 = 746.",
+          "paired_shuffle_match": {
+            "context_fact_match": false,
+            "intermediate_match": false,
+            "number_match": false
+          },
+          "stage": 3,
+          "target": "Subtract the deduction: 294 - 34 = 260."
+        },
+        {
+          "id": "validation_ordered_operation_context_0000_0",
+          "normal": "Subtract the deduction: 782 - 38 = 746.",
+          "normal_match": {
+            "context_fact_match": false,
+            "intermediate_match": false,
+            "number_match": false
+          },
+          "paired_shuffle": "Subtract the deduction: 782 - 38 = 746.",
+          "paired_shuffle_match": {
+            "context_fact_match": false,
+            "intermediate_match": false,
+            "number_match": false
+          },
+          "stage": 3,
+          "target": "Subtract the deduction: 416 - 23 = 393."
+        },
+        {
+          "id": "validation_table_fact_context_0002_3",
+          "normal": "Packing across boxes gives 57 * 7 = 399.",
+          "normal_match": {
+            "context_fact_match": false,
+            "intermediate_match": false,
+            "number_match": false
+          },
+          "paired_shuffle": "Packing across boxes gives 57 * 7 = 399.",
+          "paired_shuffle_match": {
+            "context_fact_match": false,
+            "intermediate_match": false,
+            "number_match": false
+          },
+          "stage": 3,
+          "target": "Packing across boxes gives 90 * 5 = 450."
+        },
+        {
+          "id": "validation_ordered_operation_context_0003_1",
+          "normal": "Subtract the deduction: 782 - 38 = 746.",
+          "normal_match": {
+            "context_fact_match": false,
+            "intermediate_match": false,
+            "number_match": false
+          },
+          "paired_shuffle": "Subtract the deduction: 782 - 38 = 746.",
+          "paired_shuffle_match": {
+            "context_fact_match": false,
+            "intermediate_match": false,
+            "number_match": false
+          },
+          "stage": 3,
+          "target": "Subtract the deduction: 140 - 60 = 80."
+        },
+        {
+          "id": "validation_multi_step_state_update_context_0001_1",
+          "normal": "Ending amount is 80 + 60 - 50 = 200.",
+          "normal_match": {
+            "context_fact_match": false,
+            "intermediate_match": false,
+            "number_match": false
+          },
+          "paired_shuffle": "Ending amount is 80 + 60 - 50 = 200.",
+          "paired_shuffle_match": {
+            "context_fact_match": false,
+            "intermediate_match": false,
+            "number_match": false
+          },
+          "stage": 3,
+          "target": "Ending amount is 65 + 152 - 43 = 174."
+        },
+        {
+          "id": "validation_arithmetic_context_0001_3",
+          "normal": "Then 102 * 12 = 1260, so the final value is 1260.",
+          "normal_match": {
+            "context_fact_match": false,
+            "intermediate_match": false,
+            "number_match": false
+          },
+          "paired_shuffle": "Then 102 * 12 = 1260, so the final value is 1260.",
+          "paired_shuffle_match": {
+            "context_fact_match": false,
+            "intermediate_match": false,
+            "number_match": false
+          },
+          "stage": 3,
+          "target": "Then 75 * 7 = 525, so the final value is 525."
+        },
+        {
+          "id": "validation_table_fact_context_0000_3",
+          "normal": "Packing across boxes gives 57 * 7 = 399.",
+          "normal_match": {
+            "context_fact_match": false,
+            "intermediate_match": false,
+            "number_match": false
+          },
+          "paired_shuffle": "Packing across boxes gives 57 * 7 = 399.",
+          "paired_shuffle_match": {
+            "context_fact_match": false,
+            "intermediate_match": false,
+            "number_match": false
+          },
+          "stage": 3,
+          "target": "Packing across boxes gives 79 * 5 = 395."
+        },
+        {
+          "id": "validation_multi_step_state_update_context_0003_0",
+          "normal": "Ending amount is 80 + 60 - 50 = 200.",
+          "normal_match": {
+            "context_fact_match": false,
+            "intermediate_match": false,
+            "number_match": false
+          },
+          "paired_shuffle": "Ending amount is 80 + 60 - 50 = 200.",
+          "paired_shuffle_match": {
+            "context_fact_match": false,
+            "intermediate_match": false,
+            "number_match": false
+          },
+          "stage": 3,
+          "target": "Ending amount is 49 + 27 - 8 = 68."
+        },
+        {
+          "id": "validation_table_fact_context_0001_0",
+          "normal": "Packing across boxes gives 57 * 7 = 399.",
+          "normal_match": {
+            "context_fact_match": false,
+            "intermediate_match": false,
+            "number_match": false
+          },
+          "paired_shuffle": "Packing across boxes gives 57 * 7 = 399.",
+          "paired_shuffle_match": {
+            "context_fact_match": false,
+            "intermediate_match": false,
+            "number_match": false
+          },
+          "stage": 3,
+          "target": "Packing across boxes gives 51 * 10 = 510."
+        },
+        {
+          "id": "validation_arithmetic_context_0002_1",
+          "normal": "Then 102 * 12 = 1260, so the final value is 1260.",
+          "normal_match": {
+            "context_fact_match": false,
+            "intermediate_match": false,
+            "number_match": false
+          },
+          "paired_shuffle": "Then 102 * 12 = 1260, so the final value is 1260.",
+          "paired_shuffle_match": {
+            "context_fact_match": false,
+            "intermediate_match": false,
+            "number_match": false
+          },
+          "stage": 3,
+          "target": "Then 73 * 14 = 1022, so the final value is 1022."
+        },
+        {
+          "id": "validation_arithmetic_context_0001_2",
+          "normal": "Then 102 * 12 = 1260, so the final value is 1260.",
+          "normal_match": {
+            "context_fact_match": false,
+            "intermediate_match": false,
+            "number_match": false
+          },
+          "paired_shuffle": "Then 102 * 12 = 1260, so the final value is 1260.",
+          "paired_shuffle_match": {
+            "context_fact_match": false,
+            "intermediate_match": false,
+            "number_match": false
+          },
+          "stage": 3,
+          "target": "Then 71 * 18 = 1278, so the final value is 1278."
+        },
+        {
+          "id": "validation_table_fact_context_0002_2",
+          "normal": "Packing across boxes gives 57 * 7 = 399.",
+          "normal_match": {
+            "context_fact_match": true,
+            "intermediate_match": true,
+            "number_match": false
+          },
+          "paired_shuffle": "Packing across boxes gives 57 * 7 = 399.",
+          "paired_shuffle_match": {
+            "context_fact_match": true,
+            "intermediate_match": true,
+            "number_match": false
+          },
+          "stage": 3,
+          "target": "Packing across boxes gives 26 * 7 = 182."
+        }
+      ],
+      "n": 24,
+      "normal_context_fact_match": 0.125,
+      "normal_intermediate_match": 0.125,
+      "normal_number_match": 0.0,
+      "paired_shuffle_context_fact_match": 0.125,
+      "paired_shuffle_intermediate_match": 0.125,
+      "paired_shuffle_number_match": 0.0
+    }
+  },
+  "43": {
+    "stage_1": {
+      "examples": [
+        {
+          "id": "validation_table_fact_context_0000_3",
+          "normal": "Read the table as (red + blue) * boxes = (15 + 48) * 2.",
+          "normal_match": {
+            "context_fact_match": false,
+            "intermediate_match": false,
+            "number_match": false
+          },
+          "paired_shuffle": "Read the table as (red + blue) * boxes = (15 + 48) * 2.",
+          "paired_shuffle_match": {
+            "context_fact_match": false,
+            "intermediate_match": false,
+            "number_match": false
+          },
+          "stage": 1,
+          "target": "Read the table as (red + blue) * boxes = (10 + 18) * 12."
+        },
+        {
+          "id": "validation_ordered_operation_context_0000_3",
+          "normal": "The ordered rule is start * multiplier - deduction = 20 * 17 - 45.",
+          "normal_match": {
+            "context_fact_match": false,
+            "intermediate_match": false,
+            "number_match": false
+          },
+          "paired_shuffle": "The ordered rule is start * multiplier - deduction = 20 * 17 - 45.",
+          "paired_shuffle_match": {
+            "context_fact_match": false,
+            "intermediate_match": false,
+            "number_match": false
+          },
+          "stage": 1,
+          "target": "The ordered rule is start * multiplier - deduction = 9 * 9 - 55."
+        },
+        {
+          "id": "validation_table_fact_context_0002_0",
+          "normal": "Read the table as (red + blue) * boxes = (15 + 48) * 2.",
+          "normal_match": {
+            "context_fact_match": false,
+            "intermediate_match": false,
+            "number_match": false
+          },
+          "paired_shuffle": "Read the table as (red + blue) * boxes = (15 + 48) * 2.",
+          "paired_shuffle_match": {
+            "context_fact_match": false,
+            "intermediate_match": false,
+            "number_match": false
+          },
+          "stage": 1,
+          "target": "Read the table as (red + blue) * boxes = (47 + 18) * 3."
+        },
+        {
+          "id": "validation_ordered_operation_context_0000_2",
+          "normal": "The ordered rule is start * multiplier - deduction = 20 * 17 - 45.",
+          "normal_match": {
+            "context_fact_match": false,
+            "intermediate_match": false,
+            "number_match": false
+          },
+          "paired_shuffle": "The ordered rule is start * multiplier - deduction = 20 * 17 - 45.",
+          "paired_shuffle_match": {
+            "context_fact_match": false,
+            "intermediate_match": false,
+            "number_match": false
+          },
+          "stage": 1,
+          "target": "The ordered rule is start * multiplier - deduction = 29 * 18 - 59."
+        },
+        {
+          "id": "validation_arithmetic_context_0002_3",
+          "normal": "Use the context values to form (alpha + beta) * scale = (9 + 32) * 6.",
+          "normal_match": {
+            "context_fact_match": false,
+            "intermediate_match": false,
+            "number_match": false
+          },
+          "paired_shuffle": "Use the context values to form (alpha + beta) * scale = (9 + 32) * 6.",
+          "paired_shuffle_match": {
+            "context_fact_match": false,
+            "intermediate_match": false,
+            "number_match": false
+          },
+          "stage": 1,
+          "target": "Use the context values to form (alpha + beta) * scale = (17 + 53) * 11."
+        },
+        {
+          "id": "validation_multi_step_state_update_context_0003_3",
+          "normal": "The state update is initial + daily_gain * days - final_loss = 89 + 9 * 2 - 45.",
+          "normal_match": {
+            "context_fact_match": false,
+            "intermediate_match": false,
+            "number_match": false
+          },
+          "paired_shuffle": "The state update is initial + daily_gain * days - final_loss = 89 + 9 * 2 - 45.",
+          "paired_shuffle_match": {
+            "context_fact_match": false,
+            "intermediate_match": false,
+            "number_match": false
+          },
+          "stage": 1,
+          "target": "The state update is initial + daily_gain * days - final_loss = 33 + 14 * 10 - 23."
+        },
+        {
+          "id": "validation_arithmetic_context_0001_2",
+          "normal": "Use the context values to form (alpha + beta) * scale = (9 + 32) * 6.",
+          "normal_match": {
+            "context_fact_match": false,
+            "intermediate_match": false,
+            "number_match": false
+          },
+          "paired_shuffle": "Use the context values to form (alpha + beta) * scale = (9 + 32) * 6.",
+          "paired_shuffle_match": {
+            "context_fact_match": false,
+            "intermediate_match": false,
+            "number_match": false
+          },
+          "stage": 1,
+          "target": "Use the context values to form (alpha + beta) * scale = (41 + 16) * 13."
+        },
+        {
+          "id": "validation_ordered_operation_context_0002_0",
+          "normal": "The ordered rule is start * multiplier - deduction = 20 * 17 - 45.",
+          "normal_match": {
+            "context_fact_match": false,
+            "intermediate_match": false,
+            "number_match": false
+          },
+          "paired_shuffle": "The ordered rule is start * multiplier - deduction = 20 * 17 - 45.",
+          "paired_shuffle_match": {
+            "context_fact_match": false,
+            "intermediate_match": false,
+            "number_match": false
+          },
+          "stage": 1,
+          "target": "The ordered rule is start * multiplier - deduction = 18 * 5 - 10."
+        },
+        {
+          "id": "validation_arithmetic_context_0000_0",
+          "normal": "Use the context values to form (alpha + beta) * scale = (9 + 32) * 6.",
+          "normal_match": {
+            "context_fact_match": false,
+            "intermediate_match": false,
+            "number_match": false
+          },
+          "paired_shuffle": "Use the context values to form (alpha + beta) * scale = (9 + 32) * 6.",
+          "paired_shuffle_match": {
+            "context_fact_match": false,
+            "intermediate_match": false,
+            "number_match": false
+          },
+          "stage": 1,
+          "target": "Use the context values to form (alpha + beta) * scale = (59 + 54) * 5."
+        },
+        {
+          "id": "validation_table_fact_context_0002_2",
+          "normal": "Read the table as (red + blue) * boxes = (15 + 48) * 2.",
+          "normal_match": {
+            "context_fact_match": false,
+            "intermediate_match": false,
+            "number_match": false
+          },
+          "paired_shuffle": "Read the table as (red + blue) * boxes = (15 + 48) * 2.",
+          "paired_shuffle_match": {
+            "context_fact_match": false,
+            "intermediate_match": false,
+            "number_match": false
+          },
+          "stage": 1,
+          "target": "Read the table as (red + blue) * boxes = (52 + 29) * 4."
+        },
+        {
+          "id": "validation_ordered_operation_context_0003_3",
+          "normal": "The ordered rule is start * multiplier - deduction = 20 * 17 - 45.",
+          "normal_match": {
+            "context_fact_match": true,
+            "intermediate_match": true,
+            "number_match": false
+          },
+          "paired_shuffle": "The ordered rule is start * multiplier - deduction = 20 * 17 - 45.",
+          "paired_shuffle_match": {
+            "context_fact_match": true,
+            "intermediate_match": true,
+            "number_match": false
+          },
+          "stage": 1,
+          "target": "The ordered rule is start * multiplier - deduction = 45 * 24 - 8."
+        },
+        {
+          "id": "validation_multi_step_state_update_context_0001_1",
+          "normal": "The state update is initial + daily_gain * days - final_loss = 89 + 9 * 2 - 45.",
+          "normal_match": {
+            "context_fact_match": false,
+            "intermediate_match": false,
+            "number_match": false
+          },
+          "paired_shuffle": "The state update is initial + daily_gain * days - final_loss = 89 + 9 * 2 - 45.",
+          "paired_shuffle_match": {
+            "context_fact_match": false,
+            "intermediate_match": false,
+            "number_match": false
+          },
+          "stage": 1,
+          "target": "The state update is initial + daily_gain * days - final_loss = 81 + 16 * 7 - 48."
+        }
+      ],
+      "n": 24,
+      "normal_context_fact_match": 0.041666666666666664,
+      "normal_intermediate_match": 0.041666666666666664,
+      "normal_number_match": 0.0,
+      "paired_shuffle_context_fact_match": 0.041666666666666664,
+      "paired_shuffle_intermediate_match": 0.041666666666666664,
+      "paired_shuffle_number_match": 0.0
+    },
+    "stage_2": {
+      "examples": [
+        {
+          "id": "validation_table_fact_context_0000_3",
+          "normal": "The combined count is 21 + 6 = 28.",
+          "normal_match": {
+            "context_fact_match": true,
+            "intermediate_match": true,
+            "number_match": false
+          },
+          "paired_shuffle": "The combined count is 21 + 6 = 28.",
+          "paired_shuffle_match": {
+            "context_fact_match": true,
+            "intermediate_match": true,
+            "number_match": false
+          },
+          "stage": 2,
+          "target": "The combined count is 10 + 18 = 28."
+        },
+        {
+          "id": "validation_ordered_operation_context_0000_3",
+          "normal": "Compute the product: 6 * 10 = 120.",
+          "normal_match": {
+            "context_fact_match": false,
+            "intermediate_match": false,
+            "number_match": false
+          },
+          "paired_shuffle": "Compute the product: 6 * 10 = 120.",
+          "paired_shuffle_match": {
+            "context_fact_match": false,
+            "intermediate_match": false,
+            "number_match": false
+          },
+          "stage": 2,
+          "target": "Compute the product: 9 * 9 = 81."
+        },
+        {
+          "id": "validation_table_fact_context_0002_0",
+          "normal": "The combined count is 21 + 6 = 28.",
+          "normal_match": {
+            "context_fact_match": false,
+            "intermediate_match": false,
+            "number_match": false
+          },
+          "paired_shuffle": "The combined count is 21 + 6 = 28.",
+          "paired_shuffle_match": {
+            "context_fact_match": false,
+            "intermediate_match": false,
+            "number_match": false
+          },
+          "stage": 2,
+          "target": "The combined count is 47 + 18 = 65."
+        },
+        {
+          "id": "validation_ordered_operation_context_0000_2",
+          "normal": "Compute the product: 6 * 10 = 120.",
+          "normal_match": {
+            "context_fact_match": false,
+            "intermediate_match": false,
+            "number_match": false
+          },
+          "paired_shuffle": "Compute the product: 6 * 10 = 120.",
+          "paired_shuffle_match": {
+            "context_fact_match": false,
+            "intermediate_match": false,
+            "number_match": false
+          },
+          "stage": 2,
+          "target": "Compute the product: 29 * 18 = 522."
+        },
+        {
+          "id": "validation_arithmetic_context_0002_3",
+          "normal": "First alpha + beta = 9 + 32 = 38.",
+          "normal_match": {
+            "context_fact_match": false,
+            "intermediate_match": false,
+            "number_match": false
+          },
+          "paired_shuffle": "First alpha + beta = 9 + 32 = 38.",
+          "paired_shuffle_match": {
+            "context_fact_match": false,
+            "intermediate_match": false,
+            "number_match": false
+          },
+          "stage": 2,
+          "target": "First alpha + beta = 17 + 53 = 70."
+        },
+        {
+          "id": "validation_multi_step_state_update_context_0003_3",
+          "normal": "Total gain is 9 * 2 = 32.",
+          "normal_match": {
+            "context_fact_match": false,
+            "intermediate_match": false,
+            "number_match": false
+          },
+          "paired_shuffle": "Total gain is 9 * 2 = 32.",
+          "paired_shuffle_match": {
+            "context_fact_match": false,
+            "intermediate_match": false,
+            "number_match": false
+          },
+          "stage": 2,
+          "target": "Total gain is 14 * 10 = 140."
+        },
+        {
+          "id": "validation_arithmetic_context_0001_2",
+          "normal": "First alpha + beta = 9 + 32 = 38.",
+          "normal_match": {
+            "context_fact_match": false,
+            "intermediate_match": false,
+            "number_match": false
+          },
+          "paired_shuffle": "First alpha + beta = 9 + 32 = 38.",
+          "paired_shuffle_match": {
+            "context_fact_match": false,
+            "intermediate_match": false,
+            "number_match": false
+          },
+          "stage": 2,
+          "target": "First alpha + beta = 41 + 16 = 57."
+        },
+        {
+          "id": "validation_ordered_operation_context_0002_0",
+          "normal": "Compute the product: 6 * 10 = 120.",
+          "normal_match": {
+            "context_fact_match": true,
+            "intermediate_match": true,
+            "number_match": false
+          },
+          "paired_shuffle": "Compute the product: 6 * 10 = 120.",
+          "paired_shuffle_match": {
+            "context_fact_match": true,
+            "intermediate_match": true,
+            "number_match": false
+          },
+          "stage": 2,
+          "target": "Compute the product: 18 * 5 = 90."
+        },
+        {
+          "id": "validation_arithmetic_context_0000_0",
+          "normal": "First alpha + beta = 9 + 32 = 38.",
+          "normal_match": {
+            "context_fact_match": false,
+            "intermediate_match": false,
+            "number_match": false
+          },
+          "paired_shuffle": "First alpha + beta = 9 + 32 = 38.",
+          "paired_shuffle_match": {
+            "context_fact_match": false,
+            "intermediate_match": false,
+            "number_match": false
+          },
+          "stage": 2,
+          "target": "First alpha + beta = 59 + 54 = 113."
+        },
+        {
+          "id": "validation_table_fact_context_0002_2",
+          "normal": "The combined count is 21 + 6 = 28.",
+          "normal_match": {
+            "context_fact_match": false,
+            "intermediate_match": false,
+            "number_match": false
+          },
+          "paired_shuffle": "The combined count is 21 + 6 = 28.",
+          "paired_shuffle_match": {
+            "context_fact_match": false,
+            "intermediate_match": false,
+            "number_match": false
+          },
+          "stage": 2,
+          "target": "The combined count is 52 + 29 = 81."
+        },
+        {
+          "id": "validation_ordered_operation_context_0003_3",
+          "normal": "Compute the product: 6 * 10 = 120.",
+          "normal_match": {
+            "context_fact_match": false,
+            "intermediate_match": false,
+            "number_match": false
+          },
+          "paired_shuffle": "Compute the product: 6 * 10 = 120.",
+          "paired_shuffle_match": {
+            "context_fact_match": false,
+            "intermediate_match": false,
+            "number_match": false
+          },
+          "stage": 2,
+          "target": "Compute the product: 45 * 24 = 1080."
+        },
+        {
+          "id": "validation_multi_step_state_update_context_0001_1",
+          "normal": "Total gain is 9 * 2 = 32.",
+          "normal_match": {
+            "context_fact_match": false,
+            "intermediate_match": false,
+            "number_match": false
+          },
+          "paired_shuffle": "Total gain is 9 * 2 = 32.",
+          "paired_shuffle_match": {
+            "context_fact_match": false,
+            "intermediate_match": false,
+            "number_match": false
+          },
+          "stage": 2,
+          "target": "Total gain is 16 * 7 = 112."
+        }
+      ],
+      "n": 24,
+      "normal_context_fact_match": 0.08333333333333333,
+      "normal_intermediate_match": 0.08333333333333333,
+      "normal_number_match": 0.0,
+      "paired_shuffle_context_fact_match": 0.08333333333333333,
+      "paired_shuffle_intermediate_match": 0.08333333333333333,
+      "paired_shuffle_number_match": 0.0
+    },
+    "stage_3": {
+      "examples": [
+        {
+          "id": "validation_table_fact_context_0000_3",
+          "normal": "Packing across boxes gives 50 * 8 = 400.",
+          "normal_match": {
+            "context_fact_match": false,
+            "intermediate_match": false,
+            "number_match": false
+          },
+          "paired_shuffle": "Packing across boxes gives 50 * 8 = 400.",
+          "paired_shuffle_match": {
+            "context_fact_match": false,
+            "intermediate_match": false,
+            "number_match": false
+          },
+          "stage": 3,
+          "target": "Packing across boxes gives 28 * 12 = 336."
+        },
+        {
+          "id": "validation_ordered_operation_context_0000_3",
+          "normal": "Subtract the deduction: 690 - 6 = 684.",
+          "normal_match": {
+            "context_fact_match": false,
+            "intermediate_match": false,
+            "number_match": false
+          },
+          "paired_shuffle": "Subtract the deduction: 690 - 6 = 684.",
+          "paired_shuffle_match": {
+            "context_fact_match": false,
+            "intermediate_match": false,
+            "number_match": false
+          },
+          "stage": 3,
+          "target": "Subtract the deduction: 81 - 55 = 26."
+        },
+        {
+          "id": "validation_table_fact_context_0002_0",
+          "normal": "Packing across boxes gives 50 * 8 = 400.",
+          "normal_match": {
+            "context_fact_match": false,
+            "intermediate_match": false,
+            "number_match": false
+          },
+          "paired_shuffle": "Packing across boxes gives 50 * 8 = 400.",
+          "paired_shuffle_match": {
+            "context_fact_match": false,
+            "intermediate_match": false,
+            "number_match": false
+          },
+          "stage": 3,
+          "target": "Packing across boxes gives 65 * 3 = 195."
+        },
+        {
+          "id": "validation_ordered_operation_context_0000_2",
+          "normal": "Subtract the deduction: 690 - 6 = 684.",
+          "normal_match": {
+            "context_fact_match": false,
+            "intermediate_match": false,
+            "number_match": false
+          },
+          "paired_shuffle": "Subtract the deduction: 690 - 6 = 684.",
+          "paired_shuffle_match": {
+            "context_fact_match": false,
+            "intermediate_match": false,
+            "number_match": false
+          },
+          "stage": 3,
+          "target": "Subtract the deduction: 522 - 59 = 463."
+        },
+        {
+          "id": "validation_arithmetic_context_0002_3",
+          "normal": "Then 73 * 11 = 1166, so the final value is 1166.",
+          "normal_match": {
+            "context_fact_match": true,
+            "intermediate_match": true,
+            "number_match": false
+          },
+          "paired_shuffle": "Then 73 * 11 = 1166, so the final value is 1166.",
+          "paired_shuffle_match": {
+            "context_fact_match": true,
+            "intermediate_match": true,
+            "number_match": false
+          },
+          "stage": 3,
+          "target": "Then 70 * 11 = 770, so the final value is 770."
+        },
+        {
+          "id": "validation_multi_step_state_update_context_0003_3",
+          "normal": "Ending amount is 89 + 32 - 56 = 100.",
+          "normal_match": {
+            "context_fact_match": false,
+            "intermediate_match": false,
+            "number_match": false
+          },
+          "paired_shuffle": "Ending amount is 89 + 32 - 56 = 100.",
+          "paired_shuffle_match": {
+            "context_fact_match": false,
+            "intermediate_match": false,
+            "number_match": false
+          },
+          "stage": 3,
+          "target": "Ending amount is 33 + 140 - 23 = 150."
+        },
+        {
+          "id": "validation_arithmetic_context_0001_2",
+          "normal": "Then 73 * 11 = 1166, so the final value is 1166.",
+          "normal_match": {
+            "context_fact_match": false,
+            "intermediate_match": false,
+            "number_match": false
+          },
+          "paired_shuffle": "Then 73 * 11 = 1166, so the final value is 1166.",
+          "paired_shuffle_match": {
+            "context_fact_match": false,
+            "intermediate_match": false,
+            "number_match": false
+          },
+          "stage": 3,
+          "target": "Then 57 * 13 = 741, so the final value is 741."
+        },
+        {
+          "id": "validation_ordered_operation_context_0002_0",
+          "normal": "Subtract the deduction: 690 - 6 = 684.",
+          "normal_match": {
+            "context_fact_match": false,
+            "intermediate_match": false,
+            "number_match": false
+          },
+          "paired_shuffle": "Subtract the deduction: 690 - 6 = 684.",
+          "paired_shuffle_match": {
+            "context_fact_match": false,
+            "intermediate_match": false,
+            "number_match": false
+          },
+          "stage": 3,
+          "target": "Subtract the deduction: 90 - 10 = 80."
+        },
+        {
+          "id": "validation_arithmetic_context_0000_0",
+          "normal": "Then 73 * 11 = 1166, so the final value is 1166.",
+          "normal_match": {
+            "context_fact_match": false,
+            "intermediate_match": false,
+            "number_match": false
+          },
+          "paired_shuffle": "Then 73 * 11 = 1166, so the final value is 1166.",
+          "paired_shuffle_match": {
+            "context_fact_match": false,
+            "intermediate_match": false,
+            "number_match": false
+          },
+          "stage": 3,
+          "target": "Then 113 * 5 = 565, so the final value is 565."
+        },
+        {
+          "id": "validation_table_fact_context_0002_2",
+          "normal": "Packing across boxes gives 50 * 8 = 400.",
+          "normal_match": {
+            "context_fact_match": false,
+            "intermediate_match": false,
+            "number_match": false
+          },
+          "paired_shuffle": "Packing across boxes gives 50 * 8 = 400.",
+          "paired_shuffle_match": {
+            "context_fact_match": false,
+            "intermediate_match": false,
+            "number_match": false
+          },
+          "stage": 3,
+          "target": "Packing across boxes gives 81 * 4 = 324."
+        },
+        {
+          "id": "validation_ordered_operation_context_0003_3",
+          "normal": "Subtract the deduction: 690 - 6 = 684.",
+          "normal_match": {
+            "context_fact_match": false,
+            "intermediate_match": false,
+            "number_match": false
+          },
+          "paired_shuffle": "Subtract the deduction: 690 - 6 = 684.",
+          "paired_shuffle_match": {
+            "context_fact_match": false,
+            "intermediate_match": false,
+            "number_match": false
+          },
+          "stage": 3,
+          "target": "Subtract the deduction: 1080 - 8 = 1072."
+        },
+        {
+          "id": "validation_multi_step_state_update_context_0001_1",
+          "normal": "Ending amount is 89 + 32 - 56 = 100.",
+          "normal_match": {
+            "context_fact_match": false,
+            "intermediate_match": false,
+            "number_match": false
+          },
+          "paired_shuffle": "Ending amount is 89 + 32 - 56 = 100.",
+          "paired_shuffle_match": {
+            "context_fact_match": false,
+            "intermediate_match": false,
+            "number_match": false
+          },
+          "stage": 3,
+          "target": "Ending amount is 81 + 112 - 48 = 145."
+        }
+      ],
+      "n": 24,
+      "normal_context_fact_match": 0.125,
+      "normal_intermediate_match": 0.125,
+      "normal_number_match": 0.0,
+      "paired_shuffle_context_fact_match": 0.125,
+      "paired_shuffle_intermediate_match": 0.125,
+      "paired_shuffle_number_match": 0.0
+    }
+  },
+  "44": {
+    "stage_1": {
+      "examples": [
+        {
+          "id": "validation_arithmetic_context_0003_3",
+          "normal": "Use the context values to form (alpha + beta) * scale = (11 + 13) * 15.",
+          "normal_match": {
+            "context_fact_match": false,
+            "intermediate_match": false,
+            "number_match": false
+          },
+          "paired_shuffle": "Use the context values to form (alpha + beta) * scale = (11 + 13) * 15.",
+          "paired_shuffle_match": {
+            "context_fact_match": false,
+            "intermediate_match": false,
+            "number_match": false
+          },
+          "stage": 1,
+          "target": "Use the context values to form (alpha + beta) * scale = (42 + 52) * 6."
+        },
+        {
+          "id": "validation_table_fact_context_0003_0",
+          "normal": "Read the table as (red + blue) * boxes = (11 + 13) * 3.",
+          "normal_match": {
+            "context_fact_match": false,
+            "intermediate_match": false,
+            "number_match": false
+          },
+          "paired_shuffle": "Read the table as (red + blue) * boxes = (11 + 13) * 3.",
+          "paired_shuffle_match": {
+            "context_fact_match": false,
+            "intermediate_match": false,
+            "number_match": false
+          },
+          "stage": 1,
+          "target": "Read the table as (red + blue) * boxes = (15 + 50) * 5."
+        },
+        {
+          "id": "validation_multi_step_state_update_context_0000_2",
+          "normal": "The state update is initial + daily_gain * days - final_loss = 77 + 6 * 3 - 23.",
+          "normal_match": {
+            "context_fact_match": false,
+            "intermediate_match": false,
+            "number_match": false
+          },
+          "paired_shuffle": "The state update is initial + daily_gain * days - final_loss = 77 + 6 * 3 - 23.",
+          "paired_shuffle_match": {
+            "context_fact_match": false,
+            "intermediate_match": false,
+            "number_match": false
+          },
+          "stage": 1,
+          "target": "The state update is initial + daily_gain * days - final_loss = 66 + 20 * 2 - 24."
+        },
+        {
+          "id": "validation_multi_step_state_update_context_0000_1",
+          "normal": "The state update is initial + daily_gain * days - final_loss = 77 + 6 * 3 - 23.",
+          "normal_match": {
+            "context_fact_match": false,
+            "intermediate_match": false,
+            "number_match": false
+          },
+          "paired_shuffle": "The state update is initial + daily_gain * days - final_loss = 77 + 6 * 3 - 23.",
+          "paired_shuffle_match": {
+            "context_fact_match": false,
+            "intermediate_match": false,
+            "number_match": false
+          },
+          "stage": 1,
+          "target": "The state update is initial + daily_gain * days - final_loss = 52 + 17 * 4 - 33."
+        },
+        {
+          "id": "validation_table_fact_context_0003_1",
+          "normal": "Read the table as (red + blue) * boxes = (11 + 13) * 3.",
+          "normal_match": {
+            "context_fact_match": false,
+            "intermediate_match": false,
+            "number_match": false
+          },
+          "paired_shuffle": "Read the table as (red + blue) * boxes = (11 + 13) * 3.",
+          "paired_shuffle_match": {
+            "context_fact_match": false,
+            "intermediate_match": false,
+            "number_match": false
+          },
+          "stage": 1,
+          "target": "Read the table as (red + blue) * boxes = (35 + 20) * 7."
+        },
+        {
+          "id": "validation_table_fact_context_0002_2",
+          "normal": "Read the table as (red + blue) * boxes = (11 + 13) * 3.",
+          "normal_match": {
+            "context_fact_match": false,
+            "intermediate_match": false,
+            "number_match": false
+          },
+          "paired_shuffle": "Read the table as (red + blue) * boxes = (11 + 13) * 3.",
+          "paired_shuffle_match": {
+            "context_fact_match": false,
+            "intermediate_match": false,
+            "number_match": false
+          },
+          "stage": 1,
+          "target": "Read the table as (red + blue) * boxes = (19 + 33) * 5."
+        },
+        {
+          "id": "validation_multi_step_state_update_context_0001_0",
+          "normal": "The state update is initial + daily_gain * days - final_loss = 77 + 6 * 3 - 23.",
+          "normal_match": {
+            "context_fact_match": false,
+            "intermediate_match": false,
+            "number_match": false
+          },
+          "paired_shuffle": "The state update is initial + daily_gain * days - final_loss = 77 + 6 * 3 - 23.",
+          "paired_shuffle_match": {
+            "context_fact_match": false,
+            "intermediate_match": false,
+            "number_match": false
+          },
+          "stage": 1,
+          "target": "The state update is initial + daily_gain * days - final_loss = 30 + 15 * 10 - 14."
+        },
+        {
+          "id": "validation_arithmetic_context_0002_2",
+          "normal": "Use the context values to form (alpha + beta) * scale = (11 + 13) * 15.",
+          "normal_match": {
+            "context_fact_match": false,
+            "intermediate_match": false,
+            "number_match": false
+          },
+          "paired_shuffle": "Use the context values to form (alpha + beta) * scale = (11 + 13) * 15.",
+          "paired_shuffle_match": {
+            "context_fact_match": false,
+            "intermediate_match": false,
+            "number_match": false
+          },
+          "stage": 1,
+          "target": "Use the context values to form (alpha + beta) * scale = (32 + 60) * 8."
+        },
+        {
+          "id": "validation_arithmetic_context_0000_2",
+          "normal": "Use the context values to form (alpha + beta) * scale = (11 + 13) * 15.",
+          "normal_match": {
+            "context_fact_match": true,
+            "intermediate_match": true,
+            "number_match": false
+          },
+          "paired_shuffle": "Use the context values to form (alpha + beta) * scale = (11 + 13) * 15.",
+          "paired_shuffle_match": {
+            "context_fact_match": true,
+            "intermediate_match": true,
+            "number_match": false
+          },
+          "stage": 1,
+          "target": "Use the context values to form (alpha + beta) * scale = (54 + 8) * 11."
+        },
+        {
+          "id": "validation_table_fact_context_0000_0",
+          "normal": "Read the table as (red + blue) * boxes = (11 + 13) * 3.",
+          "normal_match": {
+            "context_fact_match": false,
+            "intermediate_match": false,
+            "number_match": false
+          },
+          "paired_shuffle": "Read the table as (red + blue) * boxes = (11 + 13) * 3.",
+          "paired_shuffle_match": {
+            "context_fact_match": false,
+            "intermediate_match": false,
+            "number_match": false
+          },
+          "stage": 1,
+          "target": "Read the table as (red + blue) * boxes = (53 + 28) * 8."
+        },
+        {
+          "id": "validation_multi_step_state_update_context_0003_0",
+          "normal": "The state update is initial + daily_gain * days - final_loss = 77 + 6 * 3 - 23.",
+          "normal_match": {
+            "context_fact_match": false,
+            "intermediate_match": false,
+            "number_match": false
+          },
+          "paired_shuffle": "The state update is initial + daily_gain * days - final_loss = 77 + 6 * 3 - 23.",
+          "paired_shuffle_match": {
+            "context_fact_match": false,
+            "intermediate_match": false,
+            "number_match": false
+          },
+          "stage": 1,
+          "target": "The state update is initial + daily_gain * days - final_loss = 36 + 9 * 7 - 5."
+        },
+        {
+          "id": "validation_table_fact_context_0002_3",
+          "normal": "Read the table as (red + blue) * boxes = (11 + 13) * 3.",
+          "normal_match": {
+            "context_fact_match": false,
+            "intermediate_match": false,
+            "number_match": false
+          },
+          "paired_shuffle": "Read the table as (red + blue) * boxes = (11 + 13) * 3.",
+          "paired_shuffle_match": {
+            "context_fact_match": false,
+            "intermediate_match": false,
+            "number_match": false
+          },
+          "stage": 1,
+          "target": "Read the table as (red + blue) * boxes = (20 + 43) * 12."
+        }
+      ],
+      "n": 24,
+      "normal_context_fact_match": 0.16666666666666666,
+      "normal_intermediate_match": 0.16666666666666666,
+      "normal_number_match": 0.0,
+      "paired_shuffle_context_fact_match": 0.16666666666666666,
+      "paired_shuffle_intermediate_match": 0.16666666666666666,
+      "paired_shuffle_number_match": 0.0
+    },
+    "stage_2": {
+      "examples": [
+        {
+          "id": "validation_arithmetic_context_0003_3",
+          "normal": "First alpha + beta = 67 + 46 = 100.",
+          "normal_match": {
+            "context_fact_match": false,
+            "intermediate_match": false,
+            "number_match": false
+          },
+          "paired_shuffle": "First alpha + beta = 67 + 46 = 100.",
+          "paired_shuffle_match": {
+            "context_fact_match": false,
+            "intermediate_match": false,
+            "number_match": false
+          },
+          "stage": 2,
+          "target": "First alpha + beta = 42 + 52 = 94."
+        },
+        {
+          "id": "validation_table_fact_context_0003_0",
+          "normal": "The combined count is 11 + 13 = 22.",
+          "normal_match": {
+            "context_fact_match": false,
+            "intermediate_match": false,
+            "number_match": false
+          },
+          "paired_shuffle": "The combined count is 11 + 13 = 22.",
+          "paired_shuffle_match": {
+            "context_fact_match": false,
+            "intermediate_match": false,
+            "number_match": false
+          },
+          "stage": 2,
+          "target": "The combined count is 15 + 50 = 65."
+        },
+        {
+          "id": "validation_multi_step_state_update_context_0000_2",
+          "normal": "Total gain is 14 * 3 = 48.",
+          "normal_match": {
+            "context_fact_match": false,
+            "intermediate_match": false,
+            "number_match": false
+          },
+          "paired_shuffle": "Total gain is 14 * 3 = 48.",
+          "paired_shuffle_match": {
+            "context_fact_match": false,
+            "intermediate_match": false,
+            "number_match": false
+          },
+          "stage": 2,
+          "target": "Total gain is 20 * 2 = 40."
+        },
+        {
+          "id": "validation_multi_step_state_update_context_0000_1",
+          "normal": "Total gain is 14 * 3 = 48.",
+          "normal_match": {
+            "context_fact_match": false,
+            "intermediate_match": false,
+            "number_match": false
+          },
+          "paired_shuffle": "Total gain is 14 * 3 = 48.",
+          "paired_shuffle_match": {
+            "context_fact_match": false,
+            "intermediate_match": false,
+            "number_match": false
+          },
+          "stage": 2,
+          "target": "Total gain is 17 * 4 = 68."
+        },
+        {
+          "id": "validation_table_fact_context_0003_1",
+          "normal": "The combined count is 11 + 13 = 22.",
+          "normal_match": {
+            "context_fact_match": false,
+            "intermediate_match": false,
+            "number_match": false
+          },
+          "paired_shuffle": "The combined count is 11 + 13 = 22.",
+          "paired_shuffle_match": {
+            "context_fact_match": false,
+            "intermediate_match": false,
+            "number_match": false
+          },
+          "stage": 2,
+          "target": "The combined count is 35 + 20 = 55."
+        },
+        {
+          "id": "validation_table_fact_context_0002_2",
+          "normal": "The combined count is 11 + 13 = 22.",
+          "normal_match": {
+            "context_fact_match": false,
+            "intermediate_match": false,
+            "number_match": false
+          },
+          "paired_shuffle": "The combined count is 11 + 13 = 22.",
+          "paired_shuffle_match": {
+            "context_fact_match": false,
+            "intermediate_match": false,
+            "number_match": false
+          },
+          "stage": 2,
+          "target": "The combined count is 19 + 33 = 52."
+        },
+        {
+          "id": "validation_multi_step_state_update_context_0001_0",
+          "normal": "Total gain is 14 * 3 = 48.",
+          "normal_match": {
+            "context_fact_match": true,
+            "intermediate_match": true,
+            "number_match": false
+          },
+          "paired_shuffle": "Total gain is 14 * 3 = 48.",
+          "paired_shuffle_match": {
+            "context_fact_match": true,
+            "intermediate_match": true,
+            "number_match": false
+          },
+          "stage": 2,
+          "target": "Total gain is 15 * 10 = 150."
+        },
+        {
+          "id": "validation_arithmetic_context_0002_2",
+          "normal": "First alpha + beta = 67 + 46 = 100.",
+          "normal_match": {
+            "context_fact_match": false,
+            "intermediate_match": false,
+            "number_match": false
+          },
+          "paired_shuffle": "First alpha + beta = 67 + 46 = 100.",
+          "paired_shuffle_match": {
+            "context_fact_match": false,
+            "intermediate_match": false,
+            "number_match": false
+          },
+          "stage": 2,
+          "target": "First alpha + beta = 32 + 60 = 92."
+        },
+        {
+          "id": "validation_arithmetic_context_0000_2",
+          "normal": "First alpha + beta = 67 + 46 = 100.",
+          "normal_match": {
+            "context_fact_match": false,
+            "intermediate_match": false,
+            "number_match": false
+          },
+          "paired_shuffle": "First alpha + beta = 67 + 46 = 100.",
+          "paired_shuffle_match": {
+            "context_fact_match": false,
+            "intermediate_match": false,
+            "number_match": false
+          },
+          "stage": 2,
+          "target": "First alpha + beta = 54 + 8 = 62."
+        },
+        {
+          "id": "validation_table_fact_context_0000_0",
+          "normal": "The combined count is 11 + 13 = 22.",
+          "normal_match": {
+            "context_fact_match": false,
+            "intermediate_match": false,
+            "number_match": false
+          },
+          "paired_shuffle": "The combined count is 11 + 13 = 22.",
+          "paired_shuffle_match": {
+            "context_fact_match": false,
+            "intermediate_match": false,
+            "number_match": false
+          },
+          "stage": 2,
+          "target": "The combined count is 53 + 28 = 81."
+        },
+        {
+          "id": "validation_multi_step_state_update_context_0003_0",
+          "normal": "Total gain is 14 * 3 = 48.",
+          "normal_match": {
+            "context_fact_match": false,
+            "intermediate_match": false,
+            "number_match": false
+          },
+          "paired_shuffle": "Total gain is 14 * 3 = 48.",
+          "paired_shuffle_match": {
+            "context_fact_match": false,
+            "intermediate_match": false,
+            "number_match": false
+          },
+          "stage": 2,
+          "target": "Total gain is 9 * 7 = 63."
+        },
+        {
+          "id": "validation_table_fact_context_0002_3",
+          "normal": "The combined count is 11 + 13 = 22.",
+          "normal_match": {
+            "context_fact_match": false,
+            "intermediate_match": false,
+            "number_match": false
+          },
+          "paired_shuffle": "The combined count is 11 + 13 = 22.",
+          "paired_shuffle_match": {
+            "context_fact_match": false,
+            "intermediate_match": false,
+            "number_match": false
+          },
+          "stage": 2,
+          "target": "The combined count is 20 + 43 = 63."
+        }
+      ],
+      "n": 24,
+      "normal_context_fact_match": 0.08333333333333333,
+      "normal_intermediate_match": 0.08333333333333333,
+      "normal_number_match": 0.0,
+      "paired_shuffle_context_fact_match": 0.08333333333333333,
+      "paired_shuffle_intermediate_match": 0.08333333333333333,
+      "paired_shuffle_number_match": 0.0
+    },
+    "stage_3": {
+      "examples": [
+        {
+          "id": "validation_arithmetic_context_0003_3",
+          "normal": "Then 89 * 13 = 1330, so the final value is 1330.",
+          "normal_match": {
+            "context_fact_match": false,
+            "intermediate_match": false,
+            "number_match": false
+          },
+          "paired_shuffle": "Then 89 * 13 = 1330, so the final value is 1330.",
+          "paired_shuffle_match": {
+            "context_fact_match": false,
+            "intermediate_match": false,
+            "number_match": false
+          },
+          "stage": 3,
+          "target": "Then 94 * 6 = 564, so the final value is 564."
+        },
+        {
+          "id": "validation_table_fact_context_0003_0",
+          "normal": "Packing across boxes gives 50 * 3 = 50.",
+          "normal_match": {
+            "context_fact_match": true,
+            "intermediate_match": true,
+            "number_match": false
+          },
+          "paired_shuffle": "Packing across boxes gives 50 * 3 = 50.",
+          "paired_shuffle_match": {
+            "context_fact_match": true,
+            "intermediate_match": true,
+            "number_match": false
+          },
+          "stage": 3,
+          "target": "Packing across boxes gives 65 * 5 = 325."
+        },
+        {
+          "id": "validation_multi_step_state_update_context_0000_2",
+          "normal": "Ending amount is 50 + 40 - 23 = 24.",
+          "normal_match": {
+            "context_fact_match": true,
+            "intermediate_match": true,
+            "number_match": false
+          },
+          "paired_shuffle": "Ending amount is 50 + 40 - 23 = 24.",
+          "paired_shuffle_match": {
+            "context_fact_match": true,
+            "intermediate_match": true,
+            "number_match": false
+          },
+          "stage": 3,
+          "target": "Ending amount is 66 + 40 - 24 = 82."
+        },
+        {
+          "id": "validation_multi_step_state_update_context_0000_1",
+          "normal": "Ending amount is 50 + 40 - 23 = 24.",
+          "normal_match": {
+            "context_fact_match": false,
+            "intermediate_match": false,
+            "number_match": false
+          },
+          "paired_shuffle": "Ending amount is 50 + 40 - 23 = 24.",
+          "paired_shuffle_match": {
+            "context_fact_match": false,
+            "intermediate_match": false,
+            "number_match": false
+          },
+          "stage": 3,
+          "target": "Ending amount is 52 + 68 - 33 = 87."
+        },
+        {
+          "id": "validation_table_fact_context_0003_1",
+          "normal": "Packing across boxes gives 50 * 3 = 50.",
+          "normal_match": {
+            "context_fact_match": false,
+            "intermediate_match": false,
+            "number_match": false
+          },
+          "paired_shuffle": "Packing across boxes gives 50 * 3 = 50.",
+          "paired_shuffle_match": {
+            "context_fact_match": false,
+            "intermediate_match": false,
+            "number_match": false
+          },
+          "stage": 3,
+          "target": "Packing across boxes gives 55 * 7 = 385."
+        },
+        {
+          "id": "validation_table_fact_context_0002_2",
+          "normal": "Packing across boxes gives 50 * 3 = 50.",
+          "normal_match": {
+            "context_fact_match": false,
+            "intermediate_match": false,
+            "number_match": false
+          },
+          "paired_shuffle": "Packing across boxes gives 50 * 3 = 50.",
+          "paired_shuffle_match": {
+            "context_fact_match": false,
+            "intermediate_match": false,
+            "number_match": false
+          },
+          "stage": 3,
+          "target": "Packing across boxes gives 52 * 5 = 260."
+        },
+        {
+          "id": "validation_multi_step_state_update_context_0001_0",
+          "normal": "Ending amount is 50 + 40 - 23 = 24.",
+          "normal_match": {
+            "context_fact_match": false,
+            "intermediate_match": false,
+            "number_match": false
+          },
+          "paired_shuffle": "Ending amount is 50 + 40 - 23 = 24.",
+          "paired_shuffle_match": {
+            "context_fact_match": false,
+            "intermediate_match": false,
+            "number_match": false
+          },
+          "stage": 3,
+          "target": "Ending amount is 30 + 150 - 14 = 166."
+        },
+        {
+          "id": "validation_arithmetic_context_0002_2",
+          "normal": "Then 89 * 13 = 1330, so the final value is 1330.",
+          "normal_match": {
+            "context_fact_match": false,
+            "intermediate_match": false,
+            "number_match": false
+          },
+          "paired_shuffle": "Then 89 * 13 = 1330, so the final value is 1330.",
+          "paired_shuffle_match": {
+            "context_fact_match": false,
+            "intermediate_match": false,
+            "number_match": false
+          },
+          "stage": 3,
+          "target": "Then 92 * 8 = 736, so the final value is 736."
+        },
+        {
+          "id": "validation_arithmetic_context_0000_2",
+          "normal": "Then 89 * 13 = 1330, so the final value is 1330.",
+          "normal_match": {
+            "context_fact_match": false,
+            "intermediate_match": false,
+            "number_match": false
+          },
+          "paired_shuffle": "Then 89 * 13 = 1330, so the final value is 1330.",
+          "paired_shuffle_match": {
+            "context_fact_match": false,
+            "intermediate_match": false,
+            "number_match": false
+          },
+          "stage": 3,
+          "target": "Then 62 * 11 = 682, so the final value is 682."
+        },
+        {
+          "id": "validation_table_fact_context_0000_0",
+          "normal": "Packing across boxes gives 50 * 3 = 50.",
+          "normal_match": {
+            "context_fact_match": false,
+            "intermediate_match": false,
+            "number_match": false
+          },
+          "paired_shuffle": "Packing across boxes gives 50 * 3 = 50.",
+          "paired_shuffle_match": {
+            "context_fact_match": false,
+            "intermediate_match": false,
+            "number_match": false
+          },
+          "stage": 3,
+          "target": "Packing across boxes gives 81 * 8 = 648."
+        },
+        {
+          "id": "validation_multi_step_state_update_context_0003_0",
+          "normal": "Ending amount is 50 + 40 - 23 = 24.",
+          "normal_match": {
+            "context_fact_match": false,
+            "intermediate_match": false,
+            "number_match": false
+          },
+          "paired_shuffle": "Ending amount is 50 + 40 - 23 = 24.",
+          "paired_shuffle_match": {
+            "context_fact_match": false,
+            "intermediate_match": false,
+            "number_match": false
+          },
+          "stage": 3,
+          "target": "Ending amount is 36 + 63 - 5 = 94."
+        },
+        {
+          "id": "validation_table_fact_context_0002_3",
+          "normal": "Packing across boxes gives 50 * 3 = 50.",
+          "normal_match": {
+            "context_fact_match": false,
+            "intermediate_match": false,
+            "number_match": false
+          },
+          "paired_shuffle": "Packing across boxes gives 50 * 3 = 50.",
+          "paired_shuffle_match": {
+            "context_fact_match": false,
+            "intermediate_match": false,
+            "number_match": false
+          },
+          "stage": 3,
+          "target": "Packing across boxes gives 63 * 12 = 756."
+        }
+      ],
+      "n": 24,
+      "normal_context_fact_match": 0.16666666666666666,
+      "normal_intermediate_match": 0.16666666666666666,
+      "normal_number_match": 0.0,
+      "paired_shuffle_context_fact_match": 0.16666666666666666,
+      "paired_shuffle_intermediate_match": 0.16666666666666666,
+      "paired_shuffle_number_match": 0.0
+    }
+  }
+}

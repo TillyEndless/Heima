@@ -1,0 +1,1620 @@
+{
+  "42": {
+    "logs": [
+      {
+        "grad_A": 0.9999999864756147,
+        "loss": 0.34345000982284546,
+        "step": 1
+      },
+      {
+        "grad_A": 0.999999902190377,
+        "loss": 0.3146147131919861,
+        "step": 30
+      },
+      {
+        "grad_A": 1.000000053924451,
+        "loss": 0.34192532300949097,
+        "step": 60
+      },
+      {
+        "grad_A": 0.9999998951328679,
+        "loss": 0.23970234394073486,
+        "step": 90
+      },
+      {
+        "grad_A": 0.9999998272821096,
+        "loss": 0.11537958681583405,
+        "step": 120
+      }
+    ],
+    "ood": {
+      "answer_em": 0.015625,
+      "answer_nll": 1.8534366190433502,
+      "generation": [
+        {
+          "gold": "164",
+          "id": "full_ood_42_0000",
+          "match": false,
+          "parsed": null,
+          "raw": "",
+          "token_ids": [
+            50256
+          ]
+        },
+        {
+          "gold": "36",
+          "id": "full_ood_42_0001",
+          "match": false,
+          "parsed": "18",
+          "raw": "\nAnswer: 18",
+          "token_ids": [
+            198,
+            33706,
+            25,
+            1248,
+            50256
+          ]
+        },
+        {
+          "gold": "2244",
+          "id": "full_ood_42_0002",
+          "match": false,
+          "parsed": "480",
+          "raw": "\nAnswer: 480",
+          "token_ids": [
+            198,
+            33706,
+            25,
+            23487,
+            50256
+          ]
+        },
+        {
+          "gold": "1188",
+          "id": "full_ood_42_0003",
+          "match": false,
+          "parsed": "1430",
+          "raw": "\nAnswer: 1430",
+          "token_ids": [
+            198,
+            33706,
+            25,
+            1478,
+            1270,
+            50256
+          ]
+        },
+        {
+          "gold": "1351",
+          "id": "full_ood_42_0004",
+          "match": false,
+          "parsed": "2456",
+          "raw": "\nAnswer: 2456",
+          "token_ids": [
+            198,
+            33706,
+            25,
+            1987,
+            3980,
+            50256
+          ]
+        },
+        {
+          "gold": "201",
+          "id": "full_ood_42_0005",
+          "match": false,
+          "parsed": "228",
+          "raw": "\nAnswer: 228",
+          "token_ids": [
+            198,
+            33706,
+            25,
+            29041,
+            50256
+          ]
+        },
+        {
+          "gold": "1505",
+          "id": "full_ood_42_0006",
+          "match": false,
+          "parsed": "1952",
+          "raw": "\nAnswer: 1952",
+          "token_ids": [
+            198,
+            33706,
+            25,
+            26352,
+            50256
+          ]
+        },
+        {
+          "gold": "736",
+          "id": "full_ood_42_0007",
+          "match": false,
+          "parsed": "1043",
+          "raw": "\nAnswer: 1043",
+          "token_ids": [
+            198,
+            33706,
+            25,
+            838,
+            3559,
+            50256
+          ]
+        }
+      ],
+      "generation_em": 0.0,
+      "latent": {
+        "z1": {
+          "geometry": {
+            "effective_rank": 5.684789657592773,
+            "pairwise_cosine_mean": 0.9998399615287781,
+            "pairwise_cosine_std": 0.00013459601905196905,
+            "within_dataset_variance_mean": 0.035937968641519547,
+            "within_dataset_variance_sum": 27.600358963012695
+          },
+          "retrieval": {
+            "R@1": 1.0,
+            "R@5": 1.0,
+            "random_R@1": 0.015625,
+            "random_R@5": 0.078125
+          }
+        },
+        "z2": {
+          "geometry": {
+            "effective_rank": 3.493464946746826,
+            "pairwise_cosine_mean": 0.9997429251670837,
+            "pairwise_cosine_std": 0.00043710297904908657,
+            "within_dataset_variance_mean": 0.050405871123075485,
+            "within_dataset_variance_sum": 38.711708068847656
+          },
+          "retrieval": {
+            "R@1": 1.0,
+            "R@5": 1.0,
+            "random_R@1": 0.015625,
+            "random_R@5": 0.078125
+          }
+        },
+        "z3": {
+          "geometry": {
+            "effective_rank": 2.7692909240722656,
+            "pairwise_cosine_mean": 0.9956169724464417,
+            "pairwise_cosine_std": 0.0040109893307089806,
+            "within_dataset_variance_mean": 0.3266472816467285,
+            "within_dataset_variance_sum": 250.8651123046875
+          },
+          "retrieval": {
+            "R@1": 1.0,
+            "R@5": 1.0,
+            "random_R@1": 0.015625,
+            "random_R@5": 0.078125
+          }
+        }
+      }
+    },
+    "train": {
+      "answer_em": 0.953125,
+      "answer_nll": 0.03221012791618705,
+      "generation": [
+        {
+          "gold": "1185",
+          "id": "htext_train_0000",
+          "match": true,
+          "parsed": "1185",
+          "raw": "\nAnswer: 1185",
+          "token_ids": [
+            198,
+            33706,
+            25,
+            1367,
+            5332,
+            50256
+          ]
+        },
+        {
+          "gold": "420",
+          "id": "htext_train_0001",
+          "match": false,
+          "parsed": "94",
+          "raw": "94",
+          "token_ids": [
+            5824,
+            50256
+          ]
+        },
+        {
+          "gold": "1",
+          "id": "htext_train_0002",
+          "match": true,
+          "parsed": "1",
+          "raw": "\nAnswer: 1",
+          "token_ids": [
+            198,
+            33706,
+            25,
+            352,
+            50256
+          ]
+        },
+        {
+          "gold": "667",
+          "id": "htext_train_0003",
+          "match": true,
+          "parsed": "667",
+          "raw": "\nAnswer: 667",
+          "token_ids": [
+            198,
+            33706,
+            25,
+            718,
+            3134,
+            50256
+          ]
+        },
+        {
+          "gold": "299",
+          "id": "htext_train_0004",
+          "match": false,
+          "parsed": "298",
+          "raw": "298",
+          "token_ids": [
+            27728,
+            50256
+          ]
+        },
+        {
+          "gold": "1594",
+          "id": "htext_train_0005",
+          "match": true,
+          "parsed": "1594",
+          "raw": "\nAnswer: 1594",
+          "token_ids": [
+            198,
+            33706,
+            25,
+            1315,
+            5824,
+            50256
+          ]
+        },
+        {
+          "gold": "2391",
+          "id": "htext_train_0006",
+          "match": true,
+          "parsed": "2391",
+          "raw": "\nAnswer: 2391",
+          "token_ids": [
+            198,
+            33706,
+            25,
+            2242,
+            6420,
+            50256
+          ]
+        },
+        {
+          "gold": "1785",
+          "id": "htext_train_0007",
+          "match": true,
+          "parsed": "1785",
+          "raw": "\nAnswer: 1785",
+          "token_ids": [
+            198,
+            33706,
+            25,
+            1596,
+            5332,
+            50256
+          ]
+        }
+      ],
+      "generation_em": 0.8125,
+      "latent": {
+        "z1": {
+          "geometry": {
+            "effective_rank": 6.385984897613525,
+            "pairwise_cosine_mean": 0.9998530745506287,
+            "pairwise_cosine_std": 0.00010274493251927197,
+            "within_dataset_variance_mean": 0.0330725833773613,
+            "within_dataset_variance_sum": 25.399744033813477
+          },
+          "retrieval": {
+            "R@1": 1.0,
+            "R@5": 1.0,
+            "random_R@1": 0.015625,
+            "random_R@5": 0.078125
+          }
+        },
+        "z2": {
+          "geometry": {
+            "effective_rank": 3.590979814529419,
+            "pairwise_cosine_mean": 0.9997238516807556,
+            "pairwise_cosine_std": 0.00041293082176707685,
+            "within_dataset_variance_mean": 0.05403989180922508,
+            "within_dataset_variance_sum": 41.50263595581055
+          },
+          "retrieval": {
+            "R@1": 1.0,
+            "R@5": 1.0,
+            "random_R@1": 0.015625,
+            "random_R@5": 0.078125
+          }
+        },
+        "z3": {
+          "geometry": {
+            "effective_rank": 3.2601640224456787,
+            "pairwise_cosine_mean": 0.9960017204284668,
+            "pairwise_cosine_std": 0.0033647255040705204,
+            "within_dataset_variance_mean": 0.2695035934448242,
+            "within_dataset_variance_sum": 206.978759765625
+          },
+          "retrieval": {
+            "R@1": 1.0,
+            "R@5": 1.0,
+            "random_R@1": 0.015625,
+            "random_R@5": 0.078125
+          }
+        }
+      }
+    },
+    "validation": {
+      "answer_em": 0.0,
+      "answer_nll": 1.7563188821077347,
+      "generation": [
+        {
+          "gold": "94",
+          "id": "htext_validation_0000",
+          "match": false,
+          "parsed": "2298",
+          "raw": "\nAnswer: 2298",
+          "token_ids": [
+            198,
+            33706,
+            25,
+            362,
+            27728,
+            50256
+          ]
+        },
+        {
+          "gold": "2566",
+          "id": "htext_validation_0001",
+          "match": false,
+          "parsed": "2460",
+          "raw": "\nAnswer: 2460",
+          "token_ids": [
+            198,
+            33706,
+            25,
+            1987,
+            1899,
+            50256
+          ]
+        },
+        {
+          "gold": "166",
+          "id": "htext_validation_0002",
+          "match": false,
+          "parsed": "163",
+          "raw": "\nAnswer: 163",
+          "token_ids": [
+            198,
+            33706,
+            25,
+            26826,
+            50256
+          ]
+        },
+        {
+          "gold": "5",
+          "id": "htext_validation_0003",
+          "match": false,
+          "parsed": "867",
+          "raw": "\nAnswer: 867",
+          "token_ids": [
+            198,
+            33706,
+            25,
+            807,
+            3134,
+            50256
+          ]
+        },
+        {
+          "gold": "361",
+          "id": "htext_validation_0004",
+          "match": false,
+          "parsed": "180",
+          "raw": "180",
+          "token_ids": [
+            15259,
+            50256
+          ]
+        },
+        {
+          "gold": "514",
+          "id": "htext_validation_0005",
+          "match": false,
+          "parsed": null,
+          "raw": "",
+          "token_ids": [
+            50256
+          ]
+        },
+        {
+          "gold": "199",
+          "id": "htext_validation_0006",
+          "match": false,
+          "parsed": "2298",
+          "raw": "\nAnswer: 2298",
+          "token_ids": [
+            198,
+            33706,
+            25,
+            362,
+            27728,
+            50256
+          ]
+        },
+        {
+          "gold": "374",
+          "id": "htext_validation_0007",
+          "match": false,
+          "parsed": "336",
+          "raw": "\nAnswer: 336",
+          "token_ids": [
+            198,
+            33706,
+            25,
+            38867,
+            50256
+          ]
+        }
+      ],
+      "generation_em": 0.0,
+      "latent": {
+        "z1": {
+          "geometry": {
+            "effective_rank": 5.362560749053955,
+            "pairwise_cosine_mean": 0.9998103976249695,
+            "pairwise_cosine_std": 0.00016601009701844305,
+            "within_dataset_variance_mean": 0.043911293148994446,
+            "within_dataset_variance_sum": 33.723873138427734
+          },
+          "retrieval": {
+            "R@1": 1.0,
+            "R@5": 1.0,
+            "random_R@1": 0.015625,
+            "random_R@5": 0.078125
+          }
+        },
+        "z2": {
+          "geometry": {
+            "effective_rank": 3.5051016807556152,
+            "pairwise_cosine_mean": 0.9996735453605652,
+            "pairwise_cosine_std": 0.0005452440236695111,
+            "within_dataset_variance_mean": 0.06458047777414322,
+            "within_dataset_variance_sum": 49.597808837890625
+          },
+          "retrieval": {
+            "R@1": 1.0,
+            "R@5": 1.0,
+            "random_R@1": 0.015625,
+            "random_R@5": 0.078125
+          }
+        },
+        "z3": {
+          "geometry": {
+            "effective_rank": 3.732102632522583,
+            "pairwise_cosine_mean": 0.9970448017120361,
+            "pairwise_cosine_std": 0.0024547900538891554,
+            "within_dataset_variance_mean": 0.2241523414850235,
+            "within_dataset_variance_sum": 172.1490020751953
+          },
+          "retrieval": {
+            "R@1": 1.0,
+            "R@5": 1.0,
+            "random_R@1": 0.015625,
+            "random_R@5": 0.078125
+          }
+        }
+      }
+    }
+  },
+  "43": {
+    "logs": [
+      {
+        "grad_A": 0.9999998938163174,
+        "loss": 0.713373064994812,
+        "step": 1
+      },
+      {
+        "grad_A": 0.9999999632909173,
+        "loss": 0.3783593475818634,
+        "step": 30
+      },
+      {
+        "grad_A": 0.9999999853505414,
+        "loss": 0.39330142736434937,
+        "step": 60
+      },
+      {
+        "grad_A": 0.9999997522451998,
+        "loss": 0.1710612177848816,
+        "step": 90
+      },
+      {
+        "grad_A": 0.9999999979304448,
+        "loss": 0.23355264961719513,
+        "step": 120
+      }
+    ],
+    "ood": {
+      "answer_em": 0.03125,
+      "answer_nll": 1.6327158212661743,
+      "generation": [
+        {
+          "gold": "158",
+          "id": "full_ood_43_0000",
+          "match": false,
+          "parsed": "1776",
+          "raw": "\nAnswer: 1776",
+          "token_ids": [
+            198,
+            33706,
+            25,
+            1596,
+            4304,
+            50256
+          ]
+        },
+        {
+          "gold": "1624",
+          "id": "full_ood_43_0001",
+          "match": false,
+          "parsed": "1484",
+          "raw": "\nAnswer: 1484",
+          "token_ids": [
+            198,
+            33706,
+            25,
+            1478,
+            5705,
+            50256
+          ]
+        },
+        {
+          "gold": "234",
+          "id": "full_ood_43_0002",
+          "match": false,
+          "parsed": "340",
+          "raw": "\nAnswer: 340",
+          "token_ids": [
+            198,
+            33706,
+            25,
+            28560,
+            50256
+          ]
+        },
+        {
+          "gold": "1513",
+          "id": "full_ood_43_0003",
+          "match": false,
+          "parsed": "1784",
+          "raw": "\nAnswer: 1784",
+          "token_ids": [
+            198,
+            33706,
+            25,
+            1596,
+            5705,
+            50256
+          ]
+        },
+        {
+          "gold": "224",
+          "id": "full_ood_43_0004",
+          "match": false,
+          "parsed": "340",
+          "raw": "\nAnswer: 340",
+          "token_ids": [
+            198,
+            33706,
+            25,
+            28560,
+            50256
+          ]
+        },
+        {
+          "gold": "1350",
+          "id": "full_ood_43_0005",
+          "match": false,
+          "parsed": "451",
+          "raw": "\nAnswer: 451",
+          "token_ids": [
+            198,
+            33706,
+            25,
+            49356,
+            50256
+          ]
+        },
+        {
+          "gold": "355",
+          "id": "full_ood_43_0006",
+          "match": false,
+          "parsed": "360",
+          "raw": "\nAnswer: 360",
+          "token_ids": [
+            198,
+            33706,
+            25,
+            11470,
+            50256
+          ]
+        },
+        {
+          "gold": "752",
+          "id": "full_ood_43_0007",
+          "match": false,
+          "parsed": null,
+          "raw": "\nAnswer: \nAnswer: \nAnswer: ",
+          "token_ids": [
+            198,
+            33706,
+            25,
+            220,
+            198,
+            33706,
+            25,
+            220,
+            198,
+            33706,
+            25,
+            220,
+            50256
+          ]
+        }
+      ],
+      "generation_em": 0.03125,
+      "latent": {
+        "z1": {
+          "geometry": {
+            "effective_rank": 5.2023606300354,
+            "pairwise_cosine_mean": 0.999772310256958,
+            "pairwise_cosine_std": 0.00019060169870499521,
+            "within_dataset_variance_mean": 0.053721118718385696,
+            "within_dataset_variance_sum": 41.25782012939453
+          },
+          "retrieval": {
+            "R@1": 1.0,
+            "R@5": 1.0,
+            "random_R@1": 0.015625,
+            "random_R@5": 0.078125
+          }
+        },
+        "z2": {
+          "geometry": {
+            "effective_rank": 1.8411682844161987,
+            "pairwise_cosine_mean": 0.9992764592170715,
+            "pairwise_cosine_std": 0.0008763635414652526,
+            "within_dataset_variance_mean": 0.13877463340759277,
+            "within_dataset_variance_sum": 106.57891845703125
+          },
+          "retrieval": {
+            "R@1": 1.0,
+            "R@5": 1.0,
+            "random_R@1": 0.015625,
+            "random_R@5": 0.078125
+          }
+        },
+        "z3": {
+          "geometry": {
+            "effective_rank": 2.939039707183838,
+            "pairwise_cosine_mean": 0.9965922236442566,
+            "pairwise_cosine_std": 0.0028310418128967285,
+            "within_dataset_variance_mean": 0.23844461143016815,
+            "within_dataset_variance_sum": 183.12545776367188
+          },
+          "retrieval": {
+            "R@1": 1.0,
+            "R@5": 1.0,
+            "random_R@1": 0.015625,
+            "random_R@5": 0.078125
+          }
+        }
+      }
+    },
+    "train": {
+      "answer_em": 0.921875,
+      "answer_nll": 0.03424462233670056,
+      "generation": [
+        {
+          "gold": "1648",
+          "id": "htext_train_0000",
+          "match": true,
+          "parsed": "1648",
+          "raw": "\nAnswer: 1648",
+          "token_ids": [
+            198,
+            33706,
+            25,
+            1467,
+            2780,
+            50256
+          ]
+        },
+        {
+          "gold": "1436",
+          "id": "htext_train_0001",
+          "match": true,
+          "parsed": "1436",
+          "raw": "\nAnswer: 1436",
+          "token_ids": [
+            198,
+            33706,
+            25,
+            1478,
+            2623,
+            50256
+          ]
+        },
+        {
+          "gold": "314",
+          "id": "htext_train_0002",
+          "match": true,
+          "parsed": "314",
+          "raw": "\nAnswer: 314",
+          "token_ids": [
+            198,
+            33706,
+            25,
+            34085,
+            50256
+          ]
+        },
+        {
+          "gold": "867",
+          "id": "htext_train_0003",
+          "match": true,
+          "parsed": "867",
+          "raw": "\nAnswer: 867",
+          "token_ids": [
+            198,
+            33706,
+            25,
+            807,
+            3134,
+            50256
+          ]
+        },
+        {
+          "gold": "102",
+          "id": "htext_train_0004",
+          "match": true,
+          "parsed": "102",
+          "raw": "\nAnswer: 102",
+          "token_ids": [
+            198,
+            33706,
+            25,
+            15143,
+            50256
+          ]
+        },
+        {
+          "gold": "264",
+          "id": "htext_train_0005",
+          "match": true,
+          "parsed": "264",
+          "raw": "\nAnswer: 264",
+          "token_ids": [
+            198,
+            33706,
+            25,
+            32158,
+            50256
+          ]
+        },
+        {
+          "gold": "4893",
+          "id": "htext_train_0006",
+          "match": false,
+          "parsed": "3263",
+          "raw": "\nAnswer: 3263",
+          "token_ids": [
+            198,
+            33706,
+            25,
+            513,
+            29558,
+            50256
+          ]
+        },
+        {
+          "gold": "384",
+          "id": "htext_train_0007",
+          "match": true,
+          "parsed": "384",
+          "raw": "\nAnswer: 384",
+          "token_ids": [
+            198,
+            33706,
+            25,
+            40400,
+            50256
+          ]
+        }
+      ],
+      "generation_em": 0.90625,
+      "latent": {
+        "z1": {
+          "geometry": {
+            "effective_rank": 6.1096110343933105,
+            "pairwise_cosine_mean": 0.9997810125350952,
+            "pairwise_cosine_std": 0.00016300869174301624,
+            "within_dataset_variance_mean": 0.054771941155195236,
+            "within_dataset_variance_sum": 42.064849853515625
+          },
+          "retrieval": {
+            "R@1": 1.0,
+            "R@5": 1.0,
+            "random_R@1": 0.015625,
+            "random_R@5": 0.078125
+          }
+        },
+        "z2": {
+          "geometry": {
+            "effective_rank": 1.543299674987793,
+            "pairwise_cosine_mean": 0.9988701343536377,
+            "pairwise_cosine_std": 0.0011793109588325024,
+            "within_dataset_variance_mean": 0.21186339855194092,
+            "within_dataset_variance_sum": 162.71109008789062
+          },
+          "retrieval": {
+            "R@1": 1.0,
+            "R@5": 1.0,
+            "random_R@1": 0.015625,
+            "random_R@5": 0.078125
+          }
+        },
+        "z3": {
+          "geometry": {
+            "effective_rank": 3.131138324737549,
+            "pairwise_cosine_mean": 0.9964345097541809,
+            "pairwise_cosine_std": 0.003002784913405776,
+            "within_dataset_variance_mean": 0.26274374127388,
+            "within_dataset_variance_sum": 201.78720092773438
+          },
+          "retrieval": {
+            "R@1": 1.0,
+            "R@5": 1.0,
+            "random_R@1": 0.015625,
+            "random_R@5": 0.078125
+          }
+        }
+      }
+    },
+    "validation": {
+      "answer_em": 0.0,
+      "answer_nll": 1.6727191358804703,
+      "generation": [
+        {
+          "gold": "2005",
+          "id": "htext_validation_0000",
+          "match": false,
+          "parsed": "1146",
+          "raw": "\nAnswer: 1146",
+          "token_ids": [
+            198,
+            33706,
+            25,
+            1367,
+            3510,
+            50256
+          ]
+        },
+        {
+          "gold": "410",
+          "id": "htext_validation_0001",
+          "match": false,
+          "parsed": "405",
+          "raw": "\nAnswer: 405",
+          "token_ids": [
+            198,
+            33706,
+            25,
+            36966,
+            50256
+          ]
+        },
+        {
+          "gold": "1870",
+          "id": "htext_validation_0002",
+          "match": false,
+          "parsed": "3263",
+          "raw": "\nAnswer: 3263",
+          "token_ids": [
+            198,
+            33706,
+            25,
+            513,
+            29558,
+            50256
+          ]
+        },
+        {
+          "gold": "352",
+          "id": "htext_validation_0003",
+          "match": false,
+          "parsed": "305",
+          "raw": "\nAnswer: 305",
+          "token_ids": [
+            198,
+            33706,
+            25,
+            32747,
+            50256
+          ]
+        },
+        {
+          "gold": "3",
+          "id": "htext_validation_0004",
+          "match": false,
+          "parsed": null,
+          "raw": "\nAnswer: \nAnswer: \nAnswer: ",
+          "token_ids": [
+            198,
+            33706,
+            25,
+            220,
+            198,
+            33706,
+            25,
+            220,
+            198,
+            33706,
+            25,
+            220,
+            50256
+          ]
+        },
+        {
+          "gold": "1589",
+          "id": "htext_validation_0005",
+          "match": false,
+          "parsed": "584",
+          "raw": "\nAnswer: 584",
+          "token_ids": [
+            198,
+            33706,
+            25,
+            642,
+            5705,
+            50256
+          ]
+        },
+        {
+          "gold": "182",
+          "id": "htext_validation_0006",
+          "match": false,
+          "parsed": "164",
+          "raw": "\nAnswer: 164",
+          "token_ids": [
+            198,
+            33706,
+            25,
+            25307,
+            50256
+          ]
+        },
+        {
+          "gold": "357",
+          "id": "htext_validation_0007",
+          "match": false,
+          "parsed": "372",
+          "raw": "\nAnswer: 372",
+          "token_ids": [
+            198,
+            33706,
+            25,
+            46633,
+            50256
+          ]
+        }
+      ],
+      "generation_em": 0.0,
+      "latent": {
+        "z1": {
+          "geometry": {
+            "effective_rank": 5.629176139831543,
+            "pairwise_cosine_mean": 0.999756932258606,
+            "pairwise_cosine_std": 0.00018511409871280193,
+            "within_dataset_variance_mean": 0.06095701456069946,
+            "within_dataset_variance_sum": 46.81498718261719
+          },
+          "retrieval": {
+            "R@1": 1.0,
+            "R@5": 1.0,
+            "random_R@1": 0.015625,
+            "random_R@5": 0.078125
+          }
+        },
+        "z2": {
+          "geometry": {
+            "effective_rank": 1.7779134511947632,
+            "pairwise_cosine_mean": 0.9990650415420532,
+            "pairwise_cosine_std": 0.0009526915964670479,
+            "within_dataset_variance_mean": 0.17661495506763458,
+            "within_dataset_variance_sum": 135.64028930664062
+          },
+          "retrieval": {
+            "R@1": 1.0,
+            "R@5": 1.0,
+            "random_R@1": 0.015625,
+            "random_R@5": 0.078125
+          }
+        },
+        "z3": {
+          "geometry": {
+            "effective_rank": 3.294739246368408,
+            "pairwise_cosine_mean": 0.996489405632019,
+            "pairwise_cosine_std": 0.0027974762488156557,
+            "within_dataset_variance_mean": 0.27691569924354553,
+            "within_dataset_variance_sum": 212.6712646484375
+          },
+          "retrieval": {
+            "R@1": 1.0,
+            "R@5": 1.0,
+            "random_R@1": 0.015625,
+            "random_R@5": 0.078125
+          }
+        }
+      }
+    }
+  },
+  "44": {
+    "logs": [
+      {
+        "grad_A": 0.9999998970046438,
+        "loss": 0.4853860139846802,
+        "step": 1
+      },
+      {
+        "grad_A": 0.9999999714272856,
+        "loss": 0.260146826505661,
+        "step": 30
+      },
+      {
+        "grad_A": 0.9999997898141181,
+        "loss": 0.18492355942726135,
+        "step": 60
+      },
+      {
+        "grad_A": 0.9999999977788434,
+        "loss": 0.5029180645942688,
+        "step": 90
+      },
+      {
+        "grad_A": 0.9999998215471192,
+        "loss": 0.14266328513622284,
+        "step": 120
+      }
+    ],
+    "ood": {
+      "answer_em": 0.0,
+      "answer_nll": 1.649994432926178,
+      "generation": [
+        {
+          "gold": "1173",
+          "id": "full_ood_44_0000",
+          "match": false,
+          "parsed": "24",
+          "raw": "\nAnswer: 24",
+          "token_ids": [
+            198,
+            33706,
+            25,
+            1987,
+            50256
+          ]
+        },
+        {
+          "gold": "187",
+          "id": "full_ood_44_0001",
+          "match": false,
+          "parsed": "190",
+          "raw": "\nAnswer: 190",
+          "token_ids": [
+            198,
+            33706,
+            25,
+            19884,
+            50256
+          ]
+        },
+        {
+          "gold": "635",
+          "id": "full_ood_44_0002",
+          "match": false,
+          "parsed": "631",
+          "raw": "\nAnswer: 631",
+          "token_ids": [
+            198,
+            33706,
+            25,
+            718,
+            3132,
+            50256
+          ]
+        },
+        {
+          "gold": "550",
+          "id": "full_ood_44_0003",
+          "match": false,
+          "parsed": "585",
+          "raw": "\nAnswer: 585",
+          "token_ids": [
+            198,
+            33706,
+            25,
+            642,
+            5332,
+            50256
+          ]
+        },
+        {
+          "gold": "412",
+          "id": "full_ood_44_0004",
+          "match": false,
+          "parsed": "1026",
+          "raw": "\nAnswer: 1026",
+          "token_ids": [
+            198,
+            33706,
+            25,
+            838,
+            2075,
+            50256
+          ]
+        },
+        {
+          "gold": "652",
+          "id": "full_ood_44_0005",
+          "match": false,
+          "parsed": "631",
+          "raw": "\nAnswer: 631",
+          "token_ids": [
+            198,
+            33706,
+            25,
+            718,
+            3132,
+            50256
+          ]
+        },
+        {
+          "gold": "580",
+          "id": "full_ood_44_0006",
+          "match": false,
+          "parsed": "681",
+          "raw": "\nAnswer: 681",
+          "token_ids": [
+            198,
+            33706,
+            25,
+            718,
+            6659,
+            50256
+          ]
+        },
+        {
+          "gold": "766",
+          "id": "full_ood_44_0007",
+          "match": false,
+          "parsed": "681",
+          "raw": "\nAnswer: 681",
+          "token_ids": [
+            198,
+            33706,
+            25,
+            718,
+            6659,
+            50256
+          ]
+        }
+      ],
+      "generation_em": 0.0,
+      "latent": {
+        "z1": {
+          "geometry": {
+            "effective_rank": 5.708335876464844,
+            "pairwise_cosine_mean": 0.9998409152030945,
+            "pairwise_cosine_std": 0.00010048889089375734,
+            "within_dataset_variance_mean": 0.03945864364504814,
+            "within_dataset_variance_sum": 30.30423927307129
+          },
+          "retrieval": {
+            "R@1": 1.0,
+            "R@5": 1.0,
+            "random_R@1": 0.015625,
+            "random_R@5": 0.078125
+          }
+        },
+        "z2": {
+          "geometry": {
+            "effective_rank": 3.864933967590332,
+            "pairwise_cosine_mean": 0.9998344779014587,
+            "pairwise_cosine_std": 0.0001580241951160133,
+            "within_dataset_variance_mean": 0.033624183386564255,
+            "within_dataset_variance_sum": 25.82337188720703
+          },
+          "retrieval": {
+            "R@1": 1.0,
+            "R@5": 1.0,
+            "random_R@1": 0.015625,
+            "random_R@5": 0.078125
+          }
+        },
+        "z3": {
+          "geometry": {
+            "effective_rank": 3.536686420440674,
+            "pairwise_cosine_mean": 0.9976000189781189,
+            "pairwise_cosine_std": 0.0020010238513350487,
+            "within_dataset_variance_mean": 0.19943739473819733,
+            "within_dataset_variance_sum": 153.1679229736328
+          },
+          "retrieval": {
+            "R@1": 1.0,
+            "R@5": 1.0,
+            "random_R@1": 0.015625,
+            "random_R@5": 0.078125
+          }
+        }
+      }
+    },
+    "train": {
+      "answer_em": 0.890625,
+      "answer_nll": 0.059421367244794965,
+      "generation": [
+        {
+          "gold": "304",
+          "id": "htext_train_0000",
+          "match": true,
+          "parsed": "304",
+          "raw": "\nAnswer: 304",
+          "token_ids": [
+            198,
+            33706,
+            25,
+            31672,
+            50256
+          ]
+        },
+        {
+          "gold": "300",
+          "id": "htext_train_0001",
+          "match": true,
+          "parsed": "300",
+          "raw": "\nAnswer: 300",
+          "token_ids": [
+            198,
+            33706,
+            25,
+            5867,
+            50256
+          ]
+        },
+        {
+          "gold": "910",
+          "id": "htext_train_0002",
+          "match": true,
+          "parsed": "910",
+          "raw": "\nAnswer: 910",
+          "token_ids": [
+            198,
+            33706,
+            25,
+            860,
+            940,
+            50256
+          ]
+        },
+        {
+          "gold": "264",
+          "id": "htext_train_0003",
+          "match": true,
+          "parsed": "264",
+          "raw": "\nAnswer: 264",
+          "token_ids": [
+            198,
+            33706,
+            25,
+            32158,
+            50256
+          ]
+        },
+        {
+          "gold": "851",
+          "id": "htext_train_0004",
+          "match": true,
+          "parsed": "851",
+          "raw": "\nAnswer: 851",
+          "token_ids": [
+            198,
+            33706,
+            25,
+            807,
+            4349,
+            50256
+          ]
+        },
+        {
+          "gold": "190",
+          "id": "htext_train_0005",
+          "match": true,
+          "parsed": "190",
+          "raw": "\nAnswer: 190",
+          "token_ids": [
+            198,
+            33706,
+            25,
+            19884,
+            50256
+          ]
+        },
+        {
+          "gold": "455",
+          "id": "htext_train_0006",
+          "match": true,
+          "parsed": "455",
+          "raw": "!!!\nAnswer: 455",
+          "token_ids": [
+            10185,
+            198,
+            33706,
+            25,
+            46839,
+            50256
+          ]
+        },
+        {
+          "gold": "2133",
+          "id": "htext_train_0007",
+          "match": true,
+          "parsed": "2133",
+          "raw": "\nAnswer: 2133",
+          "token_ids": [
+            198,
+            33706,
+            25,
+            362,
+            16945,
+            50256
+          ]
+        }
+      ],
+      "generation_em": 0.78125,
+      "latent": {
+        "z1": {
+          "geometry": {
+            "effective_rank": 4.462714672088623,
+            "pairwise_cosine_mean": 0.9997984766960144,
+            "pairwise_cosine_std": 0.0001497929624747485,
+            "within_dataset_variance_mean": 0.05587182566523552,
+            "within_dataset_variance_sum": 42.90956115722656
+          },
+          "retrieval": {
+            "R@1": 1.0,
+            "R@5": 1.0,
+            "random_R@1": 0.015625,
+            "random_R@5": 0.078125
+          }
+        },
+        "z2": {
+          "geometry": {
+            "effective_rank": 3.351140260696411,
+            "pairwise_cosine_mean": 0.9998008012771606,
+            "pairwise_cosine_std": 0.00024147817748598754,
+            "within_dataset_variance_mean": 0.041533213108778,
+            "within_dataset_variance_sum": 31.89750862121582
+          },
+          "retrieval": {
+            "R@1": 1.0,
+            "R@5": 1.0,
+            "random_R@1": 0.015625,
+            "random_R@5": 0.078125
+          }
+        },
+        "z3": {
+          "geometry": {
+            "effective_rank": 2.9919049739837646,
+            "pairwise_cosine_mean": 0.9973977208137512,
+            "pairwise_cosine_std": 0.0021211334969848394,
+            "within_dataset_variance_mean": 0.2282557636499405,
+            "within_dataset_variance_sum": 175.30043029785156
+          },
+          "retrieval": {
+            "R@1": 1.0,
+            "R@5": 1.0,
+            "random_R@1": 0.015625,
+            "random_R@5": 0.078125
+          }
+        }
+      }
+    },
+    "validation": {
+      "answer_em": 0.03125,
+      "answer_nll": 1.7241454422473907,
+      "generation": [
+        {
+          "gold": "2013",
+          "id": "htext_validation_0000",
+          "match": false,
+          "parsed": "1188",
+          "raw": "\nAnswer: 1188",
+          "token_ids": [
+            198,
+            33706,
+            25,
+            1367,
+            3459,
+            50256
+          ]
+        },
+        {
+          "gold": "174",
+          "id": "htext_validation_0001",
+          "match": false,
+          "parsed": "455",
+          "raw": "!!!\nAnswer: 455",
+          "token_ids": [
+            10185,
+            198,
+            33706,
+            25,
+            46839,
+            50256
+          ]
+        },
+        {
+          "gold": "72",
+          "id": "htext_validation_0002",
+          "match": false,
+          "parsed": "96",
+          "raw": "\nAnswer: 96",
+          "token_ids": [
+            198,
+            33706,
+            25,
+            9907,
+            50256
+          ]
+        },
+        {
+          "gold": "780",
+          "id": "htext_validation_0003",
+          "match": false,
+          "parsed": "910",
+          "raw": "\nAnswer: 910",
+          "token_ids": [
+            198,
+            33706,
+            25,
+            860,
+            940,
+            50256
+          ]
+        },
+        {
+          "gold": "188",
+          "id": "htext_validation_0004",
+          "match": false,
+          "parsed": "180",
+          "raw": "\nAnswer: 180",
+          "token_ids": [
+            198,
+            33706,
+            25,
+            11546,
+            50256
+          ]
+        },
+        {
+          "gold": "440",
+          "id": "htext_validation_0005",
+          "match": false,
+          "parsed": "585",
+          "raw": "\nAnswer: 585",
+          "token_ids": [
+            198,
+            33706,
+            25,
+            642,
+            5332,
+            50256
+          ]
+        },
+        {
+          "gold": "532",
+          "id": "htext_validation_0006",
+          "match": false,
+          "parsed": "681",
+          "raw": "\nAnswer: 681",
+          "token_ids": [
+            198,
+            33706,
+            25,
+            718,
+            6659,
+            50256
+          ]
+        },
+        {
+          "gold": "2804",
+          "id": "htext_validation_0007",
+          "match": false,
+          "parsed": "1185",
+          "raw": "\nAnswer: 1185",
+          "token_ids": [
+            198,
+            33706,
+            25,
+            1367,
+            5332,
+            50256
+          ]
+        }
+      ],
+      "generation_em": 0.0,
+      "latent": {
+        "z1": {
+          "geometry": {
+            "effective_rank": 5.680744647979736,
+            "pairwise_cosine_mean": 0.9998360276222229,
+            "pairwise_cosine_std": 9.553287964081392e-05,
+            "within_dataset_variance_mean": 0.042568404227495193,
+            "within_dataset_variance_sum": 32.692535400390625
+          },
+          "retrieval": {
+            "R@1": 1.0,
+            "R@5": 1.0,
+            "random_R@1": 0.015625,
+            "random_R@5": 0.078125
+          }
+        },
+        "z2": {
+          "geometry": {
+            "effective_rank": 3.9266786575317383,
+            "pairwise_cosine_mean": 0.9998478293418884,
+            "pairwise_cosine_std": 0.00014393519086297601,
+            "within_dataset_variance_mean": 0.03193356469273567,
+            "within_dataset_variance_sum": 24.524978637695312
+          },
+          "retrieval": {
+            "R@1": 1.0,
+            "R@5": 1.0,
+            "random_R@1": 0.015625,
+            "random_R@5": 0.078125
+          }
+        },
+        "z3": {
+          "geometry": {
+            "effective_rank": 3.005060911178589,
+            "pairwise_cosine_mean": 0.9974427819252014,
+            "pairwise_cosine_std": 0.00216070469468832,
+            "within_dataset_variance_mean": 0.2196626514196396,
+            "within_dataset_variance_sum": 168.70091247558594
+          },
+          "retrieval": {
+            "R@1": 1.0,
+            "R@5": 1.0,
+            "random_R@1": 0.015625,
+            "random_R@5": 0.078125
+          }
+        }
+      }
+    }
+  }
+}

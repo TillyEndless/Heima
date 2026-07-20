@@ -1,0 +1,28 @@
+{
+  "a_visible": [
+    "context",
+    "question"
+  ],
+  "b_visible": [
+    "question",
+    "latent"
+  ],
+  "context_types": [
+    "arithmetic context",
+    "ordered operation context",
+    "table/fact context",
+    "multi-step state update context"
+  ],
+  "paired_group_size": 4,
+  "schema": [
+    "context",
+    "question",
+    "cot1",
+    "cot2",
+    "cot3",
+    "answer",
+    "pair_group_id",
+    "operation_type",
+    "intermediate_results"
+  ]
+}

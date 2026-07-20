@@ -1,0 +1,42 @@
+{
+  "api_python_httpx": {
+    "returncode": 0,
+    "stderr": "",
+    "stdout": "200 4873 {\"_id\":\"621ffdc036468d709f17434d\",\"id\":\"openai-community/gpt2\",\"private\":false,\""
+  },
+  "blocking_items": [
+    "Hugging Face auth is not logged in on the remote server",
+    "Need read token with accepted meta-llama/Llama-3.1-8B-Instruct license",
+    "After login, run bash /data/zxl/run_heima_download_with_proxy.sh inside tmux"
+  ],
+  "data_disk": {
+    "returncode": 0,
+    "stderr": "",
+    "stdout": "Filesystem      Size  Used Avail Use% Mounted on\n/dev/nvme1n1    3.5T  3.2T  388G  90% /data"
+  },
+  "hf_auth_whoami": {
+    "returncode": 1,
+    "stderr": "\u001b[1m\u001b[31mError: Not logged in\u001b[0m",
+    "stdout": ""
+  },
+  "hf_version": {
+    "returncode": 0,
+    "stderr": "",
+    "stdout": "1.24.0"
+  },
+  "proxy_hf_curl": {
+    "returncode": 0,
+    "stderr": "% Total    % Received % Xferd  Average Speed   Time    Time     Time  Current\n                                 Dload  Upload   Total   Spent    Left  Speed\n\n  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0\n  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0\n  0  169k    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0",
+    "stdout": "HTTP/1.1 200 Connection established\n\nHTTP/2 200 \ncontent-type: text/html; charset=utf-8\ncontent-length: 173208\ndate: Sat, 18 Jul 2026 03:05:21 GMT\netag: W/\"2a498-nGWzbgmidX45sT7dZ5l2xw8rVeY\"\nx-powered-by: huggingface-moon\nx-request-id: Root=1-6a5aed71-75f17835428df636088a0281\nratelimit: \"pages\";r=99;t=293\nratelimit-policy: \"fixed window\";\"pages\";q=100;w=300\ncross-origin-opener-policy: same-origin\nreferrer-policy: strict-origin-when-cross-origin\nx-frame-options: DENY\nx-cache: Hit from cloudfront\nvia: 1.1 dbe822c7520b46f4c49e2849274ac460.cloudfront.net (CloudFront)\nx-amz-cf-pop: SIN2-P7\nalt-svc: h3=\":443\"; ma=86400\nx-amz-cf-id: G-1COzdoxXN6fGHobuc7ElUDLl3lwmxPQ4HZ-CB7BbIMhCn3qCQkag==\nage: 26"
+  },
+  "reverse_proxy": {
+    "local": "127.0.0.1:7897",
+    "remote": "127.0.0.1:17890",
+    "status": "working in current Codex-maintained SSH tunnel"
+  },
+  "script_deployed": true,
+  "script_path": "/data/zxl/download_official_heima.sh",
+  "timestamp": "2026-07-18T03:05:46Z",
+  "wrapper_deployed": true,
+  "wrapper_path": "/data/zxl/run_heima_download_with_proxy.sh"
+}

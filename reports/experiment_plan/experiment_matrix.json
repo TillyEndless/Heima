@@ -1,0 +1,167 @@
+{
+  "generated_at_utc": "2026-07-20T09:00:24Z",
+  "global_rules": {
+    "loss2_allowed": false,
+    "official_baseline_requires": [
+      "Xkev/Llama-3.2V-11B-cot",
+      "meta-llama/Llama-3.1-8B-Instruct",
+      "shawnricecake/Heima",
+      "Xkev/LLaVA-CoT-100k",
+      "official Heima/Torchtune path"
+    ],
+    "small_model_caveat": "Qwen/GPT small-model runs are mechanism probes, not official Heima baseline.",
+    "single_algorithm_difference_for_ours_l1": "detach_encoder_latent"
+  },
+  "servers": {
+    "cad218": {
+      "host": "zxl@10.71.106.16",
+      "role": "small_model_mechanism_probe",
+      "gpu": "1x RTX 4090 24GB",
+      "model_path": "/mnt/nas/share2/home/zxl/small_models/Qwen2.5-0.5B-Instruct",
+      "data_path": "/mnt/nas/share2/home/zxl/official_heima/micro_subsets/chartqa_sqa_available_images_v1",
+      "run_root": "/mnt/nas/share2/home/zxl/cad218_runs"
+    },
+    "data": {
+      "host": "root@localhost via jump",
+      "role": "official_baseline_and_optional_small_model_sweeps",
+      "gpu": "8x RTX 4090 class",
+      "official_root": "/data/zxl/official_heima",
+      "small_model_path": "/data/zxl/small_models/Qwen2.5-0.5B-Instruct",
+      "run_root": "/data/zxl/runs"
+    }
+  },
+  "completed": {
+    "cad218_qwen_20step": {
+      "run_dir": "/mnt/nas/share2/home/zxl/cad218_runs/heima_small_qwen_l1/20260720_162940",
+      "status": "complete",
+      "gradient_gate": "pass",
+      "semantic_gate": "not_passed"
+    },
+    "cad218_qwen_200step_intervention": {
+      "run_dir": "/mnt/nas/share2/home/zxl/cad218_runs/heima_small_qwen_l1_200step_intervention/20260720_164836",
+      "status": "complete",
+      "gradient_gate": "pass",
+      "semantic_gate": "not_passed",
+      "joint_detach": {
+        "normal_shuffle_margin": 0.0010809153318405151,
+        "qz_gain_over_q": -0.10046352446079254
+      },
+      "ours_l1_no_detach": {
+        "normal_shuffle_margin": -0.0007229521870613098,
+        "qz_gain_over_q": -0.18046028167009354
+      }
+    }
+  },
+  "experiments": [
+    {
+      "id": "E1-qwen-oneshot-500-multiseed",
+      "status": "planned",
+      "purpose": "Longer one-shot Qwen probe for stable normal-over-shuffle signal.",
+      "server": "cad218_or_data",
+      "model": "Qwen/Qwen2.5-0.5B-Instruct",
+      "dataset": "official_micro_text_reasoning",
+      "groups": [
+        "s0_main_only",
+        "s1_staged_detach",
+        "joint_detach",
+        "ours_l1_no_detach"
+      ],
+      "config": {
+        "seeds": [42, 43, 44],
+        "s0_steps": 500,
+        "s1_steps": 500,
+        "joint_steps": 500,
+        "batch_size": 2,
+        "eval_samples": 45,
+        "lambda1": 0.1,
+        "learning_rate_A": 2e-5,
+        "learning_rate_B": 2e-5,
+        "learning_rate_projector": 1e-4,
+        "torch_dtype": "bfloat16",
+        "thinking_state_mode": "predictor",
+        "num_thinking_tokens": 1,
+        "target": "reasoning"
+      },
+      "metrics": [
+        "main_nll",
+        "loss1_q_only_nll",
+        "loss1_qz_nll",
+        "loss1_shuffle_nll",
+        "loss1_zero_nll",
+        "normal_shuffle_margin",
+        "qz_gain_over_q",
+        "latent_effective_rank",
+        "pairwise_cosine",
+        "grad_A_from_loss1"
+      ],
+      "pass_gate": "normal_shuffle_margin > 0 and qz_gain_over_q > 0 in at least 2/3 seeds"
+    },
+    {
+      "id": "E2-qwen-latent-token-budget",
+      "status": "implementation_needed",
+      "purpose": "Test K equal to 10% or 20% of CoT token count.",
+      "server": "cad218_or_data",
+      "config": {
+        "K_values": ["1", "ceil(0.10*cot_tokens)", "ceil(0.20*cot_tokens)"],
+        "K_cap": 32,
+        "seeds": [42, 43, 44],
+        "steps_per_group": 500
+      },
+      "required_code": [
+        "multiple predictor hidden extraction",
+        "multiple decoder latent slots",
+        "sample-level latent sequence shuffle"
+      ]
+    },
+    {
+      "id": "E3-progressive-clear-cot",
+      "status": "implementation_needed",
+      "purpose": "Use question/cot1/cot2/cot3/answer data and progressive distillation.",
+      "server": "cad218_or_data",
+      "schedule": [
+        "explicit: Q + cot1 + cot2 + cot3 + Answer",
+        "P1: Q + THINKING_1 + cot2 + cot3 + Answer",
+        "P2: Q + THINKING_1 + THINKING_2 + cot3 + Answer",
+        "P3: Q + THINKING_1 + THINKING_2 + THINKING_3 + Answer"
+      ],
+      "interpreter_targets": ["cot1", "cot2", "cot3"]
+    },
+    {
+      "id": "E4-context-conditioned-asymmetry",
+      "status": "implementation_needed",
+      "purpose": "Make A see context+question and B see only question+latent.",
+      "server": "cad218_or_data",
+      "schema": [
+        "context",
+        "question",
+        "cot1",
+        "cot2",
+        "cot3",
+        "answer",
+        "pair_group_id"
+      ],
+      "intervention": "same-question paired shuffle"
+    },
+    {
+      "id": "E5-official-heima-reproduction",
+      "status": "blocked_on_download",
+      "server": "data",
+      "model_A": "Xkev/Llama-3.2V-11B-cot",
+      "model_B": "meta-llama/Llama-3.1-8B-Instruct",
+      "checkpoint": "shawnricecake/Heima",
+      "dataset": "Xkev/LLaVA-CoT-100k plus images"
+    },
+    {
+      "id": "E6-official-ours-l1",
+      "status": "blocked_on_E5",
+      "server": "data",
+      "groups": ["official_staged", "joint_detach", "ours_l1_no_detach"],
+      "only_difference": "detach_encoder_latent"
+    },
+    {
+      "id": "E7-loss2",
+      "status": "blocked",
+      "entry_gate": "stable Loss1 semantic signal plus official baseline reproduction"
+    }
+  ]
+}

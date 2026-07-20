@@ -1,0 +1,305 @@
+{
+  "42": {
+    "stage_1": {
+      "between_pair_distance": 8.405113753179709,
+      "context_value_linear_probe_train_r2": {
+        "value_0": 0.8155629634857178,
+        "value_1": 0.7687729597091675,
+        "value_2": 0.9182297587394714,
+        "value_3": 0.9181609153747559,
+        "value_4": 0.9377196431159973,
+        "value_5": 0.9561622738838196
+      },
+      "mean_centered": {
+        "effective_rank": 4.33493185043335,
+        "pairwise_cosine_mean": -0.012252642773091793,
+        "pairwise_cosine_std": 0.5018256306648254,
+        "within_dataset_variance_mean": 0.05069249868392944,
+        "within_dataset_variance_sum": 38.93183898925781
+      },
+      "raw": {
+        "effective_rank": 4.33493185043335,
+        "pairwise_cosine_mean": 0.9997546076774597,
+        "pairwise_cosine_std": 0.0001690638455329463,
+        "within_dataset_variance_mean": 0.05069249868392944,
+        "within_dataset_variance_sum": 38.93183898925781
+      },
+      "whitened": {
+        "effective_rank": 62.99831008911133,
+        "pairwise_cosine_mean": -0.015872953459620476,
+        "pairwise_cosine_std": 0.0008275298168882728,
+        "within_dataset_variance_mean": 0.08035503327846527,
+        "within_dataset_variance_sum": 61.71266555786133
+      },
+      "within_pair_distance": 4.705824088305235
+    },
+    "stage_2": {
+      "between_pair_distance": 6.817898687534035,
+      "context_value_linear_probe_train_r2": {
+        "value_0": 0.6890508532524109,
+        "value_1": 0.9706363677978516,
+        "value_2": 0.881332278251648,
+        "value_3": 0.9186935424804688,
+        "value_4": 0.9283961653709412,
+        "value_5": 0.8931882977485657
+      },
+      "mean_centered": {
+        "effective_rank": 3.596245288848877,
+        "pairwise_cosine_mean": -0.011977620422840118,
+        "pairwise_cosine_std": 0.590888261795044,
+        "within_dataset_variance_mean": 0.033454783260822296,
+        "within_dataset_variance_sum": 25.693273544311523
+      },
+      "raw": {
+        "effective_rank": 3.5962464809417725,
+        "pairwise_cosine_mean": 0.9998326897621155,
+        "pairwise_cosine_std": 0.00011028983863070607,
+        "within_dataset_variance_mean": 0.033454779535532,
+        "within_dataset_variance_sum": 25.69327163696289
+      },
+      "whitened": {
+        "effective_rank": 62.9986686706543,
+        "pairwise_cosine_mean": -0.015872981399297714,
+        "pairwise_cosine_std": 0.0007473254227079451,
+        "within_dataset_variance_mean": 0.0803898349404335,
+        "within_dataset_variance_sum": 61.7393913269043
+      },
+      "within_pair_distance": 3.8255043079455695
+    },
+    "stage_3": {
+      "between_pair_distance": 11.628818025377889,
+      "context_value_linear_probe_train_r2": {
+        "value_0": 0.9728990197181702,
+        "value_1": 0.9574892520904541,
+        "value_2": 0.9817305207252502,
+        "value_3": 0.9678052067756653,
+        "value_4": 0.9856345057487488,
+        "value_5": 0.9794061779975891
+      },
+      "mean_centered": {
+        "effective_rank": 2.7170534133911133,
+        "pairwise_cosine_mean": -0.012897818349301815,
+        "pairwise_cosine_std": 0.6510911583900452,
+        "within_dataset_variance_mean": 0.10190945863723755,
+        "within_dataset_variance_sum": 78.26646423339844
+      },
+      "raw": {
+        "effective_rank": 2.717052698135376,
+        "pairwise_cosine_mean": 0.9980672001838684,
+        "pairwise_cosine_std": 0.0012468158965930343,
+        "within_dataset_variance_mean": 0.10190945863723755,
+        "within_dataset_variance_sum": 78.26646423339844
+      },
+      "whitened": {
+        "effective_rank": 62.99917984008789,
+        "pairwise_cosine_mean": -0.01587299443781376,
+        "pairwise_cosine_std": 0.0006007413612678647,
+        "within_dataset_variance_mean": 0.0805821344256401,
+        "within_dataset_variance_sum": 61.887081146240234
+      },
+      "within_pair_distance": 6.826034023116033
+    }
+  },
+  "43": {
+    "stage_1": {
+      "between_pair_distance": 4.500297066204561,
+      "context_value_linear_probe_train_r2": {
+        "value_0": 0.9062643051147461,
+        "value_1": 0.6918119788169861,
+        "value_2": 0.941146969795227,
+        "value_3": 0.8747768402099609,
+        "value_4": 0.9510464072227478,
+        "value_5": 0.9361833333969116
+      },
+      "mean_centered": {
+        "effective_rank": 2.8485825061798096,
+        "pairwise_cosine_mean": -0.01544365007430315,
+        "pairwise_cosine_std": 0.6348083019256592,
+        "within_dataset_variance_mean": 0.014616006053984165,
+        "within_dataset_variance_sum": 11.225092887878418
+      },
+      "raw": {
+        "effective_rank": 2.8485820293426514,
+        "pairwise_cosine_mean": 0.9999268651008606,
+        "pairwise_cosine_std": 4.945082400809042e-05,
+        "within_dataset_variance_mean": 0.014616006053984165,
+        "within_dataset_variance_sum": 11.225092887878418
+      },
+      "whitened": {
+        "effective_rank": 62.869571685791016,
+        "pairwise_cosine_mean": -0.01587104983627796,
+        "pairwise_cosine_std": 0.00762149877846241,
+        "within_dataset_variance_mean": 0.0769210085272789,
+        "within_dataset_variance_sum": 59.07533645629883
+      },
+      "within_pair_distance": 1.1228998654211562
+    },
+    "stage_2": {
+      "between_pair_distance": 4.937690134191265,
+      "context_value_linear_probe_train_r2": {
+        "value_0": 0.8744606971740723,
+        "value_1": 0.7793721556663513,
+        "value_2": 0.8114823698997498,
+        "value_3": 0.8354907035827637,
+        "value_4": 0.8787698745727539,
+        "value_5": 0.9751842021942139
+      },
+      "mean_centered": {
+        "effective_rank": 3.7972872257232666,
+        "pairwise_cosine_mean": -0.007712328340858221,
+        "pairwise_cosine_std": 0.5424703359603882,
+        "within_dataset_variance_mean": 0.017186041921377182,
+        "within_dataset_variance_sum": 13.198880195617676
+      },
+      "raw": {
+        "effective_rank": 3.797288179397583,
+        "pairwise_cosine_mean": 0.999921977519989,
+        "pairwise_cosine_std": 5.2228784625185654e-05,
+        "within_dataset_variance_mean": 0.017186041921377182,
+        "within_dataset_variance_sum": 13.198880195617676
+      },
+      "whitened": {
+        "effective_rank": 62.99329376220703,
+        "pairwise_cosine_mean": -0.01587286964058876,
+        "pairwise_cosine_std": 0.0017127192113548517,
+        "within_dataset_variance_mean": 0.0798616111278534,
+        "within_dataset_variance_sum": 61.333717346191406
+      },
+      "within_pair_distance": 1.704300345852971
+    },
+    "stage_3": {
+      "between_pair_distance": 13.175985901771734,
+      "context_value_linear_probe_train_r2": {
+        "value_0": 0.8362432718276978,
+        "value_1": 0.8392838835716248,
+        "value_2": 0.8864747881889343,
+        "value_3": 0.9312512278556824,
+        "value_4": 0.9192422032356262,
+        "value_5": 0.9780294299125671
+      },
+      "mean_centered": {
+        "effective_rank": 1.6155152320861816,
+        "pairwise_cosine_mean": -0.0005188519135117531,
+        "pairwise_cosine_std": 0.7546625137329102,
+        "within_dataset_variance_mean": 0.1414118856191635,
+        "within_dataset_variance_sum": 108.60432434082031
+      },
+      "raw": {
+        "effective_rank": 1.615515112876892,
+        "pairwise_cosine_mean": 0.9981231689453125,
+        "pairwise_cosine_std": 0.0017046337015926838,
+        "within_dataset_variance_mean": 0.1414118856191635,
+        "within_dataset_variance_sum": 108.60432434082031
+      },
+      "whitened": {
+        "effective_rank": 62.98545455932617,
+        "pairwise_cosine_mean": -0.015872931107878685,
+        "pairwise_cosine_std": 0.00267806020565331,
+        "within_dataset_variance_mean": 0.08049199730157852,
+        "within_dataset_variance_sum": 61.81785583496094
+      },
+      "within_pair_distance": 2.9086524099111557
+    }
+  },
+  "44": {
+    "stage_1": {
+      "between_pair_distance": 5.430884719717627,
+      "context_value_linear_probe_train_r2": {
+        "value_0": 0.9293695092201233,
+        "value_1": 0.9701757431030273,
+        "value_2": 0.884056031703949,
+        "value_3": 0.94508957862854,
+        "value_4": 0.9104876518249512,
+        "value_5": 0.9237209558486938
+      },
+      "mean_centered": {
+        "effective_rank": 1.892525315284729,
+        "pairwise_cosine_mean": 0.052724748849868774,
+        "pairwise_cosine_std": 0.662966787815094,
+        "within_dataset_variance_mean": 0.024563925340771675,
+        "within_dataset_variance_sum": 18.865095138549805
+      },
+      "raw": {
+        "effective_rank": 1.8925249576568604,
+        "pairwise_cosine_mean": 0.9999285340309143,
+        "pairwise_cosine_std": 5.619864896289073e-05,
+        "within_dataset_variance_mean": 0.024563929066061974,
+        "within_dataset_variance_sum": 18.865097045898438
+      },
+      "whitened": {
+        "effective_rank": 62.90858459472656,
+        "pairwise_cosine_mean": -0.01587194949388504,
+        "pairwise_cosine_std": 0.006449343170970678,
+        "within_dataset_variance_mean": 0.07787100225687027,
+        "within_dataset_variance_sum": 59.804927825927734
+      },
+      "within_pair_distance": 1.1193985048060615
+    },
+    "stage_2": {
+      "between_pair_distance": 8.274184770556166,
+      "context_value_linear_probe_train_r2": {
+        "value_0": 0.8724960088729858,
+        "value_1": 0.8866840600967407,
+        "value_2": 0.9050784111022949,
+        "value_3": 0.9536598324775696,
+        "value_4": 0.9488270282745361,
+        "value_5": 0.9211899042129517
+      },
+      "mean_centered": {
+        "effective_rank": 1.6197181940078735,
+        "pairwise_cosine_mean": -0.0018074446124956012,
+        "pairwise_cosine_std": 0.7320519685745239,
+        "within_dataset_variance_mean": 0.05575944855809212,
+        "within_dataset_variance_sum": 42.82325744628906
+      },
+      "raw": {
+        "effective_rank": 1.619718313217163,
+        "pairwise_cosine_mean": 0.9996833801269531,
+        "pairwise_cosine_std": 0.0003456008271314204,
+        "within_dataset_variance_mean": 0.05575944855809212,
+        "within_dataset_variance_sum": 42.82325744628906
+      },
+      "whitened": {
+        "effective_rank": 62.683231353759766,
+        "pairwise_cosine_mean": -0.01587049476802349,
+        "pairwise_cosine_std": 0.012466367334127426,
+        "within_dataset_variance_mean": 0.07794219255447388,
+        "within_dataset_variance_sum": 59.85960388183594
+      },
+      "within_pair_distance": 1.260651854487757
+    },
+    "stage_3": {
+      "between_pair_distance": 13.855658349146445,
+      "context_value_linear_probe_train_r2": {
+        "value_0": 0.8989505767822266,
+        "value_1": 0.8286970853805542,
+        "value_2": 0.8882356286048889,
+        "value_3": 0.9324418902397156,
+        "value_4": 0.8810089230537415,
+        "value_5": 0.9618528485298157
+      },
+      "mean_centered": {
+        "effective_rank": 1.6834036111831665,
+        "pairwise_cosine_mean": -0.004267668351531029,
+        "pairwise_cosine_std": 0.7869201898574829,
+        "within_dataset_variance_mean": 0.15658895671367645,
+        "within_dataset_variance_sum": 120.26032257080078
+      },
+      "raw": {
+        "effective_rank": 1.683403730392456,
+        "pairwise_cosine_mean": 0.9979668855667114,
+        "pairwise_cosine_std": 0.0020155792590230703,
+        "within_dataset_variance_mean": 0.15658895671367645,
+        "within_dataset_variance_sum": 120.26032257080078
+      },
+      "whitened": {
+        "effective_rank": 62.79448699951172,
+        "pairwise_cosine_mean": -0.015871668234467506,
+        "pairwise_cosine_std": 0.009969054721295834,
+        "within_dataset_variance_mean": 0.08042828738689423,
+        "within_dataset_variance_sum": 61.768924713134766
+      },
+      "within_pair_distance": 2.26980449197193
+    }
+  }
+}

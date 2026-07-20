@@ -1,0 +1,73 @@
+{
+  "audited_files": [
+    "experiments/g1_gpt2/configs/main_only.yaml",
+    "experiments/g1_gpt2/configs/main_l1.yaml",
+    "experiments/g1_gpt2/data/synthetic_g1_train.jsonl",
+    "src/g1/latent_reasoner.py",
+    "src/g1/whole_cot_decoder.py",
+    "src/g1/trainer.py",
+    "src/g1/evaluator.py",
+    "src/g1/gradient_monitor.py"
+  ],
+  "config": {
+    "gradient_accumulation_steps": 4,
+    "lambda1": 0.1,
+    "local_files_only": true,
+    "max_steps": 120,
+    "micro_batch_size": 2,
+    "model_name_or_path": "/mnt/nas/share2/home/zxl/models/openai-community-gpt2",
+    "source_refs": [
+      "experiments/g1_gpt2/configs/main_l1.yaml:1-24"
+    ],
+    "use_safetensors": true
+  },
+  "dataset_schema": {
+    "fields": [
+      "id",
+      "question",
+      "cot",
+      "answer",
+      "steps",
+      "metadata",
+      "source",
+      "split"
+    ],
+    "no_image_marker": true,
+    "no_summary_caption_reasoning_sections": true,
+    "source": "synthetic arithmetic text-only records"
+  },
+  "loss1": {
+    "abstract_projection": false,
+    "decoder": "single whole-CoT GPT-2 decoder B",
+    "latent_placeholder": "GPT-2 EOS token <|endoftext|>",
+    "prompt_contains_question": false,
+    "source_refs": [
+      "src/g1/whole_cot_decoder.py:10-17",
+      "src/g1/whole_cot_decoder.py:72-124"
+    ],
+    "target": "whole record[cot]"
+  },
+  "main_loss": {
+    "input_sequence": "[question embeddings] + [z] + [Answer: prefix] + [answer tokens]",
+    "latent_source": "A(question) last valid hidden over ordinary question tokens",
+    "source_refs": [
+      "src/g1/latent_reasoner.py:67-92",
+      "src/g1/latent_reasoner.py:95-160"
+    ],
+    "supervised_tokens": "answer tokens only"
+  },
+  "modalities": [
+    "text"
+  ],
+  "model_family": "openai-community-gpt2 local files only",
+  "name": "current_g1_gpt2",
+  "optimization": {
+    "joint_loss": "loss_main + lambda1 * loss1",
+    "loss1_detaches_z": false,
+    "optimizers": "one AdamW over all A and B parameters",
+    "source_refs": [
+      "src/g1/trainer.py:73-80",
+      "src/g1/trainer.py:126-142"
+    ]
+  }
+}

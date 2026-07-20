@@ -1,0 +1,177 @@
+[
+  {
+    "id": "htext_validation_0000",
+    "raw": "\nAnswer: 2298",
+    "parsed": "2298",
+    "gold": "94",
+    "match": false,
+    "token_ids": [
+      198,
+      33706,
+      25,
+      362,
+      27728,
+      50256
+    ]
+  },
+  {
+    "id": "htext_validation_0001",
+    "raw": "\nAnswer: 2460",
+    "parsed": "2460",
+    "gold": "2566",
+    "match": false,
+    "token_ids": [
+      198,
+      33706,
+      25,
+      1987,
+      1899,
+      50256
+    ]
+  },
+  {
+    "id": "htext_validation_0000",
+    "raw": "\nAnswer: 228",
+    "parsed": "228",
+    "gold": "94",
+    "match": false,
+    "token_ids": [
+      198,
+      33706,
+      25,
+      29041,
+      50256
+    ]
+  },
+  {
+    "id": "htext_validation_0001",
+    "raw": "\nAnswer: 2460",
+    "parsed": "2460",
+    "gold": "2566",
+    "match": false,
+    "token_ids": [
+      198,
+      33706,
+      25,
+      1987,
+      1899,
+      50256
+    ]
+  },
+  {
+    "id": "htext_validation_0000",
+    "raw": "\nAnswer: 1146",
+    "parsed": "1146",
+    "gold": "2005",
+    "match": false,
+    "token_ids": [
+      198,
+      33706,
+      25,
+      1367,
+      3510,
+      50256
+    ]
+  },
+  {
+    "id": "htext_validation_0001",
+    "raw": "\nAnswer: 405",
+    "parsed": "405",
+    "gold": "410",
+    "match": false,
+    "token_ids": [
+      198,
+      33706,
+      25,
+      36966,
+      50256
+    ]
+  },
+  {
+    "id": "htext_validation_0000",
+    "raw": "\nAnswer: 1146",
+    "parsed": "1146",
+    "gold": "2005",
+    "match": false,
+    "token_ids": [
+      198,
+      33706,
+      25,
+      1367,
+      3510,
+      50256
+    ]
+  },
+  {
+    "id": "htext_validation_0001",
+    "raw": "\nAnswer: 405",
+    "parsed": "405",
+    "gold": "410",
+    "match": false,
+    "token_ids": [
+      198,
+      33706,
+      25,
+      36966,
+      50256
+    ]
+  },
+  {
+    "id": "htext_validation_0000",
+    "raw": "\nAnswer: 912",
+    "parsed": "912",
+    "gold": "2013",
+    "match": false,
+    "token_ids": [
+      198,
+      33706,
+      25,
+      860,
+      1065,
+      50256
+    ]
+  },
+  {
+    "id": "htext_validation_0001",
+    "raw": "\nAnswer: 455",
+    "parsed": "455",
+    "gold": "174",
+    "match": false,
+    "token_ids": [
+      198,
+      33706,
+      25,
+      46839,
+      50256
+    ]
+  },
+  {
+    "id": "htext_validation_0000",
+    "raw": "\nAnswer: 912",
+    "parsed": "912",
+    "gold": "2013",
+    "match": false,
+    "token_ids": [
+      198,
+      33706,
+      25,
+      860,
+      1065,
+      50256
+    ]
+  },
+  {
+    "id": "htext_validation_0001",
+    "raw": "\nAnswer: 35",
+    "parsed": "35",
+    "gold": "174",
+    "match": false,
+    "token_ids": [
+      198,
+      33706,
+      25,
+      3439,
+      50256
+    ]
+  }
+]

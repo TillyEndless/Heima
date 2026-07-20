@@ -1,0 +1,449 @@
+{
+  "42": {
+    "p1": {
+      "logs": [
+        {
+          "grad_A": 0.9999999340931232,
+          "loss": 2.025438070297241,
+          "step": 1
+        },
+        {
+          "grad_A": 0.9999998821012711,
+          "loss": 0.6905316114425659,
+          "step": 30
+        },
+        {
+          "grad_A": 0.9999998980331758,
+          "loss": 0.5445728302001953,
+          "step": 60
+        },
+        {
+          "grad_A": 0.999999853862457,
+          "loss": 0.40803447365760803,
+          "step": 90
+        },
+        {
+          "grad_A": 0.9999997508296561,
+          "loss": 0.28548502922058105,
+          "step": 120
+        }
+      ],
+      "validation": {
+        "answer_em": 0.0,
+        "geometry": {
+          "stage_1": {
+            "effective_rank": 2.8282082080841064,
+            "pairwise_cosine_mean": 0.9999544024467468,
+            "pairwise_cosine_std": 3.029792060260661e-05,
+            "within_dataset_variance_mean": 0.011873760260641575,
+            "within_dataset_variance_sum": 9.119048118591309
+          }
+        },
+        "nll": 0.39055081829428673
+      }
+    },
+    "p2": {
+      "logs": [
+        {
+          "grad_A": 1.000000073731937,
+          "loss": 3.2703020572662354,
+          "step": 1
+        },
+        {
+          "grad_A": 0.9999998147710732,
+          "loss": 0.999116063117981,
+          "step": 30
+        },
+        {
+          "grad_A": 0.9999997331835145,
+          "loss": 0.8458821177482605,
+          "step": 60
+        },
+        {
+          "grad_A": 0.9999999569705968,
+          "loss": 0.6752946972846985,
+          "step": 90
+        },
+        {
+          "grad_A": 0.9999999021446323,
+          "loss": 0.4849220812320709,
+          "step": 120
+        }
+      ],
+      "validation": {
+        "answer_em": 0.0,
+        "geometry": {
+          "stage_1": {
+            "effective_rank": 3.6875646114349365,
+            "pairwise_cosine_mean": 0.9999714493751526,
+            "pairwise_cosine_std": 1.6382758985855617e-05,
+            "within_dataset_variance_mean": 0.006953204050660133,
+            "within_dataset_variance_sum": 5.340060710906982
+          },
+          "stage_2": {
+            "effective_rank": 3.4843287467956543,
+            "pairwise_cosine_mean": 0.9999052882194519,
+            "pairwise_cosine_std": 6.121694605099037e-05,
+            "within_dataset_variance_mean": 0.021917760372161865,
+            "within_dataset_variance_sum": 16.832839965820312
+          }
+        },
+        "nll": 0.722274586558342
+      }
+    },
+    "p3": {
+      "logs": [
+        {
+          "grad_A": 1.0000000071873956,
+          "loss": 7.792842864990234,
+          "step": 1
+        },
+        {
+          "grad_A": 0.999999879416343,
+          "loss": 2.2180020809173584,
+          "step": 30
+        },
+        {
+          "grad_A": 0.9999998970924207,
+          "loss": 1.6941977739334106,
+          "step": 60
+        },
+        {
+          "grad_A": 1.000000156035336,
+          "loss": 1.3997371196746826,
+          "step": 90
+        },
+        {
+          "grad_A": 0.999999887216945,
+          "loss": 0.7985023260116577,
+          "step": 120
+        }
+      ],
+      "validation": {
+        "answer_em": 0.0,
+        "geometry": {
+          "stage_1": {
+            "effective_rank": 3.4936370849609375,
+            "pairwise_cosine_mean": 0.9999502301216125,
+            "pairwise_cosine_std": 3.152492718072608e-05,
+            "within_dataset_variance_mean": 0.015137174166738987,
+            "within_dataset_variance_sum": 11.625349998474121
+          },
+          "stage_2": {
+            "effective_rank": 4.150335311889648,
+            "pairwise_cosine_mean": 0.9999135732650757,
+            "pairwise_cosine_std": 5.5061937018763274e-05,
+            "within_dataset_variance_mean": 0.013007105328142643,
+            "within_dataset_variance_sum": 9.989457130432129
+          },
+          "stage_3": {
+            "effective_rank": 3.8810415267944336,
+            "pairwise_cosine_mean": 0.9998593926429749,
+            "pairwise_cosine_std": 0.00010366802598582581,
+            "within_dataset_variance_mean": 0.016394471749663353,
+            "within_dataset_variance_sum": 12.590953826904297
+          }
+        },
+        "nll": 1.3784019351005554
+      }
+    }
+  },
+  "43": {
+    "p1": {
+      "logs": [
+        {
+          "grad_A": 0.9999998349127713,
+          "loss": 2.5256879329681396,
+          "step": 1
+        },
+        {
+          "grad_A": 0.9999998894646246,
+          "loss": 0.6668867468833923,
+          "step": 30
+        },
+        {
+          "grad_A": 0.9999999555569791,
+          "loss": 0.47335347533226013,
+          "step": 60
+        },
+        {
+          "grad_A": 0.9999999635887395,
+          "loss": 0.4027683436870575,
+          "step": 90
+        },
+        {
+          "grad_A": 0.9999999926090197,
+          "loss": 0.28666767477989197,
+          "step": 120
+        }
+      ],
+      "validation": {
+        "answer_em": 0.0,
+        "geometry": {
+          "stage_1": {
+            "effective_rank": 1.8515762090682983,
+            "pairwise_cosine_mean": 0.9997984170913696,
+            "pairwise_cosine_std": 0.00019868633535224944,
+            "within_dataset_variance_mean": 0.048085395246744156,
+            "within_dataset_variance_sum": 36.92958450317383
+          }
+        },
+        "nll": 0.40346675366163254
+      }
+    },
+    "p2": {
+      "logs": [
+        {
+          "grad_A": 0.9999998621024038,
+          "loss": 3.2196407318115234,
+          "step": 1
+        },
+        {
+          "grad_A": 0.9999997527328098,
+          "loss": 1.0653198957443237,
+          "step": 30
+        },
+        {
+          "grad_A": 0.9999999028142762,
+          "loss": 0.8215044140815735,
+          "step": 60
+        },
+        {
+          "grad_A": 0.9999998272053496,
+          "loss": 0.7223123908042908,
+          "step": 90
+        },
+        {
+          "grad_A": 0.9999997473452781,
+          "loss": 0.5353419184684753,
+          "step": 120
+        }
+      ],
+      "validation": {
+        "answer_em": 0.0,
+        "geometry": {
+          "stage_1": {
+            "effective_rank": 2.239500045776367,
+            "pairwise_cosine_mean": 0.9999090433120728,
+            "pairwise_cosine_std": 8.219644951168448e-05,
+            "within_dataset_variance_mean": 0.020762642845511436,
+            "within_dataset_variance_sum": 15.945709228515625
+          },
+          "stage_2": {
+            "effective_rank": 3.5193676948547363,
+            "pairwise_cosine_mean": 0.9999178647994995,
+            "pairwise_cosine_std": 5.837380376760848e-05,
+            "within_dataset_variance_mean": 0.018537847325205803,
+            "within_dataset_variance_sum": 14.237066268920898
+          }
+        },
+        "nll": 0.7125346437096596
+      }
+    },
+    "p3": {
+      "logs": [
+        {
+          "grad_A": 0.9999998628843277,
+          "loss": 6.4661407470703125,
+          "step": 1
+        },
+        {
+          "grad_A": 0.9999999639009263,
+          "loss": 2.1297240257263184,
+          "step": 30
+        },
+        {
+          "grad_A": 1.0000001034278316,
+          "loss": 1.6676615476608276,
+          "step": 60
+        },
+        {
+          "grad_A": 0.9999999285750799,
+          "loss": 1.3285586833953857,
+          "step": 90
+        },
+        {
+          "grad_A": 0.9999999704212708,
+          "loss": 0.7708370685577393,
+          "step": 120
+        }
+      ],
+      "validation": {
+        "answer_em": 0.0,
+        "geometry": {
+          "stage_1": {
+            "effective_rank": 1.586276888847351,
+            "pairwise_cosine_mean": 0.9998883008956909,
+            "pairwise_cosine_std": 0.00012100778985768557,
+            "within_dataset_variance_mean": 0.022242635488510132,
+            "within_dataset_variance_sum": 17.08234405517578
+          },
+          "stage_2": {
+            "effective_rank": 2.030630588531494,
+            "pairwise_cosine_mean": 0.999927282333374,
+            "pairwise_cosine_std": 4.6444780309684575e-05,
+            "within_dataset_variance_mean": 0.027118640020489693,
+            "within_dataset_variance_sum": 20.827116012573242
+          },
+          "stage_3": {
+            "effective_rank": 1.4818634986877441,
+            "pairwise_cosine_mean": 0.9998119473457336,
+            "pairwise_cosine_std": 0.00016407108341809362,
+            "within_dataset_variance_mean": 0.08544891327619553,
+            "within_dataset_variance_sum": 65.62476348876953
+          }
+        },
+        "nll": 1.4057613164186478
+      }
+    }
+  },
+  "44": {
+    "p1": {
+      "logs": [
+        {
+          "grad_A": 0.9999999687633472,
+          "loss": 2.2416131496429443,
+          "step": 1
+        },
+        {
+          "grad_A": 0.999999680978777,
+          "loss": 0.6652418971061707,
+          "step": 30
+        },
+        {
+          "grad_A": 0.9999999510255796,
+          "loss": 0.5221887826919556,
+          "step": 60
+        },
+        {
+          "grad_A": 0.9999999148632969,
+          "loss": 0.40486428141593933,
+          "step": 90
+        },
+        {
+          "grad_A": 0.9999999403975846,
+          "loss": 0.3093358874320984,
+          "step": 120
+        }
+      ],
+      "validation": {
+        "answer_em": 0.0,
+        "geometry": {
+          "stage_1": {
+            "effective_rank": 3.26778244972229,
+            "pairwise_cosine_mean": 0.9999709129333496,
+            "pairwise_cosine_std": 1.7277421648032032e-05,
+            "within_dataset_variance_mean": 0.007765385787934065,
+            "within_dataset_variance_sum": 5.963816165924072
+          }
+        },
+        "nll": 0.3883561044931412
+      }
+    },
+    "p2": {
+      "logs": [
+        {
+          "grad_A": 0.9999998586906613,
+          "loss": 3.4523634910583496,
+          "step": 1
+        },
+        {
+          "grad_A": 0.999999883296287,
+          "loss": 0.9472803473472595,
+          "step": 30
+        },
+        {
+          "grad_A": 0.9999996543082232,
+          "loss": 0.8373427391052246,
+          "step": 60
+        },
+        {
+          "grad_A": 0.9999998918608893,
+          "loss": 0.6949174404144287,
+          "step": 90
+        },
+        {
+          "grad_A": 0.9999999622630675,
+          "loss": 0.5259213447570801,
+          "step": 120
+        }
+      ],
+      "validation": {
+        "answer_em": 0.0,
+        "geometry": {
+          "stage_1": {
+            "effective_rank": 3.5181379318237305,
+            "pairwise_cosine_mean": 0.9999764561653137,
+            "pairwise_cosine_std": 1.3996877896715887e-05,
+            "within_dataset_variance_mean": 0.0060418471693992615,
+            "within_dataset_variance_sum": 4.640138626098633
+          },
+          "stage_2": {
+            "effective_rank": 3.0176217555999756,
+            "pairwise_cosine_mean": 0.9999337792396545,
+            "pairwise_cosine_std": 4.8142679588636383e-05,
+            "within_dataset_variance_mean": 0.016005326062440872,
+            "within_dataset_variance_sum": 12.29209041595459
+          }
+        },
+        "nll": 0.7036437690258026
+      }
+    },
+    "p3": {
+      "logs": [
+        {
+          "grad_A": 1.0000000170128371,
+          "loss": 6.010258197784424,
+          "step": 1
+        },
+        {
+          "grad_A": 0.999999911995921,
+          "loss": 2.2098143100738525,
+          "step": 30
+        },
+        {
+          "grad_A": 0.999999911397477,
+          "loss": 1.6036354303359985,
+          "step": 60
+        },
+        {
+          "grad_A": 1.0000000792221866,
+          "loss": 1.1084661483764648,
+          "step": 90
+        },
+        {
+          "grad_A": 0.9999998332897068,
+          "loss": 0.7433990240097046,
+          "step": 120
+        }
+      ],
+      "validation": {
+        "answer_em": 0.03125,
+        "geometry": {
+          "stage_1": {
+            "effective_rank": 2.8940041065216064,
+            "pairwise_cosine_mean": 0.9999683499336243,
+            "pairwise_cosine_std": 2.052660238405224e-05,
+            "within_dataset_variance_mean": 0.009859847836196423,
+            "within_dataset_variance_sum": 7.572363376617432
+          },
+          "stage_2": {
+            "effective_rank": 1.342758059501648,
+            "pairwise_cosine_mean": 0.9996411204338074,
+            "pairwise_cosine_std": 0.0003802490246016532,
+            "within_dataset_variance_mean": 0.058720123022794724,
+            "within_dataset_variance_sum": 45.09705352783203
+          },
+          "stage_3": {
+            "effective_rank": 1.294741153717041,
+            "pairwise_cosine_mean": 0.9991769194602966,
+            "pairwise_cosine_std": 0.0009635447640903294,
+            "within_dataset_variance_mean": 0.1736900359392166,
+            "within_dataset_variance_sum": 133.39395141601562
+          }
+        },
+        "nll": 1.292900949716568
+      }
+    }
+  }
+}

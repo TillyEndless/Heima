@@ -1,0 +1,87 @@
+{
+  "mean_std": {
+    "answer_em_diff": {
+      "direction_positive": 0,
+      "mean": 0.0,
+      "n": 3,
+      "std": 0.0
+    },
+    "answer_nll_diff": {
+      "direction_positive": 3,
+      "mean": 0.00015282630920410156,
+      "n": 3,
+      "std": 7.051556127672235e-05
+    },
+    "detach_delta_shuffle": {
+      "direction_positive": 1,
+      "mean": -9.206930796305339e-05,
+      "n": 3,
+      "std": 0.00010078044257896873
+    },
+    "feedback_gain": {
+      "direction_positive": 1,
+      "mean": -1.8278757731119792e-06,
+      "n": 3,
+      "std": 2.976388571922558e-06
+    },
+    "grad_cosine_no_detach": {
+      "direction_positive": 3,
+      "mean": 0.008580919044713179,
+      "n": 3,
+      "std": 0.0031047056362571413
+    },
+    "grad_loss1_A_detach": {
+      "direction_positive": 0,
+      "mean": 0.0,
+      "n": 3,
+      "std": 0.0
+    },
+    "grad_loss1_A_no_detach": {
+      "direction_positive": 3,
+      "mean": 0.049711337938494166,
+      "n": 3,
+      "std": 0.009705454967139244
+    },
+    "no_detach_delta_shuffle": {
+      "direction_positive": 1,
+      "mean": -9.389718373616536e-05,
+      "n": 3,
+      "std": 0.0001034782220846544
+    }
+  },
+  "per_seed_paired": [
+    {
+      "answer_em_diff": 0.0,
+      "answer_nll_diff": 5.459785461425781e-05,
+      "detach_delta_shuffle": 1.7404556274414062e-05,
+      "feedback_gain": -5.960464477539063e-08,
+      "grad_cosine_no_detach": 0.006581410765647888,
+      "grad_loss1_A_detach": 0.0,
+      "grad_loss1_A_no_detach": 0.03598966314641634,
+      "no_detach_delta_shuffle": 1.7344951629638672e-05,
+      "seed": "42"
+    },
+    {
+      "answer_em_diff": 0.0,
+      "answer_nll_diff": 0.0002168416976928711,
+      "detach_delta_shuffle": -6.777048110961914e-05,
+      "feedback_gain": 5.960464477539062e-07,
+      "grad_cosine_no_detach": 0.00619537103921175,
+      "grad_loss1_A_detach": 0.0,
+      "grad_loss1_A_no_detach": 0.056855926729408604,
+      "no_detach_delta_shuffle": -6.717443466186523e-05,
+      "seed": "43"
+    },
+    {
+      "answer_em_diff": 0.0,
+      "answer_nll_diff": 0.00018703937530517578,
+      "detach_delta_shuffle": -0.00022584199905395508,
+      "feedback_gain": -6.020069122314453e-06,
+      "grad_cosine_no_detach": 0.0129659753292799,
+      "grad_loss1_A_detach": 0.0,
+      "grad_loss1_A_no_detach": 0.05628842393965754,
+      "no_detach_delta_shuffle": -0.00023186206817626953,
+      "seed": "44"
+    }
+  ]
+}

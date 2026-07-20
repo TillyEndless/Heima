@@ -1,0 +1,34 @@
+{
+  "action_taken": "Added OfficialCompatibleAbstractProjection; did not delete LatentProjector to preserve old checkpoints.",
+  "htext_current": {
+    "bias": true,
+    "class": "src.htext.modeling.LatentProjector",
+    "initialization": "Linear identity weight, zero bias",
+    "layer_order": [
+      "LayerNorm",
+      "Linear"
+    ],
+    "normalization": "LayerNorm"
+  },
+  "mismatch": true,
+  "official": {
+    "activation": "ReLU(inplace=True)",
+    "bias": true,
+    "class": "torch.nn.Sequential",
+    "initialization": {
+      "construction": "torch.nn.Linear default initialization",
+      "heima_setup_note": "training script later initializes abstract_projection Linear weights with xavier_uniform_ when no state dict is loaded; biases are not explicitly changed",
+      "source": "heima/main_python/2-training-pipeline-main_lora-pure_llm_decoder_lora-split_3_stages-fix_num-progressive.py:780-786"
+    },
+    "input_dim": 4096,
+    "layer_order": [
+      "Linear",
+      "ReLU(inplace=True)",
+      "Linear",
+      "Dropout(p=0.0)"
+    ],
+    "normalization": null,
+    "output_dim": 4096,
+    "source": "torchtune_pkg/torchtune/torchtune/modules/transformer.py:404-416"
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "files": {
+    "joint_detach": "experiments/htext_gpt2/configs/strict_repo_joint_detach.yaml",
+    "joint_no_detach": "experiments/htext_gpt2/configs/strict_repo_joint_no_detach.yaml",
+    "official_staged": "experiments/htext_gpt2/configs/strict_repo_official_staged.yaml"
+  },
+  "joint_differences": {
+    "detach_encoder_latent": {
+      "joint_detach": true,
+      "joint_no_detach": false
+    }
+  },
+  "joint_only_diff_is_detach_encoder_latent": true,
+  "strict_repo_required_fields": {
+    "joint_detach": {
+      "heima_compatibility": "strict_repo",
+      "load_legacy_checkpoint": false,
+      "projector": "heima_official",
+      "thinking_state_mode": "predictor"
+    },
+    "joint_no_detach": {
+      "heima_compatibility": "strict_repo",
+      "load_legacy_checkpoint": false,
+      "projector": "heima_official",
+      "thinking_state_mode": "predictor"
+    },
+    "official_staged": {
+      "heima_compatibility": "strict_repo",
+      "load_legacy_checkpoint": false,
+      "projector": "heima_official",
+      "thinking_state_mode": "predictor"
+    }
+  }
+}

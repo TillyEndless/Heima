@@ -1,0 +1,16 @@
+{
+  "answer_direct_em": 1.0,
+  "answer_fullcot_em": 1.0,
+  "hidden_mode_direction": {
+    "predictor": {
+      "mean_normal_shuffle_margin": 0.00017329057057698569,
+      "n": 9,
+      "positive_count": 4
+    },
+    "token": {
+      "mean_normal_shuffle_margin": -0.0004635784361097548,
+      "n": 9,
+      "positive_count": 5
+    }
+  }
+}

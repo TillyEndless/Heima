@@ -1,0 +1,25 @@
+{
+  "frozen_b": {
+    "freeze_b": true,
+    "loss1": 8.774068832397461,
+    "model_a_grad_finite": true,
+    "model_a_grad_norm": 4.607377760264783,
+    "model_b_grad_count": 0,
+    "model_b_grad_finite": true,
+    "model_b_grad_norm": 0.0,
+    "pass": true,
+    "z_grad_norm": 0.15329770743846893
+  },
+  "status": "pass",
+  "trainable_b": {
+    "freeze_b": false,
+    "loss1": 8.774068832397461,
+    "model_a_grad_finite": true,
+    "model_a_grad_norm": 4.607377760264783,
+    "model_b_grad_count": 148,
+    "model_b_grad_finite": true,
+    "model_b_grad_norm": 71.57199118675871,
+    "pass": true,
+    "z_grad_norm": 0.15329770743846893
+  }
+}

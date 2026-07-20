@@ -1,0 +1,174 @@
+{
+  "final_test": {
+    "latent_geometry": {
+      "caption": {
+        "effective_rank": 3.1217362880706787,
+        "pairwise_cosine_mean": 0.9940435886383057,
+        "pairwise_cosine_std": 0.004701677244156599,
+        "within_dataset_variance_mean": 0.23346567153930664,
+        "within_dataset_variance_sum": 179.3016357421875
+      },
+      "reasoning": {
+        "effective_rank": 1.9645609855651855,
+        "pairwise_cosine_mean": 0.9691512584686279,
+        "pairwise_cosine_std": 0.03532131388783455,
+        "within_dataset_variance_mean": 0.39574816823005676,
+        "within_dataset_variance_sum": 303.9346008300781
+      },
+      "summary": {
+        "effective_rank": 3.086653709411621,
+        "pairwise_cosine_mean": 0.9978185296058655,
+        "pairwise_cosine_std": 0.001960666151717305,
+        "within_dataset_variance_mean": 0.2696305811405182,
+        "within_dataset_variance_sum": 207.0762939453125
+      }
+    },
+    "loss1_nll": {
+      "caption": 2.677776151233249,
+      "reasoning": 2.6007135497199165,
+      "summary": 2.9070153660244413
+    },
+    "main_nll": 4.167103809780545
+  },
+  "final_validation": {
+    "latent_geometry": {
+      "caption": {
+        "effective_rank": 1.7927342653274536,
+        "pairwise_cosine_mean": 0.995079755783081,
+        "pairwise_cosine_std": 0.004392080474644899,
+        "within_dataset_variance_mean": 0.42925921082496643,
+        "within_dataset_variance_sum": 329.67108154296875
+      },
+      "reasoning": {
+        "effective_rank": 1.637864589691162,
+        "pairwise_cosine_mean": 0.9697527289390564,
+        "pairwise_cosine_std": 0.04214881360530853,
+        "within_dataset_variance_mean": 0.41408446431159973,
+        "within_dataset_variance_sum": 318.0168762207031
+      },
+      "summary": {
+        "effective_rank": 2.7171695232391357,
+        "pairwise_cosine_mean": 0.997874915599823,
+        "pairwise_cosine_std": 0.0033195388969033957,
+        "within_dataset_variance_mean": 0.279664546251297,
+        "within_dataset_variance_sum": 214.78237915039062
+      }
+    },
+    "loss1_nll": {
+      "caption": 2.6849457105000814,
+      "reasoning": 2.706605699327257,
+      "summary": 2.9524388313293457
+    },
+    "main_nll": 4.097372913360596
+  },
+  "initial_validation": {
+    "latent_geometry": {
+      "caption": {
+        "effective_rank": 1.418817400932312,
+        "pairwise_cosine_mean": 0.9707829356193542,
+        "pairwise_cosine_std": 0.040984321385622025,
+        "within_dataset_variance_mean": 2.311781167984009,
+        "within_dataset_variance_sum": 1775.4478759765625
+      },
+      "reasoning": {
+        "effective_rank": 1.3981609344482422,
+        "pairwise_cosine_mean": 0.9860591292381287,
+        "pairwise_cosine_std": 0.02059525065124035,
+        "within_dataset_variance_mean": 3.6531665325164795,
+        "within_dataset_variance_sum": 2805.6318359375
+      },
+      "summary": {
+        "effective_rank": 3.4232261180877686,
+        "pairwise_cosine_mean": 0.9974443912506104,
+        "pairwise_cosine_std": 0.0038604296278208494,
+        "within_dataset_variance_mean": 0.2656177282333374,
+        "within_dataset_variance_sum": 203.99441528320312
+      }
+    },
+    "loss1_nll": {
+      "caption": 3.2202813731299504,
+      "reasoning": 3.0816492822435166,
+      "summary": 3.4913907368977863
+    },
+    "main_nll": 6.077570427788628
+  },
+  "logs": [
+    {
+      "grad_A_total": 51.66522629548338,
+      "grad_decoder": {
+        "caption": 2.994164525450185,
+        "reasoning": 2.654528657049168,
+        "summary": 3.3601077831602395
+      },
+      "grad_projector": {
+        "caption": 0.6365226773937245,
+        "reasoning": 0.28924097465928095,
+        "summary": 1.3168642215384878
+      },
+      "loss1": {
+        "caption": 3.526670455932617,
+        "reasoning": 3.9723684787750244,
+        "summary": 3.983844518661499
+      },
+      "main": 6.970835208892822,
+      "step": 1,
+      "total": 8.119123458862305
+    },
+    {
+      "grad_A_total": 37.35028900863571,
+      "grad_decoder": {
+        "caption": 2.4487267116794538,
+        "reasoning": 2.158468240931265,
+        "summary": 3.4262652023195725
+      },
+      "grad_projector": {
+        "caption": 0.4087698968444498,
+        "reasoning": 0.3586099173095589,
+        "summary": 0.2515039255436749
+      },
+      "loss1": {
+        "caption": 3.198319911956787,
+        "reasoning": 3.436163902282715,
+        "summary": 3.472120523452759
+      },
+      "main": 5.34861421585083,
+      "step": 2,
+      "total": 6.359274864196777
+    }
+  ],
+  "position_trace_first_batch": {
+    "caption": {
+      "selected_pos": [
+        34,
+        36
+      ],
+      "thinking_pos": [
+        35,
+        37
+      ]
+    },
+    "reasoning": {
+      "selected_pos": [
+        41,
+        43
+      ],
+      "thinking_pos": [
+        42,
+        44
+      ]
+    },
+    "summary": {
+      "selected_pos": [
+        27,
+        29
+      ],
+      "thinking_pos": [
+        28,
+        30
+      ]
+    }
+  },
+  "runtime_sec": 9.964521646499634,
+  "seed": 42,
+  "status": "complete"
+}

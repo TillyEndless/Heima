@@ -1,0 +1,11 @@
+{
+  "allow_difference_rerun": false,
+  "gates": {
+    "free_generation_normal_intermediate_better": false,
+    "normal_better_than_shuffle": true,
+    "numeric_intermediate_margin": true,
+    "q_normal_better_than_q_only": true,
+    "retrieval_above_random": true,
+    "s0_not_floor": true
+  }
+}

@@ -1,0 +1,21 @@
+experiment_name: h0_thinking_main
+model_name_or_path: /mnt/nas/share2/home/zxl/models/openai-community-gpt2
+local_files_only: true
+use_safetensors: true
+seed: 42
+num_thinking_tokens: 1
+micro_batch_size: 2
+gradient_accumulation_steps: 4
+learning_rate_A: 1.0e-5
+weight_decay: 0.01
+max_grad_norm: 1.0
+max_question_tokens: 80
+max_answer_tokens: 16
+max_steps: 120
+log_interval: 10
+eval_samples: 16
+train_path: experiments/htext_gpt2/data/synthetic_htext_train.jsonl
+validation_path: experiments/htext_gpt2/data/synthetic_htext_validation.jsonl
+report_path: experiments/htext_gpt2/reports/h0_result.json
+checkpoint_dir: experiments/htext_gpt2/checkpoints/h0
+

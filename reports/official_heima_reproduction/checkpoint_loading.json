@@ -1,0 +1,79 @@
+{
+  "attempted": false,
+  "loaded_decoders": {
+    "caption": false,
+    "reasoning": false,
+    "summary": false
+  },
+  "loaded_encoder": false,
+  "missing_required_paths": [
+    {
+      "exists": false,
+      "path": "/mnt/localssd/llava-cot-checkpoints/llava-cot-pretrained/Llama-3.2V-11B-cot",
+      "resolved_path": "/mnt/localssd/llava-cot-checkpoints/llava-cot-pretrained/Llama-3.2V-11B-cot",
+      "sha256": null
+    },
+    {
+      "exists": false,
+      "path": "/mnt/localssd/llava-cot-checkpoints/llama3_1/Llama-3.1-8B-Instruct",
+      "resolved_path": "/mnt/localssd/llava-cot-checkpoints/llama3_1/Llama-3.1-8B-Instruct",
+      "sha256": null
+    },
+    {
+      "exists": false,
+      "path": "/mnt/localssd/llava-cot-dataset/json_files",
+      "resolved_path": "/mnt/localssd/llava-cot-dataset/json_files",
+      "sha256": null
+    },
+    {
+      "exists": false,
+      "path": "/mnt/localssd/llava-cot-dataset/image_files",
+      "resolved_path": "/mnt/localssd/llava-cot-dataset/image_files",
+      "sha256": null
+    },
+    {
+      "exists": false,
+      "path": "lora-ckpts/exp-step_3/main/adapter_0.pt",
+      "resolved_path": "/data/zxl/Heima/lora-ckpts/exp-step_3/main/adapter_0.pt",
+      "sha256": null
+    },
+    {
+      "exists": false,
+      "path": "lora-ckpts/exp-step_4/decoder/summary/adapter_0.pt",
+      "resolved_path": "/data/zxl/Heima/lora-ckpts/exp-step_4/decoder/summary/adapter_0.pt",
+      "sha256": null
+    },
+    {
+      "exists": false,
+      "path": "lora-ckpts/exp-step_4/decoder/summary/abstract_projector_summary.pth",
+      "resolved_path": "/data/zxl/Heima/lora-ckpts/exp-step_4/decoder/summary/abstract_projector_summary.pth",
+      "sha256": null
+    },
+    {
+      "exists": false,
+      "path": "lora-ckpts/exp-step_4/decoder/caption/adapter_0.pt",
+      "resolved_path": "/data/zxl/Heima/lora-ckpts/exp-step_4/decoder/caption/adapter_0.pt",
+      "sha256": null
+    },
+    {
+      "exists": false,
+      "path": "lora-ckpts/exp-step_4/decoder/caption/abstract_projector_caption.pth",
+      "resolved_path": "/data/zxl/Heima/lora-ckpts/exp-step_4/decoder/caption/abstract_projector_caption.pth",
+      "sha256": null
+    },
+    {
+      "exists": false,
+      "path": "lora-ckpts/exp-step_4/decoder/reasoning/adapter_0.pt",
+      "resolved_path": "/data/zxl/Heima/lora-ckpts/exp-step_4/decoder/reasoning/adapter_0.pt",
+      "sha256": null
+    },
+    {
+      "exists": false,
+      "path": "lora-ckpts/exp-step_4/decoder/reasoning/abstract_projector_reasoning.pth",
+      "resolved_path": "/data/zxl/Heima/lora-ckpts/exp-step_4/decoder/reasoning/abstract_projector_reasoning.pth",
+      "sha256": null
+    }
+  ],
+  "no_lightweight_substitution": true,
+  "reason": "Official base models, LoRA adapters, projector weights, generated test json, and image files are not present at configured paths."
+}

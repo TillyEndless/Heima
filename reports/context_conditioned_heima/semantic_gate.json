@@ -1,0 +1,19 @@
+{
+  "allow_ours_l1_rerun": false,
+  "allow_ours_l1_rerun_nll_only": true,
+  "answer_em_nonfloor": {
+    "n": 3,
+    "passed": true,
+    "passed_count": 2
+  },
+  "free_generation_normal_over_paired_shuffle": {
+    "n": 9,
+    "passed": false,
+    "passed_count": 0
+  },
+  "stage_semantics": {
+    "n": 3,
+    "passed": true,
+    "passed_count": 2
+  }
+}

@@ -1,0 +1,581 @@
+{
+  "logs": [
+    {
+      "loss": 18.447519302368164,
+      "step": 1
+    },
+    {
+      "loss": 0.00831389706581831,
+      "step": 160
+    }
+  ],
+  "stage_eval": {
+    "cot1": {
+      "deltas": {
+        "intermediate_shuffle_minus_normal": 7.313163951039314e-05,
+        "numeric_shuffle_minus_normal": 2.574990503489971e-05,
+        "q_only_minus_normal_full": 0.09464221447706223,
+        "shuffle_minus_normal_full": 9.561772458255291e-06
+      },
+      "generation": {
+        "normal": {
+          "expression_match": 1.0,
+          "intermediate_result_match": 1.0,
+          "number_match": 1.0,
+          "texts": [
+            {
+              "gold": "The product is 67 * 18 = 1206.",
+              "id": "htext_validation_0000",
+              "text": "The product is 67 * 18 = 1206."
+            },
+            {
+              "gold": "First multiply 50 by 14: 50 * 14 = 700.",
+              "id": "htext_validation_0001",
+              "text": "First multiply 50 by 14: 50 * 14 = 700."
+            },
+            {
+              "gold": "Use multiplication first: 46 * 4 = 184.",
+              "id": "htext_validation_0002",
+              "text": "Use multiplication first: 46 * 4 = 184."
+            },
+            {
+              "gold": "Evaluate the parentheses first: 29 + 52 = 81.",
+              "id": "htext_validation_0003",
+              "text": "Evaluate the parentheses first: 29 + 52 = 81."
+            },
+            {
+              "gold": "First multiply 19 by 40: 19 * 40 = 760.",
+              "id": "htext_validation_0004",
+              "text": "First multiply 19 by 40: 19 * 40 = 760."
+            },
+            {
+              "gold": "First add 16 and 10: 16 + 10 = 26.",
+              "id": "htext_validation_0005",
+              "text": "First add 16 and 10: 16 + 10 = 26."
+            },
+            {
+              "gold": "Use multiplication first: 65 * 16 = 1040.",
+              "id": "htext_validation_0006",
+              "text": "Use multiplication first: 65 * 16 = 1040."
+            },
+            {
+              "gold": "First add 42 and 55: 42 + 55 = 97.",
+              "id": "htext_validation_0007",
+              "text": "First add 42 and 55: 42 + 55 = 97."
+            },
+            {
+              "gold": "First subtract 42 from 64: 64 - 42 = 22.",
+              "id": "htext_validation_0008",
+              "text": "First subtract 42 from 64: 64 - 42 = 22."
+            },
+            {
+              "gold": "The product is 6 * 13 = 78.",
+              "id": "htext_validation_0009",
+              "text": "The product is 6 * 13 = 78."
+            },
+            {
+              "gold": "Compute the multiplication: 11 * 17 = 187.",
+              "id": "htext_validation_0010",
+              "text": "Compute the multiplication: 11 * 17 = 187."
+            },
+            {
+              "gold": "Compute the multiplication: 39 * 7 = 273.",
+              "id": "htext_validation_0011",
+              "text": "Compute the multiplication: 39 * 7 = 273."
+            }
+          ]
+        },
+        "shuffle": {
+          "expression_match": 1.0,
+          "intermediate_result_match": 1.0,
+          "number_match": 1.0,
+          "texts": [
+            {
+              "gold": "The product is 67 * 18 = 1206.",
+              "id": "htext_validation_0000",
+              "text": "The product is 67 * 18 = 1206."
+            },
+            {
+              "gold": "First multiply 50 by 14: 50 * 14 = 700.",
+              "id": "htext_validation_0001",
+              "text": "First multiply 50 by 14: 50 * 14 = 700."
+            },
+            {
+              "gold": "Use multiplication first: 46 * 4 = 184.",
+              "id": "htext_validation_0002",
+              "text": "Use multiplication first: 46 * 4 = 184."
+            },
+            {
+              "gold": "Evaluate the parentheses first: 29 + 52 = 81.",
+              "id": "htext_validation_0003",
+              "text": "Evaluate the parentheses first: 29 + 52 = 81."
+            },
+            {
+              "gold": "First multiply 19 by 40: 19 * 40 = 760.",
+              "id": "htext_validation_0004",
+              "text": "First multiply 19 by 40: 19 * 40 = 760."
+            },
+            {
+              "gold": "First add 16 and 10: 16 + 10 = 26.",
+              "id": "htext_validation_0005",
+              "text": "First add 16 and 10: 16 + 10 = 26."
+            },
+            {
+              "gold": "Use multiplication first: 65 * 16 = 1040.",
+              "id": "htext_validation_0006",
+              "text": "Use multiplication first: 65 * 16 = 1040."
+            },
+            {
+              "gold": "First add 42 and 55: 42 + 55 = 97.",
+              "id": "htext_validation_0007",
+              "text": "First add 42 and 55: 42 + 55 = 97."
+            },
+            {
+              "gold": "First subtract 42 from 64: 64 - 42 = 22.",
+              "id": "htext_validation_0008",
+              "text": "First subtract 42 from 64: 64 - 42 = 22."
+            },
+            {
+              "gold": "The product is 6 * 13 = 78.",
+              "id": "htext_validation_0009",
+              "text": "The product is 6 * 13 = 78."
+            },
+            {
+              "gold": "Compute the multiplication: 11 * 17 = 187.",
+              "id": "htext_validation_0010",
+              "text": "Compute the multiplication: 11 * 17 = 187."
+            },
+            {
+              "gold": "Compute the multiplication: 39 * 7 = 273.",
+              "id": "htext_validation_0011",
+              "text": "Compute the multiplication: 39 * 7 = 273."
+            }
+          ]
+        }
+      },
+      "normal": {
+        "first_4_tokens": 0.001027058926410973,
+        "first_8_tokens": 0.00116448022890836,
+        "first_token": 0.0010025190422311425,
+        "full": 0.001543879508972168,
+        "intermediate_tokens": 0.007432815618813038,
+        "numeric_tokens": 0.0033676307648420334,
+        "operator_tokens": 0.0009609502158127725
+      },
+      "q_only": {
+        "first_4_tokens": 0.10966138541698456,
+        "first_8_tokens": 0.12085555493831635,
+        "first_token": 0.2622529864311218,
+        "full": 0.0961860939860344,
+        "intermediate_tokens": 0.16283676028251648,
+        "numeric_tokens": 0.06161101534962654,
+        "operator_tokens": 0.20341496169567108
+      },
+      "shuffle": {
+        "first_4_tokens": 0.0010342525783926249,
+        "first_8_tokens": 0.0011685662902891636,
+        "first_token": 0.0010213707573711872,
+        "full": 0.0015534412814304233,
+        "intermediate_tokens": 0.007505947258323431,
+        "numeric_tokens": 0.003393380669876933,
+        "operator_tokens": 0.0009639175841584802
+      },
+      "z_only": {
+        "first_4_tokens": 4.3703107833862305,
+        "first_8_tokens": 4.216109275817871,
+        "first_token": 5.8363447189331055,
+        "full": 3.2018330097198486,
+        "intermediate_tokens": 3.2253053188323975,
+        "numeric_tokens": 6.668544769287109,
+        "operator_tokens": 0.6505547761917114
+      },
+      "zero": {
+        "first_4_tokens": 0.07064199447631836,
+        "first_8_tokens": 0.14531992375850677,
+        "first_token": 0.07366341352462769,
+        "full": 0.10698644816875458,
+        "intermediate_tokens": 0.1148187518119812,
+        "numeric_tokens": 0.045998647809028625,
+        "operator_tokens": 0.07725108414888382
+      }
+    },
+    "cot2": {
+      "deltas": {
+        "intermediate_shuffle_minus_normal": 2.54753977060318e-05,
+        "numeric_shuffle_minus_normal": 1.5566591173410416e-05,
+        "q_only_minus_normal_full": 0.07652292144484818,
+        "shuffle_minus_normal_full": 7.629627361893654e-06
+      },
+      "generation": {
+        "normal": {
+          "expression_match": 1.0,
+          "intermediate_result_match": 1.0,
+          "number_match": 1.0,
+          "texts": [
+            {
+              "gold": "Adding 37 gives 37 + 1206 = 1243.",
+              "id": "htext_validation_0000",
+              "text": "Adding 37 gives 37 + 1206 = 1243."
+            },
+            {
+              "gold": "Then subtract 3: 700 - 3 = 697.",
+              "id": "htext_validation_0001",
+              "text": "Then subtract 3: 700 - 3 = 697."
+            },
+            {
+              "gold": "Combine with 23: 23 + 184 = 207.",
+              "id": "htext_validation_0002",
+              "text": "Combine with 23: 23 + 184 = 207."
+            },
+            {
+              "gold": "Now compute 14 times that value: 14 * 81 = 1134.",
+              "id": "htext_validation_0003",
+              "text": "Now compute 14 times that value: 14 * 81 = 1134."
+            },
+            {
+              "gold": "Then subtract 4: 760 - 4 = 756.",
+              "id": "htext_validation_0004",
+              "text": "Then subtract 4: 760 - 4 = 756."
+            },
+            {
+              "gold": "Then multiply the result by 9: 26 * 9 = 234.",
+              "id": "htext_validation_0005",
+              "text": "Then multiply the result by 9: 26 * 9 = 234."
+            },
+            {
+              "gold": "Combine with 13: 13 + 1040 = 1053.",
+              "id": "htext_validation_0006",
+              "text": "Combine with 13: 13 + 1040 = 1053."
+            },
+            {
+              "gold": "Then multiply the result by 3: 97 * 3 = 291.",
+              "id": "htext_validation_0007",
+              "text": "Then multiply the result by 3: 97 * 3 = 291."
+            },
+            {
+              "gold": "Then divide by 2: 22 / 2 = 11.",
+              "id": "htext_validation_0008",
+              "text": "Then divide by 2: 22 / 2 = 11."
+            },
+            {
+              "gold": "Adding 67 gives 67 + 78 = 145.",
+              "id": "htext_validation_0009",
+              "text": "Adding 67 gives 67 + 78 = 145."
+            },
+            {
+              "gold": "Finish with the subtraction: 187 - 2 = 185.",
+              "id": "htext_validation_0010",
+              "text": "Finish with the subtraction: 187 - 2 = 185."
+            },
+            {
+              "gold": "Finish with the subtraction: 273 - 13 = 260.",
+              "id": "htext_validation_0011",
+              "text": "Finish with the subtraction: 273 - 13 = 260."
+            }
+          ]
+        },
+        "shuffle": {
+          "expression_match": 1.0,
+          "intermediate_result_match": 1.0,
+          "number_match": 1.0,
+          "texts": [
+            {
+              "gold": "Adding 37 gives 37 + 1206 = 1243.",
+              "id": "htext_validation_0000",
+              "text": "Adding 37 gives 37 + 1206 = 1243."
+            },
+            {
+              "gold": "Then subtract 3: 700 - 3 = 697.",
+              "id": "htext_validation_0001",
+              "text": "Then subtract 3: 700 - 3 = 697."
+            },
+            {
+              "gold": "Combine with 23: 23 + 184 = 207.",
+              "id": "htext_validation_0002",
+              "text": "Combine with 23: 23 + 184 = 207."
+            },
+            {
+              "gold": "Now compute 14 times that value: 14 * 81 = 1134.",
+              "id": "htext_validation_0003",
+              "text": "Now compute 14 times that value: 14 * 81 = 1134."
+            },
+            {
+              "gold": "Then subtract 4: 760 - 4 = 756.",
+              "id": "htext_validation_0004",
+              "text": "Then subtract 4: 760 - 4 = 756."
+            },
+            {
+              "gold": "Then multiply the result by 9: 26 * 9 = 234.",
+              "id": "htext_validation_0005",
+              "text": "Then multiply the result by 9: 26 * 9 = 234."
+            },
+            {
+              "gold": "Combine with 13: 13 + 1040 = 1053.",
+              "id": "htext_validation_0006",
+              "text": "Combine with 13: 13 + 1040 = 1053."
+            },
+            {
+              "gold": "Then multiply the result by 3: 97 * 3 = 291.",
+              "id": "htext_validation_0007",
+              "text": "Then multiply the result by 3: 97 * 3 = 291."
+            },
+            {
+              "gold": "Then divide by 2: 22 / 2 = 11.",
+              "id": "htext_validation_0008",
+              "text": "Then divide by 2: 22 / 2 = 11."
+            },
+            {
+              "gold": "Adding 67 gives 67 + 78 = 145.",
+              "id": "htext_validation_0009",
+              "text": "Adding 67 gives 67 + 78 = 145."
+            },
+            {
+              "gold": "Finish with the subtraction: 187 - 2 = 185.",
+              "id": "htext_validation_0010",
+              "text": "Finish with the subtraction: 187 - 2 = 185."
+            },
+            {
+              "gold": "Finish with the subtraction: 273 - 13 = 260.",
+              "id": "htext_validation_0011",
+              "text": "Finish with the subtraction: 273 - 13 = 260."
+            }
+          ]
+        }
+      },
+      "normal": {
+        "first_4_tokens": 0.0012106115464121103,
+        "first_8_tokens": 0.0023658229038119316,
+        "first_token": 0.0010219522519037127,
+        "full": 0.002774263499304652,
+        "intermediate_tokens": 0.009506000205874443,
+        "numeric_tokens": 0.006532549858093262,
+        "operator_tokens": 0.000895195291377604
+      },
+      "q_only": {
+        "first_4_tokens": 0.05240922421216965,
+        "first_8_tokens": 0.1084558367729187,
+        "first_token": 0.1764717698097229,
+        "full": 0.07929718494415283,
+        "intermediate_tokens": 0.255981981754303,
+        "numeric_tokens": 0.16884569823741913,
+        "operator_tokens": 0.03156380355358124
+      },
+      "shuffle": {
+        "first_4_tokens": 0.001212617731653154,
+        "first_8_tokens": 0.0023801401257514954,
+        "first_token": 0.0010139958467334509,
+        "full": 0.002781893126666546,
+        "intermediate_tokens": 0.009531475603580475,
+        "numeric_tokens": 0.006548116449266672,
+        "operator_tokens": 0.00089947076048702
+      },
+      "z_only": {
+        "first_4_tokens": 4.651659965515137,
+        "first_8_tokens": 3.5054774284362793,
+        "first_token": 9.764410018920898,
+        "full": 2.343212604522705,
+        "intermediate_tokens": 2.601912498474121,
+        "numeric_tokens": 3.622283697128296,
+        "operator_tokens": 0.1184338629245758
+      },
+      "zero": {
+        "first_4_tokens": 0.012119701132178307,
+        "first_8_tokens": 0.0847376137971878,
+        "first_token": 0.021897757425904274,
+        "full": 0.06306047737598419,
+        "intermediate_tokens": 0.2477593868970871,
+        "numeric_tokens": 0.16381630301475525,
+        "operator_tokens": 0.016248609870672226
+      }
+    },
+    "cot3": {
+      "deltas": {
+        "intermediate_shuffle_minus_normal": -7.813796401023865e-06,
+        "numeric_shuffle_minus_normal": -4.678964614868164e-06,
+        "q_only_minus_normal_full": 0.11595063540153205,
+        "shuffle_minus_normal_full": 2.757646143436432e-06
+      },
+      "generation": {
+        "normal": {
+          "expression_match": 0.3333333333333333,
+          "intermediate_result_match": 1.0,
+          "number_match": 1.0,
+          "texts": [
+            {
+              "gold": "Subtract 414 to get 1243 - 414 = 829.",
+              "id": "htext_validation_0000",
+              "text": "Subtract 414 to get 1243 - 414 = 829."
+            },
+            {
+              "gold": "The answer is 697.",
+              "id": "htext_validation_0001",
+              "text": "The answer is 697."
+            },
+            {
+              "gold": "Reduce by 69: 207 - 69 = 138.",
+              "id": "htext_validation_0002",
+              "text": "Reduce by 69: 207 - 69 = 138."
+            },
+            {
+              "gold": "The answer is 1134.",
+              "id": "htext_validation_0003",
+              "text": "The answer is 1134."
+            },
+            {
+              "gold": "The answer is 756.",
+              "id": "htext_validation_0004",
+              "text": "The answer is 756."
+            },
+            {
+              "gold": "The answer is 234.",
+              "id": "htext_validation_0005",
+              "text": "The answer is 234."
+            },
+            {
+              "gold": "Reduce by 351: 1053 - 351 = 702.",
+              "id": "htext_validation_0006",
+              "text": "Reduce by 351: 1053 - 351 = 702."
+            },
+            {
+              "gold": "The answer is 291.",
+              "id": "htext_validation_0007",
+              "text": "The answer is 291."
+            },
+            {
+              "gold": "The answer is 11.",
+              "id": "htext_validation_0008",
+              "text": "The answer is 11."
+            },
+            {
+              "gold": "Subtract 48 to get 145 - 48 = 97.",
+              "id": "htext_validation_0009",
+              "text": "Subtract 48 to get 145 - 48 = 97."
+            },
+            {
+              "gold": "The answer is 185.",
+              "id": "htext_validation_0010",
+              "text": "The answer is 185."
+            },
+            {
+              "gold": "The answer is 260.",
+              "id": "htext_validation_0011",
+              "text": "The answer is 260."
+            }
+          ]
+        },
+        "shuffle": {
+          "expression_match": 0.3333333333333333,
+          "intermediate_result_match": 1.0,
+          "number_match": 1.0,
+          "texts": [
+            {
+              "gold": "Subtract 414 to get 1243 - 414 = 829.",
+              "id": "htext_validation_0000",
+              "text": "Subtract 414 to get 1243 - 414 = 829."
+            },
+            {
+              "gold": "The answer is 697.",
+              "id": "htext_validation_0001",
+              "text": "The answer is 697."
+            },
+            {
+              "gold": "Reduce by 69: 207 - 69 = 138.",
+              "id": "htext_validation_0002",
+              "text": "Reduce by 69: 207 - 69 = 138."
+            },
+            {
+              "gold": "The answer is 1134.",
+              "id": "htext_validation_0003",
+              "text": "The answer is 1134."
+            },
+            {
+              "gold": "The answer is 756.",
+              "id": "htext_validation_0004",
+              "text": "The answer is 756."
+            },
+            {
+              "gold": "The answer is 234.",
+              "id": "htext_validation_0005",
+              "text": "The answer is 234."
+            },
+            {
+              "gold": "Reduce by 351: 1053 - 351 = 702.",
+              "id": "htext_validation_0006",
+              "text": "Reduce by 351: 1053 - 351 = 702."
+            },
+            {
+              "gold": "The answer is 291.",
+              "id": "htext_validation_0007",
+              "text": "The answer is 291."
+            },
+            {
+              "gold": "The answer is 11.",
+              "id": "htext_validation_0008",
+              "text": "The answer is 11."
+            },
+            {
+              "gold": "Subtract 48 to get 145 - 48 = 97.",
+              "id": "htext_validation_0009",
+              "text": "Subtract 48 to get 145 - 48 = 97."
+            },
+            {
+              "gold": "The answer is 185.",
+              "id": "htext_validation_0010",
+              "text": "The answer is 185."
+            },
+            {
+              "gold": "The answer is 260.",
+              "id": "htext_validation_0011",
+              "text": "The answer is 260."
+            }
+          ]
+        }
+      },
+      "normal": {
+        "first_4_tokens": 0.0030651153065264225,
+        "first_8_tokens": 0.0024738037027418613,
+        "first_token": 0.0005437782383523881,
+        "full": 0.002359935315325856,
+        "intermediate_tokens": 0.009939336217939854,
+        "numeric_tokens": 0.007948566228151321,
+        "operator_tokens": 0.0002767405239865184
+      },
+      "q_only": {
+        "first_4_tokens": 0.1440151035785675,
+        "first_8_tokens": 0.12687622010707855,
+        "first_token": 0.4966130256652832,
+        "full": 0.11831057071685791,
+        "intermediate_tokens": 0.2227834016084671,
+        "numeric_tokens": 0.17518478631973267,
+        "operator_tokens": 0.09929283708333969
+      },
+      "shuffle": {
+        "first_4_tokens": 0.0030765789560973644,
+        "first_8_tokens": 0.002478574402630329,
+        "first_token": 0.0005677943699993193,
+        "full": 0.0023626929614692926,
+        "intermediate_tokens": 0.00993152242153883,
+        "numeric_tokens": 0.007943887263536453,
+        "operator_tokens": 0.00029269992955960333
+      },
+      "z_only": {
+        "first_4_tokens": 2.960352897644043,
+        "first_8_tokens": 2.0280048847198486,
+        "first_token": 2.159083843231201,
+        "full": 1.745089054107666,
+        "intermediate_tokens": 3.456878185272217,
+        "numeric_tokens": 4.749518871307373,
+        "operator_tokens": 0.000659470446407795
+      },
+      "zero": {
+        "first_4_tokens": 0.026073455810546875,
+        "first_8_tokens": 0.029862482100725174,
+        "first_token": 0.05233873426914215,
+        "full": 0.036037627607584,
+        "intermediate_tokens": 0.12161852419376373,
+        "numeric_tokens": 0.09591004252433777,
+        "operator_tokens": 0.039378706365823746
+      }
+    }
+  }
+}

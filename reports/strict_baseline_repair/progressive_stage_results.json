@@ -1,0 +1,149 @@
+{
+  "stages": {
+    "0": {
+      "geometry": {},
+      "logs": [
+        {
+          "loss": 4.087784290313721,
+          "step": 1
+        },
+        {
+          "loss": 0.05976366624236107,
+          "step": 160
+        }
+      ]
+    },
+    "1": {
+      "geometry": {
+        "z1": {
+          "geometry": {
+            "effective_rank": 4.093159198760986,
+            "pairwise_cosine_mean": 0.997812807559967,
+            "pairwise_cosine_std": 0.0017474922351539135,
+            "within_dataset_variance_mean": 0.5574226975440979,
+            "within_dataset_variance_sum": 428.10064697265625
+          },
+          "retrieval": {
+            "R@1": 1.0,
+            "R@5": 1.0,
+            "random_R@1": 0.020833333333333332,
+            "random_R@5": 0.10416666666666667
+          }
+        }
+      },
+      "logs": [
+        {
+          "loss": 3.3222849369049072,
+          "step": 1
+        },
+        {
+          "loss": 0.03380708396434784,
+          "step": 160
+        }
+      ]
+    },
+    "2": {
+      "geometry": {
+        "z1": {
+          "geometry": {
+            "effective_rank": 5.830347061157227,
+            "pairwise_cosine_mean": 0.9984318017959595,
+            "pairwise_cosine_std": 0.0009056178969331086,
+            "within_dataset_variance_mean": 0.499708890914917,
+            "within_dataset_variance_sum": 383.77642822265625
+          },
+          "retrieval": {
+            "R@1": 1.0,
+            "R@5": 1.0,
+            "random_R@1": 0.020833333333333332,
+            "random_R@5": 0.10416666666666667
+          }
+        },
+        "z2": {
+          "geometry": {
+            "effective_rank": 5.257222652435303,
+            "pairwise_cosine_mean": 0.998421847820282,
+            "pairwise_cosine_std": 0.001114298589527607,
+            "within_dataset_variance_mean": 0.5429812669754028,
+            "within_dataset_variance_sum": 417.0096130371094
+          },
+          "retrieval": {
+            "R@1": 1.0,
+            "R@5": 1.0,
+            "random_R@1": 0.020833333333333332,
+            "random_R@5": 0.10416666666666667
+          }
+        }
+      },
+      "logs": [
+        {
+          "loss": 4.068807601928711,
+          "step": 1
+        },
+        {
+          "loss": 0.010303176939487457,
+          "step": 160
+        }
+      ]
+    },
+    "3": {
+      "geometry": {
+        "z1": {
+          "geometry": {
+            "effective_rank": 6.2294793128967285,
+            "pairwise_cosine_mean": 0.9987326264381409,
+            "pairwise_cosine_std": 0.0008666162029840052,
+            "within_dataset_variance_mean": 0.33029913902282715,
+            "within_dataset_variance_sum": 253.66973876953125
+          },
+          "retrieval": {
+            "R@1": 1.0,
+            "R@5": 1.0,
+            "random_R@1": 0.020833333333333332,
+            "random_R@5": 0.10416666666666667
+          }
+        },
+        "z2": {
+          "geometry": {
+            "effective_rank": 4.176822662353516,
+            "pairwise_cosine_mean": 0.9994469881057739,
+            "pairwise_cosine_std": 0.000366285617928952,
+            "within_dataset_variance_mean": 0.22115658223628998,
+            "within_dataset_variance_sum": 169.84825134277344
+          },
+          "retrieval": {
+            "R@1": 1.0,
+            "R@5": 1.0,
+            "random_R@1": 0.020833333333333332,
+            "random_R@5": 0.10416666666666667
+          }
+        },
+        "z3": {
+          "geometry": {
+            "effective_rank": 4.997684478759766,
+            "pairwise_cosine_mean": 0.9992844462394714,
+            "pairwise_cosine_std": 0.0005147207994014025,
+            "within_dataset_variance_mean": 0.1945878118276596,
+            "within_dataset_variance_sum": 149.4434356689453
+          },
+          "retrieval": {
+            "R@1": 1.0,
+            "R@5": 1.0,
+            "random_R@1": 0.020833333333333332,
+            "random_R@5": 0.10416666666666667
+          }
+        }
+      },
+      "logs": [
+        {
+          "loss": 5.269351005554199,
+          "step": 1
+        },
+        {
+          "loss": 0.004223670810461044,
+          "step": 160
+        }
+      ]
+    }
+  }
+}

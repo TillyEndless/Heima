@@ -1,0 +1,165 @@
+{
+  "hf_access_probes": [
+    {
+      "http_status": null,
+      "repo": "Xkev/Llama-3.2V-11B-cot",
+      "returncode": 28,
+      "stderr": "% Total    % Received % Xferd  Average Speed   Time    Time     Time  Current\n                                 Dload  Upload   Total   Spent    Left  Speed\n\n  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0\n  0     0    0     0    0     0      0      0 --:--:--  0:00:01 --:--:--     0\n  0     0    0     0    0     0      0      0 --:--:--  0:00:02 --:--:--     0\n  0     0    0     0    0     0      0      0 --:--:--  0:00:03 --:--:--     0\n  0     0    0     0    0     0      0      0 --:--:--  0:00:04 --:--:--     0\n  0     0    0     0    0     0      0      0 --:--:--  0:00:05 --:--:--     0\n  0     0    0     0    0     0      0      0 --:--:--  0:00:06 --:--:--     0\n  0     0    0     0    0     0      0      0 --:--:--  0:00:07 --:--:--     0\n  0     0    0     0    0     0      0      0 --:--:--  0:00:07 --:--:--     0\ncurl: (28) Failed to connect to huggingface.co port 443 after 7709 ms: Connection timed out",
+      "stdout": "",
+      "type": "model",
+      "url": "https://huggingface.co/Xkev/Llama-3.2V-11B-cot/resolve/main/README.md"
+    },
+    {
+      "http_status": null,
+      "repo": "meta-llama/Llama-3.1-8B-Instruct",
+      "returncode": 28,
+      "stderr": "% Total    % Received % Xferd  Average Speed   Time    Time     Time  Current\n                                 Dload  Upload   Total   Spent    Left  Speed\n\n  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0\n  0     0    0     0    0     0      0      0 --:--:--  0:00:01 --:--:--     0\n  0     0    0     0    0     0      0      0 --:--:--  0:00:02 --:--:--     0\n  0     0    0     0    0     0      0      0 --:--:--  0:00:03 --:--:--     0\n  0     0    0     0    0     0      0      0 --:--:--  0:00:04 --:--:--     0\n  0     0    0     0    0     0      0      0 --:--:--  0:00:05 --:--:--     0\n  0     0    0     0    0     0      0      0 --:--:--  0:00:06 --:--:--     0\n  0     0    0     0    0     0      0      0 --:--:--  0:00:07 --:--:--     0\n  0     0    0     0    0     0      0      0 --:--:--  0:00:07 --:--:--     0\ncurl: (28) Failed to connect to huggingface.co port 443 after 7707 ms: Connection timed out",
+      "stdout": "",
+      "type": "model",
+      "url": "https://huggingface.co/meta-llama/Llama-3.1-8B-Instruct/resolve/main/README.md"
+    },
+    {
+      "http_status": null,
+      "repo": "Xkev/LLaVA-CoT-100k",
+      "returncode": 28,
+      "stderr": "% Total    % Received % Xferd  Average Speed   Time    Time     Time  Current\n                                 Dload  Upload   Total   Spent    Left  Speed\n\n  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0\n  0     0    0     0    0     0      0      0 --:--:--  0:00:01 --:--:--     0\n  0     0    0     0    0     0      0      0 --:--:--  0:00:02 --:--:--     0\n  0     0    0     0    0     0      0      0 --:--:--  0:00:03 --:--:--     0\n  0     0    0     0    0     0      0      0 --:--:--  0:00:04 --:--:--     0\n  0     0    0     0    0     0      0      0 --:--:--  0:00:05 --:--:--     0\n  0     0    0     0    0     0      0      0 --:--:--  0:00:06 --:--:--     0\n  0     0    0     0    0     0      0      0 --:--:--  0:00:07 --:--:--     0\n  0     0    0     0    0     0      0      0 --:--:--  0:00:07 --:--:--     0\ncurl: (28) Failed to connect to huggingface.co port 443 after 7707 ms: Connection timed out",
+      "stdout": "",
+      "type": "dataset",
+      "url": "https://huggingface.co/datasets/Xkev/LLaVA-CoT-100k/resolve/main/README.md"
+    },
+    {
+      "http_status": null,
+      "repo": "shawnricecake/Heima",
+      "returncode": 28,
+      "stderr": "% Total    % Received % Xferd  Average Speed   Time    Time     Time  Current\n                                 Dload  Upload   Total   Spent    Left  Speed\n\n  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0\n  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0\n  0     0    0     0    0     0      0      0 --:--:--  0:00:01 --:--:--     0\n  0     0    0     0    0     0      0      0 --:--:--  0:00:02 --:--:--     0\n  0     0    0     0    0     0      0      0 --:--:--  0:00:03 --:--:--     0\n  0     0    0     0    0     0      0      0 --:--:--  0:00:04 --:--:--     0\n  0     0    0     0    0     0      0      0 --:--:--  0:00:05 --:--:--     0\n  0     0    0     0    0     0      0      0 --:--:--  0:00:06 --:--:--     0\n  0     0    0     0    0     0      0      0 --:--:--  0:00:07 --:--:--     0\n  0     0    0     0    0     0      0      0 --:--:--  0:00:07 --:--:--     0\ncurl: (28) Failed to connect to huggingface.co port 443 after 7706 ms: Connection timed out",
+      "stdout": "",
+      "type": "model",
+      "url": "https://huggingface.co/shawnricecake/Heima/resolve/main/README.md"
+    }
+  ],
+  "local_git": {
+    "heima_head": {
+      "returncode": 128,
+      "stderr": "fatal: not a git repository (or any parent up to mount point /)\nStopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).",
+      "stdout": ""
+    },
+    "root_head": {
+      "returncode": 128,
+      "stderr": "fatal: not a git repository (or any parent up to mount point /)\nStopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).",
+      "stdout": ""
+    },
+    "torchtune_head": {
+      "returncode": 128,
+      "stderr": "fatal: not a git repository (or any parent up to mount point /)\nStopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).",
+      "stdout": ""
+    }
+  },
+  "local_resource_candidates": {
+    "heima_checkpoints": [
+      {
+        "exists": false,
+        "path": "/data/zxl/Heima/lora-ckpts"
+      },
+      {
+        "exists": false,
+        "path": "/mnt/localssd/llava-cot-checkpoints/output-checkpoints"
+      },
+      {
+        "exists": false,
+        "path": "/data/zxl/checkpoints/heima"
+      }
+    ],
+    "llava_cot_100k": [
+      {
+        "exists": false,
+        "path": "/mnt/localssd/llava-cot-dataset/json_files"
+      },
+      {
+        "exists": false,
+        "path": "/mnt/localssd/llava-cot-dataset/image_files"
+      },
+      {
+        "exists": false,
+        "path": "/data/zxl/datasets/LLaVA-CoT-100k"
+      }
+    ],
+    "meta_llama31_8b": [
+      {
+        "exists": false,
+        "path": "/mnt/localssd/llava-cot-checkpoints/llama3_1/Llama-3.1-8B-Instruct"
+      },
+      {
+        "exists": false,
+        "path": "/data/zxl/models/meta-llama/Llama-3.1-8B-Instruct"
+      },
+      {
+        "exists": true,
+        "path": "/data/xinmiao/weights/Llama-3.1-8B",
+        "size_bytes": "32130398335\t/data/xinmiao/weights/Llama-3.1-8B"
+      }
+    ],
+    "xkev_llama32v_cot": [
+      {
+        "exists": false,
+        "path": "/mnt/localssd/llava-cot-checkpoints/llava-cot-pretrained/Llama-3.2V-11B-cot"
+      },
+      {
+        "exists": false,
+        "path": "/data/zxl/models/Xkev/Llama-3.2V-11B-cot"
+      }
+    ]
+  },
+  "official_code_hash": {
+    "file_count": 216,
+    "sample_files": [
+      "heima/configs/2_1-llama3_2_vision-11b-main_lora-pure_llm_decoder_lora-split_3_stages-fix_num-progressive.yaml\taf3623eeeeed2260fa78b4796c0993fb29a9923b6cf133d04920f58f67ac898b",
+      "heima/configs/2_2-llama3_2_vision-11b-main_lora-pure_llm_decoder_lora-split_3_stages-fix_num-progressive.yaml\t499cd28e87a1d18fe18a079298b873f057a98ca4b76fb89bb745b9db128e25eb",
+      "heima/configs/2_3-llama3_2_vision-11b-main_lora-pure_llm_decoder_lora-split_3_stages-fix_num-progressive.yaml\tf91357214ace040d27413ed40a41ceefce6c738f741c5569f11a4cfe68407b7b",
+      "heima/configs/2_4-llama3_2_vision-11b-main_lora-pure_llm_decoder_lora-split_3_stages-fix_num-progressive.yaml\ta3068af6f8630794b9ae0adf27844d6eed234bb4c745c7d2bb609cc68971f28b",
+      "heima/configs/2_5-llama3_2_vision-11b-main_lora-pure_llm_decoder_lora-split_3_stages-fix_num-progressive.yaml\t056e4d688cbfe443302bb20ef9028baac8775ffd54025869fe65ddee82dbfcc7",
+      "heima/configs/4_1-llama3_2_vision-11b-decode-pure_llm_decoder_lora-split_3_stages.yaml\tde38a237e353b268db321fcefc22e47f0e3788d4d9e5fe4a277eb8367f0cfd17",
+      "heima/configs/5-llama3_2_vision-11b-demo-decode-pure_llm_decoder_lora-split_3_stages.yaml\t46b8e39b9f5b719c4bee08f9f717861d163de0fa14ce16eb52756a2ad59af1a5",
+      "heima/main_python/1_1-organize_dataset-num_thinking_tokens-fix_num.py\t5f4e853d7a6d3b0856b88103465bd4d749b6888370a08ff0ca30b78ad7a26092",
+      "heima/main_python/1_2-organize_dataset-pure_llm_decoder-num_thinking_tokens-fix_num.py\t82399b4319a34f5144a7fdd95586921cade4b3ceaa187301c8973365ce88166c",
+      "heima/main_python/1_3-organize_dataset-num_thinking_tokens-adaptive-sequence_special_token.py\t5c7753c45765ff671760b2ba86e94837fa56c7e803dde85a994623f6f70e83a4",
+      "heima/main_python/1_4-organize_dataset-num_thinking_tokens-fix_num-sequence_speical_token.py\t794026dc69d6d61d099fcdfe6e918de9fd59d2dd8e230a06e7d784183228bd1c",
+      "heima/main_python/2-training-pipeline-main_lora-pure_llm_decoder_lora-split_3_stages-fix_num-progressive.py\tb4a2d4d6cb2c4f4d5e88a42abeca48dea37a6e9d2376468191a4b410b11f3a6d",
+      "heima/main_python/4_1-eval-decode-pure_llm_decoder_lora-split_3_stages.py\t1f682d94d6246a69797412d4ec92dcae12c69a8e1878d1332e55a29b7df4e922",
+      "heima/main_python/4_2-eval-metrics_compute.py\t133388caee28692b54bb4aa7479361b4bfed8ef2adb9b0dfc590787bc1ff4f25",
+      "heima/main_python/5-demo-decode-pure_llm_decoder_lora-split_3_stages.py\t4d898f3e861439349b37922dd7bd9cd85594e918da13c322161ef1d0466253de",
+      "heima/scripts/run-1_1-generate_data_main-fix_num.sh\t04a3cf37ba249c81575dd6a7a10386e67c95a2609232d3aa3ecd990ed9bc74af",
+      "heima/scripts/run-1_2-generate_data-pure_llm_decoder-fix_num.sh\t4d392304b442d585b4824fcf3ef3668285c377ee849069b37080d19dc25d02e4",
+      "heima/scripts/run-1_3-generate_data_main-adaptive-sequence_special_token.sh\t6a7bd9f9a7f91a03d2fa7f3e39d9410aff7acf0fee956bfae63abec43b26d3d9",
+      "heima/scripts/run-1_4-generate_data_main-fix_num-sequence_special_token.sh\tf11d492a7903a4ca46e2ae97be6a3619a48050f5ecf28e8fea0c62713e7e8b71",
+      "heima/scripts/run-2-train-lora_main-pure_llm_decoder_lora-split_3_stages-fix_num-progressive.sh\t729fdb54e97f4c8eb8f476d4c09922980261cc52d1676071c25e725d11aa0fb7",
+      "heima/scripts/run-4_1-decode-pure_llm_decoder_lora-split_3_stages.sh\t7899defe5490af4017c2692d4eef6edc576e6f937bf41c8701fc7f2c13a324a0",
+      "heima/scripts/run-4_2-eval-metrics_compute.sh\te54e5b27f2e97a17d1f8593df0f4f37fdb2081c8d774d697bbf1427666f8e478",
+      "heima/scripts/run-5-demo-decode-pure_llm_decoder_lora-split_3_stages.sh\t08b1226e2e428ce0b91f488810bca4ea2b521c8ffbd5fdba5dfbebb1f0056ac7",
+      "torchtune_pkg/torchtune/README.md\t3f246fdad102861ac63932e5176db4f1aa25e5e5dd1dc173a74ed5242f900833",
+      "torchtune_pkg/torchtune/torchtune/__init__.py\tbb231cfd16f7713b5b7176811eb70459f6255d5dbf265750c5294c315a0f2ae7",
+      "torchtune_pkg/torchtune/torchtune/_cli/__init__.py\t31dddc0870fb027a3d915d793ea19b89c8143be44c761e1a572d722a20edff11",
+      "torchtune_pkg/torchtune/torchtune/_cli/cp.py\t53b5e98f6686ce41cb84df71af5ee240285620ebcc10e04ab6ae688cd3df1452",
+      "torchtune_pkg/torchtune/torchtune/_cli/download.py\te002bc18584c1388a9744e2fe78d28f611d9765d1d34a340215f44ba8098182b",
+      "torchtune_pkg/torchtune/torchtune/_cli/ls.py\taff533fa5404e2fb56ff59d1624e7fe85851f47c7bac91153ba435518796a455",
+      "torchtune_pkg/torchtune/torchtune/_cli/run.py\t9128ee8c5749c28d4cdccd6168a0a466056e7676445554c315b8b78fbae64a52",
+      "torchtune_pkg/torchtune/torchtune/_cli/subcommand.py\t8cd48faa086ec2ee228a71e6b8b44b24b17ad5d7d014c84787aa780defe4db67",
+      "torchtune_pkg/torchtune/torchtune/_cli/tune.py\t0988f82d89440887b6ed72e6c1b7e5583127bde610e71511c32e3b0d0bb75e29",
+      "torchtune_pkg/torchtune/torchtune/_cli/validate.py\t8a733fd3038d06e6234255913278147fc46de6947b707e15b91d998b2faa153d",
+      "torchtune_pkg/torchtune/torchtune/_recipe_registry.py\t5c59e0092bc128b043036c68a09a587a125f10bb6c20082b0492d94ef318fbeb",
+      "torchtune_pkg/torchtune/torchtune/config/__init__.py\t5aea8da0650cd49da1b070a4c20e90fc6181abd591380d39ce1c08c842285fe9",
+      "torchtune_pkg/torchtune/torchtune/config/_errors.py\t8f05b042bfdbf4c168ea5970a3f0dca0fcfc6982f637fe9530318dc52e1ea405",
+      "torchtune_pkg/torchtune/torchtune/config/_instantiate.py\teda05a71f8c200cfb7882ecab9a904657b441d37a27e12f4292dd903987cec29",
+      "torchtune_pkg/torchtune/torchtune/config/_parse.py\t2de7298bf626b75ece21484129bb6446a98c4b0b777e305469db79de749c6141",
+      "torchtune_pkg/torchtune/torchtune/config/_utils.py\t52bd3a6384c21a62c5dd0a71f0e5806fb914078bcdea59ee7d0678e810c9e94b",
+      "torchtune_pkg/torchtune/torchtune/config/_validate.py\t9cb2591f2fc690bf245894e66f8d9041dfb34048a1ff27e5a44a28512ede70b3"
+    ],
+    "tree_sha256": "37e51846b3fa4e49200a24fd2d2635d8b4a375a47c7582ee9fb659ae6ad2b7ab"
+  },
+  "requested_resources": {
+    "dataset": "Xkev/LLaVA-CoT-100k plus image files",
+    "decoder_base": "meta-llama/Llama-3.1-8B-Instruct",
+    "encoder_base": "Xkev/Llama-3.2V-11B-cot",
+    "heima_checkpoints": "shawnricecake/Heima encoder and summary/caption/reasoning decoders",
+    "torchtune_fork": "repository torchtune_pkg/torchtune"
+  }
+}
