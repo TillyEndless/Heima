@@ -11,8 +11,13 @@ from src.g1.loss2_teacher import (
     SEM_TOKEN,
     assert_student_teacher_independent,
     assert_teacher_frozen_and_excluded,
+    causal_leakage_check,
     ensure_sem_token,
+    exact_detach_grad_check,
+    feature_diagnostics,
+    find_same_question_pairs,
     freeze_teacher,
+    loss2_intervention_diagnostics,
     loss2_distance,
     loss2_forward,
     parameter_fingerprint,
@@ -153,6 +158,17 @@ def test_student_gradient_detach_and_teacher_stop_gradient():
     assert any(p.grad is not None and p.grad.norm() > 0 for p in b_dec.parameters())
 
 
+def test_exact_detach_grad_check_reports_z_control():
+    tok, b_dec, b_teacher = make_models()
+    recs = records()
+    z = torch.randn(len(recs), b_dec.config.n_embd, requires_grad=True)
+    out = exact_detach_grad_check(b_dec, b_teacher, tok, recs, z, 32)
+    assert out["grad_z_no_detach_finite"] is True
+    assert out["grad_z_no_detach_norm"] > 0
+    assert out["grad_z_detach_is_none"] is True or out["grad_z_detach_norm"] == 0.0
+    assert out["grad_z_detach_finite"] is True
+
+
 def test_distance_modes_shape_layer_and_latent_sensitivity():
     tok, b_dec, b_teacher = make_models()
     recs = records()
@@ -173,6 +189,35 @@ def test_distance_modes_shape_layer_and_latent_sensitivity():
     assert not torch.allclose(normal, shuffle_h)
 
 
+def test_loss2_intervention_and_representation_diagnostics():
+    tok, b_dec, b_teacher = make_models()
+    recs = records()
+    z = torch.randn(len(recs), b_dec.config.n_embd)
+    diag = loss2_intervention_diagnostics(b_dec, b_teacher, tok, recs, z, 32)
+    for key in (
+        "loss2_normal",
+        "loss2_shuffle",
+        "loss2_zero",
+        "loss2_random",
+        "shuffle_margin",
+        "zero_margin",
+        "random_margin",
+        "hL_batch_variance",
+        "hT_batch_variance",
+        "hL_mean_pairwise_cosine",
+        "hT_mean_pairwise_cosine",
+        "correct_pair_cosine",
+        "shuffled_pair_cosine",
+        "centered_correct_pair_cosine",
+        "centered_shuffled_pair_cosine",
+        "centered_margin",
+    ):
+        assert key in diag.metrics
+        assert isinstance(diag.metrics[key], float)
+    direct = feature_diagnostics(diag.h_l, diag.h_t)
+    assert direct["centered_margin"] == diag.metrics["centered_margin"]
+
+
 def test_pre_sem_causal_no_future_leakage():
     tok, b_dec, _teacher = make_models()
     recs_a = records()
@@ -184,6 +229,23 @@ def test_pre_sem_causal_no_future_leakage():
     assert torch.allclose(a.h_l[0], b.h_l[0])
     sem_pos = a.sem_positions[0].item()
     assert torch.allclose(a.logits[0, sem_pos], b.logits[0, sem_pos])
+
+
+def test_causal_leakage_helper_and_same_question_pairs():
+    tok, b_dec, _teacher = make_models()
+    recs_a = records()
+    recs_b = [dict(r) for r in recs_a]
+    recs_b[1]["cot"] = "Only future reasoning tokens are changed."
+    z = torch.randn(len(recs_a), b_dec.config.n_embd)
+    leakage = causal_leakage_check(b_dec, tok, recs_a, recs_b, z, 64)
+    assert leakage["sem_hidden_max_abs_diff"] == 0.0
+    assert leakage["sem_logits_max_abs_diff"] == 0.0
+
+    no_pairs = find_same_question_pairs(recs_a)
+    assert no_pairs == []
+    paired = [dict(recs_a[0]), dict(recs_a[0])]
+    paired[1]["cot"] = "Different cot with the same question."
+    assert find_same_question_pairs(paired) == [(0, 1)]
 
 
 def test_lambda2_zero_parity_with_old_loss1():

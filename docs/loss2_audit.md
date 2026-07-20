@@ -61,3 +61,22 @@ does not remove the external Model B interpreter.
 
 Loss2 is therefore added as an independent module and smoke script. It preserves
 the existing `src/g1/trainer.py` Main+Loss1 semantics.
+
+## Added Audit Scope
+
+The branch now audits Loss2 without changing the training method:
+
+- intervention metrics for normal/shuffled/zero/random latents before any
+  optimizer step and during the 2-step smoke run;
+- feature variance, raw cosine, batch-centered cosine, and correct-vs-shuffled
+  pair diagnostics;
+- exact detach checks showing whether Loss2 reaches the original producer
+  latent z;
+- separate Main/Loss1/Loss2 gradient attribution for Model A, grouped into
+  embedding, early, middle, and late block parameters;
+- causal leakage checks verifying that changing only gold CoT tokens after
+  `<SEM>` does not change the pre-SEM feature;
+- same-question paired intervention reporting when such pairs exist.
+
+This remains the original G1 whole-CoT A+B baseline. It is not the strict
+Heima/Qwen-VL official-section Loss2 path.

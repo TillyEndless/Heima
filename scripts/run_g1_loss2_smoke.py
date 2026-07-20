@@ -26,12 +26,14 @@ from src.g1.latent_reasoner import assert_parameter_independence, main_forward  
 from src.g1.loss2_teacher import (  # noqa: E402
     assert_student_teacher_independent,
     assert_teacher_frozen_and_excluded,
+    causal_leakage_check,
     ensure_sem_token,
+    exact_detach_grad_check,
+    find_same_question_pairs,
     freeze_teacher,
     loss2_forward,
+    loss2_intervention_diagnostics,
     parameter_fingerprint,
-    student_feature_forward,
-    teacher_feature_forward,
 )
 from src.g1.synthetic_data import read_jsonl  # noqa: E402
 from src.g1.whole_cot_decoder import ensure_latent_token, loss1_forward  # noqa: E402
@@ -89,14 +91,87 @@ def load_models(config: dict, *, need_b_dec: bool, need_teacher: bool):
     return tokenizer, model_a, model_b_dec, model_b_teacher, device
 
 
+def _named_param_groups(model_a) -> dict[str, list[torch.nn.Parameter]]:
+    block_ids = []
+    for name, _param in model_a.named_parameters():
+        parts = name.split(".")
+        if "h" in parts:
+            idx = parts.index("h")
+            if idx + 1 < len(parts) and parts[idx + 1].isdigit():
+                block_ids.append(int(parts[idx + 1]))
+    max_block = max(block_ids) if block_ids else -1
+    groups = {"embedding": [], "early_blocks": [], "middle_blocks": [], "late_blocks": []}
+    for name, param in model_a.named_parameters():
+        parts = name.split(".")
+        if any(k in name for k in ("wte", "wpe", "embed_tokens", "embeddings")):
+            groups["embedding"].append(param)
+            continue
+        if "h" in parts:
+            idx = parts.index("h")
+            if idx + 1 < len(parts) and parts[idx + 1].isdigit() and max_block >= 0:
+                block_id = int(parts[idx + 1])
+                frac = block_id / max(1, max_block + 1)
+                if frac < 1 / 3:
+                    groups["early_blocks"].append(param)
+                elif frac < 2 / 3:
+                    groups["middle_blocks"].append(param)
+                else:
+                    groups["late_blocks"].append(param)
+    return groups
+
+
+def _grad_vector(params: list[torch.nn.Parameter]) -> torch.Tensor:
+    pieces = []
+    for param in params:
+        if param.grad is None:
+            pieces.append(torch.zeros(param.numel(), dtype=torch.float32, device=param.device))
+        else:
+            pieces.append(param.grad.detach().float().reshape(-1))
+    if not pieces:
+        return torch.empty(0)
+    return torch.cat(pieces)
+
+
+def _vector_cosine(a: torch.Tensor | None, b: torch.Tensor | None) -> float | None:
+    if a is None or b is None or a.numel() == 0 or b.numel() == 0:
+        return None
+    denom = a.norm() * b.norm()
+    if float(denom.item()) == 0.0:
+        return None
+    return float(torch.dot(a, b).div(denom).item())
+
+
+def _norm_ratio(numerator: float | None, denominator: float | None, scale: float = 1.0) -> float | None:
+    if numerator is None or denominator is None or denominator == 0.0:
+        return None
+    return float(scale * numerator / denominator)
+
+
+def _capture_a_group_norms(model_a) -> dict:
+    out = {}
+    for group, params in _named_param_groups(model_a).items():
+        norm, finite = grad_norm(params)
+        out[group] = {"norm": norm, "finite": finite}
+    return out
+
+
 def attribution(model_a, model_b_dec, model_b_teacher, tokenizer, records, config):
     out = {}
+    lambda1 = float(config.get("lambda_loss1", 0.0))
+    lambda2 = float(config.get("lambda_loss2", 0.0))
+    a_params = list(model_a.parameters())
+    main_vec = None
+    loss1_vec = None
+    loss2_vec = None
+
     model_a.zero_grad(set_to_none=True)
     if model_b_dec is not None:
         model_b_dec.zero_grad(set_to_none=True)
     main = main_forward(model_a, tokenizer, records, config["max_question_tokens"], config["max_answer_tokens"])
     main.loss.backward()
     out["grad_norm_A_from_main"], out["finite_A_main"] = grad_norm(model_a.parameters())
+    out["grad_groups_A_from_main"] = _capture_a_group_norms(model_a)
+    main_vec = _grad_vector(a_params)
 
     if model_b_dec is not None:
         model_a.zero_grad(set_to_none=True)
@@ -106,13 +181,33 @@ def attribution(model_a, model_b_dec, model_b_teacher, tokenizer, records, confi
         l1.loss.backward()
         out["grad_norm_A_from_loss1"], out["finite_A_loss1"] = grad_norm(model_a.parameters())
         out["grad_norm_B_dec_from_loss1"], out["finite_B_dec_loss1"] = grad_norm(model_b_dec.parameters())
+        out["grad_groups_A_from_loss1"] = _capture_a_group_norms(model_a)
+        out["lambda1_weighted_grad_A_from_loss1"] = lambda1 * out["grad_norm_A_from_loss1"]
+        loss1_vec = _grad_vector(a_params)
 
     if model_b_dec is not None and model_b_teacher is not None:
         model_a.zero_grad(set_to_none=True)
         model_b_dec.zero_grad(set_to_none=True)
+        main = main_forward(model_a, tokenizer, records, config["max_question_tokens"], config["max_answer_tokens"])
+        out["exact_detach_test"] = exact_detach_grad_check(
+            model_b_dec,
+            model_b_teacher,
+            tokenizer,
+            records,
+            main.z,
+            config["max_cot_tokens"],
+            distance=config["loss2_distance"],
+            aggregate=config["loss2_aggregate"],
+            layer_index=config["loss2_layer_index"],
+            teacher_context_mode=config["teacher_context_mode"],
+            feature_mode=config["loss2_feature_mode"],
+        )
+
+        model_a.zero_grad(set_to_none=True)
+        model_b_dec.zero_grad(set_to_none=True)
         model_b_teacher.zero_grad(set_to_none=True)
         main = main_forward(model_a, tokenizer, records, config["max_question_tokens"], config["max_answer_tokens"])
-        student, teacher, l2 = loss2_forward(
+        _student, _teacher, l2 = loss2_forward(
             model_b_dec,
             model_b_teacher,
             tokenizer,
@@ -126,52 +221,46 @@ def attribution(model_a, model_b_dec, model_b_teacher, tokenizer, records, confi
             teacher_context_mode=config["teacher_context_mode"],
             feature_mode=config["loss2_feature_mode"],
         )
-        del student, teacher
+        grad_z = torch.autograd.grad(l2.loss2, main.z, retain_graph=True, allow_unused=True)[0]
         l2.loss2.backward()
         out["grad_norm_A_from_loss2"], out["finite_A_loss2"] = grad_norm(model_a.parameters())
         out["grad_norm_B_dec_from_loss2"], out["finite_B_dec_loss2"] = grad_norm(model_b_dec.parameters())
+        out["grad_projector_from_loss2"] = 0.0
+        out["finite_projector_loss2"] = True
+        out["projector_present"] = False
+        out["grad_z_from_loss2"] = 0.0 if grad_z is None else float(grad_z.float().norm().item())
+        out["finite_z_loss2"] = True if grad_z is None else bool(torch.isfinite(grad_z).all().item())
+        out["grad_groups_A_from_loss2"] = _capture_a_group_norms(model_a)
+        out["lambda2_weighted_grad_A_from_loss2"] = lambda2 * out["grad_norm_A_from_loss2"]
+        out["lambda2_weighted_grad_B_dec_from_loss2"] = lambda2 * out["grad_norm_B_dec_from_loss2"]
+        out["lambda2_weighted_grad_projector_from_loss2"] = 0.0
         out["teacher_grad_count"] = sum(1 for p in model_b_teacher.parameters() if p.grad is not None)
+
+        loss2_vec = _grad_vector(a_params)
+
+    out["cos_main_loss1"] = _vector_cosine(main_vec, loss1_vec)
+    out["cos_main_loss2"] = _vector_cosine(main_vec, loss2_vec)
+    out["cos_loss1_loss2"] = _vector_cosine(loss1_vec, loss2_vec)
+    out["lambda1_norm_loss1_over_main"] = _norm_ratio(out.get("grad_norm_A_from_loss1"), out.get("grad_norm_A_from_main"), lambda1)
+    out["lambda2_norm_loss2_over_main"] = _norm_ratio(out.get("grad_norm_A_from_loss2"), out.get("grad_norm_A_from_main"), lambda2)
     return out
 
 
-@torch.no_grad()
-def loss2_interventions(model_a, model_b_dec, model_b_teacher, tokenizer, records, config):
+def loss2_audit_snapshot(model_a, model_b_dec, model_b_teacher, tokenizer, records, config, *, prefix: str | None = None):
     if model_b_dec is None or model_b_teacher is None:
         return None
-    main = main_forward(model_a, tokenizer, records, config["max_question_tokens"], config["max_answer_tokens"])
-    z = main.z
-    rand = torch.randn_like(z)
-    rand = rand / rand.float().norm(dim=-1, keepdim=True).clamp_min(1e-6) * z.float().norm(dim=-1, keepdim=True).to(rand.dtype)
-    variants = {
-        "normal": z,
-        "shuffle": torch.roll(z, shifts=1, dims=0) if z.shape[0] > 1 else torch.zeros_like(z),
-        "zero": torch.zeros_like(z),
-        "random": rand,
-    }
-    out = {}
-    teacher = teacher_feature_forward(
-        model_b_teacher,
-        tokenizer,
-        records,
-        layer_index=config["loss2_layer_index"],
-        context_mode=config["teacher_context_mode"],
-    )
-    for name, value in variants.items():
-        student = student_feature_forward(
-            model_b_dec,
-            tokenizer,
-            records,
-            value,
-            config["max_cot_tokens"],
-            layer_index=config["loss2_layer_index"],
-            feature_mode=config["loss2_feature_mode"],
-        )
-        _s, _t, l2 = loss2_forward(
+    was_training = (model_a.training, model_b_dec.training, model_b_teacher.training)
+    model_a.eval()
+    model_b_dec.eval()
+    model_b_teacher.eval()
+    with torch.no_grad():
+        main = main_forward(model_a, tokenizer, records, config["max_question_tokens"], config["max_answer_tokens"])
+        diag = loss2_intervention_diagnostics(
             model_b_dec,
             model_b_teacher,
             tokenizer,
             records,
-            value,
+            main.z,
             config["max_cot_tokens"],
             distance=config["loss2_distance"],
             aggregate=config["loss2_aggregate"],
@@ -179,13 +268,65 @@ def loss2_interventions(model_a, model_b_dec, model_b_teacher, tokenizer, record
             teacher_context_mode=config["teacher_context_mode"],
             feature_mode=config["loss2_feature_mode"],
         )
-        out[f"loss2_{name}"] = float(l2.loss2.item())
-        out[f"h_l_variance_{name}"] = float(student.h_l.float().var(dim=0).mean().item()) if student.h_l.shape[0] > 1 else 0.0
-    out["h_t_variance"] = float(teacher.h_t.float().var(dim=0).mean().item()) if teacher.h_t.shape[0] > 1 else 0.0
-    out["shuffle_margin"] = out["loss2_shuffle"] - out["loss2_normal"]
-    out["zero_margin"] = out["loss2_zero"] - out["loss2_normal"]
-    out["random_margin"] = out["loss2_random"] - out["loss2_normal"]
-    return out
+    for model, state in zip((model_a, model_b_dec, model_b_teacher), was_training):
+        model.train(state)
+    metrics = diag.metrics
+    if prefix is None:
+        return metrics
+    return {f"{prefix}_{key}": value for key, value in metrics.items()}
+
+
+def semantic_audits(model_a, model_b_dec, model_b_teacher, tokenizer, records, config) -> dict:
+    if model_b_dec is None or model_b_teacher is None:
+        return {}
+    model_a.eval()
+    model_b_dec.eval()
+    model_b_teacher.eval()
+    with torch.no_grad():
+        main = main_forward(model_a, tokenizer, records, config["max_question_tokens"], config["max_answer_tokens"])
+    leakage_records = [dict(r) for r in records]
+    for idx, rec in enumerate(leakage_records):
+        rec["cot"] = f"Future target changed for leakage audit {idx}."
+    leakage = causal_leakage_check(
+        model_b_dec,
+        tokenizer,
+        records,
+        leakage_records,
+        main.z.detach(),
+        config["max_cot_tokens"],
+        layer_index=config["loss2_layer_index"],
+        feature_mode=config["loss2_feature_mode"],
+    )
+    pairs = find_same_question_pairs(records)
+    same_question = {"available": bool(pairs), "num_pairs": len(pairs)}
+    if pairs:
+        i, j = pairs[0]
+        pair_records = [records[i], records[j]]
+        with torch.no_grad():
+            pair_main = main_forward(model_a, tokenizer, pair_records, config["max_question_tokens"], config["max_answer_tokens"])
+            diag = loss2_intervention_diagnostics(
+                model_b_dec,
+                model_b_teacher,
+                tokenizer,
+                pair_records,
+                pair_main.z,
+                config["max_cot_tokens"],
+                distance=config["loss2_distance"],
+                aggregate=config["loss2_aggregate"],
+                layer_index=config["loss2_layer_index"],
+                teacher_context_mode=config["teacher_context_mode"],
+                feature_mode=config["loss2_feature_mode"],
+            )
+        same_question.update(
+            {
+                "loss2_correct": diag.metrics["loss2_normal"],
+                "loss2_wrong_same_question": diag.metrics["loss2_shuffle"],
+                "wrong_minus_correct": diag.metrics["shuffle_margin"],
+            }
+        )
+    else:
+        same_question["reason"] = "current smoke batch has no duplicated question with different CoT section"
+    return {"causal_leakage": leakage, "same_question_paired": same_question}
 
 
 def run_group(base_config: dict, group: str, overrides: dict, out_dir: Path) -> dict:
@@ -216,6 +357,16 @@ def run_group(base_config: dict, group: str, overrides: dict, out_dir: Path) -> 
     logs = []
     start = time.time()
     attr = attribution(model_a, model_b_dec, model_b_teacher, tokenizer, batch_records(train, config["micro_batch_size"], 0), config)
+    initial_records = batch_records(train, config["micro_batch_size"], 0)
+    initial_audit = loss2_audit_snapshot(model_a, model_b_dec, model_b_teacher, tokenizer, initial_records, config)
+    if initial_audit is not None:
+        initial_audit = {
+            **initial_audit,
+            "loss2_normal_initial": initial_audit["loss2_normal"],
+            "loss2_shuffle_initial": initial_audit["loss2_shuffle"],
+            "loss2_zero_initial": initial_audit["loss2_zero"],
+            "loss2_random_initial": initial_audit["loss2_random"],
+        }
     for step in range(1, config["max_steps"] + 1):
         records = batch_records(train, config["micro_batch_size"], step - 1)
         model_a.train()
@@ -246,6 +397,7 @@ def run_group(base_config: dict, group: str, overrides: dict, out_dir: Path) -> 
             )
             loss2 = l2.loss2
         total = main.loss + config["lambda_loss1"] * loss1 + config["lambda_loss2"] * loss2
+        step_audit = loss2_audit_snapshot(model_a, model_b_dec, model_b_teacher, tokenizer, records, config)
         total.backward()
         a_grad, a_finite = grad_norm(model_a.parameters())
         b_grad, b_finite = grad_norm(model_b_dec.parameters()) if model_b_dec is not None else (0.0, True)
@@ -262,17 +414,21 @@ def run_group(base_config: dict, group: str, overrides: dict, out_dir: Path) -> 
                 "grad_norm_B_dec": b_grad,
                 "finite_A": a_finite,
                 "finite_B_dec": b_finite,
+                "loss2_semantic_audit": step_audit,
             }
         )
     eval_records = read_jsonl(config["validation_path"])[: config["eval_samples"]]
-    interventions = loss2_interventions(model_a, model_b_dec, model_b_teacher, tokenizer, eval_records, config)
+    interventions = loss2_audit_snapshot(model_a, model_b_dec, model_b_teacher, tokenizer, eval_records, config)
+    semantic = semantic_audits(model_a, model_b_dec, model_b_teacher, tokenizer, eval_records, config)
     teacher_hash_after = parameter_fingerprint(model_b_teacher) if model_b_teacher is not None else None
     result = {
         "group": group,
         "config": config,
         "logs": logs,
         "gradient_attribution": attr,
+        "loss2_initial_audit": initial_audit,
         "loss2_interventions": interventions,
+        "semantic_audits": semantic,
         "teacher_hash_before": teacher_hash_before,
         "teacher_hash_after": teacher_hash_after,
         "teacher_unchanged": teacher_hash_before == teacher_hash_after,

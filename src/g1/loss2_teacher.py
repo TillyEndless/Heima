@@ -46,6 +46,13 @@ class Loss2Output:
     aggregate: str
 
 
+@dataclass(frozen=True)
+class Loss2DiagnosticOutput:
+    metrics: dict
+    h_l: torch.Tensor
+    h_t: torch.Tensor
+
+
 def ensure_sem_token(tokenizer, *models) -> int:
     if tokenizer.pad_token is None:
         tokenizer.pad_token = tokenizer.eos_token
@@ -284,3 +291,189 @@ def loss2_forward(
         distance=distance,
         aggregate=aggregate,
     )
+
+
+def mean_pairwise_cosine(x: torch.Tensor) -> float:
+    if x.shape[0] < 2:
+        return 1.0
+    xn = F.normalize(x.float(), dim=-1)
+    sim = xn @ xn.T
+    mask = ~torch.eye(x.shape[0], dtype=torch.bool, device=x.device)
+    return float(sim[mask].mean().item())
+
+
+def paired_cosine(a: torch.Tensor, b: torch.Tensor) -> torch.Tensor:
+    return F.cosine_similarity(a.float(), b.float(), dim=-1)
+
+
+def centered(x: torch.Tensor) -> torch.Tensor:
+    return x.float() - x.float().mean(dim=0, keepdim=True)
+
+
+def feature_diagnostics(h_l: torch.Tensor, h_t: torch.Tensor) -> dict:
+    if h_l.shape != h_t.shape:
+        raise ValueError("feature diagnostics require matching shapes")
+    correct = paired_cosine(h_l, h_t)
+    shuffled_h_t = torch.roll(h_t, shifts=1, dims=0) if h_t.shape[0] > 1 else h_t
+    shuffled = paired_cosine(h_l, shuffled_h_t)
+    h_l_c = centered(h_l)
+    h_t_c = centered(h_t)
+    shuffled_h_t_c = torch.roll(h_t_c, shifts=1, dims=0) if h_t_c.shape[0] > 1 else h_t_c
+    centered_correct = paired_cosine(h_l_c, h_t_c)
+    centered_shuffled = paired_cosine(h_l_c, shuffled_h_t_c)
+    return {
+        "hL_batch_variance": float(h_l.float().var(dim=0).mean().item()) if h_l.shape[0] > 1 else 0.0,
+        "hT_batch_variance": float(h_t.float().var(dim=0).mean().item()) if h_t.shape[0] > 1 else 0.0,
+        "hL_mean_pairwise_cosine": mean_pairwise_cosine(h_l),
+        "hT_mean_pairwise_cosine": mean_pairwise_cosine(h_t),
+        "correct_pair_cosine": float(correct.mean().item()),
+        "shuffled_pair_cosine": float(shuffled.mean().item()),
+        "centered_correct_pair_cosine": float(centered_correct.mean().item()),
+        "centered_shuffled_pair_cosine": float(centered_shuffled.mean().item()),
+        "centered_margin": float((centered_correct - centered_shuffled).mean().item()),
+    }
+
+
+@torch.no_grad()
+def loss2_intervention_diagnostics(
+    model_b_dec,
+    model_b_teacher,
+    tokenizer,
+    records: list[dict],
+    z: torch.Tensor,
+    max_cot_tokens: int,
+    *,
+    distance: Loss2Distance = "cosine",
+    aggregate: Loss2Aggregate = "mean",
+    layer_index: int = -1,
+    teacher_context_mode: TeacherContextMode = "cumulative",
+    feature_mode: Loss2FeatureMode = "pre_sem",
+) -> Loss2DiagnosticOutput:
+    rand = torch.randn_like(z)
+    rand = rand / rand.float().norm(dim=-1, keepdim=True).clamp_min(1e-6) * z.float().norm(dim=-1, keepdim=True).to(rand.dtype)
+    variants = {
+        "normal": z,
+        "shuffle": torch.roll(z, shifts=1, dims=0) if z.shape[0] > 1 else torch.zeros_like(z),
+        "zero": torch.zeros_like(z),
+        "random": rand,
+    }
+    metrics = {}
+    normal_h_l = None
+    teacher_h_t = None
+    for name, value in variants.items():
+        student, teacher, l2 = loss2_forward(
+            model_b_dec,
+            model_b_teacher,
+            tokenizer,
+            records,
+            value,
+            max_cot_tokens,
+            distance=distance,
+            aggregate=aggregate,
+            layer_index=layer_index,
+            teacher_context_mode=teacher_context_mode,
+            feature_mode=feature_mode,
+        )
+        metrics[f"loss2_{name}"] = float(l2.loss2.item())
+        metrics[f"h_l_variance_{name}"] = float(student.h_l.float().var(dim=0).mean().item()) if student.h_l.shape[0] > 1 else 0.0
+        if name == "normal":
+            normal_h_l = student.h_l.detach()
+            teacher_h_t = teacher.h_t.detach()
+    metrics["shuffle_margin"] = metrics["loss2_shuffle"] - metrics["loss2_normal"]
+    metrics["zero_margin"] = metrics["loss2_zero"] - metrics["loss2_normal"]
+    metrics["random_margin"] = metrics["loss2_random"] - metrics["loss2_normal"]
+    metrics.update(feature_diagnostics(normal_h_l, teacher_h_t))
+    return Loss2DiagnosticOutput(metrics=metrics, h_l=normal_h_l, h_t=teacher_h_t)
+
+
+def exact_detach_grad_check(
+    model_b_dec,
+    model_b_teacher,
+    tokenizer,
+    records: list[dict],
+    z: torch.Tensor,
+    max_cot_tokens: int,
+    *,
+    distance: Loss2Distance = "cosine",
+    aggregate: Loss2Aggregate = "mean",
+    layer_index: int = -1,
+    teacher_context_mode: TeacherContextMode = "cumulative",
+    feature_mode: Loss2FeatureMode = "pre_sem",
+) -> dict:
+    if not z.requires_grad:
+        raise ValueError("exact detach check requires original producer z with requires_grad")
+    _student, _teacher, no_detach = loss2_forward(
+        model_b_dec,
+        model_b_teacher,
+        tokenizer,
+        records,
+        z,
+        max_cot_tokens,
+        distance=distance,
+        aggregate=aggregate,
+        layer_index=layer_index,
+        detach_latent=False,
+        teacher_context_mode=teacher_context_mode,
+        feature_mode=feature_mode,
+    )
+    grad_no_detach = torch.autograd.grad(no_detach.loss2, z, retain_graph=True)[0]
+    _student_d, _teacher_d, detached = loss2_forward(
+        model_b_dec,
+        model_b_teacher,
+        tokenizer,
+        records,
+        z,
+        max_cot_tokens,
+        distance=distance,
+        aggregate=aggregate,
+        layer_index=layer_index,
+        detach_latent=True,
+        teacher_context_mode=teacher_context_mode,
+        feature_mode=feature_mode,
+    )
+    grad_detach = torch.autograd.grad(detached.loss2, z, allow_unused=True, retain_graph=True)[0]
+    return {
+        "grad_z_no_detach_norm": float(grad_no_detach.float().norm().item()),
+        "grad_z_no_detach_finite": bool(torch.isfinite(grad_no_detach).all().item()),
+        "grad_z_detach_is_none": grad_detach is None,
+        "grad_z_detach_norm": 0.0 if grad_detach is None else float(grad_detach.float().norm().item()),
+        "grad_z_detach_finite": True if grad_detach is None else bool(torch.isfinite(grad_detach).all().item()),
+    }
+
+
+@torch.no_grad()
+def causal_leakage_check(
+    model_b_dec,
+    tokenizer,
+    records_a: list[dict],
+    records_b: list[dict],
+    z: torch.Tensor,
+    max_cot_tokens: int,
+    *,
+    layer_index: int = -1,
+    feature_mode: Loss2FeatureMode = "pre_sem",
+) -> dict:
+    a = student_feature_forward(model_b_dec, tokenizer, records_a, z, max_cot_tokens, layer_index=layer_index, feature_mode=feature_mode)
+    b = student_feature_forward(model_b_dec, tokenizer, records_b, z, max_cot_tokens, layer_index=layer_index, feature_mode=feature_mode)
+    if not torch.equal(a.sem_positions, b.sem_positions):
+        raise AssertionError("<SEM> positions changed in leakage check")
+    sem_hidden_diff = (a.h_l.float() - b.h_l.float()).abs().max().item()
+    batch = torch.arange(a.logits.shape[0], device=a.logits.device)
+    sem_logits_diff = (a.logits[batch, a.sem_positions].float() - b.logits[batch, b.sem_positions].float()).abs().max().item()
+    return {
+        "sem_hidden_max_abs_diff": float(sem_hidden_diff),
+        "sem_logits_max_abs_diff": float(sem_logits_diff),
+    }
+
+
+def find_same_question_pairs(records: list[dict]) -> list[tuple[int, int]]:
+    by_question: dict[str, list[int]] = {}
+    for i, record in enumerate(records):
+        by_question.setdefault(record["question"], []).append(i)
+    pairs = []
+    for indices in by_question.values():
+        if len(indices) < 2:
+            continue
+        for i in range(len(indices) - 1):
+            pairs.append((indices[i], indices[i + 1]))
+    return pairs
