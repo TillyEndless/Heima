@@ -1,58 +1,193 @@
 {
   "detach_encoder_latent": true,
   "eval_size": 45,
-  "generated_at_utc": "2026-07-21T12:39:42Z",
-  "gradient_attribution": {
-    "cumulative_grad_mode": "all_prefix",
-    "detach_encoder_latent": true,
-    "finite": true,
-    "grad_A_from_loss1": 0.0,
-    "loss1_latent_context_mode": "local",
-    "stage_latent_grads": {
-      "caption": {
-        "caption": {
-          "finite": true,
-          "norm": 0.0
-        },
-        "reasoning": {
-          "finite": true,
-          "norm": 0.0
-        },
-        "summary": {
-          "finite": true,
-          "norm": 0.0
+  "formal_result": {
+    "result": {
+      "checkpoint_saved": true,
+      "generation_eval": "/data/zxl/runs/heima_ab_loss1_tiny_acceptance_v1/baseline/generations/heima_detach_baseline.jsonl",
+      "gradient_attribution": {
+        "cumulative_grad_mode": "all_prefix",
+        "detach_encoder_latent": true,
+        "finite": true,
+        "grad_A_from_loss1": 0.0,
+        "loss1_latent_context_mode": "local",
+        "stage_latent_grads": {
+          "caption": {
+            "caption": {
+              "finite": true,
+              "norm": 0.0
+            },
+            "reasoning": {
+              "finite": true,
+              "norm": 0.0
+            },
+            "summary": {
+              "finite": true,
+              "norm": 0.0
+            }
+          },
+          "reasoning": {
+            "caption": {
+              "finite": true,
+              "norm": 0.0
+            },
+            "reasoning": {
+              "finite": true,
+              "norm": 0.0
+            },
+            "summary": {
+              "finite": true,
+              "norm": 0.0
+            }
+          },
+          "summary": {
+            "caption": {
+              "finite": true,
+              "norm": 0.0
+            },
+            "reasoning": {
+              "finite": true,
+              "norm": 0.0
+            },
+            "summary": {
+              "finite": true,
+              "norm": 0.0
+            }
+          }
         }
       },
-      "reasoning": {
-        "caption": {
-          "finite": true,
-          "norm": 0.0
+      "logs": [
+        {
+          "grad_A": 52.29099160203809,
+          "loss1": {
+            "caption": 0.47830531001091003,
+            "reasoning": 0.8635865449905396,
+            "summary": 1.4130971431732178
+          },
+          "main": 0.806701123714447,
+          "step": 1,
+          "total": 1.082200050354004
         },
-        "reasoning": {
-          "finite": true,
-          "norm": 0.0
+        {
+          "grad_A": 17.41992857023459,
+          "loss1": {
+            "caption": 0.5825442671775818,
+            "reasoning": 0.5702019929885864,
+            "summary": 0.38770899176597595
+          },
+          "main": 0.18839064240455627,
+          "step": 10,
+          "total": 0.34243616461753845
         },
-        "summary": {
-          "finite": true,
-          "norm": 0.0
+        {
+          "grad_A": 12.914596741660421,
+          "loss1": {
+            "caption": 0.28414487838745117,
+            "reasoning": 0.5633924603462219,
+            "summary": 0.7655299305915833
+          },
+          "main": 0.03726154565811157,
+          "step": 20,
+          "total": 0.19856826961040497
         }
-      },
-      "summary": {
-        "caption": {
-          "finite": true,
-          "norm": 0.0
-        },
-        "reasoning": {
-          "finite": true,
-          "norm": 0.0
-        },
-        "summary": {
-          "finite": true,
-          "norm": 0.0
+      ],
+      "runtime_sec": 124.20899868011475,
+      "validation": {
+        "main_nll": 0.4816887371345527,
+        "sections": {
+          "caption": {
+            "context_mode": "local",
+            "cumulative_vs_local_gain": 0.0,
+            "current_shuffle_margin": -0.0007406473159790039,
+            "history_shuffle_margin": null,
+            "latent_geometry": {
+              "effective_rank": 6.121553897857666,
+              "pairwise_cosine_mean": 0.9275752902030945,
+              "pairwise_cosine_std": 0.0508028082549572,
+              "within_dataset_variance_mean": 1.040907621383667,
+              "within_dataset_variance_sum": 2131.77880859375
+            },
+            "nll_correct": 1.7594498938984342,
+            "nll_current_shuffle": 1.7587092465824552,
+            "nll_history_shuffle": null,
+            "nll_q_only": 1.7574025842878553,
+            "nll_random": 1.7573861069149441,
+            "nll_whole_shuffle": 1.7587092465824552,
+            "nll_zero": 1.7568121777640449,
+            "normal_shuffle_margin": -0.0007406473159790039,
+            "normal_zero_margin": -0.002637716134389345,
+            "q_only_nll": 1.7574025842878553,
+            "q_plus_z_gain": -0.0020473096105788624,
+            "qz_gain_over_q": -0.0020473096105788624,
+            "qz_nll": 1.7594498938984342,
+            "shuffle_nll": 1.7587092465824552,
+            "whole_shuffle_margin": -0.0007406473159790039,
+            "zero_nll": 1.7568121777640449
+          },
+          "reasoning": {
+            "context_mode": "local",
+            "cumulative_vs_local_gain": 0.0,
+            "current_shuffle_margin": 8.159081141134727e-05,
+            "history_shuffle_margin": null,
+            "latent_geometry": {
+              "effective_rank": 5.227751731872559,
+              "pairwise_cosine_mean": 0.8826927542686462,
+              "pairwise_cosine_std": 0.08110803365707397,
+              "within_dataset_variance_mean": 2.0423343181610107,
+              "within_dataset_variance_sum": 4182.70068359375
+            },
+            "nll_correct": 1.698882179790073,
+            "nll_current_shuffle": 1.6989637706014844,
+            "nll_history_shuffle": null,
+            "nll_q_only": 1.6964578217930264,
+            "nll_random": 1.6954695728090075,
+            "nll_whole_shuffle": 1.6989637706014844,
+            "nll_zero": 1.6987833420435587,
+            "normal_shuffle_margin": 8.159081141134727e-05,
+            "normal_zero_margin": -9.88377465143131e-05,
+            "q_only_nll": 1.6964578217930264,
+            "q_plus_z_gain": -0.0024243579970466556,
+            "qz_gain_over_q": -0.0024243579970466556,
+            "qz_nll": 1.698882179790073,
+            "shuffle_nll": 1.6989637706014844,
+            "whole_shuffle_margin": 8.159081141134727e-05,
+            "zero_nll": 1.6987833420435587
+          },
+          "summary": {
+            "context_mode": "local",
+            "cumulative_vs_local_gain": 0.0,
+            "current_shuffle_margin": -0.001846288310157096,
+            "history_shuffle_margin": null,
+            "latent_geometry": {
+              "effective_rank": 8.142646789550781,
+              "pairwise_cosine_mean": 0.8577420115470886,
+              "pairwise_cosine_std": 0.08535178005695343,
+              "within_dataset_variance_mean": 2.044579267501831,
+              "within_dataset_variance_sum": 4187.29833984375
+            },
+            "nll_correct": 1.5605868538220724,
+            "nll_current_shuffle": 1.5587405655119153,
+            "nll_history_shuffle": null,
+            "nll_q_only": 1.5649404923121135,
+            "nll_random": 1.5582774188783435,
+            "nll_whole_shuffle": 1.5587405655119153,
+            "nll_zero": 1.5559876574410332,
+            "normal_shuffle_margin": -0.001846288310157096,
+            "normal_zero_margin": -0.004599196381039228,
+            "q_only_nll": 1.5649404923121135,
+            "q_plus_z_gain": 0.004353638490041112,
+            "qz_gain_over_q": 0.004353638490041112,
+            "qz_nll": 1.5605868538220724,
+            "shuffle_nll": 1.5587405655119153,
+            "whole_shuffle_margin": -0.001846288310157096,
+            "zero_nll": 1.5559876574410332
+          }
         }
       }
-    }
+    },
+    "run_dir": "/data/zxl/runs/heima_ab_loss1_tiny_acceptance_v1/baseline"
   },
+  "generated_at_utc": "2026-07-21T15:09:12Z",
   "mode": "detach",
   "semantic_evaluator_contract": {
     "answer_metric": "answer_accuracy from deterministic Model A generation",
@@ -418,7 +553,7 @@
     }
   },
   "split": "/data/zxl/runs/heima_ab_loss1_tiny_acceptance_v1/data_split.json",
-  "status": "backward_smoke_pass",
+  "status": "formal_run_complete",
   "train_size": 167,
   "uses_existing_trainer": "scripts/run_data_small_vlm_official_sections.py"
 }

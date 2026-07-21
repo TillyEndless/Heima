@@ -16,8 +16,8 @@ This integrates the tiny real-image acceptance data with the existing strict/sca
 
 ## Backward Smoke
 
-- detach grad_A_from_loss1: `0.0`
-- no-detach grad_A_from_loss1: `22.82187856655761`
+- detach grad_A_from_loss1: `None`
+- no-detach grad_A_from_loss1: `None`
 - Expected: detach is zero; no-detach is finite and greater than zero.
 
 ## Formal Entrypoints

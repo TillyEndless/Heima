@@ -1,0 +1,282 @@
+{
+  "comparison": {
+    "grad_A_from_loss1_baseline": 0.0,
+    "grad_A_from_loss1_ours": 1.5054756589843754,
+    "main_nll_ours_minus_baseline": -0.07283416480446858,
+    "reasoning_correct_nll_ours_minus_baseline": 0.011419489648607062,
+    "reasoning_shuffle_margin_baseline": 8.159081141134727e-05,
+    "reasoning_shuffle_margin_ours": -0.0020857228173150055
+  },
+  "groups": {
+    "detach_baseline": {
+      "checkpoint": "/data/zxl/runs/heima_ab_loss1_tiny_acceptance_v1/baseline/checkpoints/heima_detach_baseline.pt",
+      "checkpoint_bytes": 10487452737,
+      "generation_jsonl": "/data/zxl/runs/heima_ab_loss1_tiny_acceptance_v1/baseline/generations/heima_detach_baseline.jsonl",
+      "generation_reasoning_semantics": {
+        "correct": {
+          "entity_token_coverage": 0.7608695652173914,
+          "generation_exact_match": 0.0,
+          "note": "generation-side coverage, not teacher-forced token accuracy",
+          "numeric_token_coverage": 0.25,
+          "samples": 8
+        },
+        "current_only_shuffle": {
+          "entity_token_coverage": 0.7391304347826086,
+          "generation_exact_match": 0.0,
+          "note": "generation-side coverage, not teacher-forced token accuracy",
+          "numeric_token_coverage": 0.25,
+          "samples": 8
+        },
+        "q_only": {
+          "entity_token_coverage": 0.717391304347826,
+          "generation_exact_match": 0.0,
+          "note": "generation-side coverage, not teacher-forced token accuracy",
+          "numeric_token_coverage": 0.25,
+          "samples": 8
+        },
+        "whole_prefix_shuffle": {
+          "entity_token_coverage": 0.7391304347826086,
+          "generation_exact_match": 0.0,
+          "note": "generation-side coverage, not teacher-forced token accuracy",
+          "numeric_token_coverage": 0.25,
+          "samples": 8
+        },
+        "zero": {
+          "entity_token_coverage": 0.7391304347826086,
+          "generation_exact_match": 0.0,
+          "note": "generation-side coverage, not teacher-forced token accuracy",
+          "numeric_token_coverage": 0.25,
+          "samples": 8
+        }
+      },
+      "gradient_attribution": {
+        "cumulative_grad_mode": "all_prefix",
+        "detach_encoder_latent": true,
+        "finite": true,
+        "grad_A_from_loss1": 0.0,
+        "loss1_latent_context_mode": "local",
+        "stage_latent_grads": {
+          "caption": {
+            "caption": {
+              "finite": true,
+              "norm": 0.0
+            },
+            "reasoning": {
+              "finite": true,
+              "norm": 0.0
+            },
+            "summary": {
+              "finite": true,
+              "norm": 0.0
+            }
+          },
+          "reasoning": {
+            "caption": {
+              "finite": true,
+              "norm": 0.0
+            },
+            "reasoning": {
+              "finite": true,
+              "norm": 0.0
+            },
+            "summary": {
+              "finite": true,
+              "norm": 0.0
+            }
+          },
+          "summary": {
+            "caption": {
+              "finite": true,
+              "norm": 0.0
+            },
+            "reasoning": {
+              "finite": true,
+              "norm": 0.0
+            },
+            "summary": {
+              "finite": true,
+              "norm": 0.0
+            }
+          }
+        }
+      },
+      "label": "Heima detach baseline",
+      "main_nll": 0.4816887371345527,
+      "result_json": "/data/zxl/runs/heima_ab_loss1_tiny_acceptance_v1/baseline/groups/heima_detach_baseline/result.json",
+      "runtime_sec": 124.20899868011475,
+      "sections": {
+        "caption": {
+          "effective_rank": 6.121553897857666,
+          "nll_correct": 1.7594498938984342,
+          "nll_q_only": 1.7574025842878553,
+          "nll_whole_shuffle": 1.7587092465824552,
+          "nll_zero": 1.7568121777640449,
+          "normal_zero_margin": -0.002637716134389345,
+          "pairwise_cosine_mean": 0.9275752902030945,
+          "q_plus_z_gain": -0.0020473096105788624,
+          "whole_shuffle_margin": -0.0007406473159790039
+        },
+        "reasoning": {
+          "effective_rank": 5.227751731872559,
+          "nll_correct": 1.698882179790073,
+          "nll_q_only": 1.6964578217930264,
+          "nll_whole_shuffle": 1.6989637706014844,
+          "nll_zero": 1.6987833420435587,
+          "normal_zero_margin": -9.88377465143131e-05,
+          "pairwise_cosine_mean": 0.8826927542686462,
+          "q_plus_z_gain": -0.0024243579970466556,
+          "whole_shuffle_margin": 8.159081141134727e-05
+        },
+        "summary": {
+          "effective_rank": 8.142646789550781,
+          "nll_correct": 1.5605868538220724,
+          "nll_q_only": 1.5649404923121135,
+          "nll_whole_shuffle": 1.5587405655119153,
+          "nll_zero": 1.5559876574410332,
+          "normal_zero_margin": -0.004599196381039228,
+          "pairwise_cosine_mean": 0.8577420115470886,
+          "q_plus_z_gain": 0.004353638490041112,
+          "whole_shuffle_margin": -0.001846288310157096
+        }
+      }
+    },
+    "no_detach_ours": {
+      "checkpoint": "/data/zxl/runs/heima_ab_loss1_tiny_acceptance_v1/ours/checkpoints/ours_loss1_no_detach.pt",
+      "checkpoint_bytes": 10487451025,
+      "generation_jsonl": "/data/zxl/runs/heima_ab_loss1_tiny_acceptance_v1/ours/generations/ours_loss1_no_detach.jsonl",
+      "generation_reasoning_semantics": {
+        "correct": {
+          "entity_token_coverage": 0.7608695652173914,
+          "generation_exact_match": 0.0,
+          "note": "generation-side coverage, not teacher-forced token accuracy",
+          "numeric_token_coverage": 0.25,
+          "samples": 8
+        },
+        "current_only_shuffle": {
+          "entity_token_coverage": 0.6956521739130435,
+          "generation_exact_match": 0.0,
+          "note": "generation-side coverage, not teacher-forced token accuracy",
+          "numeric_token_coverage": 0.25,
+          "samples": 8
+        },
+        "q_only": {
+          "entity_token_coverage": 0.8260869565217391,
+          "generation_exact_match": 0.0,
+          "note": "generation-side coverage, not teacher-forced token accuracy",
+          "numeric_token_coverage": 0.25,
+          "samples": 8
+        },
+        "whole_prefix_shuffle": {
+          "entity_token_coverage": 0.6956521739130435,
+          "generation_exact_match": 0.0,
+          "note": "generation-side coverage, not teacher-forced token accuracy",
+          "numeric_token_coverage": 0.25,
+          "samples": 8
+        },
+        "zero": {
+          "entity_token_coverage": 0.717391304347826,
+          "generation_exact_match": 0.0,
+          "note": "generation-side coverage, not teacher-forced token accuracy",
+          "numeric_token_coverage": 0.25,
+          "samples": 8
+        }
+      },
+      "gradient_attribution": {
+        "cumulative_grad_mode": "all_prefix",
+        "detach_encoder_latent": false,
+        "finite": true,
+        "grad_A_from_loss1": 1.5054756589843754,
+        "loss1_latent_context_mode": "local",
+        "stage_latent_grads": {
+          "caption": {
+            "caption": {
+              "finite": true,
+              "norm": 0.00029950961470603943
+            },
+            "reasoning": {
+              "finite": true,
+              "norm": 0.0
+            },
+            "summary": {
+              "finite": true,
+              "norm": 0.0
+            }
+          },
+          "reasoning": {
+            "caption": {
+              "finite": true,
+              "norm": 0.0
+            },
+            "reasoning": {
+              "finite": true,
+              "norm": 0.000647770706564188
+            },
+            "summary": {
+              "finite": true,
+              "norm": 0.0
+            }
+          },
+          "summary": {
+            "caption": {
+              "finite": true,
+              "norm": 0.0
+            },
+            "reasoning": {
+              "finite": true,
+              "norm": 0.0
+            },
+            "summary": {
+              "finite": true,
+              "norm": 0.0011560680577531457
+            }
+          }
+        }
+      },
+      "label": "Ours Loss1 no-detach",
+      "main_nll": 0.4088545723300841,
+      "result_json": "/data/zxl/runs/heima_ab_loss1_tiny_acceptance_v1/ours/groups/ours_loss1_no_detach/result.json",
+      "runtime_sec": 132.4940631389618,
+      "sections": {
+        "caption": {
+          "effective_rank": 6.975979804992676,
+          "nll_correct": 1.7725357095400491,
+          "nll_q_only": 1.770855059888628,
+          "nll_whole_shuffle": 1.7707743644714355,
+          "nll_zero": 1.7714992907312181,
+          "normal_zero_margin": -0.0010364188088309856,
+          "pairwise_cosine_mean": 0.9616535305976868,
+          "q_plus_z_gain": -0.0016806496514212288,
+          "whole_shuffle_margin": -0.0017613450686135845
+        },
+        "reasoning": {
+          "effective_rank": 4.003932476043701,
+          "nll_correct": 1.7103016694386801,
+          "nll_q_only": 1.6913188497225444,
+          "nll_whole_shuffle": 1.7082159466213651,
+          "nll_zero": 1.6948165059089662,
+          "normal_zero_margin": -0.015485163529713963,
+          "pairwise_cosine_mean": 0.8306884765625,
+          "q_plus_z_gain": -0.01898281971613569,
+          "whole_shuffle_margin": -0.0020857228173150055
+        },
+        "summary": {
+          "effective_rank": 11.22821044921875,
+          "nll_correct": 1.5986683779292636,
+          "nll_q_only": 1.5813664635022482,
+          "nll_whole_shuffle": 1.5984110607041253,
+          "nll_zero": 1.5754405154122246,
+          "normal_zero_margin": -0.02322786251703901,
+          "pairwise_cosine_mean": 0.8435540795326233,
+          "q_plus_z_gain": -0.017301914427015452,
+          "whole_shuffle_margin": -0.00025731722513833155
+        }
+      }
+    }
+  },
+  "limitations": [
+    "content-token NLL was specified in the acceptance contract but is not computed by the reused strict trainer result JSON; generation-side token coverage is reported separately and not treated as NLL.",
+    "deterministic Model A answer generation accuracy is not computed by this trainer output; validation main_nll is reported instead.",
+    "baseline and ours used the same seed/split/trainer/hyperparameters, but the wrapper reran S0/S1 separately for each group rather than branching both joint runs from one byte-identical S1 checkpoint."
+  ],
+  "run_root": "/data/zxl/runs/heima_ab_loss1_tiny_acceptance_v1"
+}
