@@ -1,0 +1,38 @@
+{
+  "dataset_root": "/data/zxl/official_heima/datasets/LLaVA-CoT-100k",
+  "exists": true,
+  "files_considered": [
+    "/data/zxl/official_heima/datasets/LLaVA-CoT-100k/train.jsonl"
+  ],
+  "splits": {
+    "train": {
+      "path": "/data/zxl/official_heima/datasets/LLaVA-CoT-100k/train.jsonl",
+      "sample_count": 98582,
+      "field_complete_rate": {
+        "image": 1.0,
+        "question": 1.0,
+        "summary": 0.9998681300845996,
+        "caption": 0.9999087054431843,
+        "reasoning": 0.9998985616035382,
+        "answer": 1.0
+      },
+      "image_accessible_checked": 20000,
+      "image_accessible_ratio": 0.0,
+      "token_length_stats": {
+        "p50": 444.0,
+        "p90": 680.0999999999985,
+        "p95": 775.0,
+        "p99": 934.0,
+        "max": 1399,
+        "tokenized_count": 20000
+      },
+      "truncation_ratio_over_2048": 0.0,
+      "duplicate_image_question_ratio": 5.071919823091436e-05
+    }
+  },
+  "overall_status": "fail",
+  "failures": [
+    "eval_lt_512",
+    "train_image_access_lt_95pct"
+  ]
+}
