@@ -1,0 +1,57 @@
+name: ab_loss1_qwen_vl3b
+compatibility_mode: scaled_heima_protocol
+allowed_model_scale_difference: true
+model_a:
+  name_or_path: /data/zxl/small_models/Qwen2.5-VL-3B-Instruct
+  type: qwen2_5_vl
+  role: Heima encoder scaled substitute
+model_b:
+  name_or_path: /data/zxl/small_models/Qwen2.5-0.5B-Instruct
+  type: qwen2_5_causal_lm
+  role: stage-specific Heima decoder scaled substitute
+  sharing: independent_per_stage
+data:
+  full_dataset_root: /data/zxl/official_heima/datasets/LLaVA-CoT-100k
+  prepared_json_dir: /data/zxl/official_heima/datasets/LLaVA-CoT-100k/json_files
+  image_dir: /data/zxl/official_heima/datasets/LLaVA-CoT-100k/image_files
+  train_file: data_train-num_thinking_token_summary1_caption1_reasoning1.json
+  test_file: data_test-num_thinking_token_summary1_caption1_reasoning1.json
+  micro_subset: /data/zxl/official_heima/micro_subsets/chartqa_sqa_available_images_v1
+protocol:
+  thinking_state_mode: predictor
+  thinking_tokens:
+    summary: <THINKING_OF_SUMMARY>
+    caption: <THINKING_OF_CAPTION>
+    reasoning: <THINKING_OF_REASONING>
+  main_label_mode: heima_ntp
+  loss1_latent_context_mode: local
+  projector: heima_official_linear_relu_linear_dropout0
+  decoder_train_on_input: true
+training:
+  seed: 42
+  full:
+    batch_size: 1
+    gradient_accumulation_steps: 1
+    explicit_epochs: 1
+    progressive_epochs: 1
+    recover_epochs: 1
+    interpreter_epochs: 1
+  smoke:
+    batch_size: 1
+    steps_per_stage: 2
+    save_checkpoints: false
+  optimizer:
+    name: adafactor
+    lr_a: 1.0e-5
+    lr_b: 2.0e-5
+    lr_projector: 1.0e-4
+    weight_decay: 0.0
+loss:
+  lambda_main: 1.0
+  lambda_loss1: 0.1
+evaluation:
+  paper_benchmarks: [MMStar, MMBench_V1_1, MM-Vet, MathVista, AI2D, HallusionBench]
+  decoder_metrics: [BLEU-4, METEOR, ROUGE-L, BERTScore]
+  generation_profile:
+    paper: {do_sample: false, max_new_tokens: 2048}
+    causal_deterministic: {do_sample: false, max_new_tokens: 256}
