@@ -25,8 +25,22 @@ mkdir -p "${RUN_ROOT}" reports docs/heima_alignment
 "${PYTHON_BIN}" "${SCRIPT_DIR}/audit_mini_acceptance_dataset.py" \
   --dataset-root "${DATASET_ROOT}" \
   --out "${ROOT}/docs/heima_alignment/mini_acceptance_dataset_audit.json"
-# The current implementation intentionally delegates only after the real-data audit passes.
-# Full training integration should be enabled in a follow-up commit after the full dataset is present.
+SPLIT=/data/zxl/runs/heima_ab_loss1_acceptance_v1/data_split.json
+if [[ ! -f "$SPLIT" ]]; then
+  "${PYTHON_BIN}" "${SCRIPT_DIR}/create_llava_cot_split.py" \
+    --input "${DATASET_ROOT}/train.jsonl" \
+    --dataset-root "${DATASET_ROOT}" \
+    --out "$SPLIT"
+fi
+"${PYTHON_BIN}" - <<PY
+import json, pathlib
+p=pathlib.Path('$SPLIT')
+o=json.load(open(p))
+train={x['index'] for x in o['train']}
+eval={x['index'] for x in o['eval']}
+assert train and eval and not (train & eval), 'invalid split overlap/empty'
+print({'split':str(p),'train':len(train),'eval':len(eval)})
+PY
 ARGS=(--config "$CONFIG" --mode "$MODE" --run-id heima_ab_loss1_mini_acceptance_v1 --output-root /data/zxl/runs)
 if [[ "$RESUME" == 1 ]]; then ARGS+=(--resume); fi
 if [[ -n "$STAGE" ]]; then ARGS+=(--from-stage "$STAGE" --to-stage "$STAGE"); fi

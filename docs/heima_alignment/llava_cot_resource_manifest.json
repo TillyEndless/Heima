@@ -1,0 +1,36 @@
+{
+  "repo": "Xkev/LLaVA-CoT-100k",
+  "revision": "2b1db57dccb04ba8c33fc9b418a0f1d6cd328de3",
+  "required_files": [
+    "train.jsonl",
+    "image.zip"
+  ],
+  "missing_files": [
+    "image.zip"
+  ],
+  "download_method": "hf download with resume; prefer HF_HUB_DISABLE_XET=1 over proxy, fallback to xet concurrency=1",
+  "requires_token": false,
+  "uses_xet": false,
+  "files": [
+    ".gitattributes",
+    "README.md",
+    "image.zip.part-aa",
+    "image.zip.part-ab",
+    "image.zip.part-ac",
+    "image.zip.part-ad",
+    "image.zip.part-ae",
+    "image.zip.part-af",
+    "image.zip.part-ag",
+    "image.zip.part-ah",
+    "image.zip.part-ai",
+    "image.zip.part-aj",
+    "image.zip.part-ak",
+    "image.zip.part-al",
+    "image.zip.part-am",
+    "image.zip.part-an",
+    "image.zip.part-ao",
+    "image.zip.part-ap",
+    "train.jsonl"
+  ],
+  "status": "missing_files"
+}
