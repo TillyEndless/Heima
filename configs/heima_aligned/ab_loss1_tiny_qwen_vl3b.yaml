@@ -1,0 +1,81 @@
+name: ab_loss1_tiny_qwen_vl3b
+compatibility_mode: scaled_heima_protocol_tiny_real_image_acceptance
+allowed_model_scale_difference: true
+model_a:
+  name_or_path: /data/zxl/small_models/Qwen2.5-VL-3B-Instruct
+  type: qwen2_5_vl
+  role: Heima encoder scaled substitute
+model_b:
+  name_or_path: /data/zxl/small_models/Qwen2.5-0.5B-Instruct
+  type: qwen2_5_causal_lm
+  role: reasoning-stage Heima decoder scaled substitute
+  sharing: independent_reasoning_only
+
+data:
+  micro_subset: /data/zxl/official_heima/micro_subsets/chartqa_sqa_v1
+  prepared_json_dir: /data/zxl/official_heima/micro_subsets/chartqa_sqa_v1
+  image_dir: /data/zxl/official_heima/micro_subsets/chartqa_sqa_v1/image_files
+  train_file: train.jsonl
+  eval_file: validation.jsonl
+  split_file: /data/zxl/runs/heima_ab_loss1_tiny_acceptance_v1/data_split.json
+  train_size: 192
+  eval_size: 48
+  seed: 42
+  use_configured_data_for_dry_run: true
+  forbid_full_llava_train_jsonl: true
+
+protocol:
+  thinking_state_mode: predictor
+  thinking_tokens:
+    summary: <THINKING_OF_SUMMARY>
+    caption: <THINKING_OF_CAPTION>
+    reasoning: <THINKING_OF_REASONING>
+  enabled_sections: [reasoning]
+  main_label_mode: heima_ntp
+  loss1_latent_context_mode: local
+  projector: heima_official_linear_relu_linear_dropout0
+  decoder_train_on_input: true
+  mechanism_validation_only: true
+
+acceptance_schedule:
+  stage_0: explicit_cot_sft
+  stage_1: reasoning_latent_replacement_only
+  stage_2: freeze_a_train_b_reasoning
+  stage_3_branches:
+    baseline:
+      detach_encoder_latent: true
+    ours:
+      detach_encoder_latent: false
+
+training:
+  seed: 42
+  tiny:
+    train_samples: 192
+    eval_samples: 48
+    batch_size: 1
+    gradient_accumulation_steps: 1
+    explicit_epochs: 1
+    reasoning_progressive_epochs: 1
+    interpreter_epochs: 1
+    joint_steps: 100
+    save_optimizer: false
+    save_checkpoints: final_only
+  optimizer:
+    name: adafactor
+    lr_a: 1.0e-5
+    lr_b: 2.0e-5
+    lr_projector: 1.0e-4
+    weight_decay: 0.0
+loss:
+  lambda_main: 1.0
+  lambda_loss1: 0.1
+evaluation:
+  mechanism_metrics:
+    - answer_accuracy
+    - reasoning_reconstruction_nll
+    - correct_vs_shuffle_latent_nll
+    - zero_latent_nll
+    - q_only_nll
+    - deterministic_generation_examples
+  generation_profile:
+    reasoning_acceptance: {do_sample: false, max_new_tokens: 256}

@@ -107,7 +107,8 @@ def create_micro_fixture(run_dir: Path) -> Path:
 def resolve_records(cfg: dict[str, Any], *, smoke: bool, run_dir: Path) -> tuple[list[HeimaRecord], dict[str, Any]]:
     data_cfg = cfg.get("data", {})
     report: dict[str, Any] = {"smoke": smoke}
-    if smoke:
+    use_configured_for_dry_run = bool(data_cfg.get("use_configured_data_for_dry_run", False))
+    if smoke and not use_configured_for_dry_run:
         path = create_micro_fixture(run_dir)
         records = load_heima_records(path)
         report.update({"source": str(path), "split_hash": split_hash(records), "count": len(records)})
@@ -148,8 +149,16 @@ def run_stage(stage_spec: dict[str, Any], run_dir: Path, records: list[HeimaReco
     elif stage.startswith("train_interpreter"):
         section = stage_spec.get("section", stage.rsplit("_", 1)[-1])
         sample_artifact = build_decoder_sample(records[0], section)
+    elif stage.startswith("joint_reasoning"):
+        sample_artifact = {
+            "encoder_sample": build_encoder_sample(records[0], "stage_reasoning_only"),
+            "decoder_sample": build_decoder_sample(records[0], "reasoning"),
+            "detach_encoder_latent": bool(stage_spec.get("detach_encoder_latent", False)),
+            "interventions_required": ["correct", "shuffle", "zero", "q_only"],
+            "metrics_required": ["reasoning_reconstruction_nll", "answer_accuracy", "generation_examples"],
+        }
     elif stage.startswith("eval"):
-        sample_artifact = {"evaluation_stage": stage, "profiles": ["paper", "causal_deterministic"]}
+        sample_artifact = {"evaluation_stage": stage, "profiles": ["reasoning_acceptance", "causal_deterministic"], "interventions": ["correct", "shuffle", "zero", "q_only"]}
     else:
         sample_artifact = {"training_stage": stage, "mode_specific": stage_spec}
     log = {

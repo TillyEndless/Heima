@@ -1,0 +1,4715 @@
+{
+  "micro_root": "/data/zxl/official_heima/micro_subsets",
+  "micro_tree_count": 391,
+  "micro_tree": [
+    {
+      "kind": "d",
+      "size": 167,
+      "path": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_available_images_v1",
+      "target": null
+    },
+    {
+      "kind": "f",
+      "size": 1653,
+      "path": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_available_images_v1/dataset_spec.json",
+      "target": null
+    },
+    {
+      "kind": "l",
+      "size": 65,
+      "path": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_available_images_v1/image_files",
+      "target": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_v1/image_files"
+    },
+    {
+      "kind": "f",
+      "size": 23780,
+      "path": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_available_images_v1/image_manifest.jsonl",
+      "target": null
+    },
+    {
+      "kind": "f",
+      "size": 95870,
+      "path": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_available_images_v1/test.jsonl",
+      "target": null
+    },
+    {
+      "kind": "f",
+      "size": 358863,
+      "path": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_available_images_v1/train.jsonl",
+      "target": null
+    },
+    {
+      "kind": "f",
+      "size": 98533,
+      "path": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_available_images_v1/validation.jsonl",
+      "target": null
+    },
+    {
+      "kind": "d",
+      "size": 251,
+      "path": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_v1",
+      "target": null
+    },
+    {
+      "kind": "f",
+      "size": 1033,
+      "path": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_v1/dataset_spec.json",
+      "target": null
+    },
+    {
+      "kind": "f",
+      "size": 1158,
+      "path": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_v1/image_extraction_report.json",
+      "target": null
+    },
+    {
+      "kind": "d",
+      "size": 44,
+      "path": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_v1/image_files",
+      "target": null
+    },
+    {
+      "kind": "d",
+      "size": 27,
+      "path": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_v1/image_files/chartqa",
+      "target": null
+    },
+    {
+      "kind": "d",
+      "size": 25,
+      "path": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_v1/image_files/chartqa/train",
+      "target": null
+    },
+    {
+      "kind": "d",
+      "size": 8192,
+      "path": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_v1/image_files/chartqa/train/png",
+      "target": null
+    },
+    {
+      "kind": "f",
+      "size": 45035,
+      "path": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_v1/image_files/chartqa/train/png/00108924005661.png",
+      "target": null
+    },
+    {
+      "kind": "f",
+      "size": 36904,
+      "path": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_v1/image_files/chartqa/train/png/06315654000894.png",
+      "target": null
+    },
+    {
+      "kind": "f",
+      "size": 33148,
+      "path": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_v1/image_files/chartqa/train/png/06570645001901.png",
+      "target": null
+    },
+    {
+      "kind": "f",
+      "size": 143506,
+      "path": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_v1/image_files/chartqa/train/png/1030.png",
+      "target": null
+    },
+    {
+      "kind": "f",
+      "size": 44504,
+      "path": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_v1/image_files/chartqa/train/png/13432.png",
+      "target": null
+    },
+    {
+      "kind": "f",
+      "size": 34784,
+      "path": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_v1/image_files/chartqa/train/png/13438060002042.png",
+      "target": null
+    },
+    {
+      "kind": "f",
+      "size": 37424,
+      "path": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_v1/image_files/chartqa/train/png/14726.png",
+      "target": null
+    },
+    {
+      "kind": "f",
+      "size": 30318,
+      "path": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_v1/image_files/chartqa/train/png/16263.png",
+      "target": null
+    },
+    {
+      "kind": "f",
+      "size": 46697,
+      "path": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_v1/image_files/chartqa/train/png/4876.png",
+      "target": null
+    },
+    {
+      "kind": "f",
+      "size": 40415,
+      "path": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_v1/image_files/chartqa/train/png/5147.png",
+      "target": null
+    },
+    {
+      "kind": "f",
+      "size": 38937,
+      "path": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_v1/image_files/chartqa/train/png/6354.png",
+      "target": null
+    },
+    {
+      "kind": "f",
+      "size": 34928,
+      "path": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_v1/image_files/chartqa/train/png/74596034005236.png",
+      "target": null
+    },
+    {
+      "kind": "f",
+      "size": 57246,
+      "path": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_v1/image_files/chartqa/train/png/8400.png",
+      "target": null
+    },
+    {
+      "kind": "f",
+      "size": 29948,
+      "path": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_v1/image_files/chartqa/train/png/8694.png",
+      "target": null
+    },
+    {
+      "kind": "f",
+      "size": 47487,
+      "path": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_v1/image_files/chartqa/train/png/92897785004711.png",
+      "target": null
+    },
+    {
+      "kind": "f",
+      "size": 34915,
+      "path": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_v1/image_files/chartqa/train/png/96864357005526.png",
+      "target": null
+    },
+    {
+      "kind": "f",
+      "size": 14556,
+      "path": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_v1/image_files/chartqa/train/png/OECD_INFRASTRUCTURE_MAINTENANCE_CHL_FIN_ISL_LIE_SVK_000002.png",
+      "target": null
+    },
+    {
+      "kind": "f",
+      "size": 38653,
+      "path": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_v1/image_files/chartqa/train/png/OECD_MULTIFACTOR_PRODUCTIVITY_DNK_NLD_000030.png",
+      "target": null
+    },
+    {
+      "kind": "f",
+      "size": 40477,
+      "path": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_v1/image_files/chartqa/train/png/multi_col_100461.png",
+      "target": null
+    },
+    {
+      "kind": "f",
+      "size": 93300,
+      "path": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_v1/image_files/chartqa/train/png/multi_col_100521.png",
+      "target": null
+    },
+    {
+      "kind": "f",
+      "size": 48372,
+      "path": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_v1/image_files/chartqa/train/png/multi_col_100919.png",
+      "target": null
+    },
+    {
+      "kind": "f",
+      "size": 80035,
+      "path": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_v1/image_files/chartqa/train/png/multi_col_100935.png",
+      "target": null
+    },
+    {
+      "kind": "f",
+      "size": 47769,
+      "path": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_v1/image_files/chartqa/train/png/multi_col_101086.png",
+      "target": null
+    },
+    {
+      "kind": "f",
+      "size": 37149,
+      "path": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_v1/image_files/chartqa/train/png/multi_col_1330.png",
+      "target": null
+    },
+    {
+      "kind": "f",
+      "size": 44434,
+      "path": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_v1/image_files/chartqa/train/png/multi_col_1439.png",
+      "target": null
+    },
+    {
+      "kind": "f",
+      "size": 58585,
+      "path": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_v1/image_files/chartqa/train/png/multi_col_1528.png",
+      "target": null
+    },
+    {
+      "kind": "f",
+      "size": 61873,
+      "path": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_v1/image_files/chartqa/train/png/multi_col_20011.png",
+      "target": null
+    },
+    {
+      "kind": "f",
+      "size": 32414,
+      "path": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_v1/image_files/chartqa/train/png/multi_col_20102.png",
+      "target": null
+    },
+    {
+      "kind": "f",
+      "size": 33123,
+      "path": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_v1/image_files/chartqa/train/png/multi_col_20135.png",
+      "target": null
+    },
+    {
+      "kind": "f",
+      "size": 49822,
+      "path": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_v1/image_files/chartqa/train/png/multi_col_20191.png",
+      "target": null
+    },
+    {
+      "kind": "f",
+      "size": 68301,
+      "path": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_v1/image_files/chartqa/train/png/multi_col_20344.png",
+      "target": null
+    },
+    {
+      "kind": "f",
+      "size": 37084,
+      "path": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_v1/image_files/chartqa/train/png/multi_col_20967.png",
+      "target": null
+    },
+    {
+      "kind": "f",
+      "size": 81427,
+      "path": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_v1/image_files/chartqa/train/png/multi_col_21089.png",
+      "target": null
+    },
+    {
+      "kind": "f",
+      "size": 34718,
+      "path": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_v1/image_files/chartqa/train/png/multi_col_40425.png",
+      "target": null
+    },
+    {
+      "kind": "f",
+      "size": 43923,
+      "path": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_v1/image_files/chartqa/train/png/multi_col_40858.png",
+      "target": null
+    },
+    {
+      "kind": "f",
+      "size": 39522,
+      "path": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_v1/image_files/chartqa/train/png/multi_col_60089.png",
+      "target": null
+    },
+    {
+      "kind": "f",
+      "size": 36881,
+      "path": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_v1/image_files/chartqa/train/png/multi_col_60488.png",
+      "target": null
+    },
+    {
+      "kind": "f",
+      "size": 40544,
+      "path": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_v1/image_files/chartqa/train/png/multi_col_60581.png",
+      "target": null
+    },
+    {
+      "kind": "f",
+      "size": 51013,
+      "path": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_v1/image_files/chartqa/train/png/multi_col_60624.png",
+      "target": null
+    },
+    {
+      "kind": "f",
+      "size": 34363,
+      "path": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_v1/image_files/chartqa/train/png/multi_col_60696.png",
+      "target": null
+    },
+    {
+      "kind": "f",
+      "size": 32900,
+      "path": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_v1/image_files/chartqa/train/png/multi_col_80481.png",
+      "target": null
+    },
+    {
+      "kind": "f",
+      "size": 33920,
+      "path": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_v1/image_files/chartqa/train/png/multi_col_80535.png",
+      "target": null
+    },
+    {
+      "kind": "f",
+      "size": 55403,
+      "path": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_v1/image_files/chartqa/train/png/multi_col_837.png",
+      "target": null
+    },
+    {
+      "kind": "f",
+      "size": 69310,
+      "path": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_v1/image_files/chartqa/train/png/multi_col_850.png",
+      "target": null
+    },
+    {
+      "kind": "f",
+      "size": 34121,
+      "path": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_v1/image_files/chartqa/train/png/two_col_100210.png",
+      "target": null
+    },
+    {
+      "kind": "f",
+      "size": 43032,
+      "path": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_v1/image_files/chartqa/train/png/two_col_100437.png",
+      "target": null
+    },
+    {
+      "kind": "f",
+      "size": 50679,
+      "path": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_v1/image_files/chartqa/train/png/two_col_100681.png",
+      "target": null
+    },
+    {
+      "kind": "f",
+      "size": 37888,
+      "path": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_v1/image_files/chartqa/train/png/two_col_100811.png",
+      "target": null
+    },
+    {
+      "kind": "f",
+      "size": 43886,
+      "path": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_v1/image_files/chartqa/train/png/two_col_101054.png",
+      "target": null
+    },
+    {
+      "kind": "f",
+      "size": 35706,
+      "path": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_v1/image_files/chartqa/train/png/two_col_102408.png",
+      "target": null
+    },
+    {
+      "kind": "f",
+      "size": 48908,
+      "path": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_v1/image_files/chartqa/train/png/two_col_102424.png",
+      "target": null
+    },
+    {
+      "kind": "f",
+      "size": 33459,
+      "path": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_v1/image_files/chartqa/train/png/two_col_102454.png",
+      "target": null
+    },
+    {
+      "kind": "f",
+      "size": 85489,
+      "path": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_v1/image_files/chartqa/train/png/two_col_102483.png",
+      "target": null
+    },
+    {
+      "kind": "f",
+      "size": 37527,
+      "path": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_v1/image_files/chartqa/train/png/two_col_102585.png",
+      "target": null
+    },
+    {
+      "kind": "f",
+      "size": 35724,
+      "path": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_v1/image_files/chartqa/train/png/two_col_102589.png",
+      "target": null
+    },
+    {
+      "kind": "f",
+      "size": 42862,
+      "path": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_v1/image_files/chartqa/train/png/two_col_103026.png",
+      "target": null
+    },
+    {
+      "kind": "f",
+      "size": 45627,
+      "path": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_v1/image_files/chartqa/train/png/two_col_103205.png",
+      "target": null
+    },
+    {
+      "kind": "f",
+      "size": 34966,
+      "path": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_v1/image_files/chartqa/train/png/two_col_103525.png",
+      "target": null
+    },
+    {
+      "kind": "f",
+      "size": 30733,
+      "path": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_v1/image_files/chartqa/train/png/two_col_103644.png",
+      "target": null
+    },
+    {
+      "kind": "f",
+      "size": 36382,
+      "path": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_v1/image_files/chartqa/train/png/two_col_103898.png",
+      "target": null
+    },
+    {
+      "kind": "f",
+      "size": 36166,
+      "path": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_v1/image_files/chartqa/train/png/two_col_104429.png",
+      "target": null
+    },
+    {
+      "kind": "f",
+      "size": 29079,
+      "path": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_v1/image_files/chartqa/train/png/two_col_104434.png",
+      "target": null
+    },
+    {
+      "kind": "f",
+      "size": 34839,
+      "path": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_v1/image_files/chartqa/train/png/two_col_104563.png",
+      "target": null
+    },
+    {
+      "kind": "f",
+      "size": 58862,
+      "path": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_v1/image_files/chartqa/train/png/two_col_104664.png",
+      "target": null
+    },
+    {
+      "kind": "f",
+      "size": 41397,
+      "path": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_v1/image_files/chartqa/train/png/two_col_1377.png",
+      "target": null
+    },
+    {
+      "kind": "f",
+      "size": 34594,
+      "path": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_v1/image_files/chartqa/train/png/two_col_1462.png",
+      "target": null
+    },
+    {
+      "kind": "f",
+      "size": 54437,
+      "path": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_v1/image_files/chartqa/train/png/two_col_1484.png",
+      "target": null
+    },
+    {
+      "kind": "f",
+      "size": 29375,
+      "path": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_v1/image_files/chartqa/train/png/two_col_199.png",
+      "target": null
+    },
+    {
+      "kind": "f",
+      "size": 45997,
+      "path": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_v1/image_files/chartqa/train/png/two_col_2018.png",
+      "target": null
+    },
+    {
+      "kind": "f",
+      "size": 37610,
+      "path": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_v1/image_files/chartqa/train/png/two_col_20242.png",
+      "target": null
+    },
+    {
+      "kind": "f",
+      "size": 33183,
+      "path": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_v1/image_files/chartqa/train/png/two_col_20469.png",
+      "target": null
+    },
+    {
+      "kind": "f",
+      "size": 95461,
+      "path": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_v1/image_files/chartqa/train/png/two_col_207.png",
+      "target": null
+    },
+    {
+      "kind": "f",
+      "size": 36792,
+      "path": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_v1/image_files/chartqa/train/png/two_col_20933.png",
+      "target": null
+    },
+    {
+      "kind": "f",
+      "size": 33663,
+      "path": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_v1/image_files/chartqa/train/png/two_col_2129.png",
+      "target": null
+    },
+    {
+      "kind": "f",
+      "size": 67804,
+      "path": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_v1/image_files/chartqa/train/png/two_col_21418.png",
+      "target": null
+    },
+    {
+      "kind": "f",
+      "size": 45504,
+      "path": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_v1/image_files/chartqa/train/png/two_col_21993.png",
+      "target": null
+    },
+    {
+      "kind": "f",
+      "size": 40299,
+      "path": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_v1/image_files/chartqa/train/png/two_col_22154.png",
+      "target": null
+    },
+    {
+      "kind": "f",
+      "size": 41870,
+      "path": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_v1/image_files/chartqa/train/png/two_col_22487.png",
+      "target": null
+    },
+    {
+      "kind": "f",
+      "size": 50192,
+      "path": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_v1/image_files/chartqa/train/png/two_col_2266.png",
+      "target": null
+    },
+    {
+      "kind": "f",
+      "size": 30422,
+      "path": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_v1/image_files/chartqa/train/png/two_col_22704.png",
+      "target": null
+    },
+    {
+      "kind": "f",
+      "size": 41248,
+      "path": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_v1/image_files/chartqa/train/png/two_col_22752.png",
+      "target": null
+    },
+    {
+      "kind": "f",
+      "size": 34254,
+      "path": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_v1/image_files/chartqa/train/png/two_col_22771.png",
+      "target": null
+    },
+    {
+      "kind": "f",
+      "size": 48893,
+      "path": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_v1/image_files/chartqa/train/png/two_col_23244.png",
+      "target": null
+    },
+    {
+      "kind": "f",
+      "size": 31253,
+      "path": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_v1/image_files/chartqa/train/png/two_col_23266.png",
+      "target": null
+    },
+    {
+      "kind": "f",
+      "size": 86775,
+      "path": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_v1/image_files/chartqa/train/png/two_col_23886.png",
+      "target": null
+    },
+    {
+      "kind": "f",
+      "size": 59108,
+      "path": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_v1/image_files/chartqa/train/png/two_col_24171.png",
+      "target": null
+    },
+    {
+      "kind": "f",
+      "size": 32481,
+      "path": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_v1/image_files/chartqa/train/png/two_col_2509.png",
+      "target": null
+    },
+    {
+      "kind": "f",
+      "size": 35185,
+      "path": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_v1/image_files/chartqa/train/png/two_col_2955.png",
+      "target": null
+    },
+    {
+      "kind": "f",
+      "size": 64409,
+      "path": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_v1/image_files/chartqa/train/png/two_col_3731.png",
+      "target": null
+    },
+    {
+      "kind": "f",
+      "size": 50267,
+      "path": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_v1/image_files/chartqa/train/png/two_col_3881.png",
+      "target": null
+    },
+    {
+      "kind": "f",
+      "size": 29075,
+      "path": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_v1/image_files/chartqa/train/png/two_col_40018.png",
+      "target": null
+    },
+    {
+      "kind": "f",
+      "size": 53896,
+      "path": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_v1/image_files/chartqa/train/png/two_col_40055.png",
+      "target": null
+    },
+    {
+      "kind": "f",
+      "size": 48130,
+      "path": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_v1/image_files/chartqa/train/png/two_col_40541.png",
+      "target": null
+    },
+    {
+      "kind": "f",
+      "size": 81550,
+      "path": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_v1/image_files/chartqa/train/png/two_col_40562.png",
+      "target": null
+    },
+    {
+      "kind": "f",
+      "size": 30307,
+      "path": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_v1/image_files/chartqa/train/png/two_col_40649.png",
+      "target": null
+    },
+    {
+      "kind": "f",
+      "size": 35708,
+      "path": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_v1/image_files/chartqa/train/png/two_col_40765.png",
+      "target": null
+    },
+    {
+      "kind": "f",
+      "size": 45483,
+      "path": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_v1/image_files/chartqa/train/png/two_col_40798.png",
+      "target": null
+    },
+    {
+      "kind": "f",
+      "size": 35351,
+      "path": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_v1/image_files/chartqa/train/png/two_col_40992.png",
+      "target": null
+    },
+    {
+      "kind": "f",
+      "size": 62700,
+      "path": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_v1/image_files/chartqa/train/png/two_col_41047.png",
+      "target": null
+    },
+    {
+      "kind": "f",
+      "size": 55686,
+      "path": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_v1/image_files/chartqa/train/png/two_col_41048.png",
+      "target": null
+    },
+    {
+      "kind": "f",
+      "size": 34287,
+      "path": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_v1/image_files/chartqa/train/png/two_col_41125.png",
+      "target": null
+    },
+    {
+      "kind": "f",
+      "size": 36506,
+      "path": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_v1/image_files/chartqa/train/png/two_col_41234.png",
+      "target": null
+    },
+    {
+      "kind": "f",
+      "size": 40215,
+      "path": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_v1/image_files/chartqa/train/png/two_col_41239.png",
+      "target": null
+    },
+    {
+      "kind": "f",
+      "size": 31866,
+      "path": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_v1/image_files/chartqa/train/png/two_col_41267.png",
+      "target": null
+    },
+    {
+      "kind": "f",
+      "size": 57818,
+      "path": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_v1/image_files/chartqa/train/png/two_col_41781.png",
+      "target": null
+    },
+    {
+      "kind": "f",
+      "size": 38194,
+      "path": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_v1/image_files/chartqa/train/png/two_col_42753.png",
+      "target": null
+    },
+    {
+      "kind": "f",
+      "size": 33880,
+      "path": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_v1/image_files/chartqa/train/png/two_col_42959.png",
+      "target": null
+    },
+    {
+      "kind": "f",
+      "size": 37043,
+      "path": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_v1/image_files/chartqa/train/png/two_col_43044.png",
+      "target": null
+    },
+    {
+      "kind": "f",
+      "size": 44064,
+      "path": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_v1/image_files/chartqa/train/png/two_col_43133.png",
+      "target": null
+    },
+    {
+      "kind": "f",
+      "size": 30848,
+      "path": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_v1/image_files/chartqa/train/png/two_col_43359.png",
+      "target": null
+    },
+    {
+      "kind": "f",
+      "size": 29126,
+      "path": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_v1/image_files/chartqa/train/png/two_col_43979.png",
+      "target": null
+    },
+    {
+      "kind": "f",
+      "size": 37164,
+      "path": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_v1/image_files/chartqa/train/png/two_col_4482.png",
+      "target": null
+    },
+    {
+      "kind": "f",
+      "size": 58055,
+      "path": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_v1/image_files/chartqa/train/png/two_col_5097.png",
+      "target": null
+    },
+    {
+      "kind": "f",
+      "size": 31494,
+      "path": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_v1/image_files/chartqa/train/png/two_col_5731.png",
+      "target": null
+    },
+    {
+      "kind": "f",
+      "size": 39699,
+      "path": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_v1/image_files/chartqa/train/png/two_col_6016.png",
+      "target": null
+    },
+    {
+      "kind": "f",
+      "size": 67466,
+      "path": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_v1/image_files/chartqa/train/png/two_col_60580.png",
+      "target": null
+    },
+    {
+      "kind": "f",
+      "size": 32847,
+      "path": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_v1/image_files/chartqa/train/png/two_col_6064.png",
+      "target": null
+    },
+    {
+      "kind": "f",
+      "size": 48414,
+      "path": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_v1/image_files/chartqa/train/png/two_col_60678.png",
+      "target": null
+    },
+    {
+      "kind": "f",
+      "size": 58275,
+      "path": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_v1/image_files/chartqa/train/png/two_col_60961.png",
+      "target": null
+    },
+    {
+      "kind": "f",
+      "size": 39486,
+      "path": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_v1/image_files/chartqa/train/png/two_col_61067.png",
+      "target": null
+    },
+    {
+      "kind": "f",
+      "size": 34753,
+      "path": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_v1/image_files/chartqa/train/png/two_col_61523.png",
+      "target": null
+    },
+    {
+      "kind": "f",
+      "size": 44479,
+      "path": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_v1/image_files/chartqa/train/png/two_col_61617.png",
+      "target": null
+    },
+    {
+      "kind": "f",
+      "size": 32778,
+      "path": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_v1/image_files/chartqa/train/png/two_col_61662.png",
+      "target": null
+    },
+    {
+      "kind": "f",
+      "size": 47206,
+      "path": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_v1/image_files/chartqa/train/png/two_col_6192.png",
+      "target": null
+    },
+    {
+      "kind": "f",
+      "size": 36967,
+      "path": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_v1/image_files/chartqa/train/png/two_col_62101.png",
+      "target": null
+    },
+    {
+      "kind": "f",
+      "size": 52969,
+      "path": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_v1/image_files/chartqa/train/png/two_col_62583.png",
+      "target": null
+    },
+    {
+      "kind": "f",
+      "size": 35428,
+      "path": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_v1/image_files/chartqa/train/png/two_col_62608.png",
+      "target": null
+    },
+    {
+      "kind": "f",
+      "size": 35423,
+      "path": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_v1/image_files/chartqa/train/png/two_col_627.png",
+      "target": null
+    },
+    {
+      "kind": "f",
+      "size": 46269,
+      "path": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_v1/image_files/chartqa/train/png/two_col_63072.png",
+      "target": null
+    },
+    {
+      "kind": "f",
+      "size": 29108,
+      "path": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_v1/image_files/chartqa/train/png/two_col_63157.png",
+      "target": null
+    },
+    {
+      "kind": "f",
+      "size": 63731,
+      "path": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_v1/image_files/chartqa/train/png/two_col_63320.png",
+      "target": null
+    },
+    {
+      "kind": "f",
+      "size": 40943,
+      "path": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_v1/image_files/chartqa/train/png/two_col_63497.png",
+      "target": null
+    },
+    {
+      "kind": "f",
+      "size": 67959,
+      "path": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_v1/image_files/chartqa/train/png/two_col_750.png",
+      "target": null
+    },
+    {
+      "kind": "f",
+      "size": 57034,
+      "path": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_v1/image_files/chartqa/train/png/two_col_80178.png",
+      "target": null
+    },
+    {
+      "kind": "f",
+      "size": 42338,
+      "path": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_v1/image_files/chartqa/train/png/two_col_80514.png",
+      "target": null
+    },
+    {
+      "kind": "f",
+      "size": 43747,
+      "path": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_v1/image_files/chartqa/train/png/two_col_80688.png",
+      "target": null
+    },
+    {
+      "kind": "f",
+      "size": 41686,
+      "path": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_v1/image_files/chartqa/train/png/two_col_81361.png",
+      "target": null
+    },
+    {
+      "kind": "f",
+      "size": 39612,
+      "path": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_v1/image_files/chartqa/train/png/two_col_81516.png",
+      "target": null
+    },
+    {
+      "kind": "f",
+      "size": 31584,
+      "path": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_v1/image_files/chartqa/train/png/two_col_81636.png",
+      "target": null
+    },
+    {
+      "kind": "f",
+      "size": 79861,
+      "path": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_v1/image_files/chartqa/train/png/two_col_82120.png",
+      "target": null
+    },
+    {
+      "kind": "f",
+      "size": 31956,
+      "path": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_v1/image_files/chartqa/train/png/two_col_83060.png",
+      "target": null
+    },
+    {
+      "kind": "f",
+      "size": 31725,
+      "path": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_v1/image_files/chartqa/train/png/two_col_83353.png",
+      "target": null
+    },
+    {
+      "kind": "f",
+      "size": 35999,
+      "path": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_v1/image_files/chartqa/train/png/two_col_83426.png",
+      "target": null
+    },
+    {
+      "kind": "f",
+      "size": 54255,
+      "path": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_v1/image_files/chartqa/train/png/two_col_83480.png",
+      "target": null
+    },
+    {
+      "kind": "d",
+      "size": 19,
+      "path": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_v1/image_files/sqa",
+      "target": null
+    },
+    {
+      "kind": "d",
+      "size": 4096,
+      "path": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_v1/image_files/sqa/train",
+      "target": null
+    },
+    {
+      "kind": "d",
+      "size": 23,
+      "path": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_v1/image_files/sqa/train/10226",
+      "target": null
+    },
+    {
+      "kind": "f",
+      "size": 65565,
+      "path": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_v1/image_files/sqa/train/10226/image.png",
+      "target": null
+    },
+    {
+      "kind": "d",
+      "size": 31,
+      "path": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_v1/image_files/sqa/train/10237",
+      "target": null
+    },
+    {
+      "kind": "f",
+      "size": 65497,
+      "path": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_v1/image_files/sqa/train/10237/image.png",
+      "target": null
+    },
+    {
+      "kind": "d",
+      "size": 23,
+      "path": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_v1/image_files/sqa/train/1060",
+      "target": null
+    },
+    {
+      "kind": "f",
+      "size": 60367,
+      "path": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_v1/image_files/sqa/train/1060/image.png",
+      "target": null
+    },
+    {
+      "kind": "d",
+      "size": 23,
+      "path": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_v1/image_files/sqa/train/1117",
+      "target": null
+    },
+    {
+      "kind": "f",
+      "size": 46336,
+      "path": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_v1/image_files/sqa/train/1117/image.png",
+      "target": null
+    },
+    {
+      "kind": "d",
+      "size": 23,
+      "path": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_v1/image_files/sqa/train/11230",
+      "target": null
+    },
+    {
+      "kind": "f",
+      "size": 65585,
+      "path": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_v1/image_files/sqa/train/11230/image.png",
+      "target": null
+    },
+    {
+      "kind": "d",
+      "size": 23,
+      "path": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_v1/image_files/sqa/train/11527",
+      "target": null
+    },
+    {
+      "kind": "f",
+      "size": 101680,
+      "path": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_v1/image_files/sqa/train/11527/image.png",
+      "target": null
+    },
+    {
+      "kind": "d",
+      "size": 31,
+      "path": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_v1/image_files/sqa/train/11735",
+      "target": null
+    },
+    {
+      "kind": "f",
+      "size": 72548,
+      "path": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_v1/image_files/sqa/train/11735/image.png",
+      "target": null
+    },
+    {
+      "kind": "d",
+      "size": 31,
+      "path": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_v1/image_files/sqa/train/11844",
+      "target": null
+    },
+    {
+      "kind": "f",
+      "size": 147870,
+      "path": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_v1/image_files/sqa/train/11844/image.png",
+      "target": null
+    },
+    {
+      "kind": "d",
+      "size": 31,
+      "path": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_v1/image_files/sqa/train/11899",
+      "target": null
+    },
+    {
+      "kind": "f",
+      "size": 36670,
+      "path": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_v1/image_files/sqa/train/11899/image.png",
+      "target": null
+    },
+    {
+      "kind": "d",
+      "size": 31,
+      "path": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_v1/image_files/sqa/train/11916",
+      "target": null
+    },
+    {
+      "kind": "f",
+      "size": 107673,
+      "path": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_v1/image_files/sqa/train/11916/image.png",
+      "target": null
+    },
+    {
+      "kind": "d",
+      "size": 23,
+      "path": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_v1/image_files/sqa/train/12013",
+      "target": null
+    },
+    {
+      "kind": "f",
+      "size": 66649,
+      "path": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_v1/image_files/sqa/train/12013/image.png",
+      "target": null
+    },
+    {
+      "kind": "d",
+      "size": 23,
+      "path": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_v1/image_files/sqa/train/12169",
+      "target": null
+    },
+    {
+      "kind": "f",
+      "size": 140749,
+      "path": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_v1/image_files/sqa/train/12169/image.png",
+      "target": null
+    },
+    {
+      "kind": "d",
+      "size": 23,
+      "path": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_v1/image_files/sqa/train/12409",
+      "target": null
+    },
+    {
+      "kind": "f",
+      "size": 63216,
+      "path": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_v1/image_files/sqa/train/12409/image.png",
+      "target": null
+    },
+    {
+      "kind": "d",
+      "size": 23,
+      "path": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_v1/image_files/sqa/train/12564",
+      "target": null
+    },
+    {
+      "kind": "f",
+      "size": 61875,
+      "path": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_v1/image_files/sqa/train/12564/image.png",
+      "target": null
+    },
+    {
+      "kind": "d",
+      "size": 31,
+      "path": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_v1/image_files/sqa/train/12708",
+      "target": null
+    },
+    {
+      "kind": "f",
+      "size": 73999,
+      "path": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_v1/image_files/sqa/train/12708/image.png",
+      "target": null
+    },
+    {
+      "kind": "d",
+      "size": 31,
+      "path": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_v1/image_files/sqa/train/12808",
+      "target": null
+    },
+    {
+      "kind": "f",
+      "size": 138070,
+      "path": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_v1/image_files/sqa/train/12808/image.png",
+      "target": null
+    },
+    {
+      "kind": "d",
+      "size": 31,
+      "path": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_v1/image_files/sqa/train/13075",
+      "target": null
+    },
+    {
+      "kind": "f",
+      "size": 46334,
+      "path": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_v1/image_files/sqa/train/13075/image.png",
+      "target": null
+    },
+    {
+      "kind": "d",
+      "size": 31,
+      "path": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_v1/image_files/sqa/train/13177",
+      "target": null
+    },
+    {
+      "kind": "f",
+      "size": 19563,
+      "path": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_v1/image_files/sqa/train/13177/image.png",
+      "target": null
+    },
+    {
+      "kind": "d",
+      "size": 31,
+      "path": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_v1/image_files/sqa/train/13322",
+      "target": null
+    },
+    {
+      "kind": "f",
+      "size": 61150,
+      "path": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_v1/image_files/sqa/train/13322/image.png",
+      "target": null
+    },
+    {
+      "kind": "d",
+      "size": 23,
+      "path": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_v1/image_files/sqa/train/13384",
+      "target": null
+    },
+    {
+      "kind": "f",
+      "size": 74804,
+      "path": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_v1/image_files/sqa/train/13384/image.png",
+      "target": null
+    },
+    {
+      "kind": "d",
+      "size": 31,
+      "path": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_v1/image_files/sqa/train/13495",
+      "target": null
+    },
+    {
+      "kind": "f",
+      "size": 1303,
+      "path": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_v1/image_files/sqa/train/13495/image.png",
+      "target": null
+    },
+    {
+      "kind": "d",
+      "size": 31,
+      "path": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_v1/image_files/sqa/train/13693",
+      "target": null
+    },
+    {
+      "kind": "f",
+      "size": 56959,
+      "path": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_v1/image_files/sqa/train/13693/image.png",
+      "target": null
+    },
+    {
+      "kind": "d",
+      "size": 31,
+      "path": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_v1/image_files/sqa/train/13944",
+      "target": null
+    },
+    {
+      "kind": "f",
+      "size": 10688,
+      "path": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_v1/image_files/sqa/train/13944/image.png",
+      "target": null
+    },
+    {
+      "kind": "d",
+      "size": 31,
+      "path": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_v1/image_files/sqa/train/14168",
+      "target": null
+    },
+    {
+      "kind": "f",
+      "size": 238680,
+      "path": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_v1/image_files/sqa/train/14168/image.png",
+      "target": null
+    },
+    {
+      "kind": "d",
+      "size": 31,
+      "path": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_v1/image_files/sqa/train/14186",
+      "target": null
+    },
+    {
+      "kind": "f",
+      "size": 65682,
+      "path": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_v1/image_files/sqa/train/14186/image.png",
+      "target": null
+    },
+    {
+      "kind": "d",
+      "size": 23,
+      "path": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_v1/image_files/sqa/train/14249",
+      "target": null
+    },
+    {
+      "kind": "f",
+      "size": 49990,
+      "path": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_v1/image_files/sqa/train/14249/image.png",
+      "target": null
+    },
+    {
+      "kind": "d",
+      "size": 31,
+      "path": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_v1/image_files/sqa/train/1426",
+      "target": null
+    },
+    {
+      "kind": "f",
+      "size": 65583,
+      "path": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_v1/image_files/sqa/train/1426/image.png",
+      "target": null
+    },
+    {
+      "kind": "d",
+      "size": 23,
+      "path": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_v1/image_files/sqa/train/14365",
+      "target": null
+    },
+    {
+      "kind": "f",
+      "size": 311739,
+      "path": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_v1/image_files/sqa/train/14365/image.png",
+      "target": null
+    },
+    {
+      "kind": "d",
+      "size": 31,
+      "path": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_v1/image_files/sqa/train/1452",
+      "target": null
+    },
+    {
+      "kind": "f",
+      "size": 56983,
+      "path": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_v1/image_files/sqa/train/1452/image.png",
+      "target": null
+    },
+    {
+      "kind": "d",
+      "size": 23,
+      "path": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_v1/image_files/sqa/train/14531",
+      "target": null
+    },
+    {
+      "kind": "f",
+      "size": 384949,
+      "path": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_v1/image_files/sqa/train/14531/image.png",
+      "target": null
+    },
+    {
+      "kind": "d",
+      "size": 31,
+      "path": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_v1/image_files/sqa/train/1466",
+      "target": null
+    },
+    {
+      "kind": "f",
+      "size": 49107,
+      "path": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_v1/image_files/sqa/train/1466/image.png",
+      "target": null
+    },
+    {
+      "kind": "d",
+      "size": 31,
+      "path": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_v1/image_files/sqa/train/14713",
+      "target": null
+    },
+    {
+      "kind": "f",
+      "size": 43230,
+      "path": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_v1/image_files/sqa/train/14713/image.png",
+      "target": null
+    },
+    {
+      "kind": "d",
+      "size": 23,
+      "path": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_v1/image_files/sqa/train/1475",
+      "target": null
+    },
+    {
+      "kind": "f",
+      "size": 48550,
+      "path": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_v1/image_files/sqa/train/1475/image.png",
+      "target": null
+    },
+    {
+      "kind": "d",
+      "size": 31,
+      "path": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_v1/image_files/sqa/train/14781",
+      "target": null
+    },
+    {
+      "kind": "f",
+      "size": 48009,
+      "path": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_v1/image_files/sqa/train/14781/image.png",
+      "target": null
+    },
+    {
+      "kind": "d",
+      "size": 23,
+      "path": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_v1/image_files/sqa/train/14786",
+      "target": null
+    },
+    {
+      "kind": "f",
+      "size": 51553,
+      "path": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_v1/image_files/sqa/train/14786/image.png",
+      "target": null
+    },
+    {
+      "kind": "d",
+      "size": 23,
+      "path": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_v1/image_files/sqa/train/15220",
+      "target": null
+    },
+    {
+      "kind": "f",
+      "size": 65618,
+      "path": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_v1/image_files/sqa/train/15220/image.png",
+      "target": null
+    },
+    {
+      "kind": "d",
+      "size": 31,
+      "path": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_v1/image_files/sqa/train/15367",
+      "target": null
+    },
+    {
+      "kind": "f",
+      "size": 65661,
+      "path": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_v1/image_files/sqa/train/15367/image.png",
+      "target": null
+    },
+    {
+      "kind": "d",
+      "size": 23,
+      "path": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_v1/image_files/sqa/train/15399",
+      "target": null
+    },
+    {
+      "kind": "f",
+      "size": 25087,
+      "path": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_v1/image_files/sqa/train/15399/image.png",
+      "target": null
+    },
+    {
+      "kind": "d",
+      "size": 23,
+      "path": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_v1/image_files/sqa/train/15639",
+      "target": null
+    },
+    {
+      "kind": "f",
+      "size": 205418,
+      "path": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_v1/image_files/sqa/train/15639/image.png",
+      "target": null
+    },
+    {
+      "kind": "d",
+      "size": 31,
+      "path": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_v1/image_files/sqa/train/16373",
+      "target": null
+    },
+    {
+      "kind": "f",
+      "size": 72744,
+      "path": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_v1/image_files/sqa/train/16373/image.png",
+      "target": null
+    },
+    {
+      "kind": "d",
+      "size": 31,
+      "path": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_v1/image_files/sqa/train/16441",
+      "target": null
+    },
+    {
+      "kind": "f",
+      "size": 238544,
+      "path": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_v1/image_files/sqa/train/16441/image.png",
+      "target": null
+    },
+    {
+      "kind": "d",
+      "size": 23,
+      "path": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_v1/image_files/sqa/train/16598",
+      "target": null
+    },
+    {
+      "kind": "f",
+      "size": 65630,
+      "path": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_v1/image_files/sqa/train/16598/image.png",
+      "target": null
+    },
+    {
+      "kind": "d",
+      "size": 23,
+      "path": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_v1/image_files/sqa/train/1700",
+      "target": null
+    },
+    {
+      "kind": "f",
+      "size": 46262,
+      "path": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_v1/image_files/sqa/train/1700/image.png",
+      "target": null
+    },
+    {
+      "kind": "d",
+      "size": 23,
+      "path": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_v1/image_files/sqa/train/17025",
+      "target": null
+    },
+    {
+      "kind": "f",
+      "size": 65699,
+      "path": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_v1/image_files/sqa/train/17025/image.png",
+      "target": null
+    },
+    {
+      "kind": "d",
+      "size": 31,
+      "path": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_v1/image_files/sqa/train/17108",
+      "target": null
+    },
+    {
+      "kind": "f",
+      "size": 88244,
+      "path": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_v1/image_files/sqa/train/17108/image.png",
+      "target": null
+    },
+    {
+      "kind": "d",
+      "size": 31,
+      "path": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_v1/image_files/sqa/train/1715",
+      "target": null
+    },
+    {
+      "kind": "f",
+      "size": 98352,
+      "path": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_v1/image_files/sqa/train/1715/image.png",
+      "target": null
+    },
+    {
+      "kind": "d",
+      "size": 23,
+      "path": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_v1/image_files/sqa/train/17394",
+      "target": null
+    },
+    {
+      "kind": "f",
+      "size": 72092,
+      "path": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_v1/image_files/sqa/train/17394/image.png",
+      "target": null
+    },
+    {
+      "kind": "d",
+      "size": 31,
+      "path": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_v1/image_files/sqa/train/17475",
+      "target": null
+    },
+    {
+      "kind": "f",
+      "size": 81347,
+      "path": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_v1/image_files/sqa/train/17475/image.png",
+      "target": null
+    },
+    {
+      "kind": "d",
+      "size": 23,
+      "path": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_v1/image_files/sqa/train/17478",
+      "target": null
+    },
+    {
+      "kind": "f",
+      "size": 113648,
+      "path": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_v1/image_files/sqa/train/17478/image.png",
+      "target": null
+    },
+    {
+      "kind": "d",
+      "size": 23,
+      "path": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_v1/image_files/sqa/train/17527",
+      "target": null
+    },
+    {
+      "kind": "f",
+      "size": 238427,
+      "path": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_v1/image_files/sqa/train/17527/image.png",
+      "target": null
+    },
+    {
+      "kind": "d",
+      "size": 23,
+      "path": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_v1/image_files/sqa/train/18052",
+      "target": null
+    },
+    {
+      "kind": "f",
+      "size": 72059,
+      "path": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_v1/image_files/sqa/train/18052/image.png",
+      "target": null
+    },
+    {
+      "kind": "d",
+      "size": 31,
+      "path": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_v1/image_files/sqa/train/18333",
+      "target": null
+    },
+    {
+      "kind": "f",
+      "size": 19304,
+      "path": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_v1/image_files/sqa/train/18333/image.png",
+      "target": null
+    },
+    {
+      "kind": "d",
+      "size": 31,
+      "path": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_v1/image_files/sqa/train/18461",
+      "target": null
+    },
+    {
+      "kind": "f",
+      "size": 88319,
+      "path": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_v1/image_files/sqa/train/18461/image.png",
+      "target": null
+    },
+    {
+      "kind": "d",
+      "size": 23,
+      "path": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_v1/image_files/sqa/train/18584",
+      "target": null
+    },
+    {
+      "kind": "f",
+      "size": 72548,
+      "path": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_v1/image_files/sqa/train/18584/image.png",
+      "target": null
+    },
+    {
+      "kind": "d",
+      "size": 23,
+      "path": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_v1/image_files/sqa/train/18587",
+      "target": null
+    },
+    {
+      "kind": "f",
+      "size": 74828,
+      "path": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_v1/image_files/sqa/train/18587/image.png",
+      "target": null
+    },
+    {
+      "kind": "d",
+      "size": 23,
+      "path": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_v1/image_files/sqa/train/18606",
+      "target": null
+    },
+    {
+      "kind": "f",
+      "size": 108123,
+      "path": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_v1/image_files/sqa/train/18606/image.png",
+      "target": null
+    },
+    {
+      "kind": "d",
+      "size": 31,
+      "path": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_v1/image_files/sqa/train/18757",
+      "target": null
+    },
+    {
+      "kind": "f",
+      "size": 52921,
+      "path": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_v1/image_files/sqa/train/18757/image.png",
+      "target": null
+    },
+    {
+      "kind": "d",
+      "size": 31,
+      "path": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_v1/image_files/sqa/train/18891",
+      "target": null
+    },
+    {
+      "kind": "f",
+      "size": 61429,
+      "path": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_v1/image_files/sqa/train/18891/image.png",
+      "target": null
+    },
+    {
+      "kind": "d",
+      "size": 31,
+      "path": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_v1/image_files/sqa/train/18975",
+      "target": null
+    },
+    {
+      "kind": "f",
+      "size": 46281,
+      "path": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_v1/image_files/sqa/train/18975/image.png",
+      "target": null
+    },
+    {
+      "kind": "d",
+      "size": 23,
+      "path": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_v1/image_files/sqa/train/19046",
+      "target": null
+    },
+    {
+      "kind": "f",
+      "size": 65662,
+      "path": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_v1/image_files/sqa/train/19046/image.png",
+      "target": null
+    },
+    {
+      "kind": "d",
+      "size": 23,
+      "path": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_v1/image_files/sqa/train/1927",
+      "target": null
+    },
+    {
+      "kind": "f",
+      "size": 16183,
+      "path": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_v1/image_files/sqa/train/1927/image.png",
+      "target": null
+    },
+    {
+      "kind": "d",
+      "size": 23,
+      "path": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_v1/image_files/sqa/train/19359",
+      "target": null
+    },
+    {
+      "kind": "f",
+      "size": 55459,
+      "path": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_v1/image_files/sqa/train/19359/image.png",
+      "target": null
+    },
+    {
+      "kind": "d",
+      "size": 23,
+      "path": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_v1/image_files/sqa/train/19786",
+      "target": null
+    },
+    {
+      "kind": "f",
+      "size": 259675,
+      "path": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_v1/image_files/sqa/train/19786/image.png",
+      "target": null
+    },
+    {
+      "kind": "d",
+      "size": 23,
+      "path": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_v1/image_files/sqa/train/20296",
+      "target": null
+    },
+    {
+      "kind": "f",
+      "size": 71462,
+      "path": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_v1/image_files/sqa/train/20296/image.png",
+      "target": null
+    },
+    {
+      "kind": "d",
+      "size": 23,
+      "path": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_v1/image_files/sqa/train/20543",
+      "target": null
+    },
+    {
+      "kind": "f",
+      "size": 81659,
+      "path": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_v1/image_files/sqa/train/20543/image.png",
+      "target": null
+    },
+    {
+      "kind": "d",
+      "size": 31,
+      "path": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_v1/image_files/sqa/train/20654",
+      "target": null
+    },
+    {
+      "kind": "f",
+      "size": 65582,
+      "path": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_v1/image_files/sqa/train/20654/image.png",
+      "target": null
+    },
+    {
+      "kind": "d",
+      "size": 31,
+      "path": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_v1/image_files/sqa/train/20673",
+      "target": null
+    },
+    {
+      "kind": "f",
+      "size": 28987,
+      "path": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_v1/image_files/sqa/train/20673/image.png",
+      "target": null
+    },
+    {
+      "kind": "d",
+      "size": 23,
+      "path": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_v1/image_files/sqa/train/20807",
+      "target": null
+    },
+    {
+      "kind": "f",
+      "size": 65583,
+      "path": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_v1/image_files/sqa/train/20807/image.png",
+      "target": null
+    },
+    {
+      "kind": "d",
+      "size": 31,
+      "path": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_v1/image_files/sqa/train/20816",
+      "target": null
+    },
+    {
+      "kind": "f",
+      "size": 12612,
+      "path": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_v1/image_files/sqa/train/20816/image.png",
+      "target": null
+    },
+    {
+      "kind": "d",
+      "size": 23,
+      "path": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_v1/image_files/sqa/train/20870",
+      "target": null
+    },
+    {
+      "kind": "f",
+      "size": 89886,
+      "path": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_v1/image_files/sqa/train/20870/image.png",
+      "target": null
+    },
+    {
+      "kind": "d",
+      "size": 23,
+      "path": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_v1/image_files/sqa/train/2093",
+      "target": null
+    },
+    {
+      "kind": "f",
+      "size": 140751,
+      "path": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_v1/image_files/sqa/train/2093/image.png",
+      "target": null
+    },
+    {
+      "kind": "d",
+      "size": 23,
+      "path": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_v1/image_files/sqa/train/21134",
+      "target": null
+    },
+    {
+      "kind": "f",
+      "size": 205418,
+      "path": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_v1/image_files/sqa/train/21134/image.png",
+      "target": null
+    },
+    {
+      "kind": "d",
+      "size": 31,
+      "path": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_v1/image_files/sqa/train/3655",
+      "target": null
+    },
+    {
+      "kind": "f",
+      "size": 13927,
+      "path": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_v1/image_files/sqa/train/3655/image.png",
+      "target": null
+    },
+    {
+      "kind": "d",
+      "size": 23,
+      "path": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_v1/image_files/sqa/train/3699",
+      "target": null
+    },
+    {
+      "kind": "f",
+      "size": 113645,
+      "path": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_v1/image_files/sqa/train/3699/image.png",
+      "target": null
+    },
+    {
+      "kind": "d",
+      "size": 23,
+      "path": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_v1/image_files/sqa/train/3764",
+      "target": null
+    },
+    {
+      "kind": "f",
+      "size": 13727,
+      "path": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_v1/image_files/sqa/train/3764/image.png",
+      "target": null
+    },
+    {
+      "kind": "d",
+      "size": 23,
+      "path": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_v1/image_files/sqa/train/3971",
+      "target": null
+    },
+    {
+      "kind": "f",
+      "size": 20332,
+      "path": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_v1/image_files/sqa/train/3971/image.png",
+      "target": null
+    },
+    {
+      "kind": "d",
+      "size": 23,
+      "path": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_v1/image_files/sqa/train/4234",
+      "target": null
+    },
+    {
+      "kind": "f",
+      "size": 48741,
+      "path": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_v1/image_files/sqa/train/4234/image.png",
+      "target": null
+    },
+    {
+      "kind": "d",
+      "size": 31,
+      "path": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_v1/image_files/sqa/train/4412",
+      "target": null
+    },
+    {
+      "kind": "f",
+      "size": 130429,
+      "path": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_v1/image_files/sqa/train/4412/image.png",
+      "target": null
+    },
+    {
+      "kind": "d",
+      "size": 23,
+      "path": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_v1/image_files/sqa/train/4959",
+      "target": null
+    },
+    {
+      "kind": "f",
+      "size": 14153,
+      "path": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_v1/image_files/sqa/train/4959/image.png",
+      "target": null
+    },
+    {
+      "kind": "d",
+      "size": 23,
+      "path": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_v1/image_files/sqa/train/5078",
+      "target": null
+    },
+    {
+      "kind": "f",
+      "size": 63557,
+      "path": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_v1/image_files/sqa/train/5078/image.png",
+      "target": null
+    },
+    {
+      "kind": "d",
+      "size": 23,
+      "path": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_v1/image_files/sqa/train/5095",
+      "target": null
+    },
+    {
+      "kind": "f",
+      "size": 65553,
+      "path": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_v1/image_files/sqa/train/5095/image.png",
+      "target": null
+    },
+    {
+      "kind": "d",
+      "size": 31,
+      "path": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_v1/image_files/sqa/train/5141",
+      "target": null
+    },
+    {
+      "kind": "f",
+      "size": 113648,
+      "path": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_v1/image_files/sqa/train/5141/image.png",
+      "target": null
+    },
+    {
+      "kind": "d",
+      "size": 31,
+      "path": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_v1/image_files/sqa/train/5658",
+      "target": null
+    },
+    {
+      "kind": "f",
+      "size": 46674,
+      "path": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_v1/image_files/sqa/train/5658/image.png",
+      "target": null
+    },
+    {
+      "kind": "d",
+      "size": 31,
+      "path": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_v1/image_files/sqa/train/5685",
+      "target": null
+    },
+    {
+      "kind": "f",
+      "size": 33349,
+      "path": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_v1/image_files/sqa/train/5685/image.png",
+      "target": null
+    },
+    {
+      "kind": "d",
+      "size": 31,
+      "path": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_v1/image_files/sqa/train/5708",
+      "target": null
+    },
+    {
+      "kind": "f",
+      "size": 65693,
+      "path": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_v1/image_files/sqa/train/5708/image.png",
+      "target": null
+    },
+    {
+      "kind": "d",
+      "size": 23,
+      "path": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_v1/image_files/sqa/train/572",
+      "target": null
+    },
+    {
+      "kind": "f",
+      "size": 65660,
+      "path": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_v1/image_files/sqa/train/572/image.png",
+      "target": null
+    },
+    {
+      "kind": "d",
+      "size": 31,
+      "path": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_v1/image_files/sqa/train/5891",
+      "target": null
+    },
+    {
+      "kind": "f",
+      "size": 65652,
+      "path": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_v1/image_files/sqa/train/5891/image.png",
+      "target": null
+    },
+    {
+      "kind": "d",
+      "size": 31,
+      "path": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_v1/image_files/sqa/train/5909",
+      "target": null
+    },
+    {
+      "kind": "f",
+      "size": 61693,
+      "path": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_v1/image_files/sqa/train/5909/image.png",
+      "target": null
+    },
+    {
+      "kind": "d",
+      "size": 31,
+      "path": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_v1/image_files/sqa/train/6134",
+      "target": null
+    },
+    {
+      "kind": "f",
+      "size": 131818,
+      "path": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_v1/image_files/sqa/train/6134/image.png",
+      "target": null
+    },
+    {
+      "kind": "d",
+      "size": 31,
+      "path": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_v1/image_files/sqa/train/6175",
+      "target": null
+    },
+    {
+      "kind": "f",
+      "size": 26172,
+      "path": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_v1/image_files/sqa/train/6175/image.png",
+      "target": null
+    },
+    {
+      "kind": "d",
+      "size": 31,
+      "path": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_v1/image_files/sqa/train/6287",
+      "target": null
+    },
+    {
+      "kind": "f",
+      "size": 48776,
+      "path": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_v1/image_files/sqa/train/6287/image.png",
+      "target": null
+    },
+    {
+      "kind": "d",
+      "size": 31,
+      "path": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_v1/image_files/sqa/train/6328",
+      "target": null
+    },
+    {
+      "kind": "f",
+      "size": 37402,
+      "path": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_v1/image_files/sqa/train/6328/image.png",
+      "target": null
+    },
+    {
+      "kind": "d",
+      "size": 23,
+      "path": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_v1/image_files/sqa/train/6395",
+      "target": null
+    },
+    {
+      "kind": "f",
+      "size": 60010,
+      "path": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_v1/image_files/sqa/train/6395/image.png",
+      "target": null
+    },
+    {
+      "kind": "d",
+      "size": 31,
+      "path": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_v1/image_files/sqa/train/672",
+      "target": null
+    },
+    {
+      "kind": "f",
+      "size": 113663,
+      "path": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_v1/image_files/sqa/train/672/image.png",
+      "target": null
+    },
+    {
+      "kind": "d",
+      "size": 23,
+      "path": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_v1/image_files/sqa/train/6932",
+      "target": null
+    },
+    {
+      "kind": "f",
+      "size": 44755,
+      "path": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_v1/image_files/sqa/train/6932/image.png",
+      "target": null
+    },
+    {
+      "kind": "d",
+      "size": 23,
+      "path": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_v1/image_files/sqa/train/6944",
+      "target": null
+    },
+    {
+      "kind": "f",
+      "size": 228706,
+      "path": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_v1/image_files/sqa/train/6944/image.png",
+      "target": null
+    },
+    {
+      "kind": "d",
+      "size": 23,
+      "path": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_v1/image_files/sqa/train/7003",
+      "target": null
+    },
+    {
+      "kind": "f",
+      "size": 72998,
+      "path": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_v1/image_files/sqa/train/7003/image.png",
+      "target": null
+    },
+    {
+      "kind": "d",
+      "size": 31,
+      "path": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_v1/image_files/sqa/train/733",
+      "target": null
+    },
+    {
+      "kind": "f",
+      "size": 56647,
+      "path": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_v1/image_files/sqa/train/733/image.png",
+      "target": null
+    },
+    {
+      "kind": "d",
+      "size": 31,
+      "path": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_v1/image_files/sqa/train/7438",
+      "target": null
+    },
+    {
+      "kind": "f",
+      "size": 8707,
+      "path": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_v1/image_files/sqa/train/7438/image.png",
+      "target": null
+    },
+    {
+      "kind": "d",
+      "size": 31,
+      "path": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_v1/image_files/sqa/train/778",
+      "target": null
+    },
+    {
+      "kind": "f",
+      "size": 74164,
+      "path": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_v1/image_files/sqa/train/778/image.png",
+      "target": null
+    },
+    {
+      "kind": "d",
+      "size": 23,
+      "path": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_v1/image_files/sqa/train/8076",
+      "target": null
+    },
+    {
+      "kind": "f",
+      "size": 384949,
+      "path": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_v1/image_files/sqa/train/8076/image.png",
+      "target": null
+    },
+    {
+      "kind": "d",
+      "size": 23,
+      "path": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_v1/image_files/sqa/train/8107",
+      "target": null
+    },
+    {
+      "kind": "f",
+      "size": 63915,
+      "path": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_v1/image_files/sqa/train/8107/image.png",
+      "target": null
+    },
+    {
+      "kind": "d",
+      "size": 23,
+      "path": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_v1/image_files/sqa/train/8165",
+      "target": null
+    },
+    {
+      "kind": "f",
+      "size": 55465,
+      "path": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_v1/image_files/sqa/train/8165/image.png",
+      "target": null
+    },
+    {
+      "kind": "d",
+      "size": 23,
+      "path": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_v1/image_files/sqa/train/8278",
+      "target": null
+    },
+    {
+      "kind": "f",
+      "size": 65650,
+      "path": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_v1/image_files/sqa/train/8278/image.png",
+      "target": null
+    },
+    {
+      "kind": "d",
+      "size": 23,
+      "path": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_v1/image_files/sqa/train/8668",
+      "target": null
+    },
+    {
+      "kind": "f",
+      "size": 12593,
+      "path": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_v1/image_files/sqa/train/8668/image.png",
+      "target": null
+    },
+    {
+      "kind": "d",
+      "size": 31,
+      "path": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_v1/image_files/sqa/train/8826",
+      "target": null
+    },
+    {
+      "kind": "f",
+      "size": 65781,
+      "path": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_v1/image_files/sqa/train/8826/image.png",
+      "target": null
+    },
+    {
+      "kind": "d",
+      "size": 23,
+      "path": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_v1/image_files/sqa/train/8869",
+      "target": null
+    },
+    {
+      "kind": "f",
+      "size": 74621,
+      "path": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_v1/image_files/sqa/train/8869/image.png",
+      "target": null
+    },
+    {
+      "kind": "d",
+      "size": 23,
+      "path": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_v1/image_files/sqa/train/9311",
+      "target": null
+    },
+    {
+      "kind": "f",
+      "size": 42444,
+      "path": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_v1/image_files/sqa/train/9311/image.png",
+      "target": null
+    },
+    {
+      "kind": "d",
+      "size": 31,
+      "path": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_v1/image_files/sqa/train/9405",
+      "target": null
+    },
+    {
+      "kind": "f",
+      "size": 42810,
+      "path": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_v1/image_files/sqa/train/9405/image.png",
+      "target": null
+    },
+    {
+      "kind": "d",
+      "size": 31,
+      "path": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_v1/image_files/sqa/train/9439",
+      "target": null
+    },
+    {
+      "kind": "f",
+      "size": 152737,
+      "path": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_v1/image_files/sqa/train/9439/image.png",
+      "target": null
+    },
+    {
+      "kind": "d",
+      "size": 31,
+      "path": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_v1/image_files/sqa/train/9478",
+      "target": null
+    },
+    {
+      "kind": "f",
+      "size": 46293,
+      "path": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_v1/image_files/sqa/train/9478/image.png",
+      "target": null
+    },
+    {
+      "kind": "d",
+      "size": 31,
+      "path": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_v1/image_files/sqa/train/9681",
+      "target": null
+    },
+    {
+      "kind": "f",
+      "size": 49990,
+      "path": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_v1/image_files/sqa/train/9681/image.png",
+      "target": null
+    },
+    {
+      "kind": "d",
+      "size": 31,
+      "path": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_v1/image_files/sqa/train/9973",
+      "target": null
+    },
+    {
+      "kind": "f",
+      "size": 205186,
+      "path": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_v1/image_files/sqa/train/9973/image.png",
+      "target": null
+    },
+    {
+      "kind": "f",
+      "size": 26377,
+      "path": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_v1/image_manifest.jsonl",
+      "target": null
+    },
+    {
+      "kind": "f",
+      "size": 5633,
+      "path": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_v1/sqa_image_extraction_report.json",
+      "target": null
+    },
+    {
+      "kind": "f",
+      "size": 105206,
+      "path": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_v1/test.jsonl",
+      "target": null
+    },
+    {
+      "kind": "f",
+      "size": 422358,
+      "path": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_v1/train.jsonl",
+      "target": null
+    },
+    {
+      "kind": "f",
+      "size": 106891,
+      "path": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_v1/validation.jsonl",
+      "target": null
+    }
+  ],
+  "subsets": [
+    {
+      "path": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_available_images_v1",
+      "size_follow_symlinks": "17M",
+      "image_count_follow_symlinks": 257,
+      "json_file_count": 5,
+      "json_files": [
+        {
+          "file": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_available_images_v1/dataset_spec.json",
+          "kind": "json",
+          "top_type": "dict",
+          "keys": [
+            "name",
+            "source_subset",
+            "image_root",
+            "splits",
+            "total_kept",
+            "total_dropped",
+            "strict_note"
+          ]
+        },
+        {
+          "file": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_available_images_v1/image_manifest.jsonl",
+          "kind": "jsonl",
+          "rows": 257,
+          "field_counts": {
+            "image": 257,
+            "question": 0,
+            "summary": 0,
+            "caption": 0,
+            "reasoning": 0,
+            "answer": 0
+          },
+          "field_rates": {
+            "image": 1.0,
+            "question": 0.0,
+            "summary": 0.0,
+            "caption": 0.0,
+            "reasoning": 0.0,
+            "answer": 0.0
+          },
+          "image_available": 257,
+          "unique_resolved_images": 253,
+          "image_available_rate": 1.0,
+          "samples": [
+            {
+              "index": 0,
+              "image": "chartqa/train/png/two_col_3881.png",
+              "question": null,
+              "keys": [
+                "image",
+                "task",
+                "required_by_split"
+              ],
+              "resolved_image": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_available_images_v1/image_files/chartqa/train/png/two_col_3881.png"
+            },
+            {
+              "index": 1,
+              "image": "chartqa/train/png/two_col_41267.png",
+              "question": null,
+              "keys": [
+                "image",
+                "task",
+                "required_by_split"
+              ],
+              "resolved_image": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_available_images_v1/image_files/chartqa/train/png/two_col_41267.png"
+            },
+            {
+              "index": 2,
+              "image": "chartqa/train/png/multi_col_60696.png",
+              "question": null,
+              "keys": [
+                "image",
+                "task",
+                "required_by_split"
+              ],
+              "resolved_image": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_available_images_v1/image_files/chartqa/train/png/multi_col_60696.png"
+            },
+            {
+              "index": 3,
+              "image": "chartqa/train/png/6354.png",
+              "question": null,
+              "keys": [
+                "image",
+                "task",
+                "required_by_split"
+              ],
+              "resolved_image": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_available_images_v1/image_files/chartqa/train/png/6354.png"
+            },
+            {
+              "index": 4,
+              "image": "sqa/train/12013/image.png",
+              "question": null,
+              "keys": [
+                "image",
+                "task",
+                "required_by_split"
+              ],
+              "resolved_image": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_available_images_v1/image_files/sqa/train/12013/image.png"
+            }
+          ]
+        },
+        {
+          "file": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_available_images_v1/test.jsonl",
+          "kind": "jsonl",
+          "rows": 45,
+          "field_counts": {
+            "image": 45,
+            "question": 45,
+            "summary": 45,
+            "caption": 45,
+            "reasoning": 45,
+            "answer": 45
+          },
+          "field_rates": {
+            "image": 1.0,
+            "question": 1.0,
+            "summary": 1.0,
+            "caption": 1.0,
+            "reasoning": 1.0,
+            "answer": 1.0
+          },
+          "image_available": 45,
+          "unique_resolved_images": 45,
+          "image_available_rate": 1.0,
+          "samples": [
+            {
+              "index": 0,
+              "image": "chartqa/train/png/5147.png",
+              "question": "What is the value of the red pie? Answer the question using a single word or phrase.",
+              "keys": [
+                "id",
+                "source_record_id",
+                "source_record_index",
+                "turn_index",
+                "task",
+                "image",
+                "question",
+                "summary",
+                "caption",
+                "reasoning",
+                "answer",
+                "whole_cot"
+              ],
+              "resolved_image": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_available_images_v1/image_files/chartqa/train/png/5147.png"
+            },
+            {
+              "index": 1,
+              "image": "chartqa/train/png/two_col_83480.png",
+              "question": "What year was Northern Ireland's gross domestic product 48.6 billion pounds? Answer the question using a single word or phrase.",
+              "keys": [
+                "id",
+                "source_record_id",
+                "source_record_index",
+                "turn_index",
+                "task",
+                "image",
+                "question",
+                "summary",
+                "caption",
+                "reasoning",
+                "answer",
+                "whole_cot"
+              ],
+              "resolved_image": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_available_images_v1/image_files/chartqa/train/png/two_col_83480.png"
+            },
+            {
+              "index": 2,
+              "image": "chartqa/train/png/two_col_102585.png",
+              "question": "What percentage of BEC scammers pretend to be CEOs of their victim companies? Answer the question using a single word or phrase.",
+              "keys": [
+                "id",
+                "source_record_id",
+                "source_record_index",
+                "turn_index",
+                "task",
+                "image",
+                "question",
+                "summary",
+                "caption",
+                "reasoning",
+                "answer",
+                "whole_cot"
+              ],
+              "resolved_image": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_available_images_v1/image_files/chartqa/train/png/two_col_102585.png"
+            },
+            {
+              "index": 3,
+              "image": "chartqa/train/png/two_col_627.png",
+              "question": "What was the population of Pakistan in 2020? Answer the question using a single word or phrase.",
+              "keys": [
+                "id",
+                "source_record_id",
+                "source_record_index",
+                "turn_index",
+                "task",
+                "image",
+                "question",
+                "summary",
+                "caption",
+                "reasoning",
+                "answer",
+                "whole_cot"
+              ],
+              "resolved_image": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_available_images_v1/image_files/chartqa/train/png/two_col_627.png"
+            },
+            {
+              "index": 4,
+              "image": "chartqa/train/png/two_col_3731.png",
+              "question": "What was the unemployment rate in Florida in 2020? Answer the question using a single word or phrase.",
+              "keys": [
+                "id",
+                "source_record_id",
+                "source_record_index",
+                "turn_index",
+                "task",
+                "image",
+                "question",
+                "summary",
+                "caption",
+                "reasoning",
+                "answer",
+                "whole_cot"
+              ],
+              "resolved_image": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_available_images_v1/image_files/chartqa/train/png/two_col_3731.png"
+            }
+          ]
+        },
+        {
+          "file": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_available_images_v1/train.jsonl",
+          "kind": "jsonl",
+          "rows": 167,
+          "field_counts": {
+            "image": 167,
+            "question": 167,
+            "summary": 167,
+            "caption": 167,
+            "reasoning": 167,
+            "answer": 167
+          },
+          "field_rates": {
+            "image": 1.0,
+            "question": 1.0,
+            "summary": 1.0,
+            "caption": 1.0,
+            "reasoning": 1.0,
+            "answer": 1.0
+          },
+          "image_available": 167,
+          "unique_resolved_images": 164,
+          "image_available_rate": 1.0,
+          "samples": [
+            {
+              "index": 0,
+              "image": "chartqa/train/png/two_col_3881.png",
+              "question": "What year was the average inflation rate in South Sudan? Answer the question using a single word or phrase.",
+              "keys": [
+                "id",
+                "source_record_id",
+                "source_record_index",
+                "turn_index",
+                "task",
+                "image",
+                "question",
+                "summary",
+                "caption",
+                "reasoning",
+                "answer",
+                "whole_cot"
+              ],
+              "resolved_image": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_available_images_v1/image_files/chartqa/train/png/two_col_3881.png"
+            },
+            {
+              "index": 1,
+              "image": "chartqa/train/png/two_col_41267.png",
+              "question": "How much did the manufacturing sector output increase from 2010 to 2013? Answer the question using a single word or phrase.",
+              "keys": [
+                "id",
+                "source_record_id",
+                "source_record_index",
+                "turn_index",
+                "task",
+                "image",
+                "question",
+                "summary",
+                "caption",
+                "reasoning",
+                "answer",
+                "whole_cot"
+              ],
+              "resolved_image": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_available_images_v1/image_files/chartqa/train/png/two_col_41267.png"
+            },
+            {
+              "index": 2,
+              "image": "chartqa/train/png/multi_col_60696.png",
+              "question": "What percentage of 25-35 year olds booked their holidays online in 2019? Answer the question using a single word or phrase.",
+              "keys": [
+                "id",
+                "source_record_id",
+                "source_record_index",
+                "turn_index",
+                "task",
+                "image",
+                "question",
+                "summary",
+                "caption",
+                "reasoning",
+                "answer",
+                "whole_cot"
+              ],
+              "resolved_image": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_available_images_v1/image_files/chartqa/train/png/multi_col_60696.png"
+            },
+            {
+              "index": 3,
+              "image": "chartqa/train/png/6354.png",
+              "question": "Is the value of green graph 67 in 2017? Answer the question using a single word or phrase.",
+              "keys": [
+                "id",
+                "source_record_id",
+                "source_record_index",
+                "turn_index",
+                "task",
+                "image",
+                "question",
+                "summary",
+                "caption",
+                "reasoning",
+                "answer",
+                "whole_cot"
+              ],
+              "resolved_image": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_available_images_v1/image_files/chartqa/train/png/6354.png"
+            },
+            {
+              "index": 4,
+              "image": "sqa/train/12013/image.png",
+              "question": "Which bird's beak is also adapted to catch fish? Context: s live near wetlands, marshes, and lakes. They eat mostly fish. The shape of the 's beak is adapted to catch fish. Figure: Amazon kingfisher. Options: (A) northern cardinal (B) great blue heron",
+              "keys": [
+                "id",
+                "source_record_id",
+                "source_record_index",
+                "turn_index",
+                "task",
+                "image",
+                "question",
+                "summary",
+                "caption",
+                "reasoning",
+                "answer",
+                "whole_cot"
+              ],
+              "resolved_image": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_available_images_v1/image_files/sqa/train/12013/image.png"
+            }
+          ]
+        },
+        {
+          "file": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_available_images_v1/validation.jsonl",
+          "kind": "jsonl",
+          "rows": 45,
+          "field_counts": {
+            "image": 45,
+            "question": 45,
+            "summary": 45,
+            "caption": 45,
+            "reasoning": 45,
+            "answer": 45
+          },
+          "field_rates": {
+            "image": 1.0,
+            "question": 1.0,
+            "summary": 1.0,
+            "caption": 1.0,
+            "reasoning": 1.0,
+            "answer": 1.0
+          },
+          "image_available": 45,
+          "unique_resolved_images": 45,
+          "image_available_rate": 1.0,
+          "samples": [
+            {
+              "index": 0,
+              "image": "sqa/train/3699/image.png",
+              "question": "Which part of the lettuce plant do we usually eat? Context: People use lettuce plants for food. Photosynthesis makes food for the plant. We usually eat the part of the plant that does most of the photosynthesis. Options: (A) the leaves (B) the flowers (C) the root",
+              "keys": [
+                "id",
+                "source_record_id",
+                "source_record_index",
+                "turn_index",
+                "task",
+                "image",
+                "question",
+                "summary",
+                "caption",
+                "reasoning",
+                "answer",
+                "whole_cot"
+              ],
+              "resolved_image": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_available_images_v1/image_files/sqa/train/3699/image.png"
+            },
+            {
+              "index": 1,
+              "image": "sqa/train/1117/image.png",
+              "question": "What is the name of the colony shown? Context: N/A Options: (A) New York (B) Vermont (C) Michigan (D) Indiana",
+              "keys": [
+                "id",
+                "source_record_id",
+                "source_record_index",
+                "turn_index",
+                "task",
+                "image",
+                "question",
+                "summary",
+                "caption",
+                "reasoning",
+                "answer",
+                "whole_cot"
+              ],
+              "resolved_image": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_available_images_v1/image_files/sqa/train/1117/image.png"
+            },
+            {
+              "index": 2,
+              "image": "sqa/train/5685/image.png",
+              "question": "Which i in column 3? Context: N/A Options: (A) the gas station (B) the grocery store (C) the fire department (D) the park",
+              "keys": [
+                "id",
+                "source_record_id",
+                "source_record_index",
+                "turn_index",
+                "task",
+                "image",
+                "question",
+                "summary",
+                "caption",
+                "reasoning",
+                "answer",
+                "whole_cot"
+              ],
+              "resolved_image": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_available_images_v1/image_files/sqa/train/5685/image.png"
+            },
+            {
+              "index": 3,
+              "image": "sqa/train/9478/image.png",
+              "question": "What is the name of the colony shown? Context: N/A Options: (A) Delaware (B) Wisconsin (C) New Jersey (D) Massachusetts",
+              "keys": [
+                "id",
+                "source_record_id",
+                "source_record_index",
+                "turn_index",
+                "task",
+                "image",
+                "question",
+                "summary",
+                "caption",
+                "reasoning",
+                "answer",
+                "whole_cot"
+              ],
+              "resolved_image": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_available_images_v1/image_files/sqa/train/9478/image.png"
+            },
+            {
+              "index": 4,
+              "image": "chartqa/train/png/two_col_61662.png",
+              "question": "How much did the UK spend on cultural services in 2019/20? Answer the question using a single word or phrase.",
+              "keys": [
+                "id",
+                "source_record_id",
+                "source_record_index",
+                "turn_index",
+                "task",
+                "image",
+                "question",
+                "summary",
+                "caption",
+                "reasoning",
+                "answer",
+                "whole_cot"
+              ],
+              "resolved_image": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_available_images_v1/image_files/chartqa/train/png/two_col_61662.png"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_v1",
+      "size_follow_symlinks": "17M",
+      "image_count_follow_symlinks": 257,
+      "json_file_count": 7,
+      "json_files": [
+        {
+          "file": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_v1/dataset_spec.json",
+          "kind": "json",
+          "top_type": "dict",
+          "keys": [
+            "name",
+            "source",
+            "seed",
+            "tasks",
+            "splits",
+            "num_unique_images",
+            "fields",
+            "heima_alignment"
+          ]
+        },
+        {
+          "file": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_v1/image_extraction_report.json",
+          "kind": "json",
+          "top_type": "dict",
+          "keys": [
+            "zip_part",
+            "manifest",
+            "out_root",
+            "needed",
+            "extracted",
+            "missing",
+            "extracted_by_task",
+            "missing_by_task",
+            "first_missing",
+            "unsupported"
+          ]
+        },
+        {
+          "file": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_v1/image_manifest.jsonl",
+          "kind": "jsonl",
+          "rows": 288,
+          "field_counts": {
+            "image": 288,
+            "question": 0,
+            "summary": 0,
+            "caption": 0,
+            "reasoning": 0,
+            "answer": 0
+          },
+          "field_rates": {
+            "image": 1.0,
+            "question": 0.0,
+            "summary": 0.0,
+            "caption": 0.0,
+            "reasoning": 0.0,
+            "answer": 0.0
+          },
+          "image_available": 288,
+          "unique_resolved_images": 253,
+          "image_available_rate": 1.0,
+          "samples": [
+            {
+              "index": 0,
+              "image": "chartqa/train/png/two_col_3881.png",
+              "question": null,
+              "keys": [
+                "image",
+                "task",
+                "required_by_split"
+              ],
+              "resolved_image": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_v1/image_files/chartqa/train/png/two_col_3881.png"
+            },
+            {
+              "index": 1,
+              "image": "chartqa/train/png/two_col_41267.png",
+              "question": null,
+              "keys": [
+                "image",
+                "task",
+                "required_by_split"
+              ],
+              "resolved_image": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_v1/image_files/chartqa/train/png/two_col_41267.png"
+            },
+            {
+              "index": 2,
+              "image": "sqa/train/11993/image.png",
+              "question": null,
+              "keys": [
+                "image",
+                "task",
+                "required_by_split"
+              ],
+              "resolved_image": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_v1/image_files/sqa/train/12013/image.png"
+            },
+            {
+              "index": 3,
+              "image": "sqa/train/4035/image.png",
+              "question": null,
+              "keys": [
+                "image",
+                "task",
+                "required_by_split"
+              ],
+              "resolved_image": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_v1/image_files/sqa/train/12013/image.png"
+            },
+            {
+              "index": 4,
+              "image": "chartqa/train/png/multi_col_60696.png",
+              "question": null,
+              "keys": [
+                "image",
+                "task",
+                "required_by_split"
+              ],
+              "resolved_image": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_v1/image_files/chartqa/train/png/multi_col_60696.png"
+            }
+          ]
+        },
+        {
+          "file": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_v1/sqa_image_extraction_report.json",
+          "kind": "json",
+          "top_type": "dict",
+          "keys": [
+            "parquet",
+            "subset_root",
+            "needed_sqa",
+            "extracted",
+            "missing",
+            "ambiguous",
+            "first_missing",
+            "first_ambiguous"
+          ]
+        },
+        {
+          "file": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_v1/test.jsonl",
+          "kind": "jsonl",
+          "rows": 48,
+          "field_counts": {
+            "image": 48,
+            "question": 48,
+            "summary": 48,
+            "caption": 48,
+            "reasoning": 48,
+            "answer": 48
+          },
+          "field_rates": {
+            "image": 1.0,
+            "question": 1.0,
+            "summary": 1.0,
+            "caption": 1.0,
+            "reasoning": 1.0,
+            "answer": 1.0
+          },
+          "image_available": 48,
+          "unique_resolved_images": 45,
+          "image_available_rate": 1.0,
+          "samples": [
+            {
+              "index": 0,
+              "image": "chartqa/train/png/5147.png",
+              "question": "What is the value of the red pie? Answer the question using a single word or phrase.",
+              "keys": [
+                "id",
+                "source_record_id",
+                "source_record_index",
+                "turn_index",
+                "task",
+                "image",
+                "question",
+                "summary",
+                "caption",
+                "reasoning",
+                "answer",
+                "whole_cot"
+              ],
+              "resolved_image": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_v1/image_files/chartqa/train/png/5147.png"
+            },
+            {
+              "index": 1,
+              "image": "chartqa/train/png/two_col_83480.png",
+              "question": "What year was Northern Ireland's gross domestic product 48.6 billion pounds? Answer the question using a single word or phrase.",
+              "keys": [
+                "id",
+                "source_record_id",
+                "source_record_index",
+                "turn_index",
+                "task",
+                "image",
+                "question",
+                "summary",
+                "caption",
+                "reasoning",
+                "answer",
+                "whole_cot"
+              ],
+              "resolved_image": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_v1/image_files/chartqa/train/png/two_col_83480.png"
+            },
+            {
+              "index": 2,
+              "image": "chartqa/train/png/two_col_102585.png",
+              "question": "What percentage of BEC scammers pretend to be CEOs of their victim companies? Answer the question using a single word or phrase.",
+              "keys": [
+                "id",
+                "source_record_id",
+                "source_record_index",
+                "turn_index",
+                "task",
+                "image",
+                "question",
+                "summary",
+                "caption",
+                "reasoning",
+                "answer",
+                "whole_cot"
+              ],
+              "resolved_image": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_v1/image_files/chartqa/train/png/two_col_102585.png"
+            },
+            {
+              "index": 3,
+              "image": "chartqa/train/png/two_col_627.png",
+              "question": "What was the population of Pakistan in 2020? Answer the question using a single word or phrase.",
+              "keys": [
+                "id",
+                "source_record_id",
+                "source_record_index",
+                "turn_index",
+                "task",
+                "image",
+                "question",
+                "summary",
+                "caption",
+                "reasoning",
+                "answer",
+                "whole_cot"
+              ],
+              "resolved_image": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_v1/image_files/chartqa/train/png/two_col_627.png"
+            },
+            {
+              "index": 4,
+              "image": "chartqa/train/png/two_col_3731.png",
+              "question": "What was the unemployment rate in Florida in 2020? Answer the question using a single word or phrase.",
+              "keys": [
+                "id",
+                "source_record_id",
+                "source_record_index",
+                "turn_index",
+                "task",
+                "image",
+                "question",
+                "summary",
+                "caption",
+                "reasoning",
+                "answer",
+                "whole_cot"
+              ],
+              "resolved_image": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_v1/image_files/chartqa/train/png/two_col_3731.png"
+            }
+          ]
+        },
+        {
+          "file": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_v1/train.jsonl",
+          "kind": "jsonl",
+          "rows": 192,
+          "field_counts": {
+            "image": 192,
+            "question": 192,
+            "summary": 192,
+            "caption": 192,
+            "reasoning": 192,
+            "answer": 192
+          },
+          "field_rates": {
+            "image": 1.0,
+            "question": 1.0,
+            "summary": 1.0,
+            "caption": 1.0,
+            "reasoning": 1.0,
+            "answer": 1.0
+          },
+          "image_available": 192,
+          "unique_resolved_images": 164,
+          "image_available_rate": 1.0,
+          "samples": [
+            {
+              "index": 0,
+              "image": "chartqa/train/png/two_col_3881.png",
+              "question": "What year was the average inflation rate in South Sudan? Answer the question using a single word or phrase.",
+              "keys": [
+                "id",
+                "source_record_id",
+                "source_record_index",
+                "turn_index",
+                "task",
+                "image",
+                "question",
+                "summary",
+                "caption",
+                "reasoning",
+                "answer",
+                "whole_cot"
+              ],
+              "resolved_image": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_v1/image_files/chartqa/train/png/two_col_3881.png"
+            },
+            {
+              "index": 1,
+              "image": "chartqa/train/png/two_col_41267.png",
+              "question": "How much did the manufacturing sector output increase from 2010 to 2013? Answer the question using a single word or phrase.",
+              "keys": [
+                "id",
+                "source_record_id",
+                "source_record_index",
+                "turn_index",
+                "task",
+                "image",
+                "question",
+                "summary",
+                "caption",
+                "reasoning",
+                "answer",
+                "whole_cot"
+              ],
+              "resolved_image": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_v1/image_files/chartqa/train/png/two_col_41267.png"
+            },
+            {
+              "index": 2,
+              "image": "sqa/train/11993/image.png",
+              "question": "Which property do these three objects have in common? Context: Select the best answer. Options: (A) slippery (B) blue (C) stretchy",
+              "keys": [
+                "id",
+                "source_record_id",
+                "source_record_index",
+                "turn_index",
+                "task",
+                "image",
+                "question",
+                "summary",
+                "caption",
+                "reasoning",
+                "answer",
+                "whole_cot"
+              ],
+              "resolved_image": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_v1/image_files/sqa/train/12013/image.png"
+            },
+            {
+              "index": 3,
+              "image": "sqa/train/4035/image.png",
+              "question": "Think about the magnetic force between the magnets in each pair. Which of the following statements is true? Context: The images below show two pairs of magnets. The magnets in different pairs do not affect each other. All the magnets shown are made of the same material, but some of them are different sizes. Options: (A) The magnitude of the magnetic force is greater in Pair 2. (B) The magnitude of the magnetic force is the same in both pairs. (C) The magnitude of the magnetic force is greater in Pair 1.",
+              "keys": [
+                "id",
+                "source_record_id",
+                "source_record_index",
+                "turn_index",
+                "task",
+                "image",
+                "question",
+                "summary",
+                "caption",
+                "reasoning",
+                "answer",
+                "whole_cot"
+              ],
+              "resolved_image": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_v1/image_files/sqa/train/12013/image.png"
+            },
+            {
+              "index": 4,
+              "image": "chartqa/train/png/multi_col_60696.png",
+              "question": "What percentage of 25-35 year olds booked their holidays online in 2019? Answer the question using a single word or phrase.",
+              "keys": [
+                "id",
+                "source_record_id",
+                "source_record_index",
+                "turn_index",
+                "task",
+                "image",
+                "question",
+                "summary",
+                "caption",
+                "reasoning",
+                "answer",
+                "whole_cot"
+              ],
+              "resolved_image": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_v1/image_files/chartqa/train/png/multi_col_60696.png"
+            }
+          ]
+        },
+        {
+          "file": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_v1/validation.jsonl",
+          "kind": "jsonl",
+          "rows": 48,
+          "field_counts": {
+            "image": 48,
+            "question": 48,
+            "summary": 48,
+            "caption": 48,
+            "reasoning": 48,
+            "answer": 48
+          },
+          "field_rates": {
+            "image": 1.0,
+            "question": 1.0,
+            "summary": 1.0,
+            "caption": 1.0,
+            "reasoning": 1.0,
+            "answer": 1.0
+          },
+          "image_available": 48,
+          "unique_resolved_images": 46,
+          "image_available_rate": 1.0,
+          "samples": [
+            {
+              "index": 0,
+              "image": "sqa/train/3699/image.png",
+              "question": "Which part of the lettuce plant do we usually eat? Context: People use lettuce plants for food. Photosynthesis makes food for the plant. We usually eat the part of the plant that does most of the photosynthesis. Options: (A) the leaves (B) the flowers (C) the root",
+              "keys": [
+                "id",
+                "source_record_id",
+                "source_record_index",
+                "turn_index",
+                "task",
+                "image",
+                "question",
+                "summary",
+                "caption",
+                "reasoning",
+                "answer",
+                "whole_cot"
+              ],
+              "resolved_image": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_v1/image_files/sqa/train/3699/image.png"
+            },
+            {
+              "index": 1,
+              "image": "sqa/train/1117/image.png",
+              "question": "What is the name of the colony shown? Context: N/A Options: (A) New York (B) Vermont (C) Michigan (D) Indiana",
+              "keys": [
+                "id",
+                "source_record_id",
+                "source_record_index",
+                "turn_index",
+                "task",
+                "image",
+                "question",
+                "summary",
+                "caption",
+                "reasoning",
+                "answer",
+                "whole_cot"
+              ],
+              "resolved_image": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_v1/image_files/sqa/train/1117/image.png"
+            },
+            {
+              "index": 2,
+              "image": "sqa/train/5685/image.png",
+              "question": "Which i in column 3? Context: N/A Options: (A) the gas station (B) the grocery store (C) the fire department (D) the park",
+              "keys": [
+                "id",
+                "source_record_id",
+                "source_record_index",
+                "turn_index",
+                "task",
+                "image",
+                "question",
+                "summary",
+                "caption",
+                "reasoning",
+                "answer",
+                "whole_cot"
+              ],
+              "resolved_image": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_v1/image_files/sqa/train/5685/image.png"
+            },
+            {
+              "index": 3,
+              "image": "sqa/train/9478/image.png",
+              "question": "What is the name of the colony shown? Context: N/A Options: (A) Delaware (B) Wisconsin (C) New Jersey (D) Massachusetts",
+              "keys": [
+                "id",
+                "source_record_id",
+                "source_record_index",
+                "turn_index",
+                "task",
+                "image",
+                "question",
+                "summary",
+                "caption",
+                "reasoning",
+                "answer",
+                "whole_cot"
+              ],
+              "resolved_image": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_v1/image_files/sqa/train/9478/image.png"
+            },
+            {
+              "index": 4,
+              "image": "chartqa/train/png/two_col_61662.png",
+              "question": "How much did the UK spend on cultural services in 2019/20? Answer the question using a single word or phrase.",
+              "keys": [
+                "id",
+                "source_record_id",
+                "source_record_index",
+                "turn_index",
+                "task",
+                "image",
+                "question",
+                "summary",
+                "caption",
+                "reasoning",
+                "answer",
+                "whole_cot"
+              ],
+              "resolved_image": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_v1/image_files/chartqa/train/png/two_col_61662.png"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "full_train": {
+    "path": "/data/zxl/official_heima/datasets/LLaVA-CoT-100k/train.jsonl",
+    "rows": 98582,
+    "first100_samples": [
+      {
+        "index": 0,
+        "image_field": "sqa/train/20839/image.png",
+        "question": "",
+        "dataset_source": "f2813de1-767c-4e27-8ba8-e04fd383209d",
+        "keys": [
+          "id",
+          "image",
+          "conversations"
+        ],
+        "matches_micro_image": true
+      },
+      {
+        "index": 1,
+        "image_field": "chartqa/train/png/multi_col_100056.png",
+        "question": "",
+        "dataset_source": "7c9444d8-c6a0-45ef-9d59-b04486cd0e6e",
+        "keys": [
+          "id",
+          "image",
+          "conversations"
+        ],
+        "matches_micro_image": false
+      },
+      {
+        "index": 2,
+        "image_field": "geoqa+/images/9435.png",
+        "question": "",
+        "dataset_source": "85537b16-1d54-4797-8480-7bcca5d98d88",
+        "keys": [
+          "id",
+          "image",
+          "conversations"
+        ],
+        "matches_micro_image": false
+      },
+      {
+        "index": 3,
+        "image_field": "geoqa+/images/10373.png",
+        "question": "",
+        "dataset_source": "e91b0227-5ae0-44b0-a16a-cbc7c0085cd0",
+        "keys": [
+          "id",
+          "image",
+          "conversations"
+        ],
+        "matches_micro_image": false
+      },
+      {
+        "index": 4,
+        "image_field": "geoqa+/images/12240.png",
+        "question": "",
+        "dataset_source": "1d98adda-9fa7-48b4-988a-2bec6f996b78",
+        "keys": [
+          "id",
+          "image",
+          "conversations"
+        ],
+        "matches_micro_image": false
+      },
+      {
+        "index": 5,
+        "image_field": "chartqa/train/png/two_col_102544.png",
+        "question": "",
+        "dataset_source": "b8b12429-faa5-4e7d-833b-8b599a457d54",
+        "keys": [
+          "id",
+          "image",
+          "conversations"
+        ],
+        "matches_micro_image": false
+      },
+      {
+        "index": 6,
+        "image_field": "chartqa/train/png/two_col_42332.png",
+        "question": "",
+        "dataset_source": "b428eded-5fa8-4fb9-9dfd-7e72035fb5fa",
+        "keys": [
+          "id",
+          "image",
+          "conversations"
+        ],
+        "matches_micro_image": false
+      },
+      {
+        "index": 7,
+        "image_field": "sqa/train/7088/image.png",
+        "question": "",
+        "dataset_source": "b7749c6e-350a-4916-aa35-04d8334ea95b",
+        "keys": [
+          "id",
+          "image",
+          "conversations"
+        ],
+        "matches_micro_image": true
+      },
+      {
+        "index": 8,
+        "image_field": "ai2d/images/2578.png",
+        "question": "",
+        "dataset_source": "f7612e39-51cd-4842-9c4d-058232405365",
+        "keys": [
+          "id",
+          "image",
+          "conversations"
+        ],
+        "matches_micro_image": false
+      },
+      {
+        "index": 9,
+        "image_field": "chartqa/train/png/two_col_62742.png",
+        "question": "",
+        "dataset_source": "87ca707e-0729-455a-97b9-796bb552e302",
+        "keys": [
+          "id",
+          "image",
+          "conversations"
+        ],
+        "matches_micro_image": false
+      },
+      {
+        "index": 10,
+        "image_field": "sqa/train/253/image.png",
+        "question": "",
+        "dataset_source": "50b055f6-9ba2-4200-a65a-f70d80919fac",
+        "keys": [
+          "id",
+          "image",
+          "conversations"
+        ],
+        "matches_micro_image": true
+      },
+      {
+        "index": 11,
+        "image_field": "ai2d/images/2330.png",
+        "question": "",
+        "dataset_source": "1789a448-d6bc-4ef8-b937-164707368f3e",
+        "keys": [
+          "id",
+          "image",
+          "conversations"
+        ],
+        "matches_micro_image": false
+      },
+      {
+        "index": 12,
+        "image_field": "coco/train2017/000000569618.jpg",
+        "question": "",
+        "dataset_source": "354156f7-efe1-41b9-b7d6-c07a34a5ab67",
+        "keys": [
+          "id",
+          "image",
+          "conversations"
+        ],
+        "matches_micro_image": false
+      },
+      {
+        "index": 13,
+        "image_field": "ai2d/images/2067.png",
+        "question": "",
+        "dataset_source": "932f9bc7-5932-4f4e-a04a-961a53aad59e",
+        "keys": [
+          "id",
+          "image",
+          "conversations"
+        ],
+        "matches_micro_image": false
+      },
+      {
+        "index": 14,
+        "image_field": "sqa/train/7034/image.png",
+        "question": "",
+        "dataset_source": "2ffb591b-5ee2-4718-8bbd-83dee9874d46",
+        "keys": [
+          "id",
+          "image",
+          "conversations"
+        ],
+        "matches_micro_image": true
+      },
+      {
+        "index": 15,
+        "image_field": "ai2d/images/2636.png",
+        "question": "",
+        "dataset_source": "42c4727c-68ad-4bb0-86c6-5a7bdb86c985",
+        "keys": [
+          "id",
+          "image",
+          "conversations"
+        ],
+        "matches_micro_image": false
+      },
+      {
+        "index": 16,
+        "image_field": "coco/train2017/000000292543.jpg",
+        "question": "",
+        "dataset_source": "f48da84b-7b79-472c-ab3e-ff12d356f27e",
+        "keys": [
+          "id",
+          "image",
+          "conversations"
+        ],
+        "matches_micro_image": false
+      },
+      {
+        "index": 17,
+        "image_field": "chartqa/train/png/two_col_41387.png",
+        "question": "",
+        "dataset_source": "26dd71d5-c7a0-459c-a262-961120758ebb",
+        "keys": [
+          "id",
+          "image",
+          "conversations"
+        ],
+        "matches_micro_image": false
+      },
+      {
+        "index": 18,
+        "image_field": "docvqa/train/documents/mnph0227_1.png",
+        "question": "",
+        "dataset_source": "d43eae47-eaf7-44c0-9134-2c167e59e7d8",
+        "keys": [
+          "id",
+          "image",
+          "conversations"
+        ],
+        "matches_micro_image": false
+      },
+      {
+        "index": 19,
+        "image_field": "coco/train2017/000000238772.jpg",
+        "question": "",
+        "dataset_source": "0e852d61-1b47-46ff-9af9-de65a0e7b9f2",
+        "keys": [
+          "id",
+          "image",
+          "conversations"
+        ],
+        "matches_micro_image": false
+      },
+      {
+        "index": 20,
+        "image_field": "sqa/train/14970/image.png",
+        "question": "",
+        "dataset_source": "dce22a9e-f4a1-43c8-9916-4aee9a8eb147",
+        "keys": [
+          "id",
+          "image",
+          "conversations"
+        ],
+        "matches_micro_image": true
+      },
+      {
+        "index": 21,
+        "image_field": "chartqa/train/png/two_col_5185.png",
+        "question": "",
+        "dataset_source": "b6de67a4-43b8-4435-b7c5-4092300a1273",
+        "keys": [
+          "id",
+          "image",
+          "conversations"
+        ],
+        "matches_micro_image": false
+      },
+      {
+        "index": 22,
+        "image_field": "vg/VG_100K_2/2416880.jpg",
+        "question": "",
+        "dataset_source": "4239352f-7383-4a16-aa57-78c2d44a71cc",
+        "keys": [
+          "id",
+          "image",
+          "conversations"
+        ],
+        "matches_micro_image": false
+      },
+      {
+        "index": 23,
+        "image_field": "sqa/train/12552/image.png",
+        "question": "",
+        "dataset_source": "c9325215-3894-46cb-b0d5-0729682a147b",
+        "keys": [
+          "id",
+          "image",
+          "conversations"
+        ],
+        "matches_micro_image": true
+      },
+      {
+        "index": 24,
+        "image_field": "geoqa+/images/8598.png",
+        "question": "",
+        "dataset_source": "7f595548-aa70-4f0c-9a5e-50c7d38ccf76",
+        "keys": [
+          "id",
+          "image",
+          "conversations"
+        ],
+        "matches_micro_image": false
+      },
+      {
+        "index": 25,
+        "image_field": "coco/train2017/000000292543.jpg",
+        "question": "",
+        "dataset_source": "58069aeb-5351-4713-bcf2-f3697ac8b3d7",
+        "keys": [
+          "id",
+          "image",
+          "conversations"
+        ],
+        "matches_micro_image": false
+      },
+      {
+        "index": 26,
+        "image_field": "coco/train2017/000000126413.jpg",
+        "question": "",
+        "dataset_source": "5487644f-d137-438c-85ba-e608eb435797",
+        "keys": [
+          "id",
+          "image",
+          "conversations"
+        ],
+        "matches_micro_image": false
+      },
+      {
+        "index": 27,
+        "image_field": "coco/train2017/000000136235.jpg",
+        "question": "",
+        "dataset_source": "101d75e8-f0c2-4095-9caf-47786024e333",
+        "keys": [
+          "id",
+          "image",
+          "conversations"
+        ],
+        "matches_micro_image": false
+      },
+      {
+        "index": 28,
+        "image_field": "sqa/train/7891/image.png",
+        "question": "",
+        "dataset_source": "0ce923bf-16e6-4798-be62-8d3e77d09cfb",
+        "keys": [
+          "id",
+          "image",
+          "conversations"
+        ],
+        "matches_micro_image": true
+      },
+      {
+        "index": 29,
+        "image_field": "coco/train2017/000000554378.jpg",
+        "question": "",
+        "dataset_source": "2d6c13a2-3cc7-433c-9158-331eb74172cb",
+        "keys": [
+          "id",
+          "image",
+          "conversations"
+        ],
+        "matches_micro_image": false
+      },
+      {
+        "index": 30,
+        "image_field": "docvqa/train/documents/njhx0227_1.png",
+        "question": "",
+        "dataset_source": "6711ac94-db6a-45b1-a446-c4960cad9106",
+        "keys": [
+          "id",
+          "image",
+          "conversations"
+        ],
+        "matches_micro_image": false
+      },
+      {
+        "index": 31,
+        "image_field": "ai2d/images/381.png",
+        "question": "",
+        "dataset_source": "c5c6eb45-2761-408b-a3d3-27ff1e6e6548",
+        "keys": [
+          "id",
+          "image",
+          "conversations"
+        ],
+        "matches_micro_image": false
+      },
+      {
+        "index": 32,
+        "image_field": "coco/train2017/000000164909.jpg",
+        "question": "",
+        "dataset_source": "12cf373f-61d0-4cdd-959e-179089849867",
+        "keys": [
+          "id",
+          "image",
+          "conversations"
+        ],
+        "matches_micro_image": false
+      },
+      {
+        "index": 33,
+        "image_field": "sqa/train/8125/image.png",
+        "question": "",
+        "dataset_source": "1ade7413-398a-48bb-8e9c-d648669ef388",
+        "keys": [
+          "id",
+          "image",
+          "conversations"
+        ],
+        "matches_micro_image": true
+      },
+      {
+        "index": 34,
+        "image_field": "geoqa+/images/8941.png",
+        "question": "",
+        "dataset_source": "a0b1e2eb-9ca9-45b2-ba36-75463aca32f4",
+        "keys": [
+          "id",
+          "image",
+          "conversations"
+        ],
+        "matches_micro_image": false
+      },
+      {
+        "index": 35,
+        "image_field": "coco/train2017/000000062726.jpg",
+        "question": "",
+        "dataset_source": "e1eab4ed-e25f-400b-887b-0d3a99c404d8",
+        "keys": [
+          "id",
+          "image",
+          "conversations"
+        ],
+        "matches_micro_image": false
+      },
+      {
+        "index": 36,
+        "image_field": "chartqa/train/png/two_col_2318.png",
+        "question": "",
+        "dataset_source": "83a95e49-0eaa-4809-bba5-d4c5bc5b8653",
+        "keys": [
+          "id",
+          "image",
+          "conversations"
+        ],
+        "matches_micro_image": false
+      },
+      {
+        "index": 37,
+        "image_field": "ai2d/images/1995.png",
+        "question": "",
+        "dataset_source": "85eb577d-9c19-441b-b841-925e6b748ca1",
+        "keys": [
+          "id",
+          "image",
+          "conversations"
+        ],
+        "matches_micro_image": false
+      },
+      {
+        "index": 38,
+        "image_field": "coco/train2017/000000501995.jpg",
+        "question": "",
+        "dataset_source": "2a607d99-95e4-48ca-8f8b-9a2d08a9a290",
+        "keys": [
+          "id",
+          "image",
+          "conversations"
+        ],
+        "matches_micro_image": false
+      },
+      {
+        "index": 39,
+        "image_field": "coco/train2017/000000409364.jpg",
+        "question": "",
+        "dataset_source": "0fd4f5c0-47b0-40c5-80af-e7eb7816350a",
+        "keys": [
+          "id",
+          "image",
+          "conversations"
+        ],
+        "matches_micro_image": false
+      },
+      {
+        "index": 40,
+        "image_field": "geoqa+/images/10572.png",
+        "question": "",
+        "dataset_source": "bddac3e7-8c84-4866-9f5c-15230392d6a7",
+        "keys": [
+          "id",
+          "image",
+          "conversations"
+        ],
+        "matches_micro_image": false
+      },
+      {
+        "index": 41,
+        "image_field": "ocr_vqa/images/1550379623.jpg",
+        "question": "",
+        "dataset_source": "c7dcac18-b8c9-48c3-9b7b-b8df674926a4",
+        "keys": [
+          "id",
+          "image",
+          "conversations"
+        ],
+        "matches_micro_image": false
+      },
+      {
+        "index": 42,
+        "image_field": "geoqa+/images/13063.png",
+        "question": "",
+        "dataset_source": "2e9f96ca-773d-4a6f-b3d3-60b6c06e34db",
+        "keys": [
+          "id",
+          "image",
+          "conversations"
+        ],
+        "matches_micro_image": false
+      },
+      {
+        "index": 43,
+        "image_field": "coco/train2017/000000514860.jpg",
+        "question": "",
+        "dataset_source": "53995100-9ce5-4fc0-b348-96822019c19f",
+        "keys": [
+          "id",
+          "image",
+          "conversations"
+        ],
+        "matches_micro_image": false
+      },
+      {
+        "index": 44,
+        "image_field": "ocr_vqa/images/1906525536.jpg",
+        "question": "",
+        "dataset_source": "35738e46-8526-409a-bee6-cc61460d8c77",
+        "keys": [
+          "id",
+          "image",
+          "conversations"
+        ],
+        "matches_micro_image": false
+      },
+      {
+        "index": 45,
+        "image_field": "vg/VG_100K/2365543.jpg",
+        "question": "",
+        "dataset_source": "203d3f02-44f5-474d-a6b0-dd80f0357d15",
+        "keys": [
+          "id",
+          "image",
+          "conversations"
+        ],
+        "matches_micro_image": false
+      },
+      {
+        "index": 46,
+        "image_field": "coco/train2017/000000579997.jpg",
+        "question": "",
+        "dataset_source": "d2e8a2f6-9a54-4672-84b3-716b924d8879",
+        "keys": [
+          "id",
+          "image",
+          "conversations"
+        ],
+        "matches_micro_image": false
+      },
+      {
+        "index": 47,
+        "image_field": "geoqa+/images/3063.png",
+        "question": "",
+        "dataset_source": "54c87f57-65bc-4701-bdd6-2bf72b4cfe13",
+        "keys": [
+          "id",
+          "image",
+          "conversations"
+        ],
+        "matches_micro_image": false
+      },
+      {
+        "index": 48,
+        "image_field": "ocr_vqa/images/1629720623.jpg",
+        "question": "",
+        "dataset_source": "4545efc9-4366-4c84-8869-515643b3dbf7",
+        "keys": [
+          "id",
+          "image",
+          "conversations"
+        ],
+        "matches_micro_image": false
+      },
+      {
+        "index": 49,
+        "image_field": "docvqa/train/documents/rfgk0023_1.png",
+        "question": "",
+        "dataset_source": "f6f6c150-ceb2-44c9-88fa-2a656c88e886",
+        "keys": [
+          "id",
+          "image",
+          "conversations"
+        ],
+        "matches_micro_image": false
+      },
+      {
+        "index": 50,
+        "image_field": "sqa/train/11407/image.png",
+        "question": "",
+        "dataset_source": "c3807eef-b8d2-43d5-ac91-1bb71ae88e18",
+        "keys": [
+          "id",
+          "image",
+          "conversations"
+        ],
+        "matches_micro_image": true
+      },
+      {
+        "index": 51,
+        "image_field": "coco/train2017/000000327209.jpg",
+        "question": "",
+        "dataset_source": "dd491467-4c1d-448c-aecc-cf95b1b9dc25",
+        "keys": [
+          "id",
+          "image",
+          "conversations"
+        ],
+        "matches_micro_image": false
+      },
+      {
+        "index": 52,
+        "image_field": "coco/train2017/000000075802.jpg",
+        "question": "",
+        "dataset_source": "873ad56a-0ff1-4fd5-a74a-e10c73192434",
+        "keys": [
+          "id",
+          "image",
+          "conversations"
+        ],
+        "matches_micro_image": false
+      },
+      {
+        "index": 53,
+        "image_field": "ai2d/images/2268.png",
+        "question": "",
+        "dataset_source": "edd1be83-4f90-432d-953e-4a4735e0ceb8",
+        "keys": [
+          "id",
+          "image",
+          "conversations"
+        ],
+        "matches_micro_image": false
+      },
+      {
+        "index": 54,
+        "image_field": "textvqa/train_images/929b48d1323c8323.jpg",
+        "question": "",
+        "dataset_source": "005bf96a-6a92-4d04-8fd7-7d86e7f3449b",
+        "keys": [
+          "id",
+          "image",
+          "conversations"
+        ],
+        "matches_micro_image": false
+      },
+      {
+        "index": 55,
+        "image_field": "geoqa+/images/426.png",
+        "question": "",
+        "dataset_source": "f3fa3ae5-e400-46e3-bd5c-d01207494e8e",
+        "keys": [
+          "id",
+          "image",
+          "conversations"
+        ],
+        "matches_micro_image": false
+      },
+      {
+        "index": 56,
+        "image_field": "sqa/train/15549/image.png",
+        "question": "",
+        "dataset_source": "ee21660c-461a-4d05-b4b1-b1b3e916a4ff",
+        "keys": [
+          "id",
+          "image",
+          "conversations"
+        ],
+        "matches_micro_image": true
+      },
+      {
+        "index": 57,
+        "image_field": "coco/train2017/000000508055.jpg",
+        "question": "",
+        "dataset_source": "04670ffe-bdaa-4094-b8cd-a4a325835ded",
+        "keys": [
+          "id",
+          "image",
+          "conversations"
+        ],
+        "matches_micro_image": false
+      },
+      {
+        "index": 58,
+        "image_field": "geoqa+/images/12780.png",
+        "question": "",
+        "dataset_source": "4a190ec7-0ccf-41c5-9002-ceab6743fb40",
+        "keys": [
+          "id",
+          "image",
+          "conversations"
+        ],
+        "matches_micro_image": false
+      },
+      {
+        "index": 59,
+        "image_field": "geoqa+/images/10170.png",
+        "question": "",
+        "dataset_source": "43d369ed-da2b-4617-b0ce-47c91c1d5948",
+        "keys": [
+          "id",
+          "image",
+          "conversations"
+        ],
+        "matches_micro_image": false
+      },
+      {
+        "index": 60,
+        "image_field": "chartqa/train/png/two_col_40361.png",
+        "question": "",
+        "dataset_source": "cabc0ab2-d578-4566-bb69-668db5d414d6",
+        "keys": [
+          "id",
+          "image",
+          "conversations"
+        ],
+        "matches_micro_image": false
+      },
+      {
+        "index": 61,
+        "image_field": "coco/train2017/000000014070.jpg",
+        "question": "",
+        "dataset_source": "6eb0af31-6571-4c3e-a622-0ba53c4933df",
+        "keys": [
+          "id",
+          "image",
+          "conversations"
+        ],
+        "matches_micro_image": false
+      },
+      {
+        "index": 62,
+        "image_field": "sqa/train/14311/image.png",
+        "question": "",
+        "dataset_source": "a80c6c71-87b5-4ff6-8209-716e6aa4cef9",
+        "keys": [
+          "id",
+          "image",
+          "conversations"
+        ],
+        "matches_micro_image": true
+      },
+      {
+        "index": 63,
+        "image_field": "gqa/images/2316931.jpg",
+        "question": "",
+        "dataset_source": "c3a62d71-866d-4d12-bd39-31d187c8a85a",
+        "keys": [
+          "id",
+          "image",
+          "conversations"
+        ],
+        "matches_micro_image": false
+      },
+      {
+        "index": 64,
+        "image_field": "pisc/image/24231.jpg",
+        "question": "",
+        "dataset_source": "eb901db3-1086-4771-abf5-520cb5d98291",
+        "keys": [
+          "id",
+          "image",
+          "conversations"
+        ],
+        "matches_micro_image": false
+      },
+      {
+        "index": 65,
+        "image_field": "vg/VG_100K/2334826.jpg",
+        "question": "",
+        "dataset_source": "fded190d-045f-462b-b7bf-4ab6b1e5f5fc",
+        "keys": [
+          "id",
+          "image",
+          "conversations"
+        ],
+        "matches_micro_image": false
+      },
+      {
+        "index": 66,
+        "image_field": "chartqa/train/png/OECD_GRANTS_BY_PRIVATE_AGENCIES_AND_NGOS_FRA_JPN_LVA_NLD_NOR_000035.png",
+        "question": "",
+        "dataset_source": "b99a72a5-ed04-4481-b07c-abf97bd9ad9e",
+        "keys": [
+          "id",
+          "image",
+          "conversations"
+        ],
+        "matches_micro_image": false
+      },
+      {
+        "index": 67,
+        "image_field": "sqa/train/8356/image.png",
+        "question": "",
+        "dataset_source": "cd6cbe5c-c2a6-476f-afe1-06bfed8c1e3e",
+        "keys": [
+          "id",
+          "image",
+          "conversations"
+        ],
+        "matches_micro_image": true
+      },
+      {
+        "index": 68,
+        "image_field": "coco/train2017/000000462998.jpg",
+        "question": "",
+        "dataset_source": "f49e426e-fd69-4964-84bf-0262dc7e5fed",
+        "keys": [
+          "id",
+          "image",
+          "conversations"
+        ],
+        "matches_micro_image": false
+      },
+      {
+        "index": 69,
+        "image_field": "coco/train2017/000000404652.jpg",
+        "question": "",
+        "dataset_source": "7b6aea0f-6ee3-4933-ae3f-f27b863dc0c2",
+        "keys": [
+          "id",
+          "image",
+          "conversations"
+        ],
+        "matches_micro_image": false
+      },
+      {
+        "index": 70,
+        "image_field": "sqa/train/5141/image.png",
+        "question": "",
+        "dataset_source": "cfee0e7a-8e83-4056-b28c-d1490b6ba1d0",
+        "keys": [
+          "id",
+          "image",
+          "conversations"
+        ],
+        "matches_micro_image": true
+      },
+      {
+        "index": 71,
+        "image_field": "coco/train2017/000000453968.jpg",
+        "question": "",
+        "dataset_source": "07b321f3-bd30-4bb7-a048-221c046a98f1",
+        "keys": [
+          "id",
+          "image",
+          "conversations"
+        ],
+        "matches_micro_image": false
+      },
+      {
+        "index": 72,
+        "image_field": "geoqa+/images/10033.png",
+        "question": "",
+        "dataset_source": "89aa6ca5-28fb-4ebd-9e3c-d482d93c45fa",
+        "keys": [
+          "id",
+          "image",
+          "conversations"
+        ],
+        "matches_micro_image": false
+      },
+      {
+        "index": 73,
+        "image_field": "geoqa+/images/12747.png",
+        "question": "",
+        "dataset_source": "8f3b1183-d917-4673-b6c7-2aafdabc12b2",
+        "keys": [
+          "id",
+          "image",
+          "conversations"
+        ],
+        "matches_micro_image": false
+      },
+      {
+        "index": 74,
+        "image_field": "coco/train2017/000000054009.jpg",
+        "question": "",
+        "dataset_source": "0f4d318b-c6f1-46d1-b83d-f6c8febf5d6d",
+        "keys": [
+          "id",
+          "image",
+          "conversations"
+        ],
+        "matches_micro_image": false
+      },
+      {
+        "index": 75,
+        "image_field": "gqa/images/2338237.jpg",
+        "question": "",
+        "dataset_source": "eb49c855-74a5-4761-b01f-890b86e45bec",
+        "keys": [
+          "id",
+          "image",
+          "conversations"
+        ],
+        "matches_micro_image": false
+      },
+      {
+        "index": 76,
+        "image_field": "chartqa/train/png/OECD_FDI_INCOME_RECEIPTS_BY_INDUSTRY_AUT_LVA_000018.png",
+        "question": "",
+        "dataset_source": "3927db5c-b0f0-417b-a508-0354355ce866",
+        "keys": [
+          "id",
+          "image",
+          "conversations"
+        ],
+        "matches_micro_image": false
+      },
+      {
+        "index": 77,
+        "image_field": "geoqa+/images/12041.png",
+        "question": "",
+        "dataset_source": "5c1f0645-78a3-4ecc-b8b4-32f645edeca4",
+        "keys": [
+          "id",
+          "image",
+          "conversations"
+        ],
+        "matches_micro_image": false
+      },
+      {
+        "index": 78,
+        "image_field": "gqa/images/2342953.jpg",
+        "question": "",
+        "dataset_source": "30ff59e5-496b-41a3-9387-0594c9cc0f2c",
+        "keys": [
+          "id",
+          "image",
+          "conversations"
+        ],
+        "matches_micro_image": false
+      },
+      {
+        "index": 79,
+        "image_field": "ai2d/images/449.png",
+        "question": "",
+        "dataset_source": "64a071cb-08cd-4601-8ffb-0dc070375507",
+        "keys": [
+          "id",
+          "image",
+          "conversations"
+        ],
+        "matches_micro_image": false
+      },
+      {
+        "index": 80,
+        "image_field": "geoqa+/images/8801.png",
+        "question": "",
+        "dataset_source": "e9608773-ed34-48d0-9ffd-b9db08d63f0a",
+        "keys": [
+          "id",
+          "image",
+          "conversations"
+        ],
+        "matches_micro_image": false
+      },
+      {
+        "index": 81,
+        "image_field": "coco/train2017/000000306663.jpg",
+        "question": "",
+        "dataset_source": "ed1832f3-c43d-4529-9fe9-73ea8828dcf5",
+        "keys": [
+          "id",
+          "image",
+          "conversations"
+        ],
+        "matches_micro_image": false
+      },
+      {
+        "index": 82,
+        "image_field": "coco/train2017/000000100386.jpg",
+        "question": "",
+        "dataset_source": "66163ea7-86a2-4d09-903e-2cb49c5e2dc9",
+        "keys": [
+          "id",
+          "image",
+          "conversations"
+        ],
+        "matches_micro_image": false
+      },
+      {
+        "index": 83,
+        "image_field": "geoqa+/images/12530.png",
+        "question": "",
+        "dataset_source": "13cb3c55-8cfc-4478-913c-cc85a73a826d",
+        "keys": [
+          "id",
+          "image",
+          "conversations"
+        ],
+        "matches_micro_image": false
+      },
+      {
+        "index": 84,
+        "image_field": "ai2d/images/4447.png",
+        "question": "",
+        "dataset_source": "6890f22a-ad1d-4855-869e-a503ded89485",
+        "keys": [
+          "id",
+          "image",
+          "conversations"
+        ],
+        "matches_micro_image": false
+      },
+      {
+        "index": 85,
+        "image_field": "chartqa/train/png/multi_col_60129.png",
+        "question": "",
+        "dataset_source": "967a7ed7-1ebb-4dac-8780-1b84baf9e007",
+        "keys": [
+          "id",
+          "image",
+          "conversations"
+        ],
+        "matches_micro_image": false
+      },
+      {
+        "index": 86,
+        "image_field": "coco/train2017/000000488260.jpg",
+        "question": "",
+        "dataset_source": "8de1ec7c-2bf6-48a7-8ecd-056adc4517fb",
+        "keys": [
+          "id",
+          "image",
+          "conversations"
+        ],
+        "matches_micro_image": false
+      },
+      {
+        "index": 87,
+        "image_field": "chartqa/train/png/two_col_82655.png",
+        "question": "",
+        "dataset_source": "53fcb430-5398-4734-a772-da65b2cc957b",
+        "keys": [
+          "id",
+          "image",
+          "conversations"
+        ],
+        "matches_micro_image": false
+      },
+      {
+        "index": 88,
+        "image_field": "coco/train2017/000000254266.jpg",
+        "question": "",
+        "dataset_source": "728ce0ce-b950-4835-b134-ac34773d0659",
+        "keys": [
+          "id",
+          "image",
+          "conversations"
+        ],
+        "matches_micro_image": false
+      },
+      {
+        "index": 89,
+        "image_field": "coco/train2017/000000536553.jpg",
+        "question": "",
+        "dataset_source": "ceed33c9-6d40-48c4-a321-b1e62d9a74fd",
+        "keys": [
+          "id",
+          "image",
+          "conversations"
+        ],
+        "matches_micro_image": false
+      },
+      {
+        "index": 90,
+        "image_field": "chartqa/train/png/16918615006190.png",
+        "question": "",
+        "dataset_source": "8514e373-b6cc-4b75-9294-addc517b12fc",
+        "keys": [
+          "id",
+          "image",
+          "conversations"
+        ],
+        "matches_micro_image": false
+      },
+      {
+        "index": 91,
+        "image_field": "coco/train2017/000000321942.jpg",
+        "question": "",
+        "dataset_source": "64a43ac3-a966-439c-9c52-c31046d87b30",
+        "keys": [
+          "id",
+          "image",
+          "conversations"
+        ],
+        "matches_micro_image": false
+      },
+      {
+        "index": 92,
+        "image_field": "coco/train2017/000000082456.jpg",
+        "question": "",
+        "dataset_source": "e3c9cc12-78c7-4089-b887-89dceb0ffe26",
+        "keys": [
+          "id",
+          "image",
+          "conversations"
+        ],
+        "matches_micro_image": false
+      },
+      {
+        "index": 93,
+        "image_field": "geoqa+/images/356.png",
+        "question": "",
+        "dataset_source": "d1f245e3-7ffb-456a-aab5-79b301face0e",
+        "keys": [
+          "id",
+          "image",
+          "conversations"
+        ],
+        "matches_micro_image": false
+      },
+      {
+        "index": 94,
+        "image_field": "coco/train2017/000000069729.jpg",
+        "question": "",
+        "dataset_source": "4130bced-a871-4b75-b0ff-0c9c69fcbbb9",
+        "keys": [
+          "id",
+          "image",
+          "conversations"
+        ],
+        "matches_micro_image": false
+      },
+      {
+        "index": 95,
+        "image_field": "ai2d/images/497.png",
+        "question": "",
+        "dataset_source": "766c710e-ce35-4df7-ad55-8ec836439c0d",
+        "keys": [
+          "id",
+          "image",
+          "conversations"
+        ],
+        "matches_micro_image": false
+      },
+      {
+        "index": 96,
+        "image_field": "docvqa/train/documents/qhhk0226_3.png",
+        "question": "",
+        "dataset_source": "10fe4ed3-73e4-4e0d-b11c-52cdb37d6089",
+        "keys": [
+          "id",
+          "image",
+          "conversations"
+        ],
+        "matches_micro_image": false
+      },
+      {
+        "index": 97,
+        "image_field": "chartqa/train/png/two_col_41927.png",
+        "question": "",
+        "dataset_source": "d5fac46d-a198-4ec0-aee0-5456a505ebfb",
+        "keys": [
+          "id",
+          "image",
+          "conversations"
+        ],
+        "matches_micro_image": false
+      },
+      {
+        "index": 98,
+        "image_field": "coco/train2017/000000273321.jpg",
+        "question": "",
+        "dataset_source": "5d1d64fa-0175-4329-83d0-6bbb0a59dec2",
+        "keys": [
+          "id",
+          "image",
+          "conversations"
+        ],
+        "matches_micro_image": false
+      },
+      {
+        "index": 99,
+        "image_field": "geoqa+/images/3138.png",
+        "question": "",
+        "dataset_source": "f31eb746-6915-4acc-9326-a017b9f8ad30",
+        "keys": [
+          "id",
+          "image",
+          "conversations"
+        ],
+        "matches_micro_image": false
+      }
+    ],
+    "field_counts": {
+      "image": 98582,
+      "question": 0,
+      "summary": 0,
+      "caption": 0,
+      "reasoning": 0,
+      "answer": 0
+    },
+    "field_rates": {
+      "image": 1.0,
+      "question": 0.0,
+      "summary": 0.0,
+      "caption": 0.0,
+      "reasoning": 0.0,
+      "answer": 0.0
+    },
+    "schema_keys": [
+      [
+        "id",
+        98582
+      ],
+      [
+        "image",
+        98582
+      ],
+      [
+        "conversations",
+        98582
+      ]
+    ],
+    "dataset_source_counts": [
+      [
+        "f2813de1-767c-4e27-8ba8-e04fd383209d",
+        1
+      ],
+      [
+        "7c9444d8-c6a0-45ef-9d59-b04486cd0e6e",
+        1
+      ],
+      [
+        "85537b16-1d54-4797-8480-7bcca5d98d88",
+        1
+      ],
+      [
+        "e91b0227-5ae0-44b0-a16a-cbc7c0085cd0",
+        1
+      ],
+      [
+        "1d98adda-9fa7-48b4-988a-2bec6f996b78",
+        1
+      ],
+      [
+        "b8b12429-faa5-4e7d-833b-8b599a457d54",
+        1
+      ],
+      [
+        "b428eded-5fa8-4fb9-9dfd-7e72035fb5fa",
+        1
+      ],
+      [
+        "b7749c6e-350a-4916-aa35-04d8334ea95b",
+        1
+      ],
+      [
+        "f7612e39-51cd-4842-9c4d-058232405365",
+        1
+      ],
+      [
+        "87ca707e-0729-455a-97b9-796bb552e302",
+        1
+      ],
+      [
+        "50b055f6-9ba2-4200-a65a-f70d80919fac",
+        1
+      ],
+      [
+        "1789a448-d6bc-4ef8-b937-164707368f3e",
+        1
+      ],
+      [
+        "354156f7-efe1-41b9-b7d6-c07a34a5ab67",
+        1
+      ],
+      [
+        "932f9bc7-5932-4f4e-a04a-961a53aad59e",
+        1
+      ],
+      [
+        "2ffb591b-5ee2-4718-8bbd-83dee9874d46",
+        1
+      ],
+      [
+        "42c4727c-68ad-4bb0-86c6-5a7bdb86c985",
+        1
+      ],
+      [
+        "f48da84b-7b79-472c-ab3e-ff12d356f27e",
+        1
+      ],
+      [
+        "26dd71d5-c7a0-459c-a262-961120758ebb",
+        1
+      ],
+      [
+        "d43eae47-eaf7-44c0-9134-2c167e59e7d8",
+        1
+      ],
+      [
+        "0e852d61-1b47-46ff-9af9-de65a0e7b9f2",
+        1
+      ]
+    ],
+    "image_matches_micro_total": 5796,
+    "image_matches_micro_rate": 0.058793694589275934
+  },
+  "runs_related_files": [
+    {
+      "path": "/data/zxl/runs/g1_loss2_audit_smoke_20260720/loss2_smoke/manifest.json",
+      "size": 1421
+    },
+    {
+      "path": "/data/zxl/runs/g1_loss2_smoke_20260720/loss2_smoke/manifest.json",
+      "size": 1421
+    }
+  ],
+  "capability": {
+    "max_train_samples_with_images": 192,
+    "max_jsonl_samples_with_images": 192,
+    "train_caps": [
+      {
+        "subset": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_available_images_v1",
+        "rows": 167,
+        "image_available": 167,
+        "unique_images": 164,
+        "has_all_required": true,
+        "field_rates": {
+          "image": 1.0,
+          "question": 1.0,
+          "summary": 1.0,
+          "caption": 1.0,
+          "reasoning": 1.0,
+          "answer": 1.0
+        }
+      },
+      {
+        "subset": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_v1",
+        "rows": 192,
+        "image_available": 192,
+        "unique_images": 164,
+        "has_all_required": true,
+        "field_rates": {
+          "image": 1.0,
+          "question": 1.0,
+          "summary": 1.0,
+          "caption": 1.0,
+          "reasoning": 1.0,
+          "answer": 1.0
+        }
+      }
+    ]
+  }
+}

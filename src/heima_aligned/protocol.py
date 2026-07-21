@@ -29,6 +29,7 @@ STAGE_REPLACED = {
     "stage_2_caption": ("summary", "caption"),
     "stage_3_reasoning": ("summary", "caption", "reasoning"),
     "stage_4_recover": ("summary", "caption", "reasoning"),
+    "stage_reasoning_only": ("reasoning",),
 }
 MODE_NAMES = {
     "heima_scaled_baseline",
@@ -36,6 +37,8 @@ MODE_NAMES = {
     "ours_warm_b_fixed",
     "ours_warm_b_joint",
     "ours_cold_b_joint",
+    "tiny_reasoning_baseline_detach",
+    "tiny_reasoning_ours_no_detach",
 }
 IGNORE_INDEX = -100
 
@@ -286,6 +289,22 @@ def mode_plan(mode: str) -> list[dict[str, Any]]:
             {"stage": "train_interpreter_caption", "train_a": False, "train_b": True, "loss1": True, "section": "caption"},
             {"stage": "train_interpreter_reasoning", "train_a": False, "train_b": True, "loss1": True, "section": "reasoning"},
             {"stage": "eval_encoder"}, {"stage": "eval_decoder"}, {"stage": "eval_causal"},
+        ]
+    if mode == "tiny_reasoning_baseline_detach":
+        return [
+            {"stage": "explicit_cot_sft", "train_a": True, "train_b": False, "loss1": False},
+            {"stage": "progressive_reasoning_only", "encoder_stage": "stage_reasoning_only", "train_a": True, "train_b": False, "loss1": False, "section": "reasoning"},
+            {"stage": "train_interpreter_reasoning", "train_a": False, "train_b": True, "loss1": True, "section": "reasoning", "detach_encoder_latent": True},
+            {"stage": "joint_reasoning_baseline_detach", "train_a": True, "train_b": True, "loss1": True, "section": "reasoning", "detach_encoder_latent": True},
+            {"stage": "eval_encoder"}, {"stage": "eval_decoder_reasoning"}, {"stage": "eval_causal_reasoning"},
+        ]
+    if mode == "tiny_reasoning_ours_no_detach":
+        return [
+            {"stage": "explicit_cot_sft", "train_a": True, "train_b": False, "loss1": False},
+            {"stage": "progressive_reasoning_only", "encoder_stage": "stage_reasoning_only", "train_a": True, "train_b": False, "loss1": False, "section": "reasoning"},
+            {"stage": "train_interpreter_reasoning", "train_a": False, "train_b": True, "loss1": True, "section": "reasoning", "detach_encoder_latent": True},
+            {"stage": "joint_reasoning_ours_no_detach", "train_a": True, "train_b": True, "loss1": True, "section": "reasoning", "detach_encoder_latent": False},
+            {"stage": "eval_encoder"}, {"stage": "eval_decoder_reasoning"}, {"stage": "eval_causal_reasoning"},
         ]
     if mode == "compute_matched_main_only":
         return [{"stage": s, "train_a": True, "train_b": False, "lambda_loss1": 0.0} for s in ("ours_joint_summary", "ours_joint_caption", "ours_joint_reasoning", "ours_recover")]
