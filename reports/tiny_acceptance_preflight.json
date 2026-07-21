@@ -1,0 +1,83 @@
+{
+  "generated_at_utc": "2026-07-21T12:31:39Z",
+  "phase": "Phase 0 preflight audit",
+  "git": {
+    "branch": "feat/heima-ab-loss1-mini-acceptance",
+    "status": "## feat/heima-ab-loss1-mini-acceptance...origin/feat/heima-ab-loss1-mini-acceptance",
+    "clean": true,
+    "porcelain": "",
+    "commit": "03d22f8f5982c9645fd8820b952fab9cd250f45d"
+  },
+  "data_split": {
+    "path": "/data/zxl/runs/heima_ab_loss1_tiny_acceptance_v1/data_split.json",
+    "exists": true,
+    "name": "heima_ab_loss1_tiny_acceptance_v1",
+    "seed": 42,
+    "source_subset": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_v1",
+    "requested_train_size": 192,
+    "requested_eval_size": 48,
+    "train_size": 167,
+    "eval_size": 45,
+    "exact_requested_size": false,
+    "train_rows": 167,
+    "train_images_accessible": 167,
+    "train_missing_examples": [],
+    "eval_rows": 45,
+    "eval_images_accessible": 45,
+    "eval_missing_examples": []
+  },
+  "models": {
+    "model_a_qwen2_5_vl_3b": {
+      "path": "/data/zxl/small_models/Qwen2.5-VL-3B-Instruct",
+      "exists": true,
+      "size": "7.1G",
+      "has_config": true,
+      "has_tokenizer": true,
+      "weight_files": [
+        "model-00001-of-00002.safetensors",
+        "model-00002-of-00002.safetensors"
+      ]
+    },
+    "model_b_qwen2_5_0_5b": {
+      "path": "/data/zxl/small_models/Qwen2.5-0.5B-Instruct",
+      "exists": true,
+      "size": "954M",
+      "has_config": true,
+      "has_tokenizer": true,
+      "weight_files": [
+        "model.safetensors"
+      ]
+    }
+  },
+  "gpu": {
+    "nvidia_smi_returncode": 0,
+    "nvidia_smi": "Tue Jul 21 12:31:39 2026       \n+-----------------------------------------------------------------------------------------+\n| NVIDIA-SMI 570.158.01             Driver Version: 570.158.01     CUDA Version: 12.8     |\n|-----------------------------------------+------------------------+----------------------+\n| GPU  Name                 Persistence-M | Bus-Id          Disp.A | Volatile Uncorr. ECC |\n| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |\n|                                         |                        |               MIG M. |\n|=========================================+========================+======================|\n|   0  NVIDIA GeForce RTX 4090        Off |   00000000:0C:00.0 Off |                  Off |\n| 30%   43C    P0            110W /  450W |    8249MiB /  49140MiB |     34%      Default |\n|                                         |                        |                  N/A |\n+-----------------------------------------+------------------------+----------------------+\n|   1  NVIDIA GeForce RTX 4090        Off |   00000000:32:00.0 Off |                  Off |\n| 41%   61C    P0            245W /  450W |   11781MiB /  49140MiB |     76%      Default |\n|                                         |                        |                  N/A |\n+-----------------------------------------+------------------------+----------------------+\n|   2  NVIDIA GeForce RTX 4090        Off |   00000000:45:00.0 Off |                  Off |\n| 30%   58C    P0            259W /  450W |   12657MiB /  49140MiB |     56%      Default |\n|                                         |                        |                  N/A |\n+-----------------------------------------+------------------------+----------------------+\n|   3  NVIDIA GeForce RTX 4090        Off |   00000000:58:00.0 Off |                  Off |\n| 36%   52C    P0            156W /  450W |    8783MiB /  49140MiB |     24%      Default |\n|                                         |                        |                  N/A |\n+-----------------------------------------+------------------------+----------------------+\n|   4  NVIDIA GeForce RTX 4090        Off |   00000000:84:00.0 Off |                    0 |\n| 65%   52C    P0            236W /  450W |   10839MiB /  46068MiB |     76%      Default |\n|                                         |                        |                  N/A |\n+-----------------------------------------+------------------------+----------------------+\n|   5  NVIDIA GeForce RTX 4090        Off |   00000000:AC:00.0 Off |                  Off |\n| 54%   64C    P0            310W /  450W |   14899MiB /  49140MiB |     94%      Default |\n|                                         |                        |                  N/A |\n+-----------------------------------------+------------------------+----------------------+\n|   6  NVIDIA GeForce RTX 4090        Off |   00000000:C0:00.0 Off |                  Off |\n| 30%   46C    P0            202W /  450W |    9043MiB /  49140MiB |     33%      Default |\n|                                         |                        |                  N/A |\n+-----------------------------------------+------------------------+----------------------+\n|   7  NVIDIA GeForce RTX 4090        Off |   00000000:D4:00.0 Off |                  Off |\n| 30%   46C    P0            137W /  450W |    7747MiB /  49140MiB |     37%      Default |\n|                                         |                        |                  N/A |\n+-----------------------------------------+------------------------+----------------------+\n                                                                                         \n+-----------------------------------------------------------------------------------------+\n| Processes:                                                                              |\n|  GPU   GI   CI              PID   Type   Process name                        GPU Memory |\n|        ID   ID                                                               Usage      |\n|=========================================================================================|\n+-----------------------------------------------------------------------------------------+"
+  },
+  "disk": {
+    "df_h_data": "Filesystem      Size  Used Avail Use% Mounted on\n/dev/nvme1n1    3.5T  3.5T   55G  99% /data"
+  },
+  "training_entrypoint_audit": [
+    {
+      "path": "/data/zxl/Heima-ab-loss1-mini-acceptance/scripts/heima_alignment/run_tiny_acceptance.sh",
+      "contains_note_dry_run_only": false,
+      "contains_torch_optimizer": false,
+      "contains_checkpoint_save": false
+    },
+    {
+      "path": "/data/zxl/Heima-ab-loss1-mini-acceptance/scripts/heima_aligned/pipeline.py",
+      "contains_note_dry_run_only": true,
+      "contains_torch_optimizer": false,
+      "contains_checkpoint_save": false
+    },
+    {
+      "path": "/data/zxl/Heima-ab-loss1-mini-acceptance/scripts/heima_aligned/run_train.sh",
+      "contains_note_dry_run_only": false,
+      "contains_torch_optimizer": false,
+      "contains_checkpoint_save": false
+    }
+  ],
+  "stop_gates": [
+    "no real tiny acceptance trainer/backward loop detected in current entrypoints; current pipeline is protocol/dry-run only"
+  ],
+  "status": "fail"
+}

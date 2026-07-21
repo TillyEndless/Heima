@@ -1,0 +1,1276 @@
+{
+  "latest": {
+    "detach_encoder_latent": false,
+    "eval_size": 45,
+    "generated_at_utc": "2026-07-21T12:40:15Z",
+    "gradient_attribution": {
+      "cumulative_grad_mode": "all_prefix",
+      "detach_encoder_latent": false,
+      "finite": true,
+      "grad_A_from_loss1": 22.82187856655761,
+      "loss1_latent_context_mode": "local",
+      "stage_latent_grads": {
+        "caption": {
+          "caption": {
+            "finite": true,
+            "norm": 0.0033579845912754536
+          },
+          "reasoning": {
+            "finite": true,
+            "norm": 0.0
+          },
+          "summary": {
+            "finite": true,
+            "norm": 0.0
+          }
+        },
+        "reasoning": {
+          "caption": {
+            "finite": true,
+            "norm": 0.0
+          },
+          "reasoning": {
+            "finite": true,
+            "norm": 0.004903343040496111
+          },
+          "summary": {
+            "finite": true,
+            "norm": 0.0
+          }
+        },
+        "summary": {
+          "caption": {
+            "finite": true,
+            "norm": 0.0
+          },
+          "reasoning": {
+            "finite": true,
+            "norm": 0.0
+          },
+          "summary": {
+            "finite": true,
+            "norm": 0.013974430970847607
+          }
+        }
+      }
+    },
+    "mode": "no_detach",
+    "semantic_evaluator_contract": {
+      "answer_metric": "answer_accuracy from deterministic Model A generation",
+      "example_token_diagnostics": {
+        "answer_mask": [
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false
+        ],
+        "content_mask": [
+          false,
+          true,
+          true,
+          false,
+          false,
+          true,
+          true,
+          true,
+          false,
+          false,
+          true,
+          true,
+          false,
+          true,
+          true,
+          true,
+          true,
+          false,
+          false,
+          true,
+          true,
+          false,
+          false,
+          false,
+          true,
+          false,
+          true,
+          true,
+          false,
+          true,
+          true,
+          true,
+          true,
+          false,
+          false,
+          false,
+          true,
+          true,
+          true,
+          false,
+          false,
+          false,
+          true,
+          true,
+          true,
+          true,
+          true
+        ],
+        "counts": {
+          "answer_tokens": 0,
+          "content_tokens": 28,
+          "entity_tokens": 9,
+          "numeric_tokens": 3,
+          "tokens": 47
+        },
+        "entity_mask": [
+          false,
+          false,
+          false,
+          false,
+          false,
+          true,
+          false,
+          false,
+          false,
+          false,
+          true,
+          true,
+          false,
+          false,
+          true,
+          false,
+          false,
+          false,
+          false,
+          false,
+          true,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          true,
+          false,
+          true,
+          false,
+          false,
+          false,
+          true,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          true,
+          false
+        ],
+        "numeric_mask": [
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          true,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          true,
+          true,
+          false,
+          false,
+          false
+        ],
+        "tokens": [
+          "The",
+          "problem",
+          "specifically",
+          "asks",
+          "for",
+          "Germany's",
+          "export",
+          "value",
+          "to",
+          "the",
+          "United",
+          "States",
+          "in",
+          "2019.",
+          "I",
+          "will",
+          "locate",
+          "the",
+          "bar",
+          "labeled",
+          "Germany",
+          "in",
+          "the",
+          "chart",
+          "which",
+          "shows",
+          "export",
+          "values",
+          "in",
+          "million",
+          "U.S.",
+          "dollars.",
+          "According",
+          "to",
+          "the",
+          "chart",
+          "Germany's",
+          "export",
+          "value",
+          "is",
+          "shown",
+          "at",
+          "2",
+          "883.6",
+          "million",
+          "U.S.",
+          "dollars."
+        ]
+      },
+      "latent_intervention_evaluation": {
+        "interventions": {
+          "correct": {
+            "latent": "z_i",
+            "question": true
+          },
+          "q_only": {
+            "latent": false,
+            "question": true
+          },
+          "shuffle": {
+            "latent": "z_j_derangement",
+            "question": true
+          },
+          "zero": {
+            "latent": "0",
+            "question": true
+          }
+        },
+        "keep_fixed": [
+          "question",
+          "decoder_prompt",
+          "teacher_target",
+          "attention_mask",
+          "labels"
+        ],
+        "metrics": {
+          "generation": {
+            "do_sample": false,
+            "exact_match_normalization": "lowercase_strip_punctuation_whitespace"
+          },
+          "intervention_metrics": [
+            "full_nll",
+            "content_nll",
+            "generation_exact_match"
+          ],
+          "interventions": [
+            "q_only",
+            "correct",
+            "shuffle",
+            "zero"
+          ],
+          "primary_signal": "correct.full_nll < shuffle.full_nll and correct.content_nll < shuffle.content_nll",
+          "token_level": [
+            "full_nll",
+            "content_token_nll",
+            "numeric_token_accuracy",
+            "entity_token_accuracy",
+            "answer_token_accuracy"
+          ]
+        },
+        "section": "reasoning",
+        "vary_only": "injected_latent"
+      },
+      "not_a_benchmark_reproduction": true,
+      "purpose": "mechanism validation: test whether reasoning latent carries sample-specific information",
+      "reasoning_token_level_evaluation": {
+        "generation": {
+          "do_sample": false,
+          "exact_match_normalization": "lowercase_strip_punctuation_whitespace"
+        },
+        "intervention_metrics": [
+          "full_nll",
+          "content_nll",
+          "generation_exact_match"
+        ],
+        "interventions": [
+          "q_only",
+          "correct",
+          "shuffle",
+          "zero"
+        ],
+        "primary_signal": "correct.full_nll < shuffle.full_nll and correct.content_nll < shuffle.content_nll",
+        "token_level": [
+          "full_nll",
+          "content_token_nll",
+          "numeric_token_accuracy",
+          "entity_token_accuracy",
+          "answer_token_accuracy"
+        ]
+      },
+      "warm_b_evaluation_interface": {
+        "cold_b_joint": {
+          "B_initialization": "fresh pretrained Model B",
+          "purpose": "tests whether joint Loss1 can learn B and A from a cold interpreter"
+        },
+        "comparisons": [
+          "cold_b_joint",
+          "warm_b_joint"
+        ],
+        "invariant_between_comparisons": [
+          "Model A checkpoint",
+          "data split",
+          "batch order",
+          "optimizer hyperparameters",
+          "lambda_loss1",
+          "reasoning target",
+          "latent intervention evaluator"
+        ],
+        "shared_start": "reasoning interpreter checkpoint after frozen-A training",
+        "stage_after": "freeze_A_train_B",
+        "warm_b_joint": {
+          "B_initialization": "B_reasoning from freeze_A_train_B",
+          "purpose": "isolates whether a competent interpreter improves Loss1 feedback to A"
+        }
+      }
+    },
+    "split": "/data/zxl/runs/heima_ab_loss1_tiny_acceptance_v1/data_split.json",
+    "status": "backward_smoke_pass",
+    "train_size": 167,
+    "uses_existing_trainer": "scripts/run_data_small_vlm_official_sections.py"
+  },
+  "modes": {
+    "detach": {
+      "detach_encoder_latent": true,
+      "eval_size": 45,
+      "generated_at_utc": "2026-07-21T12:39:42Z",
+      "gradient_attribution": {
+        "cumulative_grad_mode": "all_prefix",
+        "detach_encoder_latent": true,
+        "finite": true,
+        "grad_A_from_loss1": 0.0,
+        "loss1_latent_context_mode": "local",
+        "stage_latent_grads": {
+          "caption": {
+            "caption": {
+              "finite": true,
+              "norm": 0.0
+            },
+            "reasoning": {
+              "finite": true,
+              "norm": 0.0
+            },
+            "summary": {
+              "finite": true,
+              "norm": 0.0
+            }
+          },
+          "reasoning": {
+            "caption": {
+              "finite": true,
+              "norm": 0.0
+            },
+            "reasoning": {
+              "finite": true,
+              "norm": 0.0
+            },
+            "summary": {
+              "finite": true,
+              "norm": 0.0
+            }
+          },
+          "summary": {
+            "caption": {
+              "finite": true,
+              "norm": 0.0
+            },
+            "reasoning": {
+              "finite": true,
+              "norm": 0.0
+            },
+            "summary": {
+              "finite": true,
+              "norm": 0.0
+            }
+          }
+        }
+      },
+      "mode": "detach",
+      "semantic_evaluator_contract": {
+        "answer_metric": "answer_accuracy from deterministic Model A generation",
+        "example_token_diagnostics": {
+          "answer_mask": [
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false
+          ],
+          "content_mask": [
+            false,
+            true,
+            true,
+            false,
+            false,
+            true,
+            true,
+            true,
+            false,
+            false,
+            true,
+            true,
+            false,
+            true,
+            true,
+            true,
+            true,
+            false,
+            false,
+            true,
+            true,
+            false,
+            false,
+            false,
+            true,
+            false,
+            true,
+            true,
+            false,
+            true,
+            true,
+            true,
+            true,
+            false,
+            false,
+            false,
+            true,
+            true,
+            true,
+            false,
+            false,
+            false,
+            true,
+            true,
+            true,
+            true,
+            true
+          ],
+          "counts": {
+            "answer_tokens": 0,
+            "content_tokens": 28,
+            "entity_tokens": 9,
+            "numeric_tokens": 3,
+            "tokens": 47
+          },
+          "entity_mask": [
+            false,
+            false,
+            false,
+            false,
+            false,
+            true,
+            false,
+            false,
+            false,
+            false,
+            true,
+            true,
+            false,
+            false,
+            true,
+            false,
+            false,
+            false,
+            false,
+            false,
+            true,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            true,
+            false,
+            true,
+            false,
+            false,
+            false,
+            true,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            true,
+            false
+          ],
+          "numeric_mask": [
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            true,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            true,
+            true,
+            false,
+            false,
+            false
+          ],
+          "tokens": [
+            "The",
+            "problem",
+            "specifically",
+            "asks",
+            "for",
+            "Germany's",
+            "export",
+            "value",
+            "to",
+            "the",
+            "United",
+            "States",
+            "in",
+            "2019.",
+            "I",
+            "will",
+            "locate",
+            "the",
+            "bar",
+            "labeled",
+            "Germany",
+            "in",
+            "the",
+            "chart",
+            "which",
+            "shows",
+            "export",
+            "values",
+            "in",
+            "million",
+            "U.S.",
+            "dollars.",
+            "According",
+            "to",
+            "the",
+            "chart",
+            "Germany's",
+            "export",
+            "value",
+            "is",
+            "shown",
+            "at",
+            "2",
+            "883.6",
+            "million",
+            "U.S.",
+            "dollars."
+          ]
+        },
+        "latent_intervention_evaluation": {
+          "interventions": {
+            "correct": {
+              "latent": "z_i",
+              "question": true
+            },
+            "q_only": {
+              "latent": false,
+              "question": true
+            },
+            "shuffle": {
+              "latent": "z_j_derangement",
+              "question": true
+            },
+            "zero": {
+              "latent": "0",
+              "question": true
+            }
+          },
+          "keep_fixed": [
+            "question",
+            "decoder_prompt",
+            "teacher_target",
+            "attention_mask",
+            "labels"
+          ],
+          "metrics": {
+            "generation": {
+              "do_sample": false,
+              "exact_match_normalization": "lowercase_strip_punctuation_whitespace"
+            },
+            "intervention_metrics": [
+              "full_nll",
+              "content_nll",
+              "generation_exact_match"
+            ],
+            "interventions": [
+              "q_only",
+              "correct",
+              "shuffle",
+              "zero"
+            ],
+            "primary_signal": "correct.full_nll < shuffle.full_nll and correct.content_nll < shuffle.content_nll",
+            "token_level": [
+              "full_nll",
+              "content_token_nll",
+              "numeric_token_accuracy",
+              "entity_token_accuracy",
+              "answer_token_accuracy"
+            ]
+          },
+          "section": "reasoning",
+          "vary_only": "injected_latent"
+        },
+        "not_a_benchmark_reproduction": true,
+        "purpose": "mechanism validation: test whether reasoning latent carries sample-specific information",
+        "reasoning_token_level_evaluation": {
+          "generation": {
+            "do_sample": false,
+            "exact_match_normalization": "lowercase_strip_punctuation_whitespace"
+          },
+          "intervention_metrics": [
+            "full_nll",
+            "content_nll",
+            "generation_exact_match"
+          ],
+          "interventions": [
+            "q_only",
+            "correct",
+            "shuffle",
+            "zero"
+          ],
+          "primary_signal": "correct.full_nll < shuffle.full_nll and correct.content_nll < shuffle.content_nll",
+          "token_level": [
+            "full_nll",
+            "content_token_nll",
+            "numeric_token_accuracy",
+            "entity_token_accuracy",
+            "answer_token_accuracy"
+          ]
+        },
+        "warm_b_evaluation_interface": {
+          "cold_b_joint": {
+            "B_initialization": "fresh pretrained Model B",
+            "purpose": "tests whether joint Loss1 can learn B and A from a cold interpreter"
+          },
+          "comparisons": [
+            "cold_b_joint",
+            "warm_b_joint"
+          ],
+          "invariant_between_comparisons": [
+            "Model A checkpoint",
+            "data split",
+            "batch order",
+            "optimizer hyperparameters",
+            "lambda_loss1",
+            "reasoning target",
+            "latent intervention evaluator"
+          ],
+          "shared_start": "reasoning interpreter checkpoint after frozen-A training",
+          "stage_after": "freeze_A_train_B",
+          "warm_b_joint": {
+            "B_initialization": "B_reasoning from freeze_A_train_B",
+            "purpose": "isolates whether a competent interpreter improves Loss1 feedback to A"
+          }
+        }
+      },
+      "split": "/data/zxl/runs/heima_ab_loss1_tiny_acceptance_v1/data_split.json",
+      "status": "backward_smoke_pass",
+      "train_size": 167,
+      "uses_existing_trainer": "scripts/run_data_small_vlm_official_sections.py"
+    },
+    "no_detach": {
+      "detach_encoder_latent": false,
+      "eval_size": 45,
+      "generated_at_utc": "2026-07-21T12:40:15Z",
+      "gradient_attribution": {
+        "cumulative_grad_mode": "all_prefix",
+        "detach_encoder_latent": false,
+        "finite": true,
+        "grad_A_from_loss1": 22.82187856655761,
+        "loss1_latent_context_mode": "local",
+        "stage_latent_grads": {
+          "caption": {
+            "caption": {
+              "finite": true,
+              "norm": 0.0033579845912754536
+            },
+            "reasoning": {
+              "finite": true,
+              "norm": 0.0
+            },
+            "summary": {
+              "finite": true,
+              "norm": 0.0
+            }
+          },
+          "reasoning": {
+            "caption": {
+              "finite": true,
+              "norm": 0.0
+            },
+            "reasoning": {
+              "finite": true,
+              "norm": 0.004903343040496111
+            },
+            "summary": {
+              "finite": true,
+              "norm": 0.0
+            }
+          },
+          "summary": {
+            "caption": {
+              "finite": true,
+              "norm": 0.0
+            },
+            "reasoning": {
+              "finite": true,
+              "norm": 0.0
+            },
+            "summary": {
+              "finite": true,
+              "norm": 0.013974430970847607
+            }
+          }
+        }
+      },
+      "mode": "no_detach",
+      "semantic_evaluator_contract": {
+        "answer_metric": "answer_accuracy from deterministic Model A generation",
+        "example_token_diagnostics": {
+          "answer_mask": [
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false
+          ],
+          "content_mask": [
+            false,
+            true,
+            true,
+            false,
+            false,
+            true,
+            true,
+            true,
+            false,
+            false,
+            true,
+            true,
+            false,
+            true,
+            true,
+            true,
+            true,
+            false,
+            false,
+            true,
+            true,
+            false,
+            false,
+            false,
+            true,
+            false,
+            true,
+            true,
+            false,
+            true,
+            true,
+            true,
+            true,
+            false,
+            false,
+            false,
+            true,
+            true,
+            true,
+            false,
+            false,
+            false,
+            true,
+            true,
+            true,
+            true,
+            true
+          ],
+          "counts": {
+            "answer_tokens": 0,
+            "content_tokens": 28,
+            "entity_tokens": 9,
+            "numeric_tokens": 3,
+            "tokens": 47
+          },
+          "entity_mask": [
+            false,
+            false,
+            false,
+            false,
+            false,
+            true,
+            false,
+            false,
+            false,
+            false,
+            true,
+            true,
+            false,
+            false,
+            true,
+            false,
+            false,
+            false,
+            false,
+            false,
+            true,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            true,
+            false,
+            true,
+            false,
+            false,
+            false,
+            true,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            true,
+            false
+          ],
+          "numeric_mask": [
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            true,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            true,
+            true,
+            false,
+            false,
+            false
+          ],
+          "tokens": [
+            "The",
+            "problem",
+            "specifically",
+            "asks",
+            "for",
+            "Germany's",
+            "export",
+            "value",
+            "to",
+            "the",
+            "United",
+            "States",
+            "in",
+            "2019.",
+            "I",
+            "will",
+            "locate",
+            "the",
+            "bar",
+            "labeled",
+            "Germany",
+            "in",
+            "the",
+            "chart",
+            "which",
+            "shows",
+            "export",
+            "values",
+            "in",
+            "million",
+            "U.S.",
+            "dollars.",
+            "According",
+            "to",
+            "the",
+            "chart",
+            "Germany's",
+            "export",
+            "value",
+            "is",
+            "shown",
+            "at",
+            "2",
+            "883.6",
+            "million",
+            "U.S.",
+            "dollars."
+          ]
+        },
+        "latent_intervention_evaluation": {
+          "interventions": {
+            "correct": {
+              "latent": "z_i",
+              "question": true
+            },
+            "q_only": {
+              "latent": false,
+              "question": true
+            },
+            "shuffle": {
+              "latent": "z_j_derangement",
+              "question": true
+            },
+            "zero": {
+              "latent": "0",
+              "question": true
+            }
+          },
+          "keep_fixed": [
+            "question",
+            "decoder_prompt",
+            "teacher_target",
+            "attention_mask",
+            "labels"
+          ],
+          "metrics": {
+            "generation": {
+              "do_sample": false,
+              "exact_match_normalization": "lowercase_strip_punctuation_whitespace"
+            },
+            "intervention_metrics": [
+              "full_nll",
+              "content_nll",
+              "generation_exact_match"
+            ],
+            "interventions": [
+              "q_only",
+              "correct",
+              "shuffle",
+              "zero"
+            ],
+            "primary_signal": "correct.full_nll < shuffle.full_nll and correct.content_nll < shuffle.content_nll",
+            "token_level": [
+              "full_nll",
+              "content_token_nll",
+              "numeric_token_accuracy",
+              "entity_token_accuracy",
+              "answer_token_accuracy"
+            ]
+          },
+          "section": "reasoning",
+          "vary_only": "injected_latent"
+        },
+        "not_a_benchmark_reproduction": true,
+        "purpose": "mechanism validation: test whether reasoning latent carries sample-specific information",
+        "reasoning_token_level_evaluation": {
+          "generation": {
+            "do_sample": false,
+            "exact_match_normalization": "lowercase_strip_punctuation_whitespace"
+          },
+          "intervention_metrics": [
+            "full_nll",
+            "content_nll",
+            "generation_exact_match"
+          ],
+          "interventions": [
+            "q_only",
+            "correct",
+            "shuffle",
+            "zero"
+          ],
+          "primary_signal": "correct.full_nll < shuffle.full_nll and correct.content_nll < shuffle.content_nll",
+          "token_level": [
+            "full_nll",
+            "content_token_nll",
+            "numeric_token_accuracy",
+            "entity_token_accuracy",
+            "answer_token_accuracy"
+          ]
+        },
+        "warm_b_evaluation_interface": {
+          "cold_b_joint": {
+            "B_initialization": "fresh pretrained Model B",
+            "purpose": "tests whether joint Loss1 can learn B and A from a cold interpreter"
+          },
+          "comparisons": [
+            "cold_b_joint",
+            "warm_b_joint"
+          ],
+          "invariant_between_comparisons": [
+            "Model A checkpoint",
+            "data split",
+            "batch order",
+            "optimizer hyperparameters",
+            "lambda_loss1",
+            "reasoning target",
+            "latent intervention evaluator"
+          ],
+          "shared_start": "reasoning interpreter checkpoint after frozen-A training",
+          "stage_after": "freeze_A_train_B",
+          "warm_b_joint": {
+            "B_initialization": "B_reasoning from freeze_A_train_B",
+            "purpose": "isolates whether a competent interpreter improves Loss1 feedback to A"
+          }
+        }
+      },
+      "split": "/data/zxl/runs/heima_ab_loss1_tiny_acceptance_v1/data_split.json",
+      "status": "backward_smoke_pass",
+      "train_size": 167,
+      "uses_existing_trainer": "scripts/run_data_small_vlm_official_sections.py"
+    }
+  }
+}
