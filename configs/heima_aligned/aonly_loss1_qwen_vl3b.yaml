@@ -1,0 +1,38 @@
+name: aonly_loss1_qwen_vl3b
+inherits_protocol: ab_loss1_qwen_vl3b.yaml
+compatibility_mode: scaled_heima_protocol_aonly_self_decoder
+allowed_model_scale_difference: true
+model_a:
+  name_or_path: /data/zxl/small_models/Qwen2.5-VL-3B-Instruct
+  type: qwen2_5_vl
+  role: producer and text-only self-decoder
+model_b: null
+training_loss1:
+  external_b: false
+  self_decoder: true
+  detach_latent_default: false
+  latent_context_mode: local
+  cumulative_self_decoding: ablation_only
+data:
+  full_dataset_root: /data/zxl/official_heima/datasets/LLaVA-CoT-100k
+  prepared_json_dir: /data/zxl/official_heima/datasets/LLaVA-CoT-100k/json_files
+  image_dir: /data/zxl/official_heima/datasets/LLaVA-CoT-100k/image_files
+  train_file: data_train-num_thinking_token_summary1_caption1_reasoning1.json
+  test_file: data_test-num_thinking_token_summary1_caption1_reasoning1.json
+  micro_subset: /data/zxl/official_heima/micro_subsets/chartqa_sqa_available_images_v1
+protocol:
+  thinking_state_mode: predictor
+  main_label_mode: heima_ntp
+  typed_marker_ntp: true
+  stage_targets: [summary, caption, reasoning]
+fair_eval:
+  train_eval_only_stage_interpreters_after_a_training: true
+  interpreter_protocol: same_as_ab_loss1
+  metrics: [BLEU-4, METEOR, ROUGE-L, BERTScore, correct-vs-shuffle]
+training:
+  seed: 42
+  smoke: {batch_size: 1, steps_per_stage: 2, save_checkpoints: false}
+evaluation:
+  generation_profile:
+    paper: {do_sample: false, max_new_tokens: 2048}
+    causal_deterministic: {do_sample: false, max_new_tokens: 256}
