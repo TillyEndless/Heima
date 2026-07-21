@@ -36,6 +36,11 @@ MODE_NAMES = {
     "ours_warm_b_fixed",
     "ours_warm_b_joint",
     "ours_cold_b_joint",
+    "ours_warm_b_fixed_loss1_loss2",
+    "ours_warm_b_joint_loss1_loss2",
+    "ours_cold_b_joint_loss1_loss2",
+    "main_loss1_only",
+    "main_loss1_loss2",
 }
 IGNORE_INDEX = -100
 
@@ -295,6 +300,16 @@ def mode_plan(mode: str) -> list[dict[str, Any]]:
         return [{"stage": s, "train_a": True, "train_b": True, "loss1": True} for s in ("ours_joint_summary", "ours_joint_caption", "ours_joint_reasoning", "ours_recover")]
     if mode == "ours_cold_b_joint":
         return [{"stage": s, "train_a": True, "train_b": True, "loss1": True, "cold_b": True} for s in ("ours_joint_summary", "ours_joint_caption", "ours_joint_reasoning", "ours_recover")]
+    if mode == "ours_warm_b_fixed_loss1_loss2":
+        return [{"stage": s, "train_a": True, "train_b": False, "b_frozen_differentiable": True, "loss1": True, "loss2": True, "teacher_frozen": True} for s in ("ours_joint_summary", "ours_joint_caption", "ours_joint_reasoning", "ours_recover")]
+    if mode == "ours_warm_b_joint_loss1_loss2":
+        return [{"stage": s, "train_a": True, "train_b": True, "loss1": True, "loss2": True, "teacher_frozen": True} for s in ("ours_joint_summary", "ours_joint_caption", "ours_joint_reasoning", "ours_recover")]
+    if mode == "ours_cold_b_joint_loss1_loss2":
+        return [{"stage": s, "train_a": True, "train_b": True, "cold_b": True, "loss1": True, "loss2": True, "teacher_frozen": True} for s in ("ours_joint_summary", "ours_joint_caption", "ours_joint_reasoning", "ours_recover")]
+    if mode == "main_loss1_only":
+        return [{"stage": s, "train_a": True, "train_b": True, "loss1": True, "loss2": False, "lambda_loss2": 0.0} for s in ("ours_joint_summary", "ours_joint_caption", "ours_joint_reasoning", "ours_recover")]
+    if mode == "main_loss1_loss2":
+        return [{"stage": s, "train_a": True, "train_b": True, "loss1": True, "loss2": True, "teacher_frozen": True} for s in ("ours_joint_summary", "ours_joint_caption", "ours_joint_reasoning", "ours_recover")]
     raise ValueError(f"unknown mode: {mode}")
 
 
