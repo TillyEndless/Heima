@@ -72,10 +72,24 @@ loss:
 evaluation:
   mechanism_metrics:
     - answer_accuracy
-    - reasoning_reconstruction_nll
-    - correct_vs_shuffle_latent_nll
-    - zero_latent_nll
-    - q_only_nll
-    - deterministic_generation_examples
+    - reasoning_reconstruction_full_nll
+    - reasoning_content_token_nll
+    - numeric_token_accuracy
+    - entity_token_accuracy
+    - answer_token_accuracy
+    - generation_exact_match
+  latent_interventions:
+    - q_only
+    - correct
+    - shuffle
+    - zero
+  intervention_metrics:
+    - full_nll
+    - content_nll
+    - generation_exact_match
+  warm_b_interface:
+    enabled: true
+    compare: [cold_b_joint, warm_b_joint]
+    warm_b_start_stage: freeze_A_train_B
   generation_profile:
     reasoning_acceptance: {do_sample: false, max_new_tokens: 256}

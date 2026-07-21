@@ -30,6 +30,7 @@ from src.heima_aligned.protocol import (
     mode_plan,
     split_hash,
 )
+from src.heima_aligned.tiny_acceptance_eval import build_tiny_acceptance_eval_manifest
 
 STAGE_ORDER = [
     "prepare_data",
@@ -154,11 +155,21 @@ def run_stage(stage_spec: dict[str, Any], run_dir: Path, records: list[HeimaReco
             "encoder_sample": build_encoder_sample(records[0], "stage_reasoning_only"),
             "decoder_sample": build_decoder_sample(records[0], "reasoning"),
             "detach_encoder_latent": bool(stage_spec.get("detach_encoder_latent", False)),
-            "interventions_required": ["correct", "shuffle", "zero", "q_only"],
-            "metrics_required": ["reasoning_reconstruction_nll", "answer_accuracy", "generation_examples"],
+            "interventions_required": ["q_only", "correct", "shuffle", "zero"],
+            "metrics_required": [
+                "reasoning_reconstruction_full_nll",
+                "reasoning_content_token_nll",
+                "numeric_token_accuracy",
+                "entity_token_accuracy",
+                "answer_token_accuracy",
+                "generation_exact_match",
+                "answer_accuracy",
+            ],
+            "semantic_diagnostics": build_tiny_acceptance_eval_manifest({"reasoning": records[0].reasoning, "answer": records[0].answer}),
         }
     elif stage.startswith("eval"):
-        sample_artifact = {"evaluation_stage": stage, "profiles": ["reasoning_acceptance", "causal_deterministic"], "interventions": ["correct", "shuffle", "zero", "q_only"]}
+        sample_artifact = build_tiny_acceptance_eval_manifest({"reasoning": records[0].reasoning, "answer": records[0].answer})
+        sample_artifact.update({"evaluation_stage": stage, "profiles": ["reasoning_acceptance", "causal_deterministic"]})
     else:
         sample_artifact = {"training_stage": stage, "mode_specific": stage_spec}
     log = {
