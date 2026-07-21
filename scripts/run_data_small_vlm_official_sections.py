@@ -39,6 +39,30 @@ THINKING_TOKENS = {
     "caption": "<THINKING_OF_CAPTION>",
     "reasoning": "<THINKING_OF_REASONING>",
 }
+PREFIX_SECTIONS = {
+    "summary": ("summary",),
+    "caption": ("summary", "caption"),
+    "reasoning": ("summary", "caption", "reasoning"),
+}
+
+
+def prefix_sections(section: str, context_mode: str) -> tuple[str, ...]:
+    if context_mode == "local":
+        return (section,)
+    if context_mode == "causal_cumulative":
+        return PREFIX_SECTIONS[section]
+    raise ValueError(f"unsupported loss1_latent_context_mode: {context_mode}")
+
+
+def prepare_stage_latents(z: dict[str, torch.Tensor], section: str, args, *, detach_encoder_latent: bool) -> dict[str, torch.Tensor]:
+    out = {}
+    prefix = prefix_sections(section, args.loss1_latent_context_mode)
+    for s in prefix:
+        detach = detach_encoder_latent
+        if not detach and args.loss1_latent_context_mode == "causal_cumulative" and args.cumulative_grad_mode == "current_only":
+            detach = s != section
+        out[s] = prepare_latent_for_decoder(z[s], detach)
+    return out
 
 
 def write_json(path: Path, obj) -> None:
@@ -99,6 +123,13 @@ def make_optimizer(param_groups, args):
     if args.optimizer == "adamw":
         return torch.optim.AdamW(param_groups, weight_decay=args.weight_decay)
     raise ValueError(args.optimizer)
+
+
+def finite_norm(t: torch.Tensor | None) -> tuple[float, bool]:
+    if t is None:
+        return 0.0, True
+    td = t.detach().float()
+    return float(td.norm().item()), bool(torch.isfinite(td).all().item())
 
 
 def image_path(args, rec: dict) -> Path:
@@ -213,44 +244,80 @@ def pad(tokenizer, ids_rows: list[list[int]], labels_rows: list[list[int]], devi
     return input_ids, labels, attention
 
 
-def decoder_prompt(rec: dict, section: str, tokenizer_b, args, q_only: bool = False) -> str:
+def decoder_prompt(rec: dict, section: str, tokenizer_b, args, q_only: bool = False, context_mode: str = "local") -> str:
     q_ids = tok(tokenizer_b, rec["question"], args.max_q)
     question = tokenizer_b.decode(q_ids, skip_special_tokens=False)
     if q_only:
         return f"Question:\n{question}\n\nInstruction:\nReconstruct the Heima {section} thought. Do not use the image.\n\nTarget:\n"
+    if context_mode == "local":
+        return (
+            f"Question:\n{question}\n\n"
+            f"Instruction:\nReconstruct the Heima {section} thought from the latent. Do not use the image.\n\n"
+            f"{THINKING_TOKENS[section]}\n\nTarget:\n"
+        )
+    slots = "\n".join(THINKING_TOKENS[s] for s in prefix_sections(section, context_mode))
     return (
         f"Question:\n{question}\n\n"
-        f"Instruction:\nReconstruct the Heima {section} thought from the latent. Do not use the image.\n\n"
-        f"{THINKING_TOKENS[section]}\n\nTarget:\n"
+        f"Instruction:\nReconstruct the Heima {section} thought from the causal prefix latents. Do not use the image.\n\n"
+        f"{slots}\n\nTarget:\n"
     )
 
 
-def decoder_forward(model_b, projector, tokenizer_b, section: str, records: list[dict], z: torch.Tensor, args, q_only: bool = False):
+def decoder_forward(
+    model_b,
+    projector,
+    tokenizer_b,
+    section: str,
+    records: list[dict],
+    z,
+    args,
+    q_only: bool = False,
+    context_mode: str | None = None,
+):
     device = next(model_b.parameters()).device
     rows, label_rows, slots = [], [], []
-    token_id = tokenizer_b.convert_tokens_to_ids(THINKING_TOKENS[section])
+    context_mode = context_mode or args.loss1_latent_context_mode
+    slot_sections = () if q_only else prefix_sections(section, context_mode)
+    token_ids = {s: tokenizer_b.convert_tokens_to_ids(THINKING_TOKENS[s]) for s in slot_sections}
     for rec in records:
-        prompt_ids = tok(tokenizer_b, decoder_prompt(rec, section, tokenizer_b, args, q_only=q_only))
+        prompt_ids = tok(tokenizer_b, decoder_prompt(rec, section, tokenizer_b, args, q_only=q_only, context_mode=context_mode))
         target_ids = tok(tokenizer_b, rec[section] + tokenizer_b.eos_token, args.max_target)
         rows.append(prompt_ids + target_ids)
         labels = [-100] * len(prompt_ids) + target_ids
         if not q_only:
-            locs = [i for i, value in enumerate(prompt_ids) if value == token_id]
-            if len(locs) != 1:
-                raise RuntimeError(f"expected one slot for {section}, got {locs}")
-            slots.append(locs[0])
+            sample_slots = []
+            for slot_section in slot_sections:
+                locs = [i for i, value in enumerate(prompt_ids) if value == token_ids[slot_section]]
+                if len(locs) != 1:
+                    raise RuntimeError(f"expected one {slot_section} slot for {section}, got {locs}")
+                sample_slots.append(locs[0])
+            if sample_slots != sorted(sample_slots):
+                raise RuntimeError(f"latent slots are not in causal order for {section}: {sample_slots}")
+            slots.append(sample_slots)
             if getattr(args, "train_latent_marker_ntp", False):
-                labels[locs[0]] = token_id
+                for slot_section, pos in zip(slot_sections, sample_slots):
+                    labels[pos] = token_ids[slot_section]
         label_rows.append(labels)
     input_ids, labels, attention = pad(tokenizer_b, rows, label_rows, device)
     if q_only:
         out = model_b(input_ids=input_ids, attention_mask=attention, use_cache=False)
     else:
         embeds = model_b.get_input_embeddings()(input_ids)
-        projected = projector(z).unsqueeze(1)
+        if isinstance(z, torch.Tensor):
+            z_by_section = {section: z}
+        else:
+            z_by_section = z
+        if isinstance(projector, dict):
+            projected = torch.stack([projector[s](z_by_section[s]) for s in slot_sections], dim=1)
+        else:
+            projected = torch.stack([projector(z_by_section[s]) for s in slot_sections], dim=1)
         mask = torch.zeros_like(input_ids, dtype=torch.bool)
-        for i, pos in enumerate(slots):
-            mask[i, pos] = True
+        for i, sample_slots in enumerate(slots):
+            for pos in sample_slots:
+                mask[i, pos] = True
+        expected = len(records) * len(slot_sections)
+        if int(mask.sum().item()) != expected:
+            raise RuntimeError(f"expected {expected} latent slots for {section}, got {int(mask.sum().item())}")
         embeds = official_embedding_replacement(embeds, projected, mask)
         out = model_b(inputs_embeds=embeds, attention_mask=attention, use_cache=False)
     return heima_ce_loss(out.logits, labels), out.logits, labels
@@ -274,7 +341,21 @@ def evaluate(model_a, processor, tokenizer_a, decoders, projectors, tokenizer_b,
         decoders[s].eval()
         projectors[s].eval()
     total_main = 0.0
-    totals = {s: {"qz": 0.0, "q": 0.0, "shuffle": 0.0, "zero": 0.0, "zs": []} for s in SECTIONS}
+    totals = {
+        s: {
+            "qz": 0.0,
+            "q": 0.0,
+            "whole_shuffle": 0.0,
+            "current_shuffle": 0.0,
+            "history_shuffle": 0.0,
+            "history_count": 0,
+            "zero": 0.0,
+            "random": 0.0,
+            "local_qz": 0.0,
+            "zs": [],
+        }
+        for s in SECTIONS
+    }
     z_banks = {s: [] for s in SECTIONS}
     main_losses = []
     for start in range(0, len(rows), args.batch_size):
@@ -285,38 +366,178 @@ def evaluate(model_a, processor, tokenizer_a, decoders, projectors, tokenizer_b,
             z_banks[s].append(z[s].detach())
     z_all = {s: torch.cat(z_banks[s], dim=0) for s in SECTIONS}
     shuffled = {s: torch.roll(z_all[s], shifts=1, dims=0) if len(rows) > 1 else torch.zeros_like(z_all[s]) for s in SECTIONS}
+    random_prefix = {}
+    for s in SECTIONS:
+        rand = torch.randn_like(z_all[s])
+        random_prefix[s] = (rand.float() / rand.float().norm(dim=-1, keepdim=True).clamp_min(1e-6) * z_all[s].float().norm(dim=-1, keepdim=True)).to(z_all[s].dtype)
     for start in range(0, len(rows), args.batch_size):
         batch = rows[start : start + args.batch_size]
         total_main += sum(main_losses[start : start + len(batch)])
         for s in SECTIONS:
-            z = z_all[s][start : start + len(batch)]
-            qz, _l, _lab = decoder_forward(decoders[s], projectors[s], tokenizer_b, s, batch, z, args)
-            q, _ql, _qab = decoder_forward(decoders[s], projectors[s], tokenizer_b, s, batch, z, args, q_only=True)
-            sh, _sl, _slab = decoder_forward(decoders[s], projectors[s], tokenizer_b, s, batch, shuffled[s][start : start + len(batch)], args)
-            ze, _zl, _zlab = decoder_forward(decoders[s], projectors[s], tokenizer_b, s, batch, torch.zeros_like(z), args)
+            prefix = prefix_sections(s, args.loss1_latent_context_mode)
+            z_prefix = {ps: z_all[ps][start : start + len(batch)] for ps in prefix}
+            whole = {ps: shuffled[ps][start : start + len(batch)] for ps in prefix}
+            current = {ps: (shuffled[ps][start : start + len(batch)] if ps == s else z_prefix[ps]) for ps in prefix}
+            history = {ps: (shuffled[ps][start : start + len(batch)] if ps != s else z_prefix[ps]) for ps in prefix}
+            zero = {ps: torch.zeros_like(z_prefix[ps]) for ps in prefix}
+            random_z = {ps: random_prefix[ps][start : start + len(batch)] for ps in prefix}
+            qz, _l, _lab = decoder_forward(decoders[s], projectors, tokenizer_b, s, batch, z_prefix, args)
+            q, _ql, _qab = decoder_forward(decoders[s], projectors, tokenizer_b, s, batch, z_prefix, args, q_only=True)
+            wh, _sl, _slab = decoder_forward(decoders[s], projectors, tokenizer_b, s, batch, whole, args)
+            cur, _cl, _clab = decoder_forward(decoders[s], projectors, tokenizer_b, s, batch, current, args)
+            ze, _zl, _zlab = decoder_forward(decoders[s], projectors, tokenizer_b, s, batch, zero, args)
+            ra, _rl, _rlab = decoder_forward(decoders[s], projectors, tokenizer_b, s, batch, random_z, args)
+            local_z = z_all[s][start : start + len(batch)]
+            loc, _ll, _llab = decoder_forward(decoders[s], projectors[s], tokenizer_b, s, batch, local_z, args, context_mode="local")
             totals[s]["qz"] += float(qz.item()) * len(batch)
             totals[s]["q"] += float(q.item()) * len(batch)
-            totals[s]["shuffle"] += float(sh.item()) * len(batch)
+            totals[s]["whole_shuffle"] += float(wh.item()) * len(batch)
+            totals[s]["current_shuffle"] += float(cur.item()) * len(batch)
+            if len(prefix) > 1:
+                hi, _hl, _hlab = decoder_forward(decoders[s], projectors, tokenizer_b, s, batch, history, args)
+                totals[s]["history_shuffle"] += float(hi.item()) * len(batch)
+                totals[s]["history_count"] += len(batch)
             totals[s]["zero"] += float(ze.item()) * len(batch)
-            totals[s]["zs"].append(z.detach().cpu())
+            totals[s]["random"] += float(ra.item()) * len(batch)
+            totals[s]["local_qz"] += float(loc.item()) * len(batch)
+            totals[s]["zs"].append(z_all[s][start : start + len(batch)].detach().cpu())
     n = len(rows)
     out = {"main_nll": total_main / n, "sections": {}}
     for s in SECTIONS:
         qz = totals[s]["qz"] / n
         q = totals[s]["q"] / n
-        sh = totals[s]["shuffle"] / n
+        wh = totals[s]["whole_shuffle"] / n
+        cur = totals[s]["current_shuffle"] / n
+        hist = None if totals[s]["history_count"] == 0 else totals[s]["history_shuffle"] / totals[s]["history_count"]
         ze = totals[s]["zero"] / n
+        ra = totals[s]["random"] / n
+        local_qz = totals[s]["local_qz"] / n
         out["sections"][s] = {
+            "context_mode": args.loss1_latent_context_mode,
+            "nll_correct": qz,
             "qz_nll": qz,
             "q_only_nll": q,
-            "shuffle_nll": sh,
+            "nll_q_only": q,
+            "shuffle_nll": wh,
+            "nll_whole_shuffle": wh,
+            "nll_current_shuffle": cur,
+            "nll_history_shuffle": hist,
             "zero_nll": ze,
+            "nll_zero": ze,
+            "nll_random": ra,
             "qz_gain_over_q": q - qz,
-            "normal_shuffle_margin": sh - qz,
+            "q_plus_z_gain": q - qz,
+            "normal_shuffle_margin": wh - qz,
+            "whole_shuffle_margin": wh - qz,
+            "current_shuffle_margin": cur - qz,
+            "history_shuffle_margin": None if hist is None else hist - qz,
             "normal_zero_margin": ze - qz,
+            "cumulative_vs_local_gain": local_qz - qz,
             "latent_geometry": hidden_geometry(torch.cat(totals[s]["zs"], dim=0)),
         }
     return out
+
+
+@torch.no_grad()
+def decoder_generate(model_b, projectors, tokenizer_b, section: str, records: list[dict], z, args, *, q_only: bool = False):
+    device = next(model_b.parameters()).device
+    rows, slots = [], []
+    context_mode = args.loss1_latent_context_mode
+    slot_sections = () if q_only else prefix_sections(section, context_mode)
+    token_ids = {s: tokenizer_b.convert_tokens_to_ids(THINKING_TOKENS[s]) for s in slot_sections}
+    for rec in records:
+        prompt_ids = tok(tokenizer_b, decoder_prompt(rec, section, tokenizer_b, args, q_only=q_only, context_mode=context_mode))
+        rows.append(prompt_ids)
+        if not q_only:
+            sample_slots = []
+            for slot_section in slot_sections:
+                locs = [i for i, value in enumerate(prompt_ids) if value == token_ids[slot_section]]
+                if len(locs) != 1:
+                    raise RuntimeError(f"expected one {slot_section} generation slot for {section}, got {locs}")
+                sample_slots.append(locs[0])
+            slots.append(sample_slots)
+    input_ids, _labels, attention = pad(tokenizer_b, rows, [[-100] * len(r) for r in rows], device)
+    if q_only:
+        generated = model_b.generate(
+            input_ids=input_ids,
+            attention_mask=attention,
+            do_sample=False,
+            max_new_tokens=args.max_new_tokens,
+            eos_token_id=tokenizer_b.eos_token_id,
+            pad_token_id=tokenizer_b.pad_token_id,
+        )
+        continuations = generated[:, input_ids.shape[1] :]
+    else:
+        embeds = model_b.get_input_embeddings()(input_ids)
+        projected = torch.stack([projectors[s](z[s]) for s in slot_sections], dim=1)
+        mask = torch.zeros_like(input_ids, dtype=torch.bool)
+        for i, sample_slots in enumerate(slots):
+            for pos in sample_slots:
+                mask[i, pos] = True
+        embeds = official_embedding_replacement(embeds, projected, mask)
+        generated = model_b.generate(
+            inputs_embeds=embeds,
+            attention_mask=attention,
+            do_sample=False,
+            max_new_tokens=args.max_new_tokens,
+            eos_token_id=tokenizer_b.eos_token_id,
+            pad_token_id=tokenizer_b.pad_token_id,
+        )
+        continuations = generated
+    return tokenizer_b.batch_decode(continuations, skip_special_tokens=True)
+
+
+@torch.no_grad()
+def save_generation_eval(path: Path, model_a, processor, tokenizer_a, decoders, projectors, tokenizer_b, rows: list[dict], args, *, training_group: str, checkpoint: str) -> None:
+    model_a.eval()
+    for s in SECTIONS:
+        decoders[s].eval()
+        projectors[s].eval()
+    rows = rows[: args.generation_samples]
+    z_banks = {s: [] for s in SECTIONS}
+    for start in range(0, len(rows), args.batch_size):
+        batch = rows[start : start + args.batch_size]
+        _main, _logits, _labels, z, _trace = encoder_forward(model_a, processor, tokenizer_a, batch, args)
+        for s in SECTIONS:
+            z_banks[s].append(z[s].detach())
+    z_all = {s: torch.cat(z_banks[s], dim=0) for s in SECTIONS}
+    shuffled = {s: torch.roll(z_all[s], shifts=1, dims=0) if len(rows) > 1 else torch.zeros_like(z_all[s]) for s in SECTIONS}
+    output = path
+    output.parent.mkdir(parents=True, exist_ok=True)
+    with output.open("w", encoding="utf-8") as f:
+        for start in range(0, len(rows), args.batch_size):
+            batch = rows[start : start + args.batch_size]
+            sample_slice = slice(start, start + len(batch))
+            for section in SECTIONS:
+                prefix = prefix_sections(section, args.loss1_latent_context_mode)
+                correct = {ps: z_all[ps][sample_slice] for ps in prefix}
+                whole = {ps: shuffled[ps][sample_slice] for ps in prefix}
+                current = {ps: (shuffled[ps][sample_slice] if ps == section else correct[ps]) for ps in prefix}
+                history = {ps: (shuffled[ps][sample_slice] if ps != section else correct[ps]) for ps in prefix}
+                zero = {ps: torch.zeros_like(correct[ps]) for ps in prefix}
+                conditions = {
+                    "correct": (correct, False),
+                    "whole_prefix_shuffle": (whole, False),
+                    "current_only_shuffle": (current, False),
+                    "zero": (zero, False),
+                    "q_only": (correct, True),
+                }
+                if len(prefix) > 1:
+                    conditions["history_only_shuffle"] = (history, False)
+                for condition, (z_variant, q_only) in conditions.items():
+                    preds = decoder_generate(decoders[section], projectors, tokenizer_b, section, batch, z_variant, args, q_only=q_only)
+                    for offset, (rec, pred) in enumerate(zip(batch, preds)):
+                        f.write(json.dumps({
+                            "sample_id": start + offset,
+                            "question": rec["question"],
+                            "stage": section,
+                            "gold_text": rec[section],
+                            "prediction": pred,
+                            "condition": condition,
+                            "context_mode": args.loss1_latent_context_mode,
+                            "training_group": training_group,
+                            "checkpoint": checkpoint,
+                        }, ensure_ascii=False) + "\n")
 
 
 def save_ckpt(path: Path, **payload) -> None:
@@ -375,7 +596,15 @@ def train_s1(args, run_dir: Path, processor, tokenizer_a, model_a, train, val):
         loss_sum = torch.zeros((), device=device)
         per = {}
         for s in SECTIONS:
-            loss, _l, _lab = decoder_forward(decoders[s], projectors[s], tokenizer_b, s, batch, z[s].detach(), args)
+            loss, _l, _lab = decoder_forward(
+                decoders[s],
+                projectors,
+                tokenizer_b,
+                s,
+                batch,
+                prepare_stage_latents(z, s, args, detach_encoder_latent=True),
+                args,
+            )
             loss_sum = loss_sum + loss
             per[s] = float(loss.item())
         loss_sum.backward()
@@ -414,8 +643,22 @@ def attribution(args, model_a, processor, tokenizer_a, tokenizer_b, decoders, pr
         m.zero_grad(set_to_none=True)
     _main, _logits, _labels, z, _trace = encoder_forward(model_a, processor, tokenizer_a, batch, args)
     loss_sum = torch.zeros((), device=next(model_a.parameters()).device)
+    stage_latent_grads = {}
     for s in SECTIONS:
-        loss, _l, _lab = decoder_forward(decoders[s], projectors[s], tokenizer_b, s, batch, prepare_latent_for_decoder(z[s], detach), args)
+        loss, _l, _lab = decoder_forward(
+            decoders[s],
+            projectors,
+            tokenizer_b,
+            s,
+            batch,
+            prepare_stage_latents(z, s, args, detach_encoder_latent=detach),
+            args,
+        )
+        grads = torch.autograd.grad(loss, [z[ps] for ps in SECTIONS], retain_graph=True, allow_unused=True)
+        stage_latent_grads[s] = {
+            ps: {"norm": finite_norm(g)[0], "finite": finite_norm(g)[1]}
+            for ps, g in zip(SECTIONS, grads)
+        }
         loss_sum = loss_sum + loss
     loss_sum.backward()
     ga, fa = grad_norm(model_a.parameters())
@@ -423,10 +666,17 @@ def attribution(args, model_a, processor, tokenizer_a, tokenizer_b, decoders, pr
         raise RuntimeError("detach Loss1 returned to A")
     if (not detach) and not (ga > 0 and fa):
         raise RuntimeError("no-detach Loss1 did not reach A")
-    return {"detach_encoder_latent": detach, "grad_A_from_loss1": ga, "finite": fa}
+    return {
+        "detach_encoder_latent": detach,
+        "loss1_latent_context_mode": args.loss1_latent_context_mode,
+        "cumulative_grad_mode": args.cumulative_grad_mode,
+        "grad_A_from_loss1": ga,
+        "finite": fa,
+        "stage_latent_grads": stage_latent_grads,
+    }
 
 
-def train_joint(args, run_dir: Path, train, val, detach: bool):
+def train_joint(args, run_dir: Path, train, val, detach: bool, group_name: str | None = None):
     set_seed(args.seed + 202)
     processor, tokenizer_a, model_a, tokenizer_b, decoders, projectors = load_s1(args, run_dir)
     params = [{"params": model_a.parameters(), "lr": args.lr_a}]
@@ -443,7 +693,15 @@ def train_joint(args, run_dir: Path, train, val, detach: bool):
         loss_sum = torch.zeros((), device=main.device)
         per = {}
         for s in SECTIONS:
-            loss, _l, _lab = decoder_forward(decoders[s], projectors[s], tokenizer_b, s, batch, prepare_latent_for_decoder(z[s], detach), args)
+            loss, _l, _lab = decoder_forward(
+                decoders[s],
+                projectors,
+                tokenizer_b,
+                s,
+                batch,
+                prepare_stage_latents(z, s, args, detach_encoder_latent=detach),
+                args,
+            )
             loss_sum = loss_sum + loss
             per[s] = float(loss.item())
         total = main + args.lambda1 * loss_sum
@@ -456,9 +714,28 @@ def train_joint(args, run_dir: Path, train, val, detach: bool):
         if step == 1 or step == args.joint_steps or step % args.log_every == 0:
             logs.append({"step": step, "main": float(main.item()), "loss1": per, "total": float(total.item()), "grad_A": ga})
     metrics = evaluate(model_a, processor, tokenizer_a, decoders, projectors, tokenizer_b, val[: args.eval_samples], args)
-    name = "joint_detach" if detach else "ours_l1_no_detach"
-    save_ckpt(run_dir / "checkpoints" / f"{name}.pt", model_a=model_a.state_dict(), decoders={s: decoders[s].state_dict() for s in SECTIONS}, projectors={s: projectors[s].state_dict() for s in SECTIONS})
-    result = {"runtime_sec": time.time() - start, "gradient_attribution": attr, "logs": logs, "validation": metrics}
+    if group_name is None:
+        if args.loss1_latent_context_mode == "local":
+            name = "joint_detach" if detach else "ours_l1_no_detach"
+        else:
+            name = "cumulative_joint_detach" if detach else f"cumulative_ours_l1_no_detach_{args.cumulative_grad_mode}"
+    else:
+        name = group_name
+    ckpt_path = run_dir / "checkpoints" / f"{name}.pt"
+    if not getattr(args, "skip_joint_checkpoints", False):
+        save_ckpt(ckpt_path, model_a=model_a.state_dict(), decoders={s: decoders[s].state_dict() for s in SECTIONS}, projectors={s: projectors[s].state_dict() for s in SECTIONS})
+    generation_path = None
+    if getattr(args, "save_generation_eval", False):
+        generation_path = run_dir / "generations" / f"{name}.jsonl"
+        save_generation_eval(generation_path, model_a, processor, tokenizer_a, decoders, projectors, tokenizer_b, val, args, training_group=name, checkpoint=str(ckpt_path))
+    result = {
+        "runtime_sec": time.time() - start,
+        "gradient_attribution": attr,
+        "logs": logs,
+        "validation": metrics,
+        "checkpoint_saved": not getattr(args, "skip_joint_checkpoints", False),
+        "generation_eval": None if generation_path is None else str(generation_path),
+    }
     write_json(run_dir / "groups" / name / "result.json", result)
     return result
 
@@ -489,7 +766,16 @@ def main() -> None:
     p.add_argument("--torch-dtype", default="bfloat16")
     p.add_argument("--log-every", type=int, default=10)
     p.add_argument("--train-latent-marker-ntp", action="store_true")
+    p.add_argument("--loss1-latent-context-mode", choices=["local", "causal_cumulative"], default="local")
+    p.add_argument("--cumulative-grad-mode", choices=["all_prefix", "current_only"], default="all_prefix")
+    p.add_argument("--run-local-and-cumulative-comparison", action="store_true")
+    p.add_argument("--save-generation-eval", action="store_true")
+    p.add_argument("--skip-joint-checkpoints", action="store_true")
+    p.add_argument("--generation-samples", type=int, default=4)
+    p.add_argument("--max-new-tokens", type=int, default=96)
     args = p.parse_args()
+    if args.train_latent_marker_ntp and args.loss1_latent_context_mode != "local":
+        raise ValueError("First cumulative Loss1 version uses text-only labels; disable --train-latent-marker-ntp")
 
     run_id = time.strftime("%Y%m%d_%H%M%S")
     run_dir = args.out / f"seed{args.seed}" / run_id
@@ -506,6 +792,7 @@ def main() -> None:
         "gpu": shell(["nvidia-smi", "--query-gpu=index,name,memory.total,memory.free", "--format=csv,noheader"]),
         "script_sha256": hashlib.sha256(Path(__file__).read_bytes()).hexdigest(),
         "task": "MLLM official-section Heima micro baseline: summary/caption/reasoning",
+        "git_baseline_note": "Built from server snapshot d6275da, the commit containing strict Qwen2.5-VL A+B official-section scripts used by text_labels_m0_m1_m2.",
         "model_a": {"type": "VLM", "path": args.model_a_path, "sees": ["image", "question"]},
         "model_b": {"type": "LLM interpreter", "path": args.model_b_path, "sees": ["question", "latent"], "does_not_see": ["image"]},
         "data": {"source": "Xkev/LLaVA-CoT-100k micro subset", "fields_used": ["image", "question", "summary", "caption", "reasoning", "answer"], "train": len(train), "validation": len(val), "test": len(test)},
@@ -513,7 +800,13 @@ def main() -> None:
         "args": vars(args),
     }
     write_json(run_dir / "experiment_manifest.json", manifest)
-    for g in ["s0_multisection_main", "s1_staged_sections", "joint_detach", "ours_l1_no_detach"]:
+    group_names = ["s0_multisection_main", "s1_staged_sections"]
+    if args.run_local_and_cumulative_comparison:
+        group_names += ["L-D_local_detach", "L-N_local_no_detach", "C-D_cumulative_detach", "C-N_cumulative_no_detach_all_prefix", "C-N-current_cumulative_no_detach_current_only"]
+    else:
+        group_names += ["joint_detach" if args.loss1_latent_context_mode == "local" else "cumulative_joint_detach"]
+        group_names += ["ours_l1_no_detach" if args.loss1_latent_context_mode == "local" else f"cumulative_ours_l1_no_detach_{args.cumulative_grad_mode}"]
+    for g in group_names:
         cfg = copy.deepcopy(manifest)
         cfg["selected_group"] = g
         write_json(run_dir / "groups" / g / "config_full.json", cfg)
@@ -522,15 +815,39 @@ def main() -> None:
     del processor, tokenizer_a, model_a, tokenizer_b, decoders, projectors
     if torch.cuda.is_available():
         torch.cuda.empty_cache()
-    detach_result = train_joint(args, run_dir, train, val, True)
-    if torch.cuda.is_available():
-        torch.cuda.empty_cache()
-    ours_result = train_joint(args, run_dir, train, val, False)
+    if args.run_local_and_cumulative_comparison:
+        joint_results = {}
+        specs = [
+            ("L-D_local_detach", "local", "all_prefix", True),
+            ("L-N_local_no_detach", "local", "all_prefix", False),
+            ("C-D_cumulative_detach", "causal_cumulative", "all_prefix", True),
+            ("C-N_cumulative_no_detach_all_prefix", "causal_cumulative", "all_prefix", False),
+            ("C-N-current_cumulative_no_detach_current_only", "causal_cumulative", "current_only", False),
+        ]
+        for group_name, context_mode, grad_mode, detach in specs:
+            run_args = copy.deepcopy(args)
+            run_args.loss1_latent_context_mode = context_mode
+            run_args.cumulative_grad_mode = grad_mode
+            if torch.cuda.is_available():
+                torch.cuda.empty_cache()
+            joint_results[group_name] = train_joint(run_args, run_dir, train, val, detach, group_name=group_name)
+        detach_result = joint_results["L-D_local_detach"]
+        ours_result = joint_results["L-N_local_no_detach"]
+    else:
+        detach_result = train_joint(args, run_dir, train, val, True)
+        if torch.cuda.is_available():
+            torch.cuda.empty_cache()
+        ours_result = train_joint(args, run_dir, train, val, False)
+        joint_results = {
+            "joint_detach" if args.loss1_latent_context_mode == "local" else "cumulative_joint_detach": detach_result,
+            "ours_l1_no_detach" if args.loss1_latent_context_mode == "local" else f"cumulative_ours_l1_no_detach_{args.cumulative_grad_mode}": ours_result,
+        }
     summary = {
         "status": "complete",
         "completed_at_utc": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime()),
         "joint_detach": detach_result,
         "ours_l1_no_detach": ours_result,
+        "joint_results": joint_results,
         "backend_resolution": backend_resolution_snapshot(),
     }
     write_json(run_dir / "summary.json", summary)
