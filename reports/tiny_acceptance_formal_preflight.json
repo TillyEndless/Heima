@@ -1,0 +1,51 @@
+{
+  "data_split": {
+    "eval_images_accessible": 45,
+    "eval_rows": 45,
+    "eval_size": 45,
+    "exact_requested_size": false,
+    "exists": true,
+    "name": "heima_ab_loss1_tiny_acceptance_v1",
+    "path": "/data/zxl/runs/heima_ab_loss1_tiny_acceptance_v1/data_split.json",
+    "requested_eval_size": 48,
+    "requested_train_size": 192,
+    "seed": 42,
+    "source_subset": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_v1",
+    "train_images_accessible": 167,
+    "train_rows": 167,
+    "train_size": 167
+  },
+  "disk": {
+    "available_bytes": 168468484096,
+    "df_h": "Filesystem      Size  Used Avail Use% Mounted on\n/dev/nvme1n1    3.5T  3.4T  157G  96% /data",
+    "min_required_bytes": 85899345920
+  },
+  "generated_at_utc": "2026-07-21T15:08:31Z",
+  "git": {
+    "clean": true,
+    "commit": "357efa6251c5b83df505d7a5a478e38231305f61",
+    "status": "## feat/heima-ab-loss1-mini-acceptance...origin/feat/heima-ab-loss1-mini-acceptance\n?? reports/tiny_acceptance_formal_preflight.json"
+  },
+  "gpu": "Tue Jul 21 15:08:30 2026       \n+-----------------------------------------------------------------------------------------+\n| NVIDIA-SMI 570.158.01             Driver Version: 570.158.01     CUDA Version: 12.8     |\n|-----------------------------------------+------------------------+----------------------+\n| GPU  Name                 Persistence-M | Bus-Id          Disp.A | Volatile Uncorr. ECC |\n| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |\n|                                         |                        |               MIG M. |\n|=========================================+========================+======================|\n|   0  NVIDIA GeForce RTX 4090        Off |   00000000:0C:00.0 Off |                  Off |\n| 66%   46C    P3             66W /  450W |       0MiB /  49140MiB |      0%      Default |\n|                                         |                        |                  N/A |\n+-----------------------------------------+------------------------+----------------------+\n|   1  NVIDIA GeForce RTX 4090        Off |   00000000:32:00.0 Off |                  Off |\n| 30%   26C    P8             19W /  450W |       0MiB /  49140MiB |      0%      Default |\n|                                         |                        |                  N/A |\n+-----------------------------------------+------------------------+----------------------+\n|   2  NVIDIA GeForce RTX 4090        Off |   00000000:45:00.0 Off |                  Off |\n| 30%   25C    P8             17W /  450W |       0MiB /  49140MiB |      0%      Default |\n|                                         |                        |                  N/A |\n+-----------------------------------------+------------------------+----------------------+\n|   3  NVIDIA GeForce RTX 4090        Off |   00000000:58:00.0 Off |                  Off |\n| 30%   28C    P8             19W /  450W |       0MiB /  49140MiB |      0%      Default |\n|                                         |                        |                  N/A |\n+-----------------------------------------+------------------------+----------------------+\n|   4  NVIDIA GeForce RTX 4090        Off |   00000000:84:00.0 Off |                    0 |\n| 61%   25C    P8             22W /  450W |       0MiB /  46068MiB |      0%      Default |\n|                                         |                        |                  N/A |\n+-----------------------------------------+------------------------+----------------------+\n|   5  NVIDIA GeForce RTX 4090        Off |   00000000:AC:00.0 Off |                  Off |\n| 30%   27C    P8             24W /  450W |       0MiB /  49140MiB |      0%      Default |\n|                                         |                        |                  N/A |\n+-----------------------------------------+------------------------+----------------------+\n|   6  NVIDIA GeForce RTX 4090        Off |   00000000:C0:00.0 Off |                  Off |\n| 30%   25C    P8             34W /  450W |       0MiB /  49140MiB |      0%      Default |\n|                                         |                        |                  N/A |\n+-----------------------------------------+------------------------+----------------------+\n|   7  NVIDIA GeForce RTX 4090        Off |   00000000:D4:00.0 Off |                  Off |\n| 30%   25C    P8             25W /  450W |       0MiB /  49140MiB |      0%      Default |\n|                                         |                        |                  N/A |\n+-----------------------------------------+------------------------+----------------------+\n                                                                                         \n+-----------------------------------------------------------------------------------------+\n| Processes:                                                                              |\n|  GPU   GI   CI              PID   Type   Process name                        GPU Memory |\n|        ID   ID                                                               Usage      |\n|=========================================================================================|\n|  No running processes found                                                             |\n+-----------------------------------------------------------------------------------------+",
+  "outputs": {
+    "tiny_acceptance_detach_baseline": {
+      "checkpoint_count": 0,
+      "checkpoint_files": [],
+      "exists": false,
+      "path": "/data/zxl/runs/heima_ab_loss1_tiny_acceptance_v1/baseline",
+      "safe_empty_or_no_checkpoints": true,
+      "size": null
+    },
+    "tiny_acceptance_no_detach_ours": {
+      "checkpoint_count": 0,
+      "checkpoint_files": [],
+      "exists": false,
+      "path": "/data/zxl/runs/heima_ab_loss1_tiny_acceptance_v1/ours",
+      "safe_empty_or_no_checkpoints": true,
+      "size": null
+    }
+  },
+  "processes": "1641995 bash -c mkdir -p /data/zxl/test/models/logs/demo_fast && cd /data/zxl/test/BoxDreamer && nohup env CUDA_VISIBLE_DEVICES=0 BOXDREAMER_ARTIFACT_ROOT=/data/zxl/test /root/miniconda3/envs/test/bin/python -m src.demo.gradio_demo --ckpt /data/zxl/test/models/checkpoints/dji_pose_refquery_scratch_baseline/Best-epoch=270-val_loss=5.33814.ckpt > /data/zxl/test/models/logs/demo_fast/baseline_best270_fast100.log 2>&1 < /dev/null & echo $!\n1641997 /root/miniconda3/envs/test/bin/python -m src.demo.gradio_demo --ckpt /data/zxl/test/models/checkpoints/dji_pose_refquery_scratch_baseline/Best-epoch=270-val_loss=5.33814.ckpt\n2082660 /data/zxl/conda_envs/nlp-final/bin/python /tmp/tiny_acceptance_formal_preflight.py\n4049277 python -",
+  "status": "pass",
+  "stop_gates": []
+}
