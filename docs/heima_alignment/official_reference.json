@@ -1,0 +1,67 @@
+{
+  "official_repo_url": "https://github.com/shawnricecake/Heima.git",
+  "official_reference_dir": "/data/zxl/reference/Heima-official",
+  "official_commit": "cebd6ef3ef862f62c601ced191b64b45d2bf3de2",
+  "paper_version": "ICML 2026 / arXiv 2501.19201 as referenced by README",
+  "official_configuration_paths": [
+    "heima/configs/2_1-llama3_2_vision-11b-main_lora-pure_llm_decoder_lora-split_3_stages-fix_num-progressive.yaml",
+    "heima/configs/2_2-llama3_2_vision-11b-main_lora-pure_llm_decoder_lora-split_3_stages-fix_num-progressive.yaml",
+    "heima/configs/2_3-llama3_2_vision-11b-main_lora-pure_llm_decoder_lora-split_3_stages-fix_num-progressive.yaml",
+    "heima/configs/2_4-llama3_2_vision-11b-main_lora-pure_llm_decoder_lora-split_3_stages-fix_num-progressive.yaml",
+    "heima/configs/2_5-llama3_2_vision-11b-main_lora-pure_llm_decoder_lora-split_3_stages-fix_num-progressive.yaml",
+    "heima/configs/4_1-llama3_2_vision-11b-decode-pure_llm_decoder_lora-split_3_stages.yaml"
+  ],
+  "official_dataset_preparation_scripts": [
+    "heima/main_python/1_1-organize_dataset-num_thinking_tokens-fix_num.py",
+    "heima/main_python/1_2-organize_dataset-pure_llm_decoder-num_thinking_tokens-fix_num.py",
+    "heima/scripts/run-1_1-generate_data_main-fix_num.sh",
+    "heima/scripts/run-1_2-generate_data-pure_llm_decoder-fix_num.sh"
+  ],
+  "official_progressive_training_scripts": [
+    "heima/main_python/2-training-pipeline-main_lora-pure_llm_decoder_lora-split_3_stages-fix_num-progressive.py",
+    "heima/scripts/run-2-train-lora_main-pure_llm_decoder_lora-split_3_stages-fix_num-progressive.sh"
+  ],
+  "official_recover_scripts": [
+    "heima/configs/2_4-llama3_2_vision-11b-main_lora-pure_llm_decoder_lora-split_3_stages-fix_num-progressive.yaml"
+  ],
+  "official_decoder_interpreter_scripts": [
+    "heima/configs/2_5-llama3_2_vision-11b-main_lora-pure_llm_decoder_lora-split_3_stages-fix_num-progressive.yaml",
+    "heima/main_python/4_1-eval-decode-pure_llm_decoder_lora-split_3_stages.py"
+  ],
+  "official_encoder_evaluation_scripts": [
+    "zero-shot-evaluation/VLMEvalKit/run-eval.sh",
+    "zero-shot-evaluation/VLMEvalKit/run.py"
+  ],
+  "official_decoder_evaluation_scripts": [
+    "heima/main_python/4_1-eval-decode-pure_llm_decoder_lora-split_3_stages.py",
+    "heima/main_python/4_2-eval-metrics_compute.py",
+    "heima/scripts/run-4_1-decode-pure_llm_decoder_lora-split_3_stages.sh",
+    "heima/scripts/run-4_2-eval-metrics_compute.sh"
+  ],
+  "official_prompts": {
+    "decoder_summary_template_0": "{question}\nCan you provide the details of thinking progress <THINKING_OF_SUMMARY> for summarizing the given question?",
+    "decoder_caption_template_0": "{question}\nCan you provide the thinking progress <THINKING_OF_CAPTION> for the caption of the given question?",
+    "decoder_reasoning_template_0": "{question}\nCan you provide the thinking progress <THINKING_OF_REASONING> for the reasoning of the given question?",
+    "demo_template": "For the question: '${input_question}' Can you explain the thinking progress <THINKING_OF_REASONING>?"
+  },
+  "official_hidden_state_extraction_code": {
+    "file": "heima/main_python/2-training-pipeline-main_lora-pure_llm_decoder_lora-split_3_stages-fix_num-progressive.py",
+    "lines": "mask_token = batch['tokens'][:, 1:] == token_id; append one false column; select model.decoder.last_hidden_state[mask]",
+    "semantics": "predictor hidden at position p-1 for a thinking token at token position p"
+  },
+  "official_projector_code": {
+    "file": "torchtune_pkg/torchtune/torchtune/modules/transformer.py",
+    "structure": "nn.Sequential(nn.Linear(projector_input_dim, hidden_dim), nn.ReLU(inplace=True), nn.Linear(hidden_dim, hidden_dim), nn.Dropout(0.0))",
+    "note": "The official comments say the projector was not applied inside transformer replacement in one path; checkpoint configs still carry per-stage abstract projector weights. Scaled code exposes official-compatible projector explicitly."
+  },
+  "official_label_construction_code": {
+    "training_file": "heima/main_python/2-training-pipeline-main_lora-pure_llm_decoder_lora-split_3_stages-fix_num-progressive.py",
+    "loss": "torchtune.modules.loss.CEWithChunkedOutputLoss",
+    "decoder_train_on_input": true
+  },
+  "official_replacement_code": {
+    "file": "torchtune_pkg/torchtune/torchtune/modules/transformer.py",
+    "location": "after token embedding lookup h = self.tok_embeddings(tokens), before transformer layers",
+    "operation": "flat_hidden[flat_mask] = flat_thinking_token"
+  }
+}
