@@ -1,0 +1,39 @@
+experiment: strict_heima_stage2_interp_supervision
+stage1:
+  entrypoint: scripts/heima_stage1_train.py
+  model_a_frozen: true
+  model_b_trainable: true
+  official_trainer: heima/main_python/2-training-pipeline-main_lora-pure_llm_decoder_lora-split_3_stages-fix_num-progressive.py
+stage2:
+  entrypoint: scripts/heima_stage2_compare.py
+  modes:
+    - heima_baseline
+    - ours_interp_supervision
+  invariant:
+    same_A_initialization: true
+    same_B_checkpoint: true
+    same_dataset: true
+    same_optimizer: true
+    same_training_steps: true
+  only_variable: interpreter_loss_gradient_to_A
+  heima_baseline:
+    model_A_trainable: true
+    model_B_frozen: true
+    total_loss: L_NTP
+    interpreter_loss: forward_log_eval_only
+    detach_latent_before_B: true
+  ours_interp_supervision:
+    model_A_trainable: true
+    model_B_frozen: true
+    total_loss: L_NTP + lambda_interp * L_interp
+    interpreter_loss: contributes_to_A_gradient
+    detach_latent_before_B: false
+evaluation:
+  reuse_heima_eval: true
+  metrics:
+    - answer_accuracy
+    - ntp_loss
+    - interpreter_loss
+    - B_z_generation_bleu_rouge_or_official_metric
+    - cot_reconstruction_accuracy
+    - latent_intervention_correct_shuffle_zero
