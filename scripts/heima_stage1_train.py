@@ -16,6 +16,7 @@ OFFICIAL_TRAINER = ROOT / "heima/main_python/2-training-pipeline-main_lora-pure_
 
 def main() -> int:
     parser = argparse.ArgumentParser()
+    parser.add_argument("--stage1", action="store_true", help="Compatibility flag; this entrypoint always runs Stage1.")
     parser.add_argument("--config", required=True, help="Official Heima Stage1 torchtune YAML.")
     parser.add_argument("--output-dir", required=True)
     parser.add_argument("--nproc-per-node", default="1")
@@ -39,6 +40,7 @@ def main() -> int:
     ] + list(args.overrides)
     manifest = {
         "stage": "stage1_interpreter_learning",
+        "stage1_flag": bool(args.stage1),
         "official_trainer": str(OFFICIAL_TRAINER),
         "command": command,
         "invariants": [
