@@ -1,0 +1,61 @@
+{
+  "status": "insufficient_accessible_images",
+  "dataset_path": "/data/zxl/official_heima/datasets/LLaVA-CoT-100k/train.jsonl",
+  "candidate_image_roots": [
+    "/data/zxl/official_heima/datasets/LLaVA-CoT-100k/image_files",
+    "/data/zxl/official_heima/datasets/LLaVA-CoT-100k",
+    "/data/zxl/official_heima/micro_subsets/chartqa_sqa_v1/image_files",
+    "/data/zxl/official_heima/micro_subsets/chartqa_sqa_available_images_v1/image_files"
+  ],
+  "counts": {
+    "total": 98582,
+    "question": 98582,
+    "complete_sections": 98568,
+    "image_accessible": 257,
+    "usable": 257
+  },
+  "access_by_root": {
+    "/data/zxl/official_heima/datasets/LLaVA-CoT-100k/image_files": 0,
+    "/data/zxl/official_heima/datasets/LLaVA-CoT-100k": 0,
+    "/data/zxl/official_heima/micro_subsets/chartqa_sqa_v1/image_files": 257,
+    "/data/zxl/official_heima/micro_subsets/chartqa_sqa_available_images_v1/image_files": 0
+  },
+  "section_completeness_rate": 0.9998579862449535,
+  "image_access_rate": 0.0026069667890689986,
+  "usable_rate": 0.0026069667890689986,
+  "token_statistics": {
+    "question": {
+      "mean": 31.101167315175097,
+      "median": 21,
+      "p95": 124,
+      "max": 206
+    },
+    "summary": {
+      "mean": 34.42412451361868,
+      "median": 35,
+      "p95": 48,
+      "max": 61
+    },
+    "caption": {
+      "mean": 40.67704280155642,
+      "median": 40,
+      "p95": 63,
+      "max": 76
+    },
+    "reasoning": {
+      "mean": 62.505836575875485,
+      "median": 58,
+      "p95": 102,
+      "max": 137
+    },
+    "answer": {
+      "mean": 3.8249027237354087,
+      "median": 1,
+      "p95": 11,
+      "max": 88
+    }
+  },
+  "decision": "do_not_start_training",
+  "reason": "usable image-backed complete examples below 10000 threshold",
+  "data_split_path": "/data/zxl/Heima-model-a-only-loss1-formal/data_split.json"
+}

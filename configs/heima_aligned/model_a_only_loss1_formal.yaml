@@ -1,0 +1,40 @@
+experiment: model_a_only_loss1_formal_pilot
+model:
+  name: Qwen2.5-VL-3B-Instruct
+  path: /data/zxl/small_models/Qwen2.5-VL-3B-Instruct
+mode: model_a_only_self_decode
+stage0_checkpoint: /data/zxl/runs/heima_stage2_interp_supervision_small_v1/seed42/20260722_135515/checkpoints/s0_encoder.pt
+data:
+  split_path: /data/zxl/Heima-model-a-only-loss1-formal/data_split.json
+  dataset_path: /data/zxl/official_heima/datasets/LLaVA-CoT-100k/train.jsonl
+  image_root: /data/zxl/official_heima/datasets/LLaVA-CoT-100k/image_files
+  required_train_min: 10000
+  target_train_samples: 10000
+  target_eval_samples: 512
+loss:
+  main_loss: true
+  loss1:
+    enabled: true
+    lambda: 0.1
+  loss2:
+    enabled: false
+latent:
+  sections:
+    - summary
+    - caption
+    - reasoning
+  latent_source: last_hidden_state_of_latent_cot_i
+self_decode:
+  with_image: false
+  detach_latent: false
+training:
+  max_steps: 5000
+  eval_every: 500
+  save_steps:
+    - 1000
+    - 2500
+    - 5000
+  save_final: true
+  save_optimizer: false
+  output_dir: /data/zxl/runs/model_a_only_loss1_formal
+  tmux_session: model_a_only_loss1_formal

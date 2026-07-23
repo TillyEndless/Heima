@@ -1,0 +1,14 @@
+{
+  "stage0_checkpoint": "/data/zxl/runs/heima_stage2_interp_supervision_small_v1/seed42/20260722_135515/checkpoints/s0_encoder.pt",
+  "checkpoint_source": "strict Heima Stage0 explicit section/answer warmup from heima_stage2_interp_supervision_small_v1; selected as best Heima-aligned latent checkpoint available",
+  "checkpoint_limitations": "Stage0 source run used micro subset train_samples=167; no larger Qwen2.5-VL-3B explicit-CoT Stage0 checkpoint was found during audit",
+  "model_name": "/data/zxl/small_models/Qwen2.5-VL-3B-Instruct",
+  "git_commit": "2c3947f5229fe48769e6b3e30068fca47d68ebb9",
+  "branch": "feat/model-a-only-self-decode",
+  "config_path": "/data/zxl/runs/heima_stage2_interp_supervision_small_v1/seed42/20260722_135515/experiment_manifest.json",
+  "dataset_path": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_available_images_v1",
+  "image_root": "/data/zxl/official_heima/micro_subsets/chartqa_sqa_v1/image_files",
+  "train_samples": 167,
+  "validation_samples": 45,
+  "status": "usable_stage0_found"
+}
