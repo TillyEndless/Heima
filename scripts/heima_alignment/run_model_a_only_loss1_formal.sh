@@ -14,6 +14,7 @@ TRAIN=0
 EVAL_ONLY=0
 RESUME=0
 DRY_RUN=0
+PYTHON_BIN="${PYTHON_BIN:-/root/miniconda3/envs/st/bin/python}"
 
 while [[ $# -gt 0 ]]; do
   case "$1" in
@@ -102,7 +103,7 @@ if [[ "$DRY_RUN" == "1" || "$TRAIN" == "0" ]]; then
   exit 0
 fi
 
-CMD=(python3 "$ROOT/scripts/heima_stage2_model_a_only_self_decode.py"
+CMD=("$PYTHON_BIN" "$ROOT/scripts/heima_stage2_model_a_only_self_decode.py"
   --model-a-path /data/zxl/small_models/Qwen2.5-VL-3B-Instruct
   --dataset-path "$DATASET"
   --image-root "$IMAGE_ROOT"

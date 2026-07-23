@@ -4,7 +4,7 @@
   "cumulative_latent": false,
   "dataset_path": "/data/zxl/runs/model_a_only_loss1_formal/formal_split",
   "detach_latent": false,
-  "disk_free_gb": 208.69,
+  "disk_free_gb": 208.98,
   "dry_run": false,
   "eval_only": false,
   "full_llava_cot_100k": false,
@@ -25,5 +25,5 @@
   "split_status": "ready",
   "stage0_checkpoint": "/data/zxl/runs/heima_stage2_interp_supervision_small_v1/seed42/20260722_135515/checkpoints/s0_encoder.pt",
   "tiny_acceptance": false,
-  "train_requested": false
+  "train_requested": true
 }
