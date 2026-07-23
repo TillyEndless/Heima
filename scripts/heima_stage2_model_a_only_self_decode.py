@@ -60,8 +60,19 @@ def load_stage0_checkpoint_if_present(model_a, stage0_checkpoint: str | None, de
     state = payload.get("model_a", payload)
     target = model_a.state_dict()
     candidates = [("raw", state)]
-    if all(isinstance(k, str) and k.startswith("model.") for k in state.keys()):
-        candidates.append(("strip_model_prefix", {k[len("model."):]: v for k, v in state.items()}))
+    candidates.append(("strip_model_prefix_per_key", {
+        (k[len("model."):] if isinstance(k, str) and k.startswith("model.") else k): v
+        for k, v in state.items()
+    }))
+    qwen25_bridge = {}
+    for k, v in state.items():
+        if isinstance(k, str) and k.startswith("model.visual."):
+            qwen25_bridge[k[len("model."):]] = v
+        elif isinstance(k, str) and k.startswith("model.language_model."):
+            qwen25_bridge["model." + k[len("model.language_model."):]] = v
+        else:
+            qwen25_bridge[k] = v
+    candidates.append(("qwen25_vl_model_bridge", qwen25_bridge))
 
     best_name, best_state, best_matches = None, None, []
     for name, candidate in candidates:
