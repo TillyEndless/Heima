@@ -52,12 +52,42 @@ def parse_sections(raw: str) -> tuple[str, ...]:
     return sections
 
 
-def load_stage0_checkpoint_if_present(model_a, stage0_checkpoint: str | None, device: torch.device) -> None:
+def load_stage0_checkpoint_if_present(model_a, stage0_checkpoint: str | None, device: torch.device, report_path: Path | None = None) -> dict:
+    report = {"stage0_checkpoint": stage0_checkpoint, "loaded": False}
     if not stage0_checkpoint:
-        return
+        return report
     payload = torch.load(stage0_checkpoint, map_location=device)
     state = payload.get("model_a", payload)
-    model_a.load_state_dict(state, strict=True)
+    target = model_a.state_dict()
+    candidates = [("raw", state)]
+    if all(isinstance(k, str) and k.startswith("model.") for k in state.keys()):
+        candidates.append(("strip_model_prefix", {k[len("model."):]: v for k, v in state.items()}))
+
+    best_name, best_state, best_matches = None, None, []
+    for name, candidate in candidates:
+        matches = [k for k, v in candidate.items() if k in target and tuple(v.shape) == tuple(target[k].shape)]
+        if len(matches) > len(best_matches):
+            best_name, best_state, best_matches = name, candidate, matches
+    if best_state is None or not best_matches:
+        raise RuntimeError(f"Stage0 checkpoint has no compatible tensors: {stage0_checkpoint}")
+
+    filtered = {k: best_state[k] for k in best_matches}
+    missing, unexpected = model_a.load_state_dict(filtered, strict=False)
+    report = {
+        "stage0_checkpoint": stage0_checkpoint,
+        "loaded": True,
+        "key_transform": best_name,
+        "checkpoint_tensors": len(state),
+        "loaded_tensors": len(filtered),
+        "target_tensors": len(target),
+        "missing_after_partial_load": len(missing),
+        "unexpected_after_partial_load": len(unexpected),
+        "first_missing": list(missing)[:20],
+        "first_unexpected": list(unexpected)[:20],
+    }
+    if report_path is not None:
+        write_json(report_path, report)
+    return report
 
 
 def make_first_pass_fn(processor, tokenizer_a, args):
@@ -108,7 +138,7 @@ def run_smoke_backward_only(args, run_dir: Path) -> dict:
         raise FileNotFoundError(f"missing images: {missing[:5]} count={len(missing)}")
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
     processor, tokenizer_a, model_a = base.load_vlm_a(args, device)
-    load_stage0_checkpoint_if_present(model_a, args.stage0_checkpoint, device)
+    load_stage0_checkpoint_if_present(model_a, args.stage0_checkpoint, device, run_dir / "stage0_load_report.json")
     optimizer = base.make_optimizer([{"params": model_a.parameters(), "lr": args.lr_a}], args)
     first_pass = make_first_pass_fn(processor, tokenizer_a, args)
     records = train[: args.batch_size]
@@ -140,7 +170,7 @@ def train_stage2(args, run_dir: Path) -> dict:
         train = train[: args.max_train_samples]
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
     processor, tokenizer_a, model_a = base.load_vlm_a(args, device)
-    load_stage0_checkpoint_if_present(model_a, args.stage0_checkpoint, device)
+    load_stage0_checkpoint_if_present(model_a, args.stage0_checkpoint, device, run_dir / "stage0_load_report.json")
     optimizer = base.make_optimizer([{"params": model_a.parameters(), "lr": args.lr_a}], args)
     first_pass = make_first_pass_fn(processor, tokenizer_a, args)
     logs = []
