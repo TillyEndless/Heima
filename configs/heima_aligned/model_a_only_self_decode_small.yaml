@@ -1,0 +1,20 @@
+experiment: model_a_only_self_decode_v0
+model_a_path: /data/zxl/small_models/Qwen2.5-VL-3B-Instruct
+dataset_path: /data/zxl/official_heima/micro_subsets/chartqa_sqa_available_images_v1
+image_root: /data/zxl/official_heima/micro_subsets/chartqa_sqa_v1/image_files
+output_dir: /data/zxl/runs/model_a_only_self_decode_v0
+sections:
+  - summary
+  - caption
+  - reasoning
+lambda_self: 0.05
+self_decode_with_image: false
+use_projector: false
+use_role_embedding: false
+mode: a_only_self_decode
+stage0_checkpoint: null
+max_train_samples: null
+max_eval_samples: 8
+max_steps: 1
+eval_every: 0
+save_every: 0
