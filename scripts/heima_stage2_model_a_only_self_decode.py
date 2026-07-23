@@ -173,6 +173,80 @@ def run_smoke_backward_only(args, run_dir: Path) -> dict:
     return outputs
 
 
+def save_progress(run_dir: Path, records: list[dict]) -> None:
+    write_json(run_dir / "progress.json", records)
+    write_json(Path("/data/zxl/runs/model_a_only_loss1_formal/reports/model_a_only_loss1_progress.json"), records)
+
+
+def parse_save_steps(raw: str | None, save_every: int, max_steps: int) -> set[int]:
+    steps: set[int] = set()
+    if raw:
+        steps.update(int(x.strip()) for x in raw.split(",") if x.strip())
+    if save_every:
+        steps.update(range(save_every, max_steps + 1, save_every))
+    steps.add(max_steps)
+    return {s for s in steps if 1 <= s <= max_steps}
+
+
+def summarize_eval_step(args, model_a, tokenizer_a, first_pass, val: list[dict], step: int) -> dict:
+    probe = val[: max(1, min(len(val), args.eval_probe_samples))]
+    grad_batch = probe[: args.batch_size]
+    optimizer_stub = base.make_optimizer([{"params": model_a.parameters(), "lr": args.lr_a}], args)
+    grad_out = run_a_only_train_step(
+        model_a=model_a,
+        optimizer_a=optimizer_stub,
+        records=grad_batch,
+        tokenizer=tokenizer_a,
+        first_pass_fn=first_pass,
+        mode=args.mode,
+        lambda_self=args.lambda_self,
+        sections=args.sections,
+        max_q=args.max_q,
+        max_target=args.max_target,
+        step_optimizer=False,
+    )
+    model_a.zero_grad(set_to_none=True)
+    interventions_by_section = {section: [] for section in args.sections}
+    for start in range(0, len(probe), args.eval_batch_size):
+        batch = probe[start : start + args.eval_batch_size]
+        metrics = evaluate_self_decode_interventions(
+            model_a=model_a,
+            tokenizer=tokenizer_a,
+            records=batch,
+            first_pass_fn=first_pass,
+            sections=args.sections,
+            max_q=args.max_q,
+            max_target=args.max_target,
+        )
+        for section, vals in metrics.items():
+            interventions_by_section[section].append(vals)
+    interventions = {}
+    for section, rows in interventions_by_section.items():
+        interventions[section] = {
+            key: float(sum(row[key] for row in rows) / max(1, len(rows)))
+            for key in ("correct", "shuffle", "zero", "q_only", "shuffle_margin", "zero_margin", "qz_gain")
+        }
+    return {
+        "step": step,
+        "eval_samples_requested": args.max_eval_samples,
+        "eval_probe_samples": len(probe),
+        "validation_main_nll_probe": grad_out.main_loss,
+        "answer_generation_accuracy": None,
+        "answer_generation_note": "Not run inside training loop; Heima benchmark evaluation remains disabled.",
+        "loss1_reconstruction_probe": grad_out.per_section_loss,
+        "latent_intervention": interventions,
+        "correct_shuffle_margin": {section: vals["shuffle_margin"] for section, vals in interventions.items()},
+        "gradient_audit": {
+            "grad_z_summary": grad_out.grad_z_norm.get("summary", 0.0),
+            "grad_z_caption": grad_out.grad_z_norm.get("caption", 0.0),
+            "grad_z_reasoning": grad_out.grad_z_norm.get("reasoning", 0.0),
+            "grad_A_from_loss1": grad_out.grad_A_from_self_decode_norm,
+            "grad_A_total": grad_out.grad_A_total_norm,
+            "finite": grad_out.finite,
+        },
+    }
+
+
 def train_stage2(args, run_dir: Path) -> dict:
     base.set_seed(args.seed)
     train = read_jsonl(args.dataset_path / "train.jsonl")
@@ -185,6 +259,8 @@ def train_stage2(args, run_dir: Path) -> dict:
     optimizer = base.make_optimizer([{"params": model_a.parameters(), "lr": args.lr_a}], args)
     first_pass = make_first_pass_fn(processor, tokenizer_a, args)
     logs = []
+    progress = []
+    save_steps = parse_save_steps(args.save_steps, args.save_every, args.max_steps)
     started = time.time()
     for step in range(1, args.max_steps + 1):
         records = base.batch_rows(train, args.batch_size, step - 1)
@@ -201,13 +277,19 @@ def train_stage2(args, run_dir: Path) -> dict:
             max_target=args.max_target,
             step_optimizer=True,
         )
-        logs.append(out.__dict__ | {"mode": out.mode.value, "step": step})
-        if args.save_every and step % args.save_every == 0:
+        row = out.__dict__ | {"mode": out.mode.value, "step": step}
+        logs.append(row)
+        if step == 1 or (args.log_every and step % args.log_every == 0):
+            print(json.dumps(row, ensure_ascii=False, sort_keys=True), flush=True)
+        if args.eval_every and step % args.eval_every == 0:
+            progress.append(summarize_eval_step(args, model_a, tokenizer_a, first_pass, val, step))
+            save_progress(run_dir, progress)
+        if step in save_steps:
             base.save_ckpt(run_dir / "checkpoints" / f"model_a_step{step}.pt", model_a=model_a.state_dict())
     interventions = evaluate_self_decode_interventions(
         model_a=model_a,
         tokenizer=tokenizer_a,
-        records=val,
+        records=val[: args.eval_probe_samples],
         first_pass_fn=first_pass,
         sections=args.sections,
         max_q=args.max_q,
@@ -217,18 +299,19 @@ def train_stage2(args, run_dir: Path) -> dict:
         "mode": args.mode,
         "runtime_sec": time.time() - started,
         "logs": logs,
+        "progress": progress,
         "latent_intervention_eval": interventions,
         "has_model_b": False,
         "optimizer_contains_model_b": False,
         "use_projector": False,
         "use_role_embedding": False,
         "extra_trainable_params_except_A": 0,
+        "save_steps": sorted(save_steps),
+        "save_optimizer": False,
     }
     write_json(run_dir / "result.json", result)
-    if args.save_every:
-        base.save_ckpt(run_dir / "checkpoints" / "model_a_final.pt", model_a=model_a.state_dict())
+    base.save_ckpt(run_dir / "checkpoints" / "model_a_final.pt", model_a=model_a.state_dict())
     return result
-
 
 def main() -> int:
     parser = argparse.ArgumentParser()
@@ -244,6 +327,10 @@ def main() -> int:
     parser.add_argument("--max_steps", "--max-steps", type=int, default=1)
     parser.add_argument("--eval_every", "--eval-every", type=int, default=0)
     parser.add_argument("--save_every", "--save-every", type=int, default=0)
+    parser.add_argument("--save_steps", "--save-steps", default=None)
+    parser.add_argument("--log_every", "--log-every", type=int, default=10)
+    parser.add_argument("--eval_batch_size", "--eval-batch-size", type=int, default=1)
+    parser.add_argument("--eval_probe_samples", "--eval-probe-samples", type=int, default=32)
     parser.add_argument("--dry_run", "--dry-run", action="store_true")
     parser.add_argument("--smoke_backward_only", "--smoke-backward-only", action="store_true")
     parser.add_argument("--mode", choices=[m.value for m in AOnlySelfDecodeMode], default=AOnlySelfDecodeMode.A_ONLY_SELF_DECODE.value)

@@ -115,7 +115,9 @@ CMD=("$PYTHON_BIN" "$ROOT/scripts/heima_stage2_model_a_only_self_decode.py"
   --max-eval-samples 512
   --max-steps 5000
   --eval-every 1000
-  --save-every 1000
+  --save-every 0
+  --save-steps 1000,2500,5000
+  --eval-probe-samples 32
   --mode a_only_self_decode)
 
 printf '%q ' "${CMD[@]}" > "$OUT/train_command.sh"

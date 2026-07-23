@@ -4,7 +4,7 @@
   "cumulative_latent": false,
   "dataset_path": "/data/zxl/runs/model_a_only_loss1_formal/formal_split",
   "detach_latent": false,
-  "disk_free_gb": 208.97,
+  "disk_free_gb": 208.47,
   "dry_run": false,
   "eval_only": false,
   "full_llava_cot_100k": false,
