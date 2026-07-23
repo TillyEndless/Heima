@@ -3,13 +3,15 @@ model:
   name: Qwen2.5-VL-3B-Instruct
   path: /data/zxl/small_models/Qwen2.5-VL-3B-Instruct
 mode: model_a_only_self_decode
+has_model_b: false
 stage0_checkpoint: /data/zxl/runs/heima_stage2_interp_supervision_small_v1/seed42/20260722_135515/checkpoints/s0_encoder.pt
 data:
-  split_path: /data/zxl/Heima-model-a-only-loss1-formal/data_split.json
-  dataset_path: /data/zxl/official_heima/datasets/LLaVA-CoT-100k/train.jsonl
-  image_root: /data/zxl/official_heima/datasets/LLaVA-CoT-100k/image_files
-  required_train_min: 10000
-  target_train_samples: 10000
+  split_path: /data/zxl/runs/model_a_only_loss1_formal/data_split.json
+  dataset_path: /data/zxl/runs/model_a_only_loss1_formal/formal_split
+  source_jsonl: /data/zxl/official_heima/datasets/LLaVA-CoT-100k/train.jsonl
+  image_root: /data/zxl/runs/model_a_only_loss1_formal/image_files
+  required_train_min: 5000
+  target_train_samples: 5000
   target_eval_samples: 512
 loss:
   main_loss: true
@@ -29,7 +31,7 @@ self_decode:
   detach_latent: false
 training:
   max_steps: 5000
-  eval_every: 500
+  eval_every: 1000
   save_steps:
     - 1000
     - 2500
@@ -38,3 +40,10 @@ training:
   save_optimizer: false
   output_dir: /data/zxl/runs/model_a_only_loss1_formal
   tmux_session: model_a_only_loss1_formal
+forbidden:
+  loss2: true
+  cumulative_latent: true
+  model_b_interpreter_training: true
+  full_llava_cot_100k: true
+  heima_benchmark_evaluation: true
+  tiny_acceptance: true

@@ -1,0 +1,126 @@
+{
+  "available_usable": 5512,
+  "first_missing_images": [
+    "coco/train2017/000000144530.jpg",
+    "docvqa/train/documents/jldg0227_18.png",
+    "coco/train2017/000000256465.jpg",
+    "vg/VG_100K_2/2391997.jpg",
+    "vg/VG_100K/2347626.jpg",
+    "gqa/images/2371373.jpg",
+    "docvqa/train/documents/prbn0226_5.png",
+    "gqa/images/2410153.jpg",
+    "docvqa/train/documents/rgvh0023_4.png",
+    "sqa/train/20757/image.png",
+    "coco/train2017/000000281711.jpg",
+    "docvqa/train/documents/mlgh0077_9.png",
+    "ocr_vqa/images/1583941908.jpg",
+    "gqa/images/2379198.jpg",
+    "coco/train2017/000000207447.jpg",
+    "coco/train2017/000000002444.jpg",
+    "vg/VG_100K_2/2399379.jpg",
+    "coco/train2017/000000166653.jpg",
+    "ocr_vqa/images/1500323462.jpg",
+    "coco/train2017/000000565245.jpg",
+    "gqa/images/2397647.jpg",
+    "docvqa/train/documents/fsxw0228_5.png",
+    "ocr_vqa/images/71807837.jpg",
+    "gqa/images/2368548.jpg",
+    "sqa/train/5279/image.png",
+    "vg/VG_100K_2/2401279.jpg",
+    "gqa/images/2402148.jpg",
+    "gqa/images/2347202.jpg",
+    "ocr_vqa/images/1476747733.jpg",
+    "coco/train2017/000000396681.jpg",
+    "coco/train2017/000000192053.jpg",
+    "coco/train2017/000000109399.jpg",
+    "ocr_vqa/images/1553417038.jpg",
+    "docvqa/train/documents/gkvw0217_12.png",
+    "coco/train2017/000000081602.jpg",
+    "docvqa/train/documents/hqjm0081_1.png",
+    "vg/VG_100K_2/2417012.jpg",
+    "ocr_vqa/images/791060918.jpg",
+    "ocr_vqa/images/762736542.jpg",
+    "ocr_vqa/images/849914809.jpg",
+    "coco/train2017/000000059151.jpg",
+    "docvqa/train/documents/phhx0023_8.png",
+    "coco/train2017/000000072793.jpg",
+    "docvqa/train/documents/glhv0228_1.png",
+    "docvqa/train/documents/hghx0227_3.png",
+    "gqa/images/2321867.jpg",
+    "gqa/images/2384995.jpg",
+    "coco/train2017/000000012838.jpg",
+    "coco/train2017/000000249275.jpg",
+    "geoqa+/images/11923.png"
+  ],
+  "image_access_rate": 0.021627,
+  "local_image_roots": [
+    "/data/zxl/runs/model_a_only_loss1_formal/image_files",
+    "/data/zxl/official_heima/datasets/LLaVA-CoT-100k/image_files",
+    "/data/zxl/official_heima/micro_subsets/chartqa_sqa_available_images_v1/image_files",
+    "/data/zxl/official_heima/micro_subsets/chartqa_sqa_v1/image_files"
+  ],
+  "missing_images": 32002,
+  "notes": [
+    "No full image.zip download is performed by this script.",
+    "Images are symlinked into the formal run image root when possible."
+  ],
+  "parsed_complete_count": 254866,
+  "required_total": 5512,
+  "restored_from_zip_count": 20347,
+  "section_completeness": {
+    "image_ok": 254927,
+    "question_ok": 254927,
+    "sections_missing": 61,
+    "sections_ok": 254866
+  },
+  "selected_eval_count": 512,
+  "selected_train_count": 5000,
+  "split_hash": "f1a0c51bc4960c58add4c5421525ad764d1cee09ccfda7ff79fb153d20d08325",
+  "status": "ready",
+  "task_counts_selected": {
+    "CLEVR_v1.0": 49,
+    "ai2d": 1654,
+    "chartqa": 3792,
+    "sqa": 17
+  },
+  "token_statistics": {
+    "answer": {
+      "max": 37,
+      "mean": 1.31,
+      "min": 1
+    },
+    "caption": {
+      "max": 105,
+      "mean": 44.98,
+      "min": 16
+    },
+    "question": {
+      "max": 206,
+      "mean": 22.19,
+      "min": 6
+    },
+    "reasoning": {
+      "max": 361,
+      "mean": 59.5,
+      "min": 26
+    },
+    "summary": {
+      "max": 81,
+      "mean": 35.01,
+      "min": 17
+    }
+  },
+  "total_jsonl_count": 254927,
+  "zip_sources": [
+    {
+      "exists": true,
+      "path": "/data/zxl/official_heima/datasets/LLaVA-CoT-100k/image.zip",
+      "size": 0
+    },
+    {
+      "exists": true,
+      "path": "/data/zxl/official_heima/datasets/LLaVA-CoT-100k/.download_parts/image.zip.part-aa",
+      "size": 8550149512
+    }
+  ]
+}
