@@ -1,0 +1,28 @@
+experiment: strict_heima_stage2_loss1_loss2
+base_branch: feat/heima-stage2-interp-supervision
+entrypoint: scripts/run_small_vlm_stage2_interp_supervision.py
+model_a_path: /data/zxl/small_models/Qwen2.5-VL-3B-Instruct
+model_b_path: /data/zxl/small_models/Qwen2.5-0.5B-Instruct
+subset: /data/zxl/official_heima/micro_subsets/chartqa_sqa_available_images_v1
+image_root: /data/zxl/official_heima/micro_subsets/chartqa_sqa_v1/image_files
+sections:
+  - summary
+  - caption
+  - reasoning
+stage2_modes:
+  - heima_baseline
+  - ours_interp_supervision
+  - ours_loss1_loss2
+loss:
+  lambda_loss1: 0.1
+  lambda_loss2: 0.05
+  loss2_pool: mean
+  loss2_distance: normalized_mse
+  loss2_text_context_mode: cumulative
+stage2_invariants:
+  model_A_trainable: true
+  model_B_frozen: true
+  optimizer_contains_B: false
+  same_A_initialization: true
+  same_B_checkpoint: true
+  same_dataset: true

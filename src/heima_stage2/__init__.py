@@ -16,4 +16,15 @@ __all__ = [
     "compute_grad_norm",
     "freeze_teacher_interpreters",
     "run_stage2_train_step",
+    "Loss2Features",
+    "compute_loss2_grad_norm",
+    "loss2_forward",
+    "pool_target_hidden",
 ]
+
+from .loss2_alignment import (
+    Loss2Features,
+    compute_grad_norm as compute_loss2_grad_norm,
+    loss2_forward,
+    pool_target_hidden,
+)
