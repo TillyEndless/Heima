@@ -1,0 +1,9 @@
+{
+  "finite": true,
+  "grad_A_from_loss1": 15.262592298210707,
+  "grad_A_total": 30.497396448686327,
+  "grad_z_caption": 0.00026719269768258626,
+  "grad_z_reasoning": 0.0004625731811221489,
+  "grad_z_summary": 0.00014001406368100092,
+  "pass": true
+}
