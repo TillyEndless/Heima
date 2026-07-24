@@ -30,6 +30,7 @@ from src.heima_stage2.model_a_only_self_decode import (
     FirstPassOutput,
     evaluate_self_decode_interventions,
     run_a_only_train_step,
+    causal_lm_loss,
 )
 
 os.environ.setdefault("HF_HUB_OFFLINE", "1")
@@ -62,11 +63,103 @@ def load_stage0_checkpoint_if_present(model_a, stage0_checkpoint: str | None, de
 
 def make_first_pass_fn(processor, tokenizer_a, args):
     def first_pass(model_a, records):
-        main, _logits, _labels, z, _trace = base.encoder_forward(model_a, processor, tokenizer_a, list(records), args)
-        return FirstPassOutput(main_loss=main, latents=z)
+        main, logits, _labels, z, trace = base.encoder_forward(model_a, processor, tokenizer_a, list(records), args)
+        latent_labels = torch.full(logits.shape[:2], -100, dtype=torch.long, device=logits.device)
+        for section in args.sections:
+            token_id = tokenizer_a.convert_tokens_to_ids(base.THINKING_TOKENS[section])
+            for row, pos in enumerate(trace[section]["thinking_pos"]):
+                latent_labels[row, int(pos)] = int(token_id)
+        latent_token_loss = causal_lm_loss(logits, latent_labels)
+        return FirstPassOutput(main_loss=main, latents=z, latent_token_loss=latent_token_loss)
 
     return first_pass
 
+
+def trainable_parameter_report(model_a) -> dict:
+    named = list(model_a.named_parameters())
+    trainable = [(name, p) for name, p in named if p.requires_grad]
+
+    def grad_norm(params):
+        total = 0.0
+        has_grad = False
+        for p in params:
+            if p.grad is not None:
+                has_grad = True
+                total += float(p.grad.detach().float().pow(2).sum().item())
+        return total ** 0.5, has_grad
+
+    def module_param_stats(module):
+        if module is None:
+            return {"exists": False, "matched_names": [], "trainable_param_count": 0, "has_grad": False, "grad_norm": 0.0}
+        module_param_ids = {id(p) for p in module.parameters(recurse=True)}
+        matched = [(n, p) for n, p in trainable if id(p) in module_param_ids]
+        norm, has_grad = grad_norm([p for _n, p in matched])
+        return {
+            "exists": True,
+            "module_class": module.__class__.__name__,
+            "matched_names": [n for n, _p in matched][:50],
+            "trainable_param_count": int(sum(p.numel() for _n, p in matched)),
+            "has_grad": has_grad,
+            "grad_norm": norm,
+        }
+
+    def name_group_stats(patterns):
+        matched = [(n, p) for n, p in trainable if any(pat in n for pat in patterns)]
+        norm, has_grad = grad_norm([p for _n, p in matched])
+        return {
+            "matched_names": [n for n, _p in matched][:50],
+            "trainable_param_count": int(sum(p.numel() for _n, p in matched)),
+            "has_grad": has_grad,
+            "grad_norm": norm,
+        }
+
+    input_emb = model_a.get_input_embeddings() if hasattr(model_a, "get_input_embeddings") else None
+    output_emb = model_a.get_output_embeddings() if hasattr(model_a, "get_output_embeddings") else None
+    input_ids = {id(p) for p in input_emb.parameters(recurse=True)} if input_emb is not None else set()
+    output_ids = {id(p) for p in output_emb.parameters(recurse=True)} if output_emb is not None else set()
+    peft_config = getattr(model_a, "peft_config", None)
+    return {
+        "total_param_count": int(sum(p.numel() for _n, p in named)),
+        "trainable_param_count": int(sum(p.numel() for _n, p in trainable)),
+        "trainable_name_count": len(trainable),
+        "has_peft_config": peft_config is not None,
+        "peft_config": str(peft_config) if peft_config is not None else None,
+        "input_embeddings": module_param_stats(input_emb),
+        "output_embeddings_or_lm_head": module_param_stats(output_emb),
+        "output_tied_to_input_embeddings": bool(input_ids and output_ids and bool(input_ids & output_ids)),
+        "lm_head_name_fallback": name_group_stats(("lm_head", "language_model.lm_head")),
+        "sample_trainable_names": [n for n, _p in trainable[:100]],
+        "all_name_count": len(named),
+    }
+
+
+
+@torch.no_grad()
+def evaluate_answer_accuracy(model_a, processor, tokenizer_a, args, records: list[dict]) -> dict:
+    if not records:
+        return {"accuracy": None, "samples": 0}
+    device = next(model_a.parameters()).device
+    hits = 0
+    total = 0
+    examples = []
+    for rec in records:
+        batch = base.vlm_inputs(processor, args, [rec], include_answer=False).to(device)
+        generated = model_a.generate(
+            **batch,
+            do_sample=False,
+            max_new_tokens=32,
+            pad_token_id=tokenizer_a.pad_token_id,
+            eos_token_id=tokenizer_a.eos_token_id,
+        )
+        prompt_len = int(batch["attention_mask"][0].sum().item())
+        text = tokenizer_a.decode(generated[0, prompt_len:], skip_special_tokens=True).strip()
+        gold = str(rec.get("answer", "")).strip()
+        ok = bool(gold and gold.lower() in text.lower())
+        hits += int(ok)
+        total += 1
+        if len(examples) < 8:
+            examples.append({"question": rec.get("question"), "gold_answer": gold, "generated": text, "correct": ok})
+    return {"accuracy": hits / total if total else None, "samples": total, "match_rule": "gold answer substring in greedy generation", "examples": examples}
 
 def manifest(args, status: str) -> dict:
     return {
@@ -83,6 +176,7 @@ def manifest(args, status: str) -> dict:
         "image_root": str(args.image_root),
         "sections": list(args.sections),
         "lambda_self": args.lambda_self,
+        "latent_token_loss_weight": args.latent_token_loss_weight,
         "self_decode_with_image": args.self_decode_with_image,
         "stage0_checkpoint": args.stage0_checkpoint,
         "forward_contract": {
@@ -91,8 +185,8 @@ def manifest(args, status: str) -> dict:
             "expected_forward_count_per_batch": len(args.sections) + 1,
         },
         "loss_contract": {
-            "a_only_main_baseline": "L_total = L_main; self-decode forwards are eval/log only with detached z and no gradient contribution",
-            "a_only_self_decode": "L_total = L_main + lambda_self * mean_i(L_cot_i); z is not detached",
+            "a_only_main_baseline": "L_total = L_main + latent_token_loss_weight * L_latent_token; self-decode forwards are eval/log only with detached z",
+            "a_only_self_decode": "L_total = L_main + lambda_self * mean_i(L_cot_i) + latent_token_loss_weight * L_latent_token; z is not detached",
         },
         "script_sha256": hashlib.sha256(Path(__file__).read_bytes()).hexdigest(),
         "base_component_sha256": hashlib.sha256(Path(base.__file__).read_bytes()).hexdigest(),
@@ -122,6 +216,7 @@ def run_smoke_backward_only(args, run_dir: Path) -> dict:
             first_pass_fn=first_pass,
             mode=mode,
             lambda_self=args.lambda_self,
+            lambda_latent=args.latent_token_loss_weight,
             sections=args.sections,
             max_q=args.max_q,
             max_target=args.max_target,
@@ -129,6 +224,7 @@ def run_smoke_backward_only(args, run_dir: Path) -> dict:
         )
         outputs[mode.value] = step_out.__dict__ | {"mode": step_out.mode.value}
     write_json(run_dir / "smoke_backward_only.json", outputs)
+    write_json(run_dir / "trainable_parameter_report.json", trainable_parameter_report(model_a))
     return outputs
 
 
@@ -155,6 +251,7 @@ def train_stage2(args, run_dir: Path) -> dict:
             first_pass_fn=first_pass,
             mode=args.mode,
             lambda_self=args.lambda_self,
+            lambda_latent=args.latent_token_loss_weight,
             sections=args.sections,
             max_q=args.max_q,
             max_target=args.max_target,
@@ -172,10 +269,12 @@ def train_stage2(args, run_dir: Path) -> dict:
         max_q=args.max_q,
         max_target=args.max_target,
     ) if val else {}
+    answer_accuracy = evaluate_answer_accuracy(model_a, processor, tokenizer_a, args, val) if val else {"accuracy": None, "samples": 0}
     result = {
         "mode": args.mode,
         "runtime_sec": time.time() - started,
         "logs": logs,
+        "answer_accuracy": answer_accuracy,
         "latent_intervention_eval": interventions,
         "has_model_b": False,
         "optimizer_contains_model_b": False,
@@ -197,6 +296,7 @@ def main() -> int:
     parser.add_argument("--output_dir", "--output-dir", type=Path, default=Path("/data/zxl/runs/model_a_only_self_decode_v0"))
     parser.add_argument("--sections", type=parse_sections, default=parse_sections("summary,caption,reasoning"))
     parser.add_argument("--lambda_self", "--lambda-self", type=float, default=0.05)
+    parser.add_argument("--latent_token_loss_weight", "--latent-token-loss-weight", type=float, default=0.05)
     parser.add_argument("--stage0_checkpoint", "--stage0-checkpoint", default=None)
     parser.add_argument("--max_train_samples", "--max-train-samples", type=int, default=None)
     parser.add_argument("--max_eval_samples", "--max-eval-samples", type=int, default=8)

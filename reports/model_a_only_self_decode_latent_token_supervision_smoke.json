@@ -1,0 +1,58 @@
+{
+  "a_only_main_baseline": {
+    "actual_forward_count_per_batch": 4,
+    "expected_forward_count_per_batch": 4,
+    "extra_trainable_params_except_A": 0,
+    "finite": true,
+    "grad_A_from_latent_token_norm": 650.2898606698778,
+    "grad_A_from_self_decode_norm": 0.0,
+    "grad_A_total_norm": 999.2617226024936,
+    "grad_z_norm": {
+      "caption": 0.0,
+      "reasoning": 0.0,
+      "summary": 0.0
+    },
+    "has_model_b": false,
+    "latent_token_loss": 23.125,
+    "main_loss": 1.5389786958694458,
+    "mode": "a_only_main_baseline",
+    "optimizer_contains_model_b": false,
+    "per_section_loss": {
+      "caption": 1.7890625,
+      "reasoning": 7.34375,
+      "summary": 2.0
+    },
+    "self_loss": 3.71875,
+    "total_loss": 2.6952285766601562,
+    "use_projector": false,
+    "use_role_embedding": false
+  },
+  "a_only_self_decode": {
+    "actual_forward_count_per_batch": 4,
+    "expected_forward_count_per_batch": 4,
+    "extra_trainable_params_except_A": 0,
+    "finite": true,
+    "grad_A_from_latent_token_norm": 651.9491122073833,
+    "grad_A_from_self_decode_norm": 160.15363337041737,
+    "grad_A_total_norm": 976.3880241649522,
+    "grad_z_norm": {
+      "caption": 0.0028510016728189006,
+      "reasoning": 0.04566086757519321,
+      "summary": 0.0014668589875979148
+    },
+    "has_model_b": false,
+    "latent_token_loss": 23.125,
+    "main_loss": 1.5389786958694458,
+    "mode": "a_only_self_decode",
+    "optimizer_contains_model_b": false,
+    "per_section_loss": {
+      "caption": 1.7890625,
+      "reasoning": 7.34375,
+      "summary": 2.0
+    },
+    "self_loss": 3.71875,
+    "total_loss": 2.8807754516601562,
+    "use_projector": false,
+    "use_role_embedding": false
+  }
+}

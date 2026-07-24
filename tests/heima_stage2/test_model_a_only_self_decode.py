@@ -98,6 +98,15 @@ def make_first_pass(tokenizer: TinyTokenizer):
             input_ids[i, : len(ids)] = torch.tensor(ids)
             label_tensor[i, : len(labels[i])] = torch.tensor(labels[i])
             attention[i, : len(ids)] = 1
+        latent_label_tensor = torch.full_like(input_ids, -100)
+        latent_token_ids = {
+            "summary": tokenizer("<sum>")["input_ids"][0],
+            "caption": tokenizer("<cap>")["input_ids"][0],
+            "reasoning": tokenizer("<reas>")["input_ids"][0],
+        }
+        for section, pos in positions.items():
+            for row, p in enumerate(pos):
+                latent_label_tensor[row, p] = latent_token_ids[section]
         out = model(input_ids=input_ids, attention_mask=attention, output_hidden_states=True, use_cache=False)
         hidden = out.hidden_states[-1]
         batch_idx = torch.arange(len(rows))
@@ -108,7 +117,11 @@ def make_first_pass(tokenizer: TinyTokenizer):
             if z.requires_grad:
                 z.retain_grad()
             latents[section] = z
-        return FirstPassOutput(main_loss=causal_lm_loss(out.logits, label_tensor), latents=latents)
+        return FirstPassOutput(
+            main_loss=causal_lm_loss(out.logits, label_tensor),
+            latents=latents,
+            latent_token_loss=causal_lm_loss(out.logits, latent_label_tensor),
+        )
 
     return first_pass
 
@@ -196,6 +209,8 @@ def test_self_decode_mode_sends_gradients_to_z_and_a() -> None:
         step_optimizer=False,
     )
     assert out.grad_A_from_self_decode_norm > 0.0
+    assert out.grad_A_from_latent_token_norm > 0.0
+    assert out.latent_token_loss > 0.0
     assert all(out.grad_z_norm[s] > 0.0 for s in ("summary", "caption", "reasoning"))
 
 
@@ -216,7 +231,8 @@ def test_baseline_mode_keeps_self_decode_gradient_zero() -> None:
     )
     assert out.grad_A_from_self_decode_norm == 0.0
     assert all(v == 0.0 for v in out.grad_z_norm.values())
-    assert out.total_loss == out.main_loss
+    assert out.total_loss > out.main_loss
+    assert out.grad_A_from_latent_token_norm > 0.0
     assert model.forward_calls == 4
 
 
@@ -259,8 +275,30 @@ def test_latent_intervention_eval_has_required_conditions() -> None:
             "shuffle",
             "zero",
             "q_only",
+            "latent_only",
             "shuffle_margin",
             "zero_margin",
             "qz_gain",
         }
         assert all(torch.isfinite(torch.tensor(v)) for v in section_metrics.values())
+
+
+def test_latent_token_loss_weight_changes_total_loss() -> None:
+    tokenizer = TinyTokenizer()
+    model = ToyA()
+    opt = torch.optim.SGD(model.parameters(), lr=0.01)
+    out = run_a_only_train_step(
+        model_a=model,
+        optimizer_a=opt,
+        records=records(),
+        tokenizer=tokenizer,
+        first_pass_fn=make_first_pass(tokenizer),
+        mode=AOnlySelfDecodeMode.A_ONLY_SELF_DECODE,
+        lambda_self=0.05,
+        lambda_latent=0.05,
+        sections=("summary", "caption", "reasoning"),
+        step_optimizer=False,
+    )
+    expected = out.main_loss + 0.05 * out.self_loss + 0.05 * out.latent_token_loss
+    assert abs(out.total_loss - expected) < 1e-5
+    assert out.grad_A_from_latent_token_norm > 0.0

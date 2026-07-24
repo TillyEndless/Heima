@@ -45,6 +45,7 @@ class SelfDecodeFeatures:
 class FirstPassOutput:
     main_loss: Tensor
     latents: Mapping[str, Tensor]
+    latent_token_loss: Tensor | None = None
 
 
 @dataclass(frozen=True)
@@ -52,10 +53,12 @@ class AOnlyStepOutput:
     mode: AOnlySelfDecodeMode
     main_loss: float
     self_loss: float
+    latent_token_loss: float
     total_loss: float
     per_section_loss: dict[str, float]
     grad_z_norm: dict[str, float]
     grad_A_from_self_decode_norm: float
+    grad_A_from_latent_token_norm: float
     grad_A_total_norm: float
     has_model_b: bool
     optimizer_contains_model_b: bool
@@ -136,6 +139,7 @@ def build_self_decode_features(
     max_q: int,
     max_target: int,
     include_latent: bool = True,
+    include_question: bool = True,
 ) -> SelfDecodeFeatures:
     """Build second-pass inputs_embeds and CE labels for one CoT section.
 
@@ -162,7 +166,11 @@ def build_self_decode_features(
         raise ValueError("z batch size must match records")
 
     for i, rec in enumerate(records):
-        prompt_ids = tokenize_text(tokenizer, explain_prompt_text(rec, section, tokenizer, max_q))
+        prompt_text = explain_prompt_text(rec, section, tokenizer, max_q) if include_question else (
+            f"Instruction:\n{DEFAULT_EXPLAIN_PROMPTS.get(section, f'Reconstruct the Heima {section} thought from the continuous latent.')}\n"
+            "Do not use the image or question.\n\nLatent:\n"
+        )
+        prompt_ids = tokenize_text(tokenizer, prompt_text)
         prefix_ids = tokenize_text(tokenizer, section_prefix(section))
         target_ids = tokenize_text(tokenizer, str(rec[section]) + _eos(tokenizer), max_target)
         prompt_tensor = torch.tensor(prompt_ids, dtype=torch.long, device=device)
@@ -220,6 +228,7 @@ def self_decode_forward(
     max_q: int,
     max_target: int,
     include_latent: bool = True,
+    include_question: bool = True,
 ) -> tuple[Tensor, Tensor, Tensor, SelfDecodeFeatures]:
     features = build_self_decode_features(
         model_a=model_a,
@@ -230,6 +239,7 @@ def self_decode_forward(
         max_q=max_q,
         max_target=max_target,
         include_latent=include_latent,
+        include_question=include_question,
     )
     out = model_a(
         inputs_embeds=features.inputs_embeds,
@@ -246,9 +256,12 @@ def _as_first_pass_output(obj: FirstPassOutput | Mapping[str, object]) -> FirstP
         return obj
     main = obj.get("main_loss", obj.get("ntp_loss"))
     latents = obj.get("latents")
+    latent_token_loss = obj.get("latent_token_loss")
     if not isinstance(main, Tensor) or not isinstance(latents, Mapping):
         raise TypeError("first_pass_fn must return FirstPassOutput or mapping with main_loss/ntp_loss and latents")
-    return FirstPassOutput(main_loss=main, latents=latents)  # type: ignore[arg-type]
+    if latent_token_loss is not None and not isinstance(latent_token_loss, Tensor):
+        raise TypeError("latent_token_loss must be a Tensor when provided")
+    return FirstPassOutput(main_loss=main, latents=latents, latent_token_loss=latent_token_loss)  # type: ignore[arg-type]
 
 
 def run_a_only_train_step(
@@ -260,6 +273,7 @@ def run_a_only_train_step(
     first_pass_fn: FirstPassFn,
     mode: AOnlySelfDecodeMode | str,
     lambda_self: float,
+    lambda_latent: float = 0.05,
     sections: Sequence[str] = DEFAULT_SECTIONS,
     max_q: int = 160,
     max_target: int = 160,
@@ -270,13 +284,16 @@ def run_a_only_train_step(
     Baseline still performs second-pass self-decode forwards for logging, but it
     does so under no_grad with detached z and keeps L_total equal to L_main.
     Self-decode mode keeps the z graph and backpropagates once through
-    L_main + lambda_self * mean_i(L_cot_i).
+    L_main + lambda_self * mean_i(L_cot_i) + lambda_latent * L_latent_token.
     """
 
     stage_mode = AOnlySelfDecodeMode(mode)
     sections = tuple(sections)
     optimizer_a.zero_grad(set_to_none=True)
     first = _as_first_pass_output(first_pass_fn(model_a, records))
+    latent_token_loss = first.latent_token_loss
+    if latent_token_loss is None:
+        latent_token_loss = first.main_loss.new_zeros(())
     for section in sections:
         if section not in first.latents:
             raise KeyError(f"missing first-pass latent for section {section!r}")
@@ -304,7 +321,7 @@ def run_a_only_train_step(
         self_loss = torch.stack([v.to(first.main_loss.device) for v in per_losses.values()]).mean()
         grad_a_from_self = 0.0
         grad_z = {section: 0.0 for section in sections}
-        total = first.main_loss
+        total = first.main_loss + float(lambda_latent) * latent_token_loss
     else:
         for section in sections:
             loss, _logits, _labels, _features = self_decode_forward(
@@ -333,15 +350,24 @@ def run_a_only_train_step(
             section: compute_tensor_grad_norm([grad])[0]
             for section, grad in zip(sections, grads[len(params) :])
         }
-        total = first.main_loss + float(lambda_self) * self_loss
+        total = first.main_loss + float(lambda_self) * self_loss + float(lambda_latent) * latent_token_loss
+
+    params_for_latent = [param for param in model_a.parameters() if param.requires_grad]
+    latent_grads = torch.autograd.grad(
+        latent_token_loss,
+        params_for_latent,
+        retain_graph=True,
+        allow_unused=True,
+    ) if float(lambda_latent) != 0.0 else tuple(None for _ in params_for_latent)
+    grad_a_from_latent, finite_latent = compute_tensor_grad_norm(latent_grads)
 
     total.backward()
     grad_a_total, finite_total = compute_grad_norm(model_a.parameters())
     if step_optimizer:
         optimizer_a.step()
 
-    finite_losses = torch.isfinite(first.main_loss.detach()) and torch.isfinite(self_loss.detach()) and torch.isfinite(total.detach())
-    finite = bool(finite_losses.item()) and finite_total
+    finite_losses = torch.isfinite(first.main_loss.detach()) and torch.isfinite(self_loss.detach()) and torch.isfinite(latent_token_loss.detach()) and torch.isfinite(total.detach())
+    finite = bool(finite_losses.item()) and finite_total and finite_latent
     if stage_mode == AOnlySelfDecodeMode.A_ONLY_SELF_DECODE:
         finite = finite and finite_self
 
@@ -349,10 +375,12 @@ def run_a_only_train_step(
         mode=stage_mode,
         main_loss=float(first.main_loss.detach().cpu().item()),
         self_loss=float(self_loss.detach().cpu().item()),
+        latent_token_loss=float(latent_token_loss.detach().cpu().item()),
         total_loss=float(total.detach().cpu().item()),
         per_section_loss={k: float(v.detach().cpu().item()) for k, v in per_losses.items()},
         grad_z_norm=grad_z,
         grad_A_from_self_decode_norm=grad_a_from_self,
+        grad_A_from_latent_token_norm=grad_a_from_latent,
         grad_A_total_norm=grad_a_total,
         has_model_b=False,
         optimizer_contains_model_b=False,
@@ -377,6 +405,9 @@ def evaluate_self_decode_interventions(
     max_target: int = 160,
 ) -> dict[str, dict[str, float]]:
     first = _as_first_pass_output(first_pass_fn(model_a, records))
+    latent_token_loss = first.latent_token_loss
+    if latent_token_loss is None:
+        latent_token_loss = first.main_loss.new_zeros(())
     metrics: dict[str, dict[str, float]] = {}
     for section in sections:
         z = first.latents[section]
@@ -398,15 +429,21 @@ def evaluate_self_decode_interventions(
             model_a=model_a, tokenizer=tokenizer, records=records, section=section, z=None,
             max_q=max_q, max_target=max_target, include_latent=False,
         )
+        latent_only_loss, _l, _lab, _f = self_decode_forward(
+            model_a=model_a, tokenizer=tokenizer, records=records, section=section, z=z,
+            max_q=max_q, max_target=max_target, include_latent=True, include_question=False,
+        )
         correct = float(correct_loss.item())
         shuffled = float(shuffle_loss.item())
         zeroed = float(zero_loss.item())
         q_only = float(q_loss.item())
+        latent_only = float(latent_only_loss.item())
         metrics[section] = {
             "correct": correct,
             "shuffle": shuffled,
             "zero": zeroed,
             "q_only": q_only,
+            "latent_only": latent_only,
             "shuffle_margin": shuffled - correct,
             "zero_margin": zeroed - correct,
             "qz_gain": q_only - correct,
