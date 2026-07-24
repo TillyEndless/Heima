@@ -1,0 +1,178 @@
+{
+  "checkpoint": {
+    "canonical_b_init": "/data/zxl/runs/ab_loss1_shortcut_formal/checkpoints/b_init_seed42.pt",
+    "checkpoint_source": "strict Heima Stage0 explicit-CoT warmup reused as A initialization",
+    "checkpoint_tensor_count": 825,
+    "config_path": "/data/zxl/runs/heima_stage2_interp_supervision_small_v1/seed42/20260722_135515/experiment_manifest.json",
+    "dataset_path": "/data/zxl/runs/model_a_only_loss1_formal/formal_split",
+    "git_branch": "feat/ab-loss1-shortcut-formal",
+    "git_commit": "a71a7d7978e84b9b2151d5c4a2f6791951e0ee0a",
+    "h0_b_checkpoint": "/data/zxl/runs/ab_loss1_shortcut_formal/h0_heima_b_probe/checkpoints/b_final.pt",
+    "h2_dependency": "H2 must load h0_heima_b_probe/checkpoints/b_final.pt after H0 completes",
+    "model_a_name": "/data/zxl/small_models/Qwen2.5-VL-3B-Instruct",
+    "model_b_name": "/data/zxl/small_models/Qwen2.5-0.5B-Instruct",
+    "stage0_checkpoint": "/data/zxl/runs/heima_stage2_interp_supervision_small_v1/seed42/20260722_135515/checkpoints/s0_encoder.pt",
+    "status": "usable_stage0_found"
+  },
+  "data": {
+    "dataset_path": "/data/zxl/runs/model_a_only_loss1_formal/formal_split",
+    "image_access_rate": 1.0,
+    "image_root": "/data/zxl/runs/model_a_only_loss1_formal/image_files",
+    "missing_images_count": 0,
+    "missing_images_preview": [],
+    "section_completeness": {
+      "answer": {
+        "complete": 5512,
+        "missing": 0
+      },
+      "caption": {
+        "complete": 5512,
+        "missing": 0
+      },
+      "image": {
+        "complete": 5512,
+        "missing": 0
+      },
+      "question": {
+        "complete": 5512,
+        "missing": 0
+      },
+      "reasoning": {
+        "complete": 5512,
+        "missing": 0
+      },
+      "summary": {
+        "complete": 5512,
+        "missing": 0
+      }
+    },
+    "selected_eval_count": 512,
+    "selected_train_count": 5000,
+    "source_split": "/data/zxl/runs/model_a_only_loss1_formal/data_split.json",
+    "source_split_hash": "f1a0c51bc4960c58add4c5421525ad764d1cee09ccfda7ff79fb153d20d08325",
+    "split_hash": "3ce0459e558f00e69dbcf1ee42a648275521fca76cd1e4dc0471487d5b4a1b60:6f5bd78c121a1dbcabbc983ddf9d724b5e8754a18a1f05685c261fd4a6911a1c",
+    "status": "ready",
+    "target_eval_count": 512,
+    "target_train_count": 5000,
+    "token_statistics_whitespace": {
+      "answer": {
+        "max": 37,
+        "mean": 1.3076923076923077,
+        "min": 1
+      },
+      "caption": {
+        "max": 105,
+        "mean": 44.98421625544267,
+        "min": 16
+      },
+      "question": {
+        "max": 206,
+        "mean": 22.190493468795356,
+        "min": 6
+      },
+      "reasoning": {
+        "max": 361,
+        "mean": 59.49854862119013,
+        "min": 26
+      },
+      "summary": {
+        "max": 81,
+        "mean": 35.01215529753266,
+        "min": 17
+      }
+    }
+  },
+  "groups": {
+    "h0_heima_b_probe": {
+      "dry_run_status": "pass",
+      "gradient_probe": {
+        "detach_encoder_latent_for_loss1": true,
+        "finite_A": true,
+        "finite_B": true,
+        "grad_A_from_loss1": 0.0,
+        "grad_B_from_loss1": 35.75615473054087,
+        "grad_z_caption": 0.0,
+        "grad_z_reasoning": 0.0,
+        "grad_z_summary": 0.0,
+        "group": "h0_heima_b_probe",
+        "loss1_by_section": {
+          "caption": 2.3452112674713135,
+          "reasoning": 1.5757063627243042,
+          "summary": 2.073214054107666
+        },
+        "loss1_mean_probe": 1.9980440139770508,
+        "main_loss_probe": 1.3156023025512695
+      },
+      "optimizer_contract": {
+        "cumulative_latent": false,
+        "group": "h0_heima_b_probe",
+        "loss2_enabled": false,
+        "model_a_only_training": false,
+        "optimizer_contains_A": false,
+        "optimizer_contains_B": true,
+        "trainable_A_params": 0,
+        "trainable_B_params": 1489296768
+      },
+      "stage0_load": {
+        "checkpoint_tensors": 825,
+        "first_missing": [],
+        "first_unexpected": [],
+        "key_transform": "qwen25_vl_model_bridge",
+        "loaded": true,
+        "loaded_tensors": 825,
+        "missing_after_partial_load": 0,
+        "stage0_checkpoint": "/data/zxl/runs/heima_stage2_interp_supervision_small_v1/seed42/20260722_135515/checkpoints/s0_encoder.pt",
+        "target_tensors": 825,
+        "unexpected_after_partial_load": 0
+      }
+    },
+    "h1_joint_ab_loss1": {
+      "dry_run_status": "pass",
+      "gradient_probe": {
+        "detach_encoder_latent_for_loss1": false,
+        "finite_A": true,
+        "finite_B": true,
+        "grad_A_from_loss1": 15.734638861234066,
+        "grad_B_from_loss1": 35.75615473054087,
+        "grad_z_caption": 0.017806213349103928,
+        "grad_z_reasoning": 0.0008580193971283734,
+        "grad_z_summary": 0.004962950013577938,
+        "group": "h1_joint_ab_loss1",
+        "loss1_by_section": {
+          "caption": 2.3452112674713135,
+          "reasoning": 1.5757063627243042,
+          "summary": 2.073214054107666
+        },
+        "loss1_mean_probe": 1.9980440139770508,
+        "main_loss_probe": 1.3156023025512695
+      },
+      "optimizer_contract": {
+        "cumulative_latent": false,
+        "group": "h1_joint_ab_loss1",
+        "loss2_enabled": false,
+        "model_a_only_training": false,
+        "optimizer_contains_A": true,
+        "optimizer_contains_B": true,
+        "trainable_A_params": 3754074112,
+        "trainable_B_params": 1489296768
+      },
+      "stage0_load": {
+        "checkpoint_tensors": 825,
+        "first_missing": [],
+        "first_unexpected": [],
+        "key_transform": "qwen25_vl_model_bridge",
+        "loaded": true,
+        "loaded_tensors": 825,
+        "missing_after_partial_load": 0,
+        "stage0_checkpoint": "/data/zxl/runs/heima_stage2_interp_supervision_small_v1/seed42/20260722_135515/checkpoints/s0_encoder.pt",
+        "target_tensors": 825,
+        "unexpected_after_partial_load": 0
+      }
+    },
+    "h2_frozen_b_loss1_to_a": {
+      "dry_run_status": "deferred_until_h0_final_b_exists",
+      "required_b_checkpoint": "/data/zxl/runs/ab_loss1_shortcut_formal/h0_heima_b_probe/checkpoints/b_final.pt"
+    }
+  },
+  "status": "pass"
+}

@@ -1,0 +1,68 @@
+{
+  "dataset_path": "/data/zxl/runs/model_a_only_loss1_formal/formal_split",
+  "image_access_rate": 1.0,
+  "image_root": "/data/zxl/runs/model_a_only_loss1_formal/image_files",
+  "missing_images_count": 0,
+  "missing_images_preview": [],
+  "section_completeness": {
+    "answer": {
+      "complete": 5512,
+      "missing": 0
+    },
+    "caption": {
+      "complete": 5512,
+      "missing": 0
+    },
+    "image": {
+      "complete": 5512,
+      "missing": 0
+    },
+    "question": {
+      "complete": 5512,
+      "missing": 0
+    },
+    "reasoning": {
+      "complete": 5512,
+      "missing": 0
+    },
+    "summary": {
+      "complete": 5512,
+      "missing": 0
+    }
+  },
+  "selected_eval_count": 512,
+  "selected_train_count": 5000,
+  "source_split": "/data/zxl/runs/model_a_only_loss1_formal/data_split.json",
+  "source_split_hash": "f1a0c51bc4960c58add4c5421525ad764d1cee09ccfda7ff79fb153d20d08325",
+  "split_hash": "3ce0459e558f00e69dbcf1ee42a648275521fca76cd1e4dc0471487d5b4a1b60:6f5bd78c121a1dbcabbc983ddf9d724b5e8754a18a1f05685c261fd4a6911a1c",
+  "status": "ready",
+  "target_eval_count": 512,
+  "target_train_count": 5000,
+  "token_statistics_whitespace": {
+    "answer": {
+      "max": 37,
+      "mean": 1.3076923076923077,
+      "min": 1
+    },
+    "caption": {
+      "max": 105,
+      "mean": 44.98421625544267,
+      "min": 16
+    },
+    "question": {
+      "max": 206,
+      "mean": 22.190493468795356,
+      "min": 6
+    },
+    "reasoning": {
+      "max": 361,
+      "mean": 59.49854862119013,
+      "min": 26
+    },
+    "summary": {
+      "max": 81,
+      "mean": 35.01215529753266,
+      "min": 17
+    }
+  }
+}

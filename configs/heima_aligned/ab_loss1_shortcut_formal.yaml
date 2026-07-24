@@ -1,0 +1,81 @@
+experiment: ab_loss1_shortcut_formal
+description: Strict Heima A+B Loss1 shortcut control with image-backed LLaVA-CoT subset.
+
+models:
+  model_a:
+    name: Qwen2.5-VL-3B-Instruct
+    path: /data/zxl/small_models/Qwen2.5-VL-3B-Instruct
+    stage0_checkpoint: /data/zxl/runs/heima_stage2_interp_supervision_small_v1/seed42/20260722_135515/checkpoints/s0_encoder.pt
+  model_b:
+    name: Qwen2.5-0.5B-Instruct
+    path: /data/zxl/small_models/Qwen2.5-0.5B-Instruct
+
+data:
+  source_split: /data/zxl/runs/model_a_only_loss1_formal/data_split.json
+  dataset_path: /data/zxl/runs/model_a_only_loss1_formal/formal_split
+  image_root: /data/zxl/runs/model_a_only_loss1_formal/image_files
+  train_samples: 5000
+  eval_samples: 512
+  seed: 42
+
+loss:
+  main_loss: true
+  loss1:
+    enabled: true
+    lambda: 0.1
+    sections:
+      - summary
+      - caption
+      - reasoning
+  loss2:
+    enabled: false
+
+latent:
+  source: last_hidden_state_of_latent_cot_i
+  context_mode: local
+  cumulative_latent: false
+
+groups:
+  h0_heima_b_probe:
+    freeze_a: true
+    freeze_b: false
+    loss: loss1_only
+    optimizer: B_only
+    expected_grad_A_from_loss1: 0
+    expected_grad_B_from_loss1: positive
+  h1_joint_ab_loss1:
+    freeze_a: false
+    freeze_b: false
+    loss: main_plus_0.1_loss1
+    optimizer: A_plus_B
+    expected_grad_A_from_loss1: positive
+    expected_grad_B_from_loss1: positive
+  h2_frozen_b_loss1_to_a:
+    freeze_a: false
+    freeze_b: true
+    loss: main_plus_0.1_loss1
+    optimizer: A_only
+    b_checkpoint_source: h0_final
+    expected_grad_A_from_loss1: positive
+    expected_grad_B_from_loss1: 0
+
+training:
+  max_steps: 5000
+  batch_size: 1
+  eval_every: 1000
+  save_steps:
+    - 1000
+    - 2500
+    - 5000
+  save_final: true
+  save_optimizer: false
+  output_dir: /data/zxl/runs/ab_loss1_shortcut_formal
+  tmux_session: ab_loss1_shortcut_formal
+
+forbidden:
+  model_a_only_training: true
+  loss2: true
+  cumulative_latent: true
+  tiny_acceptance: true
+  full_llava_cot_100k: true
+  heima_benchmark_evaluation: true
