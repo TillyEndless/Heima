@@ -5,7 +5,7 @@
   "config_path": "/data/zxl/runs/heima_stage2_interp_supervision_small_v1/seed42/20260722_135515/experiment_manifest.json",
   "dataset_path": "/data/zxl/runs/model_a_only_loss1_formal/formal_split",
   "git_branch": "feat/ab-loss1-shortcut-formal",
-  "git_commit": "a71a7d7978e84b9b2151d5c4a2f6791951e0ee0a",
+  "git_commit": "6345325be153c20353178d6a4bfac53c1ff12fa8",
   "h0_b_checkpoint": "/data/zxl/runs/ab_loss1_shortcut_formal/h0_heima_b_probe/checkpoints/b_final.pt",
   "h2_dependency": "H2 must load h0_heima_b_probe/checkpoints/b_final.pt after H0 completes",
   "model_a_name": "/data/zxl/small_models/Qwen2.5-VL-3B-Instruct",
