@@ -66,7 +66,7 @@ if [[ "$TRAIN" == "1" ]]; then
   printf "%q " "${cmd[@]}" > "$OUT/${GROUP}_command.sh"
   printf "\n" >> "$OUT/${GROUP}_command.sh"
   chmod +x "$OUT/${GROUP}_command.sh"
-  tmux new-session -d -s "$SESSION" "cd  && exec ${cmd[*]} >> /logs/.log 2>&1"
+  tmux new-session -d -s "$SESSION" "cd \"$ROOT\" && exec ${cmd[*]} >> \"$OUT/logs/${GROUP}.log\" 2>&1"
   sleep 3
   pgrep -af "ab_loss1_shortcut_formal.py.*--group $GROUP" > "$OUT/${GROUP}_pid.txt" || true
   nvidia-smi --query-gpu=index,name,memory.used,memory.total,utilization.gpu --format=csv,noheader > "$OUT/gpu_at_start.txt" || true
