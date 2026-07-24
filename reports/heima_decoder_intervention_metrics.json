@@ -1,0 +1,94 @@
+{
+  "official_scaled_h0": {
+    "avg": {
+      "NLL_Q_correct": 1.6860735641481976,
+      "NLL_Q_only": 1.6777668371796608,
+      "NLL_Q_shuffle": 1.6861471879916887,
+      "NLL_Z_only": 2.2471307131151357,
+      "latent_gain": -0.008306726968536774,
+      "question_shortcut_ratio": 0.014589487179685837,
+      "shuffle_margin": 7.362384349107742e-05
+    },
+    "checkpoint": "/data/zxl/runs/heima_official_intervention_scaled/official_h0_b_probe/checkpoints/b_final.pt",
+    "eval_samples": 128,
+    "run_dir": "/data/zxl/runs/heima_official_intervention_scaled/official_h0_b_probe",
+    "sections": {
+      "caption": {
+        "NLL_Q_correct": 1.7468294468708336,
+        "NLL_Q_only": 1.7367558842524886,
+        "NLL_Q_shuffle": 1.7468985808081925,
+        "NLL_Z_only": 2.131675655953586,
+        "latent_gain": -0.010073562618345022,
+        "question_shortcut_ratio": 0.025507871066960376,
+        "samples": 128,
+        "shuffle_margin": 6.91339373588562e-05
+      },
+      "reasoning": {
+        "NLL_Q_correct": 1.7251877142116427,
+        "NLL_Q_only": 1.7084823190234601,
+        "NLL_Q_shuffle": 1.72495595831424,
+        "NLL_Z_only": 2.1623498015105724,
+        "latent_gain": -0.016705395188182592,
+        "question_shortcut_ratio": 0.036806768126766934,
+        "samples": 128,
+        "shuffle_margin": -0.00023175589740276337
+      },
+      "summary": {
+        "NLL_Q_correct": 1.5862035313621163,
+        "NLL_Q_only": 1.5880623082630336,
+        "NLL_Q_shuffle": 1.5865870248526335,
+        "NLL_Z_only": 2.447366681881249,
+        "latent_gain": 0.0018587769009172916,
+        "question_shortcut_ratio": -0.0021631181662565783,
+        "samples": 128,
+        "shuffle_margin": 0.00038349349051713943
+      }
+    }
+  },
+  "our_h0": {
+    "avg": {
+      "NLL_Q_correct": 1.3902280282539625,
+      "NLL_Q_only": 1.390548140431444,
+      "NLL_Q_shuffle": 1.390057482989505,
+      "NLL_Z_only": 1.9097588644362986,
+      "latent_gain": 0.0003201121774812539,
+      "question_shortcut_ratio": -0.0006165361435762812,
+      "shuffle_margin": -0.0001705452644576629
+    },
+    "checkpoint": "/data/zxl/runs/ab_loss1_shortcut_formal/h0_heima_b_probe/checkpoints/b_final.pt",
+    "eval_samples": 128,
+    "run_dir": "/data/zxl/runs/ab_loss1_shortcut_formal/h0_heima_b_probe",
+    "sections": {
+      "caption": {
+        "NLL_Q_correct": 1.4830207745544612,
+        "NLL_Q_only": 1.4835890540853143,
+        "NLL_Q_shuffle": 1.4829834888223559,
+        "NLL_Z_only": 1.8401091927662492,
+        "latent_gain": 0.0005682795308530331,
+        "question_shortcut_ratio": -0.001593961937060758,
+        "samples": 128,
+        "shuffle_margin": -3.7285732105374336e-05
+      },
+      "reasoning": {
+        "NLL_Q_correct": 1.5109508831519634,
+        "NLL_Q_only": 1.510934665100649,
+        "NLL_Q_shuffle": 1.5107034561224282,
+        "NLL_Z_only": 1.8941579540260136,
+        "latent_gain": -1.6218051314353943e-05,
+        "question_shortcut_ratio": 4.232010888438599e-05,
+        "samples": 128,
+        "shuffle_margin": -0.00024742702953517437
+      },
+      "summary": {
+        "NLL_Q_correct": 1.1767124270554632,
+        "NLL_Q_only": 1.1771207021083683,
+        "NLL_Q_shuffle": 1.1764855040237308,
+        "NLL_Z_only": 1.995009446516633,
+        "latent_gain": 0.0004082750529050827,
+        "question_shortcut_ratio": -0.000499181649944903,
+        "samples": 128,
+        "shuffle_margin": -0.00022692303173244
+      }
+    }
+  }
+}

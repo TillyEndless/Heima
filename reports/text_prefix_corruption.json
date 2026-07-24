@@ -1,0 +1,50 @@
+{
+  "official_scaled_h0": {
+    "run": "official_scaled_h0",
+    "sections": {
+      "caption": {
+        "delta_corrupted_minus_original": 0.6944108009338379,
+        "prefix_tokens_replaced": 12,
+        "suffix_corrupted_prefix_loss": 1.78315269947052,
+        "suffix_original_loss": 1.0887418985366821
+      },
+      "reasoning": {
+        "delta_corrupted_minus_original": 0.3924236297607422,
+        "prefix_tokens_replaced": 12,
+        "suffix_corrupted_prefix_loss": 1.6844662427902222,
+        "suffix_original_loss": 1.29204261302948
+      },
+      "summary": {
+        "delta_corrupted_minus_original": 0.9477992057800293,
+        "prefix_tokens_replaced": 10,
+        "suffix_corrupted_prefix_loss": 2.0869905948638916,
+        "suffix_original_loss": 1.1391913890838623
+      }
+    },
+    "unrelated_prefix": "Completely unrelated prefix about an airplane flying over the ocean. "
+  },
+  "our_h0": {
+    "run": "our_h0",
+    "sections": {
+      "caption": {
+        "delta_corrupted_minus_original": 0.7841256856918335,
+        "prefix_tokens_replaced": 12,
+        "suffix_corrupted_prefix_loss": 1.5376118421554565,
+        "suffix_original_loss": 0.753486156463623
+      },
+      "reasoning": {
+        "delta_corrupted_minus_original": 0.4845612049102783,
+        "prefix_tokens_replaced": 12,
+        "suffix_corrupted_prefix_loss": 1.4859532117843628,
+        "suffix_original_loss": 1.0013920068740845
+      },
+      "summary": {
+        "delta_corrupted_minus_original": 0.8793646097183228,
+        "prefix_tokens_replaced": 10,
+        "suffix_corrupted_prefix_loss": 1.5308631658554077,
+        "suffix_original_loss": 0.651498556137085
+      }
+    },
+    "unrelated_prefix": "Completely unrelated prefix about an airplane flying over the ocean. "
+  }
+}
