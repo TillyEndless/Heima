@@ -1,0 +1,25 @@
+experiment: G3
+description: Full GPT2 ablation with main loss, self decode, and latent token supervision.
+model:
+  family: gpt2
+  name_or_path: /data/zxl/models/openai-community-gpt2
+  special_tokens: {think: <THINK>}
+method:
+  has_model_b: false
+  projector: false
+  role_embedding: false
+  cumulative_latent: false
+  loss2: false
+latent:
+  source: last_hidden_state_at_think_token
+  injection: inputs_embeds_replacement
+  detach_latent: false
+loss:
+  main: true
+  self_decode: true
+  latent_token: true
+  lambda_self: 0.1
+  lambda_latent: 0.05
+trainability:
+  require_embed_tokens_trainable: true
+  require_lm_head_trainable: true

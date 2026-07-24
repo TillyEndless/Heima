@@ -1,0 +1,34 @@
+{
+  "G0": {
+    "total_parameters": 124440576,
+    "trainable_parameters": 124440576,
+    "embed_tokens_trainable": true,
+    "lm_head_trainable": true,
+    "embed_tokens_has_grad": true,
+    "lm_head_has_grad": true
+  },
+  "G1": {
+    "total_parameters": 124440576,
+    "trainable_parameters": 124440576,
+    "embed_tokens_trainable": true,
+    "lm_head_trainable": true,
+    "embed_tokens_has_grad": true,
+    "lm_head_has_grad": true
+  },
+  "G2": {
+    "total_parameters": 124440576,
+    "trainable_parameters": 124440576,
+    "embed_tokens_trainable": true,
+    "lm_head_trainable": true,
+    "embed_tokens_has_grad": true,
+    "lm_head_has_grad": true
+  },
+  "G3": {
+    "total_parameters": 124440576,
+    "trainable_parameters": 124440576,
+    "embed_tokens_trainable": true,
+    "lm_head_trainable": true,
+    "embed_tokens_has_grad": true,
+    "lm_head_has_grad": true
+  }
+}

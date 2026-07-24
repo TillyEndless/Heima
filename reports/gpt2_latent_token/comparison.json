@@ -1,0 +1,64 @@
+{
+  "split": {
+    "dataset_path": "/data/zxl/official_heima/datasets/LLaVA-CoT-100k/train.jsonl",
+    "total_rows": 98582,
+    "usable_examples": 98573,
+    "train_samples": 32,
+    "eval_samples": 8,
+    "split_path": "/data/zxl/runs/gpt2_latent_token_ablation_smoke_rerun/data_split.json"
+  },
+  "groups": {
+    "G0": {
+      "main_loss": 3.0081627368927,
+      "latent_token_accuracy": 0.0,
+      "NLL_Q_correct": null,
+      "NLL_Q_shuffle": null,
+      "NLL_Q_only": null,
+      "NLL_Z_only": null,
+      "shuffle_margin": null,
+      "latent_gain": null,
+      "checkpoint_save_load_ok": true,
+      "generation_accuracy": null,
+      "generation_token_overlap": null
+    },
+    "G1": {
+      "main_loss": 2.81988787651062,
+      "latent_token_accuracy": 0.0,
+      "NLL_Q_correct": null,
+      "NLL_Q_shuffle": null,
+      "NLL_Q_only": null,
+      "NLL_Z_only": null,
+      "shuffle_margin": null,
+      "latent_gain": null,
+      "checkpoint_save_load_ok": true,
+      "generation_accuracy": null,
+      "generation_token_overlap": null
+    },
+    "G2": {
+      "main_loss": 2.7825570106506348,
+      "latent_token_accuracy": 0.0,
+      "NLL_Q_correct": 3.66778564453125,
+      "NLL_Q_shuffle": 3.667283535003662,
+      "NLL_Q_only": 3.017961025238037,
+      "NLL_Z_only": 5.061434268951416,
+      "shuffle_margin": -0.0005021095275878906,
+      "latent_gain": -0.6498246192932129,
+      "checkpoint_save_load_ok": true,
+      "generation_accuracy": 0.125,
+      "generation_token_overlap": 0.7261523199023199
+    },
+    "G3": {
+      "main_loss": 2.8409311771392822,
+      "latent_token_accuracy": 0.0,
+      "NLL_Q_correct": 3.652132749557495,
+      "NLL_Q_shuffle": 3.68212628364563,
+      "NLL_Q_only": 3.0119574069976807,
+      "NLL_Z_only": 5.055022716522217,
+      "shuffle_margin": 0.029993534088134766,
+      "latent_gain": -0.6401753425598145,
+      "checkpoint_save_load_ok": true,
+      "generation_accuracy": 0.125,
+      "generation_token_overlap": 0.7053571428571428
+    }
+  }
+}

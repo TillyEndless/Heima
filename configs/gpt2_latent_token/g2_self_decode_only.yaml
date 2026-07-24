@@ -1,0 +1,22 @@
+experiment: G2
+description: Self decode from continuous <THINK> hidden state; no latent token CE.
+model:
+  family: gpt2
+  name_or_path: /data/zxl/models/openai-community-gpt2
+  special_tokens: {think: <THINK>}
+method:
+  has_model_b: false
+  projector: false
+  role_embedding: false
+  cumulative_latent: false
+  loss2: false
+latent:
+  source: last_hidden_state_at_think_token
+  injection: inputs_embeds_replacement
+  detach_latent: false
+loss:
+  main: true
+  self_decode: true
+  latent_token: false
+  lambda_self: 0.1
+  lambda_latent: 0.0
