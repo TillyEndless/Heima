@@ -1,0 +1,40 @@
+{
+  "checks": {
+    "predict_t1": {
+      "invisible": [
+        "t1",
+        "t2",
+        "t3",
+        "t4"
+      ],
+      "source_position": 1,
+      "visible": [
+        "Q",
+        "<LATENT>"
+      ]
+    },
+    "predict_t3": {
+      "invisible": [
+        "t3",
+        "t4"
+      ],
+      "source_position": 3,
+      "visible": [
+        "Q",
+        "<LATENT>",
+        "t1",
+        "t2"
+      ]
+    }
+  },
+  "rule": "labels[p] is predicted from hidden[p-1]; hidden[p-1] can attend only positions <= p-1",
+  "sequence": [
+    "Q",
+    "<LATENT>",
+    "t1",
+    "t2",
+    "t3",
+    "t4"
+  ],
+  "status": "PASS_NO_CAUSAL_LEAK_FOUND"
+}

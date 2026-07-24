@@ -1,0 +1,35 @@
+{
+  "caption": {
+    "corrupted_future_prefix_loss": 0.6277058988079444,
+    "corruption_cut_target_token_index": 25,
+    "max_abs_prefix_loss_diff": 0.0,
+    "mean_abs_prefix_loss_diff": 0.0,
+    "mean_abs_suffix_loss_diff": 2.6063962205891866,
+    "note": "Full sequence loss is expected to change after the corruption because corrupted suffix labels and suffix input tokens change. The leakage check compares only prefix target-token losses before the corruption point.",
+    "original_prefix_loss": 0.6277058988079444,
+    "prefix_tokens_tested": 25,
+    "status": "PASS_NO_FUTURE_TEXT_LEAKAGE"
+  },
+  "reasoning": {
+    "corrupted_future_prefix_loss": 0.49283415212838527,
+    "corruption_cut_target_token_index": 28,
+    "max_abs_prefix_loss_diff": 0.0,
+    "mean_abs_prefix_loss_diff": 0.0,
+    "mean_abs_suffix_loss_diff": 2.1716451590514874,
+    "note": "Full sequence loss is expected to change after the corruption because corrupted suffix labels and suffix input tokens change. The leakage check compares only prefix target-token losses before the corruption point.",
+    "original_prefix_loss": 0.49283415212838527,
+    "prefix_tokens_tested": 28,
+    "status": "PASS_NO_FUTURE_TEXT_LEAKAGE"
+  },
+  "summary": {
+    "corrupted_future_prefix_loss": 0.17114757978879425,
+    "corruption_cut_target_token_index": 20,
+    "max_abs_prefix_loss_diff": 0.0,
+    "mean_abs_prefix_loss_diff": 0.0,
+    "mean_abs_suffix_loss_diff": 3.989596607696772,
+    "note": "Full sequence loss is expected to change after the corruption because corrupted suffix labels and suffix input tokens change. The leakage check compares only prefix target-token losses before the corruption point.",
+    "original_prefix_loss": 0.17114757978879425,
+    "prefix_tokens_tested": 20,
+    "status": "PASS_NO_FUTURE_TEXT_LEAKAGE"
+  }
+}
