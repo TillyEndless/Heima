@@ -1,0 +1,12 @@
+{
+  "G2": {
+    "shuffle_margin": 0.0002561159133911133,
+    "latent_acc": 0.0,
+    "generation_acc": 0.2578125
+  },
+  "G3": {
+    "shuffle_margin": 0.00015956497192382813,
+    "latent_acc": 1.0,
+    "generation_acc": 0.265625
+  }
+}
