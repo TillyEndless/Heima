@@ -1,0 +1,86 @@
+{
+  "rows": [
+    {
+      "section": "summary",
+      "official_style": {
+        "system_prompt": null,
+        "question_position": "prefix before instruction",
+        "question": "What was the population of the Dominican Republic in 2019? Answer the question using a single word or phrase.",
+        "instruction": "Reconstruct the Heima summary thought from the latent. Do not use the image.",
+        "section_name": "summary",
+        "special_token": "<THINKING_OF_SUMMARY>",
+        "latent_slot_position": "after instruction, before blank line and Target:",
+        "target_position": "immediately after `Target:\n`",
+        "template": "Question:\nWhat was the population of the Dominican Republic in 2019? Answer the question using a single word or phrase.\n\nInstruction:\nReconstruct the Heima summary thought from the latent. Do not use the image.\n\n<THINKING_OF_SUMMARY>\n\nTarget:\n"
+      },
+      "current_implementation": {
+        "system_prompt": null,
+        "question_position": "prefix before instruction",
+        "question": "What was the population of the Dominican Republic in 2019? Answer the question using a single word or phrase.",
+        "instruction": "Reconstruct the Heima summary thought from the latent. Do not use the image.",
+        "section_name": "summary",
+        "special_token": "<THINKING_OF_SUMMARY>",
+        "latent_slot_position": "after instruction, before blank line and Target:",
+        "target_position": "immediately after `Target:\n`",
+        "template": "Question:\nWhat was the population of the Dominican Republic in 2019? Answer the question using a single word or phrase.\n\nInstruction:\nReconstruct the Heima summary thought from the latent. Do not use the image.\n\n<THINKING_OF_SUMMARY>\n\nTarget:\n"
+      },
+      "diff": [],
+      "aligned": true
+    },
+    {
+      "section": "caption",
+      "official_style": {
+        "system_prompt": null,
+        "question_position": "prefix before instruction",
+        "question": "What was the population of the Dominican Republic in 2019? Answer the question using a single word or phrase.",
+        "instruction": "Reconstruct the Heima caption thought from the latent. Do not use the image.",
+        "section_name": "caption",
+        "special_token": "<THINKING_OF_CAPTION>",
+        "latent_slot_position": "after instruction, before blank line and Target:",
+        "target_position": "immediately after `Target:\n`",
+        "template": "Question:\nWhat was the population of the Dominican Republic in 2019? Answer the question using a single word or phrase.\n\nInstruction:\nReconstruct the Heima caption thought from the latent. Do not use the image.\n\n<THINKING_OF_CAPTION>\n\nTarget:\n"
+      },
+      "current_implementation": {
+        "system_prompt": null,
+        "question_position": "prefix before instruction",
+        "question": "What was the population of the Dominican Republic in 2019? Answer the question using a single word or phrase.",
+        "instruction": "Reconstruct the Heima caption thought from the latent. Do not use the image.",
+        "section_name": "caption",
+        "special_token": "<THINKING_OF_CAPTION>",
+        "latent_slot_position": "after instruction, before blank line and Target:",
+        "target_position": "immediately after `Target:\n`",
+        "template": "Question:\nWhat was the population of the Dominican Republic in 2019? Answer the question using a single word or phrase.\n\nInstruction:\nReconstruct the Heima caption thought from the latent. Do not use the image.\n\n<THINKING_OF_CAPTION>\n\nTarget:\n"
+      },
+      "diff": [],
+      "aligned": true
+    },
+    {
+      "section": "reasoning",
+      "official_style": {
+        "system_prompt": null,
+        "question_position": "prefix before instruction",
+        "question": "What was the population of the Dominican Republic in 2019? Answer the question using a single word or phrase.",
+        "instruction": "Reconstruct the Heima reasoning thought from the latent. Do not use the image.",
+        "section_name": "reasoning",
+        "special_token": "<THINKING_OF_REASONING>",
+        "latent_slot_position": "after instruction, before blank line and Target:",
+        "target_position": "immediately after `Target:\n`",
+        "template": "Question:\nWhat was the population of the Dominican Republic in 2019? Answer the question using a single word or phrase.\n\nInstruction:\nReconstruct the Heima reasoning thought from the latent. Do not use the image.\n\n<THINKING_OF_REASONING>\n\nTarget:\n"
+      },
+      "current_implementation": {
+        "system_prompt": null,
+        "question_position": "prefix before instruction",
+        "question": "What was the population of the Dominican Republic in 2019? Answer the question using a single word or phrase.",
+        "instruction": "Reconstruct the Heima reasoning thought from the latent. Do not use the image.",
+        "section_name": "reasoning",
+        "special_token": "<THINKING_OF_REASONING>",
+        "latent_slot_position": "after instruction, before blank line and Target:",
+        "target_position": "immediately after `Target:\n`",
+        "template": "Question:\nWhat was the population of the Dominican Republic in 2019? Answer the question using a single word or phrase.\n\nInstruction:\nReconstruct the Heima reasoning thought from the latent. Do not use the image.\n\n<THINKING_OF_REASONING>\n\nTarget:\n"
+      },
+      "diff": [],
+      "aligned": true
+    }
+  ],
+  "summary": "Current official-section H0 prompt matches the audited official-style template for local latent mode."
+}

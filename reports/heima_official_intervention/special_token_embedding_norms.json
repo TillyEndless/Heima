@@ -1,0 +1,23 @@
+{
+  "summary": {
+    "token": "<THINKING_OF_SUMMARY>",
+    "token_id": 151665,
+    "before_replacement_embedding_norm": 0.2964552044868469,
+    "embedding_trainable_default": true,
+    "remove_zero_after_replacement_norm": 0.0
+  },
+  "caption": {
+    "token": "<THINKING_OF_CAPTION>",
+    "token_id": 151666,
+    "before_replacement_embedding_norm": 0.29645681381225586,
+    "embedding_trainable_default": true,
+    "remove_zero_after_replacement_norm": 0.0
+  },
+  "reasoning": {
+    "token": "<THINKING_OF_REASONING>",
+    "token_id": 151667,
+    "before_replacement_embedding_norm": 0.29647359251976013,
+    "embedding_trainable_default": true,
+    "remove_zero_after_replacement_norm": 0.0
+  }
+}
