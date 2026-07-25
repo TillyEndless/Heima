@@ -1,0 +1,18 @@
+{
+  "note": "Public Heima HF snapshot lacks abstract_projector_*.pth; this is official decoder-adapter thinking-slot ablation, not full continuous-latent intervention.",
+  "base_model": "/data/zxl/models/meta-llama-Llama-3.1-8B-Instruct",
+  "adapter_root": "/data/zxl/models/official_heima_hf",
+  "data": "/data/zxl/official_heima/datasets/LLaVA-CoT-100k/train.jsonl",
+  "samples": 8,
+  "conditions": [
+    "normal",
+    "zero_slot",
+    "deleted_slot"
+  ],
+  "thinking_token_ids": {
+    "summary": 128013,
+    "caption": 128014,
+    "reasoning": 128015
+  },
+  "projector_files_found": []
+}

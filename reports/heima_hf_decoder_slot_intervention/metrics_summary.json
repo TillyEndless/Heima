@@ -1,0 +1,318 @@
+{
+  "summary": {
+    "summary": {
+      "normal": {
+        "nll": 1.6961415857076645,
+        "bleu1": 0.38964385271337953,
+        "rouge_l": 0.4990722599768653,
+        "nll_delta_vs_normal": 0.0
+      },
+      "zero_slot": {
+        "nll": 1.6961415857076645,
+        "bleu1": 0.38964385271337953,
+        "rouge_l": 0.4990722599768653,
+        "nll_delta_vs_normal": 0.0
+      },
+      "deleted_slot": {
+        "nll": 1.4747160226106644,
+        "bleu1": 0.3773430013365525,
+        "rouge_l": 0.4990722599768653,
+        "nll_delta_vs_normal": -0.22142556309700012
+      }
+    },
+    "caption": {
+      "normal": {
+        "nll": 1.4088784009218216,
+        "bleu1": 0.45675115952950585,
+        "rouge_l": 0.4867908634015712,
+        "nll_delta_vs_normal": 0.0
+      },
+      "zero_slot": {
+        "nll": 1.4088784009218216,
+        "bleu1": 0.45675115952950585,
+        "rouge_l": 0.4867908634015712,
+        "nll_delta_vs_normal": 0.0
+      },
+      "deleted_slot": {
+        "nll": 1.3485380709171295,
+        "bleu1": 0.43767480649993823,
+        "rouge_l": 0.4867908634015712,
+        "nll_delta_vs_normal": -0.06034033000469208
+      }
+    },
+    "reasoning": {
+      "normal": {
+        "nll": 1.2114410027861595,
+        "bleu1": 0.36466496981870383,
+        "rouge_l": 0.2850586729605304,
+        "nll_delta_vs_normal": 0.0
+      },
+      "zero_slot": {
+        "nll": 1.2114410027861595,
+        "bleu1": 0.36466496981870383,
+        "rouge_l": 0.2850586729605304,
+        "nll_delta_vs_normal": 0.0
+      },
+      "deleted_slot": {
+        "nll": 1.3158422261476517,
+        "bleu1": 0.3502211075203045,
+        "rouge_l": 0.27052233210840004,
+        "nll_delta_vs_normal": 0.10440122336149216
+      }
+    }
+  },
+  "merge_reports": {
+    "summary": {
+      "adapter_file": "/data/zxl/models/official_heima_hf/decoder/summary/adapter_model.bin",
+      "merged_modules": 225,
+      "first_modules": [
+        {
+          "module": "lm_head",
+          "shape": [
+            128256,
+            4096
+          ]
+        },
+        {
+          "module": "model.layers.0.mlp.down_proj",
+          "shape": [
+            4096,
+            14336
+          ]
+        },
+        {
+          "module": "model.layers.0.mlp.gate_proj",
+          "shape": [
+            14336,
+            4096
+          ]
+        },
+        {
+          "module": "model.layers.0.mlp.up_proj",
+          "shape": [
+            14336,
+            4096
+          ]
+        },
+        {
+          "module": "model.layers.0.self_attn.k_proj",
+          "shape": [
+            1024,
+            4096
+          ]
+        },
+        {
+          "module": "model.layers.0.self_attn.o_proj",
+          "shape": [
+            4096,
+            4096
+          ]
+        }
+      ],
+      "last_modules": [
+        {
+          "module": "model.layers.9.self_attn.k_proj",
+          "shape": [
+            1024,
+            4096
+          ]
+        },
+        {
+          "module": "model.layers.9.self_attn.o_proj",
+          "shape": [
+            4096,
+            4096
+          ]
+        },
+        {
+          "module": "model.layers.9.self_attn.q_proj",
+          "shape": [
+            4096,
+            4096
+          ]
+        },
+        {
+          "module": "model.layers.9.self_attn.v_proj",
+          "shape": [
+            1024,
+            4096
+          ]
+        }
+      ]
+    },
+    "caption": {
+      "adapter_file": "/data/zxl/models/official_heima_hf/decoder/caption/adapter_model.bin",
+      "merged_modules": 225,
+      "first_modules": [
+        {
+          "module": "lm_head",
+          "shape": [
+            128256,
+            4096
+          ]
+        },
+        {
+          "module": "model.layers.0.mlp.down_proj",
+          "shape": [
+            4096,
+            14336
+          ]
+        },
+        {
+          "module": "model.layers.0.mlp.gate_proj",
+          "shape": [
+            14336,
+            4096
+          ]
+        },
+        {
+          "module": "model.layers.0.mlp.up_proj",
+          "shape": [
+            14336,
+            4096
+          ]
+        },
+        {
+          "module": "model.layers.0.self_attn.k_proj",
+          "shape": [
+            1024,
+            4096
+          ]
+        },
+        {
+          "module": "model.layers.0.self_attn.o_proj",
+          "shape": [
+            4096,
+            4096
+          ]
+        }
+      ],
+      "last_modules": [
+        {
+          "module": "model.layers.9.self_attn.k_proj",
+          "shape": [
+            1024,
+            4096
+          ]
+        },
+        {
+          "module": "model.layers.9.self_attn.o_proj",
+          "shape": [
+            4096,
+            4096
+          ]
+        },
+        {
+          "module": "model.layers.9.self_attn.q_proj",
+          "shape": [
+            4096,
+            4096
+          ]
+        },
+        {
+          "module": "model.layers.9.self_attn.v_proj",
+          "shape": [
+            1024,
+            4096
+          ]
+        }
+      ]
+    },
+    "reasoning": {
+      "adapter_file": "/data/zxl/models/official_heima_hf/decoder/reasoning/adapter_model.bin",
+      "merged_modules": 225,
+      "first_modules": [
+        {
+          "module": "lm_head",
+          "shape": [
+            128256,
+            4096
+          ]
+        },
+        {
+          "module": "model.layers.0.mlp.down_proj",
+          "shape": [
+            4096,
+            14336
+          ]
+        },
+        {
+          "module": "model.layers.0.mlp.gate_proj",
+          "shape": [
+            14336,
+            4096
+          ]
+        },
+        {
+          "module": "model.layers.0.mlp.up_proj",
+          "shape": [
+            14336,
+            4096
+          ]
+        },
+        {
+          "module": "model.layers.0.self_attn.k_proj",
+          "shape": [
+            1024,
+            4096
+          ]
+        },
+        {
+          "module": "model.layers.0.self_attn.o_proj",
+          "shape": [
+            4096,
+            4096
+          ]
+        }
+      ],
+      "last_modules": [
+        {
+          "module": "model.layers.9.self_attn.k_proj",
+          "shape": [
+            1024,
+            4096
+          ]
+        },
+        {
+          "module": "model.layers.9.self_attn.o_proj",
+          "shape": [
+            4096,
+            4096
+          ]
+        },
+        {
+          "module": "model.layers.9.self_attn.q_proj",
+          "shape": [
+            4096,
+            4096
+          ]
+        },
+        {
+          "module": "model.layers.9.self_attn.v_proj",
+          "shape": [
+            1024,
+            4096
+          ]
+        }
+      ]
+    }
+  },
+  "metadata": {
+    "note": "Public Heima HF snapshot lacks abstract_projector_*.pth; this is official decoder-adapter thinking-slot ablation, not full continuous-latent intervention.",
+    "base_model": "/data/zxl/models/meta-llama-Llama-3.1-8B-Instruct",
+    "adapter_root": "/data/zxl/models/official_heima_hf",
+    "data": "/data/zxl/official_heima/datasets/LLaVA-CoT-100k/train.jsonl",
+    "samples": 8,
+    "conditions": [
+      "normal",
+      "zero_slot",
+      "deleted_slot"
+    ],
+    "thinking_token_ids": {
+      "summary": 128013,
+      "caption": 128014,
+      "reasoning": 128015
+    },
+    "projector_files_found": []
+  }
+}
