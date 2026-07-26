@@ -1,8 +1,8 @@
 {
   "G0": {
-    "main_nll": 2.8802558183670044,
-    "cot_nll": 2.8542667627334595,
-    "answer_nll": 3.899277687072754,
+    "main_nll": 1.7621554918289184,
+    "cot_nll": 1.766845814704895,
+    "answer_nll": 1.447075562953949,
     "latent_token_accuracy": null,
     "NLL_correct": null,
     "NLL_shuffle": null,
@@ -15,169 +15,174 @@
     "latent_gain": null,
     "z_only_margin": null,
     "wrong_q_margin": null,
-    "checkpoint_path": "/data/zxl/runs/gpt2_cot_latent_adjacent_matrix_seed42_dryrun/G0/step1",
-    "step": 1,
+    "checkpoint_path": "/data/zxl/runs/gpt2_cot_latent_adjacent_matrix_seed42/G0/step5000",
+    "step": 5000,
     "answer_accuracy": 0.0,
-    "generation_samples": 8
+    "generation_samples": 128,
+    "status": "VANILLA_COT_BASELINE"
   },
   "G1": {
-    "main_nll": 2.767806887626648,
+    "main_nll": 1.4680999279022218,
     "cot_nll": 0.0,
-    "answer_nll": 2.767806887626648,
+    "answer_nll": 1.4680999279022218,
     "latent_token_accuracy": 0.0,
-    "NLL_correct": 3.610961824655533,
-    "NLL_shuffle": 3.6305179595947266,
-    "NLL_zero": 2.9242740869522095,
-    "NLL_q_only": 2.9222428500652313,
-    "NLL_z_only": 4.334155946969986,
-    "NLL_z_only_shuffle": 4.351291000843048,
-    "NLL_wrong_q": 3.6085465252399445,
-    "shuffle_margin": 0.019556134939193726,
+    "NLL_correct": 3.481399754047394,
+    "NLL_shuffle": 3.4939475491046905,
+    "NLL_zero": 3.082395657539368,
+    "NLL_q_only": 3.0717115453481676,
+    "NLL_z_only": 3.9450482957363127,
+    "NLL_z_only_shuffle": 3.953556978702545,
+    "NLL_wrong_q": 3.761568426847458,
+    "shuffle_margin": 0.012547795057296753,
     "shuffle_margin_ci": [
-      -0.0035678446292877197,
-      0.04637080430984497
+      0.0009895834922790526,
+      0.023354893684387208
     ],
-    "latent_gain": -0.6887189745903015,
+    "latent_gain": -0.4096882086992264,
     "latent_gain_ci": [
-      -0.9351301193237305,
-      -0.4183181822299957
+      -0.4222390629053116,
+      -0.3940196651220322
     ],
-    "z_only_margin": 0.017135053873062134,
+    "z_only_margin": 0.008508682966232299,
     "z_only_margin_ci": [
-      -0.017050951719284058,
-      0.05210769176483154
+      -0.00832341456413269,
+      0.025539520740509032
     ],
-    "wrong_q_margin": -0.002415299415588379,
+    "wrong_q_margin": 0.2801686728000641,
     "wrong_q_margin_ci": [
-      -0.32469290494918823,
-      0.3705264627933502
+      0.2596362292766571,
+      0.3049876546859741
     ],
-    "checkpoint_path": "/data/zxl/runs/gpt2_cot_latent_adjacent_matrix_seed42_dryrun/G1/step1",
-    "step": 1,
-    "answer_accuracy": 0.25,
-    "answer_flip_correct_vs_shuffle": 1,
-    "correct_success_shuffle_failure_count": 1,
-    "correct_shuffle_nearly_identical_count": 4,
-    "avg_similarity_correct_shuffle": 0.8348193473193473
+    "checkpoint_path": "/data/zxl/runs/gpt2_cot_latent_adjacent_matrix_seed42/G1/step5000",
+    "step": 5000,
+    "answer_accuracy": 0.140625,
+    "answer_flip_correct_vs_shuffle": 0,
+    "correct_success_shuffle_failure_count": 0,
+    "correct_shuffle_nearly_identical_count": 49,
+    "avg_similarity_correct_shuffle": 0.5511891603963571,
+    "status": "SHUFFLE_SIGNAL_BUT_Q_ONLY_BETTER"
   },
   "G2": {
-    "main_nll": 2.7742865085601807,
+    "main_nll": 1.4368756940364837,
     "cot_nll": 0.0,
-    "answer_nll": 2.7742865085601807,
-    "latent_token_accuracy": 0.0,
-    "NLL_correct": 3.598758578300476,
-    "NLL_shuffle": 3.5965797901153564,
-    "NLL_zero": 2.9229665398597717,
-    "NLL_q_only": 2.9210256338119507,
-    "NLL_z_only": 4.312136650085449,
-    "NLL_z_only_shuffle": 4.310250788927078,
-    "NLL_wrong_q": 3.604353278875351,
-    "shuffle_margin": -0.002178788185119629,
+    "answer_nll": 1.4368756940364837,
+    "latent_token_accuracy": 1.0,
+    "NLL_correct": 2.2222713284492492,
+    "NLL_shuffle": 2.222541650891304,
+    "NLL_zero": 2.238327725768089,
+    "NLL_q_only": 2.2401134581565856,
+    "NLL_z_only": 2.483645966410637,
+    "NLL_z_only_shuffle": 2.4838896872997283,
+    "NLL_wrong_q": 2.5210608571767805,
+    "shuffle_margin": 0.0002703224420547485,
     "shuffle_margin_ci": [
-      -0.016810297966003418,
-      0.012879759073257446
+      9.751296043395997e-05,
+      0.0004553496837615967
     ],
-    "latent_gain": -0.6777329444885254,
+    "latent_gain": 0.017842129707336427,
     "latent_gain_ci": [
-      -0.9127608239650726,
-      -0.41650739312171936
+      0.01677328085899353,
+      0.018756572008132934
     ],
-    "z_only_margin": -0.0018858611583709717,
+    "z_only_margin": 0.0002437208890914917,
     "z_only_margin_ci": [
-      -0.03011918067932129,
-      0.022188395261764526
+      -8.479321002960205e-05,
+      0.0005788719654083252
     ],
-    "wrong_q_margin": 0.005594700574874878,
+    "wrong_q_margin": 0.29878952872753145,
     "wrong_q_margin_ci": [
-      -0.3057141602039337,
-      0.3696882128715515
+      0.29168008518218996,
+      0.30656612348556517
     ],
-    "checkpoint_path": "/data/zxl/runs/gpt2_cot_latent_adjacent_matrix_seed42_dryrun/G2/step1",
-    "step": 1,
-    "answer_accuracy": 0.25,
+    "checkpoint_path": "/data/zxl/runs/gpt2_cot_latent_adjacent_matrix_seed42/G2/step5000",
+    "step": 5000,
+    "answer_accuracy": 0.1640625,
     "answer_flip_correct_vs_shuffle": 1,
     "correct_success_shuffle_failure_count": 1,
-    "correct_shuffle_nearly_identical_count": 2,
-    "avg_similarity_correct_shuffle": 0.6763396299042079
+    "correct_shuffle_nearly_identical_count": 106,
+    "avg_similarity_correct_shuffle": 0.960306466549374,
+    "status": "LATENT_TOKEN_FORMATION_WITH_WEAK_CAUSAL_USAGE"
   },
   "G3": {
-    "main_nll": 2.947958469390869,
-    "cot_nll": 2.820026993751526,
-    "answer_nll": 3.4029080867767334,
-    "latent_token_accuracy": 0.0,
-    "NLL_correct": 3.5905623137950897,
-    "NLL_shuffle": 3.6211569607257843,
-    "NLL_zero": 2.9131387770175934,
-    "NLL_q_only": 2.912500888109207,
-    "NLL_z_only": 4.324651151895523,
-    "NLL_z_only_shuffle": 4.340606540441513,
-    "NLL_wrong_q": 3.5918578505516052,
-    "shuffle_margin": 0.03059464693069458,
+    "main_nll": 1.7561158514022828,
+    "cot_nll": 1.77015815448761,
+    "answer_nll": 1.4461694316864013,
+    "latent_token_accuracy": 1.0,
+    "NLL_correct": 2.382467422902584,
+    "NLL_shuffle": 2.3923754964470865,
+    "NLL_zero": 1.858063260138035,
+    "NLL_q_only": 1.85349865347147,
+    "NLL_z_only": 3.2023341802358627,
+    "NLL_z_only_shuffle": 3.2101948255300523,
+    "NLL_wrong_q": 2.7173813788890837,
+    "shuffle_margin": 0.00990807354450226,
     "shuffle_margin_ci": [
-      0.010950207710266113,
-      0.056046485900878906
+      0.007175847411155701,
+      0.01214029860496521
     ],
-    "latent_gain": -0.6780614256858826,
+    "latent_gain": -0.5289687694311141,
     "latent_gain_ci": [
-      -0.9331742525100708,
-      -0.40601086616516113
+      -0.5487005230784416,
+      -0.508598560988903
     ],
-    "z_only_margin": 0.01595538854598999,
+    "z_only_margin": 0.007860645294189453,
     "z_only_margin_ci": [
-      -0.06674748659133911,
-      0.09548291563987732
+      0.004684531688690185,
+      0.010679726600646972
     ],
-    "wrong_q_margin": 0.001295536756515503,
+    "wrong_q_margin": 0.3349139559864998,
     "wrong_q_margin_ci": [
-      -0.3236556649208069,
-      0.3628890812397003
+      0.3095500608086586,
+      0.36508190381526945
     ],
-    "checkpoint_path": "/data/zxl/runs/gpt2_cot_latent_adjacent_matrix_seed42_dryrun/G3/step1",
-    "step": 1,
-    "answer_accuracy": 0.25,
+    "checkpoint_path": "/data/zxl/runs/gpt2_cot_latent_adjacent_matrix_seed42/G3/step5000",
+    "step": 5000,
+    "answer_accuracy": 0.125,
     "answer_flip_correct_vs_shuffle": 1,
     "correct_success_shuffle_failure_count": 1,
-    "correct_shuffle_nearly_identical_count": 1,
-    "avg_similarity_correct_shuffle": 0.46418178741548305
+    "correct_shuffle_nearly_identical_count": 89,
+    "avg_similarity_correct_shuffle": 0.8685215620457213,
+    "status": "SHUFFLE_SIGNAL_BUT_Q_ONLY_BETTER"
   },
   "G4": {
-    "main_nll": 2.94827938079834,
-    "cot_nll": 2.819978713989258,
-    "answer_nll": 3.4058241844177246,
-    "latent_token_accuracy": 0.0,
-    "NLL_correct": 3.5939321517944336,
-    "NLL_shuffle": 3.6240529119968414,
-    "NLL_zero": 2.914987176656723,
-    "NLL_q_only": 2.9136419892311096,
-    "NLL_z_only": 4.327234983444214,
-    "NLL_z_only_shuffle": 4.342628091573715,
-    "NLL_wrong_q": 3.5941649973392487,
-    "shuffle_margin": 0.030120760202407837,
+    "main_nll": 1.766573890686035,
+    "cot_nll": 1.780418372154236,
+    "answer_nll": 1.4721336350440979,
+    "latent_token_accuracy": 1.0,
+    "NLL_correct": 2.417101233243942,
+    "NLL_shuffle": 2.4251910960674286,
+    "NLL_zero": 1.8680746313929557,
+    "NLL_q_only": 1.864138522207737,
+    "NLL_z_only": 3.1793197668790816,
+    "NLL_z_only_shuffle": 3.1899710627794264,
+    "NLL_wrong_q": 2.672699208140373,
+    "shuffle_margin": 0.008089862823486327,
     "shuffle_margin_ci": [
-      0.010700643062591553,
-      0.05533704161643982
+      0.005923004031181335,
+      0.010159662008285523
     ],
-    "latent_gain": -0.680290162563324,
+    "latent_gain": -0.5529627110362053,
     "latent_gain_ci": [
-      -0.9359307885169983,
-      -0.406925767660141
+      -0.5731486656665802,
+      -0.5316967815756798
     ],
-    "z_only_margin": 0.015393108129501343,
+    "z_only_margin": 0.010651295900344849,
     "z_only_margin_ci": [
-      -0.0668950080871582,
-      0.09562888741493225
+      0.008053532719612122,
+      0.013268129587173463
     ],
-    "wrong_q_margin": 0.00023284554481506348,
+    "wrong_q_margin": 0.255597974896431,
     "wrong_q_margin_ci": [
-      -0.3267397880554199,
-      0.3632286489009857
+      0.22995848542451858,
+      0.28485982793569564
     ],
-    "checkpoint_path": "/data/zxl/runs/gpt2_cot_latent_adjacent_matrix_seed42_dryrun/G4/step1",
-    "step": 1,
-    "answer_accuracy": 0.25,
-    "answer_flip_correct_vs_shuffle": 1,
-    "correct_success_shuffle_failure_count": 1,
-    "correct_shuffle_nearly_identical_count": 0,
-    "avg_similarity_correct_shuffle": 0.40168178741548305
+    "checkpoint_path": "/data/zxl/runs/gpt2_cot_latent_adjacent_matrix_seed42/G4/step5000",
+    "step": 5000,
+    "answer_accuracy": 0.078125,
+    "answer_flip_correct_vs_shuffle": 0,
+    "correct_success_shuffle_failure_count": 0,
+    "correct_shuffle_nearly_identical_count": 93,
+    "avg_similarity_correct_shuffle": 0.8821813079061688,
+    "status": "SHUFFLE_SIGNAL_BUT_Q_ONLY_BETTER"
   }
 }

@@ -1,0 +1,16 @@
+{
+  "G2": {
+    "shuffle_margin": 0.0002703224420547485,
+    "latent_acc": 1.0,
+    "generation_acc": 0.1640625,
+    "latent_gain": 0.017842129707336427,
+    "status": "LATENT_TOKEN_FORMATION_WITH_WEAK_CAUSAL_USAGE"
+  },
+  "G3": {
+    "shuffle_margin": 0.00990807354450226,
+    "latent_acc": 1.0,
+    "generation_acc": 0.125,
+    "latent_gain": -0.5289687694311141,
+    "status": "SHUFFLE_SIGNAL_BUT_Q_ONLY_BETTER"
+  }
+}
