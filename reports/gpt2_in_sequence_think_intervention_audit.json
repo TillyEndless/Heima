@@ -1,0 +1,179 @@
+{
+  "audit": "in_sequence_think_intervention",
+  "run_root": "/data/zxl/runs/gpt2_cot_latent_adjacent_matrix_seed42",
+  "eval_samples": 1000,
+  "max_length": 640,
+  "intervention_note": "zero_think/shuffle_think patch each GPT2 block output at the THINK position; remove_think masks that key position while preserving sequence length.",
+  "groups": {
+    "G3": {
+      "group": "G3",
+      "checkpoint": "/data/zxl/runs/gpt2_cot_latent_adjacent_matrix_seed42/G3/step5000",
+      "num_eval_samples": 1000,
+      "conditions": {
+        "normal": {
+          "cot_nll": 1.772774321615696,
+          "answer_nll": 1.149548196527292
+        },
+        "zero_think_embedding": {
+          "cot_nll": 1.7732843662500382,
+          "answer_nll": 1.1484042794586276
+        },
+        "zero_think": {
+          "cot_nll": 1.7840206922888755,
+          "answer_nll": 1.152860985188221
+        },
+        "shuffle_think": {
+          "cot_nll": 1.8331418421268464,
+          "answer_nll": 1.172197159807838
+        },
+        "remove_think": {
+          "cot_nll": 1.78048093521595,
+          "answer_nll": 1.150032386195613
+        }
+      },
+      "deltas_vs_normal": {
+        "zero_think_embedding": {
+          "cot_delta": 0.0005100446343421937,
+          "cot_delta_ci": [
+            0.00029510676860809324,
+            0.0007198837399482727
+          ],
+          "answer_delta": -0.0011439170686644501,
+          "answer_delta_ci": [
+            -0.0027174892416223883,
+            0.00012696058093570172
+          ],
+          "cot_positive_fraction": 0.565,
+          "answer_positive_fraction": 0.468
+        },
+        "zero_think": {
+          "cot_delta": 0.011246370673179627,
+          "cot_delta_ci": [
+            0.010498722612857819,
+            0.011920028269290924
+          ],
+          "answer_delta": 0.003312788660929073,
+          "answer_delta_ci": [
+            0.0002035998814390041,
+            0.006171724535583053
+          ],
+          "cot_positive_fraction": 0.851,
+          "answer_positive_fraction": 0.613
+        },
+        "shuffle_think": {
+          "cot_delta": 0.06036752051115036,
+          "cot_delta_ci": [
+            0.044574678599834446,
+            0.0773281580209732
+          ],
+          "answer_delta": 0.022648963280546015,
+          "answer_delta_ci": [
+            0.003681809438567143,
+            0.05202031495980918
+          ],
+          "cot_positive_fraction": 0.66,
+          "answer_positive_fraction": 0.503
+        },
+        "remove_think": {
+          "cot_delta": 0.0077066136002540584,
+          "cot_delta_ci": [
+            0.007320970356464386,
+            0.008085710167884827
+          ],
+          "answer_delta": 0.0004841896683210507,
+          "answer_delta_ci": [
+            -0.0013821102810325102,
+            0.002096685490803793
+          ],
+          "cot_positive_fraction": 0.927,
+          "answer_positive_fraction": 0.606
+        }
+      }
+    },
+    "G4": {
+      "group": "G4",
+      "checkpoint": "/data/zxl/runs/gpt2_cot_latent_adjacent_matrix_seed42/G4/step5000",
+      "num_eval_samples": 1000,
+      "conditions": {
+        "normal": {
+          "cot_nll": 1.7829769197702408,
+          "answer_nll": 1.1912678911034018
+        },
+        "zero_think_embedding": {
+          "cot_nll": 1.7836189594268799,
+          "answer_nll": 1.1903582543644589
+        },
+        "zero_think": {
+          "cot_nll": 1.798895828604698,
+          "answer_nll": 1.194606439436786
+        },
+        "shuffle_think": {
+          "cot_nll": 1.8379955041408538,
+          "answer_nll": 1.2156889666686765
+        },
+        "remove_think": {
+          "cot_nll": 1.7938547784090042,
+          "answer_nll": 1.1908634493709542
+        }
+      },
+      "deltas_vs_normal": {
+        "zero_think_embedding": {
+          "cot_delta": 0.0006420396566390992,
+          "cot_delta_ci": [
+            0.0004394637942314148,
+            0.0008330848813056945
+          ],
+          "answer_delta": -0.000909636738942936,
+          "answer_delta_ci": [
+            -0.001653593576513231,
+            -0.000181814543902874
+          ],
+          "cot_positive_fraction": 0.591,
+          "answer_positive_fraction": 0.446
+        },
+        "zero_think": {
+          "cot_delta": 0.015918908834457398,
+          "cot_delta_ci": [
+            0.015158527076244354,
+            0.016636428594589234
+          ],
+          "answer_delta": 0.0033385483333840966,
+          "answer_delta_ci": [
+            0.00022705092933028936,
+            0.00635079450905323
+          ],
+          "cot_positive_fraction": 0.921,
+          "answer_positive_fraction": 0.633
+        },
+        "shuffle_think": {
+          "cot_delta": 0.0550185843706131,
+          "cot_delta_ci": [
+            0.040230082035064695,
+            0.07112264508008957
+          ],
+          "answer_delta": 0.024421075565274807,
+          "answer_delta_ci": [
+            0.005341138250660151,
+            0.054408358494751154
+          ],
+          "cot_positive_fraction": 0.653,
+          "answer_positive_fraction": 0.475
+        },
+        "remove_think": {
+          "cot_delta": 0.010877858638763428,
+          "cot_delta_ci": [
+            0.010419510900974274,
+            0.011315524518489838
+          ],
+          "answer_delta": -0.0004044417324475944,
+          "answer_delta_ci": [
+            -0.001353258463088423,
+            0.0005278750979341567
+          ],
+          "cot_positive_fraction": 0.954,
+          "answer_positive_fraction": 0.577
+        }
+      }
+    }
+  }
+}
