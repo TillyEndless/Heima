@@ -1,0 +1,25 @@
+{
+  "dataset_source_path": "/data/zxl/official_heima/datasets/LLaVA-CoT-100k/train.jsonl",
+  "total_jsonl_count": 98582,
+  "usable_count": 98573,
+  "train_count": 32,
+  "eval_count": 8,
+  "split_seed": 42,
+  "split_hash": "c24ca08e4efd75e927262a6fdda3e15a96221161d39095c3ada133d013e7064b",
+  "field_completeness": {
+    "question": 1.0,
+    "cot": 1.0,
+    "answer": 1.0
+  },
+  "avg_question_token_length": 32.8,
+  "avg_cot_token_length": 179.875,
+  "avg_answer_token_length": 6.0,
+  "max_observed_sequence_length_sampled": 560,
+  "configured_max_length": 640,
+  "max_sequence_length_sufficient_sampled": true,
+  "format": {
+    "question": "string",
+    "cot": "string",
+    "answer": "string"
+  }
+}

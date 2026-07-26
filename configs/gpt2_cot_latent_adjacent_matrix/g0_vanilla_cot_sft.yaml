@@ -1,0 +1,9 @@
+group: G0
+name: vanilla_cot_sft
+model: GPT2-small
+seed: 42
+has_model_b: false
+projector: false
+role_embedding: false
+cumulative_latent: false
+loss2: false

@@ -1,0 +1,9 @@
+group: G1
+name: heima_style_gpt2_baseline
+model: GPT2-small
+seed: 42
+has_model_b: false
+projector: false
+role_embedding: false
+cumulative_latent: false
+loss2: false
