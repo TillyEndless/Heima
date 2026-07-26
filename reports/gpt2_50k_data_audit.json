@@ -1,0 +1,20 @@
+{
+  "train_count": 50000,
+  "eval_count": 1000,
+  "split_seed": 42,
+  "split_hash": "0231130c2d57a6d8567b6b4203d7427554d8216292f9995f0bb59b471a3ef42a",
+  "overlap_with_eval": 0,
+  "question_completeness": 1.0,
+  "cot_completeness": 1.0,
+  "answer_completeness": 1.0,
+  "avg_question_token_length": 34.10466666666667,
+  "max_question_token_length": 452,
+  "avg_cot_token_length": 176.1048431372549,
+  "max_cot_token_length": 736,
+  "avg_answer_token_length": 11.54329411764706,
+  "max_answer_token_length": 362,
+  "max_seq_len": 640,
+  "sampled_max_sequence_length": 667,
+  "truncation_rate_sampled": 0.0006666666666666666,
+  "eval_matches_10k_eval_prefix": true
+}
