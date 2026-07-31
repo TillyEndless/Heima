@@ -3,7 +3,8 @@
 ## Branch And Commits
 
 - branch: `feat/latent-cot-overnight-audit-qwen7b`
-- HEAD: `0e7c6c2 run: start gpt2 g3 50k in-sequence training`
+- HEAD before result commits: `0e7c6c2 run: start gpt2 g3 50k in-sequence training`
+- latest local commit after reports/status: `24dbec2 exp: add overnight audit and stage1 smoke results`
 
 ## Gate Results
 
