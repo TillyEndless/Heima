@@ -1,0 +1,20 @@
+{
+  "disk_free_before": 16196556554240,
+  "files": [
+    "LICENSE",
+    "model-00002-of-000002.safetensors",
+    "model-00001-of-000002.safetensors",
+    ".gitattributes",
+    "tokenizer.json",
+    "generation_config.json",
+    "model.safetensors.index.json",
+    "README.md",
+    "figures",
+    "tokenizer_config.json",
+    "config.json"
+  ],
+  "local_path": "/weights2/zhouxiaoling/hf_cache/models--deepseek-ai--DeepSeek-R1-Distill-Qwen-7B/snapshots/916b56a44061fd5cd7d6a8fb632557ed4f724f60",
+  "model_id": "deepseek-ai/DeepSeek-R1-Distill-Qwen-7B",
+  "sha": "916b56a44061fd5cd7d6a8fb632557ed4f724f60",
+  "status": "complete"
+}

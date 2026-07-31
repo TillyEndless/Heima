@@ -1,0 +1,67 @@
+{
+  "branch": {
+    "cmd": [
+      "git",
+      "branch",
+      "--show-current"
+    ],
+    "returncode": 0,
+    "stderr": "",
+    "stdout": "feat/latent-cot-overnight-audit-qwen7b\n"
+  },
+  "cuda_available": true,
+  "device_count": 1,
+  "disk": {
+    "cmd": [
+      "df",
+      "-h",
+      "/data2/zhouxiaoling/latent_cot/Heima-overnight-qwen7b",
+      "/weights2/zhouxiaoling/hf_cache"
+    ],
+    "returncode": 0,
+    "stderr": "",
+    "stdout": "Filesystem         Size  Used Avail Use% Mounted on\n10.0.0.4:/data      16T   47G   15T   1% /data2\n10.0.0.4:/weights   16T   47G   15T   1% /weights2\n"
+  },
+  "executable": "/data2/zhouxiaoling/envs/latentcot/bin/python",
+  "git": {
+    "cmd": [
+      "git",
+      "rev-parse",
+      "HEAD"
+    ],
+    "returncode": 0,
+    "stderr": "",
+    "stdout": "0e7c6c2bf146b506d95acd7645ec97d2ec358c90\n"
+  },
+  "git_status": {
+    "cmd": [
+      "git",
+      "status",
+      "--short"
+    ],
+    "returncode": 0,
+    "stderr": "",
+    "stdout": " M .gitignore\n?? reports/answer_parser_tests.json\n?? reports/dataset_audit.json\n?? reports/dynamic_latent_length_report.json\n?? reports/model_download.json\n?? reports/overnight/\n?? reports/overnight_status.md\n?? reports/qwen_baseline_sanity.jsonl\n?? reports/qwen_baseline_sanity_summary.json\n?? reports/samples.md\n?? scripts/._latent_cot_overnight_qwen7b.py\n?? scripts/latent_cot_overnight_qwen7b.py\n?? scripts/overnight/\n?? status/\n"
+  },
+  "gpu": {
+    "cmd": [
+      "nvidia-smi",
+      "--query-gpu=index,name,memory.used,memory.total,utilization.gpu",
+      "--format=csv,noheader"
+    ],
+    "returncode": 0,
+    "stderr": "",
+    "stdout": "0, NVIDIA A100-PCIE-40GB, 0 MiB, 40960 MiB, 0 %\n1, NVIDIA A100-PCIE-40GB, 4 MiB, 40960 MiB, 0 %\n"
+  },
+  "hf_home": "/weights2/zhouxiaoling/hf_cache",
+  "modules": {
+    "accelerate": "0.34.2",
+    "datasets": "5.0.1",
+    "huggingface_hub": "0.36.2",
+    "peft": "0.12.0",
+    "torch": "2.3.1+cu121",
+    "transformers": "4.45.2"
+  },
+  "python": "3.10.20 | packaged by conda-forge | (main, Jun 11 2026, 03:31:56) [GCC 14.3.0]",
+  "torch_cuda": "12.1"
+}

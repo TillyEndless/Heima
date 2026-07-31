@@ -1,0 +1,2898 @@
+{
+  "checks": {
+    "question_labels_all_ignore": true,
+    "think_id": 151665,
+    "think_labels_are_think_id": true
+  },
+  "rows": [
+    {
+      "contributes_to_loss": false,
+      "label": -100,
+      "position": 0,
+      "sample": 0,
+      "segment": "question",
+      "token": "Question",
+      "token_id": 14582
+    },
+    {
+      "contributes_to_loss": false,
+      "label": -100,
+      "position": 1,
+      "sample": 0,
+      "segment": "question",
+      "token": ":\n",
+      "token_id": 510
+    },
+    {
+      "contributes_to_loss": false,
+      "label": -100,
+      "position": 2,
+      "sample": 0,
+      "segment": "question",
+      "token": "D",
+      "token_id": 35
+    },
+    {
+      "contributes_to_loss": false,
+      "label": -100,
+      "position": 3,
+      "sample": 0,
+      "segment": "question",
+      "token": "etermine",
+      "token_id": 24308
+    },
+    {
+      "contributes_to_loss": false,
+      "label": -100,
+      "position": 4,
+      "sample": 0,
+      "segment": "question",
+      "token": " the",
+      "token_id": 279
+    },
+    {
+      "contributes_to_loss": false,
+      "label": -100,
+      "position": 5,
+      "sample": 0,
+      "segment": "question",
+      "token": " radius",
+      "token_id": 10578
+    },
+    {
+      "contributes_to_loss": false,
+      "label": -100,
+      "position": 6,
+      "sample": 0,
+      "segment": "question",
+      "token": " of",
+      "token_id": 315
+    },
+    {
+      "contributes_to_loss": false,
+      "label": -100,
+      "position": 7,
+      "sample": 0,
+      "segment": "question",
+      "token": " a",
+      "token_id": 264
+    },
+    {
+      "contributes_to_loss": false,
+      "label": -100,
+      "position": 8,
+      "sample": 0,
+      "segment": "question",
+      "token": " cylindrical",
+      "token_id": 78510
+    },
+    {
+      "contributes_to_loss": false,
+      "label": -100,
+      "position": 9,
+      "sample": 0,
+      "segment": "question",
+      "token": " can",
+      "token_id": 646
+    },
+    {
+      "contributes_to_loss": false,
+      "label": -100,
+      "position": 10,
+      "sample": 0,
+      "segment": "question",
+      "token": " given",
+      "token_id": 2661
+    },
+    {
+      "contributes_to_loss": false,
+      "label": -100,
+      "position": 11,
+      "sample": 0,
+      "segment": "question",
+      "token": " the",
+      "token_id": 279
+    },
+    {
+      "contributes_to_loss": false,
+      "label": -100,
+      "position": 12,
+      "sample": 0,
+      "segment": "question",
+      "token": " area",
+      "token_id": 3082
+    },
+    {
+      "contributes_to_loss": false,
+      "label": -100,
+      "position": 13,
+      "sample": 0,
+      "segment": "question",
+      "token": " of",
+      "token_id": 315
+    },
+    {
+      "contributes_to_loss": false,
+      "label": -100,
+      "position": 14,
+      "sample": 0,
+      "segment": "question",
+      "token": " a",
+      "token_id": 264
+    },
+    {
+      "contributes_to_loss": false,
+      "label": -100,
+      "position": 15,
+      "sample": 0,
+      "segment": "question",
+      "token": " label",
+      "token_id": 2383
+    },
+    {
+      "contributes_to_loss": false,
+      "label": -100,
+      "position": 16,
+      "sample": 0,
+      "segment": "question",
+      "token": " on",
+      "token_id": 389
+    },
+    {
+      "contributes_to_loss": false,
+      "label": -100,
+      "position": 17,
+      "sample": 0,
+      "segment": "question",
+      "token": " the",
+      "token_id": 279
+    },
+    {
+      "contributes_to_loss": false,
+      "label": -100,
+      "position": 18,
+      "sample": 0,
+      "segment": "question",
+      "token": " can",
+      "token_id": 646
+    },
+    {
+      "contributes_to_loss": false,
+      "label": -100,
+      "position": 19,
+      "sample": 0,
+      "segment": "question",
+      "token": ",",
+      "token_id": 11
+    },
+    {
+      "contributes_to_loss": false,
+      "label": -100,
+      "position": 20,
+      "sample": 0,
+      "segment": "question",
+      "token": " A",
+      "token_id": 362
+    },
+    {
+      "contributes_to_loss": false,
+      "label": -100,
+      "position": 21,
+      "sample": 0,
+      "segment": "question",
+      "token": " =",
+      "token_id": 284
+    },
+    {
+      "contributes_to_loss": false,
+      "label": -100,
+      "position": 22,
+      "sample": 0,
+      "segment": "question",
+      "token": " ",
+      "token_id": 220
+    },
+    {
+      "contributes_to_loss": false,
+      "label": -100,
+      "position": 23,
+      "sample": 0,
+      "segment": "question",
+      "token": "1",
+      "token_id": 16
+    },
+    {
+      "contributes_to_loss": false,
+      "label": -100,
+      "position": 24,
+      "sample": 0,
+      "segment": "question",
+      "token": "6",
+      "token_id": 21
+    },
+    {
+      "contributes_to_loss": false,
+      "label": -100,
+      "position": 25,
+      "sample": 0,
+      "segment": "question",
+      "token": "(pi",
+      "token_id": 51264
+    },
+    {
+      "contributes_to_loss": false,
+      "label": -100,
+      "position": 26,
+      "sample": 0,
+      "segment": "question",
+      "token": ")x",
+      "token_id": 50724
+    },
+    {
+      "contributes_to_loss": false,
+      "label": -100,
+      "position": 27,
+      "sample": 0,
+      "segment": "question",
+      "token": "^",
+      "token_id": 61
+    },
+    {
+      "contributes_to_loss": false,
+      "label": -100,
+      "position": 28,
+      "sample": 0,
+      "segment": "question",
+      "token": "2",
+      "token_id": 17
+    },
+    {
+      "contributes_to_loss": false,
+      "label": -100,
+      "position": 29,
+      "sample": 0,
+      "segment": "question",
+      "token": " -",
+      "token_id": 481
+    },
+    {
+      "contributes_to_loss": false,
+      "label": -100,
+      "position": 30,
+      "sample": 0,
+      "segment": "question",
+      "token": " ",
+      "token_id": 220
+    },
+    {
+      "contributes_to_loss": false,
+      "label": -100,
+      "position": 31,
+      "sample": 0,
+      "segment": "question",
+      "token": "6",
+      "token_id": 21
+    },
+    {
+      "contributes_to_loss": false,
+      "label": -100,
+      "position": 32,
+      "sample": 0,
+      "segment": "question",
+      "token": "8",
+      "token_id": 23
+    },
+    {
+      "contributes_to_loss": false,
+      "label": -100,
+      "position": 33,
+      "sample": 0,
+      "segment": "question",
+      "token": "(pi",
+      "token_id": 51264
+    },
+    {
+      "contributes_to_loss": false,
+      "label": -100,
+      "position": 34,
+      "sample": 0,
+      "segment": "question",
+      "token": ")x",
+      "token_id": 50724
+    },
+    {
+      "contributes_to_loss": false,
+      "label": -100,
+      "position": 35,
+      "sample": 0,
+      "segment": "question",
+      "token": " +",
+      "token_id": 488
+    },
+    {
+      "contributes_to_loss": false,
+      "label": -100,
+      "position": 36,
+      "sample": 0,
+      "segment": "question",
+      "token": " ",
+      "token_id": 220
+    },
+    {
+      "contributes_to_loss": false,
+      "label": -100,
+      "position": 37,
+      "sample": 0,
+      "segment": "question",
+      "token": "4",
+      "token_id": 19
+    },
+    {
+      "contributes_to_loss": false,
+      "label": -100,
+      "position": 38,
+      "sample": 0,
+      "segment": "question",
+      "token": "2",
+      "token_id": 17
+    },
+    {
+      "contributes_to_loss": false,
+      "label": -100,
+      "position": 39,
+      "sample": 0,
+      "segment": "question",
+      "token": "(pi",
+      "token_id": 51264
+    },
+    {
+      "contributes_to_loss": false,
+      "label": -100,
+      "position": 40,
+      "sample": 0,
+      "segment": "question",
+      "token": "),",
+      "token_id": 701
+    },
+    {
+      "contributes_to_loss": false,
+      "label": -100,
+      "position": 41,
+      "sample": 0,
+      "segment": "question",
+      "token": " and",
+      "token_id": 323
+    },
+    {
+      "contributes_to_loss": false,
+      "label": -100,
+      "position": 42,
+      "sample": 0,
+      "segment": "question",
+      "token": " the",
+      "token_id": 279
+    },
+    {
+      "contributes_to_loss": false,
+      "label": -100,
+      "position": 43,
+      "sample": 0,
+      "segment": "question",
+      "token": " height",
+      "token_id": 2608
+    },
+    {
+      "contributes_to_loss": false,
+      "label": -100,
+      "position": 44,
+      "sample": 0,
+      "segment": "question",
+      "token": " of",
+      "token_id": 315
+    },
+    {
+      "contributes_to_loss": false,
+      "label": -100,
+      "position": 45,
+      "sample": 0,
+      "segment": "question",
+      "token": " the",
+      "token_id": 279
+    },
+    {
+      "contributes_to_loss": false,
+      "label": -100,
+      "position": 46,
+      "sample": 0,
+      "segment": "question",
+      "token": " can",
+      "token_id": 646
+    },
+    {
+      "contributes_to_loss": false,
+      "label": -100,
+      "position": 47,
+      "sample": 0,
+      "segment": "question",
+      "token": ",",
+      "token_id": 11
+    },
+    {
+      "contributes_to_loss": false,
+      "label": -100,
+      "position": 48,
+      "sample": 0,
+      "segment": "question",
+      "token": " h",
+      "token_id": 305
+    },
+    {
+      "contributes_to_loss": false,
+      "label": -100,
+      "position": 49,
+      "sample": 0,
+      "segment": "question",
+      "token": " =",
+      "token_id": 284
+    },
+    {
+      "contributes_to_loss": false,
+      "label": -100,
+      "position": 50,
+      "sample": 0,
+      "segment": "question",
+      "token": " ",
+      "token_id": 220
+    },
+    {
+      "contributes_to_loss": false,
+      "label": -100,
+      "position": 51,
+      "sample": 0,
+      "segment": "question",
+      "token": "2",
+      "token_id": 17
+    },
+    {
+      "contributes_to_loss": false,
+      "label": -100,
+      "position": 52,
+      "sample": 0,
+      "segment": "question",
+      "token": "x",
+      "token_id": 87
+    },
+    {
+      "contributes_to_loss": false,
+      "label": -100,
+      "position": 53,
+      "sample": 0,
+      "segment": "question",
+      "token": " -",
+      "token_id": 481
+    },
+    {
+      "contributes_to_loss": false,
+      "label": -100,
+      "position": 54,
+      "sample": 0,
+      "segment": "question",
+      "token": " ",
+      "token_id": 220
+    },
+    {
+      "contributes_to_loss": false,
+      "label": -100,
+      "position": 55,
+      "sample": 0,
+      "segment": "question",
+      "token": "7",
+      "token_id": 22
+    },
+    {
+      "contributes_to_loss": false,
+      "label": -100,
+      "position": 56,
+      "sample": 0,
+      "segment": "question",
+      "token": ".",
+      "token_id": 13
+    },
+    {
+      "contributes_to_loss": false,
+      "label": -100,
+      "position": 57,
+      "sample": 0,
+      "segment": "question",
+      "token": " Show",
+      "token_id": 6928
+    },
+    {
+      "contributes_to_loss": false,
+      "label": -100,
+      "position": 58,
+      "sample": 0,
+      "segment": "question",
+      "token": " all",
+      "token_id": 678
+    },
+    {
+      "contributes_to_loss": false,
+      "label": -100,
+      "position": 59,
+      "sample": 0,
+      "segment": "question",
+      "token": " steps",
+      "token_id": 7354
+    },
+    {
+      "contributes_to_loss": false,
+      "label": -100,
+      "position": 60,
+      "sample": 0,
+      "segment": "question",
+      "token": " and",
+      "token_id": 323
+    },
+    {
+      "contributes_to_loss": false,
+      "label": -100,
+      "position": 61,
+      "sample": 0,
+      "segment": "question",
+      "token": " explain",
+      "token_id": 10339
+    },
+    {
+      "contributes_to_loss": false,
+      "label": -100,
+      "position": 62,
+      "sample": 0,
+      "segment": "question",
+      "token": " your",
+      "token_id": 697
+    },
+    {
+      "contributes_to_loss": false,
+      "label": -100,
+      "position": 63,
+      "sample": 0,
+      "segment": "question",
+      "token": " reasoning",
+      "token_id": 32711
+    },
+    {
+      "contributes_to_loss": false,
+      "label": -100,
+      "position": 64,
+      "sample": 0,
+      "segment": "question",
+      "token": ".\n\n",
+      "token_id": 382
+    },
+    {
+      "contributes_to_loss": true,
+      "label": 151665,
+      "position": 65,
+      "sample": 0,
+      "segment": "think",
+      "token": "<THINK>",
+      "token_id": 151665
+    },
+    {
+      "contributes_to_loss": true,
+      "label": 151665,
+      "position": 66,
+      "sample": 0,
+      "segment": "think",
+      "token": "<THINK>",
+      "token_id": 151665
+    },
+    {
+      "contributes_to_loss": true,
+      "label": 151665,
+      "position": 67,
+      "sample": 0,
+      "segment": "think",
+      "token": "<THINK>",
+      "token_id": 151665
+    },
+    {
+      "contributes_to_loss": true,
+      "label": 151665,
+      "position": 68,
+      "sample": 0,
+      "segment": "think",
+      "token": "<THINK>",
+      "token_id": 151665
+    },
+    {
+      "contributes_to_loss": true,
+      "label": 151665,
+      "position": 69,
+      "sample": 0,
+      "segment": "think",
+      "token": "<THINK>",
+      "token_id": 151665
+    },
+    {
+      "contributes_to_loss": true,
+      "label": 151665,
+      "position": 70,
+      "sample": 0,
+      "segment": "think",
+      "token": "<THINK>",
+      "token_id": 151665
+    },
+    {
+      "contributes_to_loss": true,
+      "label": 151665,
+      "position": 71,
+      "sample": 0,
+      "segment": "think",
+      "token": "<THINK>",
+      "token_id": 151665
+    },
+    {
+      "contributes_to_loss": true,
+      "label": 151665,
+      "position": 72,
+      "sample": 0,
+      "segment": "think",
+      "token": "<THINK>",
+      "token_id": 151665
+    },
+    {
+      "contributes_to_loss": true,
+      "label": 151665,
+      "position": 73,
+      "sample": 0,
+      "segment": "think",
+      "token": "<THINK>",
+      "token_id": 151665
+    },
+    {
+      "contributes_to_loss": true,
+      "label": 151665,
+      "position": 74,
+      "sample": 0,
+      "segment": "think",
+      "token": "<THINK>",
+      "token_id": 151665
+    },
+    {
+      "contributes_to_loss": true,
+      "label": 151665,
+      "position": 75,
+      "sample": 0,
+      "segment": "think",
+      "token": "<THINK>",
+      "token_id": 151665
+    },
+    {
+      "contributes_to_loss": true,
+      "label": 151665,
+      "position": 76,
+      "sample": 0,
+      "segment": "think",
+      "token": "<THINK>",
+      "token_id": 151665
+    },
+    {
+      "contributes_to_loss": true,
+      "label": 151665,
+      "position": 77,
+      "sample": 0,
+      "segment": "think",
+      "token": "<THINK>",
+      "token_id": 151665
+    },
+    {
+      "contributes_to_loss": true,
+      "label": 151665,
+      "position": 78,
+      "sample": 0,
+      "segment": "think",
+      "token": "<THINK>",
+      "token_id": 151665
+    },
+    {
+      "contributes_to_loss": true,
+      "label": 151665,
+      "position": 79,
+      "sample": 0,
+      "segment": "think",
+      "token": "<THINK>",
+      "token_id": 151665
+    },
+    {
+      "contributes_to_loss": true,
+      "label": 151665,
+      "position": 80,
+      "sample": 0,
+      "segment": "think",
+      "token": "<THINK>",
+      "token_id": 151665
+    },
+    {
+      "contributes_to_loss": true,
+      "label": 151665,
+      "position": 81,
+      "sample": 0,
+      "segment": "think",
+      "token": "<THINK>",
+      "token_id": 151665
+    },
+    {
+      "contributes_to_loss": true,
+      "label": 151665,
+      "position": 82,
+      "sample": 0,
+      "segment": "think",
+      "token": "<THINK>",
+      "token_id": 151665
+    },
+    {
+      "contributes_to_loss": true,
+      "label": 151665,
+      "position": 83,
+      "sample": 0,
+      "segment": "think",
+      "token": "<THINK>",
+      "token_id": 151665
+    },
+    {
+      "contributes_to_loss": true,
+      "label": 151665,
+      "position": 84,
+      "sample": 0,
+      "segment": "think",
+      "token": "<THINK>",
+      "token_id": 151665
+    },
+    {
+      "contributes_to_loss": true,
+      "label": 151665,
+      "position": 85,
+      "sample": 0,
+      "segment": "think",
+      "token": "<THINK>",
+      "token_id": 151665
+    },
+    {
+      "contributes_to_loss": true,
+      "label": 151665,
+      "position": 86,
+      "sample": 0,
+      "segment": "think",
+      "token": "<THINK>",
+      "token_id": 151665
+    },
+    {
+      "contributes_to_loss": true,
+      "label": 151665,
+      "position": 87,
+      "sample": 0,
+      "segment": "think",
+      "token": "<THINK>",
+      "token_id": 151665
+    },
+    {
+      "contributes_to_loss": true,
+      "label": 151665,
+      "position": 88,
+      "sample": 0,
+      "segment": "think",
+      "token": "<THINK>",
+      "token_id": 151665
+    },
+    {
+      "contributes_to_loss": true,
+      "label": 151665,
+      "position": 89,
+      "sample": 0,
+      "segment": "think",
+      "token": "<THINK>",
+      "token_id": 151665
+    },
+    {
+      "contributes_to_loss": true,
+      "label": 151665,
+      "position": 90,
+      "sample": 0,
+      "segment": "think",
+      "token": "<THINK>",
+      "token_id": 151665
+    },
+    {
+      "contributes_to_loss": true,
+      "label": 151665,
+      "position": 91,
+      "sample": 0,
+      "segment": "think",
+      "token": "<THINK>",
+      "token_id": 151665
+    },
+    {
+      "contributes_to_loss": true,
+      "label": 151665,
+      "position": 92,
+      "sample": 0,
+      "segment": "think",
+      "token": "<THINK>",
+      "token_id": 151665
+    },
+    {
+      "contributes_to_loss": true,
+      "label": 151665,
+      "position": 93,
+      "sample": 0,
+      "segment": "think",
+      "token": "<THINK>",
+      "token_id": 151665
+    },
+    {
+      "contributes_to_loss": true,
+      "label": 151665,
+      "position": 94,
+      "sample": 0,
+      "segment": "think",
+      "token": "<THINK>",
+      "token_id": 151665
+    },
+    {
+      "contributes_to_loss": true,
+      "label": 151665,
+      "position": 95,
+      "sample": 0,
+      "segment": "think",
+      "token": "<THINK>",
+      "token_id": 151665
+    },
+    {
+      "contributes_to_loss": true,
+      "label": 151665,
+      "position": 96,
+      "sample": 0,
+      "segment": "think",
+      "token": "<THINK>",
+      "token_id": 151665
+    },
+    {
+      "contributes_to_loss": true,
+      "label": 151665,
+      "position": 97,
+      "sample": 0,
+      "segment": "think",
+      "token": "<THINK>",
+      "token_id": 151665
+    },
+    {
+      "contributes_to_loss": true,
+      "label": 151665,
+      "position": 98,
+      "sample": 0,
+      "segment": "think",
+      "token": "<THINK>",
+      "token_id": 151665
+    },
+    {
+      "contributes_to_loss": true,
+      "label": 151665,
+      "position": 99,
+      "sample": 0,
+      "segment": "think",
+      "token": "<THINK>",
+      "token_id": 151665
+    },
+    {
+      "contributes_to_loss": true,
+      "label": 151665,
+      "position": 100,
+      "sample": 0,
+      "segment": "think",
+      "token": "<THINK>",
+      "token_id": 151665
+    },
+    {
+      "contributes_to_loss": true,
+      "label": 151665,
+      "position": 101,
+      "sample": 0,
+      "segment": "think",
+      "token": "<THINK>",
+      "token_id": 151665
+    },
+    {
+      "contributes_to_loss": true,
+      "label": 151665,
+      "position": 102,
+      "sample": 0,
+      "segment": "think",
+      "token": "<THINK>",
+      "token_id": 151665
+    },
+    {
+      "contributes_to_loss": true,
+      "label": 151665,
+      "position": 103,
+      "sample": 0,
+      "segment": "think",
+      "token": "<THINK>",
+      "token_id": 151665
+    },
+    {
+      "contributes_to_loss": true,
+      "label": 151665,
+      "position": 104,
+      "sample": 0,
+      "segment": "think",
+      "token": "<THINK>",
+      "token_id": 151665
+    },
+    {
+      "contributes_to_loss": true,
+      "label": 151665,
+      "position": 105,
+      "sample": 0,
+      "segment": "think",
+      "token": "<THINK>",
+      "token_id": 151665
+    },
+    {
+      "contributes_to_loss": true,
+      "label": 151665,
+      "position": 106,
+      "sample": 0,
+      "segment": "think",
+      "token": "<THINK>",
+      "token_id": 151665
+    },
+    {
+      "contributes_to_loss": true,
+      "label": 151665,
+      "position": 107,
+      "sample": 0,
+      "segment": "think",
+      "token": "<THINK>",
+      "token_id": 151665
+    },
+    {
+      "contributes_to_loss": true,
+      "label": 151665,
+      "position": 108,
+      "sample": 0,
+      "segment": "think",
+      "token": "<THINK>",
+      "token_id": 151665
+    },
+    {
+      "contributes_to_loss": true,
+      "label": 151665,
+      "position": 109,
+      "sample": 0,
+      "segment": "think",
+      "token": "<THINK>",
+      "token_id": 151665
+    },
+    {
+      "contributes_to_loss": true,
+      "label": 151665,
+      "position": 110,
+      "sample": 0,
+      "segment": "think",
+      "token": "<THINK>",
+      "token_id": 151665
+    },
+    {
+      "contributes_to_loss": true,
+      "label": 151665,
+      "position": 111,
+      "sample": 0,
+      "segment": "think",
+      "token": "<THINK>",
+      "token_id": 151665
+    },
+    {
+      "contributes_to_loss": true,
+      "label": 151665,
+      "position": 112,
+      "sample": 0,
+      "segment": "think",
+      "token": "<THINK>",
+      "token_id": 151665
+    },
+    {
+      "contributes_to_loss": true,
+      "label": 151665,
+      "position": 113,
+      "sample": 0,
+      "segment": "think",
+      "token": "<THINK>",
+      "token_id": 151665
+    },
+    {
+      "contributes_to_loss": true,
+      "label": 151665,
+      "position": 114,
+      "sample": 0,
+      "segment": "think",
+      "token": "<THINK>",
+      "token_id": 151665
+    },
+    {
+      "contributes_to_loss": true,
+      "label": 151665,
+      "position": 115,
+      "sample": 0,
+      "segment": "think",
+      "token": "<THINK>",
+      "token_id": 151665
+    },
+    {
+      "contributes_to_loss": true,
+      "label": 151665,
+      "position": 116,
+      "sample": 0,
+      "segment": "think",
+      "token": "<THINK>",
+      "token_id": 151665
+    },
+    {
+      "contributes_to_loss": true,
+      "label": 151665,
+      "position": 117,
+      "sample": 0,
+      "segment": "think",
+      "token": "<THINK>",
+      "token_id": 151665
+    },
+    {
+      "contributes_to_loss": true,
+      "label": 151665,
+      "position": 118,
+      "sample": 0,
+      "segment": "think",
+      "token": "<THINK>",
+      "token_id": 151665
+    },
+    {
+      "contributes_to_loss": true,
+      "label": 151665,
+      "position": 119,
+      "sample": 0,
+      "segment": "think",
+      "token": "<THINK>",
+      "token_id": 151665
+    },
+    {
+      "contributes_to_loss": true,
+      "label": 151665,
+      "position": 120,
+      "sample": 0,
+      "segment": "think",
+      "token": "<THINK>",
+      "token_id": 151665
+    },
+    {
+      "contributes_to_loss": true,
+      "label": 151665,
+      "position": 121,
+      "sample": 0,
+      "segment": "think",
+      "token": "<THINK>",
+      "token_id": 151665
+    },
+    {
+      "contributes_to_loss": true,
+      "label": 151665,
+      "position": 122,
+      "sample": 0,
+      "segment": "think",
+      "token": "<THINK>",
+      "token_id": 151665
+    },
+    {
+      "contributes_to_loss": true,
+      "label": 151665,
+      "position": 123,
+      "sample": 0,
+      "segment": "think",
+      "token": "<THINK>",
+      "token_id": 151665
+    },
+    {
+      "contributes_to_loss": true,
+      "label": 151665,
+      "position": 124,
+      "sample": 0,
+      "segment": "think",
+      "token": "<THINK>",
+      "token_id": 151665
+    },
+    {
+      "contributes_to_loss": true,
+      "label": 151665,
+      "position": 125,
+      "sample": 0,
+      "segment": "think",
+      "token": "<THINK>",
+      "token_id": 151665
+    },
+    {
+      "contributes_to_loss": true,
+      "label": 151665,
+      "position": 126,
+      "sample": 0,
+      "segment": "think",
+      "token": "<THINK>",
+      "token_id": 151665
+    },
+    {
+      "contributes_to_loss": true,
+      "label": 151665,
+      "position": 127,
+      "sample": 0,
+      "segment": "think",
+      "token": "<THINK>",
+      "token_id": 151665
+    },
+    {
+      "contributes_to_loss": true,
+      "label": 151665,
+      "position": 128,
+      "sample": 0,
+      "segment": "think",
+      "token": "<THINK>",
+      "token_id": 151665
+    },
+    {
+      "contributes_to_loss": true,
+      "label": 151665,
+      "position": 129,
+      "sample": 0,
+      "segment": "think",
+      "token": "<THINK>",
+      "token_id": 151665
+    },
+    {
+      "contributes_to_loss": true,
+      "label": 151665,
+      "position": 130,
+      "sample": 0,
+      "segment": "think",
+      "token": "<THINK>",
+      "token_id": 151665
+    },
+    {
+      "contributes_to_loss": true,
+      "label": 151665,
+      "position": 131,
+      "sample": 0,
+      "segment": "think",
+      "token": "<THINK>",
+      "token_id": 151665
+    },
+    {
+      "contributes_to_loss": true,
+      "label": 151665,
+      "position": 132,
+      "sample": 0,
+      "segment": "think",
+      "token": "<THINK>",
+      "token_id": 151665
+    },
+    {
+      "contributes_to_loss": true,
+      "label": 151665,
+      "position": 133,
+      "sample": 0,
+      "segment": "think",
+      "token": "<THINK>",
+      "token_id": 151665
+    },
+    {
+      "contributes_to_loss": true,
+      "label": 151665,
+      "position": 134,
+      "sample": 0,
+      "segment": "think",
+      "token": "<THINK>",
+      "token_id": 151665
+    },
+    {
+      "contributes_to_loss": true,
+      "label": 151665,
+      "position": 135,
+      "sample": 0,
+      "segment": "think",
+      "token": "<THINK>",
+      "token_id": 151665
+    },
+    {
+      "contributes_to_loss": true,
+      "label": 151665,
+      "position": 136,
+      "sample": 0,
+      "segment": "think",
+      "token": "<THINK>",
+      "token_id": 151665
+    },
+    {
+      "contributes_to_loss": true,
+      "label": 151665,
+      "position": 137,
+      "sample": 0,
+      "segment": "think",
+      "token": "<THINK>",
+      "token_id": 151665
+    },
+    {
+      "contributes_to_loss": true,
+      "label": 151665,
+      "position": 138,
+      "sample": 0,
+      "segment": "think",
+      "token": "<THINK>",
+      "token_id": 151665
+    },
+    {
+      "contributes_to_loss": true,
+      "label": 151665,
+      "position": 139,
+      "sample": 0,
+      "segment": "think",
+      "token": "<THINK>",
+      "token_id": 151665
+    },
+    {
+      "contributes_to_loss": true,
+      "label": 151665,
+      "position": 140,
+      "sample": 0,
+      "segment": "think",
+      "token": "<THINK>",
+      "token_id": 151665
+    },
+    {
+      "contributes_to_loss": true,
+      "label": 151665,
+      "position": 141,
+      "sample": 0,
+      "segment": "think",
+      "token": "<THINK>",
+      "token_id": 151665
+    },
+    {
+      "contributes_to_loss": true,
+      "label": 151665,
+      "position": 142,
+      "sample": 0,
+      "segment": "think",
+      "token": "<THINK>",
+      "token_id": 151665
+    },
+    {
+      "contributes_to_loss": true,
+      "label": 151665,
+      "position": 143,
+      "sample": 0,
+      "segment": "think",
+      "token": "<THINK>",
+      "token_id": 151665
+    },
+    {
+      "contributes_to_loss": true,
+      "label": 151665,
+      "position": 144,
+      "sample": 0,
+      "segment": "think",
+      "token": "<THINK>",
+      "token_id": 151665
+    },
+    {
+      "contributes_to_loss": true,
+      "label": 151665,
+      "position": 145,
+      "sample": 0,
+      "segment": "think",
+      "token": "<THINK>",
+      "token_id": 151665
+    },
+    {
+      "contributes_to_loss": true,
+      "label": 151665,
+      "position": 146,
+      "sample": 0,
+      "segment": "think",
+      "token": "<THINK>",
+      "token_id": 151665
+    },
+    {
+      "contributes_to_loss": true,
+      "label": 151665,
+      "position": 147,
+      "sample": 0,
+      "segment": "think",
+      "token": "<THINK>",
+      "token_id": 151665
+    },
+    {
+      "contributes_to_loss": true,
+      "label": 151665,
+      "position": 148,
+      "sample": 0,
+      "segment": "think",
+      "token": "<THINK>",
+      "token_id": 151665
+    },
+    {
+      "contributes_to_loss": true,
+      "label": 151665,
+      "position": 149,
+      "sample": 0,
+      "segment": "think",
+      "token": "<THINK>",
+      "token_id": 151665
+    },
+    {
+      "contributes_to_loss": true,
+      "label": 151665,
+      "position": 150,
+      "sample": 0,
+      "segment": "think",
+      "token": "<THINK>",
+      "token_id": 151665
+    },
+    {
+      "contributes_to_loss": true,
+      "label": 151665,
+      "position": 151,
+      "sample": 0,
+      "segment": "think",
+      "token": "<THINK>",
+      "token_id": 151665
+    },
+    {
+      "contributes_to_loss": true,
+      "label": 151665,
+      "position": 152,
+      "sample": 0,
+      "segment": "think",
+      "token": "<THINK>",
+      "token_id": 151665
+    },
+    {
+      "contributes_to_loss": true,
+      "label": 151665,
+      "position": 153,
+      "sample": 0,
+      "segment": "think",
+      "token": "<THINK>",
+      "token_id": 151665
+    },
+    {
+      "contributes_to_loss": true,
+      "label": 151665,
+      "position": 154,
+      "sample": 0,
+      "segment": "think",
+      "token": "<THINK>",
+      "token_id": 151665
+    },
+    {
+      "contributes_to_loss": true,
+      "label": 151665,
+      "position": 155,
+      "sample": 0,
+      "segment": "think",
+      "token": "<THINK>",
+      "token_id": 151665
+    },
+    {
+      "contributes_to_loss": true,
+      "label": 151665,
+      "position": 156,
+      "sample": 0,
+      "segment": "think",
+      "token": "<THINK>",
+      "token_id": 151665
+    },
+    {
+      "contributes_to_loss": true,
+      "label": 151665,
+      "position": 157,
+      "sample": 0,
+      "segment": "think",
+      "token": "<THINK>",
+      "token_id": 151665
+    },
+    {
+      "contributes_to_loss": true,
+      "label": 151665,
+      "position": 158,
+      "sample": 0,
+      "segment": "think",
+      "token": "<THINK>",
+      "token_id": 151665
+    },
+    {
+      "contributes_to_loss": true,
+      "label": 151665,
+      "position": 159,
+      "sample": 0,
+      "segment": "think",
+      "token": "<THINK>",
+      "token_id": 151665
+    },
+    {
+      "contributes_to_loss": true,
+      "label": 151665,
+      "position": 160,
+      "sample": 0,
+      "segment": "think",
+      "token": "<THINK>",
+      "token_id": 151665
+    },
+    {
+      "contributes_to_loss": true,
+      "label": 151665,
+      "position": 161,
+      "sample": 0,
+      "segment": "think",
+      "token": "<THINK>",
+      "token_id": 151665
+    },
+    {
+      "contributes_to_loss": true,
+      "label": 151665,
+      "position": 162,
+      "sample": 0,
+      "segment": "think",
+      "token": "<THINK>",
+      "token_id": 151665
+    },
+    {
+      "contributes_to_loss": true,
+      "label": 151665,
+      "position": 163,
+      "sample": 0,
+      "segment": "think",
+      "token": "<THINK>",
+      "token_id": 151665
+    },
+    {
+      "contributes_to_loss": true,
+      "label": 151665,
+      "position": 164,
+      "sample": 0,
+      "segment": "think",
+      "token": "<THINK>",
+      "token_id": 151665
+    },
+    {
+      "contributes_to_loss": true,
+      "label": 151665,
+      "position": 165,
+      "sample": 0,
+      "segment": "think",
+      "token": "<THINK>",
+      "token_id": 151665
+    },
+    {
+      "contributes_to_loss": true,
+      "label": 151665,
+      "position": 166,
+      "sample": 0,
+      "segment": "think",
+      "token": "<THINK>",
+      "token_id": 151665
+    },
+    {
+      "contributes_to_loss": true,
+      "label": 151665,
+      "position": 167,
+      "sample": 0,
+      "segment": "think",
+      "token": "<THINK>",
+      "token_id": 151665
+    },
+    {
+      "contributes_to_loss": true,
+      "label": 151665,
+      "position": 168,
+      "sample": 0,
+      "segment": "think",
+      "token": "<THINK>",
+      "token_id": 151665
+    },
+    {
+      "contributes_to_loss": true,
+      "label": 151665,
+      "position": 169,
+      "sample": 0,
+      "segment": "think",
+      "token": "<THINK>",
+      "token_id": 151665
+    },
+    {
+      "contributes_to_loss": true,
+      "label": 151665,
+      "position": 170,
+      "sample": 0,
+      "segment": "think",
+      "token": "<THINK>",
+      "token_id": 151665
+    },
+    {
+      "contributes_to_loss": true,
+      "label": 151665,
+      "position": 171,
+      "sample": 0,
+      "segment": "think",
+      "token": "<THINK>",
+      "token_id": 151665
+    },
+    {
+      "contributes_to_loss": true,
+      "label": 151665,
+      "position": 172,
+      "sample": 0,
+      "segment": "think",
+      "token": "<THINK>",
+      "token_id": 151665
+    },
+    {
+      "contributes_to_loss": true,
+      "label": 151665,
+      "position": 173,
+      "sample": 0,
+      "segment": "think",
+      "token": "<THINK>",
+      "token_id": 151665
+    },
+    {
+      "contributes_to_loss": true,
+      "label": 151665,
+      "position": 174,
+      "sample": 0,
+      "segment": "think",
+      "token": "<THINK>",
+      "token_id": 151665
+    },
+    {
+      "contributes_to_loss": true,
+      "label": 151665,
+      "position": 175,
+      "sample": 0,
+      "segment": "think",
+      "token": "<THINK>",
+      "token_id": 151665
+    },
+    {
+      "contributes_to_loss": true,
+      "label": 151665,
+      "position": 176,
+      "sample": 0,
+      "segment": "think",
+      "token": "<THINK>",
+      "token_id": 151665
+    },
+    {
+      "contributes_to_loss": true,
+      "label": 151665,
+      "position": 177,
+      "sample": 0,
+      "segment": "think",
+      "token": "<THINK>",
+      "token_id": 151665
+    },
+    {
+      "contributes_to_loss": true,
+      "label": 151665,
+      "position": 178,
+      "sample": 0,
+      "segment": "think",
+      "token": "<THINK>",
+      "token_id": 151665
+    },
+    {
+      "contributes_to_loss": true,
+      "label": 151665,
+      "position": 179,
+      "sample": 0,
+      "segment": "think",
+      "token": "<THINK>",
+      "token_id": 151665
+    },
+    {
+      "contributes_to_loss": true,
+      "label": 151665,
+      "position": 180,
+      "sample": 0,
+      "segment": "think",
+      "token": "<THINK>",
+      "token_id": 151665
+    },
+    {
+      "contributes_to_loss": true,
+      "label": 151665,
+      "position": 181,
+      "sample": 0,
+      "segment": "think",
+      "token": "<THINK>",
+      "token_id": 151665
+    },
+    {
+      "contributes_to_loss": true,
+      "label": 151665,
+      "position": 182,
+      "sample": 0,
+      "segment": "think",
+      "token": "<THINK>",
+      "token_id": 151665
+    },
+    {
+      "contributes_to_loss": true,
+      "label": 151665,
+      "position": 183,
+      "sample": 0,
+      "segment": "think",
+      "token": "<THINK>",
+      "token_id": 151665
+    },
+    {
+      "contributes_to_loss": true,
+      "label": 151665,
+      "position": 184,
+      "sample": 0,
+      "segment": "think",
+      "token": "<THINK>",
+      "token_id": 151665
+    },
+    {
+      "contributes_to_loss": true,
+      "label": 151665,
+      "position": 185,
+      "sample": 0,
+      "segment": "think",
+      "token": "<THINK>",
+      "token_id": 151665
+    },
+    {
+      "contributes_to_loss": true,
+      "label": 151665,
+      "position": 186,
+      "sample": 0,
+      "segment": "think",
+      "token": "<THINK>",
+      "token_id": 151665
+    },
+    {
+      "contributes_to_loss": true,
+      "label": 151665,
+      "position": 187,
+      "sample": 0,
+      "segment": "think",
+      "token": "<THINK>",
+      "token_id": 151665
+    },
+    {
+      "contributes_to_loss": true,
+      "label": 151665,
+      "position": 188,
+      "sample": 0,
+      "segment": "think",
+      "token": "<THINK>",
+      "token_id": 151665
+    },
+    {
+      "contributes_to_loss": true,
+      "label": 151665,
+      "position": 189,
+      "sample": 0,
+      "segment": "think",
+      "token": "<THINK>",
+      "token_id": 151665
+    },
+    {
+      "contributes_to_loss": true,
+      "label": 151665,
+      "position": 190,
+      "sample": 0,
+      "segment": "think",
+      "token": "<THINK>",
+      "token_id": 151665
+    },
+    {
+      "contributes_to_loss": true,
+      "label": 151665,
+      "position": 191,
+      "sample": 0,
+      "segment": "think",
+      "token": "<THINK>",
+      "token_id": 151665
+    },
+    {
+      "contributes_to_loss": true,
+      "label": 151665,
+      "position": 192,
+      "sample": 0,
+      "segment": "think",
+      "token": "<THINK>",
+      "token_id": 151665
+    },
+    {
+      "contributes_to_loss": true,
+      "label": 198,
+      "position": 193,
+      "sample": 0,
+      "segment": "answer",
+      "token": "\n",
+      "token_id": 198
+    },
+    {
+      "contributes_to_loss": true,
+      "label": 16141,
+      "position": 194,
+      "sample": 0,
+      "segment": "answer",
+      "token": "Answer",
+      "token_id": 16141
+    },
+    {
+      "contributes_to_loss": true,
+      "label": 510,
+      "position": 195,
+      "sample": 0,
+      "segment": "answer",
+      "token": ":\n",
+      "token_id": 510
+    },
+    {
+      "contributes_to_loss": true,
+      "label": 785,
+      "position": 196,
+      "sample": 0,
+      "segment": "answer",
+      "token": "The",
+      "token_id": 785
+    },
+    {
+      "contributes_to_loss": true,
+      "label": 10578,
+      "position": 197,
+      "sample": 0,
+      "segment": "answer",
+      "token": " radius",
+      "token_id": 10578
+    },
+    {
+      "contributes_to_loss": true,
+      "label": 17767,
+      "position": 198,
+      "sample": 0,
+      "segment": "answer",
+      "token": " \\(",
+      "token_id": 17767
+    },
+    {
+      "contributes_to_loss": true,
+      "label": 435,
+      "position": 199,
+      "sample": 0,
+      "segment": "answer",
+      "token": " r",
+      "token_id": 435
+    },
+    {
+      "contributes_to_loss": true,
+      "label": 1124,
+      "position": 200,
+      "sample": 0,
+      "segment": "answer",
+      "token": " \\",
+      "token_id": 1124
+    },
+    {
+      "contributes_to_loss": true,
+      "label": 8,
+      "position": 201,
+      "sample": 0,
+      "segment": "answer",
+      "token": ")",
+      "token_id": 8
+    },
+    {
+      "contributes_to_loss": true,
+      "label": 315,
+      "position": 202,
+      "sample": 0,
+      "segment": "answer",
+      "token": " of",
+      "token_id": 315
+    },
+    {
+      "contributes_to_loss": true,
+      "label": 279,
+      "position": 203,
+      "sample": 0,
+      "segment": "answer",
+      "token": " the",
+      "token_id": 279
+    },
+    {
+      "contributes_to_loss": true,
+      "label": 78510,
+      "position": 204,
+      "sample": 0,
+      "segment": "answer",
+      "token": " cylindrical",
+      "token_id": 78510
+    },
+    {
+      "contributes_to_loss": true,
+      "label": 646,
+      "position": 205,
+      "sample": 0,
+      "segment": "answer",
+      "token": " can",
+      "token_id": 646
+    },
+    {
+      "contributes_to_loss": true,
+      "label": 374,
+      "position": 206,
+      "sample": 0,
+      "segment": "answer",
+      "token": " is",
+      "token_id": 374
+    },
+    {
+      "contributes_to_loss": true,
+      "label": 17767,
+      "position": 207,
+      "sample": 0,
+      "segment": "answer",
+      "token": " \\(",
+      "token_id": 17767
+    },
+    {
+      "contributes_to_loss": true,
+      "label": 1124,
+      "position": 208,
+      "sample": 0,
+      "segment": "answer",
+      "token": " \\",
+      "token_id": 1124
+    },
+    {
+      "contributes_to_loss": true,
+      "label": 79075,
+      "position": 209,
+      "sample": 0,
+      "segment": "answer",
+      "token": "boxed",
+      "token_id": 79075
+    },
+    {
+      "contributes_to_loss": true,
+      "label": 90,
+      "position": 210,
+      "sample": 0,
+      "segment": "answer",
+      "token": "{",
+      "token_id": 90
+    },
+    {
+      "contributes_to_loss": true,
+      "label": 19,
+      "position": 211,
+      "sample": 0,
+      "segment": "answer",
+      "token": "4",
+      "token_id": 19
+    },
+    {
+      "contributes_to_loss": true,
+      "label": 87,
+      "position": 212,
+      "sample": 0,
+      "segment": "answer",
+      "token": "x",
+      "token_id": 87
+    },
+    {
+      "contributes_to_loss": true,
+      "label": 481,
+      "position": 213,
+      "sample": 0,
+      "segment": "answer",
+      "token": " -",
+      "token_id": 481
+    },
+    {
+      "contributes_to_loss": true,
+      "label": 220,
+      "position": 214,
+      "sample": 0,
+      "segment": "answer",
+      "token": " ",
+      "token_id": 220
+    },
+    {
+      "contributes_to_loss": true,
+      "label": 18,
+      "position": 215,
+      "sample": 0,
+      "segment": "answer",
+      "token": "3",
+      "token_id": 18
+    },
+    {
+      "contributes_to_loss": true,
+      "label": 92,
+      "position": 216,
+      "sample": 0,
+      "segment": "answer",
+      "token": "}",
+      "token_id": 92
+    },
+    {
+      "contributes_to_loss": true,
+      "label": 1124,
+      "position": 217,
+      "sample": 0,
+      "segment": "answer",
+      "token": " \\",
+      "token_id": 1124
+    },
+    {
+      "contributes_to_loss": true,
+      "label": 3593,
+      "position": 218,
+      "sample": 0,
+      "segment": "answer",
+      "token": ").\n\n",
+      "token_id": 3593
+    },
+    {
+      "contributes_to_loss": true,
+      "label": 334,
+      "position": 219,
+      "sample": 0,
+      "segment": "answer",
+      "token": "**",
+      "token_id": 334
+    },
+    {
+      "contributes_to_loss": true,
+      "label": 8304,
+      "position": 220,
+      "sample": 0,
+      "segment": "answer",
+      "token": "Step",
+      "token_id": 8304
+    },
+    {
+      "contributes_to_loss": true,
+      "label": 14319,
+      "position": 221,
+      "sample": 0,
+      "segment": "answer",
+      "token": "-by",
+      "token_id": 14319
+    },
+    {
+      "contributes_to_loss": true,
+      "label": 12,
+      "position": 222,
+      "sample": 0,
+      "segment": "answer",
+      "token": "-",
+      "token_id": 12
+    },
+    {
+      "contributes_to_loss": true,
+      "label": 8304,
+      "position": 223,
+      "sample": 0,
+      "segment": "answer",
+      "token": "Step",
+      "token_id": 8304
+    },
+    {
+      "contributes_to_loss": true,
+      "label": 71287,
+      "position": 224,
+      "sample": 0,
+      "segment": "answer",
+      "token": " Explanation",
+      "token_id": 71287
+    },
+    {
+      "contributes_to_loss": true,
+      "label": 25,
+      "position": 225,
+      "sample": 0,
+      "segment": "answer",
+      "token": ":",
+      "token_id": 25
+    },
+    {
+      "contributes_to_loss": true,
+      "label": 56177,
+      "position": 226,
+      "sample": 0,
+      "segment": "answer",
+      "token": "**\n\n",
+      "token_id": 56177
+    },
+    {
+      "contributes_to_loss": true,
+      "label": 16,
+      "position": 227,
+      "sample": 0,
+      "segment": "answer",
+      "token": "1",
+      "token_id": 16
+    },
+    {
+      "contributes_to_loss": true,
+      "label": 13,
+      "position": 228,
+      "sample": 0,
+      "segment": "answer",
+      "token": ".",
+      "token_id": 13
+    },
+    {
+      "contributes_to_loss": true,
+      "label": 3070,
+      "position": 229,
+      "sample": 0,
+      "segment": "answer",
+      "token": " **",
+      "token_id": 3070
+    },
+    {
+      "contributes_to_loss": true,
+      "label": 16250,
+      "position": 230,
+      "sample": 0,
+      "segment": "answer",
+      "token": "Under",
+      "token_id": 16250
+    },
+    {
+      "contributes_to_loss": true,
+      "label": 2685,
+      "position": 231,
+      "sample": 0,
+      "segment": "answer",
+      "token": "stand",
+      "token_id": 2685
+    },
+    {
+      "contributes_to_loss": true,
+      "label": 279,
+      "position": 232,
+      "sample": 0,
+      "segment": "answer",
+      "token": " the",
+      "token_id": 279
+    },
+    {
+      "contributes_to_loss": true,
+      "label": 14806,
+      "position": 233,
+      "sample": 0,
+      "segment": "answer",
+      "token": " formula",
+      "token_id": 14806
+    },
+    {
+      "contributes_to_loss": true,
+      "label": 369,
+      "position": 234,
+      "sample": 0,
+      "segment": "answer",
+      "token": " for",
+      "token_id": 369
+    },
+    {
+      "contributes_to_loss": true,
+      "label": 279,
+      "position": 235,
+      "sample": 0,
+      "segment": "answer",
+      "token": " the",
+      "token_id": 279
+    },
+    {
+      "contributes_to_loss": true,
+      "label": 44469,
+      "position": 236,
+      "sample": 0,
+      "segment": "answer",
+      "token": " lateral",
+      "token_id": 44469
+    },
+    {
+      "contributes_to_loss": true,
+      "label": 7329,
+      "position": 237,
+      "sample": 0,
+      "segment": "answer",
+      "token": " surface",
+      "token_id": 7329
+    },
+    {
+      "contributes_to_loss": true,
+      "label": 3082,
+      "position": 238,
+      "sample": 0,
+      "segment": "answer",
+      "token": " area",
+      "token_id": 3082
+    },
+    {
+      "contributes_to_loss": true,
+      "label": 320,
+      "position": 239,
+      "sample": 0,
+      "segment": "answer",
+      "token": " (",
+      "token_id": 320
+    },
+    {
+      "contributes_to_loss": true,
+      "label": 1502,
+      "position": 240,
+      "sample": 0,
+      "segment": "answer",
+      "token": "label",
+      "token_id": 1502
+    },
+    {
+      "contributes_to_loss": true,
+      "label": 3082,
+      "position": 241,
+      "sample": 0,
+      "segment": "answer",
+      "token": " area",
+      "token_id": 3082
+    },
+    {
+      "contributes_to_loss": true,
+      "label": 1648,
+      "position": 242,
+      "sample": 0,
+      "segment": "answer",
+      "token": "):",
+      "token_id": 1648
+    },
+    {
+      "contributes_to_loss": true,
+      "label": 334,
+      "position": 243,
+      "sample": 0,
+      "segment": "answer",
+      "token": "**",
+      "token_id": 334
+    },
+    {
+      "contributes_to_loss": true,
+      "label": 2303,
+      "position": 244,
+      "sample": 0,
+      "segment": "answer",
+      "token": "  \n",
+      "token_id": 2303
+    },
+    {
+      "contributes_to_loss": true,
+      "label": 256,
+      "position": 245,
+      "sample": 0,
+      "segment": "answer",
+      "token": "  ",
+      "token_id": 256
+    },
+    {
+      "contributes_to_loss": true,
+      "label": 576,
+      "position": 246,
+      "sample": 0,
+      "segment": "answer",
+      "token": " The",
+      "token_id": 576
+    },
+    {
+      "contributes_to_loss": true,
+      "label": 3082,
+      "position": 247,
+      "sample": 0,
+      "segment": "answer",
+      "token": " area",
+      "token_id": 3082
+    },
+    {
+      "contributes_to_loss": true,
+      "label": 315,
+      "position": 248,
+      "sample": 0,
+      "segment": "answer",
+      "token": " of",
+      "token_id": 315
+    },
+    {
+      "contributes_to_loss": true,
+      "label": 279,
+      "position": 249,
+      "sample": 0,
+      "segment": "answer",
+      "token": " the",
+      "token_id": 279
+    },
+    {
+      "contributes_to_loss": true,
+      "label": 2383,
+      "position": 250,
+      "sample": 0,
+      "segment": "answer",
+      "token": " label",
+      "token_id": 2383
+    },
+    {
+      "contributes_to_loss": true,
+      "label": 389,
+      "position": 251,
+      "sample": 0,
+      "segment": "answer",
+      "token": " on",
+      "token_id": 389
+    },
+    {
+      "contributes_to_loss": true,
+      "label": 264,
+      "position": 252,
+      "sample": 0,
+      "segment": "answer",
+      "token": " a",
+      "token_id": 264
+    },
+    {
+      "contributes_to_loss": true,
+      "label": 34564,
+      "position": 253,
+      "sample": 0,
+      "segment": "answer",
+      "token": " cylinder",
+      "token_id": 34564
+    },
+    {
+      "contributes_to_loss": true,
+      "label": 374,
+      "position": 254,
+      "sample": 0,
+      "segment": "answer",
+      "token": " is",
+      "token_id": 374
+    },
+    {
+      "contributes_to_loss": true,
+      "label": 2661,
+      "position": 255,
+      "sample": 0,
+      "segment": "answer",
+      "token": " given",
+      "token_id": 2661
+    },
+    {
+      "contributes_to_loss": true,
+      "label": 553,
+      "position": 256,
+      "sample": 0,
+      "segment": "answer",
+      "token": " by",
+      "token_id": 553
+    },
+    {
+      "contributes_to_loss": true,
+      "label": 279,
+      "position": 257,
+      "sample": 0,
+      "segment": "answer",
+      "token": " the",
+      "token_id": 279
+    },
+    {
+      "contributes_to_loss": true,
+      "label": 44469,
+      "position": 258,
+      "sample": 0,
+      "segment": "answer",
+      "token": " lateral",
+      "token_id": 44469
+    },
+    {
+      "contributes_to_loss": true,
+      "label": 7329,
+      "position": 259,
+      "sample": 0,
+      "segment": "answer",
+      "token": " surface",
+      "token_id": 7329
+    },
+    {
+      "contributes_to_loss": true,
+      "label": 3082,
+      "position": 260,
+      "sample": 0,
+      "segment": "answer",
+      "token": " area",
+      "token_id": 3082
+    },
+    {
+      "contributes_to_loss": true,
+      "label": 14806,
+      "position": 261,
+      "sample": 0,
+      "segment": "answer",
+      "token": " formula",
+      "token_id": 14806
+    },
+    {
+      "contributes_to_loss": true,
+      "label": 25,
+      "position": 262,
+      "sample": 0,
+      "segment": "answer",
+      "token": ":",
+      "token_id": 25
+    },
+    {
+      "contributes_to_loss": true,
+      "label": 2303,
+      "position": 263,
+      "sample": 0,
+      "segment": "answer",
+      "token": "  \n",
+      "token_id": 2303
+    },
+    {
+      "contributes_to_loss": true,
+      "label": 256,
+      "position": 264,
+      "sample": 0,
+      "segment": "answer",
+      "token": "  ",
+      "token_id": 256
+    },
+    {
+      "contributes_to_loss": true,
+      "label": 1124,
+      "position": 265,
+      "sample": 0,
+      "segment": "answer",
+      "token": " \\",
+      "token_id": 1124
+    },
+    {
+      "contributes_to_loss": true,
+      "label": 9640,
+      "position": 266,
+      "sample": 0,
+      "segment": "answer",
+      "token": "[\n",
+      "token_id": 9640
+    },
+    {
+      "contributes_to_loss": true,
+      "label": 256,
+      "position": 267,
+      "sample": 0,
+      "segment": "answer",
+      "token": "  ",
+      "token_id": 256
+    },
+    {
+      "contributes_to_loss": true,
+      "label": 362,
+      "position": 268,
+      "sample": 0,
+      "segment": "answer",
+      "token": " A",
+      "token_id": 362
+    },
+    {
+      "contributes_to_loss": true,
+      "label": 284,
+      "position": 269,
+      "sample": 0,
+      "segment": "answer",
+      "token": " =",
+      "token_id": 284
+    },
+    {
+      "contributes_to_loss": true,
+      "label": 220,
+      "position": 270,
+      "sample": 0,
+      "segment": "answer",
+      "token": " ",
+      "token_id": 220
+    },
+    {
+      "contributes_to_loss": true,
+      "label": 17,
+      "position": 271,
+      "sample": 0,
+      "segment": "answer",
+      "token": "2",
+      "token_id": 17
+    },
+    {
+      "contributes_to_loss": true,
+      "label": 59,
+      "position": 272,
+      "sample": 0,
+      "segment": "answer",
+      "token": "\\",
+      "token_id": 59
+    },
+    {
+      "contributes_to_loss": true,
+      "label": 2493,
+      "position": 273,
+      "sample": 0,
+      "segment": "answer",
+      "token": "pi",
+      "token_id": 2493
+    },
+    {
+      "contributes_to_loss": true,
+      "label": 435,
+      "position": 274,
+      "sample": 0,
+      "segment": "answer",
+      "token": " r",
+      "token_id": 435
+    },
+    {
+      "contributes_to_loss": true,
+      "label": 305,
+      "position": 275,
+      "sample": 0,
+      "segment": "answer",
+      "token": " h",
+      "token_id": 305
+    },
+    {
+      "contributes_to_loss": true,
+      "label": 198,
+      "position": 276,
+      "sample": 0,
+      "segment": "answer",
+      "token": "\n",
+      "token_id": 198
+    },
+    {
+      "contributes_to_loss": true,
+      "label": 256,
+      "position": 277,
+      "sample": 0,
+      "segment": "answer",
+      "token": "  ",
+      "token_id": 256
+    },
+    {
+      "contributes_to_loss": true,
+      "label": 1124,
+      "position": 278,
+      "sample": 0,
+      "segment": "answer",
+      "token": " \\",
+      "token_id": 1124
+    },
+    {
+      "contributes_to_loss": true,
+      "label": 60,
+      "position": 279,
+      "sample": 0,
+      "segment": "answer",
+      "token": "]",
+      "token_id": 60
+    },
+    {
+      "contributes_to_loss": true,
+      "label": 2303,
+      "position": 280,
+      "sample": 0,
+      "segment": "answer",
+      "token": "  \n",
+      "token_id": 2303
+    },
+    {
+      "contributes_to_loss": true,
+      "label": 256,
+      "position": 281,
+      "sample": 0,
+      "segment": "answer",
+      "token": "  ",
+      "token_id": 256
+    },
+    {
+      "contributes_to_loss": true,
+      "label": 1380,
+      "position": 282,
+      "sample": 0,
+      "segment": "answer",
+      "token": " where",
+      "token_id": 1380
+    },
+    {
+      "contributes_to_loss": true,
+      "label": 17767,
+      "position": 283,
+      "sample": 0,
+      "segment": "answer",
+      "token": " \\(",
+      "token_id": 17767
+    },
+    {
+      "contributes_to_loss": true,
+      "label": 435,
+      "position": 284,
+      "sample": 0,
+      "segment": "answer",
+      "token": " r",
+      "token_id": 435
+    },
+    {
+      "contributes_to_loss": true,
+      "label": 1124,
+      "position": 285,
+      "sample": 0,
+      "segment": "answer",
+      "token": " \\",
+      "token_id": 1124
+    },
+    {
+      "contributes_to_loss": true,
+      "label": 8,
+      "position": 286,
+      "sample": 0,
+      "segment": "answer",
+      "token": ")",
+      "token_id": 8
+    },
+    {
+      "contributes_to_loss": true,
+      "label": 374,
+      "position": 287,
+      "sample": 0,
+      "segment": "answer",
+      "token": " is",
+      "token_id": 374
+    },
+    {
+      "contributes_to_loss": true,
+      "label": 279,
+      "position": 288,
+      "sample": 0,
+      "segment": "answer",
+      "token": " the",
+      "token_id": 279
+    },
+    {
+      "contributes_to_loss": true,
+      "label": 10578,
+      "position": 289,
+      "sample": 0,
+      "segment": "answer",
+      "token": " radius",
+      "token_id": 10578
+    },
+    {
+      "contributes_to_loss": true,
+      "label": 323,
+      "position": 290,
+      "sample": 0,
+      "segment": "answer",
+      "token": " and",
+      "token_id": 323
+    },
+    {
+      "contributes_to_loss": true,
+      "label": 17767,
+      "position": 291,
+      "sample": 0,
+      "segment": "answer",
+      "token": " \\(",
+      "token_id": 17767
+    },
+    {
+      "contributes_to_loss": true,
+      "label": 305,
+      "position": 292,
+      "sample": 0,
+      "segment": "answer",
+      "token": " h",
+      "token_id": 305
+    },
+    {
+      "contributes_to_loss": true,
+      "label": 1124,
+      "position": 293,
+      "sample": 0,
+      "segment": "answer",
+      "token": " \\",
+      "token_id": 1124
+    },
+    {
+      "contributes_to_loss": true,
+      "label": 8,
+      "position": 294,
+      "sample": 0,
+      "segment": "answer",
+      "token": ")",
+      "token_id": 8
+    },
+    {
+      "contributes_to_loss": true,
+      "label": 374,
+      "position": 295,
+      "sample": 0,
+      "segment": "answer",
+      "token": " is",
+      "token_id": 374
+    },
+    {
+      "contributes_to_loss": true,
+      "label": 279,
+      "position": 296,
+      "sample": 0,
+      "segment": "answer",
+      "token": " the",
+      "token_id": 279
+    },
+    {
+      "contributes_to_loss": true,
+      "label": 2608,
+      "position": 297,
+      "sample": 0,
+      "segment": "answer",
+      "token": " height",
+      "token_id": 2608
+    },
+    {
+      "contributes_to_loss": true,
+      "label": 382,
+      "position": 298,
+      "sample": 0,
+      "segment": "answer",
+      "token": ".\n\n",
+      "token_id": 382
+    },
+    {
+      "contributes_to_loss": true,
+      "label": 17,
+      "position": 299,
+      "sample": 0,
+      "segment": "answer",
+      "token": "2",
+      "token_id": 17
+    },
+    {
+      "contributes_to_loss": true,
+      "label": 13,
+      "position": 300,
+      "sample": 0,
+      "segment": "answer",
+      "token": ".",
+      "token_id": 13
+    },
+    {
+      "contributes_to_loss": true,
+      "label": 3070,
+      "position": 301,
+      "sample": 0,
+      "segment": "answer",
+      "token": " **",
+      "token_id": 3070
+    },
+    {
+      "contributes_to_loss": true,
+      "label": 3136,
+      "position": 302,
+      "sample": 0,
+      "segment": "answer",
+      "token": "Sub",
+      "token_id": 3136
+    },
+    {
+      "contributes_to_loss": true,
+      "label": 7660,
+      "position": 303,
+      "sample": 0,
+      "segment": "answer",
+      "token": "stitute",
+      "token_id": 7660
+    },
+    {
+      "contributes_to_loss": true,
+      "label": 279,
+      "position": 304,
+      "sample": 0,
+      "segment": "answer",
+      "token": " the",
+      "token_id": 279
+    },
+    {
+      "contributes_to_loss": true,
+      "label": 2661,
+      "position": 305,
+      "sample": 0,
+      "segment": "answer",
+      "token": " given",
+      "token_id": 2661
+    },
+    {
+      "contributes_to_loss": true,
+      "label": 23393,
+      "position": 306,
+      "sample": 0,
+      "segment": "answer",
+      "token": " expressions",
+      "token_id": 23393
+    },
+    {
+      "contributes_to_loss": true,
+      "label": 1119,
+      "position": 307,
+      "sample": 0,
+      "segment": "answer",
+      "token": " into",
+      "token_id": 1119
+    },
+    {
+      "contributes_to_loss": true,
+      "label": 279,
+      "position": 308,
+      "sample": 0,
+      "segment": "answer",
+      "token": " the",
+      "token_id": 279
+    },
+    {
+      "contributes_to_loss": true,
+      "label": 14806,
+      "position": 309,
+      "sample": 0,
+      "segment": "answer",
+      "token": " formula",
+      "token_id": 14806
+    },
+    {
+      "contributes_to_loss": true,
+      "label": 66963,
+      "position": 310,
+      "sample": 0,
+      "segment": "answer",
+      "token": ":**",
+      "token_id": 66963
+    },
+    {
+      "contributes_to_loss": true,
+      "label": 2303,
+      "position": 311,
+      "sample": 0,
+      "segment": "answer",
+      "token": "  \n",
+      "token_id": 2303
+    },
+    {
+      "contributes_to_loss": true,
+      "label": 256,
+      "position": 312,
+      "sample": 0,
+      "segment": "answer",
+      "token": "  ",
+      "token_id": 256
+    },
+    {
+      "contributes_to_loss": true,
+      "label": 576,
+      "position": 313,
+      "sample": 0,
+      "segment": "answer",
+      "token": " The",
+      "token_id": 576
+    },
+    {
+      "contributes_to_loss": true,
+      "label": 3491,
+      "position": 314,
+      "sample": 0,
+      "segment": "answer",
+      "token": " problem",
+      "token_id": 3491
+    },
+    {
+      "contributes_to_loss": true,
+      "label": 5707,
+      "position": 315,
+      "sample": 0,
+      "segment": "answer",
+      "token": " provides",
+      "token_id": 5707
+    },
+    {
+      "contributes_to_loss": true,
+      "label": 17767,
+      "position": 316,
+      "sample": 0,
+      "segment": "answer",
+      "token": " \\(",
+      "token_id": 17767
+    },
+    {
+      "contributes_to_loss": true,
+      "label": 362,
+      "position": 317,
+      "sample": 0,
+      "segment": "answer",
+      "token": " A",
+      "token_id": 362
+    },
+    {
+      "contributes_to_loss": true,
+      "label": 284,
+      "position": 318,
+      "sample": 0,
+      "segment": "answer",
+      "token": " =",
+      "token_id": 284
+    },
+    {
+      "contributes_to_loss": true,
+      "label": 220,
+      "position": 319,
+      "sample": 0,
+      "segment": "answer",
+      "token": " ",
+      "token_id": 220
+    },
+    {
+      "contributes_to_loss": true,
+      "label": 16,
+      "position": 320,
+      "sample": 0,
+      "segment": "answer",
+      "token": "1",
+      "token_id": 16
+    }
+  ]
+}

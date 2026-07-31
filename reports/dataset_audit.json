@@ -1,0 +1,45 @@
+{
+  "config_name": "am_0.9M_sample_1k",
+  "cot_token_count": {
+    "count": 1000,
+    "max": 19612,
+    "mean": 1722.379,
+    "min": 120
+  },
+  "dataset_id": "a-m-team/AM-DeepSeek-R1-Distilled-1.4M",
+  "errors": [
+    "TypeError(\"Couldn't cast array of type\\nstring\\nto\\n{'test_code': Value('string'), 'test_entry_point': Value('string')}\")"
+  ],
+  "invalid": 0,
+  "latent_count": {
+    "count": 1000,
+    "max": 9806,
+    "mean": 861.191,
+    "min": 60
+  },
+  "parse_status_counts": {
+    "jsonl_fallback:assistant_tags": 1000
+  },
+  "parsed": 1000,
+  "raw_seen": 1000,
+  "repo_files_head": [
+    ".gitattributes",
+    "AM-DeepSeek-R1-Distilled.jpeg",
+    "README.md",
+    "am_0.5M.jsonl",
+    "am_0.5M.jsonl.zst",
+    "am_0.9M.jsonl",
+    "am_0.9M.jsonl.zst",
+    "am_0.9M_sample_1k.jsonl",
+    "am_0.9M_sample_1k.jsonl.zst"
+  ],
+  "tokenizer": {
+    "added": 1,
+    "single_token": true,
+    "think_encode": [
+      151665
+    ],
+    "think_id": 151665
+  },
+  "valid": 1000
+}

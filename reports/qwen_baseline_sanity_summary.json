@@ -1,0 +1,8 @@
+{
+  "answer_accuracy": 0.0,
+  "cases_path": "/data2/zhouxiaoling/latent_cot/Heima-overnight-qwen7b/reports/qwen_baseline_sanity.jsonl",
+  "model_id": "deepseek-ai/DeepSeek-R1-Distill-Qwen-7B",
+  "num_cases": 16,
+  "peak_memory_bytes": 15338236416,
+  "tokens_per_second": 34.23763791246773
+}

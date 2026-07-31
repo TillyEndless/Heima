@@ -1,0 +1,14 @@
+{
+  "counts": {
+    "overfit32": 32,
+    "smoke1k": 1000
+  },
+  "dynamic_latent_length": {
+    "current": "oracle-K",
+    "definition": "K=max(1, round(0.5 * gold CoT token count)); diagnostic/training smoke only, not leakage-free formal inference.",
+    "fixed-K": "not used tonight",
+    "free-K": "not used tonight"
+  },
+  "overfit32": "/data2/zhouxiaoling/latent_cot/Heima-overnight-qwen7b/data/processed_large/qwen7b_stage1/overfit32.json",
+  "smoke1k": "/data2/zhouxiaoling/latent_cot/Heima-overnight-qwen7b/data/processed_large/qwen7b_stage1/smoke1k.json"
+}
