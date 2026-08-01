@@ -1,0 +1,2 @@
+level,status,reason,valid_answer_rate,exact_answer_accuracy,suffix_exact_match,stop_success_rate,malformed_rate
+P0/P1/P2/P4/P8/PALL_MINUS_1,not_completed,"ladder run was stopped to prioritize direct-answer gate; direct-answer failed, so O1/O2/O3 are blocked until generation/template/parser is fixed",,,,,

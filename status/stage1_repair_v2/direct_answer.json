@@ -1,0 +1,9 @@
+{
+  "answer_accuracy": 0.40625,
+  "iso": "2026-08-01T05:36:11.708406+00:00",
+  "passed": false,
+  "stage": "direct_answer",
+  "status": "failed",
+  "time": 1785562571.7084408,
+  "valid_answer_rate": 0.5625
+}

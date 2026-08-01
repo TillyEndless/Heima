@@ -1,0 +1,109 @@
+{
+  "can_resume_10k": false,
+  "comparison": [
+    {
+      "experiment": "O0 token-weighted",
+      "fixed_k_acc": 0.09375,
+      "fixed_k_format": 0.375,
+      "forced_k_acc": 0.125,
+      "forced_k_valid": 0.34375,
+      "free_k_acc": 0.0625,
+      "free_k_valid": 0.125,
+      "status": "fail",
+      "steps": 500
+    }
+  ],
+  "direct_answer_pass": false,
+  "o1_o2_status": "skipped_direct_answer_failed",
+  "o3_status": "skipped_o1_o2_not_run",
+  "prefix_ladder_status": "not_completed_direct_gate_failed",
+  "statuses": {
+    "direct_answer": {
+      "answer_accuracy": 0.40625,
+      "iso": "2026-08-01T05:36:11.708406+00:00",
+      "passed": false,
+      "stage": "direct_answer",
+      "status": "failed",
+      "time": 1785562571.7084408,
+      "valid_answer_rate": 0.5625
+    },
+    "transition_audit": {
+      "iso": "2026-08-01T05:03:22.901563+00:00",
+      "stage": "transition_audit",
+      "status": "complete",
+      "time": 1785560602.9016006
+    }
+  },
+  "transition_cache_diff": {
+    "generated_first_cache": "<THINK>",
+    "generated_first_no_cache": "<THINK>",
+    "top20_full": [
+      151665,
+      198,
+      271,
+      16141,
+      3837,
+      9909,
+      320,
+      11,
+      315,
+      17,
+      33,
+      220,
+      16,
+      323,
+      27442,
+      59,
+      362,
+      32,
+      89911,
+      44923
+    ],
+    "top20_generate_cache": [
+      151665,
+      198,
+      271,
+      16141,
+      3837,
+      9909,
+      320,
+      11,
+      315,
+      17,
+      33,
+      220,
+      16,
+      323,
+      27442,
+      59,
+      362,
+      32,
+      89911,
+      44923
+    ],
+    "top20_generate_no_cache": [
+      151665,
+      198,
+      271,
+      16141,
+      3837,
+      9909,
+      320,
+      11,
+      315,
+      17,
+      33,
+      220,
+      16,
+      323,
+      27442,
+      59,
+      362,
+      32,
+      89911,
+      44923
+    ],
+    "use_cache_false_max_abs_prob_diff": 1.6689300537109375e-06,
+    "use_cache_true_max_abs_prob_diff": 1.6689300537109375e-06
+  }
+}

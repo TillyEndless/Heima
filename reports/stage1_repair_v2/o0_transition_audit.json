@@ -1,0 +1,525 @@
+{
+  "answer_marker": "\nAnswer:\n",
+  "answer_marker_exists": true,
+  "answer_marker_participates_in_loss": true,
+  "answer_marker_preprovided_in_forced_generation": true,
+  "answer_marker_token_ids": [
+    198,
+    16141,
+    510
+  ],
+  "checkpoint": "/data2/zhouxiaoling/latent_cot/Heima-qwen7b-stage-validity-pilot/checkpoints/stage1_repair_o0/final_adapter",
+  "first_answer_metrics": {
+    "first_answer_token_accuracy": 0.0,
+    "first_answer_token_nll": 3.53007173538208,
+    "remaining_answer_token_accuracy": 1.0,
+    "remaining_answer_token_nll": 0.0014614710921886597
+  },
+  "full_vs_generate_logits": {
+    "generated_first_cache": "<THINK>",
+    "generated_first_no_cache": "<THINK>",
+    "top20_full": [
+      151665,
+      198,
+      271,
+      16141,
+      3837,
+      9909,
+      320,
+      11,
+      315,
+      17,
+      33,
+      220,
+      16,
+      323,
+      27442,
+      59,
+      362,
+      32,
+      89911,
+      44923
+    ],
+    "top20_generate_cache": [
+      151665,
+      198,
+      271,
+      16141,
+      3837,
+      9909,
+      320,
+      11,
+      315,
+      17,
+      33,
+      220,
+      16,
+      323,
+      27442,
+      59,
+      362,
+      32,
+      89911,
+      44923
+    ],
+    "top20_generate_no_cache": [
+      151665,
+      198,
+      271,
+      16141,
+      3837,
+      9909,
+      320,
+      11,
+      315,
+      17,
+      33,
+      220,
+      16,
+      323,
+      27442,
+      59,
+      362,
+      32,
+      89911,
+      44923
+    ],
+    "use_cache_false_max_abs_prob_diff": 1.6689300537109375e-06,
+    "use_cache_true_max_abs_prob_diff": 1.6689300537109375e-06
+  },
+  "generation_settings": {
+    "do_sample": false,
+    "greedy": true,
+    "temperature": null,
+    "top_p": null
+  },
+  "next_token_top20_after_question_plus_K_THINK": [
+    {
+      "probability": 0.9601162672042847,
+      "rank": 1,
+      "token": "<THINK>",
+      "token_id": 151665
+    },
+    {
+      "probability": 0.039628732949495316,
+      "rank": 2,
+      "token": "\n",
+      "token_id": 198
+    },
+    {
+      "probability": 2.8143309464212507e-05,
+      "rank": 3,
+      "token": "\n\n",
+      "token_id": 271
+    },
+    {
+      "probability": 5.371245151764015e-06,
+      "rank": 4,
+      "token": "Answer",
+      "token_id": 16141
+    },
+    {
+      "probability": 3.808783048953046e-06,
+      "rank": 5,
+      "token": "，",
+      "token_id": 3837
+    },
+    {
+      "probability": 3.5780203688773327e-06,
+      "rank": 6,
+      "token": "（",
+      "token_id": 9909
+    },
+    {
+      "probability": 2.537196451157797e-06,
+      "rank": 7,
+      "token": " (",
+      "token_id": 320
+    },
+    {
+      "probability": 2.3834754756535403e-06,
+      "rank": 8,
+      "token": ",",
+      "token_id": 11
+    },
+    {
+      "probability": 1.9759706901822938e-06,
+      "rank": 9,
+      "token": " of",
+      "token_id": 315
+    },
+    {
+      "probability": 1.9759706901822938e-06,
+      "rank": 10,
+      "token": "2",
+      "token_id": 17
+    },
+    {
+      "probability": 1.9759706901822938e-06,
+      "rank": 11,
+      "token": "B",
+      "token_id": 33
+    },
+    {
+      "probability": 1.5877369605732383e-06,
+      "rank": 12,
+      "token": " ",
+      "token_id": 220
+    },
+    {
+      "probability": 1.358063400402898e-06,
+      "rank": 13,
+      "token": "1",
+      "token_id": 16
+    },
+    {
+      "probability": 1.1984866432612762e-06,
+      "rank": 14,
+      "token": " and",
+      "token_id": 323
+    },
+    {
+      "probability": 1.0251200137645355e-06,
+      "rank": 15,
+      "token": "点",
+      "token_id": 27442
+    },
+    {
+      "probability": 9.046652280630951e-07,
+      "rank": 16,
+      "token": "\\",
+      "token_id": 59
+    },
+    {
+      "probability": 7.983642831277393e-07,
+      "rank": 17,
+      "token": " A",
+      "token_id": 362
+    },
+    {
+      "probability": 6.618672045988205e-07,
+      "rank": 18,
+      "token": "A",
+      "token_id": 32
+    },
+    {
+      "probability": 6.415037319129624e-07,
+      "rank": 19,
+      "token": " aValue",
+      "token_id": 89911
+    },
+    {
+      "probability": 5.840958010594477e-07,
+      "rank": 20,
+      "token": "Chinese",
+      "token_id": 44923
+    }
+  ],
+  "sample_id": "1",
+  "segment_metrics": {
+    "answer_count": 81,
+    "answer_nll": 0.045024558901786804,
+    "answer_token_accuracy": 0.9876543283462524,
+    "think_count": 378,
+    "think_nll": 0.006302637979388237,
+    "think_token_accuracy": 0.9999999403953552
+  },
+  "template_checks": {
+    "adapter_enabled": true,
+    "attention_mask_shape": [
+      1,
+      430
+    ],
+    "chat_template_applied": false,
+    "no_duplicate_bos_eos": true,
+    "position_ids": "default_arange"
+  },
+  "token_window": [
+    {
+      "label": 151665,
+      "label_token": "<THINK>",
+      "loss_mask": true,
+      "notes": [],
+      "position": 420,
+      "segment": "think",
+      "token": "<THINK>",
+      "token_id": 151665
+    },
+    {
+      "label": 151665,
+      "label_token": "<THINK>",
+      "loss_mask": true,
+      "notes": [],
+      "position": 421,
+      "segment": "think",
+      "token": "<THINK>",
+      "token_id": 151665
+    },
+    {
+      "label": 151665,
+      "label_token": "<THINK>",
+      "loss_mask": true,
+      "notes": [],
+      "position": 422,
+      "segment": "think",
+      "token": "<THINK>",
+      "token_id": 151665
+    },
+    {
+      "label": 151665,
+      "label_token": "<THINK>",
+      "loss_mask": true,
+      "notes": [],
+      "position": 423,
+      "segment": "think",
+      "token": "<THINK>",
+      "token_id": 151665
+    },
+    {
+      "label": 151665,
+      "label_token": "<THINK>",
+      "loss_mask": true,
+      "notes": [],
+      "position": 424,
+      "segment": "think",
+      "token": "<THINK>",
+      "token_id": 151665
+    },
+    {
+      "label": 151665,
+      "label_token": "<THINK>",
+      "loss_mask": true,
+      "notes": [],
+      "position": 425,
+      "segment": "think",
+      "token": "<THINK>",
+      "token_id": 151665
+    },
+    {
+      "label": 151665,
+      "label_token": "<THINK>",
+      "loss_mask": true,
+      "notes": [],
+      "position": 426,
+      "segment": "think",
+      "token": "<THINK>",
+      "token_id": 151665
+    },
+    {
+      "label": 151665,
+      "label_token": "<THINK>",
+      "loss_mask": true,
+      "notes": [],
+      "position": 427,
+      "segment": "think",
+      "token": "<THINK>",
+      "token_id": 151665
+    },
+    {
+      "label": 151665,
+      "label_token": "<THINK>",
+      "loss_mask": true,
+      "notes": [
+        "last_THINK"
+      ],
+      "position": 428,
+      "segment": "think",
+      "token": "<THINK>",
+      "token_id": 151665
+    },
+    {
+      "label": 198,
+      "label_token": "\n",
+      "loss_mask": true,
+      "notes": [
+        "first_token_after_THINK/answer_boundary_start"
+      ],
+      "position": 429,
+      "segment": "answer",
+      "token": "\n",
+      "token_id": 198
+    },
+    {
+      "label": 16141,
+      "label_token": "Answer",
+      "loss_mask": true,
+      "notes": [],
+      "position": 430,
+      "segment": "answer",
+      "token": "Answer",
+      "token_id": 16141
+    },
+    {
+      "label": 510,
+      "label_token": ":\n",
+      "loss_mask": true,
+      "notes": [],
+      "position": 431,
+      "segment": "answer",
+      "token": ":\n",
+      "token_id": 510
+    },
+    {
+      "label": 16,
+      "label_token": "1",
+      "loss_mask": true,
+      "notes": [
+        "gold_first_answer_text_token"
+      ],
+      "position": 432,
+      "segment": "answer",
+      "token": "1",
+      "token_id": 16
+    },
+    {
+      "label": 13,
+      "label_token": ".",
+      "loss_mask": true,
+      "notes": [],
+      "position": 433,
+      "segment": "answer",
+      "token": ".",
+      "token_id": 13
+    },
+    {
+      "label": 10479,
+      "label_token": " Who",
+      "loss_mask": true,
+      "notes": [],
+      "position": 434,
+      "segment": "answer",
+      "token": " Who",
+      "token_id": 10479
+    },
+    {
+      "label": 1033,
+      "label_token": " were",
+      "loss_mask": true,
+      "notes": [],
+      "position": 435,
+      "segment": "answer",
+      "token": " were",
+      "token_id": 1033
+    },
+    {
+      "label": 279,
+      "label_token": " the",
+      "loss_mask": true,
+      "notes": [],
+      "position": 436,
+      "segment": "answer",
+      "token": " the",
+      "token_id": 279
+    },
+    {
+      "label": 1378,
+      "label_token": " two",
+      "loss_mask": true,
+      "notes": [],
+      "position": 437,
+      "segment": "answer",
+      "token": " two",
+      "token_id": 1378
+    },
+    {
+      "label": 11178,
+      "label_token": " candidates",
+      "loss_mask": true,
+      "notes": [],
+      "position": 438,
+      "segment": "answer",
+      "token": " candidates",
+      "token_id": 11178
+    },
+    {
+      "label": 6398,
+      "label_token": " involved",
+      "loss_mask": true,
+      "notes": [],
+      "position": 439,
+      "segment": "answer",
+      "token": " involved",
+      "token_id": 6398
+    },
+    {
+      "label": 304,
+      "label_token": " in",
+      "loss_mask": true,
+      "notes": [],
+      "position": 440,
+      "segment": "answer",
+      "token": " in",
+      "token_id": 304
+    },
+    {
+      "label": 279,
+      "label_token": " the",
+      "loss_mask": true,
+      "notes": [],
+      "position": 441,
+      "segment": "answer",
+      "token": " the",
+      "token_id": 279
+    },
+    {
+      "label": 1156,
+      "label_token": " first",
+      "loss_mask": true,
+      "notes": [],
+      "position": 442,
+      "segment": "answer",
+      "token": " first",
+      "token_id": 1156
+    },
+    {
+      "label": 220,
+      "label_token": " ",
+      "loss_mask": true,
+      "notes": [],
+      "position": 443,
+      "segment": "answer",
+      "token": " ",
+      "token_id": 220
+    },
+    {
+      "label": 17,
+      "label_token": "2",
+      "loss_mask": true,
+      "notes": [],
+      "position": 444,
+      "segment": "answer",
+      "token": "2",
+      "token_id": 17
+    }
+  ],
+  "tracked_next_tokens": {
+    "EOS": {
+      "probability": 5.669778535555281e-10,
+      "rank": 53276,
+      "token": "<｜end▁of▁sentence｜>",
+      "token_id": 151643
+    },
+    "THINK": {
+      "probability": 0.9601162672042847,
+      "rank": 1,
+      "token": "<THINK>",
+      "token_id": 151665
+    },
+    "expected_answer_boundary_token": {
+      "probability": 0.039628732949495316,
+      "rank": 2,
+      "token": "\n",
+      "token_id": 198
+    },
+    "gold_first_answer_text_token": {
+      "probability": 1.358063400402898e-06,
+      "rank": 13,
+      "token": "1",
+      "token_id": 16
+    }
+  },
+  "training_generation_template_match": {
+    "forced_k_prompt_matches_training_prefix_until_answer_marker": true,
+    "p0_ladder_does_not_preprovide_answer_marker": true
+  }
+}

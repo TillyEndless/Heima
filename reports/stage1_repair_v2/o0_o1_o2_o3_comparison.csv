@@ -1,0 +1,2 @@
+experiment,status,steps,forced_k_acc,forced_k_valid,fixed_k_acc,fixed_k_format,free_k_acc,free_k_valid
+O0 token-weighted,fail,500,0.125,0.34375,0.09375,0.375,0.0625,0.125
