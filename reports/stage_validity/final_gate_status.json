@@ -1,0 +1,37 @@
+{
+  "gate_a_reload": {
+    "iso": "2026-08-01T03:39:05.977097+00:00",
+    "passed": true,
+    "stage": "gate_a_reload",
+    "status": "complete",
+    "time": 1785555545.9770896
+  },
+  "gate_b_loss": {
+    "iso": "2026-08-01T03:40:16.030904+00:00",
+    "passed": true,
+    "stage": "gate_b_loss",
+    "status": "complete",
+    "time": 1785555616.0308921
+  },
+  "gate_c_length": {
+    "answer_truncation_rate": 0.841,
+    "iso": "2026-08-01T03:40:30.187837+00:00",
+    "latent_cap_rate": 0.979,
+    "stage": "gate_c_length",
+    "status": "complete",
+    "time": 1785555630.1878188
+  },
+  "gate_d_overfit": {
+    "iso": "2026-08-01T03:46:44.666162+00:00",
+    "passed": false,
+    "stage": "gate_d_overfit",
+    "status": "failed",
+    "time": 1785556004.666152
+  },
+  "prior_inventory": {
+    "iso": "2026-08-01T03:35:00.012140+00:00",
+    "stage": "prior_inventory",
+    "status": "complete",
+    "time": 1785555300.012125
+  }
+}

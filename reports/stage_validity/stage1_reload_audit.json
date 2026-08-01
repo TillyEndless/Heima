@@ -1,0 +1,16 @@
+{
+  "adapter": "/data2/zhouxiaoling/latent_cot/Heima-overnight-qwen7b/checkpoints/qwen7b_stage1_smoke1k_200/final_adapter",
+  "adapter_loaded_parameter_count": 1107326976,
+  "checksum_sha256": "50d9ea79527af14a18c4439cafa1360d8a105d25a0c0b3b507803cb26d16c982",
+  "cleanup_note": "memory_after_cleanup is measured before process exit; runner verifies external GPU release after subprocess exits",
+  "expected_think_id": 151665,
+  "forward_ok": true,
+  "generate_ok": true,
+  "memory_after_cleanup": 17525645312,
+  "model_revision": "916b56a44061fd5cd7d6a8fb632557ed4f724f60",
+  "passed": true,
+  "peak_allocated": 17538610176,
+  "think_id": 151665,
+  "think_single_token": true,
+  "tokenizer_loaded": true
+}

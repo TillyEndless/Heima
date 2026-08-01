@@ -1,0 +1,285 @@
+{
+  "checkpoint": "/data2/zhouxiaoling/latent_cot/Heima-qwen7b-stage-validity-pilot/checkpoints/stage_validity_gate_d_overfit/final_adapter",
+  "criteria": {
+    "free_generation_format_compliance": ">=0.95",
+    "think_token_accuracy": ">=0.99",
+    "train_answer_accuracy": ">=0.95",
+    "valid_answer_rate": ">=0.95"
+  },
+  "failure_reason": "free-generation/train answer gate not satisfied within 500 steps or only 8-case eval insufficient for pass",
+  "logs": [
+    {
+      "answer_token_accuracy": 0.8203125,
+      "loss": 9.832609176635742,
+      "step": 1,
+      "think_token_accuracy": 0.0
+    },
+    {
+      "answer_token_accuracy": 0.59375,
+      "loss": 4.989665508270264,
+      "step": 25,
+      "think_token_accuracy": 0.0
+    },
+    {
+      "answer_token_accuracy": 0.828125,
+      "loss": 0.9778316020965576,
+      "step": 50,
+      "think_token_accuracy": 0.984375
+    },
+    {
+      "answer_token_accuracy": 0.65625,
+      "loss": 0.7243034243583679,
+      "step": 75,
+      "think_token_accuracy": 0.9921875
+    },
+    {
+      "answer_token_accuracy": 0.7421875,
+      "loss": 0.46824103593826294,
+      "step": 100,
+      "think_token_accuracy": 0.9921875
+    },
+    {
+      "answer_token_accuracy": 0.765625,
+      "loss": 0.5553720593452454,
+      "step": 125,
+      "think_token_accuracy": 0.9921875
+    },
+    {
+      "answer_token_accuracy": 0.71875,
+      "loss": 0.5849719643592834,
+      "step": 150,
+      "think_token_accuracy": 0.9921875
+    },
+    {
+      "answer_token_accuracy": 0.703125,
+      "loss": 0.5379767417907715,
+      "step": 175,
+      "think_token_accuracy": 0.9921875
+    },
+    {
+      "answer_token_accuracy": 0.8203125,
+      "loss": 0.357014536857605,
+      "step": 200,
+      "think_token_accuracy": 0.9921875
+    },
+    {
+      "answer_token_accuracy": 0.9765625,
+      "loss": 0.060629524290561676,
+      "step": 225,
+      "think_token_accuracy": 1.0
+    },
+    {
+      "answer_token_accuracy": 0.9453125,
+      "loss": 0.11308204382658005,
+      "step": 250,
+      "think_token_accuracy": 0.9921875
+    },
+    {
+      "answer_token_accuracy": 0.8984375,
+      "loss": 0.146066352725029,
+      "step": 275,
+      "think_token_accuracy": 1.0
+    },
+    {
+      "answer_token_accuracy": 0.9921875,
+      "free_eval_8": {
+        "answer_accuracy": 0.25,
+        "cases": [
+          {
+            "gold": "3",
+            "pred": "2",
+            "sample_id": "0",
+            "text": "The radius of the cylindrical can is \\(\\boxed{4x - 3}\\).\n\n**Step-by-Step Explanation:**\n\n1. **Understand the formula for the lateral surface area (label area):**  \n   The area of the label on a cylinder is given by the lateral surface area formula:  \n   \\[\n   A = 2\\pi r h\n   \\]  \n   where \\( r \\) is the radius and \\( h \\) is the height.\n\n2. **Substitute the given expressions into the formula:**  \n   The problem provides \\( A = 16\\pi x^2 - "
+          },
+          {
+            "gold": "5",
+            "pred": "5",
+            "sample_id": "1",
+            "text": "1. Who were the two candidates involved in the 2020 presidential debate?  \n2. How was the exchange between Trump and Biden characterized during the debate?  \n3. What primary question did viewers have after watching the debate?  \n4. Which year’s presidential election cycle is referenced in the text?  \n5. What uncertainty did the debate create among the audience?<｜end▁of▁sentence｜>"
+          },
+          {
+            "gold": "14",
+            "pred": "14",
+            "sample_id": "2",
+            "text": "A: $\\frac{\\sqrt{70}}{14}$<｜end▁of▁sentence｜>"
+          },
+          {
+            "gold": "3",
+            "pred": "1",
+            "sample_id": "3",
+            "text": "The researcher should use a **retrospective cohort study** to investigate whether people living in homes with high radon levels die at a greater rate than the general population.  \n\n### **Justification**  \n1. **Study Design Rationale**:  \n   - **Retrospective cohort studies** compare outcomes (e.g., mortality) between groups defined by past exposure (e.g., radon levels). This design is ideal because:  \n     - **Already existing data**: Radon levels in homes are measurable using established methods (e.g., liquid scintillation, diffusion tube monitoring).  \n     - **Long-term outcomes**: Mortality"
+          },
+          {
+            "gold": "450",
+            "pred": "-34",
+            "sample_id": "4",
+            "text": "The intensity of a light wave is determined by two factors: the **number of photons** passing through a unit area per unit time (photon flux) and the **energy of each photon**. These factors combine to define intensity as power per unit area, given by the equation:\n\n\\[\nI = n \\cdot hf\n\\]\n\nwhere:\n- \\( n \\) = number of photons per second per unit area,\n- \\( h \\) = Planck's constant (\\(6.626 \\times 10^{-34} \\, \\text{J·s}\\)),\n- \\( f \\) = frequency"
+          },
+          {
+            "gold": "2",
+            "pred": "1",
+            "sample_id": "5",
+            "text": "To solve the problem of finding the number of submatrices with all ones in a given binary matrix, we can use a dynamic programming approach that efficiently computes the number of such submatrices in rows and then extends it to submatrices of varying heights. Here's the step-by-step explanation:\n\n1. **Precompute Row-wise Heights**:\n   - For each cell `(i, j)`, compute `row[i][j]` which represents the number of consecutive ones ending at `(i, j)` in the same row. This is done by iterating through each row and updating the count based on whether the current cell is "
+          },
+          {
+            "gold": "250",
+            "pred": "1",
+            "sample_id": "6",
+            "text": "**Process of Acquiring Satellite Signal and Authenticating a Subscription:**\n\n1. **Signal Acquisition (e.g., XM Radio):**\n   - **Satellite Transmission:** The satellite broadcasts signals encoded with **Forward Error Correction (FEC)** to combat signal degradation and **Automatic Repeat reQuest (ARQ)** for error detection and retransmission.\n   - **Receiver Preprocessing:** The ground station processes the signal using **interpolation** (e.g., zero-padding) and **matched filtering** (frequency and timing alignment) to enhance signal quality.\n   - **Digital Downconversion:** The processed signal is converted to an intermediate baseband"
+          },
+          {
+            "gold": "4",
+            "pred": "1978",
+            "sample_id": "7",
+            "text": "The Supreme Court’s potential elimination of affirmative action would be a grave injustice, particularly for Mexican Americans and the broader Chicano Movement. Affirmative action, rooted in the legacy of systemic racism, has historically prioritized marginalized groups like Mexican Americans, who faced systemic exclusion from higher education, the workforce, and political participation. The Supreme Court’s 1978 decision in *Birch v. Bering** solidified the principle that racial discrimination in college admissions is inherently unequal, justifying affirmative action as a corrective measure. Even after landmark cases like *Gonzalez v. Batson** (striking down racial interrogations"
+          }
+        ],
+        "malformed_output_rate": 0.0,
+        "valid_answer_rate": 1.0
+      },
+      "loss": 0.025293543934822083,
+      "step": 300,
+      "think_token_accuracy": 1.0
+    },
+    {
+      "answer_token_accuracy": 1.0,
+      "loss": 0.012076460756361485,
+      "step": 325,
+      "think_token_accuracy": 1.0
+    },
+    {
+      "answer_token_accuracy": 1.0,
+      "loss": 0.006640400271862745,
+      "step": 350,
+      "think_token_accuracy": 1.0
+    },
+    {
+      "answer_token_accuracy": 0.9609375,
+      "loss": 0.09001265466213226,
+      "step": 375,
+      "think_token_accuracy": 1.0
+    },
+    {
+      "answer_token_accuracy": 0.9921875,
+      "loss": 0.01738302782177925,
+      "step": 400,
+      "think_token_accuracy": 1.0
+    },
+    {
+      "answer_token_accuracy": 0.9921875,
+      "loss": 0.01529740635305643,
+      "step": 425,
+      "think_token_accuracy": 1.0
+    },
+    {
+      "answer_token_accuracy": 1.0,
+      "loss": 0.0003692875325214118,
+      "step": 450,
+      "think_token_accuracy": 1.0
+    },
+    {
+      "answer_token_accuracy": 1.0,
+      "loss": 0.0017141905846074224,
+      "step": 475,
+      "think_token_accuracy": 1.0
+    },
+    {
+      "answer_token_accuracy": 1.0,
+      "free_eval_8": {
+        "answer_accuracy": 0.375,
+        "cases": [
+          {
+            "gold": "3",
+            "pred": "16",
+            "sample_id": "0",
+            "text": "The radius \\( r \\) of the cylindrical can is \\(\\boxed{4x - 3}\\).\n\n**Step-by-Step Explanation:**\n\n1. **Understand the formula for the lateral surface area (label area):**  \n   The area of the label on a cylinder is given by the lateral surface area formula:  \n   \\[\n   A = 2\\pi r h\n   \\]  \n   where \\( r \\) is the radius and \\( h \\) is the height.\n\n2. **Substitute the given expressions into the formula:**  \n   The problem provides \\( A = 16\\pi x"
+          },
+          {
+            "gold": "5",
+            "pred": "5",
+            "sample_id": "1",
+            "text": "1. Who were the two candidates involved in the first 2020 presidential debate?  \n2. How was the exchange between Trump and Biden characterized during the debate?  \n3. What primary question did viewers have after watching the debate?  \n4. Which year’s presidential election cycle is referenced in the text?  \n5. What uncertainty did the debate create among the audience?<｜end▁of▁sentence｜>"
+          },
+          {
+            "gold": "14",
+            "pred": "14",
+            "sample_id": "2",
+            "text": "A: $\\frac{\\sqrt{70}}{14}$<｜end▁of▁sentence｜>"
+          },
+          {
+            "gold": "3",
+            "pred": "1",
+            "sample_id": "3",
+            "text": "The researcher should use a **retrospective cohort study** to investigate whether people living in homes with high radon levels die at a greater rate than the general population.  \n\n### **Justification**  \n1. **Study Design Rationale**:  \n   - **Retrospective cohort studies** compare outcomes (e.g., mortality) between groups defined by *past exposure* (e.g., radon levels). This design is ideal because:  \n     - Radon exposure occurs naturally over long periods, making it unethical or impractical to randomize individuals to high- or low-radon environments (eliminating randomized clinical trials).  \n    "
+          },
+          {
+            "gold": "450",
+            "pred": "-34",
+            "sample_id": "4",
+            "text": "The intensity of a light wave is determined by two factors: the **number of photons** passing through a unit area per unit time (photon flux) and the **energy of each photon**. These factors combine to define intensity (\\(I\\)) as the power per unit area, mathematically expressed as:\n\\[\nI = n \\cdot hf\n\\]\nwhere:\n- \\(n\\) = number of photons per second per unit area,\n- \\(h\\) = Planck's constant (\\(6.626 \\times 10^{-34} \\, \\text{J·s}\\)),\n- \\("
+          },
+          {
+            "gold": "2",
+            "pred": "2",
+            "sample_id": "5",
+            "text": "To solve this problem, we need to count the number of submatrices that consist entirely of ones in a given binary matrix. The approach involves using dynamic programming to efficiently track the number of consecutive ones in each row and then combining this information across rows to determine valid submatrices.\n\n### Approach\n1. **Precompute Consecutive Ones**: For each cell in the matrix, compute the number of consecutive ones ending at that cell in its row. This is stored in a 2D array called `left`.\n2. **Iterate Over Each Cell**: For each cell that contains a one, calculate the number of valid submatrices"
+          },
+          {
+            "gold": "250",
+            "pred": "2",
+            "sample_id": "6",
+            "text": "**Process of Acquiring Satellite Signal and Authenticating Subscription:**\n\n1. **Signal Acquisition:**\n   - **Satellite and Terrestrial Infrastructure:** Systems like XM Radio use geostationary satellites and terrestrial repeaters. The receiver first attempts to lock onto the satellite signal (via directional antenna) and then switches to terrestrial repeaters in case of obstructed satellite views (e.g., during rain or in urban areas).\n   - **Synchronization:** The receiver scans predefined frequencies, demodulates the signal, and synchronizes using timing and framing data embedded in the broadcast. Error correction (e.g., DVB-S2) mitig"
+          },
+          {
+            "gold": "4",
+            "pred": "1972",
+            "sample_id": "7",
+            "text": "**Against the Elimination of Affirmative Action**  \n\nThe Supreme Court’s potential elimination of affirmative action would undermine decades of progress toward racial equity, particularly for Mexican Americans and other marginalized groups whose histories are intertwined with systemic discrimination and legal exclusion. Affirmative action is not merely a policy preference but a corrective tool rooted in the recognition of historical injustices—a principle central to the Chicano Movement and the broader struggle for civil rights.  \n\n**1. Historical Context of Mexican American Inequality**  \nMexican Americans have endured systemic exclusion, from segregation in schools (e.g., *Mendez v. Westminster*, 1972"
+          }
+        ],
+        "malformed_output_rate": 0.0,
+        "valid_answer_rate": 1.0
+      },
+      "loss": 0.05435449630022049,
+      "step": 500,
+      "think_token_accuracy": 0.9921875
+    }
+  ],
+  "overfit_gate": "fail",
+  "run_status": "complete",
+  "sample_ids": [
+    "0",
+    "1",
+    "2",
+    "3",
+    "4",
+    "5",
+    "6",
+    "7",
+    "8",
+    "9",
+    "10",
+    "11",
+    "12",
+    "13",
+    "14",
+    "15",
+    "16",
+    "17",
+    "18",
+    "19",
+    "20",
+    "21",
+    "22",
+    "23",
+    "24",
+    "25",
+    "26",
+    "27",
+    "28",
+    "29",
+    "30",
+    "31"
+  ],
+  "steps": 500
+}

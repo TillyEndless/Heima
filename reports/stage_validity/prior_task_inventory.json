@@ -1,0 +1,96 @@
+[
+  {
+    "evidence": [
+      "/data2/zhouxiaoling/latent_cot/Heima-overnight-qwen7b/reports/qwen_baseline_sanity.jsonl"
+    ],
+    "notes": "verified by file presence and content category; not inferred from filename alone",
+    "status": "incomplete-result",
+    "task": "current A-only 50-case raw generation audit"
+  },
+  {
+    "evidence": [
+      "/data2/zhouxiaoling/latent_cot/Heima-overnight-qwen7b/reports/answer_parser_tests.json"
+    ],
+    "notes": "verified by file presence and content category; not inferred from filename alone",
+    "status": "complete",
+    "task": "answer parser unit tests"
+  },
+  {
+    "evidence": [
+      "/data2/zhouxiaoling/latent_cot/Heima-overnight-qwen7b/reports/qwen7b_stage1_smoke1k_200_reload_error.json"
+    ],
+    "notes": "verified by file presence and content category; not inferred from filename alone",
+    "status": "failed",
+    "task": "clean-process adapter reload"
+  },
+  {
+    "evidence": [
+      "/data2/zhouxiaoling/latent_cot/Heima-overnight-qwen7b/reports/overnight/token_level_audit.json"
+    ],
+    "notes": "verified by file presence and content category; not inferred from filename alone",
+    "status": "incomplete-result",
+    "task": "L_main reduction audit"
+  },
+  {
+    "evidence": [
+      "/data2/zhouxiaoling/latent_cot/Heima-overnight-qwen7b/reports/dataset_audit.json",
+      "/data2/zhouxiaoling/latent_cot/Heima-overnight-qwen7b/reports/dynamic_latent_length_report.json"
+    ],
+    "notes": "verified by file presence and content category; not inferred from filename alone",
+    "status": "incomplete-result",
+    "task": "cap/truncation audit"
+  },
+  {
+    "evidence": [],
+    "notes": "verified by file presence and content category; not inferred from filename alone",
+    "status": "not-run",
+    "task": "base vs Stage1 held-out evaluation"
+  },
+  {
+    "evidence": [],
+    "notes": "verified by file presence and content category; not inferred from filename alone",
+    "status": "not-run",
+    "task": "free-generation THINK compliance"
+  },
+  {
+    "evidence": [],
+    "notes": "verified by file presence and content category; not inferred from filename alone",
+    "status": "not-run",
+    "task": "decoded-vs-gold semantic cosine"
+  },
+  {
+    "evidence": [],
+    "notes": "verified by file presence and content category; not inferred from filename alone",
+    "status": "not-run",
+    "task": "gold-gold / gold-random calibration"
+  },
+  {
+    "evidence": [],
+    "notes": "verified by file presence and content category; not inferred from filename alone",
+    "status": "not-run",
+    "task": "correct/shuffle/zero/remove/q-only intervention"
+  },
+  {
+    "evidence": [
+      "/data2/zhouxiaoling/latent_cot/Heima-overnight-qwen7b/reports/qwen7b_stage1_overfit32_stage1_smoke.json"
+    ],
+    "notes": "verified by file presence and content category; not inferred from filename alone",
+    "status": "incomplete-result",
+    "task": "32-sample true overfit"
+  },
+  {
+    "evidence": [],
+    "notes": "verified by file presence and content category; not inferred from filename alone",
+    "status": "not-run",
+    "task": "E0 joint / E1 main-only / E2 two-stage small-model smoke"
+  },
+  {
+    "evidence": [
+      "/data2/zhouxiaoling/latent_cot/Heima-overnight-qwen7b/reports/performance/historical_runs.jsonl",
+      "/data2/zhouxiaoling/latent_cot/Heima-overnight-qwen7b/reports/performance/historical_timing_audit.md"
+    ],
+    "notes": "verified by file presence and content category; not inferred from filename alone",
+    "status": "complete",
+    "task": "historical timing audit"
+  }
+]

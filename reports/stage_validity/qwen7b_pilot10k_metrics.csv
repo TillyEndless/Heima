@@ -1,0 +1,11 @@
+gate,status,passed,key evidence
+Gate A clean reload,complete,True,forward=True; generate=True; adapter_params=1107326976; think_id=151665
+Gate B loss/mask,complete,True,question_ignore=True; think_label=True; model_loss=10.9579
+Gate C length/cap,complete,True,latent_cap_rate=0.979; answer_truncation_rate=0.841; cot_truncation_rate=0.981
+Gate D true overfit,failed,False,steps=500; think_acc=0.9921875; answer_token_acc=1.0; free_answer_acc=0.375
+
+model,run_status,reason
+B0 base,not-run,blocked by Gate D
+M0 main-only,not-run,blocked by Gate D
+M1 joint,not-run,blocked by Gate D
+M2 two-stage,not-run,blocked by Gate D
