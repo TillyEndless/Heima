@@ -1,0 +1,3 @@
+metric,old,repaired,note
+forced_k_token_exact,0.125 parsed answer acc old,0.1875,old used noncanonical/parser-style metric
+fixed_k_token_exact,0.09375 parsed answer acc old,0.0,canonical prefix + task-aware metric

@@ -1,0 +1,32 @@
+{
+  "divergent_cases": [
+    {
+      "batched_not_tested": true,
+      "cache_text": "\nAnswer:\n1. **「暮色花园」法式餐厅**  \n   - **特色菜**：鹅肝黑松露惠灵顿牛排  \n     外层酥皮包裹菲力牛排与鹅肝酱，中心填入黑松露碎，搭配波特酒酱汁，口感层次丰富，适合搭配餐厅提供的香槟鸡尾酒与香草奶油甜点。\n\n2. **「竹涧」日式怀石料理**  \n   - **特色菜**：九宫格季节刺身拼盘  \n     每日选用金枪鱼大腹、海胆、海胆紫菜等时令海鲜，搭配手作山葵与山葵子酱，配以樱花木烟熏提味，仪式感与新鲜度兼备，推荐搭配「竹涧」限定的樱花啤酒。\n\n3. **「云栖」空中景观餐厅**  \n   - **特色菜**：香草慢烤澳洲牛排配地中海海草  \n     72小时低温熟成的澳洲 finishing cut 牛排，表面撒香草碎，搭配手工海草与 tzatziki 花枝，配以星空 projections 作为配菜，用餐时",
+      "cache_token": "「",
+      "conclusion": "single-sample cache/no-cache divergence; validity pipeline uses no-cache",
+      "first_divergence_step": 168,
+      "input_length": 16,
+      "no_cache_text": "\nAnswer:\n1. **「暮色花园」法式餐厅**  \n   - **特色菜**：鹅肝黑松露惠灵顿牛排  \n     外层酥皮包裹菲力牛排与鹅肝酱，中心填入黑松露碎，搭配波特酒酱汁，口感层次丰富，适合搭配餐厅提供的香槟鸡尾酒与香草奶油甜点。\n\n2. **「竹涧」日式怀石料理**  \n   - **特色菜**：九宫格季节刺身拼盘  \n     每日选用金枪鱼大腹、海胆、海胆紫菜等时令海鲜，搭配手作山葵与山葵子酱，配以樱花木烟熏提味，仪式感与新鲜度兼备，推荐搭配怀石水洗&竹涧鸡尾酒。\n\n3. **「云栖」空中景观餐厅**  \n   - **特色菜**：香草慢烤澳洲牛排配木香子酒  \n     72-96小时新鲜澳洲和牛，搭配特制香草酱与木香子酒，口感顺滑，适合搭配餐厅提供的香草柠檬塔塔或时蔬拼盘",
+      "no_cache_token": "怀",
+      "padding_side": "left",
+      "sample_id": "67",
+      "single_sample_cache_matches_no_cache": false
+    },
+    {
+      "batched_not_tested": true,
+      "cache_text": "\nAnswer:\nAs of the current date, no Albanian author has been awarded the Nobel Prize in Literature. **Ismail Kadare**, Albania's most renowned novelist and poet, has frequently been cited as a strong contender and has been nominated multiple times. His works, such as *The General of the Dead Army* and *Broken April*, are celebrated internationally for their exploration of history, totalitarianism, and Albanian identity. However, the Nobel Committee has not yet honored an Albanian writer with the prize. Kadare's continued recognition and the frequency of his nominations reflect the high esteem in which his literary contributions are held within the global community.<｜end▁of▁sentence｜>",
+      "cache_token": " frequency",
+      "conclusion": "single-sample cache/no-cache divergence; validity pipeline uses no-cache",
+      "first_divergence_step": 111,
+      "input_length": 36,
+      "no_cache_text": "\nAnswer:\nAs of the current date, no Albanian author has been awarded the Nobel Prize in Literature. **Ismail Kadare**, Albania's most renowned novelist and poet, has frequently been cited as a strong contender and has been nominated multiple times. His works, such as *The General of the Dead Army* and *Broken April*, are celebrated internationally for their exploration of history, totalitarianism, and Albanian identity. However, the Nobel Committee has not yet honored an Albanian writer with the prize. Kadare's continued recognition and the persistent absence of an Albanian Nobel Literature winner remain notable aspects of international literature.<｜end▁of▁sentence｜>",
+      "no_cache_token": " persistent",
+      "padding_side": "left",
+      "sample_id": "181",
+      "single_sample_cache_matches_no_cache": false
+    }
+  ],
+  "n_divergent": 2,
+  "validity_pipeline": "use_cache=False"
+}
