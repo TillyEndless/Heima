@@ -1,0 +1,8 @@
+{
+  "iso": "2026-08-01T04:20:47.478819+00:00",
+  "lora_ab_parameters": 20185088,
+  "peft_trainable_parameters": 1107326976,
+  "stage": "adapter_audit",
+  "status": "complete",
+  "time": 1785558047.478809
+}

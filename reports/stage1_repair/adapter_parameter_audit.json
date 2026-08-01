@@ -1,0 +1,28 @@
+{
+  "adapter": "/data2/zhouxiaoling/latent_cot/Heima-qwen7b-stage-validity-pilot/checkpoints/stage_validity_gate_d_overfit/final_adapter",
+  "adapter_checkpoint_size_bytes": 6603644184,
+  "embed_lm_head_tied": false,
+  "embed_tokens_parameters": 1087141888,
+  "embed_tokens_trainable": true,
+  "explanation": "The ~1.107B adapter count is dominated by modules_to_save copies of full embed_tokens and lm_head. DeepSeek/Qwen has a large vocab times hidden-size matrix; saving both input embedding and output head as trainable full modules makes the PEFT adapter much larger than LoRA A/B alone.",
+  "lm_head_parameters": 1087141888,
+  "lm_head_trainable": true,
+  "lora_ab_parameters": 20185088,
+  "model_id": "deepseek-ai/DeepSeek-R1-Distill-Qwen-7B",
+  "modules_to_save_entries": [
+    {
+      "name": "base_model.model.model.embed_tokens.modules_to_save.default.weight",
+      "parameters": 543570944,
+      "trainable": true
+    },
+    {
+      "name": "base_model.model.lm_head.modules_to_save.default.weight",
+      "parameters": 543570944,
+      "trainable": true
+    }
+  ],
+  "modules_to_save_parameters": 1087141888,
+  "peft_trainable_parameters": 1107326976,
+  "revision": "916b56a44061fd5cd7d6a8fb632557ed4f724f60",
+  "total_model_parameters": 8720090624
+}

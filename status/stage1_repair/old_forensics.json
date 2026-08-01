@@ -1,0 +1,19 @@
+{
+  "counts": {
+    "correct": 3,
+    "other": 24,
+    "valid_but_wrong_answer": 5
+  },
+  "iso": "2026-08-01T04:19:37.291151+00:00",
+  "stage": "old_forensics",
+  "status": "complete",
+  "summary": {
+    "answer_accuracy": 0.09375,
+    "malformed_rate": 0.75,
+    "mean_generated_THINK_count": 0.0,
+    "n": 32,
+    "stop_success_rate": 1.0,
+    "valid_answer_rate": 0.25
+  },
+  "time": 1785557977.2911315
+}

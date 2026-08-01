@@ -1,0 +1,44 @@
+{
+  "adapter_audit": {
+    "iso": "2026-08-01T04:20:47.478819+00:00",
+    "lora_ab_parameters": 20185088,
+    "peft_trainable_parameters": 1107326976,
+    "stage": "adapter_audit",
+    "status": "complete",
+    "time": 1785558047.478809
+  },
+  "debug32": {
+    "iso": "2026-08-01T04:21:02.329137+00:00",
+    "split_hash": "3d4a837b2fbfc8c98a3c99216d351b94afbaee51f1641f7206545500aaf8fdd2",
+    "stage": "debug32",
+    "status": "complete",
+    "time": 1785558062.3291223
+  },
+  "o0_overfit": {
+    "iso": "2026-08-01T04:43:45.873909+00:00",
+    "passed": false,
+    "stage": "o0_overfit",
+    "status": "failed",
+    "steps": 500,
+    "time": 1785559425.8738906
+  },
+  "old_forensics": {
+    "counts": {
+      "correct": 3,
+      "other": 24,
+      "valid_but_wrong_answer": 5
+    },
+    "iso": "2026-08-01T04:19:37.291151+00:00",
+    "stage": "old_forensics",
+    "status": "complete",
+    "summary": {
+      "answer_accuracy": 0.09375,
+      "malformed_rate": 0.75,
+      "mean_generated_THINK_count": 0.0,
+      "n": 32,
+      "stop_success_rate": 1.0,
+      "valid_answer_rate": 0.25
+    },
+    "time": 1785557977.2911315
+  }
+}
