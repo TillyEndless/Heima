@@ -1,0 +1,11 @@
+run_id,stage,status,completed_steps,runtime_source,confidence,seconds_per_step,applicable_configuration
+qwen7b_stage1_overfit32,stage1,historical_runtime_missing,30,checkpoint/report only; original step wall timestamps missing,low,,"Stage1 max_q=256, max_latent=128, max_answer=128, LoRA BF16 GC microbatch=1"
+qwen7b_stage1_smoke1k_200,stage1,historical_runtime_missing_needs_profiler,200,checkpoint/report only; original step wall timestamps missing,low,,"Stage1 max_q=256, max_latent=128, max_answer=128, LoRA BF16 GC microbatch=1"
+S1-current,stage1,skipped_existing_measured_run_missing_runtime,,new profiler,,,"{'max_answer': 128, 'max_latent': 128, 'max_q': 256, 'measure': 0, 'skip_if_historical': True, 'stage': 'stage1', 'warmup': 0}"
+S1-small,stage1,complete,30,new profiler,high,0.29052253340681394,"{'max_answer': 128, 'max_latent': 64, 'max_q': 128, 'measure': 30, 'stage': 'stage1', 'warmup': 10}"
+S1-medium,stage1,complete,30,new profiler,high,0.3409061963514735,"{'max_answer': 256, 'max_latent': 256, 'max_q': 256, 'measure': 30, 'stage': 'stage1', 'warmup': 10}"
+S1-large,stage1,complete,20,new profiler,high,0.3918126423144713,"{'max_answer': 256, 'max_latent': 384, 'max_q': 384, 'measure': 20, 'stage': 'stage1', 'warmup': 6}"
+S2-small,stage2,complete,20,new profiler,high,0.5878164888126776,"{'max_answer': 64, 'max_cot': 128, 'max_latent': 64, 'max_q': 128, 'measure': 20, 'stage': 'stage2', 'warmup': 5}"
+S2-current,stage2,complete,20,new profiler,high,0.6142413445748389,"{'max_answer': 128, 'max_cot': 256, 'max_latent': 128, 'max_q': 256, 'measure': 20, 'stage': 'stage2', 'warmup': 5}"
+S2-medium,stage2,complete,12,new profiler,high,0.6734689217604076,"{'max_answer': 128, 'max_cot': 512, 'max_latent': 128, 'max_q': 256, 'measure': 12, 'stage': 'stage2', 'warmup': 3}"
+GEN-self-decode-50,semantic_eval,complete,10,new profiler,high,5.745383587153628,"{'cases': 50, 'max_new_tokens': 96, 'measure': 10, 'stage': 'semantic_eval', 'warmup': 2}"

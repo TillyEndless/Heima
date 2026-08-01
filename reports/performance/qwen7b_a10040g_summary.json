@@ -1,0 +1,235 @@
+{
+  "eta": {
+    "1000": {
+      "basis_config": "S1-medium",
+      "note": "microbatch=1, grad_accum=1, capped benchmark length; long CoT requires length-bucket estimates",
+      "optimistic_compute_only_seconds": 340.9061963514735,
+      "realistic_with_15_percent_overhead_seconds": 392.0421258041945
+    },
+    "10000": {
+      "basis_config": "S1-medium",
+      "note": "microbatch=1, grad_accum=1, capped benchmark length; long CoT requires length-bucket estimates",
+      "optimistic_compute_only_seconds": 3409.061963514735,
+      "realistic_with_15_percent_overhead_seconds": 3920.421258041945
+    },
+    "100000": {
+      "basis_config": "S1-medium",
+      "note": "microbatch=1, grad_accum=1, capped benchmark length; long CoT requires length-bucket estimates",
+      "optimistic_compute_only_seconds": 34090.61963514735,
+      "realistic_with_15_percent_overhead_seconds": 39204.212580419444
+    },
+    "500000": {
+      "basis_config": "S1-medium",
+      "note": "microbatch=1, grad_accum=1, capped benchmark length; long CoT requires length-bucket estimates",
+      "optimistic_compute_only_seconds": 170453.09817573676,
+      "realistic_with_15_percent_overhead_seconds": 196021.06290209724
+    },
+    "900000": {
+      "basis_config": "S1-medium",
+      "note": "microbatch=1, grad_accum=1, capped benchmark length; long CoT requires length-bucket estimates",
+      "optimistic_compute_only_seconds": 306815.5767163262,
+      "realistic_with_15_percent_overhead_seconds": 352837.9132237751
+    }
+  },
+  "eta_by_length_bucket": {
+    "S1-large": {
+      "1000": {
+        "optimistic_compute_only_hours": 0.10883684508735314,
+        "realistic_15pct_overhead_hours": 0.1251623718504561
+      },
+      "10000": {
+        "optimistic_compute_only_hours": 1.0883684508735314,
+        "realistic_15pct_overhead_hours": 1.2516237185045611
+      },
+      "100000": {
+        "optimistic_compute_only_hours": 10.883684508735314,
+        "realistic_15pct_overhead_hours": 12.516237185045611
+      },
+      "500000": {
+        "optimistic_compute_only_hours": 54.41842254367657,
+        "realistic_15pct_overhead_hours": 62.58118592522805
+      },
+      "900000": {
+        "optimistic_compute_only_hours": 97.95316057861783,
+        "realistic_15pct_overhead_hours": 112.64613466541049
+      }
+    },
+    "S1-medium": {
+      "1000": {
+        "optimistic_compute_only_hours": 0.09469616565318709,
+        "realistic_15pct_overhead_hours": 0.10890059050116513
+      },
+      "10000": {
+        "optimistic_compute_only_hours": 0.9469616565318708,
+        "realistic_15pct_overhead_hours": 1.0890059050116514
+      },
+      "100000": {
+        "optimistic_compute_only_hours": 9.469616565318708,
+        "realistic_15pct_overhead_hours": 10.890059050116513
+      },
+      "500000": {
+        "optimistic_compute_only_hours": 47.34808282659354,
+        "realistic_15pct_overhead_hours": 54.45029525058257
+      },
+      "900000": {
+        "optimistic_compute_only_hours": 85.22654908786838,
+        "realistic_15pct_overhead_hours": 98.01053145104864
+      }
+    },
+    "S1-small": {
+      "1000": {
+        "optimistic_compute_only_hours": 0.08070070372411497,
+        "realistic_15pct_overhead_hours": 0.09280580928273222
+      },
+      "10000": {
+        "optimistic_compute_only_hours": 0.8070070372411499,
+        "realistic_15pct_overhead_hours": 0.9280580928273222
+      },
+      "100000": {
+        "optimistic_compute_only_hours": 8.070070372411498,
+        "realistic_15pct_overhead_hours": 9.280580928273222
+      },
+      "500000": {
+        "optimistic_compute_only_hours": 40.35035186205749,
+        "realistic_15pct_overhead_hours": 46.40290464136611
+      },
+      "900000": {
+        "optimistic_compute_only_hours": 72.63063335170348,
+        "realistic_15pct_overhead_hours": 83.525228354459
+      }
+    },
+    "S2-current": {
+      "1000": {
+        "optimistic_compute_only_hours": 0.17062259571523303,
+        "realistic_15pct_overhead_hours": 0.19621598507251797
+      },
+      "10000": {
+        "optimistic_compute_only_hours": 1.7062259571523302,
+        "realistic_15pct_overhead_hours": 1.9621598507251794
+      },
+      "100000": {
+        "optimistic_compute_only_hours": 17.062259571523303,
+        "realistic_15pct_overhead_hours": 19.621598507251797
+      },
+      "500000": {
+        "optimistic_compute_only_hours": 85.31129785761651,
+        "realistic_15pct_overhead_hours": 98.10799253625899
+      },
+      "900000": {
+        "optimistic_compute_only_hours": 153.56033614370972,
+        "realistic_15pct_overhead_hours": 176.59438656526618
+      }
+    },
+    "S2-medium": {
+      "1000": {
+        "optimistic_compute_only_hours": 0.18707470048900213,
+        "realistic_15pct_overhead_hours": 0.21513590556235243
+      },
+      "10000": {
+        "optimistic_compute_only_hours": 1.8707470048900212,
+        "realistic_15pct_overhead_hours": 2.1513590556235243
+      },
+      "100000": {
+        "optimistic_compute_only_hours": 18.707470048900213,
+        "realistic_15pct_overhead_hours": 21.513590556235243
+      },
+      "500000": {
+        "optimistic_compute_only_hours": 93.53735024450106,
+        "realistic_15pct_overhead_hours": 107.56795278117622
+      },
+      "900000": {
+        "optimistic_compute_only_hours": 168.3672304401019,
+        "realistic_15pct_overhead_hours": 193.6223150061172
+      }
+    },
+    "S2-small": {
+      "1000": {
+        "optimistic_compute_only_hours": 0.16328235800352153,
+        "realistic_15pct_overhead_hours": 0.18777471170404977
+      },
+      "10000": {
+        "optimistic_compute_only_hours": 1.6328235800352155,
+        "realistic_15pct_overhead_hours": 1.8777471170404976
+      },
+      "100000": {
+        "optimistic_compute_only_hours": 16.328235800352154,
+        "realistic_15pct_overhead_hours": 18.77747117040498
+      },
+      "500000": {
+        "optimistic_compute_only_hours": 81.64117900176078,
+        "realistic_15pct_overhead_hours": 93.88735585202488
+      },
+      "900000": {
+        "optimistic_compute_only_hours": 146.9541222031694,
+        "realistic_15pct_overhead_hours": 168.9972405336448
+      }
+    }
+  },
+  "failed_configs": [],
+  "generated_iso": "2026-08-01T03:00:24.627965+00:00",
+  "git_sha": "fd3959a324d574bfd32dc51e1a0057b6167845f2",
+  "historical_runs": 2,
+  "measured_configs": [
+    "S1-small",
+    "S1-medium",
+    "S1-large",
+    "S2-small",
+    "S2-current",
+    "S2-medium",
+    "GEN-self-decode-50"
+  ],
+  "measured_or_inferred_notes": "Stage1-current historical run has loss logs but missing timing; not reused as throughput. New short profiler gives measured step times for bucket configs. Checkpoint save time and model load time are marked missing/not_tested in report, not guessed.",
+  "missing_metrics": [
+    "historical core training runtime",
+    "historical model load time",
+    "historical checkpoint save duration",
+    "new benchmark checkpoint save duration",
+    "frozen encoder semantic cosine time",
+    "GPU utilization sampling over step"
+  ],
+  "oom_configs": [],
+  "ratios": {
+    "stage2_over_stage1_memory_ratio": 1.005998461017495,
+    "stage2_over_stage1_time_ratio": 2.0233077342388714
+  },
+  "raw_jsonl": "/data2/zhouxiaoling/latent_cot/Heima-overnight-qwen7b/reports/performance/qwen7b_a10040g_benchmark.jsonl",
+  "rows": 8,
+  "semantic_eval_eta": {
+    "1000_cases_hours": 1.5959398853204523,
+    "200_cases_hours": 0.31918797706409047,
+    "50_cases_hours": 0.07979699426602262,
+    "basis": "GEN-self-decode-50 free generation only; frozen encoder cosine not tested"
+  },
+  "two_stage_60_40_eta": {
+    "1000": {
+      "optimistic_compute_only_hours": 0.12506673767800547,
+      "realistic_15pct_overhead_hours": 0.1438267483297063,
+      "stage1_basis": "S1-medium",
+      "stage2_basis": "S2-current"
+    },
+    "10000": {
+      "optimistic_compute_only_hours": 1.2506673767800547,
+      "realistic_15pct_overhead_hours": 1.4382674832970628,
+      "stage1_basis": "S1-medium",
+      "stage2_basis": "S2-current"
+    },
+    "100000": {
+      "optimistic_compute_only_hours": 12.506673767800548,
+      "realistic_15pct_overhead_hours": 14.38267483297063,
+      "stage1_basis": "S1-medium",
+      "stage2_basis": "S2-current"
+    },
+    "500000": {
+      "optimistic_compute_only_hours": 62.53336883900274,
+      "realistic_15pct_overhead_hours": 71.91337416485314,
+      "stage1_basis": "S1-medium",
+      "stage2_basis": "S2-current"
+    },
+    "900000": {
+      "optimistic_compute_only_hours": 112.56006391020493,
+      "realistic_15pct_overhead_hours": 129.44407349673568,
+      "stage1_basis": "S1-medium",
+      "stage2_basis": "S2-current"
+    }
+  }
+}

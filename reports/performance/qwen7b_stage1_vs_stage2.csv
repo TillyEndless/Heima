@@ -1,0 +1,9 @@
+config,stage,status,source,confidence,seconds_per_step,steps_per_hour,samples_per_second,tokens_per_second,supervised_tokens_per_second,peak_allocated_gb,peak_reserved_gb,grad_nonzero_finite,setup_included,checkpoint_save_time
+S1-current,stage1,skipped_existing_measured_run_missing_runtime,historical report exists but no timestamps; not rerun due skip policy,low,,,,,,0.0,0.0,,missing,not_tested
+S1-small,stage1,complete,new_profiler,high,0.29052253340681394,12391.46567319437,3.4420737981095475,866.7141823639842,629.5552976742363,24.91851043701172,26.646484375,,excluded: measured loop only,not_tested
+S1-medium,stage1,complete,new_profiler,high,0.3409061963514735,10560.089662578055,2.933358239605015,1638.280576819401,1394.7140643241978,25.17185401916504,27.638671875,,excluded: measured loop only,not_tested
+S1-large,stage1,complete,new_profiler,high,0.3918126423144713,9188.064935154944,2.552240259765262,1742.5420373547327,1483.4896509885587,25.250460147857666,28.015625,,excluded: measured loop only,not_tested
+S2-small,stage2,complete,new_profiler,high,0.5878164888126776,6124.360354830452,1.7012112096751253,815.9859567206739,435.5100696768321,25.067983150482178,27.927734375,True,excluded: measured loop only,not_tested
+S2-current,stage2,complete,new_profiler,high,0.6142413445748389,5860.888446856051,1.6280245685711254,1358.8307061578898,828.4203017174171,25.432440280914307,28.998046875,True,excluded: measured loop only,not_tested
+S2-medium,stage2,complete,new_profiler,high,0.6734689217604076,5345.458244145571,1.4848495122626588,1551.5440028551234,1098.4174266963018,25.4658145904541,29.947265625,True,excluded: measured loop only,not_tested
+GEN-self-decode-50,semantic_eval,complete,new_profiler,high,5.745383587153628,626.5900170790003,0.17405278252194453,0.0,0.0,16.372663021087646,16.513671875,,excluded: measured loop only,not_tested
