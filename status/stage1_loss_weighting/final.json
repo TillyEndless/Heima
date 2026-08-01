@@ -1,0 +1,6 @@
+{
+  "decision": "CASE 2: O1/O2 improve over O0 but remain below gate; next should run explicit-boundary O3 if transition remains the bottleneck.",
+  "stage": "final",
+  "status": "complete",
+  "time": 1785594638.9645746
+}

@@ -1,0 +1,8 @@
+{
+  "forced_k_token_exact": 0.03125,
+  "passed": false,
+  "stage": "o1_segment_balanced",
+  "status": "complete_gate_not_passed",
+  "steps": 500,
+  "time": 1785585992.0957437
+}
