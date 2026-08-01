@@ -1,0 +1,167 @@
+{
+  "mean_accuracy": 0.9990972198549729,
+  "n": 32,
+  "samples": [
+    {
+      "answer_token_count": 81,
+      "gold_prefix_next_token_accuracy": 1.0,
+      "sample_id": "1"
+    },
+    {
+      "answer_token_count": 109,
+      "gold_prefix_next_token_accuracy": 1.0,
+      "sample_id": "12"
+    },
+    {
+      "answer_token_count": 36,
+      "gold_prefix_next_token_accuracy": 1.0,
+      "sample_id": "29"
+    },
+    {
+      "answer_token_count": 44,
+      "gold_prefix_next_token_accuracy": 1.0,
+      "sample_id": "47"
+    },
+    {
+      "answer_token_count": 18,
+      "gold_prefix_next_token_accuracy": 1.0,
+      "sample_id": "54"
+    },
+    {
+      "answer_token_count": 49,
+      "gold_prefix_next_token_accuracy": 1.0,
+      "sample_id": "61"
+    },
+    {
+      "answer_token_count": 36,
+      "gold_prefix_next_token_accuracy": 1.0,
+      "sample_id": "65"
+    },
+    {
+      "answer_token_count": 246,
+      "gold_prefix_next_token_accuracy": 0.9878048780487805,
+      "sample_id": "67"
+    },
+    {
+      "answer_token_count": 60,
+      "gold_prefix_next_token_accuracy": 1.0,
+      "sample_id": "69"
+    },
+    {
+      "answer_token_count": 48,
+      "gold_prefix_next_token_accuracy": 1.0,
+      "sample_id": "74"
+    },
+    {
+      "answer_token_count": 135,
+      "gold_prefix_next_token_accuracy": 1.0,
+      "sample_id": "76"
+    },
+    {
+      "answer_token_count": 12,
+      "gold_prefix_next_token_accuracy": 1.0,
+      "sample_id": "78"
+    },
+    {
+      "answer_token_count": 204,
+      "gold_prefix_next_token_accuracy": 1.0,
+      "sample_id": "79"
+    },
+    {
+      "answer_token_count": 44,
+      "gold_prefix_next_token_accuracy": 1.0,
+      "sample_id": "96"
+    },
+    {
+      "answer_token_count": 132,
+      "gold_prefix_next_token_accuracy": 1.0,
+      "sample_id": "100"
+    },
+    {
+      "answer_token_count": 53,
+      "gold_prefix_next_token_accuracy": 1.0,
+      "sample_id": "118"
+    },
+    {
+      "answer_token_count": 243,
+      "gold_prefix_next_token_accuracy": 1.0,
+      "sample_id": "119"
+    },
+    {
+      "answer_token_count": 103,
+      "gold_prefix_next_token_accuracy": 1.0,
+      "sample_id": "123"
+    },
+    {
+      "answer_token_count": 113,
+      "gold_prefix_next_token_accuracy": 1.0,
+      "sample_id": "135"
+    },
+    {
+      "answer_token_count": 169,
+      "gold_prefix_next_token_accuracy": 1.0,
+      "sample_id": "136"
+    },
+    {
+      "answer_token_count": 27,
+      "gold_prefix_next_token_accuracy": 1.0,
+      "sample_id": "149"
+    },
+    {
+      "answer_token_count": 103,
+      "gold_prefix_next_token_accuracy": 1.0,
+      "sample_id": "152"
+    },
+    {
+      "answer_token_count": 11,
+      "gold_prefix_next_token_accuracy": 1.0,
+      "sample_id": "154"
+    },
+    {
+      "answer_token_count": 5,
+      "gold_prefix_next_token_accuracy": 1.0,
+      "sample_id": "155"
+    },
+    {
+      "answer_token_count": 155,
+      "gold_prefix_next_token_accuracy": 1.0,
+      "sample_id": "159"
+    },
+    {
+      "answer_token_count": 117,
+      "gold_prefix_next_token_accuracy": 1.0,
+      "sample_id": "163"
+    },
+    {
+      "answer_token_count": 25,
+      "gold_prefix_next_token_accuracy": 1.0,
+      "sample_id": "173"
+    },
+    {
+      "answer_token_count": 105,
+      "gold_prefix_next_token_accuracy": 1.0,
+      "sample_id": "180"
+    },
+    {
+      "answer_token_count": 159,
+      "gold_prefix_next_token_accuracy": 0.9874213836477987,
+      "sample_id": "181"
+    },
+    {
+      "answer_token_count": 27,
+      "gold_prefix_next_token_accuracy": 1.0,
+      "sample_id": "199"
+    },
+    {
+      "answer_token_count": 243,
+      "gold_prefix_next_token_accuracy": 0.9958847736625515,
+      "sample_id": "237"
+    },
+    {
+      "answer_token_count": 38,
+      "gold_prefix_next_token_accuracy": 1.0,
+      "sample_id": "250"
+    }
+  ],
+  "sequence_all_correct_rate": 0.90625
+}

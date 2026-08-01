@@ -1,0 +1,17 @@
+{
+  "causal_shift_or_off_by_one_bug": false,
+  "decision_case": "CASE 5 + parser applicability issue: old inference prefix mismatched canonical training prefix; canonical token exact improves to 0.90625 but remains below 0.95, while numeric parser undercounts nonnumeric/code/text answers.",
+  "direct_answer_free_overfit": false,
+  "exact_training_generation_prefix_match": false,
+  "generate_cache_numeric_accuracy": 0.59375,
+  "generate_cache_token_exact_match": 0.90625,
+  "gold_prefix_induction_mean_accuracy": 0.9990972198549729,
+  "manual_greedy_numeric_accuracy": 0.59375,
+  "may_start_o1_o2": false,
+  "o0_reeval_status": "skipped_until_direct_gate_passes",
+  "parser_accuracy": 0.59375,
+  "parser_applicability_note": "Numeric parser is not appropriate for all debug32 answers: some gold answers are code or free text. Use token/decoded-string exact match as the primary direct-answer overfit metric.",
+  "primary_direct_free_metric": "generate_cache_token_exact_match",
+  "teacher_forced_accuracy_correct": true,
+  "ten_k_and_stage2_still_forbidden": true
+}

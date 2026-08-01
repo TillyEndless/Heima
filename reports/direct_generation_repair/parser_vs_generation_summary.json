@@ -1,0 +1,41 @@
+{
+  "generate_cache": {
+    "decoded_string_exact_match_rate": 0.90625,
+    "failure_counts": {
+      "correct": 18,
+      "correct_tokens_parser_failure": 11,
+      "extra_template_tokens": 1,
+      "max_length_stop": 2
+    },
+    "n": 32,
+    "numeric_answer_match_rate": 0.59375,
+    "parser_accuracy": 0.59375,
+    "token_exact_match_rate": 0.90625
+  },
+  "generate_no_cache": {
+    "decoded_string_exact_match_rate": 0.90625,
+    "failure_counts": {
+      "correct": 18,
+      "correct_tokens_parser_failure": 11,
+      "extra_template_tokens": 1,
+      "max_length_stop": 2
+    },
+    "n": 32,
+    "numeric_answer_match_rate": 0.59375,
+    "parser_accuracy": 0.59375,
+    "token_exact_match_rate": 0.90625
+  },
+  "manual": {
+    "decoded_string_exact_match_rate": 0.90625,
+    "failure_counts": {
+      "correct": 18,
+      "correct_tokens_parser_failure": 11,
+      "extra_template_tokens": 1,
+      "max_length_stop": 2
+    },
+    "n": 32,
+    "numeric_answer_match_rate": 0.59375,
+    "parser_accuracy": 0.59375,
+    "token_exact_match_rate": 0.90625
+  }
+}
