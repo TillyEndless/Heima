@@ -1,0 +1,3 @@
+kind,step,D1_token_exact,D1_normalized_exact,D1_valid,D2_token_exact,D2_normalized_exact,D2_boundary_sequence,D2_valid,D3_THINK_termination,D3_mean_THINK,D3_boundary_sequence
+best,475,0.8125,0.8125,0.875,0.8125,0.8125,1.0,0.875,0.0,0.0,0.0
+final,500,0.8125,0.8125,0.875,0.78125,0.78125,0.9375,0.875,0.0,0.0,0.0

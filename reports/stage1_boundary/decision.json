@@ -1,0 +1,33 @@
+{
+  "best": {
+    "D1_normalized_exact": 0.8125,
+    "D1_token_exact": 0.8125,
+    "D1_valid": 0.875,
+    "D2_boundary_sequence": 1.0,
+    "D2_normalized_exact": 0.8125,
+    "D2_token_exact": 0.8125,
+    "D2_valid": 0.875,
+    "D3_THINK_termination": 0.0,
+    "D3_boundary_sequence": 0.0,
+    "D3_mean_THINK": 0.0,
+    "kind": "best",
+    "step": 475
+  },
+  "d1_pass": false,
+  "d2_pass": false,
+  "decision": "CASE C: D1 still failed; explicit boundary did not solve latent-answer content path, do not enter Stage2.",
+  "final": {
+    "D1_normalized_exact": 0.8125,
+    "D1_token_exact": 0.8125,
+    "D1_valid": 0.875,
+    "D2_boundary_sequence": 0.9375,
+    "D2_normalized_exact": 0.78125,
+    "D2_token_exact": 0.78125,
+    "D2_valid": 0.875,
+    "D3_THINK_termination": 0.0,
+    "D3_boundary_sequence": 0.0,
+    "D3_mean_THINK": 0.0,
+    "kind": "final",
+    "step": 500
+  }
+}
