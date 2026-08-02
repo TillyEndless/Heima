@@ -1,0 +1,46 @@
+{
+  "time": 1785689299.4510615,
+  "lanes": [
+    {
+      "lane": 0,
+      "protocol": "FIXED-K32",
+      "gpu": 0
+    },
+    {
+      "lane": 1,
+      "protocol": "FIXED-K64",
+      "gpu": 1
+    },
+    {
+      "lane": 2,
+      "protocol": "FIXED-K-P50",
+      "gpu": 2
+    },
+    {
+      "lane": 3,
+      "protocol": "PROGRESSIVE-4-TYPED",
+      "gpu": 3
+    },
+    {
+      "lane": 4,
+      "protocol": "PROGRESSIVE-8-TYPED",
+      "gpu": 4
+    },
+    {
+      "lane": 5,
+      "protocol": "PROGRESSIVE-4-REPEATED",
+      "gpu": 5
+    },
+    {
+      "lane": 6,
+      "protocol": "PROGRESSIVE-4-TYPED-NO-LATENT-NTP",
+      "gpu": 6
+    },
+    {
+      "lane": 7,
+      "protocol": "ONESHOT-4-TYPED",
+      "gpu": 7
+    }
+  ],
+  "status": "launching"
+}
