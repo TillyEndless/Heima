@@ -1,0 +1,1 @@
+{"status":"registered","lanes":8,"a100_queue":4,"note":"Full queue registered; workers wait for free GPUs and record per-job failures without stopping lanes."}

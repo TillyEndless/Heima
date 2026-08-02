@@ -1,0 +1,17 @@
+{
+  "branch":"exp/overnight-stage1-structural-20260803",
+  "base_model":"deepseek-ai/DeepSeek-R1-Distill-Qwen-7B",
+  "revision":"916b56a44061fd5cd7d6a8fb632557ed4f724f60",
+  "scales":["D32","S2K","S10K","S50K"],
+  "lanes":[
+    {"lane":0,"protocol":"FIXED-K32","gpu":0},
+    {"lane":1,"protocol":"FIXED-K64","gpu":1},
+    {"lane":2,"protocol":"FIXED-K-P50","gpu":2},
+    {"lane":3,"protocol":"PROGRESSIVE-4-TYPED","gpu":3},
+    {"lane":4,"protocol":"PROGRESSIVE-8-TYPED","gpu":4},
+    {"lane":5,"protocol":"PROGRESSIVE-4-REPEATED","gpu":5},
+    {"lane":6,"protocol":"PROGRESSIVE-4-TYPED-NO-LATENT-NTP","gpu":6},
+    {"lane":7,"protocol":"ONESHOT-4-TYPED","gpu":7}
+  ],
+  "a100_queue":["BASELINE-DIRECT","BASELINE-EXPLICIT-COT","CURRENT-O3-DYNAMIC-CONTROL","AUTO-SELECT-M0-M1-M2"]
+}

@@ -1,0 +1,13 @@
+{
+  "generated_at": "2026-08-03T00:00:00+08:00",
+  "discovered": [
+    {"role":"4090", "host":"4090", "hostname":"706124b042cd", "gpus":8, "gpu_name":"NVIDIA GeForce RTX 4090", "memory_total_mb":[49140,49140,49140,49140,46068,49140,49140,49140], "status":"reachable_all_gpus_busy", "data_free":"110G"},
+    {"role":"a100", "host":"10.71.106.248:20024", "hostname":"unknown", "gpus":1, "gpu_name":"A100 40GB", "status":"temporarily_unreachable_ssh_timeout"}
+  ],
+  "missing_or_unusable": [
+    {"host":"falcon", "reason":"permission denied"},
+    {"host":"newa100", "reason":"ssh timeout"},
+    {"host":"cb11", "reason":"2080Ti only / low disk"},
+    {"host":"cb10", "reason":"nvidia driver unavailable / low disk"}
+  ]
+}
