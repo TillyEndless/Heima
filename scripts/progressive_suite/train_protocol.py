@@ -53,7 +53,7 @@ def prepare_data():
     tok=tok_only(); rows=load_raw_rows(); random.Random(42).shuffle(rows)
     for r in rows:
         r["cot_chunks"]=split_chunks(tok,r["gold_cot"]); r["q_token_count"]=len(tok(q_prefix(r),add_special_tokens=False)["input_ids"]); r["cot_token_count"]=len(tok(r["gold_cot"],add_special_tokens=False)["input_ids"]); r["answer_token_count"]=len(tok(answer_text(tok,r),add_special_tokens=False)["input_ids"]); r["raw_K"]=max(1,round(0.5*r["cot_token_count"])) if r["cot_token_count"] else 0
-    max_train_tokens=int(os.environ.get("PROGRESSIVE_MAX_SEQUENCE_TOKENS","4096"))
+    max_train_tokens=int(os.environ.get("PROGRESSIVE_MAX_SEQUENCE_TOKENS","1024"))
     filtered=[]; dropped_long=0
     for r in rows:
         if r["q_token_count"] + r["cot_token_count"] + r["answer_token_count"] + 8 <= max_train_tokens:
