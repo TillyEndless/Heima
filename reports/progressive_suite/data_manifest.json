@@ -1,0 +1,57 @@
+{
+  "git_sha": "4c440eb3415ce9c806fcdcc46b134302a4102296",
+  "model_id": "deepseek-ai/DeepSeek-R1-Distill-Qwen-7B",
+  "model_revision": "916b56a44061fd5cd7d6a8fb632557ed4f724f60",
+  "scales": {
+    "D32": {
+      "actual_eval": 32,
+      "actual_train": 32,
+      "requested_eval": 32,
+      "requested_train": 32,
+      "split_hash": "b118f7fe11d55275572aaaa52e8c86d9769ed1ae2d325a3632e5c2f74185fb1f",
+      "split_path": "/data2/zhouxiaoling/latent_cot/Heima-qwen7b-progressive-suite-20260803-171939/runs/progressive_suite/D32/data_split.json",
+      "status": "ok",
+      "usable": true
+    },
+    "S10K": {
+      "actual_eval": 0,
+      "actual_train": 0,
+      "requested_eval": 1000,
+      "requested_train": 10000,
+      "split_hash": "764f688004c4212830219180ed975d0af37fe600e4709d28134b385cd9c3142c",
+      "split_path": "/data2/zhouxiaoling/latent_cot/Heima-qwen7b-progressive-suite-20260803-171939/runs/progressive_suite/S10K/data_split.json",
+      "status": "DATA_INSUFFICIENT",
+      "usable": false
+    },
+    "S2K": {
+      "actual_eval": 0,
+      "actual_train": 0,
+      "requested_eval": 512,
+      "requested_train": 2048,
+      "split_hash": "764f688004c4212830219180ed975d0af37fe600e4709d28134b385cd9c3142c",
+      "split_path": "/data2/zhouxiaoling/latent_cot/Heima-qwen7b-progressive-suite-20260803-171939/runs/progressive_suite/S2K/data_split.json",
+      "status": "DATA_INSUFFICIENT",
+      "usable": false
+    },
+    "S50K": {
+      "actual_eval": 0,
+      "actual_train": 0,
+      "requested_eval": 2000,
+      "requested_train": 50000,
+      "split_hash": "764f688004c4212830219180ed975d0af37fe600e4709d28134b385cd9c3142c",
+      "split_path": "/data2/zhouxiaoling/latent_cot/Heima-qwen7b-progressive-suite-20260803-171939/runs/progressive_suite/S50K/data_split.json",
+      "status": "DATA_INSUFFICIENT",
+      "usable": false
+    }
+  },
+  "source_rows": 1000,
+  "tokens": [
+    "<THINK>",
+    "<THINK_1>",
+    "<THINK_2>",
+    "<THINK_3>",
+    "<THINK_4>",
+    "<THINK_END>",
+    "<ANSWER>"
+  ]
+}
