@@ -1,0 +1,9 @@
+{
+  "decode_nll": 1.3384666442871094,
+  "grad_A_total_detach_control": 423.8322812470159,
+  "grad_A_total_no_detach": 429.72369222707187,
+  "k": 64,
+  "note": "detach control here removes decode gradient to first-forward z but main loss still gives A gradient; full split-gradient audit is deferred.",
+  "sample_id": "1",
+  "status": "pass"
+}
