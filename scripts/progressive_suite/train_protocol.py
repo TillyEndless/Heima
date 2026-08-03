@@ -9,8 +9,16 @@ MODEL_ID="deepseek-ai/DeepSeek-R1-Distill-Qwen-7B"; MODEL_REVISION="916b56a44061
 TOKENS=["<THINK>","<THINK_1>","<THINK_2>","<THINK_3>","<THINK_4>","<THINK_END>","<ANSWER>"]; THINK,THINK_END,ANSWER=TOKENS[0],TOKENS[5],TOKENS[6]
 OUT=REPO/"reports/progressive_suite"; RUNS=REPO/"runs/progressive_suite"; CKPT=REPO/"checkpoints/progressive_suite"; STATUS=REPO/"status/progressive_suite"
 ANSWER_RE=re.compile(r"####\s*([-+]?\d[\d,]*(?:\.\d+)?(?:/\d[\d,]*)?)"); NUM_RE=re.compile(r"[-+]?\d[\d,]*(?:\.\d+)?(?:/\d[\d,]*)?")
-def wj(p,o): p.parent.mkdir(parents=True,exist_ok=True); p.write_text(json.dumps(o,indent=2,ensure_ascii=False,sort_keys=True)+"\n")
-def wjl(p,rows): p.parent.mkdir(parents=True,exist_ok=True); p.write_text("".join(json.dumps(r,ensure_ascii=False,sort_keys=True)+"\n" for r in rows))
+def wj(p,o):
+    p.parent.mkdir(parents=True,exist_ok=True)
+    tmp=p.with_suffix(p.suffix+f".{os.getpid()}.tmp")
+    tmp.write_text(json.dumps(o,indent=2,ensure_ascii=False,sort_keys=True)+"\n")
+    tmp.replace(p)
+def wjl(p,rows):
+    p.parent.mkdir(parents=True,exist_ok=True)
+    tmp=p.with_suffix(p.suffix+f".{os.getpid()}.tmp")
+    tmp.write_text("".join(json.dumps(r,ensure_ascii=False,sort_keys=True)+"\n" for r in rows))
+    tmp.replace(p)
 def stat(name,state,**kw): wj(STATUS/f"{name}.json",dict(time=time.time(),stage=name,status=state,**kw))
 def git_sha():
     try: return subprocess.check_output(["git","rev-parse","HEAD"],cwd=REPO,text=True).strip()
@@ -45,7 +53,15 @@ def prepare_data():
     tok=tok_only(); rows=load_raw_rows(); random.Random(42).shuffle(rows)
     for r in rows:
         r["cot_chunks"]=split_chunks(tok,r["gold_cot"]); r["q_token_count"]=len(tok(q_prefix(r),add_special_tokens=False)["input_ids"]); r["cot_token_count"]=len(tok(r["gold_cot"],add_special_tokens=False)["input_ids"]); r["answer_token_count"]=len(tok(answer_text(tok,r),add_special_tokens=False)["input_ids"]); r["raw_K"]=max(1,round(0.5*r["cot_token_count"])) if r["cot_token_count"] else 0
-    scales={"D32":(32,32),"S2K":(2048,512),"S10K":(10000,1000),"S50K":(50000,2000)}; manifest={"source_rows":len(rows),"model_id":MODEL_ID,"model_revision":MODEL_REVISION,"git_sha":git_sha(),"tokens":TOKENS,"scales":{}}
+    max_train_tokens=int(os.environ.get("PROGRESSIVE_MAX_SEQUENCE_TOKENS","4096"))
+    filtered=[]; dropped_long=0
+    for r in rows:
+        if r["q_token_count"] + r["cot_token_count"] + r["answer_token_count"] + 8 <= max_train_tokens:
+            filtered.append(r)
+        else:
+            dropped_long += 1
+    rows=filtered
+    scales={"D32":(32,32),"S2K":(2048,512),"S10K":(10000,1000),"S50K":(50000,2000)}; manifest={"source_rows":len(load_raw_rows()),"filtered_rows":len(rows),"dropped_too_long":dropped_long,"max_sequence_tokens":max_train_tokens,"model_id":MODEL_ID,"model_revision":MODEL_REVISION,"git_sha":git_sha(),"tokens":TOKENS,"scales":{}}
     for s,(tr,ev) in scales.items():
         ok=len(rows)>=tr+ev; train=rows[:tr] if ok else (rows[:32] if s=="D32" and len(rows)>=32 else []); eval_=rows[tr:tr+ev] if ok else (rows[:32] if s=="D32" and len(rows)>=32 else [])
         path=RUNS/f"{s}/data_split.json"; wj(path,{"train":train,"eval":eval_})

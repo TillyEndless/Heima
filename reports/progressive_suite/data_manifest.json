@@ -1,5 +1,8 @@
 {
-  "git_sha": "4c440eb3415ce9c806fcdcc46b134302a4102296",
+  "dropped_too_long": 124,
+  "filtered_rows": 876,
+  "git_sha": "cc5af7aec75825729a0af1ac996fb27512f90325",
+  "max_sequence_tokens": 4096,
   "model_id": "deepseek-ai/DeepSeek-R1-Distill-Qwen-7B",
   "model_revision": "916b56a44061fd5cd7d6a8fb632557ed4f724f60",
   "scales": {
@@ -8,7 +11,7 @@
       "actual_train": 32,
       "requested_eval": 32,
       "requested_train": 32,
-      "split_hash": "b118f7fe11d55275572aaaa52e8c86d9769ed1ae2d325a3632e5c2f74185fb1f",
+      "split_hash": "300a5858b8230a87bbcfb9a97d6805b0f17acf51a432ace7cdc801ae3ebf38cd",
       "split_path": "/data2/zhouxiaoling/latent_cot/Heima-qwen7b-progressive-suite-20260803-171939/runs/progressive_suite/D32/data_split.json",
       "status": "ok",
       "usable": true
