@@ -1,0 +1,1 @@
+{"branch":"exp/stage2-overnight-20260804-002656","commit":"3f4ce2398a6eda320c059293a00d0e978ebd5053","gpu0_queue":"configs/stage2_overnight/gpu0_queue.csv","gpu1_queue":"configs/stage2_overnight/gpu1_queue.csv","note":"D32 Stage2 queue launched; S2K/S10K not launched because current worktree only has debug32 manifest locally."}

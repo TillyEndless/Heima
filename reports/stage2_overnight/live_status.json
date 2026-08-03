@@ -1,0 +1,37 @@
+{
+  "gpu": "0, NVIDIA H200 NVL, 27797, 143771, 0\n1, NVIDIA H200 NVL, 28831, 143771, 0",
+  "logs": "logs/stage2_overnight/worker_gpu{0,1}.log",
+  "processes": "1618595 tmux new-session -d -s progressive_gpu0 cd \"/data2/zhouxiaoling/latent_cot/Heima-qwen7b-progressive-suite-20260803-171939\" && REPO_ROOT=\"/data2/zhouxiaoling/latent_cot/Heima-qwen7b-progressive-suite-20260803-171939\" bash scripts/progressive_suite/gpu_worker.sh 0 configs/progressive_suite/gpu0_queue.csv\n1898461 bash scripts/stage2_overnight/gpu_worker.sh 0 configs/stage2_overnight/gpu0_queue.csv\n1898464 bash scripts/stage2_overnight/gpu_worker.sh 1 configs/stage2_overnight/gpu1_queue.csv\n1898469 bash -c cd \"/data2/zhouxiaoling/latent_cot/Heima-qwen7b-stage2-overnight-20260804-002656\" && while true; do /data2/zhouxiaoling/envs/latentcot/bin/python scripts/stage2_overnight/stage2_runner.py gpt2-audit; sleep 3600; done\n1898504 /data2/zhouxiaoling/envs/latentcot/bin/python scripts/stage2_overnight/stage2_runner.py train --job D32_A0_M0_475_CONT --mode M0 --adapter-kind o3_475 --steps 300 --lambda-decode 0.0\n1898508 /data2/zhouxiaoling/envs/latentcot/bin/python scripts/stage2_overnight/stage2_runner.py train --job D32_B0_M1_JOINT_LAMBDA0p1 --mode M1 --adapter-kind none --steps 800 --lambda-decode 0.1\n1904874 /bin/sh -c pgrep -af 'stage2_runner.py train|gpu_worker.sh|stage2_runner.py gpt2-audit|stage2_monitor' || true",
+  "statuses": {
+    "D32_A0_M0_475_CONT.json": {
+      "stage": "D32_A0_M0_475_CONT",
+      "status": "running",
+      "step": 20,
+      "time": 1785775523.4211226,
+      "total_loss": 0.11755218356847763
+    },
+    "D32_B0_M1_JOINT_LAMBDA0p1.json": {
+      "stage": "D32_B0_M1_JOINT_LAMBDA0p1",
+      "status": "running",
+      "step": 20,
+      "time": 1785775524.9540484,
+      "total_loss": 12.582513809204102
+    },
+    "gradient_smoke.json": {
+      "stage": "gradient_smoke",
+      "status": "running",
+      "time": 1785775096.8167002
+    },
+    "gradient_smoke_result": {
+      "decode_nll": 1.3384666442871094,
+      "grad_A_total_detach_control": 423.8322812470159,
+      "grad_A_total_no_detach": 429.72369222707187,
+      "k": 64,
+      "note": "detach control here removes decode gradient to first-forward z but main loss still gives A gradient; full split-gradient audit is deferred.",
+      "sample_id": "1",
+      "status": "pass"
+    }
+  },
+  "task_registry": "reports/stage2_overnight/task_registry.json",
+  "time": "2026-08-04T00:51:04+0800"
+}
