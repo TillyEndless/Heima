@@ -1,0 +1,26 @@
+{
+  "generated_at": 1785724474.8599985,
+  "branch": "exp/teacher-five-points-validation-20260803",
+  "servers": [
+    {
+      "role": "4090",
+      "host": "4090",
+      "hostname": "706124b042cd",
+      "status": "reachable_all_gpus_busy",
+      "gpus": 8,
+      "worktree": "/data/zxl/Heima-qwen7b-teacher-validation-20260803"
+    },
+    {
+      "role": "a100",
+      "host": "10.71.106.248:20024",
+      "status": "unreachable_connection_closed_or_timeout",
+      "gpus": 1
+    }
+  ],
+  "missing_host_report": [
+    {
+      "host": "10.71.106.248:20024",
+      "reason": "SSH probes failed: connection closed / timed out during banner exchange"
+    }
+  ]
+}

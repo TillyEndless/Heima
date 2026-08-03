@@ -1,0 +1,6 @@
+[
+  {
+    "host": "10.71.106.248:20024",
+    "reason": "SSH probes failed: connection closed / timed out during banner exchange"
+  }
+]

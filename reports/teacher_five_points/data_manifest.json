@@ -1,0 +1,26 @@
+{
+  "D32": {
+    "available": true,
+    "path": "data/manifests/stage1_debug32_no_truncation.json",
+    "count": 32,
+    "sample_ids": [
+      "1",
+      "12",
+      "29",
+      "47",
+      "54"
+    ]
+  },
+  "S2K": {
+    "available": false,
+    "reason": "AM-DeepSeek-R1-Distilled-1.4M source/split not found on 4090 worktree"
+  },
+  "S10K": {
+    "available": false,
+    "reason": "AM source/split not found"
+  },
+  "S50K": {
+    "available": false,
+    "reason": "AM source/split not found"
+  }
+}
