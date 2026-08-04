@@ -10,11 +10,11 @@ MODEL_ID='deepseek-ai/DeepSeek-R1-Distill-Qwen-7B'
 MODEL_REVISION='916b56a44061fd5cd7d6a8fb632557ed4f724f60'
 THINK='<THINK>'; THINK_END='<THINK_END>'; ANSWER='<ANSWER>'
 TOKENS=[THINK,THINK_END,ANSWER]
-MANIFEST=REPO/'data/manifests/stage1_debug32_no_truncation.json'
+MANIFEST=Path(os.environ.get('STAGE2_MANIFEST', str(REPO/'data/manifests/stage1_debug32_no_truncation.json')))
 OUT=REPO/'reports/stage2_overnight'; LOGS=REPO/'logs/stage2_overnight'; RUNS=REPO/'runs/stage2_overnight'; STATUS=REPO/'status/stage2_overnight'; CKPT=REPO/'checkpoints/stage2_overnight'
 O3_CKPT=Path(os.environ.get('O3_CKPT_ROOT','/data2/zhouxiaoling/latent_cot/Heima-qwen7b-stage-validity-pilot/checkpoints/stage1_boundary_o3_dynamic'))
 ANSWER_RE=re.compile(r'####\s*([-+]?\d[\d,]*(?:\.\d+)?(?:/\d[\d,]*)?)'); NUM_RE=re.compile(r'[-+]?\d[\d,]*(?:\.\d+)?(?:/\d[\d,]*)?'); CHOICE_RE=re.compile(r'\b([A-E])\b', re.I)
-SEED=42; LR=2e-5; EVAL_EVERY=25; STAGE2_MAX_K=int(os.environ.get('STAGE2_MAX_K','64'))
+SEED=42; LR=float(os.environ.get('STAGE2_LR','2e-5')); EVAL_EVERY=int(os.environ.get('STAGE2_EVAL_EVERY','100')); STAGE2_MAX_K=int(os.environ.get('STAGE2_MAX_K','64')); STAGE2_EVAL_N=int(os.environ.get('STAGE2_EVAL_N','64')); STAGE2_SAVE_BEST=os.environ.get('STAGE2_SAVE_BEST','0')=='1'; STAGE2_SAVE_FINAL=os.environ.get('STAGE2_SAVE_FINAL','1')=='1'
 
 def atomic_json(p:Path,o:Any):
     p.parent.mkdir(parents=True,exist_ok=True); tmp=p.with_suffix(p.suffix+f'.{os.getpid()}.tmp'); tmp.write_text(json.dumps(o,indent=2,ensure_ascii=False,sort_keys=True)+'\n'); tmp.replace(p)
@@ -72,15 +72,15 @@ def load_model(adapter:Path|None=None, train=True):
     return torch,tok,model
 
 def ids_for(tok,r,k_cap:int|None=None):
-    q=tok(q_prefix(r),add_special_tokens=False)['input_ids']; raw_k=int(r['raw_K']); k=min(raw_k,k_cap) if k_cap else raw_k; ans=tok(answer_text(tok,r),add_special_tokens=False)['input_ids']
-    return q,k,ans
+    q=tok(q_prefix(r),add_special_tokens=False)['input_ids']; raw_k=int(r.get('raw_K') or r.get('latent_count') or max(1, round(float(r.get('cot_token_count') or 2)*float(r.get('latent_ratio') or 0.5)))); k=min(raw_k,k_cap) if k_cap else raw_k; ans=tok(answer_text(tok,r),add_special_tokens=False)['input_ids']
+    return q,k,ans,raw_k
 
 def make_main_batch(torch,tok,rs,k_cap:int|None=None):
     think_id,end_id,answer_id=[tok.convert_tokens_to_ids(x) for x in TOKENS]
     rows_ids=[]; rows_lab=[]; segs=[]; metas=[]
     for r in rs:
-        q,k,ans=ids_for(tok,r,k_cap); ids=q+[think_id]*k+[end_id,answer_id]+ans; labs=[-100]*len(q)+[think_id]*k+[end_id,answer_id]+ans; seg=['question']*len(q)+['think']*k+['boundary_end','boundary_answer']+['answer']*len(ans)
-        rows_ids.append(ids); rows_lab.append(labs); segs.append(seg); metas.append(dict(sample_id=r['sample_id'],q_len=len(q),k=k,raw_K=int(r['raw_K']),answer_ids=ans,prefix_d1=q+[think_id]*k+[end_id,answer_id],prefix_d2=q+[think_id]*k,boundary_ids=[end_id,answer_id],full_target_ids=[end_id,answer_id]+ans))
+        q,k,ans,raw_k=ids_for(tok,r,k_cap); ids=q+[think_id]*k+[end_id,answer_id]+ans; labs=[-100]*len(q)+[think_id]*k+[end_id,answer_id]+ans; seg=['question']*len(q)+['think']*k+['boundary_end','boundary_answer']+['answer']*len(ans)
+        rows_ids.append(ids); rows_lab.append(labs); segs.append(seg); metas.append(dict(sample_id=r.get('sample_id'),q_len=len(q),k=k,raw_K=raw_k,answer_ids=ans,prefix_d1=q+[think_id]*k+[end_id,answer_id],prefix_d2=q+[think_id]*k,boundary_ids=[end_id,answer_id],full_target_ids=[end_id,answer_id]+ans))
     mx=max(map(len,rows_ids)); pad=tok.pad_token_id or tok.eos_token_id
     input_ids=torch.full((len(rs),mx),pad,dtype=torch.long,device='cuda:0'); labels=torch.full_like(input_ids,-100); attn=torch.zeros_like(input_ids)
     for i,ids in enumerate(rows_ids): input_ids[i,:len(ids)]=torch.tensor(ids,device='cuda:0'); labels[i,:len(ids)]=torch.tensor(rows_lab[i],device='cuda:0'); attn[i,:len(ids)]=1; segs[i]+=['pad']*(mx-len(ids))
@@ -152,6 +152,22 @@ def gradient_smoke():
     out=dict(status='pass' if grad>0 and grad_det>0 else 'fail',grad_A_total_no_detach=grad,grad_A_total_detach_control=grad_det,note='detach control here removes decode gradient to first-forward z but main loss still gives A gradient; full split-gradient audit is deferred.',sample_id=r['sample_id'],k=rec['k'],decode_nll=rec.get('decode_nll'))
     atomic_json(OUT/'stage2_gradient_smoke.json',out); status(name,out['status'],result=out); del model; gc.collect(); torch.cuda.empty_cache(); return 0 if out['status']=='pass' else 1
 
+def save_with_lock(model,tok,out_dir:Path,tokenizer_dir:Path):
+    lock=CKPT/'checkpoint_save.lock'
+    while True:
+        try:
+            lock.mkdir(parents=True,exist_ok=False)
+            break
+        except FileExistsError:
+            time.sleep(30)
+    try:
+        out_dir.mkdir(parents=True,exist_ok=True)
+        model.save_pretrained(out_dir)
+        tok.save_pretrained(tokenizer_dir)
+    finally:
+        try: lock.rmdir()
+        except OSError: pass
+
 def train_job(job,mode,adapter_kind='none',steps=300,lambda_decode=0.1):
     status(job,'running',step=0); adapter=None
     if adapter_kind=='o3_475': adapter=O3_CKPT/'best_adapter'
@@ -163,10 +179,15 @@ def train_job(job,mode,adapter_kind='none',steps=300,lambda_decode=0.1):
             r=rs[(step-1)%len(rs)]; rec=forward_losses(torch,tok,model,r,mode,lambda_decode,False); loss=rec.pop('total_loss_tensor'); loss.backward(); torch.nn.utils.clip_grad_norm_(params,1.0); opt.step(); opt.zero_grad(set_to_none=True); rec.update(step=step,sample_id=r['sample_id']); logs.append(rec)
             if step%10==0: atomic_jsonl(OUT/f'{job}_train.partial.jsonl',logs); status(job,'running',step=step,total_loss=rec['total_loss_value'])
             if step%EVAL_EVERY==0:
-                ev=eval_model(torch,tok,model,rs,job,STAGE2_MAX_K if mode in ['M1','M2'] else None); ev['step']=step; evals.append(ev); score=(ev['D2_type_aware'],ev['D1_type_aware'])
-                if score>best: best=score; best_dir.mkdir(parents=True,exist_ok=True); model.save_pretrained(best_dir); tok.save_pretrained(CKPT/job/'tokenizer')
-        final_dir.mkdir(parents=True,exist_ok=True); model.save_pretrained(final_dir); tok.save_pretrained(CKPT/job/'tokenizer'); fev=eval_model(torch,tok,model,rs,job,STAGE2_MAX_K if mode in ['M1','M2'] else None)
-        rep=dict(job=job,mode=mode,adapter_kind=adapter_kind,lambda_decode=lambda_decode,steps=steps,status='complete',runtime_seconds=time.perf_counter()-t0,best_score=best,evals=evals,final_eval=fev,best_checkpoint=str(best_dir),final_checkpoint=str(final_dir),stage2_max_k=STAGE2_MAX_K,exploratory=True,peak_gpu_memory=int(torch.cuda.max_memory_allocated()))
+                ev=eval_model(torch,tok,model,rs[:STAGE2_EVAL_N],job,STAGE2_MAX_K if mode in ['M1','M2'] else None); ev['step']=step; evals.append(ev); score=(ev['D2_type_aware'],ev['D1_type_aware'])
+                if score>best:
+                    best=score
+                    if STAGE2_SAVE_BEST:
+                        save_with_lock(model,tok,best_dir,CKPT/job/'tokenizer')
+        if STAGE2_SAVE_FINAL:
+            save_with_lock(model,tok,final_dir,CKPT/job/'tokenizer')
+        fev=eval_model(torch,tok,model,rs[:STAGE2_EVAL_N],job,STAGE2_MAX_K if mode in ['M1','M2'] else None)
+        rep=dict(job=job,mode=mode,adapter_kind=adapter_kind,lambda_decode=lambda_decode,steps=steps,status='complete',runtime_seconds=time.perf_counter()-t0,best_score=best,evals=evals,final_eval=fev,best_checkpoint=str(best_dir),final_checkpoint=str(final_dir),stage2_max_k=STAGE2_MAX_K,eval_n=STAGE2_EVAL_N,save_best=STAGE2_SAVE_BEST,save_final=STAGE2_SAVE_FINAL,manifest=str(MANIFEST),exploratory=True,peak_gpu_memory=int(torch.cuda.max_memory_allocated()))
         atomic_json(OUT/f'{job}.json',rep); atomic_jsonl(OUT/f'{job}_train.jsonl',logs); status(job,'complete',step=steps,best_score=best); rc=0
     except Exception as e:
         atomic_json(OUT/f'{job}_failure.json',dict(job=job,status='failed',reason=repr(e),traceback=traceback.format_exc())); status(job,'failed',reason=repr(e)); rc=1

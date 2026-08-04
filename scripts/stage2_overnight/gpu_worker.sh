@@ -7,7 +7,8 @@ LOG="logs/stage2_overnight/worker_gpu${GPU}.log"; FAIL="reports/stage2_overnight
 echo "[$(date -Is)] worker start gpu=$GPU queue=$QUEUE" | tee -a "$LOG"
 while IFS=, read -r job mode adapter steps lambda; do
   [[ -z "${job:-}" || "$job" = job ]] && continue
-  while true; do used=$(nvidia-smi --id="$GPU" --query-gpu=memory.used --format=csv,noheader,nounits | tr -d ' '); [[ "$used" -lt "${GPU_IDLE_MEM_MB:-20000}" ]] && break; echo "[$(date -Is)] gpu=$GPU busy used=${used}MiB" | tee -a "$LOG"; sleep 60; done
+  if [[ -f "status/stage2_overnight/${job}.json" ]] && grep -q '"status": "complete"' "status/stage2_overnight/${job}.json"; then echo "[$(date -Is)] skip completed $job" | tee -a "$LOG"; continue; fi
+  while true; do used=$(nvidia-smi --id="$GPU" --query-gpu=memory.used --format=csv,noheader,nounits | tr -d ' '); [[ "$used" -lt "${GPU_IDLE_MEM_MB:-20000}" ]] && break; echo "[$(date -Is)] gpu=$GPU busy used=${used}MiB" | tee -a "$LOG"; sleep ${GPU_POLL_SECONDS:-120}; done
   export CUDA_VISIBLE_DEVICES="$GPU" REPO_ROOT="$REPO_ROOT"
   echo "[$(date -Is)] start $job mode=$mode adapter=$adapter steps=$steps lambda=$lambda" | tee -a "$LOG"
   set +e; "$PY" scripts/stage2_overnight/stage2_runner.py train --job "$job" --mode "$mode" --adapter-kind "$adapter" --steps "$steps" --lambda-decode "$lambda" >> "$LOG" 2>&1; rc=$?; set -e
