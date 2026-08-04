@@ -29,7 +29,9 @@ def sha256_file(p:Path):
     with p.open('rb') as f:
         for b in iter(lambda:f.read(1024*1024),b''): h.update(b)
     return h.hexdigest()
-def rows(): return json.loads(MANIFEST.read_text())['samples']
+def rows():
+    obj=json.loads(MANIFEST.read_text())
+    return obj['samples'] if isinstance(obj,dict) and 'samples' in obj else obj
 def q_prefix(r): return 'Question:\n'+r['question']+'\n\n'
 def answer_text(tok,r): return r['answer']+tok.eos_token
 def cot_text(tok,r): return (r.get('gold_cot') or r.get('cot') or '').strip()+tok.eos_token
