@@ -692,6 +692,8 @@ def run_stage1(args):
     t0 = now()
     checkpoint_steps = {250, 500, 1000, 2000, 5000, 10000, 15000, 20000, 25000, 30000}
     stop_after_30k = False
+    gate_passed = False
+    gate_checkpoint = None
     for step in range(1, args.stage1_steps + 1):
         r = train[(step - 1) % len(train)]
         torch.cuda.reset_peak_memory_stats()
@@ -732,6 +734,8 @@ def run_stage1(args):
             k_ratio = ga.get("generated_THINK_over_target_K_mean") or 0.0
             k_ok = 0.7 <= k_ratio <= 1.4
             if step >= 5000 and start_ok and end_ok and answer_ok and k_ok:
+                gate_passed = True
+                gate_checkpoint = ckpt
                 write_json(status, {"status": "stage1_gate_passed", "step": step, "generation_protocol": ga, "checkpoint": ckpt})
                 break
             if step == 30000 and not (start_ok and end_ok and answer_ok and k_ok):
@@ -739,7 +743,8 @@ def run_stage1(args):
                 write_json(status, {"status": "stopped_at_30k_protocol_fail", "reason": "START/END/ANSWER/K gate failed", "step": step, "generation_protocol": ga})
                 break
     final = save_checkpoint(run, model, projector, tok, "stage1_final", step)
-    write_json(status, {"status": "stage1_complete" if not stop_after_30k else "stage1_stopped_after_gate", "step": step, "final_checkpoint": final, "elapsed": now() - t0})
+    final_status = "stage1_gate_passed" if gate_passed else ("stage1_stopped_after_gate" if stop_after_30k else "stage1_complete")
+    write_json(status, {"status": final_status, "step": step, "final_checkpoint": final, "gate_checkpoint": gate_checkpoint, "elapsed": now() - t0})
 
 
 def run_stage2(args):
