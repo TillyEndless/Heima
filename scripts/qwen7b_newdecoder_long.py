@@ -754,11 +754,13 @@ def run_stage2(args):
     run.mkdir(parents=True, exist_ok=True)
     train, eval_rows, data_meta = load_split(Path(args.manifest))
     stage1_ckpt = Path(args.stage1_ckpt) if args.stage1_ckpt else run / "checkpoints" / "stage1_final"
-    adapter_path = stage1_ckpt / "adapter"
-    projector_path = stage1_ckpt / "projector.pt"
+    resume_ckpt = Path(args.resume_ckpt) if args.resume_ckpt else None
+    init_ckpt = resume_ckpt or stage1_ckpt
+    adapter_path = init_ckpt / "adapter"
+    projector_path = init_ckpt / "projector.pt"
     tokenizer_path = run / "checkpoints" / "tokenizer"
     if not adapter_path.exists() or not projector_path.exists():
-        raise FileNotFoundError(f"Stage2 requires Stage1 adapter/projector: {stage1_ckpt}")
+        raise FileNotFoundError(f"Stage2 requires adapter/projector: {init_ckpt}")
     tok, model, projector = load_model_and_projector(True, adapter_path=adapter_path, tokenizer_path=tokenizer_path, projector_path=projector_path)
     torch.manual_seed(SEED); torch.cuda.manual_seed_all(SEED)
     params = [p for p in model.parameters() if p.requires_grad]
@@ -770,6 +772,8 @@ def run_stage2(args):
         "commit": git_sha(repo),
         "manifest": str(args.manifest),
         "stage1_checkpoint": str(stage1_ckpt),
+        "resume_checkpoint": str(resume_ckpt) if resume_ckpt else None,
+        "resume_step": args.resume_step,
         "data_meta": data_meta,
         "seed": SEED,
         "model": MODEL_ID,
@@ -790,8 +794,9 @@ def run_stage2(args):
     log = run / "stage2_train.jsonl"
     status = run / "status.json"
     t0 = now()
-    checkpoint_steps = {1000, 5000, 10000, 15000, 20000, 25000, 30000, 35000, 40000, 45000}
-    for step in range(1, args.stage2_steps + 1):
+    checkpoint_steps = {1000, 2000, 5000, 10000, 15000, 20000, 25000, 30000, 35000, 40000, 45000}
+    start_step = int(args.resume_step) + 1 if args.resume_step else 1
+    for step in range(start_step, args.stage2_steps + 1):
         r = train[(step - 1) % len(train)]
         torch.cuda.reset_peak_memory_stats()
         s0 = now()
@@ -841,6 +846,8 @@ def main():
     ap.add_argument("--stage1-steps", type=int, default=25000)
     ap.add_argument("--stage2-steps", type=int, default=35000)
     ap.add_argument("--stage1-ckpt", default="")
+    ap.add_argument("--resume-ckpt", default="")
+    ap.add_argument("--resume-step", type=int, default=0)
     ap.add_argument("--eval-n", type=int, default=64)
     ap.add_argument("--gen-audit-n", type=int, default=32)
     args = ap.parse_args()
