@@ -534,6 +534,7 @@ def run_audit_smoke(args):
     if len(smoke) >= 20:
         report["smoke_decode_loss_first10_mean"] = sum(x["L_decode"] for x in smoke[:10]) / 10
         report["smoke_decode_loss_last10_mean"] = sum(x["L_decode"] for x in smoke[-10:]) / 10
+    report["free_generation_smoke"] = generation_protocol_audit(tok, model, eval_rows, n=min(args.gen_audit_n, 16))
     report["passed"] = bool(passed and all(math.isfinite(x["loss_total"]) for x in smoke))
     write_json(audit_dir / "pretrain_audit_smoke.json", report)
     print(json.dumps(report, indent=2, ensure_ascii=False))
