@@ -272,7 +272,8 @@ def forward_components(tok, model, projector, row: dict, need_hidden: bool = Tru
     if need_hidden:
         hidden = out.hidden_states[-1]
         z = hidden[:, meta["think_positions"], :]
-        z.retain_grad()
+        if z.requires_grad:
+            z.retain_grad()
         dseq, dmeta = decoder_sequence(tok, row, meta["k"])
         decoder_ids = torch.tensor([dseq], dtype=torch.long, device="cuda")
         decoder_attn = torch.ones_like(decoder_ids)
