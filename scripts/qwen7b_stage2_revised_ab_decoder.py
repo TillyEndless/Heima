@@ -50,7 +50,29 @@ def tokenizer_for_ckpt(stage1_ckpt: Path) -> Path:
     return stage1_ckpt.parent / "tokenizer"
 
 
-def load_a_b(stage1_ckpt: Path, trainable: bool = True):
+def load_one_model(tok, adapter: Path, projector_path: Path, trainable: bool, device: str):
+    model = base.AutoModelForCausalLM.from_pretrained(
+        base.MODEL_ID,
+        revision=base.MODEL_REVISION,
+        cache_dir=base.HF_HOME,
+        torch_dtype=torch.bfloat16,
+        trust_remote_code=True,
+        local_files_only=True,
+    )
+    model.resize_token_embeddings(len(tok))
+    model.config.use_cache = False
+    if hasattr(model, "gradient_checkpointing_enable"):
+        model.gradient_checkpointing_enable()
+    model = base.PeftModel.from_pretrained(model, str(adapter), is_trainable=trainable)
+    model.to(device)
+    hidden = int(model.config.hidden_size)
+    projector = base.IdentityLinearProjector(hidden).to(device, dtype=torch.bfloat16)
+    if projector_path.exists():
+        projector.load_state_dict(torch.load(str(projector_path), map_location=device))
+    return model, projector
+
+
+def load_a_b(stage1_ckpt: Path, trainable: bool = True, device_a: str = "cuda", device_b: str | None = None):
     tok_path = tokenizer_for_ckpt(stage1_ckpt)
     adapter = stage1_ckpt / "adapter"
     projector = stage1_ckpt / "projector.pt"
@@ -58,8 +80,10 @@ def load_a_b(stage1_ckpt: Path, trainable: bool = True):
         raise FileNotFoundError(adapter)
     if not tok_path.exists():
         raise FileNotFoundError(tok_path)
-    tok, model_a, projector_a = base.load_model_and_projector(trainable, adapter_path=adapter, tokenizer_path=tok_path, projector_path=projector)
-    _, model_b, _ = base.load_model_and_projector(trainable, adapter_path=adapter, tokenizer_path=tok_path, projector_path=projector)
+    device_b = device_b or device_a
+    tok = base.load_tokenizer(tok_path)
+    model_a, projector_a = load_one_model(tok, adapter, projector, trainable, device_a)
+    model_b, _ = load_one_model(tok, adapter, projector, trainable, device_b)
     return tok, model_a, model_b, projector_a
 
 
@@ -170,9 +194,15 @@ def ce_by_positions_chunked(logits: torch.Tensor, input_ids: torch.Tensor, activ
     return total_loss / max(total_count, 1), total_correct / max(total_count, 1), total_count
 
 
+def model_device(model) -> torch.device:
+    return next(model.parameters()).device
+
+
 def forward_revised(tok, model_a, model_b, row: dict, detach_z: bool = False):
+    device_a = model_device(model_a)
+    device_b = model_device(model_b)
     seq, meta = base.main_sequence(tok, row)
-    input_ids = torch.tensor([seq], dtype=torch.long, device="cuda")
+    input_ids = torch.tensor([seq], dtype=torch.long, device=device_a)
     attn = torch.ones_like(input_ids)
     out, hidden, hidden_hook_path = forward_with_final_hidden(model_a, input_ids, attn)
 
@@ -194,11 +224,11 @@ def forward_revised(tok, model_a, model_b, row: dict, detach_z: bool = False):
         z_for_b.retain_grad()
 
     dseq, dmeta = base.decoder_sequence(tok, row, meta["k"])
-    decoder_ids = torch.tensor([dseq], dtype=torch.long, device="cuda")
+    decoder_ids = torch.tensor([dseq], dtype=torch.long, device=device_b)
     decoder_attn = torch.ones_like(decoder_ids)
     embeds = model_b.get_input_embeddings()(decoder_ids)
     embeds = embeds.clone()
-    embeds[:, dmeta["placeholder_positions"], :] = z_for_b.to(dtype=embeds.dtype)
+    embeds[:, dmeta["placeholder_positions"], :] = z_for_b.to(device=device_b, dtype=embeds.dtype)
     dout = model_b(inputs_embeds=embeds, attention_mask=decoder_attn, use_cache=False)
     decode_loss, decode_acc, decode_count = ce_by_positions_chunked(dout.logits, decoder_ids, dmeta["decode_label_positions"], chunk_size=8)
 
@@ -246,7 +276,8 @@ def forward_revised(tok, model_a, model_b, row: dict, detach_z: bool = False):
 
 
 def total_loss(c: dict) -> torch.Tensor:
-    return stage1_total_loss(c) + LAMBDA_DECODE * c["decode"]["loss"]
+    main = stage1_total_loss(c)
+    return main + LAMBDA_DECODE * c["decode"]["loss"].to(main.device)
 
 
 def save_checkpoint(run: Path, model_a, model_b, tok, name: str, step: int) -> str:
@@ -297,7 +328,7 @@ def grad_sanity(args):
     audit_dir = run / "audit"
     train, _, data_meta = base.load_split(Path(args.manifest))
     stage1_ckpt = Path(args.stage1_ckpt)
-    tok, model_a, model_b, _ = load_a_b(stage1_ckpt, trainable=True)
+    tok, model_a, model_b, _ = load_a_b(stage1_ckpt, trainable=True, device_a=args.device_a, device_b=args.device_b)
     row = train[0]
     a_params = trainable_params(model_a)
     b_params = trainable_params(model_b)
@@ -356,7 +387,7 @@ def run_stage2(args):
     run.mkdir(parents=True, exist_ok=True)
     train, eval_rows, data_meta = base.load_split(Path(args.manifest))
     stage1_ckpt = Path(args.stage1_ckpt)
-    tok, model_a, model_b, _ = load_a_b(stage1_ckpt, trainable=True)
+    tok, model_a, model_b, _ = load_a_b(stage1_ckpt, trainable=True, device_a=args.device_a, device_b=args.device_b)
     torch.manual_seed(SEED); torch.cuda.manual_seed_all(SEED)
     a_params = trainable_params(model_a)
     b_params = trainable_params(model_b)
@@ -393,7 +424,9 @@ def run_stage2(args):
     t0 = now()
     for step in range(1, args.stage2_steps + 1):
         r = train[(step - 1) % len(train)]
-        torch.cuda.reset_peak_memory_stats()
+        for dev in {model_device(model_a), model_device(model_b)}:
+            if dev.type == "cuda":
+                torch.cuda.reset_peak_memory_stats(dev)
         s0 = now()
         model_a.zero_grad(set_to_none=True); model_b.zero_grad(set_to_none=True)
         c = forward_revised(tok, model_a, model_b, r, detach_z=False)
@@ -412,7 +445,8 @@ def run_stage2(args):
             "z_grad_norm_after_backward": float(c["z"].grad.detach().float().norm().cpu()) if c["z"].grad is not None else 0.0,
             "step_runtime": now() - s0,
             "elapsed": now() - t0,
-            "peak_gb": torch.cuda.max_memory_allocated() / 1024**3,
+            "peak_gb_A": torch.cuda.max_memory_allocated(model_device(model_a)) / 1024**3 if model_device(model_a).type == "cuda" else None,
+            "peak_gb_B": torch.cuda.max_memory_allocated(model_device(model_b)) / 1024**3 if model_device(model_b).type == "cuda" else None,
         }
         if step == 1 or step % 500 == 0:
             rec["grad_norm_A"] = grad_norm(a_params)
@@ -442,6 +476,8 @@ def main():
     ap.add_argument("--stage2-steps", type=int, default=25000)
     ap.add_argument("--eval-n", type=int, default=64)
     ap.add_argument("--gen-audit-n", type=int, default=32)
+    ap.add_argument("--device-a", default="cuda:0")
+    ap.add_argument("--device-b", default=None)
     args = ap.parse_args()
     os.environ.setdefault("TRANSFORMERS_OFFLINE", "1")
     os.environ.setdefault("HF_HUB_OFFLINE", "1")
