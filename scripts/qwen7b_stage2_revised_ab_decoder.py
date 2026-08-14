@@ -17,8 +17,8 @@ import qwen7b_stage1_r64_lr5_gate_sweep as base
 LR = base.LR
 SEED = base.SEED
 LAMBDA_DECODE = 1.0
-DEFAULT_STAGE1_50K = "/data2/zhouxiaoling/latent_cot/runs/QWEN7B_90K_NOCAP_THINKSTART_LALL1_R64_LR5e-5_STAGE1_GATE_5K_10K_25K_50K_90K_NOSTOP_20260811/checkpoints/stage1_step50000"
-DEFAULT_RUN = "/data2/zhouxiaoling/latent_cot/runs/QWEN7B_90K_NOCAP_THINKSTART_LALL1_R64_LR5e-5_REVISED_AB_DECODER_FROM_S1_50K_S2_25K_20260813"
+DEFAULT_STAGE1_50K = "/data2/zhouxiaoling/latent_cot/runs/AM_DEEPSEEK_QWEN7B_R64_LR5e-5_STAGE1_GATE_5K_10K_25K_50K_90K/checkpoints/stage1_step50000"
+DEFAULT_RUN = "/data2/zhouxiaoling/latent_cot/runs/AM_DEEPSEEK_QWEN7B_R64_LR5e-5_REVISED_AB_DECODER_FROM_S1_50K_S2_25K"
 
 
 def now() -> float:
@@ -50,6 +50,19 @@ def tokenizer_for_ckpt(stage1_ckpt: Path) -> Path:
     return stage1_ckpt.parent / "tokenizer"
 
 
+def assert_am_stage1_checkpoint(stage1_ckpt: Path) -> None:
+    config_path = stage1_ckpt.parents[1] / "config.json"
+    if not config_path.exists():
+        raise FileNotFoundError(
+            f"Missing Stage1 run config for strict AM-only Stage2: {config_path}. "
+            "Do not use legacy checkpoints without data provenance."
+        )
+    cfg = json.loads(config_path.read_text())
+    data_meta = cfg.get("data_meta") or {}
+    manifest = str(cfg.get("manifest") or "")
+    base.assert_am_text_manifest(Path(manifest or base.DEFAULT_MANIFEST), [], [], data_meta)
+
+
 def load_one_model(tok, adapter: Path, projector_path: Path, trainable: bool, device: str):
     model = base.AutoModelForCausalLM.from_pretrained(
         base.MODEL_ID,
@@ -73,6 +86,7 @@ def load_one_model(tok, adapter: Path, projector_path: Path, trainable: bool, de
 
 
 def load_a_b(stage1_ckpt: Path, trainable: bool = True, device_a: str = "cuda", device_b: str | None = None):
+    assert_am_stage1_checkpoint(stage1_ckpt)
     tok_path = tokenizer_for_ckpt(stage1_ckpt)
     adapter = stage1_ckpt / "adapter"
     projector = stage1_ckpt / "projector.pt"
@@ -198,7 +212,7 @@ def model_device(model) -> torch.device:
     return next(model.parameters()).device
 
 
-def forward_revised(tok, model_a, model_b, row: dict, detach_z: bool = False):
+def forward_revised(tok, model_a, model_b, row: dict, detach_z: bool = False, drop_last_cot_step: bool = False):
     device_a = model_device(model_a)
     device_b = model_device(model_b)
     seq, meta = base.main_sequence(tok, row)
@@ -223,7 +237,7 @@ def forward_revised(tok, model_a, model_b, row: dict, detach_z: bool = False):
         z_for_b.requires_grad_(True)
         z_for_b.retain_grad()
 
-    dseq, dmeta = base.decoder_sequence(tok, row, meta["k"])
+    dseq, dmeta = base.decoder_sequence(tok, row, meta["k"], drop_last_cot_step=drop_last_cot_step)
     decoder_ids = torch.tensor([dseq], dtype=torch.long, device=device_b)
     decoder_attn = torch.ones_like(decoder_ids)
     embeds = model_b.get_input_embeddings()(decoder_ids)
@@ -297,12 +311,12 @@ def save_checkpoint(run: Path, model_a, model_b, tok, name: str, step: int) -> s
     return str(path)
 
 
-def validation(tok, model_a, model_b, rows: list[dict], n: int = 64) -> dict:
+def validation(tok, model_a, model_b, rows: list[dict], n: int = 64, drop_last_cot_step: bool = False) -> dict:
     vals = []
     model_a.eval(); model_b.eval()
     with torch.no_grad():
         for r in rows[:n]:
-            c = forward_revised(tok, model_a, model_b, r)
+            c = forward_revised(tok, model_a, model_b, r, drop_last_cot_step=drop_last_cot_step)
             vals.append({
                 "answer": float(c["answer_loss"].detach().cpu()),
                 "start": float(c["start_loss"].detach().cpu()),
@@ -400,6 +414,7 @@ def run_stage2(args):
         "seed": SEED,
         "lr": LR,
         "lambda_decode": LAMBDA_DECODE,
+        "drop_last_cot_step": bool(args.drop_last_cot_step),
         "model_a_init": "Stage1 50K adapter",
         "model_b_init": "deepcopy/same Stage1 50K adapter, independent parameters",
         "routing": {
@@ -429,7 +444,7 @@ def run_stage2(args):
                 torch.cuda.reset_peak_memory_stats(dev)
         s0 = now()
         model_a.zero_grad(set_to_none=True); model_b.zero_grad(set_to_none=True)
-        c = forward_revised(tok, model_a, model_b, r, detach_z=False)
+        c = forward_revised(tok, model_a, model_b, r, detach_z=False, drop_last_cot_step=args.drop_last_cot_step)
         loss = total_loss(c)
         if not torch.isfinite(loss):
             raise RuntimeError(f"non-finite loss at step {step}")
@@ -457,7 +472,7 @@ def run_stage2(args):
             write_json(status, {"status": "running", "phase": "stage2_revised_ab_decoder", "step": step, "last": rec, "elapsed": now() - t0})
         if step in checkpoint_steps:
             ckpt = save_checkpoint(run, model_a, model_b, tok, f"stage2_step{step}", step)
-            val = validation(tok, model_a, model_b, eval_rows, n=args.eval_n)
+            val = validation(tok, model_a, model_b, eval_rows, n=args.eval_n, drop_last_cot_step=args.drop_last_cot_step)
             ga = base.generation_protocol_audit(tok, model_a, eval_rows, n=args.gen_audit_n)
             evt = {"event": "stage2_checkpoint_eval", "step": step, "checkpoint": ckpt, "validation": val, "generation_protocol": ga, "elapsed": now() - t0}
             append_jsonl(log, evt)
@@ -478,6 +493,7 @@ def main():
     ap.add_argument("--gen-audit-n", type=int, default=32)
     ap.add_argument("--device-a", default="cuda:0")
     ap.add_argument("--device-b", default=None)
+    ap.add_argument("--drop-last-cot-step", action="store_true")
     args = ap.parse_args()
     os.environ.setdefault("TRANSFORMERS_OFFLINE", "1")
     os.environ.setdefault("HF_HUB_OFFLINE", "1")

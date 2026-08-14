@@ -27,9 +27,9 @@ ANSWER = "<ANSWER>"
 SPECIAL_TOKENS = [THINK_START, THINK, THINK_END, ANSWER]
 EXPAND_PROMPT = "Please expand the latent token into textual information\n"
 DEFAULT_MANIFEST = "/data2/zhouxiaoling/latent_cot/am_deepseek_runs/AM_DEEPSEEK_R1_DISTILLED_90K_TRAIN_5K_EVAL/manifest_train90k_eval5k_floor_nocap.json"
-DEFAULT_RUN = "/data2/zhouxiaoling/latent_cot/runs/QWEN7B_90K_NOCAP_THINKSTART_LALL1_NEWDECODER_S1_25K_S2_35K_20260809"
+DEFAULT_RUN = "/data2/zhouxiaoling/latent_cot/runs/QWEN7B_90K_NOCAP_THINKSTART_LALL1_R64_LR5e-5_STAGE1_GATE_5K_10K_25K_50K_90K_NOSTOP_20260811"
 SEED = 42
-LR = 2e-4
+LR = 5e-5
 PER_DEVICE_BATCH = 1
 GRAD_ACCUM = 1
 NUM_GPUS = 1
@@ -37,6 +37,38 @@ EOS_IN_DECODE_LOSS = True
 
 NUM_RE = re.compile(r"[-+]?\d[\d,]*(?:\.\d+)?(?:/\d[\d,]*)?")
 CHOICE_RE = re.compile(r"\b([A-E])\b", re.I)
+FORBIDDEN_DATASET_RE = re.compile(r"(LLaVA|LLaVA-CoT|official_heima|image[_-]?backed|multimodal)", re.I)
+VISUAL_COT_RE = re.compile(r"\b(image|picture|photo|chart|diagram|shown|visual|bounding box|bbox|ocr|document displays|the image shows)\b", re.I)
+AM_DATASET_ID = "a-m-team/AM-DeepSeek-R1-Distilled-1.4M"
+
+
+def assert_am_text_manifest(path: Path, train: list[dict], eval_rows: list[dict], meta: dict) -> None:
+    """Fail closed if a Qwen latent-reasoning run is about to use LLaVA/visual CoT data."""
+    haystack = "\n".join(str(x) for x in [path, meta.get("source"), meta.get("derived_from"), meta.get("dataset_id"), meta.get("dataset")])
+    if FORBIDDEN_DATASET_RE.search(haystack):
+        raise ValueError(
+            "Refusing to load multimodal/LLaVA manifest for AM-only latent reasoning training: "
+            f"path={path}, source={meta.get('source')}, derived_from={meta.get('derived_from')}"
+        )
+    combined = list(train[:1000]) + list(eval_rows[:200])
+    bad_source = [str(r.get("source") or r.get("dataset") or "") for r in combined if FORBIDDEN_DATASET_RE.search(str(r.get("source") or r.get("dataset") or ""))]
+    if bad_source:
+        raise ValueError(f"Refusing manifest with multimodal row source examples: {bad_source[:3]}")
+    visual_rate = 0.0
+    if combined:
+        visual_count = sum(bool(VISUAL_COT_RE.search(str(r.get("gold_cot", "")))) for r in combined)
+        visual_rate = visual_count / len(combined)
+    declared_am = AM_DATASET_ID in haystack or any(AM_DATASET_ID in str(r.get("dataset", "")) for r in combined[:20])
+    if not declared_am:
+        raise ValueError(
+            "Refusing to load manifest that is not declared as AM-DeepSeek derived. "
+            f"path={path}, meta.dataset_id={meta.get('dataset_id')}, meta.source={meta.get('source')}"
+        )
+    if visual_rate > 0.25:
+        raise ValueError(
+            "Refusing manifest with high visual-CoT lexical rate; likely LLaVA-style data leaked in. "
+            f"visual_rate_sample={visual_rate:.3f}, path={path}"
+        )
 
 
 def now() -> float:
@@ -65,6 +97,7 @@ def git_sha(repo: Path) -> str:
 
 
 def load_split(path: Path) -> tuple[list[dict], list[dict], dict]:
+    require_am_manifest(path)
     obj = json.loads(path.read_text())
     if isinstance(obj, dict):
         train = obj.get("train") or obj.get("samples") or []
@@ -72,12 +105,33 @@ def load_split(path: Path) -> tuple[list[dict], list[dict], dict]:
         meta = obj.get("meta") or {}
     else:
         train, eval_rows, meta = obj, [], {}
+    assert_am_text_manifest(path, train, eval_rows, meta)
     for rows in (train, eval_rows):
         for r in rows:
+            if "question" not in r or "gold_cot" not in r or not ("answer" in r or "reference_answer" in r):
+                raise ValueError(f"AM manifest row missing required fields: keys={sorted(r.keys())}")
             r["raw_K"] = int(r.get("raw_K") or r.get("latent_count") or max(1, math.floor(float(r.get("cot_token_count") or 2) * 0.5)))
             r["latent_count"] = int(r.get("latent_count") or r["raw_K"])
             r["k_rule"] = "floor(0.5*N_text_CoT), no cap"
     return train, eval_rows, meta
+
+
+def require_am_manifest(path: str | Path) -> None:
+    manifest = Path(path) if path else None
+    if manifest is None or not str(manifest):
+        raise ValueError("--manifest is required. Use an AM-DeepSeek-derived manifest; LLaVA defaults are disabled.")
+    if not manifest.exists():
+        raise FileNotFoundError(manifest)
+    manifest_text = str(manifest)
+    obj = json.loads(manifest.read_text())
+    meta = obj.get("meta", {}) if isinstance(obj, dict) else {}
+    audit_text = json.dumps(meta, ensure_ascii=False) + " " + manifest_text
+    forbidden = ("LLaVA", "llava", "official_heima", "ScienceQA", "scienceqa")
+    if any(x in audit_text for x in forbidden):
+        raise ValueError(f"Refusing non-AM/multimodal manifest: {manifest}")
+    required = ("AM-DeepSeek", "AM_DEEPSEEK", "a-m-team", "am_deepseek", "am-deepseek")
+    if not any(x in audit_text for x in required):
+        raise ValueError(f"Manifest must be explicitly AM-DeepSeek-derived, got meta/path: {manifest}")
 
 
 def norm_num(s: str | None) -> str | None:
@@ -134,8 +188,8 @@ def load_tokenizer(tokenizer_path: str | Path | None = None):
 
 def lora_config() -> LoraConfig:
     return LoraConfig(
-        r=8,
-        lora_alpha=16,
+        r=64,
+        lora_alpha=128,
         lora_dropout=0.05,
         target_modules=["q_proj", "k_proj", "v_proj", "o_proj", "gate_proj", "up_proj", "down_proj"],
         modules_to_save=["embed_tokens", "lm_head"],
@@ -209,10 +263,11 @@ def main_sequence(tok, row: dict) -> tuple[list[int], dict[str, list[int] | int]
     }
 
 
-def decoder_sequence(tok, row: dict, k: int) -> tuple[list[int], dict[str, list[int]]]:
+def decoder_sequence(tok, row: dict, k: int, drop_last_cot_step: bool = False) -> tuple[list[int], dict[str, list[int]]]:
     think_id = tok.convert_tokens_to_ids(THINK)
     prompt_ids = ids(tok, EXPAND_PROMPT)
-    cot_ids = ids(tok, str(row["gold_cot"]).strip())
+    cot_text = str(row["gold_cot_drop_last"] if drop_last_cot_step and row.get("gold_cot_drop_last") else row["gold_cot"]).strip()
+    cot_ids = ids(tok, cot_text)
     eos_ids = [tok.eos_token_id] if EOS_IN_DECODE_LOSS and tok.eos_token_id is not None else []
     seq = prompt_ids + [think_id] * k + cot_ids + eos_ids
     placeholder_positions = list(range(len(prompt_ids), len(prompt_ids) + k))
@@ -673,7 +728,7 @@ def run_stage1(args):
         "seed": SEED,
         "model": MODEL_ID,
         "revision": MODEL_REVISION,
-        "lora": {"r": 8, "alpha": 16, "dropout": 0.05, "target_modules": ["q_proj", "k_proj", "v_proj", "o_proj", "gate_proj", "up_proj", "down_proj"], "modules_to_save": ["embed_tokens", "lm_head"]},
+        "lora": {"r": 64, "alpha": 128, "dropout": 0.05, "target_modules": ["q_proj", "k_proj", "v_proj", "o_proj", "gate_proj", "up_proj", "down_proj"], "modules_to_save": ["embed_tokens", "lm_head"]},
         "loss": {
             "stage1": "L_answer + L_start + L_sync + L_end + L_marker",
             "stage2": "L_answer + L_start + L_sync + L_end + L_marker + L_decode",
@@ -683,7 +738,7 @@ def run_stage1(args):
         },
         "batch": trainable_report(tok, model, projector),
         "stage1_target": args.stage1_steps,
-        "stage1_extension_ceiling": 30000,
+        "stage1_extension_ceiling": 90000,
         "samples_seen_stage1": args.stage1_steps * PER_DEVICE_BATCH * NUM_GPUS * GRAD_ACCUM,
         "effective_epochs_stage1": args.stage1_steps * PER_DEVICE_BATCH * NUM_GPUS * GRAD_ACCUM / max(len(train), 1),
     }
@@ -691,7 +746,7 @@ def run_stage1(args):
     log = run / "stage1_train.jsonl"
     status = run / "status.json"
     t0 = now()
-    checkpoint_steps = {250, 500, 1000, 2000, 5000, 10000, 15000, 20000, 25000, 30000}
+    checkpoint_steps = {5000, 10000, 25000, 50000, 90000}
     stop_after_30k = False
     gate_passed = False
     gate_checkpoint = None
@@ -738,13 +793,14 @@ def run_stage1(args):
                 gate_passed = True
                 gate_checkpoint = ckpt
                 write_json(status, {"status": "stage1_gate_passed", "step": step, "generation_protocol": ga, "checkpoint": ckpt})
-                break
+                # This sweep intentionally continues after the protocol gate to
+                # measure when Stage1 latent states become stable enough for Stage2.
             if step == 30000 and not (start_ok and end_ok and answer_ok and k_ok):
                 stop_after_30k = True
                 write_json(status, {"status": "stopped_at_30k_protocol_fail", "reason": "START/END/ANSWER/K gate failed", "step": step, "generation_protocol": ga})
                 break
     final = save_checkpoint(run, model, projector, tok, "stage1_final", step)
-    final_status = "stage1_gate_passed" if gate_passed else ("stage1_stopped_after_gate" if stop_after_30k else "stage1_complete")
+    final_status = "stage1_complete"
     write_json(status, {"status": final_status, "step": step, "final_checkpoint": final, "gate_checkpoint": gate_checkpoint, "elapsed": now() - t0})
 
 
@@ -843,7 +899,7 @@ def main():
     ap.add_argument("--run-dir", default=DEFAULT_RUN)
     ap.add_argument("--repo", default=str(Path.cwd()))
     ap.add_argument("--smoke-steps", type=int, default=50)
-    ap.add_argument("--stage1-steps", type=int, default=25000)
+    ap.add_argument("--stage1-steps", type=int, default=90000)
     ap.add_argument("--stage2-steps", type=int, default=35000)
     ap.add_argument("--stage1-ckpt", default="")
     ap.add_argument("--resume-ckpt", default="")

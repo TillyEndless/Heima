@@ -27,7 +27,7 @@ ANSWER = "<ANSWER>"
 SPECIAL_TOKENS = [THINK_START, THINK, THINK_END, ANSWER]
 EXPAND_PROMPT = "Please expand the latent token into textual information\n"
 DEFAULT_MANIFEST = "/data2/zhouxiaoling/latent_cot/am_deepseek_runs/AM_DEEPSEEK_R1_DISTILLED_90K_TRAIN_5K_EVAL/manifest_train90k_eval5k_floor_nocap.json"
-DEFAULT_RUN = "/data2/zhouxiaoling/latent_cot/runs/QWEN7B_90K_NOCAP_THINKSTART_LALL1_NEWDECODER_S1_25K_S2_35K_20260809"
+DEFAULT_RUN = "/data2/zhouxiaoling/latent_cot/runs/QWEN7B_90K_NOCAP_THINKSTART_LALL1_NEWDECODER_LORA64_R0P5_20260810"
 SEED = 42
 LR = 2e-4
 PER_DEVICE_BATCH = 1
@@ -134,8 +134,8 @@ def load_tokenizer(tokenizer_path: str | Path | None = None):
 
 def lora_config() -> LoraConfig:
     return LoraConfig(
-        r=8,
-        lora_alpha=16,
+        r=64,
+        lora_alpha=128,
         lora_dropout=0.05,
         target_modules=["q_proj", "k_proj", "v_proj", "o_proj", "gate_proj", "up_proj", "down_proj"],
         modules_to_save=["embed_tokens", "lm_head"],
@@ -673,7 +673,7 @@ def run_stage1(args):
         "seed": SEED,
         "model": MODEL_ID,
         "revision": MODEL_REVISION,
-        "lora": {"r": 8, "alpha": 16, "dropout": 0.05, "target_modules": ["q_proj", "k_proj", "v_proj", "o_proj", "gate_proj", "up_proj", "down_proj"], "modules_to_save": ["embed_tokens", "lm_head"]},
+        "lora": {"r": 64, "alpha": 128, "dropout": 0.05, "target_modules": ["q_proj", "k_proj", "v_proj", "o_proj", "gate_proj", "up_proj", "down_proj"], "modules_to_save": ["embed_tokens", "lm_head"]},
         "loss": {
             "stage1": "L_answer + L_start + L_sync + L_end + L_marker",
             "stage2": "L_answer + L_start + L_sync + L_end + L_marker + L_decode",
